@@ -41,7 +41,6 @@ Bun.serve({
 
             // check file exist
             if (await fileExists(`static${filename}.dot`)) {
-                console.log(`trying to get file: static${filename}.dot`)
                 file = Bun.file(`static${filename}.dot`);
                 return new Response(file, { headers });
             } else {
@@ -56,7 +55,6 @@ Bun.serve({
             const filename = url.pathname.replace("/json", "");
             let file = null;
             if (await fileExists(`static${filename}.json`)) {
-                console.log(`trying to get file: static${filename}.json`)
                 file = Bun.file(`static${filename}.json`);
                 return new Response(file, { headers });
             } else {
@@ -68,7 +66,6 @@ Bun.serve({
         if (url.pathname.endsWith("/json") && req.method === "POST") {
             const filename = url.pathname.replace("/json", "");
             let file = await req.json();
-            console.log(`trying to save file: static${filename}.json`)
             await Bun.write(`static${filename}.json`, JSON.stringify(file));
             return new Response(JSON.stringify({"status": "File saved!"}), { headers });
         }
@@ -81,11 +78,9 @@ Bun.serve({
 async function fileExists(path: string) {
     try {
         await access(path);
-        console.log(`file ${path} exists`)
         return true;
     }
     catch (err) {
-        console.log(`file ${path} does not exists`, err)
         return false;
     }
 }
