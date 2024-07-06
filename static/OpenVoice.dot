@@ -1,0 +1,623 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        openvoice [label="openvoice", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        openvoice__api [label="openvoice.api", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        openvoice__attentions [label="openvoice.attentions", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        openvoice__commons [label="openvoice.commons", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        openvoice__mel_processing [label="openvoice.mel_processing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        openvoice__models [label="openvoice.models", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        openvoice__modules [label="openvoice.modules", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        openvoice__openvoice_app [label="openvoice.openvoice_app", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        openvoice__se_extractor [label="openvoice.se_extractor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        openvoice__text [label="openvoice.text", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        openvoice__text__cleaners [label="openvoice.text.cleaners", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        openvoice__text__english [label="openvoice.text.english", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        openvoice__text__mandarin [label="openvoice.text.mandarin", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        openvoice__text__symbols [label="openvoice.text.symbols", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        openvoice__transforms [label="openvoice.transforms", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        openvoice__utils [label="openvoice.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        setup [label="setup", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="16"];
+        subgraph cluster_openvoice__api {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.api"];
+            openvoice__api__BaseSpeakerTTS [label="BaseSpeakerTTS\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:42)", style="filled", fillcolor="#ffbb99b2", fontcolor="#000000", group="1"];
+            openvoice__api__OpenVoiceBaseClass [label="OpenVoiceBaseClass\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:14)", style="filled", fillcolor="#ffbb99b2", fontcolor="#000000", group="1"];
+            openvoice__api__ToneColorConverter [label="ToneColorConverter\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:101)", style="filled", fillcolor="#ffbb99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_openvoice__api__BaseSpeakerTTS {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.api.BaseSpeakerTTS"];
+            openvoice__api__BaseSpeakerTTS__audio_numpy_concat [label="audio_numpy_concat\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:57)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__BaseSpeakerTTS__get_text [label="get_text\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:49)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__BaseSpeakerTTS__split_sentences_into_pieces [label="split_sentences_into_pieces\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:66)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__BaseSpeakerTTS__tts [label="tts\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:73)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_openvoice__api__OpenVoiceBaseClass {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.api.OpenVoiceBaseClass"];
+            openvoice__api__OpenVoiceBaseClass____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:15)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__OpenVoiceBaseClass__load_ckpt [label="load_ckpt\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:35)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_openvoice__api__ToneColorConverter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.api.ToneColorConverter"];
+            openvoice__api__ToneColorConverter____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:102)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__ToneColorConverter__add_watermark [label="add_watermark\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:162)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__ToneColorConverter__convert [label="convert\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:141)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__ToneColorConverter__detect_watermark [label="detect_watermark\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:186)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+            openvoice__api__ToneColorConverter__extract_se [label="extract_se\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\api.py:114)", style="filled", fillcolor="#ff9965b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_openvoice__attentions {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.attentions"];
+            openvoice__attentions__Decoder [label="Decoder\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:124)", style="filled", fillcolor="#ffdd99b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__Encoder [label="Encoder\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:37)", style="filled", fillcolor="#ffdd99b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__FFN [label="FFN\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:410)", style="filled", fillcolor="#ffdd99b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__LayerNorm [label="LayerNorm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:12)", style="filled", fillcolor="#ffdd99b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention [label="MultiHeadAttention\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:210)", style="filled", fillcolor="#ffdd99b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__fused_add_tanh_sigmoid_multiply [label="fused_add_tanh_sigmoid_multiply\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:28)", style="filled", fillcolor="#ffdd99b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_openvoice__attentions__Decoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.attentions.Decoder"];
+            openvoice__attentions__Decoder____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:125)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__Decoder__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:184)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_openvoice__attentions__Encoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.attentions.Encoder"];
+            openvoice__attentions__Encoder____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:38)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__Encoder__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:104)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_openvoice__attentions__FFN {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.attentions.FFN"];
+            openvoice__attentions__FFN____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:411)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__FFN___causal_padding [label="_causal_padding\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:449)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__FFN___same_padding [label="_same_padding\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:458)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__FFN__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:439)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_openvoice__attentions__LayerNorm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.attentions.LayerNorm"];
+            openvoice__attentions__LayerNorm____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:13)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__LayerNorm__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:21)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_openvoice__attentions__MultiHeadAttention {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.attentions.MultiHeadAttention"];
+            openvoice__attentions__MultiHeadAttention____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:211)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention___absolute_position_to_relative_position [label="_absolute_position_to_relative_position\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:382)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention___attention_bias_proximal [label="_attention_bias_proximal\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:398)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention___get_relative_embeddings [label="_get_relative_embeddings\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:343)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention___matmul_with_relative_keys [label="_matmul_with_relative_keys\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:334)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention___matmul_with_relative_values [label="_matmul_with_relative_values\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:325)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention___relative_position_to_absolute_position [label="_relative_position_to_absolute_position\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:361)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention__attention [label="attention\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:274)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+            openvoice__attentions__MultiHeadAttention__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\attentions.py:264)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_openvoice__commons {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.commons"];
+            openvoice__commons__add_timing_signal_1d [label="add_timing_signal_1d\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:83)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__cat_timing_signal_1d [label="cat_timing_signal_1d\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:89)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__clip_grad_value_ [label="clip_grad_value_\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:145)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__convert_pad_shape [label="convert_pad_shape\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:110)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__fused_add_tanh_sigmoid_multiply [label="fused_add_tanh_sigmoid_multiply\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:101)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__generate_path [label="generate_path\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:128)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__get_padding [label="get_padding\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:12)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__get_timing_signal_1d [label="get_timing_signal_1d\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:67)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__init_weights [label="init_weights\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:6)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__intersperse [label="intersperse\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:22)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__kl_divergence [label="kl_divergence\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:28)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__rand_gumbel [label="rand_gumbel\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:37)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__rand_gumbel_like [label="rand_gumbel_like\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:43)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__rand_slice_segments [label="rand_slice_segments\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:57)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__sequence_mask [label="sequence_mask\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:121)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__shift_1d [label="shift_1d\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:116)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__slice_segments [label="slice_segments\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:48)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+            openvoice__commons__subsequent_mask [label="subsequent_mask\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\commons.py:95)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_openvoice__mel_processing {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.mel_processing"];
+            openvoice__mel_processing__dynamic_range_compression_torch [label="dynamic_range_compression_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:8)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__dynamic_range_decompression_torch [label="dynamic_range_decompression_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:17)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__mel_spectrogram_torch [label="mel_spectrogram_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:136)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__spec_to_mel_torch [label="spec_to_mel_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:122)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__spectral_de_normalize_torch [label="spectral_de_normalize_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:31)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__spectral_normalize_torch [label="spectral_normalize_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:26)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__spectrogram_torch [label="spectrogram_torch\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:40)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+            openvoice__mel_processing__spectrogram_torch_conv [label="spectrogram_torch_conv\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\mel_processing.py:78)", style="filled", fillcolor="#dcff99b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_openvoice__models {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models"];
+            openvoice__models__DurationPredictor [label="DurationPredictor\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:60)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__Generator [label="Generator\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:224)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__PosteriorEncoder [label="PosteriorEncoder\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:182)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__ReferenceEncoder [label="ReferenceEncoder\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:301)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__ResidualCouplingBlock [label="ResidualCouplingBlock\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:367)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__StochasticDurationPredictor [label="StochasticDurationPredictor\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:102)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__SynthesizerTrn [label="SynthesizerTrn\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:399)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+            openvoice__models__TextEncoder [label="TextEncoder\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:16)", style="filled", fillcolor="#baff99b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__DurationPredictor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.DurationPredictor"];
+            openvoice__models__DurationPredictor____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:61)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__DurationPredictor__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:86)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__Generator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.Generator"];
+            openvoice__models__Generator____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:225)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__Generator__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:272)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__Generator__remove_weight_norm [label="remove_weight_norm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:293)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__PosteriorEncoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.PosteriorEncoder"];
+            openvoice__models__PosteriorEncoder____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:183)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__PosteriorEncoder__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:212)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__ReferenceEncoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.ReferenceEncoder"];
+            openvoice__models__ReferenceEncoder____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:307)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__ReferenceEncoder__calculate_channels [label="calculate_channels\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:361)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__ReferenceEncoder__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:339)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__ResidualCouplingBlock {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.ResidualCouplingBlock"];
+            openvoice__models__ResidualCouplingBlock____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:368)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__ResidualCouplingBlock__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:390)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__StochasticDurationPredictor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.StochasticDurationPredictor"];
+            openvoice__models__StochasticDurationPredictor____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:103)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__StochasticDurationPredictor__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:135)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__SynthesizerTrn {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.SynthesizerTrn"];
+            openvoice__models__SynthesizerTrn____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:404)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__SynthesizerTrn__infer [label="infer\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:467)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__SynthesizerTrn__voice_conversion [label="voice_conversion\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:492)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__models__TextEncoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.models.TextEncoder"];
+            openvoice__models__TextEncoder____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:17)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+            openvoice__models__TextEncoder__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\models.py:48)", style="filled", fillcolor="#98ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_openvoice__modules {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules"];
+            openvoice__modules__ConvFlow [label="ConvFlow\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:459)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ConvReluNorm [label="ConvReluNorm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:32)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__DDSConv [label="DDSConv\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:84)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ElementwiseAffine [label="ElementwiseAffine\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:384)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__Flip [label="Flip\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:374)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__LayerNorm [label="LayerNorm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:17)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__Log [label="Log\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:363)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResBlock1 [label="ResBlock1\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:221)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResBlock2 [label="ResBlock2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:318)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResidualCouplingLayer [label="ResidualCouplingLayer\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:402)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__TransformerCouplingLayer [label="TransformerCouplingLayer\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:519)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+            openvoice__modules__WN [label="WN\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:133)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__ConvFlow {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.ConvFlow"];
+            openvoice__modules__ConvFlow____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:460)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ConvFlow__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:486)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__ConvReluNorm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.ConvReluNorm"];
+            openvoice__modules__ConvReluNorm____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:33)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ConvReluNorm__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:74)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__DDSConv {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.DDSConv"];
+            openvoice__modules__DDSConv____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:89)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__DDSConv__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:118)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__ElementwiseAffine {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.ElementwiseAffine"];
+            openvoice__modules__ElementwiseAffine____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:385)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ElementwiseAffine__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:391)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__Flip {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.Flip"];
+            openvoice__modules__Flip__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:375)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__LayerNorm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.LayerNorm"];
+            openvoice__modules__LayerNorm____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:18)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__LayerNorm__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:26)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__Log {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.Log"];
+            openvoice__modules__Log__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:364)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__ResBlock1 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.ResBlock1"];
+            openvoice__modules__ResBlock1____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:222)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResBlock1__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:296)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResBlock1__remove_weight_norm [label="remove_weight_norm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:311)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__ResBlock2 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.ResBlock2"];
+            openvoice__modules__ResBlock2____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:319)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResBlock2__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:347)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResBlock2__remove_weight_norm [label="remove_weight_norm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:358)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__ResidualCouplingLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.ResidualCouplingLayer"];
+            openvoice__modules__ResidualCouplingLayer____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:403)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__ResidualCouplingLayer__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:437)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__TransformerCouplingLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.TransformerCouplingLayer"];
+            openvoice__modules__TransformerCouplingLayer____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:520)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__TransformerCouplingLayer__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:562)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__modules__WN {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.modules.WN"];
+            openvoice__modules__WN____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:134)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__WN__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:185)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+            openvoice__modules__WN__remove_weight_norm [label="remove_weight_norm\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\modules.py:212)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_openvoice__openvoice_app {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.openvoice_app"];
+            openvoice__openvoice_app__predict [label="predict\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\openvoice_app.py:37)", style="filled", fillcolor="#99ffbbb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_openvoice__se_extractor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.se_extractor"];
+            openvoice__se_extractor__get_se [label="get_se\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\se_extractor.py:129)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="8"];
+            openvoice__se_extractor__hash_numpy_array [label="hash_numpy_array\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\se_extractor.py:118)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="8"];
+            openvoice__se_extractor__split_audio_vad [label="split_audio_vad\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\se_extractor.py:77)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="8"];
+            openvoice__se_extractor__split_audio_whisper [label="split_audio_whisper\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\se_extractor.py:19)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_openvoice__text {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.text"];
+            openvoice__text___clean_text [label="_clean_text\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\__init__.py:73)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="9"];
+            openvoice__text__cleaned_text_to_sequence [label="cleaned_text_to_sequence\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\__init__.py:33)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="9"];
+            openvoice__text__cleaned_text_to_sequence_vits2 [label="cleaned_text_to_sequence_vits2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\__init__.py:47)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="9"];
+            openvoice__text__sequence_to_text [label="sequence_to_text\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\__init__.py:64)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="9"];
+            openvoice__text__text_to_sequence [label="text_to_sequence\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\__init__.py:11)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_openvoice__text__cleaners {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.text.cleaners"];
+            openvoice__text__cleaners__cjke_cleaners2 [label="cjke_cleaners2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\cleaners.py:5)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_openvoice__text__english {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.text.english"];
+            openvoice__text__english___expand_decimal_point [label="_expand_decimal_point\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:102)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english___expand_dollars [label="_expand_dollars\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:106)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english___expand_number [label="_expand_number\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:131)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english___expand_ordinal [label="_expand_ordinal\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:127)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english___remove_commas [label="_remove_commas\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:98)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__collapse_whitespace [label="collapse_whitespace\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:94)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__english_to_ipa [label="english_to_ipa\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:160)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__english_to_ipa2 [label="english_to_ipa2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:176)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__english_to_lazy_ipa [label="english_to_lazy_ipa\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:169)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__english_to_lazy_ipa2 [label="english_to_lazy_ipa2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:184)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__expand_abbreviations [label="expand_abbreviations\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:88)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__mark_dark_l [label="mark_dark_l\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:156)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+            openvoice__text__english__normalize_numbers [label="normalize_numbers\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\english.py:146)", style="filled", fillcolor="#6598ffb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_openvoice__text__mandarin {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.text.mandarin"];
+            openvoice__text__mandarin__bopomofo_to_ipa [label="bopomofo_to_ipa\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:272)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__bopomofo_to_ipa2 [label="bopomofo_to_ipa2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:278)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__bopomofo_to_romaji [label="bopomofo_to_romaji\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:266)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__chinese_to_bopomofo [label="chinese_to_bopomofo\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:243)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__chinese_to_ipa [label="chinese_to_ipa\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:304)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__chinese_to_ipa2 [label="chinese_to_ipa2\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:317)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__chinese_to_lazy_ipa [label="chinese_to_lazy_ipa\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:297)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__chinese_to_romaji [label="chinese_to_romaji\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:284)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__latin_to_bopomofo [label="latin_to_bopomofo\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:260)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+            openvoice__text__mandarin__number_to_chinese [label="number_to_chinese\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\text\mandarin.py:236)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_openvoice__transforms {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.transforms"];
+            openvoice__transforms__piecewise_rational_quadratic_transform [label="piecewise_rational_quadratic_transform\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\transforms.py:12)", style="filled", fillcolor="#dd99ffb2", fontcolor="#000000", group="14"];
+            openvoice__transforms__rational_quadratic_spline [label="rational_quadratic_spline\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\transforms.py:100)", style="filled", fillcolor="#dd99ffb2", fontcolor="#000000", group="14"];
+            openvoice__transforms__searchsorted [label="searchsorted\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\transforms.py:45)", style="filled", fillcolor="#dd99ffb2", fontcolor="#000000", group="14"];
+            openvoice__transforms__unconstrained_rational_quadratic_spline [label="unconstrained_rational_quadratic_spline\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\transforms.py:50)", style="filled", fillcolor="#dd99ffb2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_openvoice__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.utils"];
+            openvoice__utils__HParams [label="HParams\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:14)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__bits_to_string [label="bits_to_string\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:65)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__get_hparams_from_file [label="get_hparams_from_file\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:6)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__merge_short_sentences_latin [label="merge_short_sentences_latin\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:120)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__merge_short_sentences_zh [label="merge_short_sentences_zh\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:170)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__split_sentence [label="split_sentence\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:78)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__split_sentences_latin [label="split_sentences_latin\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:85)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__split_sentences_zh [label="split_sentences_zh\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:145)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__string_to_bits [label="string_to_bits\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:46)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_openvoice__utils__HParams {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openvoice.utils.HParams"];
+            openvoice__utils__HParams____contains__ [label="__contains__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:39)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams____getitem__ [label="__getitem__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:33)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:15)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams____len__ [label="__len__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:30)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams____repr__ [label="__repr__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:42)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams____setitem__ [label="__setitem__\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:36)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams__items [label="items\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:24)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams__keys [label="keys\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:21)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+            openvoice__utils__HParams__values [label="values\n(C:/Users/sanju/Desktop/projects/explore/OpenVoice\openvoice\utils.py:27)", style="filled", fillcolor="#ff65feb2", fontcolor="#000000", group="15"];
+        }
+    }
+        openvoice__api -> openvoice__text__text_to_sequence [style="solid",  color="#000000"];
+        openvoice__api -> openvoice__models__SynthesizerTrn [style="solid",  color="#000000"];
+        openvoice__api -> openvoice__mel_processing__spectrogram_torch [style="solid",  color="#000000"];
+        openvoice__api -> openvoice__utils [style="solid",  color="#000000"];
+        openvoice__api -> openvoice__commons [style="solid",  color="#000000"];
+        openvoice__api__OpenVoiceBaseClass____init__ -> openvoice__models__SynthesizerTrn____init__ [style="solid",  color="#000000"];
+        openvoice__api__OpenVoiceBaseClass____init__ -> openvoice__utils__get_hparams_from_file [style="solid",  color="#000000"];
+        openvoice__api__OpenVoiceBaseClass____init__ -> openvoice__models__SynthesizerTrn [style="solid",  color="#000000"];
+        openvoice__api__OpenVoiceBaseClass__load_ckpt -> openvoice__models__SynthesizerTrn____init__ [style="solid",  color="#000000"];
+        openvoice__api__OpenVoiceBaseClass__load_ckpt -> openvoice__models__SynthesizerTrn [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS -> openvoice__api__OpenVoiceBaseClass [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__get_text -> openvoice__text__text_to_sequence [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__get_text -> openvoice__commons__intersperse [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__split_sentences_into_pieces -> openvoice__utils__split_sentence [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__tts -> openvoice__models__SynthesizerTrn [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__tts -> openvoice__utils__get_hparams_from_file [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__tts -> openvoice__models__SynthesizerTrn____init__ [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__tts -> openvoice__api__BaseSpeakerTTS__get_text [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__tts -> openvoice__api__BaseSpeakerTTS__audio_numpy_concat [style="solid",  color="#000000"];
+        openvoice__api__BaseSpeakerTTS__tts -> openvoice__api__BaseSpeakerTTS__split_sentences_into_pieces [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter -> openvoice__api__OpenVoiceBaseClass [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter____init__ -> openvoice__utils__get_hparams_from_file [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter____init__ -> openvoice__api__OpenVoiceBaseClass____init__ [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__extract_se -> openvoice__utils__get_hparams_from_file [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__extract_se -> openvoice__models__SynthesizerTrn____init__ [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__extract_se -> openvoice__models__SynthesizerTrn [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__extract_se -> openvoice__mel_processing__spectrogram_torch [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__convert -> openvoice__models__SynthesizerTrn [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__convert -> openvoice__utils__get_hparams_from_file [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__convert -> openvoice__models__SynthesizerTrn____init__ [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__convert -> openvoice__mel_processing__spectrogram_torch [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__convert -> openvoice__api__ToneColorConverter__add_watermark [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__add_watermark -> openvoice__utils__string_to_bits [style="solid",  color="#000000"];
+        openvoice__api__ToneColorConverter__detect_watermark -> openvoice__utils__bits_to_string [style="solid",  color="#000000"];
+        openvoice__attentions -> openvoice__commons [style="solid",  color="#000000"];
+        openvoice__attentions__Encoder____init__ -> openvoice__attentions__LayerNorm____init__ [style="solid",  color="#000000"];
+        openvoice__attentions__Encoder____init__ -> openvoice__attentions__FFN [style="solid",  color="#000000"];
+        openvoice__attentions__Encoder____init__ -> openvoice__attentions__MultiHeadAttention____init__ [style="solid",  color="#000000"];
+        openvoice__attentions__Encoder____init__ -> openvoice__attentions__FFN____init__ [style="solid",  color="#000000"];
+        openvoice__attentions__Encoder____init__ -> openvoice__attentions__LayerNorm [style="solid",  color="#000000"];
+        openvoice__attentions__Encoder____init__ -> openvoice__attentions__MultiHeadAttention [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder____init__ -> openvoice__attentions__LayerNorm____init__ [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder____init__ -> openvoice__attentions__FFN____init__ [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder____init__ -> openvoice__attentions__LayerNorm [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder____init__ -> openvoice__attentions__FFN [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder____init__ -> openvoice__attentions__MultiHeadAttention____init__ [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder____init__ -> openvoice__attentions__MultiHeadAttention [style="solid",  color="#000000"];
+        openvoice__attentions__Decoder__forward -> openvoice__commons__subsequent_mask [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__forward -> openvoice__attentions__MultiHeadAttention__attention [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__attention -> openvoice__attentions__MultiHeadAttention___matmul_with_relative_values [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__attention -> openvoice__attentions__MultiHeadAttention___get_relative_embeddings [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__attention -> openvoice__attentions__MultiHeadAttention___relative_position_to_absolute_position [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__attention -> openvoice__attentions__MultiHeadAttention___attention_bias_proximal [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__attention -> openvoice__attentions__MultiHeadAttention___absolute_position_to_relative_position [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention__attention -> openvoice__attentions__MultiHeadAttention___matmul_with_relative_keys [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention___get_relative_embeddings -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention___relative_position_to_absolute_position -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__attentions__MultiHeadAttention___absolute_position_to_relative_position -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__attentions__FFN____init__ -> openvoice__attentions__FFN___same_padding [style="solid",  color="#000000"];
+        openvoice__attentions__FFN____init__ -> openvoice__attentions__FFN___causal_padding [style="solid",  color="#000000"];
+        openvoice__attentions__FFN__forward -> openvoice__attentions__FFN___same_padding [style="solid",  color="#000000"];
+        openvoice__attentions__FFN___causal_padding -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__attentions__FFN___same_padding -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__commons__rand_gumbel_like -> openvoice__commons__rand_gumbel [style="solid",  color="#000000"];
+        openvoice__commons__rand_slice_segments -> openvoice__commons__slice_segments [style="solid",  color="#000000"];
+        openvoice__commons__add_timing_signal_1d -> openvoice__commons__get_timing_signal_1d [style="solid",  color="#000000"];
+        openvoice__commons__cat_timing_signal_1d -> openvoice__commons__get_timing_signal_1d [style="solid",  color="#000000"];
+        openvoice__commons__shift_1d -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__commons__generate_path -> openvoice__commons__convert_pad_shape [style="solid",  color="#000000"];
+        openvoice__commons__generate_path -> openvoice__commons__sequence_mask [style="solid",  color="#000000"];
+        openvoice__mel_processing__spectral_normalize_torch -> openvoice__mel_processing__dynamic_range_compression_torch [style="solid",  color="#000000"];
+        openvoice__mel_processing__spectral_de_normalize_torch -> openvoice__mel_processing__dynamic_range_decompression_torch [style="solid",  color="#000000"];
+        openvoice__mel_processing__spec_to_mel_torch -> openvoice__mel_processing__spectral_normalize_torch [style="solid",  color="#000000"];
+        openvoice__mel_processing__mel_spectrogram_torch -> openvoice__mel_processing__spectral_normalize_torch [style="solid",  color="#000000"];
+        openvoice__models -> openvoice__modules [style="solid",  color="#000000"];
+        openvoice__models -> openvoice__commons__init_weights [style="solid",  color="#000000"];
+        openvoice__models -> openvoice__attentions [style="solid",  color="#000000"];
+        openvoice__models -> openvoice__commons__get_padding [style="solid",  color="#000000"];
+        openvoice__models -> openvoice__commons [style="solid",  color="#000000"];
+        openvoice__models__TextEncoder____init__ -> openvoice__attentions__Encoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__TextEncoder____init__ -> openvoice__attentions__Encoder [style="solid",  color="#000000"];
+        openvoice__models__TextEncoder__forward -> openvoice__attentions__Encoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__TextEncoder__forward -> openvoice__commons__sequence_mask [style="solid",  color="#000000"];
+        openvoice__models__TextEncoder__forward -> openvoice__attentions__Encoder [style="solid",  color="#000000"];
+        openvoice__models__DurationPredictor____init__ -> openvoice__modules__LayerNorm [style="solid",  color="#000000"];
+        openvoice__models__DurationPredictor____init__ -> openvoice__modules__LayerNorm____init__ [style="solid",  color="#000000"];
+        openvoice__models__DurationPredictor__forward -> openvoice__modules__LayerNorm [style="solid",  color="#000000"];
+        openvoice__models__DurationPredictor__forward -> openvoice__modules__LayerNorm____init__ [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__DDSConv____init__ [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__ElementwiseAffine [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__DDSConv [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__Log [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__ElementwiseAffine____init__ [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__ConvFlow [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__Flip [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor____init__ -> openvoice__modules__ConvFlow____init__ [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor__forward -> openvoice__modules__DDSConv____init__ [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor__forward -> openvoice__modules__DDSConv [style="solid",  color="#000000"];
+        openvoice__models__StochasticDurationPredictor__forward -> openvoice__modules__Log [style="solid",  color="#000000"];
+        openvoice__models__PosteriorEncoder____init__ -> openvoice__modules__WN____init__ [style="solid",  color="#000000"];
+        openvoice__models__PosteriorEncoder____init__ -> openvoice__modules__WN [style="solid",  color="#000000"];
+        openvoice__models__PosteriorEncoder__forward -> openvoice__modules__WN [style="solid",  color="#000000"];
+        openvoice__models__PosteriorEncoder__forward -> openvoice__commons__sequence_mask [style="solid",  color="#000000"];
+        openvoice__models__PosteriorEncoder__forward -> openvoice__modules__WN____init__ [style="solid",  color="#000000"];
+        openvoice__models__Generator____init__ -> openvoice__modules__ResBlock2 [style="solid",  color="#000000"];
+        openvoice__models__Generator____init__ -> openvoice__commons__init_weights [style="solid",  color="#000000"];
+        openvoice__models__Generator____init__ -> openvoice__modules__ResBlock1 [style="solid",  color="#000000"];
+        openvoice__models__Generator____init__ -> openvoice__modules__ResBlock2____init__ [style="solid",  color="#000000"];
+        openvoice__models__Generator__remove_weight_norm -> openvoice__models__Generator__remove_weight_norm [style="solid",  color="#000000"];
+        openvoice__models__ReferenceEncoder____init__ -> openvoice__models__ReferenceEncoder__calculate_channels [style="solid",  color="#000000"];
+        openvoice__models__ResidualCouplingBlock____init__ -> openvoice__modules__Flip [style="solid",  color="#000000"];
+        openvoice__models__ResidualCouplingBlock____init__ -> openvoice__modules__ResidualCouplingLayer [style="solid",  color="#000000"];
+        openvoice__models__ResidualCouplingBlock____init__ -> openvoice__modules__ResidualCouplingLayer____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__Generator [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__TextEncoder [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__StochasticDurationPredictor [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__ReferenceEncoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__PosteriorEncoder [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__Generator____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__ReferenceEncoder [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__StochasticDurationPredictor____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__PosteriorEncoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__TextEncoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__DurationPredictor [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__ResidualCouplingBlock [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__DurationPredictor____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn____init__ -> openvoice__models__ResidualCouplingBlock____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__StochasticDurationPredictor____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__ResidualCouplingBlock____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__TextEncoder [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__Generator____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__commons__sequence_mask [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__commons__generate_path [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__ResidualCouplingBlock [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__DurationPredictor____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__Generator [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__StochasticDurationPredictor [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__TextEncoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__infer -> openvoice__models__DurationPredictor [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__voice_conversion -> openvoice__models__Generator [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__voice_conversion -> openvoice__models__PosteriorEncoder [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__voice_conversion -> openvoice__models__Generator____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__voice_conversion -> openvoice__models__PosteriorEncoder____init__ [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__voice_conversion -> openvoice__models__ResidualCouplingBlock [style="solid",  color="#000000"];
+        openvoice__models__SynthesizerTrn__voice_conversion -> openvoice__models__ResidualCouplingBlock____init__ [style="solid",  color="#000000"];
+        openvoice__modules -> openvoice__commons [style="solid",  color="#000000"];
+        openvoice__modules -> openvoice__commons__init_weights [style="solid",  color="#000000"];
+        openvoice__modules -> openvoice__transforms__piecewise_rational_quadratic_transform [style="solid",  color="#000000"];
+        openvoice__modules -> openvoice__attentions__Encoder [style="solid",  color="#000000"];
+        openvoice__modules -> openvoice__commons__get_padding [style="solid",  color="#000000"];
+        openvoice__modules__ConvReluNorm____init__ -> openvoice__modules__LayerNorm____init__ [style="solid",  color="#000000"];
+        openvoice__modules__ConvReluNorm____init__ -> openvoice__modules__LayerNorm [style="solid",  color="#000000"];
+        openvoice__modules__DDSConv____init__ -> openvoice__modules__LayerNorm [style="solid",  color="#000000"];
+        openvoice__modules__DDSConv____init__ -> openvoice__modules__LayerNorm____init__ [style="solid",  color="#000000"];
+        openvoice__modules__WN__forward -> openvoice__commons__fused_add_tanh_sigmoid_multiply [style="solid",  color="#000000"];
+        openvoice__modules__ResBlock1____init__ -> openvoice__commons__init_weights [style="solid",  color="#000000"];
+        openvoice__modules__ResBlock1____init__ -> openvoice__commons__get_padding [style="solid",  color="#000000"];
+        openvoice__modules__ResBlock1__remove_weight_norm -> openvoice__modules__ResBlock1__remove_weight_norm [style="solid",  color="#000000"];
+        openvoice__modules__ResBlock2____init__ -> openvoice__commons__init_weights [style="solid",  color="#000000"];
+        openvoice__modules__ResBlock2____init__ -> openvoice__commons__get_padding [style="solid",  color="#000000"];
+        openvoice__modules__ResBlock2__remove_weight_norm -> openvoice__modules__ResBlock2__remove_weight_norm [style="solid",  color="#000000"];
+        openvoice__modules__ResidualCouplingLayer____init__ -> openvoice__modules__WN____init__ [style="solid",  color="#000000"];
+        openvoice__modules__ResidualCouplingLayer____init__ -> openvoice__modules__WN [style="solid",  color="#000000"];
+        openvoice__modules__ResidualCouplingLayer__forward -> openvoice__modules__WN [style="solid",  color="#000000"];
+        openvoice__modules__ResidualCouplingLayer__forward -> openvoice__modules__WN____init__ [style="solid",  color="#000000"];
+        openvoice__modules__ConvFlow____init__ -> openvoice__modules__DDSConv____init__ [style="solid",  color="#000000"];
+        openvoice__modules__ConvFlow____init__ -> openvoice__modules__DDSConv [style="solid",  color="#000000"];
+        openvoice__modules__ConvFlow__forward -> openvoice__modules__DDSConv____init__ [style="solid",  color="#000000"];
+        openvoice__modules__ConvFlow__forward -> openvoice__transforms__piecewise_rational_quadratic_transform [style="solid",  color="#000000"];
+        openvoice__modules__ConvFlow__forward -> openvoice__modules__DDSConv [style="solid",  color="#000000"];
+        openvoice__modules__TransformerCouplingLayer____init__ -> openvoice__attentions__Encoder [style="solid",  color="#000000"];
+        openvoice__modules__TransformerCouplingLayer____init__ -> openvoice__attentions__Encoder____init__ [style="solid",  color="#000000"];
+        openvoice__modules__TransformerCouplingLayer__forward -> openvoice__transforms__piecewise_rational_quadratic_transform [style="solid",  color="#000000"];
+        openvoice__openvoice_app -> openvoice__api__BaseSpeakerTTS [style="solid",  color="#000000"];
+        openvoice__openvoice_app -> openvoice__openvoice_app__predict [style="solid",  color="#000000"];
+        openvoice__openvoice_app -> openvoice__api__OpenVoiceBaseClass__load_ckpt [style="solid",  color="#000000"];
+        openvoice__openvoice_app -> openvoice__se_extractor [style="solid",  color="#000000"];
+        openvoice__openvoice_app -> openvoice__api__ToneColorConverter [style="solid",  color="#000000"];
+        openvoice__openvoice_app -> openvoice__api__ToneColorConverter____init__ [style="solid",  color="#000000"];
+        openvoice__openvoice_app__predict -> openvoice__api__BaseSpeakerTTS [style="solid",  color="#000000"];
+        openvoice__openvoice_app__predict -> openvoice__api__BaseSpeakerTTS__tts [style="solid",  color="#000000"];
+        openvoice__openvoice_app__predict -> openvoice__se_extractor__get_se [style="solid",  color="#000000"];
+        openvoice__openvoice_app__predict -> openvoice__api__ToneColorConverter [style="solid",  color="#000000"];
+        openvoice__openvoice_app__predict -> openvoice__api__ToneColorConverter__convert [style="solid",  color="#000000"];
+        openvoice__se_extractor__get_se -> openvoice__se_extractor__split_audio_whisper [style="solid",  color="#000000"];
+        openvoice__se_extractor__get_se -> openvoice__se_extractor__hash_numpy_array [style="solid",  color="#000000"];
+        openvoice__se_extractor__get_se -> openvoice__se_extractor__split_audio_vad [style="solid",  color="#000000"];
+        openvoice__transforms__piecewise_rational_quadratic_transform -> openvoice__transforms__unconstrained_rational_quadratic_spline [style="solid",  color="#000000"];
+        openvoice__transforms__piecewise_rational_quadratic_transform -> openvoice__transforms__rational_quadratic_spline [style="solid",  color="#000000"];
+        openvoice__transforms__unconstrained_rational_quadratic_spline -> openvoice__transforms__rational_quadratic_spline [style="solid",  color="#000000"];
+        openvoice__transforms__rational_quadratic_spline -> openvoice__transforms__searchsorted [style="solid",  color="#000000"];
+        openvoice__utils__get_hparams_from_file -> openvoice__utils__HParams [style="solid",  color="#000000"];
+        openvoice__utils__get_hparams_from_file -> openvoice__utils__HParams____init__ [style="solid",  color="#000000"];
+        openvoice__utils__HParams____init__ -> openvoice__utils__HParams____init__ [style="solid",  color="#000000"];
+        openvoice__utils__HParams__keys -> openvoice__utils__HParams____init__ [style="solid",  color="#000000"];
+        openvoice__utils__HParams__items -> openvoice__utils__HParams____init__ [style="solid",  color="#000000"];
+        openvoice__utils__HParams__values -> openvoice__utils__HParams____init__ [style="solid",  color="#000000"];
+        openvoice__utils__HParams____repr__ -> openvoice__utils__HParams____init__ [style="solid",  color="#000000"];
+        openvoice__utils__split_sentence -> openvoice__utils__split_sentences_latin [style="solid",  color="#000000"];
+        openvoice__utils__split_sentence -> openvoice__utils__split_sentences_zh [style="solid",  color="#000000"];
+        openvoice__utils__split_sentences_latin -> openvoice__utils__merge_short_sentences_latin [style="solid",  color="#000000"];
+        openvoice__utils__split_sentences_zh -> openvoice__utils__merge_short_sentences_zh [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__number_to_chinese [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__english__english_to_lazy_ipa2 [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__english__english_to_ipa2 [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__chinese_to_romaji [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__chinese_to_lazy_ipa [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__chinese_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__english__english_to_lazy_ipa [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__latin_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__chinese_to_ipa [style="solid",  color="#000000"];
+        openvoice__text__cleaners -> openvoice__text__mandarin__chinese_to_ipa2 [style="solid",  color="#000000"];
+        openvoice__text__cleaners__cjke_cleaners2 -> openvoice__text__english__english_to_ipa2 [style="solid",  color="#000000"];
+        openvoice__text__cleaners__cjke_cleaners2 -> openvoice__text__mandarin__chinese_to_ipa [style="solid",  color="#000000"];
+        openvoice__text__english__normalize_numbers -> openvoice__text__english___expand_ordinal [style="solid",  color="#000000"];
+        openvoice__text__english__normalize_numbers -> openvoice__text__english___expand_dollars [style="solid",  color="#000000"];
+        openvoice__text__english__normalize_numbers -> openvoice__text__english___expand_decimal_point [style="solid",  color="#000000"];
+        openvoice__text__english__normalize_numbers -> openvoice__text__english___remove_commas [style="solid",  color="#000000"];
+        openvoice__text__english__normalize_numbers -> openvoice__text__english___expand_number [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_ipa -> openvoice__text__english__collapse_whitespace [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_ipa -> openvoice__text__english__normalize_numbers [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_ipa -> openvoice__text__english__expand_abbreviations [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_lazy_ipa -> openvoice__text__english__english_to_ipa [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_ipa2 -> openvoice__text__english__english_to_ipa [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_ipa2 -> openvoice__text__english__mark_dark_l [style="solid",  color="#000000"];
+        openvoice__text__english__english_to_lazy_ipa2 -> openvoice__text__english__english_to_ipa [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_romaji -> openvoice__text__mandarin__number_to_chinese [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_romaji -> openvoice__text__mandarin__bopomofo_to_romaji [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_romaji -> openvoice__text__mandarin__chinese_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_romaji -> openvoice__text__mandarin__latin_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_lazy_ipa -> openvoice__text__mandarin__chinese_to_romaji [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa -> openvoice__text__mandarin__number_to_chinese [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa -> openvoice__text__mandarin__bopomofo_to_ipa [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa -> openvoice__text__mandarin__chinese_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa -> openvoice__text__mandarin__latin_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa2 -> openvoice__text__mandarin__bopomofo_to_ipa2 [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa2 -> openvoice__text__mandarin__number_to_chinese [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa2 -> openvoice__text__mandarin__chinese_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text__mandarin__chinese_to_ipa2 -> openvoice__text__mandarin__latin_to_bopomofo [style="solid",  color="#000000"];
+        openvoice__text -> openvoice__text__cleaners [style="solid",  color="#000000"];
+        openvoice__text__text_to_sequence -> openvoice__text___clean_text [style="solid",  color="#000000"];
+        openvoice__text___clean_text -> openvoice__text__cleaners [style="solid",  color="#000000"];
+    }
