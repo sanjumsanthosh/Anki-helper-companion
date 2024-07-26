@@ -4,6 +4,7 @@ from tqdm import tqdm
 from groq import Groq
 from dotenv import load_dotenv
 import os
+import time
 
 load_dotenv()
 
@@ -116,13 +117,16 @@ client = Groq(
     api_key=KEY
 )
 
-def summarize_with_llama(function_def):
-    
+def summarize_with_llama(function):
+    function_def = function.function_def
+    function_name = function.function_name
+    max_retries = 3
+    retry_delay = 2  # seconds
 
     if skip:
         return "Summary not available"
-    try:
-        prompt = '''
+
+    prompt = '''
 You are an expert programmer. read though the selection below and give the following
 
 [Quick summary]
@@ -136,34 +140,34 @@ what is the expected output. as points only
 
 Just the summary, inputs and output is required for output
 '''
-        # Point to the local server
-        chat_completion = client.chat.completions.create(
-            messages=[
-                {
-                    "role": "system",
-                    "content": function_def,
-                },
-                {
-                    "role": "user",
-                    "content": prompt,
-                }
-            ],
-            temperature=1.0,
-            stream=False,
-            model="gemma2-9b-it",
-        )
-        
-        return chat_completion.choices[0].message.content
-    except Exception as e:
-        print(e)
-        return "Summary not available"
+
+    for attempt in range(max_retries):
+        try:
+            # Point to the local server
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {
+                        "role": "system",
+                        "content": function_def,
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                temperature=1.0,
+                stream=False,
+                model="gemma2-9b-it",
+            )
+            return chat_completion.choices[0].message.content
+        except Exception as e:
+            print(f"\nAttempt {attempt + 1} failed: {e} | Retrying in {retry_delay} seconds | {function_name}")
+            if attempt < max_retries - 1:
+                time.sleep(retry_delay)
+            else:
+                return "Summary not available"
 
 
-# {"ANKIConfig":{"GIT_URL":"https://github.com/piku/piku/blob/master/"},
-# "piku__deploy_python":{"label":"deploy_python",
-# "systemPath":"C:/Users/sanju/Desktop/projects/explore/piku\\piku.py:646",
-# "relativePath":"piku.py","lineNo":"646","emgithubIframeLink":"https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L646-L696&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
-# "description":"[Quick summary]\n\nThis function, `deploy_python`, deploys a Python application. It sets up a virtual environment if needed, installs dependencies from a `requirements.txt` file, and then starts the application using another function (`spawn_app`).\n\n[Inputs]\n\n* `app`: String representing the name of the Python application to deploy.\n* `deltas` (optional): Dictionary containing additional arguments to be passed to the `spawn_app` function (presumably for customization during deployment).\n\n[Output]\n\n* The function doesn't explicitly return a value, but it likely calls another function `spawn_app` (not shown) to start the deployed application.  "},
 class OutputFormat(BaseModel):
     label: str
     systemPath: str
@@ -195,11 +199,11 @@ for function in tqdm(get_all_function_start_end, desc="Processing functions"):
         "lineNo": function.start,
         "endLineNo": function.end,
         "emgithubIframeLink": create_emgithub_link(relative_path, function.start, function.end),
-        "description": summarize_with_llama(function.function_def)
+        "description": summarize_with_llama(function)
     }
 
     # sleep for 1 second to avoid rate limiting
-    import time
+    
     if not skip: time.sleep(1)
 
 
