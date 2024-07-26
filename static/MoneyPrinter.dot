@@ -1,0 +1,116 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        gpt [label="gpt", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        search [label="search", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        tiktokvoice [label="tiktokvoice", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        utils [label="utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        video [label="video", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        youtube [label="youtube", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        subgraph cluster_gpt {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt"];
+            gpt__generate_metadata [label="generate_metadata\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\gpt.py:230)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            gpt__generate_response [label="generate_response\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\gpt.py:22)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            gpt__generate_script [label="generate_script\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\gpt.py:69)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            gpt__get_search_terms [label="get_search_terms\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\gpt.py:159)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="main"];
+            main__cancel [label="cancel\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\main.py:346)", style="filled", fillcolor="#fef2ccb2", fontcolor="#000000", group="1"];
+            main__generate [label="generate\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\main.py:43)", style="filled", fillcolor="#fef2ccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_search {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="search"];
+            search__search_for_stock_videos [label="search_for_stock_videos\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\search.py:9)", style="filled", fillcolor="#e5feccb2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_tiktokvoice {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tiktokvoice"];
+            tiktokvoice__generate_audio [label="generate_audio\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\tiktokvoice.py:112)", style="filled", fillcolor="#ccfed8b2", fontcolor="#000000", group="3"];
+            tiktokvoice__get_api_response [label="get_api_response\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\tiktokvoice.py:98)", style="filled", fillcolor="#ccfed8b2", fontcolor="#000000", group="3"];
+            tiktokvoice__save_audio_file [label="save_audio_file\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\tiktokvoice.py:105)", style="filled", fillcolor="#ccfed8b2", fontcolor="#000000", group="3"];
+            tiktokvoice__split_string [label="split_string\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\tiktokvoice.py:79)", style="filled", fillcolor="#ccfed8b2", fontcolor="#000000", group="3"];
+            tiktokvoice__tts [label="tts\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\tiktokvoice.py:121)", style="filled", fillcolor="#ccfed8b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_tiktokvoice__tts {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tiktokvoice.tts"];
+            tiktokvoice__tts__generate_audio_thread [label="generate_audio_thread\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\tiktokvoice.py:172)", style="filled", fillcolor="#99ffb2b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="utils"];
+            utils__check_env_vars [label="check_env_vars\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\utils.py:96)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="4"];
+            utils__choose_random_song [label="choose_random_song\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\utils.py:80)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="4"];
+            utils__clean_dir [label="clean_dir\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\utils.py:16)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="4"];
+            utils__fetch_songs [label="fetch_songs\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\utils.py:40)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_video {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="video"];
+            video____generate_subtitles_assemblyai [label="__generate_subtitles_assemblyai\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:40)", style="filled", fillcolor="#ccd8feb2", fontcolor="#000000", group="5"];
+            video____generate_subtitles_locally [label="__generate_subtitles_locally\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:72)", style="filled", fillcolor="#ccd8feb2", fontcolor="#000000", group="5"];
+            video__combine_videos [label="combine_videos\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:146)", style="filled", fillcolor="#ccd8feb2", fontcolor="#000000", group="5"];
+            video__generate_subtitles [label="generate_subtitles\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:105)", style="filled", fillcolor="#ccd8feb2", fontcolor="#000000", group="5"];
+            video__generate_video [label="generate_video\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:208)", style="filled", fillcolor="#ccd8feb2", fontcolor="#000000", group="5"];
+            video__save_video [label="save_video\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:21)", style="filled", fillcolor="#ccd8feb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_video____generate_subtitles_locally {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="video.__generate_subtitles_locally"];
+            video____generate_subtitles_locally__convert_to_srt_time_format [label="convert_to_srt_time_format\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:83)", style="filled", fillcolor="#99b2ffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_video__generate_subtitles {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="video.generate_subtitles"];
+            video__generate_subtitles__equalize_subtitles [label="equalize_subtitles\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\video.py:118)", style="filled", fillcolor="#99b2ffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_youtube {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="youtube"];
+            youtube__get_authenticated_service [label="get_authenticated_service\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\youtube.py:63)", style="filled", fillcolor="#e5ccfeb2", fontcolor="#000000", group="6"];
+            youtube__initialize_upload [label="initialize_upload\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\youtube.py:84)", style="filled", fillcolor="#e5ccfeb2", fontcolor="#000000", group="6"];
+            youtube__resumable_upload [label="resumable_upload\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\youtube.py:123)", style="filled", fillcolor="#e5ccfeb2", fontcolor="#000000", group="6"];
+            youtube__upload_video [label="upload_video\n(C:/Users/sanju/Desktop/projects/explore/MoneyPrinter\Backend\youtube.py:163)", style="filled", fillcolor="#e5ccfeb2", fontcolor="#000000", group="6"];
+        }
+    }
+        gpt__generate_script -> gpt__generate_response [style="solid",  color="#000000"];
+        gpt__get_search_terms -> gpt__generate_response [style="solid",  color="#000000"];
+        gpt__generate_metadata -> gpt__get_search_terms [style="solid",  color="#000000"];
+        gpt__generate_metadata -> gpt__generate_response [style="solid",  color="#000000"];
+        main -> utils__check_env_vars [style="solid",  color="#000000"];
+        main -> youtube__upload_video [style="solid",  color="#000000"];
+        main__generate -> video__generate_subtitles [style="solid",  color="#000000"];
+        main__generate -> gpt__generate_script [style="solid",  color="#000000"];
+        main__generate -> youtube__upload_video [style="solid",  color="#000000"];
+        main__generate -> gpt__get_search_terms [style="solid",  color="#000000"];
+        main__generate -> search__search_for_stock_videos [style="solid",  color="#000000"];
+        main__generate -> video__combine_videos [style="solid",  color="#000000"];
+        main__generate -> utils__fetch_songs [style="solid",  color="#000000"];
+        main__generate -> tiktokvoice__tts [style="solid",  color="#000000"];
+        main__generate -> utils__choose_random_song [style="solid",  color="#000000"];
+        main__generate -> video__save_video [style="solid",  color="#000000"];
+        main__generate -> gpt__generate_metadata [style="solid",  color="#000000"];
+        main__generate -> video__generate_video [style="solid",  color="#000000"];
+        main__generate -> utils__clean_dir [style="solid",  color="#000000"];
+        search -> search__search_for_stock_videos [style="solid",  color="#000000"];
+        tiktokvoice__tts -> tiktokvoice__tts__generate_audio_thread [style="solid",  color="#000000"];
+        tiktokvoice__tts -> tiktokvoice__get_api_response [style="solid",  color="#000000"];
+        tiktokvoice__tts -> tiktokvoice__generate_audio [style="solid",  color="#000000"];
+        tiktokvoice__tts -> tiktokvoice__split_string [style="solid",  color="#000000"];
+        tiktokvoice__tts -> tiktokvoice__save_audio_file [style="solid",  color="#000000"];
+        tiktokvoice__tts__generate_audio_thread -> tiktokvoice__generate_audio [style="solid",  color="#000000"];
+        video____generate_subtitles_locally -> video____generate_subtitles_locally__convert_to_srt_time_format [style="solid",  color="#000000"];
+        video__generate_subtitles -> video____generate_subtitles_assemblyai [style="solid",  color="#000000"];
+        video__generate_subtitles -> video____generate_subtitles_locally [style="solid",  color="#000000"];
+        video__generate_subtitles -> video__generate_subtitles__equalize_subtitles [style="solid",  color="#000000"];
+        youtube__initialize_upload -> youtube__resumable_upload [style="solid",  color="#000000"];
+        youtube__upload_video -> youtube__get_authenticated_service [style="solid",  color="#000000"];
+        youtube__upload_video -> youtube__initialize_upload [style="solid",  color="#000000"];
+    }

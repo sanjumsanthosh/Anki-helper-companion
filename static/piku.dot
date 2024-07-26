@@ -1,0 +1,160 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        piku [label="piku", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        subgraph cluster_piku {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="piku"];
+            piku___get_plugin_commands [label="_get_plugin_commands\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1659)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__check_requirements [label="check_requirements\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:350)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cleanup [label="cleanup\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1280)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_apps [label="cmd_apps\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1288)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_config [label="cmd_config\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1302)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_config_get [label="cmd_config_get\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1317)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_config_live [label="cmd_config_live\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1373)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_config_set [label="cmd_config_set\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1334)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_config_unset [label="cmd_config_unset\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1356)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_deploy [label="cmd_deploy\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1387)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_destroy [label="cmd_destroy\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1396)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_git_hook [label="cmd_git_hook\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1595)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_git_receive_pack [label="cmd_git_receive_pack\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1619)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_git_upload_pack [label="cmd_git_upload_pack\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1643)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_help [label="cmd_help\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1679)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_logs [label="cmd_logs\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1438)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_ps [label="cmd_ps\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1453)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_ps_scale [label="cmd_ps_scale\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1468)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_restart [label="cmd_restart\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1512)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_run [label="cmd_run\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1496)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_scp [label="cmd_scp\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1654)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_setup [label="cmd_setup\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1521)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_setup_ssh [label="cmd_setup_ssh\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1559)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_stop [label="cmd_stop\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1585)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__cmd_update [label="cmd_update\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1685)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__command_output [label="command_output\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:322)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_clojure_cli [label="deploy_clojure_cli\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:494)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_clojure_leiningen [label="deploy_clojure_leiningen\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:516)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_go [label="deploy_go\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:564)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_identity [label="deploy_identity\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:683)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_java_gradle [label="deploy_java_gradle\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:434)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_java_maven [label="deploy_java_maven\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:463)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_nodeX [label="deploy_node\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:591)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_python [label="deploy_python\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:646)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__deploy_ruby [label="deploy_ruby\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:539)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__do_deploy [label="do_deploy\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:368)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__do_restart [label="do_restart\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1206)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__do_stop [label="do_stop\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1195)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__exit_if_invalid [label="exit_if_invalid\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:228)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__expandvars [label="expandvars\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:312)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__found_app [label="found_app\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:362)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__get_boolean [label="get_boolean\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:248)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__get_free_port [label="get_free_port\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:238)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__multi_tail [label="multi_tail\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1214)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__parse_procfile [label="parse_procfile\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:276)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__parse_settings [label="parse_settings\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:331)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__piku [label="piku\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1271)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__sanitize_app_name [label="sanitize_app_name\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:221)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__setup_authorized_keys [label="setup_authorized_keys\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:263)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__spawn_app [label="spawn_app\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:690)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__spawn_worker [label="spawn_worker\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1034)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            piku__write_config [label="write_config\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:254)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_piku__cmd_setup_ssh {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="piku.cmd_setup_ssh"];
+            piku__cmd_setup_ssh__add_helper [label="add_helper\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1562)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_piku__expandvars {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="piku.expandvars"];
+            piku__expandvars__replace_var [label="replace_var\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:315)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_piku__multi_tail {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="piku.multi_tail"];
+            piku__multi_tail__peek [label="peek\n(C:/Users/sanju/Desktop/projects/explore/piku\piku.py:1218)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+    }
+        piku -> piku___get_plugin_commands [style="solid",  color="#000000"];
+        piku -> piku__piku [style="solid",  color="#000000"];
+        piku__exit_if_invalid -> piku__sanitize_app_name [style="solid",  color="#000000"];
+        piku__expandvars -> piku__expandvars__replace_var [style="solid",  color="#000000"];
+        piku__parse_settings -> piku__expandvars [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_python [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_go [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_clojure_leiningen [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_nodeX [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__found_app [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__parse_procfile [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__check_requirements [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_java_gradle [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_ruby [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_identity [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_java_maven [style="solid",  color="#000000"];
+        piku__do_deploy -> piku__deploy_clojure_cli [style="solid",  color="#000000"];
+        piku__deploy_java_gradle -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_java_gradle -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_java_maven -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_java_maven -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_clojure_cli -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_clojure_cli -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_clojure_leiningen -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_clojure_leiningen -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_ruby -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_ruby -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_go -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_nodeX -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_nodeX -> piku__check_requirements [style="solid",  color="#000000"];
+        piku__deploy_nodeX -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_python -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__deploy_python -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__deploy_identity -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__get_free_port [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__parse_procfile [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__command_output [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__write_config [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__spawn_worker [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__get_boolean [style="solid",  color="#000000"];
+        piku__spawn_app -> piku__expandvars [style="solid",  color="#000000"];
+        piku__spawn_worker -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__do_restart -> piku__spawn_app [style="solid",  color="#000000"];
+        piku__do_restart -> piku__do_stop [style="solid",  color="#000000"];
+        piku__multi_tail -> piku__multi_tail__peek [style="solid",  color="#000000"];
+        piku__cmd_config -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_config_get -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_config_get -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__cmd_config_set -> piku__do_deploy [style="solid",  color="#000000"];
+        piku__cmd_config_set -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__cmd_config_set -> piku__write_config [style="solid",  color="#000000"];
+        piku__cmd_config_set -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_config_unset -> piku__write_config [style="solid",  color="#000000"];
+        piku__cmd_config_unset -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_config_unset -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__cmd_config_unset -> piku__do_deploy [style="solid",  color="#000000"];
+        piku__cmd_config_live -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_deploy -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_deploy -> piku__do_deploy [style="solid",  color="#000000"];
+        piku__cmd_destroy -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_logs -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_logs -> piku__multi_tail [style="solid",  color="#000000"];
+        piku__cmd_ps -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_ps_scale -> piku__do_deploy [style="solid",  color="#000000"];
+        piku__cmd_ps_scale -> piku__parse_procfile [style="solid",  color="#000000"];
+        piku__cmd_ps_scale -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_run -> piku__parse_settings [style="solid",  color="#000000"];
+        piku__cmd_run -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_restart -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_restart -> piku__do_restart [style="solid",  color="#000000"];
+        piku__cmd_setup_ssh__add_helper -> piku__cmd_setup_ssh__add_helper [style="solid",  color="#000000"];
+        piku__cmd_setup_ssh__add_helper -> piku__setup_authorized_keys [style="solid",  color="#000000"];
+        piku__cmd_setup_ssh -> piku__cmd_setup_ssh__add_helper [style="solid",  color="#000000"];
+        piku__cmd_stop -> piku__exit_if_invalid [style="solid",  color="#000000"];
+        piku__cmd_stop -> piku__do_stop [style="solid",  color="#000000"];
+        piku__cmd_git_hook -> piku__do_deploy [style="solid",  color="#000000"];
+        piku__cmd_git_hook -> piku__sanitize_app_name [style="solid",  color="#000000"];
+        piku__cmd_git_receive_pack -> piku__sanitize_app_name [style="solid",  color="#000000"];
+        piku__cmd_git_upload_pack -> piku__sanitize_app_name [style="solid",  color="#000000"];
+        piku___get_plugin_commands -> piku___get_plugin_commands [style="solid",  color="#000000"];
+    }

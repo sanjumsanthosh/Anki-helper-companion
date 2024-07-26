@@ -1,0 +1,211 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        conf [label="conf", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        kan [label="kan", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        kan__KAN [label="kan.KAN", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        kan__KANLayer [label="kan.KANLayer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        kan__LBFGS [label="kan.LBFGS", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        kan__Symbolic_KANLayer [label="kan.Symbolic_KANLayer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        kan__spline [label="kan.spline", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        kan__utils [label="kan.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        setup [label="setup", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        subgraph cluster_conf {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="conf"];
+            conf__setup [label="setup\n(C:/Users/sanju/Desktop/projects/explore/pykan\docs\conf.py:40)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            conf__skip [label="skip\n(C:/Users/sanju/Desktop/projects/explore/pykan\docs\conf.py:35)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_kan__KAN {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KAN"];
+            kan__KAN__KAN [label="KAN\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:15)", style="filled", fillcolor="#eaff99b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_kan__KAN__KAN {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KAN.KAN"];
+            kan__KAN__KAN____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:80)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__auto_symbolic [label="auto_symbolic\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1106)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__clear_ckpts [label="clear_ckpts\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1260)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__fix_symbolic [label="fix_symbolic\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:377)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:277)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__get_range [label="get_range\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:516)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__initialize_from_another_model [label="initialize_from_another_model\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:167)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__initialize_grid_from_another_model [label="initialize_grid_from_another_model\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:246)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__load_ckpt [label="load_ckpt\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1302)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__lock [label="lock\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:459)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__plot [label="plot\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:561)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__prune [label="prune\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:937)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__remove_edge [label="remove_edge\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1001)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__remove_nodeX [label="remove_node\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1020)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__save_ckpt [label="save_ckpt\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1280)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__set_mode [label="set_mode\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:337)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__suggest_symbolic [label="suggest_symbolic\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1040)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__symbolic_formula [label="symbolic_formula\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1162)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__train [label="train\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:762)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__unfix_symbolic [label="unfix_symbolic\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:444)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__unfix_symbolic_all [label="unfix_symbolic_all\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:450)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__unlock [label="unlock\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:489)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__update_grid_from_samples [label="update_grid_from_samples\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:219)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_kan__KAN__KAN__plot {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KAN.KAN.plot"];
+            kan__KAN__KAN__plot__score2alpha [label="score2alpha\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:657)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_kan__KAN__KAN__symbolic_formula {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KAN.KAN.symbolic_formula"];
+            kan__KAN__KAN__symbolic_formula__ex_round [label="ex_round\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:1198)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_kan__KAN__KAN__train {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KAN.KAN.train"];
+            kan__KAN__KAN__train__closure [label="closure\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:875)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+            kan__KAN__KAN__train__reg [label="reg\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:822)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_kan__KAN__KAN__train__reg {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KAN.KAN.train.reg"];
+            kan__KAN__KAN__train__reg__nonlinear [label="nonlinear\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KAN.py:824)", style="filled", fillcolor="#cbff00b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_kan__KANLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KANLayer"];
+            kan__KANLayer__KANLayer [label="KANLayer\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:7)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_kan__KANLayer__KANLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.KANLayer.KANLayer"];
+            kan__KANLayer__KANLayer____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:65)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            kan__KANLayer__KANLayer__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:137)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            kan__KANLayer__KANLayer__get_subset [label="get_subset\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:259)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            kan__KANLayer__KANLayer__initialize_grid_from_parent [label="initialize_grid_from_parent\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:220)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            kan__KANLayer__KANLayer__lock [label="lock\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:293)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            kan__KANLayer__KANLayer__unlock [label="unlock\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:326)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            kan__KANLayer__KANLayer__update_grid_from_samples [label="update_grid_from_samples\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\KANLayer.py:185)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_kan__LBFGS {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.LBFGS"];
+            kan__LBFGS__LBFGS [label="LBFGS\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:185)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="4"];
+            kan__LBFGS___cubic_interpolate [label="_cubic_interpolate\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:7)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="4"];
+            kan__LBFGS___strong_wolfe [label="_strong_wolfe\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:35)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_kan__LBFGS__LBFGS {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.LBFGS.LBFGS"];
+            kan__LBFGS__LBFGS____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:218)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS___add_grad [label="_add_grad\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:265)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS___clone_param [label="_clone_param\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:274)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS___directional_evaluate [label="_directional_evaluate\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:281)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS___gather_flat_grad [label="_gather_flat_grad\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:253)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS___numel [label="_numel\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:248)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS___set_param [label="_set_param\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:277)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+            kan__LBFGS__LBFGS__step [label="step\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:290)", style="filled", fillcolor="#65ffa3b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_kan__LBFGS__LBFGS__step {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.LBFGS.LBFGS.step"];
+            kan__LBFGS__LBFGS__step__obj_func [label="obj_func\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\LBFGS.py:430)", style="filled", fillcolor="#32ff84b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_kan__Symbolic_KANLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.Symbolic_KANLayer"];
+            kan__Symbolic_KANLayer__Symbolic_KANLayer [label="Symbolic_KANLayer\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\Symbolic_KANLayer.py:9)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_kan__Symbolic_KANLayer__Symbolic_KANLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.Symbolic_KANLayer.Symbolic_KANLayer"];
+            kan__Symbolic_KANLayer__Symbolic_KANLayer____init__ [label="__init__\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\Symbolic_KANLayer.py:39)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            kan__Symbolic_KANLayer__Symbolic_KANLayer__fix_symbolic [label="fix_symbolic\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\Symbolic_KANLayer.py:153)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            kan__Symbolic_KANLayer__Symbolic_KANLayer__forward [label="forward\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\Symbolic_KANLayer.py:78)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            kan__Symbolic_KANLayer__Symbolic_KANLayer__get_subset [label="get_subset\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\Symbolic_KANLayer.py:120)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_kan__spline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.spline"];
+            kan__spline__B_batch [label="B_batch\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\spline.py:4)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="6"];
+            kan__spline__coef2curve [label="coef2curve\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\spline.py:65)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="6"];
+            kan__spline__curve2coef [label="curve2coef\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\spline.py:107)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_kan__spline__B_batch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.spline.B_batch"];
+            kan__spline__B_batch__extend_grid [label="extend_grid\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\spline.py:39)", style="filled", fillcolor="#65a3ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_kan__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.utils"];
+            kan__utils__add_symbolic [label="add_symbolic\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\utils.py:233)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+            kan__utils__create_dataset [label="create_dataset\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\utils.py:37)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+            kan__utils__fit_params [label="fit_params\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\utils.py:127)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_kan__utils__create_dataset {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="kan.utils.create_dataset"];
+            kan__utils__create_dataset__normalize [label="normalize\n(C:/Users/sanju/Desktop/projects/explore/pykan\kan\utils.py:101)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+        }
+    }
+        conf__setup -> conf__skip [style="solid",  color="#000000"];
+        kan__KAN__KAN____init__ -> kan__Symbolic_KANLayer__Symbolic_KANLayer [style="solid",  color="#000000"];
+        kan__KAN__KAN____init__ -> kan__KANLayer__KANLayer [style="solid",  color="#000000"];
+        kan__KAN__KAN__initialize_from_another_model -> kan__KAN__KAN__initialize_grid_from_another_model [style="solid",  color="#000000"];
+        kan__KAN__KAN__initialize_from_another_model -> kan__spline__curve2coef [style="solid",  color="#000000"];
+        kan__KAN__KAN__update_grid_from_samples -> kan__KAN__KAN__forward [style="solid",  color="#000000"];
+        kan__KAN__KAN__forward -> kan__KAN__KAN____init__ [style="solid",  color="#000000"];
+        kan__KAN__KAN__fix_symbolic -> kan__KAN__KAN__set_mode [style="solid",  color="#000000"];
+        kan__KAN__KAN__unfix_symbolic -> kan__KAN__KAN__set_mode [style="solid",  color="#000000"];
+        kan__KAN__KAN__unfix_symbolic_all -> kan__KAN__KAN__unfix_symbolic [style="solid",  color="#000000"];
+        kan__KAN__KAN__plot -> kan__KAN__KAN__get_range [style="solid",  color="#000000"];
+        kan__KAN__KAN__plot -> kan__KAN__KAN____init__ [style="solid",  color="#000000"];
+        kan__KAN__KAN__plot -> kan__KAN__KAN__plot__score2alpha [style="solid",  color="#000000"];
+        kan__KAN__KAN__train__reg -> kan__KAN__KAN__train__reg__nonlinear [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__KAN__KAN__plot [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__KAN__KAN__forward [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__KAN__KAN____init__ [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__KAN__KAN__train__reg [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__KAN__KAN__update_grid_from_samples [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__KAN__KAN__train__closure [style="solid",  color="#000000"];
+        kan__KAN__KAN__train -> kan__LBFGS__LBFGS [style="solid",  color="#000000"];
+        kan__KAN__KAN__train__closure -> kan__KAN__KAN__train__reg [style="solid",  color="#000000"];
+        kan__KAN__KAN__train__closure -> kan__LBFGS__LBFGS [style="solid",  color="#000000"];
+        kan__KAN__KAN__train__closure -> kan__KAN__KAN__forward [style="solid",  color="#000000"];
+        kan__KAN__KAN__prune -> kan__KAN__KAN__remove_nodeX [style="solid",  color="#000000"];
+        kan__KAN__KAN__prune -> kan__KAN__KAN____init__ [style="solid",  color="#000000"];
+        kan__KAN__KAN__suggest_symbolic -> kan__KAN__KAN__fix_symbolic [style="solid",  color="#000000"];
+        kan__KAN__KAN__suggest_symbolic -> kan__KAN__KAN__unfix_symbolic [style="solid",  color="#000000"];
+        kan__KAN__KAN__auto_symbolic -> kan__KAN__KAN__suggest_symbolic [style="solid",  color="#000000"];
+        kan__KAN__KAN__auto_symbolic -> kan__KAN__KAN__fix_symbolic [style="solid",  color="#000000"];
+        kan__KAN__KAN__symbolic_formula -> kan__KAN__KAN__symbolic_formula__ex_round [style="solid",  color="#000000"];
+        kan__KAN__KAN__save_ckpt -> kan__KAN__KAN____init__ [style="solid",  color="#000000"];
+        kan__KAN__KAN__load_ckpt -> kan__KAN__KAN____init__ [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer____init__ -> kan__spline__curve2coef [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__forward -> kan__spline__coef2curve [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__update_grid_from_samples -> kan__spline__curve2coef [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__update_grid_from_samples -> kan__spline__coef2curve [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__initialize_grid_from_parent -> kan__spline__curve2coef [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__initialize_grid_from_parent -> kan__spline__coef2curve [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__initialize_grid_from_parent -> kan__KANLayer__KANLayer____init__ [style="solid",  color="#000000"];
+        kan__KANLayer__KANLayer__get_subset -> kan__KANLayer__KANLayer____init__ [style="solid",  color="#000000"];
+        kan__LBFGS___strong_wolfe -> kan__LBFGS___cubic_interpolate [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS___add_grad -> kan__LBFGS__LBFGS___numel [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS___directional_evaluate -> kan__LBFGS__LBFGS___set_param [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS___directional_evaluate -> kan__LBFGS__LBFGS___add_grad [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS___directional_evaluate -> kan__LBFGS__LBFGS___gather_flat_grad [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS__step -> kan__LBFGS__LBFGS___clone_param [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS__step -> kan__LBFGS___strong_wolfe [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS__step -> kan__LBFGS__LBFGS___gather_flat_grad [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS__step -> kan__LBFGS__LBFGS__step__obj_func [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS__step -> kan__LBFGS__LBFGS___add_grad [style="solid",  color="#000000"];
+        kan__LBFGS__LBFGS__step__obj_func -> kan__LBFGS__LBFGS___directional_evaluate [style="solid",  color="#000000"];
+        kan__spline__B_batch -> kan__spline__B_batch__extend_grid [style="solid",  color="#000000"];
+        kan__spline__B_batch -> kan__spline__B_batch [style="solid",  color="#000000"];
+        kan__spline__coef2curve -> kan__spline__B_batch [style="solid",  color="#000000"];
+        kan__spline__curve2coef -> kan__spline__B_batch [style="solid",  color="#000000"];
+        kan__Symbolic_KANLayer__Symbolic_KANLayer__get_subset -> kan__Symbolic_KANLayer__Symbolic_KANLayer____init__ [style="solid",  color="#000000"];
+        kan__Symbolic_KANLayer__Symbolic_KANLayer__fix_symbolic -> kan__utils__fit_params [style="solid",  color="#000000"];
+        kan__utils__create_dataset -> kan__utils__create_dataset__normalize [style="solid",  color="#000000"];
+    }

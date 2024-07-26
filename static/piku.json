@@ -1,0 +1,500 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/piku/piku/blob/master/"
+    },
+    "piku___get_plugin_commands": {
+        "label": "_get_plugin_commands",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1698,
+        "endLineNo": 1715,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1698-L1715&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**\nThis function searches a directory (`path`) for subdirectories containing Python modules. \n\nIt imports these modules (if possible) and collects their defined CLI commands, returning a list of all discovered commands. The purpose is to dynamically load and manage command-line interface (CLI) functionality from multiple modules.\n\n**[Inputs]**\n* `path`: A string representing the absolute path to a directory containing potential CLI module subdirectories.\n\n**[Output]**\n* `cli_commands`: A list, where each element is a dictionary or list representing a single CLI command definition.  \n"
+    },
+    "piku__check_requirements": {
+        "label": "check_requirements",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 350,
+        "endLineNo": 361,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L350-L361&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick summary]**\n\nThis function checks if a list of specified binaries (`binaries`) are present in the system and have executable permissions. It iterates through the list, utilizing the `which` function to locate each binary and prints the results. If any binary is not found or is not executable, the function returns `False`, indicating a missing requirement. Otherwise, it returns `True`, confirming all binaries are accessible.\n\n**[Inputs]**\n\n* `binaries`: A list of strings representing the names of binaries to check. \n\n**[Output]**\n\n* `True`: If all binaries exist and are executable.\n* `False`: If any binary is missing or not executable. \n\n\n"
+    },
+    "piku__cleanup": {
+        "label": "cleanup",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1319,
+        "endLineNo": 1322,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1319-L1322&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function acts as a callback triggered after a command execution.  It's designed to be customized for debugging purposes by adding specific logging or error handling logic. The primary purpose is to provide a mechanism for monitoring and inspecting the outcome of executed commands.\n\n**Inputs:**\n\n*  Likely the result of the command execution. \n\n**Output:**\n\n*  None (This function appears to be designed for side effects like debugging logging rather than explicit output).  \n"
+    },
+    "piku__cmd_apps": {
+        "label": "cmd_apps",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1327,
+        "endLineNo": 1338,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1327-L1338&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function lists the applications deployed in a specific directory (`APP_ROOT`). It indicates which applications are currently running using a green \"*\" or a space.\n\n## Inputs\n\n* **APP_ROOT**:  Likely a path string pointing to the directory where deployed applications are stored.\n* **UWSGI_ENABLED**:  Likely a path string pointing to a directory where UWSGI configuration files (`.ini`) for enabled applications are located.\n* **echo**: This appears to be a function for printing output to the console, possibly with formatting options (`fg` likely changes the foreground color).\n* **listdir**:  A function used to list the contents of a directory.\n* **join**: A function used to concatenate strings, likely for creating paths to UWSGI configuration files.\n* **glob**:  A function used to find files matching a specific pattern. In this case, it searches for UWSGI configuration files (`*.ini`) within a directory.\n\n## Output\n\n* A list of application names, displayed in green if they are running and in white if they are not. \n* If no applications are found, a message indicating \"There are no applications deployed.\" is printed. \n\n\n\n"
+    },
+    "piku__cmd_config": {
+        "label": "cmd_config",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1341,
+        "endLineNo": 1352,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1341-L1352&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis\n\n**[Quick Summary]**\n\nThis function displays the configuration file for a given application. It searches for a file named 'ENV' within a specific directory structure based on the application name. If found, it prints the content of the file; otherwise, it prints a warning message.\n\n**[Inputs]**\n\n*  `app`:  The name of the application whose configuration is to be displayed.\n\n\n**[Outputs]**\n\n*  Content of the 'ENV' configuration file for the specified application.\n*  A warning message if the application is not deployed (i.e., the 'ENV' file is not found). \n"
+    },
+    "piku__cmd_config_get": {
+        "label": "cmd_config_get",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1356,
+        "endLineNo": 1369,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1356-L1369&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**  This function retrieves a specific setting from an application's configuration file. It checks if a configuration file exists for the given application and, if found, looks up the value of the specified setting within the file. If the setting is found, it's printed in white text; otherwise, a warning is displayed indicating the absence of a config file for that application.\n\n**Inputs:**\n\n*  `<app>`:  The name of the application whose configuration is being accessed. \n*  `FOO`: The name of the specific setting to be retrieved from the configuration file.\n\n**Output:**\n\n*  The value of the setting `FOO` if it exists in the configuration file for the application `<app>`.\n*  A warning message if a configuration file for `<app>` does not exist. \n\n\n"
+    },
+    "piku__cmd_config_live": {
+        "label": "cmd_config_live",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1412,
+        "endLineNo": 1423,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1412-L1423&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]**\n\nThis function retrieves and displays the live environment configuration for a specified application.  It looks for a file named `LIVE_ENV` within the application's directory under the `ENV_ROOT` directory. If the file exists, it prints its contents; otherwise, it warns that the app is not deployed.  \n\n**[Inputs]**\n\n* `app`:  The name of the application to retrieve the configuration for.\n\n**[Outputs]**\n\n* The contents of the `LIVE_ENV` configuration file, if it exists and is accessible.\n* A warning message indicating the app is not deployed and no configuration was found, if `LIVE_ENV` does not exist. \n\n\n"
+    },
+    "piku__cmd_config_set": {
+        "label": "cmd_config_set",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1373,
+        "endLineNo": 1391,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1373-L1391&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function takes application name and key-value pairs as input, updates the application's environment configuration file with the provided settings, and then triggers a deployment process for the application.  It is intended to manage and modify application configurations dynamically.  \n\n## Inputs\n\n*  `app`: The name of the application whose configuration needs to be updated.\n* `settings`: A list of strings, each representing a key-value pair to be set in the configuration file. \n   Each string follows the format \"key=value\"\n\n## Output\n\n* A confirmation message indicating the updated settings for the given application.\n* If there are errors in the input settings, an error message will be displayed along with the problematic setting.\n* The application's configuration file is updated with the new settings.\n* The application is deployed.\n\n\n\n"
+    },
+    "piku__cmd_config_unset": {
+        "label": "cmd_config_unset",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1395,
+        "endLineNo": 1409,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1395-L1409&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function unsets specified settings within a given application's environment configuration file, then redeploys the application. It aims to dynamically modify application settings for deployments or testing purposes.\n\n**Inputs:**\n* `<app>`: The name of the application whose configuration will be modified.\n* `FOO`:  A comma-separated list of settings to be unset within the application's configuration.  \n\n**Output:**\n*  Updated application configuration file with the specified settings removed.\n*  Redeployed application with the modified settings in effect.\n\n\n"
+    },
+    "piku__cmd_deploy": {
+        "label": "cmd_deploy",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1426,
+        "endLineNo": 1432,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1426-L1432&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown \n\n**Quick Summary:** This function handles the deployment of an application. It takes the application name as input, validates its existence, and then calls a  `do_deploy` function to execute the deployment process. The primary purpose is to provide a concise command-line interface for deploying applications.\n\n**Inputs:**\n\n* `app`: This is the name of the application to be deployed.\n\n**Output:**\n\n* The `do_deploy` function will handle the actual deployment process and its output. \n* Potentially, the function might print success or failure messages depending on the outcome of the deployment. \n\n\n"
+    },
+    "piku__cmd_destroy": {
+        "label": "cmd_destroy",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1435,
+        "endLineNo": 1473,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1435-L1473&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This function removes a given application's files and directories from various locations on the system, likely as part of an app deinstallation or cleanup process.  \n\n**Inputs:**\n\n*  `app`: A string representing the name of the application to be removed.\n\n**Output:**\n\n*  The function removes files and directories related to the specified application.\n* Likely prints messages indicating the files/directories being removed. \n\n\n\n\nLet me know if you'd like a deeper dive into specific parts of the code!\n"
+    },
+    "piku__cmd_git_hook": {
+        "label": "cmd_git_hook",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1634,
+        "endLineNo": 1655,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1634-L1655&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Post-Receive Git Hook Analysis\n\n**Quick Summary:** This code is a Git post-receive hook designed to automatically deploy new versions of web applications. It clones a repository to the designated app directory, creates necessary folders (app and data), and runs a deployment function (`do_deploy`) whenever a new commit is pushed to the specified repository.\n\n\n**Inputs:**\n\n*  `stdin`:  Contains the output of the `git receive-pack` command, which includes information about the pushed changes (old and new revision IDs, and the refname).\n\n**Output:**\n\n* Creates the application directory and its data directory if they don't exist.\n* Clones the application code from the repository to the designated location.\n* Deploys the latest code (indicated by the `newrev`) using the `do_deploy` function. \n"
+    },
+    "piku__cmd_git_receive_pack": {
+        "label": "cmd_git_receive_pack",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1658,
+        "endLineNo": 1671,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1658-L1671&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis Python function sets up a Git hook within a project's repository to automatically trigger a custom action upon receiving a new push. It initializes a bare Git repository, creates a post-receive hook script, and writes a basic script template to the hook file that executes based on incoming pushes.\n\nThe purpose is to automate a specific task or workflow whenever code is pushed to the repository.\n\n## Inputs\n\n- `app`: Name of the application (likely sanitized) for which the hook is being set up.\n\n\n## Output\n\n-  A newly created post-receive hook script within the application's `.git/hooks` directory. \n\n"
+    },
+    "piku__cmd_git_upload_pack": {
+        "label": "cmd_git_upload_pack",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1682,
+        "endLineNo": 1690,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1682-L1690&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Internal Git Upload Pack Handler Analysis:\n\n**Quick Summary:** This code snippet handles the receiving of a Git upload pack for a specified application. \n\nIt sanitizes the application name, prepares a shell command to process the received pack using `git-shell`, and executes it within the project's Git root directory.  Essentially, it facilitates the integration of a pushed application update into the project.\n\n**Inputs:**\n\n*  `app`: The name of the application for which the pack is intended.\n*  `argv`: A list of command-line arguments passed to the script. \n*  `GIT_ROOT`: An environment variable likely pointing to the root directory of the Git repository.\n\n**Output:**\n\n* Execution of the `git-shell` command with the provided pack data within the project's Git root. \n*  The outcome of this command (success or failure) will ultimately determine the application's update status. \n\n\n"
+    },
+    "piku__cmd_help": {
+        "label": "cmd_help",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1718,
+        "endLineNo": 1722,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1718-L1722&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Breakdown\n\n**Quick Summary:** This function,  when called, displays help information for a command or application named \"piku\". The help information is likely stored within a structure called `ctx.parent` and retrieved using the `get_help()` method.\n\n**Inputs:**\n\n* `ctx`: This likely represents a context object containing information about the current environment or execution. \n* `ctx.parent`: This suggests a hierarchical structure within the context, where \"parent\" refers to a higher-level component or command associated with \"piku\".\n\n**Output:**\n\n* Help information for the command or application named \"piku\". This could be in any format (textual, graphical, etc.) depending on the implementation. \n\n\n"
+    },
+    "piku__cmd_logs": {
+        "label": "cmd_logs",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1477,
+        "endLineNo": 1489,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1477-L1489&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**  This function tails (continuously monitors) log files for a specified application (`app`) and an optional process (`process`). It outputs each log line to the console. The purpose is to provide a live view of application logs for monitoring or debugging purposes.\n\n\n**Inputs:**\n\n* `app`: The name of the application whose logs are to be tailed.\n* `process`:  (Optional)  The name of a specific process within the application.\n\n\n**Output:**\n\n* Live, streaming lines from the application's log files.\n*     A \"No logs found for app '{}'.\". message if no matching log files are found. \n\n"
+    },
+    "piku__cmd_ps": {
+        "label": "cmd_ps",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1492,
+        "endLineNo": 1503,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1492-L1503&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary: \n\nThis function is designed to retrieve and display the number of worker processes running for a given application (app) based on a configuration file.  The code likely aims to provide a quick way to check the current deployment status of an application.\n\n## Inputs: \n\n* `app`:  The name of the application for which to check process count.\n\n## Output:\n\n*  The contents of the configuration file located at `ENV_ROOT/app/SCALING`, if it exists. \n*  An error message indicating that no workers were found for the specified application, if the configuration file is not present. \n\n\n"
+    },
+    "piku__cmd_ps_scale": {
+        "label": "cmd_ps_scale",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1507,
+        "endLineNo": 1531,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1507-L1531&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis\n\n**Quick Summary:**\n\nThis function handles scaling of application workers based on user-defined settings. It reads scaling parameters from a configuration file, processes user-provided scaling instructions, and ultimately calls a `do_deploy` function to adjust the worker count accordingly.\n\n**Inputs:**\n\n*  `app`: The name of the application to be scaled.\n*  `settings`: A list of strings representing scaling instructions in the format \"type=delta\", where \"type\" is a worker type and \"delta\" is the desired change in worker count for that type.\n*  `ENV_ROOT`: The root directory where environment configurations are stored.\n\n**Output:**\n\n* Success: Applies the scaling changes to the application.\n* Failure: Prints error messages indicating issues with parsing configuration, invalid scaling instructions, or missing worker types. \n\n\n"
+    },
+    "piku__cmd_restart": {
+        "label": "cmd_restart",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1551,
+        "endLineNo": 1558,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1551-L1558&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis Python function restarts a specific application. \n\nIt takes an application name as input and uses the `exit_if_invalid` function to validate it before calling the `do_restart` function, which handles the actual restarting process.\n\n## Inputs\n\n* `app`: The name of the application to be restarted.\n\n## Output\n\n* The application specified by `app` is restarted. \n"
+    },
+    "piku__cmd_run": {
+        "label": "cmd_run",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1535,
+        "endLineNo": 1548,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1535-L1548&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This function executes a shell command (`<app> ls -- -al`) within a specific application's directory (`APP_ROOT/<app>`), utilizing environment variables defined in a configuration file (`LIVE_ENV`). It redirects standard input/output and errors, and uses non-blocking file descriptors for stdin/stdout/stderr.\n\n\n**Inputs:**\n\n* `app`:  The name of the application directory.\n* `cmd`:  A list of arguments representing the shell command to execute. E.g., `['ls', '--', '-al']`\n* `stdout`: \n  File descriptor for standard output.\n* `stderr`: File descriptor for standard error.\n\n**Output:**\n\n    * Standard Output: The output of the `ls -- -al` command.\n    * Standard Error: Any error messages generated by the command.\n   \n"
+    },
+    "piku__cmd_scp": {
+        "label": "cmd_scp",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1693,
+        "endLineNo": 1697,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1693-L1697&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function executes an `scp` command to transfer files. It combines a list of arguments (`ctx.args`) with the `scp` command, runs it in a shell, and sets the working directory to `GIT_ROOT`.  Its purpose is to simplify the use of `scp` within a specific context, likely a Git workflow.\n\n## Inputs\n\n* **`ctx.args`**: This is a list of arguments intended for the `scp` command. It likely specifies the source and destination files or directories.\n* **`GIT_ROOT`**: This variable represents the root directory of a Git repository. \n\n## Output\n\n*  The output of the executed `scp` command, including any messages or errors. The actual file transfer is handled by the `scp` command itself. \n\n\n"
+    },
+    "piku__cmd_setup": {
+        "label": "cmd_setup",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1560,
+        "endLineNo": 1595,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1560-L1595&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of the Python Code Snippet\n\n**Quick Summary:** This function initializes the environment for a Python application, likely a web application. It creates necessary directories, configures a uWSGI instance, and sets the script as executable. The purpose is to set up a production-ready environment for the application.\n\n**Inputs:**\n\n* `APP_ROOT`: Root directory for the application.\n* `CACHE_ROOT`: Root directory for cached data.\n* `DATA_ROOT`: Root directory for application data.\n* `GIT_ROOT`: Root directory containing the application's Git repository. \n* `ENV_ROOT`: Root directory for the environment.\n* `UWSGI_ROOT`: Root directory for uWSGI configuration and data.\n* `UWSGI_AVAILABLE`: Directory for available uWSGI configurations.\n* `UWSGI_ENABLED`: Directory for enabled uWSGI configurations.\n* `LOG_ROOT`: Root directory for application logs.\n* `NGINX_ROOT`: Root directory for Nginx configuration and data.\n* `version_info`: Provides version details of the Python interpreter being used.\n\n**Output:**\n\n*   A directory structure based on the defined constants.\n*  A configuration file (`uwsgi.ini`) in the `UWSGI_ROOT` directory for the uWSGI emperor instance.\n*   The script (`PIKU_SCRIPT`) will have execution permissions.\n\n\n"
+    },
+    "piku__cmd_setup_ssh": {
+        "label": "cmd_setup_ssh",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1598,
+        "endLineNo": 1621,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1598-L1621&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function handles adding a new SSH key to an authorized_keys file, either from a provided file path or directly from standard input.  The script extracts the key fingerprint and adds the key to the configured `authorized_keys` file, ensuring secure authentication for SSH access.\n\n\n**Inputs:**\n\n* `public_key_file`:  A string representing the path to a public key file or `-` for input from stdin.\n\n**Outputs:**\n\n*  Prints a success message with the key fingerprint if the key is added successfully.\n*  Prints an error message if the provided key file is invalid or doesn't exist. \n\n\n\n"
+    },
+    "piku__cmd_stop": {
+        "label": "cmd_stop",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1624,
+        "endLineNo": 1629,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1624-L1629&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function `stop<app>` is designed to terminate a running application. It first validates the input `app` name using `exit_if_invalid(app)`, ensuring it's a valid application. Then, it calls a separate function `do_stop(app)` to actually stop the specified application.\n\n**Inputs:**\n\n* `app`:  The name of the application to be stopped.\n\n**Output:**\n\n* The function implicitly returns `None`.\n* The application named `app` should be stopped. \n\n\n"
+    },
+    "piku__cmd_update": {
+        "label": "cmd_update",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1724,
+        "endLineNo": 1740,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1724-L1740&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Python Code Snippet\n\n**Quick Summary:**\n\nThis function updates the \"piku\" script on the local machine by downloading the latest version from a specified URL.  It checks the HTTP response code to determine if the update was successful.\n\n**Inputs:**\n\n* `PIKU_RAW_SOURCE_URL`:  A string containing the URL of the raw piku script source.\n* `PIKU_SCRIPT`: A string containing the local path to the piku script file.\n\n**Outputs:**\n\n*  Prints success or error messages to the console. \n*  Copies the downloaded script to the specified `PIKU_SCRIPT` location if successful. \n\n\n\n"
+    },
+    "piku__command_output": {
+        "label": "command_output",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 322,
+        "endLineNo": 330,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L322-L330&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function executes a given command in a shell environment. It captures both standard output and standard error, combining them into a single string, and returns the output. The purpose is to safely and reliably run shell commands and retrieve their results.\n\n## Inputs\n\n* `cmd`: A string containing the shell command to be executed.\n* `environ`: An optional dictionary that defines the environment variables to be used when executing the command.\n\n## Output\n\n* A string containing the combined output (both stdout and stderr) of the executed command. If the command fails, an empty string is returned. \n"
+    },
+    "piku__deploy_clojure_cli": {
+        "label": "deploy_clojure_cli",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 502,
+        "endLineNo": 523,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L502-L523&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function deploys a Clojure application. It builds a release, sets up a virtual environment, configures paths and environment variables, and then launches the application.  \n\n## Inputs\n\n* **app**: The name of the Clojure application to deploy.\n* **deltas**: This likely refers to changes or updates to be applied to the deployment. \n* **ENV_ROOT**: The root directory where virtual environments will be created.\n* **APP_ROOT**: The root directory where applications are located.\n\n\n## Output\n\n* **Successfully launched Clojure application**: The function should return after successfully deploying and starting the application.\n* **Spawned process associated with the application**: This suggests a separate process is spawned to run the deployed application. \n\n\n\n\n\n\n"
+    },
+    "piku__deploy_clojure_leiningen": {
+        "label": "deploy_clojure_leiningen",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 524,
+        "endLineNo": 546,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L524-L546&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick summary:** This function deploys a Clojure application by building a self-contained uberjar and potentially configuring environment variables from an external file. The code aims to streamline the deployment process for Clojure applications.\n\n**Inputs:**\n\n* `app`:  The name of the Clojure application to deploy.\n* `deltas`: This input's meaning is unclear without further context. It could potentially represent deployment-specific configuration changes or updates.\n* `ENV_ROOT`:  The root directory where environment-specific settings and files are stored.\n* `APP_ROOT`:  The root directory containing the deployed application.\n\n**Output:**\n\n\n* A spawned application instance (`spawn_app` function is assumed to be defined elsewhere). \n"
+    },
+    "piku__deploy_go": {
+        "label": "deploy_go",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 572,
+        "endLineNo": 604,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L572-L604&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Golang function deploys a web application by preparing its environment, updating dependencies, and finally launching the application. The purpose is to automate the deployment process for Go applications, ensuring consistency and reducing manual effort. \n\n## Inputs\n\n*  `app`: The name of the Go application to be deployed.\n*  `ENV_ROOT`: The directory where the application will be deployed.\n*  `APP_ROOT`: The root directory of the application's source code.\n*  `deltas`: This appears to be a list of configuration changes or updates related to the application deployment.\n\n\n## Output\n\n* A running instance of the specified Go application. \n"
+    },
+    "piku__deploy_identity": {
+        "label": "deploy_identity",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 706,
+        "endLineNo": 712,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L706-L712&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**Quick Summary:**  This function prepares an environment for running an application (`app`) and then launches it using `spawn_app`. It creates a dedicated directory for the application within the `ENV_ROOT` directory and contains code to handle application setup and execution. Likely part of an application containerization or deployment system.\n\n**Inputs:**\n\n*  `app`:  Likely the name or identifier of the application to be run.\n* `deltas`: May be a list of changes or configurations specific to this application instance.\n\n**Output:**\n\n* Likely returns a process object representing the running application. \n\n\n\n\nLet me know if you need further clarification on any aspect of this code.\n"
+    },
+    "piku__deploy_java_gradle": {
+        "label": "deploy_java_gradle",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 442,
+        "endLineNo": 470,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L442-L470&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]** This function deploys a Java application using Gradle. It builds the application, handles environment variables, and potentially cleans up previous builds before spawning the application. The ultimate purpose is to automate the deployment process of a Java application.  \n\n**[Inputs]**\n\n*  `app`:  String representing the name of the Java application.\n*  `deltas`: Not clear from the context, but likely represents application-specific deployment configurations or data.\n*  `ENV_ROOT`:  String representing a root directory for environment variables.\n*  `APP_ROOT`: String representing a root directory for the application.\n\n**[Output]**\n\n*  Starts the deployed Java application. \n"
+    },
+    "piku__deploy_java_maven": {
+        "label": "deploy_java_maven",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 471,
+        "endLineNo": 501,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L471-L501&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary:** This function deploys a Java application using Maven. It builds the application if it doesn't exist, or rebuilds it if a previous build exists, then spawns the application. The purpose is to automate the deployment of Java applications within a containerized environment. \n\n**Inputs:**\n\n* `app`:  The name of the Java application.\n* `deltas`: Likely a list or dictionary of configuration changes specific to this deployment. \n\n**Outputs:**\n\n* A running Java application instance. \n\n\n\n\n"
+    },
+    "piku__deploy_nodeX": {
+        "label": "deploy_node",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 614,
+        "endLineNo": 668,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L614-L668&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown  \n\n**Quick Summary:**\nThis function deploys a Node.js application by setting up its environment, managing dependencies, and potentially updating the installed Node.js version. Its purpose is to streamline the deployment process for Node.js applications within a specific infrastructure. \n\n**Inputs:**\n* `app`: The name of the Node.js application being deployed.\n* `deltas`: This likely refers to changes or updates associated with the deployment, though its specific meaning isn't clear from the provided snippet.\n\n**Output:**\n*  Likely spawns the Node.js application after successful deployment.\n*   Outputs messages during the process indicating its actions (e.g., creating node_modules, installing npm dependencies, updating Node version).  \n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "piku__deploy_python": {
+        "label": "deploy_python",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 669,
+        "endLineNo": 705,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L669-L705&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this Python code snippet.\n\n**Quick Summary**\n\nThis function deploys a Python application by creating or updating a virtual environment, installing dependencies, and then launching the application.\n\n**Inputs**\n\n*  `app`:  The name of the Python application to deploy.\n*  `ENV_ROOT`:  The base directory where the virtual environments for the applications will be created.\n*  `APP_ROOT`: The directory containing the application code.\n*  `requirements`:  A path to a `requirements.txt` file listing the application's dependencies.\n*  `ENV`: A path to an optional `.env` file containing environment variables. \n*  `deltas`: This is likely a list of configuration changes or updates that might apply to the running application.\n\n**Output**\n\n*  A running instance of the Python application within its virtual environment. \n\n\n"
+    },
+    "piku__deploy_ruby": {
+        "label": "deploy_ruby",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 547,
+        "endLineNo": 571,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L547-L571&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function deploys a Ruby application by creating or rebuilding its virtual environment, installing dependencies, and finally spawning the application. The purpose is to streamline the deployment process for Ruby applications, ensuring dependencies are managed correctly.\n\n**Inputs:** \n\n* `app`: The name of the Ruby application to deploy.\n* `deltas`: This likely represents a set of changes or updates to the application.\n\n\n**Output:** \n\n* `None`: The function returns `spawn_app(app, deltas)` which suggests it spawns the application instance.\n\n\n\n"
+    },
+    "piku__do_deploy": {
+        "label": "do_deploy",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 368,
+        "endLineNo": 441,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L368-L441&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis:\n\n**[Quick summary]** This function deploys a web app by resetting its working directory to the latest version from Git. It detects the app's runtime (e.g., Python, Ruby, Node.js, etc.) and executes relevant deployment scripts based on the detected runtime. .\n\n**[Inputs]**\n\n*  `app`: The name of the app directory to deploy.\n*  `newrev`: (Optional) A specific Git commit hash to reset to.\n*  `deltas`: (Optional) Information about changes made to the app.\n\n**[Output]**\n\n* Successful deployment of the web application to the server.\n* Exit codes indicating errors during deployment (e.g., missing requirements, Git errors). \n* Log messages providing information about the deployment process.\n\n\n\n"
+    },
+    "piku__do_restart": {
+        "label": "do_restart",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1245,
+        "endLineNo": 1252,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1245-L1252&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]** \n\nThis function restarts a deployed application identified by the `app` variable. It first stops the application, then spawns a new instance, ensuring the application is running afterwards.\n\n**[Inputs]**\n* `app`: A string representing the name or identifier of the deployed application to be restarted.\n\n**[Output]**\n*  A successful restart of the deployed application. \n"
+    },
+    "piku__do_stop": {
+        "label": "do_stop",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1234,
+        "endLineNo": 1244,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1234-L1244&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "You haven't provided any code for me to analyze. Please provide the code snippet you'd like me to review.  \n\n"
+    },
+    "piku__exit_if_invalid": {
+        "label": "exit_if_invalid",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 228,
+        "endLineNo": 237,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L228-L237&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]**\n\nThis function checks if a given application name (presumably the name of a script or program) is valid and exists in a specified directory (`APP_ROOT`). It sanitizes the input name, verifies its existence, and raises an error if the app is not found.\n\n**[Inputs]**\n\n*  `app`:  The name of the application to be checked.\n\n**[Output]**\n\n* A sanitized version of the application name if the app exists in the `APP_ROOT` directory. \n* An exit code of 1 and an error message displayed in red if the app does not exist. \n"
+    },
+    "piku__expandvars": {
+        "label": "expandvars",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 312,
+        "endLineNo": 321,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L312-L321&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function expands shell-style environment variables within a given buffer. \n\nIt replaces occurrences of `$variable_name` or `${variable_name}` with the actual value of the corresponding environment variable. If a variable is not found, it uses a provided default value or leaves the original string untouched. \n\nThe purpose is to dynamically substitute environment variable values into a string.\n\n## Inputs\n\n*  `buffer`: The input string where environment variables need to be expanded.\n*  `env`: A dictionary-like object representing the environment variables, likely an `os.environ` object.\n*  `skip_escaped`: A boolean indicating whether to skip escaped variables (prefixed with a backslash).\n*  `default`: An optional string to use as a default value if a variable is not found in the environment.\n\n## Output\n\n*  A string with all shell-style environment variables expanded to their actual values (or the default value if applicable).  "
+    },
+    "piku__found_app": {
+        "label": "found_app",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 362,
+        "endLineNo": 367,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L362-L367&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Summary:** This function identifies and announces the detection of a specific application type (\"kind\") to the user. It uses a colored output (\"fg='green'\") to highlight the detection.  The purpose is likely to provide feedback during a system scan or process.\n\n**Inputs:**\n* `kind`: A string representing the type of application detected. \n\n**Output:**\n*  A message printed to the console, indicating the detected app type in green text. \n\n\n\n"
+    },
+    "piku__get_boolean": {
+        "label": "get_boolean",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 248,
+        "endLineNo": 253,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L248-L253&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function converts a string that resembles a boolean value (like \"1\", \"true\", \"yes\") into an actual boolean (True or False). The purpose is to handle user input or data from sources that might use different representations for boolean values.\n\n## Inputs\n\n- `value`: A string that could represent a boolean.\n\n## Output\n\n- `True` if the string represents 'true' (e.g., \"1\", \"on\", \"true\", \"enabled\", \"yes\", \"y\"), otherwise `False`. \n\n\n"
+    },
+    "piku__get_free_port": {
+        "label": "get_free_port",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 238,
+        "endLineNo": 247,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L238-L247&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]** This function finds a free TCP port on any network interface. It uses a socket object, binds it with a specified IP address and an ephemeral port (0), retrieves the assigned port, and closes the socket.  \n\n**[Inputs]**\n\n* `address`: An IP address string representing the network interface to bind the socket to.\n\n**[Output]**\n\n*  An integer representing the randomly assigned free TCP port number.  \n\n\n\n"
+    },
+    "piku__multi_tail": {
+        "label": "multi_tail",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1253,
+        "endLineNo": 1303,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1253-L1303&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick Summary]\n\nThis function monitors multiple log files concurrently, yielding new lines as they are appended. It handles log file rotations by detecting changes in file inode numbers, automatically reopening and re-integrating rotated files. The overall purpose is to provide a real-time, consolidated view of log events from different sources.\n\n[Inputs]\n* `filenames`: A list of paths to the log files to monitor.\n\n[Output]\n* For each new line encountered in each log file: \n    * A string formatted as `[Prefix] | [Line]`, where `[Prefix]` is the base name of the log file (without extension) and `[Line]` is the new log line.\n \n"
+    },
+    "piku__parse_procfile": {
+        "label": "parse_procfile",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 276,
+        "endLineNo": 311,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L276-L311&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\nThis Python function parses a `Procfile`, a file used to specify process types for applications, and returns a dictionary of allowed worker types. It prioritizes WSGI workers over regular web workers and ensures only one worker of each type is present. The purpose is likely to generate a list of processes for a web application based on its `Procfile` configuration.\n\n## Inputs\n*   `filename`: A string representing the path to the `Procfile`.\n\n\n## Output\n*   A dictionary where keys are worker types (e.g., \"web\", \"cron\", \"wsgi\") and values are their corresponding commands.\n*   If no valid workers are found, it returns an empty dictionary.\n"
+    },
+    "piku__parse_settings": {
+        "label": "parse_settings",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 331,
+        "endLineNo": 349,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L331-L349&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function reads a settings file, parses key-value pairs, and expands environment variables within the values. It then returns a dictionary containing these settings as environment variables. The purpose is likely to load configuration settings from a file into a format easily usable by a program.\n\n## Inputs\n\n\n* `filename`: The path to the settings file.\n\n## Output\n\n* `env`: A dictionary containing key-value pairs representing the parsed environment variables. \n"
+    },
+    "piku__piku": {
+        "label": "piku",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1310,
+        "endLineNo": 1314,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1310-L1314&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick summary:** This code snippet defines a placeholder function with a descriptive docstring, but doesn't perform any actual operations. It likely intends to illustrate a concept of a minimal Platform as a Service (PaaS) implementation.  \n\n**Inputs:**\n\n* None, as the function does not accept any arguments.\n\n**Output:**\n\n* None, as the function does not return any value.  \n\n\n"
+    },
+    "piku__sanitize_app_name": {
+        "label": "sanitize_app_name",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 221,
+        "endLineNo": 227,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L221-L227&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function sanitizes an application name (`app`) to create a valid path string. It removes any non-alphanumeric characters except '.', '_', and '-'. Leading and trailing slashes are also removed.\n\n## Inputs\n\n* `app`: The application name, potentially containing invalid characters for a directory path.\n\n## Output\n\n* A sanitized application name, suitable for a directory path. \n"
+    },
+    "piku__setup_authorized_keys": {
+        "label": "setup_authorized_keys",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 263,
+        "endLineNo": 275,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L263-L275&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function sets up an `authorized_keys` file to redirect all SSH commands to a specific script.  It achieves this by defining a custom command that executes the provided script with the original SSH command. This effectively acts as a gateway for all SSH connections, allowing for centralized control and potential security measures. \n\n## Inputs\n\n* `environ['HOME']`:  The user's home directory.\n* `ssh_fingerprint`:  The SSH fingerprint of the connecting user.\n* `script_path`: The path to the script that will handle the SSH command execution.\n* `pubkey`: The public key of the connecting user. \n\n## Output\n\n* A modified `authorized_keys` file containing an entry that redirects all SSH commands to the specified script. \n* The `authorized_keys` directory and file will have correct permissions. \n\n\n\n"
+    },
+    "piku__spawn_app": {
+        "label": "spawn_app",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 713,
+        "endLineNo": 1059,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L713-L1059&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\nThis function manages the workers for an application by spawning new ones and terminating old ones based on configurations. It handles Nginx configuration for the application and updates environment variables.\n\n## Inputs\n* `app`: name of the app\n* `worker_count`: number of workers required for the app\n* `env`: Envrionment variables for the app\n* `procfile`: Procfile content\n* `live`: Location of live settings\n* `scaling`: Location of scaling settings file\n* `deltas`:  Delta worker count change\n\n## Outputs\n*  Envrionment variables\n\n```python\n    env.update(env)\n```"
+    },
+    "piku__spawn_worker": {
+        "label": "spawn_worker",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1060,
+        "endLineNo": 1233,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1060-L1233&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function configures and deploys a single worker process for a given application type ('wsgi', 'web', 'php', 'cron', etc.)  It generates a UWSGI configuration file based on environment variables and specific settings for the worker type.\n\n///\n\n## Inputs:\n\n* **kind:** String specifying the type of worker process (e.g., 'wsgi', 'web', 'php').\n* **app:** String representing the application name.\n* **env:** A dictionary containing environment variables relevant to the deployment.\n* **command:**  String specifying the command to be executed by the worker process.\n\n## Output:\n\n* A new UWSGI configuration (.ini) file is created in the  `UWSGI_AVAILABLE` directory with a unique name based on the application, kind, and ordinal.\n* The configuration file is copied to the  `UWSGI_ENABLED` directory, enabling the worker process. \n\n\n"
+    },
+    "piku__write_config": {
+        "label": "write_config",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 254,
+        "endLineNo": 262,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L254-L262&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function writes a configuration file from a dictionary `bag`. It iterates through key-value pairs in the dictionary and writes each pair to the file in a specific format: key followed by a separator and then the value, each on a new line.  \n\n[Inputs]\n\n* `filename`: The path to the file where the configuration should be written.\n* `bag`: A dictionary containing the key-value pairs for the configuration.\n* `separator`: A string that will be used to separate the key and value in the output file.\n\n[Output]\n\n* A file containing the configuration data in the format: `keyseparatorvalue` on each line. \n\n\n\n"
+    },
+    "piku__cmd_setup_ssh__add_helper": {
+        "label": "add_helper",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1601,
+        "endLineNo": 1618,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1601-L1618&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick summary** \n\nThis function is designed to manage SSH public keys. It checks if a specified key file exists, reads its contents, and attempts to set up authorized keys, allowing access to a system.\n\n**Inputs**\n* `key_file`: A path to a file containing a public SSH key.\n* `public_key_file`: A filename used to potentially read the public key from a file or standard input.\n* `PIKU_SCRIPT`:  A filename or path, likely representing the script that sets up authorized keys.\n* `stdin`: Standard input stream, used if `public_key_file` is '-' to read the key from the console.\n\n**Output**\n* Success message indicating the key was added along with its fingerprint.\n* Error message if the key file is invalid or not found. \n\n\n\n"
+    },
+    "piku__expandvars__replace_var": {
+        "label": "replace_var",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 315,
+        "endLineNo": 317,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L315-L317&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]**\n\nThis function aims to retrieve a value from an environment (likely a dictionary or similar) based on a matched pattern. It first tries to find a value using the second capture group from a regular expression match. If that fails, it attempts the first capture group. If both capture groups are absent or both fail, it returns a default value (if provided) or the original input string. \n\n**[Inputs]**\n\n\n* `match`: A match object returned from a regular expression engine. This object contains captured groups from the matched pattern.\n* `env`:  A dictionary-like object containing key-value pairs representing environment variables or settings.\n* `default`: An optional value to return if no match is found in the environment. \n\n**[Output]**\n\n* A value retrieved from the `env` based on the captured groups from the `match` object, or \n  * the `default` value (if provided) if no match is found, or \n  * the original input string if no `default` is given. \n\n\n\n"
+    },
+    "piku__multi_tail__peek": {
+        "label": "peek",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/piku/piku.py",
+        "relativePath": "piku.py",
+        "lineNo": 1257,
+        "endLineNo": 1264,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpiku%2Fpiku%2Fblob%2Fmaster%2Fpiku.py%23L1257-L1264&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary:\n\nThis function reads a single line from a file handle. It attempts to advance to the next line but gracefully handles reaching the end of the file by repositioning the handle and returning `None`.  \n\n## Inputs:\n\n* `handle`: This is assumed to be a file object representing an open file. \n\n\n## Output:\n\n*  A string representing the next line read from the file.\n*  `None` if the end of the file is reached. \n"
+    }
+}

@@ -1,0 +1,654 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        pyan [label="pyan", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        pyan____main__ [label="pyan.__main__", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        pyan__analyzer [label="pyan.analyzer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        pyan__anutils [label="pyan.anutils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        pyan__main [label="pyan.main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        pyan__nodeX [label="pyan.node", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        pyan__sphinx [label="pyan.sphinx", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        pyan__visgraphX [label="pyan.visgraph", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        pyan__writers [label="pyan.writers", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        subgraph cluster_pyan {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan"];
+            pyan__create_callgraphX [label="create_callgraph\n(pyan\__init__.py:17)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_pyan__analyzer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer"];
+            pyan__analyzer__CallGraphVisitor [label="CallGraphVisitor\n(pyan\analyzer.py:45)", style="filled", fillcolor="#eaff99b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__analyzer__CallGraphVisitor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer.CallGraphVisitor"];
+            pyan__analyzer__CallGraphVisitor____init__ [label="__init__\n(pyan\analyzer.py:54)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__add_defines_edge [label="add_defines_edge\n(pyan\analyzer.py:1530)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__add_uses_edge [label="add_uses_edge\n(pyan\analyzer.py:1544)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__analyze_arguments [label="analyze_arguments\n(pyan\analyzer.py:504)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__analyze_binding [label="analyze_binding\n(pyan\analyzer.py:1036)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__analyze_comprehension [label="analyze_comprehension\n(pyan\analyzer.py:849)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__analyze_functiondef [label="analyze_functiondef\n(pyan\analyzer.py:984)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__analyze_module_import [label="analyze_module_import\n(pyan\analyzer.py:591)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__analyze_scopes [label="analyze_scopes\n(pyan\analyzer.py:1245)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__associate_nodeX [label="associate_node\n(pyan\analyzer.py:1507)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__collapse_inner [label="collapse_inner\n(pyan\analyzer.py:1747)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__contract_nonexistents [label="contract_nonexistents\n(pyan\analyzer.py:1662)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__cull_inherited [label="cull_inherited\n(pyan\analyzer.py:1716)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__expand_unknowns [label="expand_unknowns\n(pyan\analyzer.py:1682)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__filter [label="filter\n(pyan\analyzer.py:241)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__generate_args_nodeXs [label="generate_args_nodes\n(pyan\analyzer.py:477)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_attribute [label="get_attribute\n(pyan\analyzer.py:1349)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_current_class [label="get_current_class\n(pyan\analyzer.py:1279)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_nodeX [label="get_node\n(pyan\analyzer.py:1439)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [label="get_node_of_current_namespace\n(pyan\analyzer.py:1283)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_parent_nodeX [label="get_parent_node\n(pyan\analyzer.py:1499)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_related_nodeXs [label="get_related_nodes\n(pyan\analyzer.py:270)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__get_value [label="get_value\n(pyan\analyzer.py:1302)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__postprocess [label="postprocess\n(pyan\analyzer.py:145)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__process [label="process\n(pyan\analyzer.py:87)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__process_one [label="process_one\n(pyan\analyzer.py:97)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__remove_uses_edge [label="remove_uses_edge\n(pyan\analyzer.py:1582)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__remove_wild [label="remove_wild\n(pyan\analyzer.py:1590)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__resolve_attribute [label="resolve_attribute\n(pyan\analyzer.py:1157)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__resolve_base_classes [label="resolve_base_classes\n(pyan\analyzer.py:113)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__resolve_builtins [label="resolve_builtins\n(pyan\analyzer.py:1088)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__resolve_imports [label="resolve_imports\n(pyan\analyzer.py:176)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__set_attribute [label="set_attribute\n(pyan\analyzer.py:1410)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__set_value [label="set_value\n(pyan\analyzer.py:1326)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_AnnAssign [label="visit_AnnAssign\n(pyan\analyzer.py:772)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Assign [label="visit_Assign\n(pyan\analyzer.py:747)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_AsyncFor [label="visit_AsyncFor\n(pyan\analyzer.py:830)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_AsyncFunctionDef [label="visit_AsyncFunctionDef\n(pyan\analyzer.py:465)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Attribute [label="visit_Attribute\n(pyan\analyzer.py:634)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_AugAssign [label="visit_AugAssign\n(pyan\analyzer.py:793)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Call [label="visit_Call\n(pyan\analyzer.py:887)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_ClassDef [label="visit_ClassDef\n(pyan\analyzer.py:352)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Constant [label="visit_Constant\n(pyan\analyzer.py:626)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_DictComp [label="visit_DictComp\n(pyan\analyzer.py:841)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_For [label="visit_For\n(pyan\analyzer.py:818)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_FunctionDef [label="visit_FunctionDef\n(pyan\analyzer.py:396)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_GeneratorExp [label="visit_GeneratorExp\n(pyan\analyzer.py:845)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Import [label="visit_Import\n(pyan\analyzer.py:525)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_ImportFrom [label="visit_ImportFrom\n(pyan\analyzer.py:534)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Lambda [label="visit_Lambda\n(pyan\analyzer.py:468)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_ListComp [label="visit_ListComp\n(pyan\analyzer.py:833)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Module [label="visit_Module\n(pyan\analyzer.py:332)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_Name [label="visit_Name\n(pyan\analyzer.py:718)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_SetComp [label="visit_SetComp\n(pyan\analyzer.py:837)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+            pyan__analyzer__CallGraphVisitor__visit_With [label="visit_With\n(pyan\analyzer.py:938)", style="filled", fillcolor="#e0ff65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__analyzer__CallGraphVisitor__analyze_scopes {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer.CallGraphVisitor.analyze_scopes"];
+            pyan__analyzer__CallGraphVisitor__analyze_scopes__process [label="process\n(pyan\analyzer.py:1257)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__analyzer__CallGraphVisitor__get_attribute {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer.CallGraphVisitor.get_attribute"];
+            pyan__analyzer__CallGraphVisitor__get_attribute__lookup [label="lookup\n(pyan\analyzer.py:1384)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__analyzer__CallGraphVisitor__get_value {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer.CallGraphVisitor.get_value"];
+            pyan__analyzer__CallGraphVisitor__get_value__find_scope [label="find_scope\n(pyan\analyzer.py:1307)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__analyzer__CallGraphVisitor__set_value {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer.CallGraphVisitor.set_value"];
+            pyan__analyzer__CallGraphVisitor__set_value__find_scope [label="find_scope\n(pyan\analyzer.py:1330)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__analyzer__CallGraphVisitor__visit_With {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.analyzer.CallGraphVisitor.visit_With"];
+            pyan__analyzer__CallGraphVisitor__visit_With__add_uses_enter_exit_of [label="add_uses_enter_exit_of\n(pyan\analyzer.py:941)", style="filled", fillcolor="#d6ff32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_pyan__anutils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.anutils"];
+            pyan__anutils__ExecuteInInnerScope [label="ExecuteInInnerScope\n(pyan\anutils.py:225)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__Scope [label="Scope\n(pyan\anutils.py:207)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__UnresolvedSuperCallError [label="UnresolvedSuperCallError\n(pyan\anutils.py:201)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__format_alias [label="format_alias\n(pyan\anutils.py:56)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__get_ast_nodeX_name [label="get_ast_node_name\n(pyan\anutils.py:67)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__get_module_name [label="get_module_name\n(pyan\anutils.py:23)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__head [label="head\n(pyan\anutils.py:11)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order [label="resolve_method_resolution_order\n(pyan\anutils.py:94)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__sanitize_exprs [label="sanitize_exprs\n(pyan\anutils.py:79)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            pyan__anutils__tail [label="tail\n(pyan\anutils.py:16)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_pyan__anutils__ExecuteInInnerScope {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.anutils.ExecuteInInnerScope"];
+            pyan__anutils__ExecuteInInnerScope____enter__ [label="__enter__\n(pyan\anutils.py:243)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__ExecuteInInnerScope____exit__ [label="__exit__\n(pyan\anutils.py:261)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__ExecuteInInnerScope____init__ [label="__init__\n(pyan\anutils.py:237)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_pyan__anutils__Scope {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.anutils.Scope"];
+            pyan__anutils__Scope____init__ [label="__init__\n(pyan\anutils.py:211)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__Scope____repr__ [label="__repr__\n(pyan\anutils.py:220)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_pyan__anutils__resolve_method_resolution_order {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.anutils.resolve_method_resolution_order"];
+            pyan__anutils__resolve_method_resolution_order__C3_find_good_head [label="C3_find_good_head\n(pyan\anutils.py:109)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order__C3_linearize [label="C3_linearize\n(pyan\anutils.py:145)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order__C3_merge [label="C3_merge\n(pyan\anutils.py:126)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order__LinearizationImpossible [label="LinearizationImpossible\n(pyan\anutils.py:103)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order__lookup_bases_recursive [label="lookup_bases_recursive\n(pyan\anutils.py:180)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order__remove_all [label="remove_all\n(pyan\anutils.py:120)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+            pyan__anutils__resolve_method_resolution_order__remove_all_in [label="remove_all_in\n(pyan\anutils.py:123)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_pyan__anutils__sanitize_exprs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.anutils.sanitize_exprs"];
+            pyan__anutils__sanitize_exprs__process [label="process\n(pyan\anutils.py:82)", style="filled", fillcolor="#84ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_pyan__main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.main"];
+            pyan__main__main [label="main\n(pyan\main.py:22)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_pyan__nodeX {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.node"];
+            pyan__nodeX__Flavor [label="Flavor\n(pyan\node.py:18)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node [label="Node\n(pyan\node.py:58)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__make_safe_label [label="make_safe_label\n(pyan\node.py:9)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_pyan__nodeX__Flavor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.node.Flavor"];
+            pyan__nodeX__Flavor____repr__ [label="__repr__\n(pyan\node.py:54)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Flavor__specificity [label="specificity\n(pyan\node.py:44)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_pyan__nodeX__Node {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.node.Node"];
+            pyan__nodeX__Node____init__ [label="__init__\n(pyan\node.py:91)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node____repr__ [label="__repr__\n(pyan\node.py:188)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_annotated_name [label="get_annotated_name\n(pyan\node.py:108)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_label [label="get_label\n(pyan\node.py:174)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_level [label="get_level\n(pyan\node.py:149)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_long_annotated_name [label="get_long_annotated_name\n(pyan\node.py:119)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_name [label="get_name\n(pyan\node.py:139)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_namespace_label [label="get_namespace_label\n(pyan\node.py:181)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_short_name [label="get_short_name\n(pyan\node.py:99)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+            pyan__nodeX__Node__get_toplevel_namespace [label="get_toplevel_namespace\n(pyan\node.py:161)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_pyan__sphinx {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.sphinx"];
+            pyan__sphinx__CallgraphXDirective [label="CallgraphDirective\n(pyan\sphinx.py:41)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="6"];
+            pyan__sphinx__direction_spec [label="direction_spec\n(pyan\sphinx.py:37)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="6"];
+            pyan__sphinx__setup [label="setup\n(pyan\sphinx.py:151)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_pyan__sphinx__CallgraphXDirective {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.sphinx.CallgraphDirective"];
+            pyan__sphinx__CallgraphXDirective__run [label="run\n(pyan\sphinx.py:65)", style="filled", fillcolor="#65a3ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_pyan__sphinx__CallgraphXDirective__run {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.sphinx.CallgraphDirective.run"];
+            pyan__sphinx__CallgraphXDirective__run__create_link [label="create_link\n(pyan\sphinx.py:101)", style="filled", fillcolor="#3284ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_pyan__visgraphX {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.visgraph"];
+            pyan__visgraphX__Colorizer [label="Colorizer\n(pyan\visgraph.py:10)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualEdge [label="VisualEdge\n(pyan\visgraph.py:96)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualGraph [label="VisualGraph\n(pyan\visgraph.py:113)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualNode [label="VisualNode\n(pyan\visgraph.py:75)", style="filled", fillcolor="#ad99ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_pyan__visgraphX__Colorizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.visgraph.Colorizer"];
+            pyan__visgraphX__Colorizer____init__ [label="__init__\n(pyan\visgraph.py:22)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__Colorizer___next_idx [label="_next_idx\n(pyan\visgraph.py:30)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__Colorizer___nodeX_to_idx [label="_node_to_idx\n(pyan\visgraph.py:38)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__Colorizer__get [label="get\n(pyan\visgraph.py:45)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__Colorizer__htmlize_rgb [label="htmlize_rgb\n(pyan\visgraph.py:66)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__Colorizer__make_colors [label="make_colors\n(pyan\visgraph.py:49)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_pyan__visgraphX__VisualEdge {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.visgraph.VisualEdge"];
+            pyan__visgraphX__VisualEdge____init__ [label="__init__\n(pyan\visgraph.py:103)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualEdge____repr__ [label="__repr__\n(pyan\visgraph.py:109)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_pyan__visgraphX__VisualGraph {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.visgraph.VisualGraph"];
+            pyan__visgraphX__VisualGraph____init__ [label="__init__\n(pyan\visgraph.py:114)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualGraph__from_visitor [label="from_visitor\n(pyan\visgraph.py:123)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_pyan__visgraphX__VisualGraph__from_visitor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.visgraph.VisualGraph.from_visitor"];
+            pyan__visgraphX__VisualGraph__from_visitor__find_filenames [label="find_filenames\n(pyan\visgraph.py:165)", style="filled", fillcolor="#5b32ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualGraph__from_visitor__labeler [label="labeler\n(pyan\visgraph.py:152)", style="filled", fillcolor="#5b32ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_pyan__visgraphX__VisualNode {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.visgraph.VisualNode"];
+            pyan__visgraphX__VisualNode____init__ [label="__init__\n(pyan\visgraph.py:80)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+            pyan__visgraphX__VisualNode____repr__ [label="__repr__\n(pyan\visgraph.py:88)", style="filled", fillcolor="#8465ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_pyan__writers {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers"];
+            pyan__writers__DotWriter [label="DotWriter\n(pyan\writers.py:121)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__HTMLWriter [label="HTMLWriter\n(pyan\writers.py:196)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__MermaidWriter [label="MermaidWriter\n(pyan\writers.py:108)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__SVGWriter [label="SVGWriter\n(pyan\writers.py:171)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__TgfWriter [label="TgfWriter\n(pyan\writers.py:90)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer [label="Writer\n(pyan\writers.py:15)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter [label="YedWriter\n(pyan\writers.py:221)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__DotWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.DotWriter"];
+            pyan__writers__DotWriter____init__ [label="__init__\n(pyan\writers.py:122)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__DotWriter__finish_graphX [label="finish_graph\n(pyan\writers.py:167)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__DotWriter__finish_subgraphXX [label="finish_subgraph\n(pyan\writers.py:145)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__DotWriter__start_graphX [label="start_graph\n(pyan\writers.py:130)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__DotWriter__start_subgraphXX [label="start_subgraph\n(pyan\writers.py:135)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__DotWriter__write_edge [label="write_edge\n(pyan\writers.py:158)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__DotWriter__write_nodeX [label="write_node\n(pyan\writers.py:151)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__HTMLWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.HTMLWriter"];
+            pyan__writers__HTMLWriter__run [label="run\n(pyan\writers.py:197)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__MermaidWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.MermaidWriter"];
+            pyan__writers__MermaidWriter____init__ [label="__init__\n(pyan\writers.py:109)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__MermaidWriter__start_graphX [label="start_graph\n(pyan\writers.py:112)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__MermaidWriter__write_edge [label="write_edge\n(pyan\writers.py:118)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__MermaidWriter__write_nodeX [label="write_node\n(pyan\writers.py:115)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__SVGWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.SVGWriter"];
+            pyan__writers__SVGWriter__run [label="run\n(pyan\writers.py:172)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__TgfWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.TgfWriter"];
+            pyan__writers__TgfWriter____init__ [label="__init__\n(pyan\writers.py:91)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__TgfWriter__start_edges [label="start_edges\n(pyan\writers.py:101)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__TgfWriter__write_edge [label="write_edge\n(pyan\writers.py:104)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__TgfWriter__write_nodeX [label="write_node\n(pyan\writers.py:96)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__Writer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.Writer"];
+            pyan__writers__Writer____init__ [label="__init__\n(pyan\writers.py:16)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__dedent [label="dedent\n(pyan\writers.py:29)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__finish_edges [label="finish_edges\n(pyan\writers.py:80)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__finish_graphX [label="finish_graph\n(pyan\writers.py:86)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__finish_subgraphXX [label="finish_subgraph\n(pyan\writers.py:83)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__indent [label="indent\n(pyan\writers.py:26)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__log [label="log\n(pyan\writers.py:23)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__run [label="run\n(pyan\writers.py:35)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__start_edges [label="start_edges\n(pyan\writers.py:74)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__start_graphX [label="start_graph\n(pyan\writers.py:65)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__start_subgraphXX [label="start_subgraph\n(pyan\writers.py:68)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__write [label="write\n(pyan\writers.py:32)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__write_edge [label="write_edge\n(pyan\writers.py:77)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__write_edges [label="write_edges\n(pyan\writers.py:59)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__write_nodeX [label="write_node\n(pyan\writers.py:71)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__Writer__write_subgraphXX [label="write_subgraph\n(pyan\writers.py:51)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_pyan__writers__YedWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pyan.writers.YedWriter"];
+            pyan__writers__YedWriter____init__ [label="__init__\n(pyan\writers.py:222)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter__finish_graphX [label="finish_graph\n(pyan\writers.py:330)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter__finish_subgraphXX [label="finish_subgraph\n(pyan\writers.py:279)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter__start_graphX [label="start_graph\n(pyan\writers.py:228)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter__start_subgraphXX [label="start_subgraph\n(pyan\writers.py:250)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter__write_edge [label="write_edge\n(pyan\writers.py:307)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+            pyan__writers__YedWriter__write_nodeX [label="write_node\n(pyan\writers.py:286)", style="filled", fillcolor="#e065ffb2", fontcolor="#000000", group="8"];
+        }
+    }
+        pyan__analyzer -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__ExecuteInInnerScope [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__format_alias [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__UnresolvedSuperCallError [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__Scope [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__resolve_method_resolution_order [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__get_module_name [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__anutils__tail [style="solid",  color="#000000"];
+        pyan__analyzer -> pyan__nodeX__Flavor [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor____init__ -> pyan__anutils__get_module_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor____init__ -> pyan__analyzer__CallGraphVisitor__process [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__process -> pyan__analyzer__CallGraphVisitor__resolve_base_classes [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__process -> pyan__analyzer__CallGraphVisitor__process_one [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__process -> pyan__analyzer__CallGraphVisitor__postprocess [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__process_one -> pyan__analyzer__CallGraphVisitor__analyze_scopes [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__process_one -> pyan__anutils__get_module_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__process_one -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_base_classes -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_base_classes -> pyan__anutils__resolve_method_resolution_order [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_base_classes -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_base_classes -> pyan__analyzer__CallGraphVisitor__get_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_base_classes -> pyan__analyzer__CallGraphVisitor__get_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__postprocess -> pyan__analyzer__CallGraphVisitor__cull_inherited [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__postprocess -> pyan__analyzer__CallGraphVisitor__contract_nonexistents [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__postprocess -> pyan__analyzer__CallGraphVisitor__expand_unknowns [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__postprocess -> pyan__analyzer__CallGraphVisitor__resolve_imports [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__postprocess -> pyan__analyzer__CallGraphVisitor__collapse_inner [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_imports -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__filter -> pyan__analyzer__CallGraphVisitor__get_related_nodeXs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__filter -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_related_nodeXs -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Module -> pyan__analyzer__CallGraphVisitor__add_defines_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Module -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Module -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Module -> pyan__analyzer__CallGraphVisitor__associate_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ClassDef -> pyan__analyzer__CallGraphVisitor__add_defines_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ClassDef -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ClassDef -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ClassDef -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ClassDef -> pyan__analyzer__CallGraphVisitor__set_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ClassDef -> pyan__analyzer__CallGraphVisitor__associate_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__generate_args_nodeXs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__get_current_class [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__add_defines_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__set_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__associate_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__analyze_arguments [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_FunctionDef -> pyan__analyzer__CallGraphVisitor__analyze_functiondef [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AsyncFunctionDef -> pyan__analyzer__CallGraphVisitor__visit_FunctionDef [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__analyzer__CallGraphVisitor__generate_args_nodeXs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__anutils__ExecuteInInnerScope [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__anutils__ExecuteInInnerScope____enter__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__anutils__ExecuteInInnerScope____exit__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__analyzer__CallGraphVisitor__analyze_arguments [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Lambda -> pyan__anutils__ExecuteInInnerScope____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__generate_args_nodeXs -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_arguments -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_arguments -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Import -> pyan__anutils__format_alias [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Import -> pyan__analyzer__CallGraphVisitor__analyze_module_import [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ImportFrom -> pyan__anutils__format_alias [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ImportFrom -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ImportFrom -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ImportFrom -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ImportFrom -> pyan__analyzer__CallGraphVisitor__set_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_module_import -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_module_import -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_module_import -> pyan__analyzer__CallGraphVisitor__set_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_module_import -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Constant -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Constant -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__anutils__UnresolvedSuperCallError [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor__remove_wild [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor__get_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Attribute -> pyan__analyzer__CallGraphVisitor__set_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__analyzer__CallGraphVisitor__get_current_class [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__analyzer__CallGraphVisitor__get_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Name -> pyan__analyzer__CallGraphVisitor__set_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Assign -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Assign -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Assign -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AnnAssign -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AnnAssign -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AnnAssign -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AnnAssign -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AugAssign -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AugAssign -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AugAssign -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_For -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_For -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_For -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_AsyncFor -> pyan__analyzer__CallGraphVisitor__visit_For [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_ListComp -> pyan__analyzer__CallGraphVisitor__analyze_comprehension [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_SetComp -> pyan__analyzer__CallGraphVisitor__analyze_comprehension [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_DictComp -> pyan__analyzer__CallGraphVisitor__analyze_comprehension [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_GeneratorExp -> pyan__analyzer__CallGraphVisitor__analyze_comprehension [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__anutils__ExecuteInInnerScope [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__anutils__ExecuteInInnerScope____enter__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__anutils__ExecuteInInnerScope____exit__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_comprehension -> pyan__anutils__ExecuteInInnerScope____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__anutils__UnresolvedSuperCallError [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_Call -> pyan__analyzer__CallGraphVisitor__resolve_builtins [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With -> pyan__analyzer__CallGraphVisitor__analyze_binding [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With -> pyan__analyzer__CallGraphVisitor__visit_With__add_uses_enter_exit_of [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With -> pyan__anutils__sanitize_exprs [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With__add_uses_enter_exit_of -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With__add_uses_enter_exit_of -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With__add_uses_enter_exit_of -> pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__visit_With__add_uses_enter_exit_of -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_functiondef -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_functiondef -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_binding -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_builtins -> pyan__analyzer__CallGraphVisitor__get_current_class [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_builtins -> pyan__anutils__UnresolvedSuperCallError [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_builtins -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_builtins -> pyan__anutils__resolve_method_resolution_order [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_builtins -> pyan__analyzer__CallGraphVisitor__get_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_attribute -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_attribute -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_attribute -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_attribute -> pyan__analyzer__CallGraphVisitor__get_value [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_attribute -> pyan__analyzer__CallGraphVisitor__resolve_builtins [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__resolve_attribute -> pyan__analyzer__CallGraphVisitor__resolve_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_scopes__process -> pyan__anutils__Scope [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_scopes__process -> pyan__analyzer__CallGraphVisitor__analyze_scopes__process [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_scopes__process -> pyan__anutils__Scope____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__analyze_scopes -> pyan__analyzer__CallGraphVisitor__analyze_scopes__process [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_nodeX_of_current_namespace -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_value -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_value -> pyan__analyzer__CallGraphVisitor__get_value__find_scope [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__set_value -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__set_value -> pyan__analyzer__CallGraphVisitor__set_value__find_scope [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute -> pyan__anutils__resolve_method_resolution_order [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute -> pyan__analyzer__CallGraphVisitor__get_attribute__lookup [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute -> pyan__anutils__tail [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute -> pyan__analyzer__CallGraphVisitor__resolve_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_attribute__lookup -> pyan__analyzer__CallGraphVisitor__resolve_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__set_attribute -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__set_attribute -> pyan__analyzer__CallGraphVisitor__resolve_attribute [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_nodeX -> pyan__nodeX__Node [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_nodeX -> pyan__nodeX__Flavor__specificity [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_nodeX -> pyan__nodeX__Node____init__ [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__get_parent_nodeX -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__add_uses_edge -> pyan__analyzer__CallGraphVisitor__remove_wild [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__remove_wild -> pyan__analyzer__CallGraphVisitor__remove_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__contract_nonexistents -> pyan__analyzer__CallGraphVisitor__remove_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__contract_nonexistents -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__contract_nonexistents -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__expand_unknowns -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__expand_unknowns -> pyan__analyzer__CallGraphVisitor__add_defines_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__cull_inherited -> pyan__analyzer__CallGraphVisitor__get_parent_nodeX [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__cull_inherited -> pyan__analyzer__CallGraphVisitor__remove_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__collapse_inner -> pyan__analyzer__CallGraphVisitor__add_uses_edge [style="solid",  color="#000000"];
+        pyan__analyzer__CallGraphVisitor__collapse_inner -> pyan__analyzer__CallGraphVisitor__get_parent_nodeX [style="solid",  color="#000000"];
+        pyan__anutils -> pyan__nodeX__Flavor [style="solid",  color="#000000"];
+        pyan__anutils__get_ast_nodeX_name -> pyan__anutils__get_ast_nodeX_name [style="solid",  color="#000000"];
+        pyan__anutils__sanitize_exprs -> pyan__anutils__sanitize_exprs__process [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order -> pyan__anutils__resolve_method_resolution_order__lookup_bases_recursive [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order -> pyan__anutils__resolve_method_resolution_order__C3_linearize [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order -> pyan__anutils__resolve_method_resolution_order__LinearizationImpossible [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_find_good_head -> pyan__anutils__resolve_method_resolution_order__LinearizationImpossible [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__remove_all_in -> pyan__anutils__resolve_method_resolution_order__remove_all [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_merge -> pyan__anutils__resolve_method_resolution_order__C3_find_good_head [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_merge -> pyan__anutils__head [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_merge -> pyan__anutils__tail [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_merge -> pyan__anutils__resolve_method_resolution_order__remove_all_in [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_linearize -> pyan__anutils__resolve_method_resolution_order__C3_linearize [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__C3_linearize -> pyan__anutils__resolve_method_resolution_order__C3_merge [style="solid",  color="#000000"];
+        pyan__anutils__resolve_method_resolution_order__lookup_bases_recursive -> pyan__anutils__resolve_method_resolution_order__lookup_bases_recursive [style="solid",  color="#000000"];
+        pyan__main -> pyan__visgraphX__VisualGraph [style="solid",  color="#000000"];
+        pyan__main -> pyan__writers__MermaidWriter [style="solid",  color="#000000"];
+        pyan__main -> pyan__writers__YedWriter [style="solid",  color="#000000"];
+        pyan__main -> pyan__writers__HTMLWriter [style="solid",  color="#000000"];
+        pyan__main -> pyan__writers__SVGWriter [style="solid",  color="#000000"];
+        pyan__main -> pyan__writers__TgfWriter [style="solid",  color="#000000"];
+        pyan__main -> pyan__main__main [style="solid",  color="#000000"];
+        pyan__main -> pyan__analyzer__CallGraphVisitor [style="solid",  color="#000000"];
+        pyan__main -> pyan__writers__DotWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__DotWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__HTMLWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__SVGWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__TgfWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__YedWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__MermaidWriter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__TgfWriter____init__ [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__YedWriter____init__ [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__visgraphX__VisualGraph__from_visitor [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__analyzer__CallGraphVisitor [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__MermaidWriter____init__ [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__analyzer__CallGraphVisitor__filter [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__DotWriter____init__ [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__main__main -> pyan__writers__Writer__run [style="solid",  color="#000000"];
+        pyan__nodeX__Node__get_annotated_name -> pyan__nodeX__Node__get_level [style="solid",  color="#000000"];
+        pyan__nodeX__Node__get_long_annotated_name -> pyan__nodeX__Node__get_level [style="solid",  color="#000000"];
+        pyan__nodeX__Node__get_label -> pyan__nodeX__Node__get_name [style="solid",  color="#000000"];
+        pyan__nodeX__Node__get_label -> pyan__nodeX__make_safe_label [style="solid",  color="#000000"];
+        pyan__nodeX__Node__get_namespace_label -> pyan__nodeX__make_safe_label [style="solid",  color="#000000"];
+        pyan__nodeX__Node____repr__ -> pyan__nodeX__Node__get_name [style="solid",  color="#000000"];
+        pyan__sphinx -> pyan__create_callgraphX [style="solid",  color="#000000"];
+        pyan__sphinx__CallgraphXDirective -> pyan__sphinx__direction_spec [style="solid",  color="#000000"];
+        pyan__sphinx__CallgraphXDirective__run -> pyan__create_callgraphX [style="solid",  color="#000000"];
+        pyan__sphinx__CallgraphXDirective__run -> pyan__sphinx__CallgraphXDirective__run__create_link [style="solid",  color="#000000"];
+        pyan__sphinx__setup -> pyan__sphinx__CallgraphXDirective [style="solid",  color="#000000"];
+        pyan__visgraphX__Colorizer___nodeX_to_idx -> pyan__visgraphX__Colorizer___next_idx [style="solid",  color="#000000"];
+        pyan__visgraphX__Colorizer__get -> pyan__visgraphX__Colorizer___nodeX_to_idx [style="solid",  color="#000000"];
+        pyan__visgraphX__Colorizer__make_colors -> pyan__visgraphX__Colorizer__htmlize_rgb [style="solid",  color="#000000"];
+        pyan__visgraphX__Colorizer__make_colors -> pyan__visgraphX__Colorizer__get [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualEdge____init__ [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__Colorizer [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__Colorizer__make_colors [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualGraph__from_visitor__find_filenames [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualGraph__from_visitor__labeler [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualGraph____init__ [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__Colorizer____init__ [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualNode____init__ [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualNode [style="solid",  color="#000000"];
+        pyan__visgraphX__VisualGraph__from_visitor -> pyan__visgraphX__VisualEdge [style="solid",  color="#000000"];
+        pyan__writers__Writer__run -> pyan__writers__Writer__finish_graphX [style="solid",  color="#000000"];
+        pyan__writers__Writer__run -> pyan__writers__Writer__write_edges [style="solid",  color="#000000"];
+        pyan__writers__Writer__run -> pyan__writers__Writer__write_subgraphXX [style="solid",  color="#000000"];
+        pyan__writers__Writer__run -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__Writer__run -> pyan__writers__Writer__start_graphX [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_subgraphXX -> pyan__writers__Writer__write_nodeX [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_subgraphXX -> pyan__writers__Writer__write_subgraphXX [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_subgraphXX -> pyan__writers__Writer__start_subgraphXX [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_subgraphXX -> pyan__writers__Writer__finish_subgraphXX [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_edges -> pyan__writers__Writer__write_edge [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_edges -> pyan__writers__Writer__start_edges [style="solid",  color="#000000"];
+        pyan__writers__Writer__write_edges -> pyan__writers__Writer__finish_edges [style="solid",  color="#000000"];
+        pyan__writers__TgfWriter -> pyan__writers__Writer [style="solid",  color="#000000"];
+        pyan__writers__TgfWriter____init__ -> pyan__writers__Writer____init__ [style="solid",  color="#000000"];
+        pyan__writers__TgfWriter__write_nodeX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__TgfWriter__start_edges -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__TgfWriter__write_edge -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__MermaidWriter -> pyan__writers__Writer [style="solid",  color="#000000"];
+        pyan__writers__MermaidWriter____init__ -> pyan__writers__Writer____init__ [style="solid",  color="#000000"];
+        pyan__writers__MermaidWriter__start_graphX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__MermaidWriter__write_nodeX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__MermaidWriter__write_edge -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__DotWriter -> pyan__writers__Writer [style="solid",  color="#000000"];
+        pyan__writers__DotWriter____init__ -> pyan__writers__Writer____init__ [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__start_graphX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__start_graphX -> pyan__writers__Writer__indent [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__start_subgraphXX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__start_subgraphXX -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__start_subgraphXX -> pyan__writers__Writer__indent [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__finish_subgraphXX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__finish_subgraphXX -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__finish_subgraphXX -> pyan__writers__Writer__dedent [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__write_nodeX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__write_nodeX -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__write_edge -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__DotWriter__finish_graphX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__SVGWriter -> pyan__writers__DotWriter [style="solid",  color="#000000"];
+        pyan__writers__SVGWriter__run -> pyan__writers__Writer__write_subgraphXX [style="solid",  color="#000000"];
+        pyan__writers__SVGWriter__run -> pyan__writers__Writer__write_edges [style="solid",  color="#000000"];
+        pyan__writers__SVGWriter__run -> pyan__writers__DotWriter__finish_graphX [style="solid",  color="#000000"];
+        pyan__writers__SVGWriter__run -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__SVGWriter__run -> pyan__writers__DotWriter__start_graphX [style="solid",  color="#000000"];
+        pyan__writers__HTMLWriter -> pyan__writers__SVGWriter [style="solid",  color="#000000"];
+        pyan__writers__HTMLWriter__run -> pyan__writers__SVGWriter__run [style="solid",  color="#000000"];
+        pyan__writers__YedWriter -> pyan__writers__Writer [style="solid",  color="#000000"];
+        pyan__writers__YedWriter____init__ -> pyan__writers__Writer____init__ [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__start_graphX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__start_graphX -> pyan__writers__Writer__indent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__start_subgraphXX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__start_subgraphXX -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__start_subgraphXX -> pyan__writers__Writer__dedent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__start_subgraphXX -> pyan__writers__Writer__indent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__finish_subgraphXX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__finish_subgraphXX -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__finish_subgraphXX -> pyan__writers__Writer__dedent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_nodeX -> pyan__writers__Writer__dedent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_nodeX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_nodeX -> pyan__writers__Writer__log [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_nodeX -> pyan__writers__Writer__indent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_edge -> pyan__writers__Writer__dedent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_edge -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__write_edge -> pyan__writers__Writer__indent [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__finish_graphX -> pyan__writers__Writer__write [style="solid",  color="#000000"];
+        pyan__writers__YedWriter__finish_graphX -> pyan__writers__Writer__dedent [style="solid",  color="#000000"];
+        pyan -> pyan__visgraphX__VisualGraph [style="solid",  color="#000000"];
+        pyan -> pyan__writers__HTMLWriter [style="solid",  color="#000000"];
+        pyan -> pyan__writers__SVGWriter [style="solid",  color="#000000"];
+        pyan -> pyan__main__main [style="solid",  color="#000000"];
+        pyan -> pyan__analyzer__CallGraphVisitor [style="solid",  color="#000000"];
+        pyan -> pyan__writers__DotWriter [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__writers__DotWriter [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__writers__SVGWriter__run [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__writers__HTMLWriter [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__writers__SVGWriter [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__visgraphX__VisualGraph__from_visitor [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__analyzer__CallGraphVisitor [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__analyzer__CallGraphVisitor__filter [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__writers__DotWriter____init__ [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__analyzer__CallGraphVisitor__get_nodeX [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__analyzer__CallGraphVisitor____init__ [style="solid",  color="#000000"];
+        pyan__create_callgraphX -> pyan__writers__Writer__run [style="solid",  color="#000000"];
+        pyan____main__ -> pyan__main__main [style="solid",  color="#000000"];
+        pyan____main__ -> pyan [style="solid",  color="#000000"];
+    }
