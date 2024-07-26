@@ -1,0 +1,122 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/kyosek/RAG-based-job-search-assistant/blob/master/"
+    },
+    "gradio_demo__main": {
+        "label": "main",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/gradio_demo.py",
+        "relativePath": "src/gradio_demo.py",
+        "lineNo": 42,
+        "endLineNo": 46,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fgradio_demo.py%23L42-L46&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:**\n\nThis function calls a function named `user_query` which likely interacts with a language model (`cv`), processes a given `query` from a user, and then returns the generated `response` from the language model. \n\n**Inputs:**\n\n*  `cv`: This likely represents a connection or instance of a language model, like a chatbot or text generation AI.\n*  `query`: This is the user's input, a string of text that the language model will process and respond to.\n\n**Output:**\n\n*  `response.response`: This is the generated text response from the `user_query` function, representing the AI's answer to the user's `query`. \n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "gradio_demo__user_query": {
+        "label": "user_query",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/gradio_demo.py",
+        "relativePath": "src/gradio_demo.py",
+        "lineNo": 13,
+        "endLineNo": 41,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fgradio_demo.py%23L13-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**\n\nThis function simulates a career advice chatbot. It takes a CV and a user question as input, uses a pre-trained index and query engine to process the information, and generates a step-by-step response with referenced information. \n\n**[Inputs]**\n\n* `cv`:  The user's curriculum vitae (CV) as text.\n* `query`: The user's question about their career.\n\n**[Output]**\n\n* A textual response from the chatbot, providing step-by-step career advice based on the CV and the question. \n* The response should include referenced information, such as job IDs, and indicate the source nodes used. \n\n\n"
+    },
+    "job_scraper__initialise_query": {
+        "label": "initialise_query",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 93,
+        "endLineNo": 117,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L93-L117&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function constructs a list of job search queries for a platform like LinkedIn, filtering results by location, relevance, time posted, job type, and company.   It aims to streamline the process of finding specific job opportunities.\n\n**Inputs:**\n\n*  `job_title`: (string) The desired job title to search for.\n*  `locations`: (list) A list of locations where the jobs should be located.\n*  `RelevanceFilters`:  (enum)  A filter specifying the relevance of results (e.g., RECENT, RELEVANCE).\n\n**Output:**\n\n*  `queries`: (list) A list of pre-configured job search queries ready to be executed. \n"
+    },
+    "job_scraper__initialise_scraper": {
+        "label": "initialise_scraper",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 74,
+        "endLineNo": 92,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L74-L92&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function creates an instance of a `LinkedinScraper` class, configures its settings for crawling LinkedIn data, and sets up event listeners for handling various events (data reception, errors, and completion). Its purpose is to initialize a LinkedIn web scraper with custom options and event handling mechanisms.\n\n## Inputs\n\n* `chrome_executable_path`: Path to a custom Chrome executable (e.g., Chromedriver).\n* `chrome_binary_location`: Path to a custom Chrome or Chromium binary.\n* `chrome_options`: Custom Chrome options to be passed to the scraper.\n* `headless`: Boolean indicating whether to run Chrome in headless mode (default is True)\n* `max_workers`: Number of threads for concurrent data retrieval.\n* `slow_mo`: Delay in seconds to avoid rate-limiting errors.\n* `page_load_timeout`:  Timeout in seconds for page loading.\n\n## Output\n\n*  A configured `LinkedinScraper` object ready to be used for LinkedIn data extraction. \n"
+    },
+    "job_scraper__on_data": {
+        "label": "on_data",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 22,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L22-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis\n\n**Quick Summary:** This function scrapes job postings from a website, extracting relevant data like job ID, location, title, company, date, link, and description. It stores this information in a list and then saves it as a CSV file named \"jobs.csv\". The purpose of the code is to collect and organize job postings for further analysis or processing. \n\n**Inputs:**\n\n* **data:** A presumably custom object containing job posting details (title, company, company link, date, link, insights, description).\n\n**Output:**\n\n* A CSV file named \"data/jobs.csv\" containing a table of job postings with columns for: \n    * Job_ID\n    * Location\n    * Title\n    * Company\n    * Date\n    * Link\n    * Description \n\n\n"
+    },
+    "job_scraper__on_end": {
+        "label": "on_end",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 70,
+        "endLineNo": 73,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L70-L73&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Output Breakdown:\n\n**[Quick Summary]**\nThis code snippet likely represents the end of a program or a specific section of code. The `[ON_END]` message is likely used for logging, debugging, or signaling the completion of a task.\n\n**[Inputs]**\n*  None explicitly stated\n\n**[Outputs]**\n* Prints the string \"[ON_END]\" to the console \n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "job_scraper__on_error": {
+        "label": "on_error",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 66,
+        "endLineNo": 69,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L66-L69&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]** This code snippet is designed to handle errors during program execution. It prints the error message enclosed within square brackets `[ON_ERROR]` followed by the value of the `error` variable, likely providing debugging information.\n\n**[Inputs]**\n*  `error`: This variable presumably holds the error message or information encountered during runtime.\n\n**[Output]**\n*  Prints the string `[ON_ERROR]` concatenated with the content stored in the `error` variable to the console.  \n\n\nLet me know if you have any other code snippets you'd like analyzed!\n"
+    },
+    "job_scraper__on_metrics": {
+        "label": "on_metrics",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 62,
+        "endLineNo": 65,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L62-L65&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]** This function likely tracks and prints performance metrics during a program's execution.  The `metrics` variable probably holds a dictionary or list of key-value pairs representing the measured metrics. The \"[ON_METRICS]\" prefix might indicate this output is part of a logging system or debugging tool. \n\n**[Inputs]**\n* `metrics`:  This is the primary input, likely a data structure (like a dictionary or list) containing performance data.\n\n**[Output]**\n*  A string representation of the `metrics` data, prefixed with \"[ON_METRICS]\". \n    * This string will be printed to the console. \n\n\n\n\n"
+    },
+    "job_scraper__scrape_jobs": {
+        "label": "scrape_jobs",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/job_scraper.py",
+        "relativePath": "src/job_scraper.py",
+        "lineNo": 118,
+        "endLineNo": 125,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fjob_scraper.py%23L118-L125&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** \n\nThis function initializes a web scraper, defines search queries based on a job title and location, runs the scraper to retrieve job postings, and returns the initialized scraper object. The purpose is to automate the process of collecting job listings from online platforms.\n\n**Inputs:**\n\n* `job_title`: A string representing the desired job title for the search.\n* `locations`:  A list of strings representing the desired geographical locations for the search.\n\n**Output:**\n\n* A scraper object containing the collected job postings. \n\n\n"
+    },
+    "main__evaluate_response": {
+        "label": "evaluate_response",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/main.py",
+        "relativePath": "src/main.py",
+        "lineNo": 48,
+        "endLineNo": 62,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fmain.py%23L48-L62&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis \n\n[Quick Summary] This function evaluates the logical coherence and helpfulness of AI-generated responses based on a given query and context. It first checks if the response logically addresses the query and context, and if not, it suggests a rewritten query for better context retrieval.\n\n[Inputs]\n\n*  `query`:  The original user question or prompt.\n*  `response`: The AI-generated answer to the query. \n*  `agent`:  Likely a pre-trained language model or chatbot capable of understanding and responding to text.\n\n[Output]\n\n*  A string:  \n    *  \"Yes\" if the response is logically sound and helpful.\n    *  A rewritten query if the response lacks logical coherence. \n\n\n"
+    },
+    "main__main": {
+        "label": "main",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/main.py",
+        "relativePath": "src/main.py",
+        "lineNo": 63,
+        "endLineNo": 93,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fmain.py%23L63-L93&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function retrieves information from a PDF document based on a user query. It iteratively refines the query based on the evaluation of the initial response, aiming to achieve high faithfulness and relevance to the original query.\n\n## Inputs\n\n* `pdf_path`: The path to the PDF document \n* `query`: The user's initial question or request.\n* `user_query`: A function that takes the PDF path and query as input and returns a response.\n* `evaluate_response`: A function that evaluates the quality of a response.\n* `faithfulness_evaluator`: An object used to evaluate the faithfulness of the response to the source document.\n* `relevancy_evaluator`: An object used to evaluate the relevance of the response to the query.\n* `MAX_ITER`: The maximum number of iterations allowed in the refinement process.\n\n## Output\n\n* A string containing the final, hopefully improved, response to the user's query. \n* If the maximum number of iterations is reached without satisfactory results, a message indicating this along with the final response is returned. \n\n\n"
+    },
+    "main__user_query": {
+        "label": "user_query",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/main.py",
+        "relativePath": "src/main.py",
+        "lineNo": 28,
+        "endLineNo": 47,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fmain.py%23L28-L47&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]**\nThis function acts as a career advising chatbot. It takes a job seeker's CV and a question as input, processes them using a pre-built index, and generates a step-by-step answer referencing the information used. Essentially, it aims to provide personalized career advice based on the provided CV and user query.\n\n**[Inputs]**\n* `pdf_path`:  The path to a PDF file containing a job seeker's CV.\n* `query`: A string representing the user's career-related question.\n* `PERSIST_DIR`: A directory where the chatbot's index and storage are located.\n\n**[Output]**\n* A string containing the chatbot's response to the user's question:\n    * Step-by-step answer.\n    * References to the information used in the answer.\n    * Source nodes utilized for the response. \n\n\n\n"
+    },
+    "store_data__create_vector_storage": {
+        "label": "create_vector_storage",
+        "systemPath": "C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant/src/store_data.py",
+        "relativePath": "src/store_data.py",
+        "lineNo": 18,
+        "endLineNo": 29,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkyosek%2FRAG-based-job-search-assistant%2Fblob%2Fmaster%2Fsrc%2Fstore_data.py%23L18-L29&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function checks if a directory (`PERSIST_DIR`) exists. If not, it loads documents from \"data/\", creates a vector index, and saves it to `PERSIST_DIR`. If the directory already exists, it logs an error.  This ensures only one index is created and avoids overwriting existing data. \n\n**Inputs:**\n\n* `PERSIST_DIR`: The path to the directory where the vector index will be stored. \n \n**Output:**\n\n*  Saves a vector index to `PERSIST_DIR` if it doesn't exist.\n* Logs an error if `PERSIST_DIR` already exists. \n\n\n"
+    }
+}

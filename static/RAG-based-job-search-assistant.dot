@@ -1,0 +1,53 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        gradio_demo [label="gradio_demo", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        job_scraper [label="job_scraper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        query_pandas [label="query_pandas", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        store_data [label="store_data", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        subgraph cluster_gradio_demo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gradio_demo"];
+            gradio_demo__main [label="main\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\gradio_demo.py:42)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            gradio_demo__user_query [label="user_query\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\gradio_demo.py:13)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_job_scraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="job_scraper"];
+            job_scraper__initialise_query [label="initialise_query\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:93)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+            job_scraper__initialise_scraper [label="initialise_scraper\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:74)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+            job_scraper__on_data [label="on_data\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:22)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+            job_scraper__on_end [label="on_end\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:70)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+            job_scraper__on_error [label="on_error\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:66)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+            job_scraper__on_metrics [label="on_metrics\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:62)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+            job_scraper__scrape_jobs [label="scrape_jobs\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\job_scraper.py:118)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="main"];
+            main__evaluate_response [label="evaluate_response\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\main.py:48)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            main__main [label="main\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\main.py:63)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            main__user_query [label="user_query\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\main.py:28)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_store_data {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="store_data"];
+            store_data__create_vector_storage [label="create_vector_storage\n(C:/Users/sanju/Desktop/projects/explore/RAG-based-job-search-assistant\src\store_data.py:18)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+        }
+    }
+        gradio_demo -> gradio_demo__main [style="solid",  color="#000000"];
+        gradio_demo__main -> gradio_demo__user_query [style="solid",  color="#000000"];
+        job_scraper -> job_scraper__scrape_jobs [style="solid",  color="#000000"];
+        job_scraper__initialise_scraper -> job_scraper__on_error [style="solid",  color="#000000"];
+        job_scraper__initialise_scraper -> job_scraper__on_data [style="solid",  color="#000000"];
+        job_scraper__initialise_scraper -> job_scraper__on_end [style="solid",  color="#000000"];
+        job_scraper__scrape_jobs -> job_scraper__initialise_query [style="solid",  color="#000000"];
+        job_scraper__scrape_jobs -> job_scraper__initialise_scraper [style="solid",  color="#000000"];
+        main -> main__main [style="solid",  color="#000000"];
+        main__main -> main__evaluate_response [style="solid",  color="#000000"];
+        main__main -> main__user_query [style="solid",  color="#000000"];
+        store_data -> store_data__create_vector_storage [style="solid",  color="#000000"];
+    }
