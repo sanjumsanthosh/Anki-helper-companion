@@ -1,0 +1,123 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        RAG_NDCG5 [label="RAG_NDCG5", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        RAG_pipeline1_chromadb [label="RAG_pipeline1_chromadb", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        RAG_pipeline2_crossencoder [label="RAG_pipeline2_crossencoder", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        dspy_eval_helper [label="dspy_eval_helper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        helper_utils [label="helper_utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        rag_ragas_dspy_evaluation [label="rag_ragas_dspy_evaluation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        ragas_pipeline_evaluation [label="ragas_pipeline_evaluation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        reranker_GPT4o_Chatbot [label="reranker_GPT4o_Chatbot", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        tnav_copilot [label="tnav_copilot", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        subgraph cluster_RAG_NDCG5 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="RAG_NDCG5"];
+            RAG_NDCG5__create_query_retrival_pairs [label="create_query_retrival_pairs\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py:84)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            RAG_NDCG5__ndcg [label="ndcg\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py:50)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            RAG_NDCG5__rag [label="rag\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py:57)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            RAG_NDCG5__rank_relevancy_pairs [label="rank_relevancy_pairs\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py:99)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            RAG_NDCG5__true_relevancy [label="true_relevancy\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py:121)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_RAG_pipeline1_chromadb {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="RAG_pipeline1_chromadb"];
+            RAG_pipeline1_chromadb__chromadb_retrieval_qa [label="chromadb_retrieval_qa\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline1_chromadb.py:51)", style="filled", fillcolor="#feeaccb2", fontcolor="#000000", group="1"];
+            RAG_pipeline1_chromadb__chunk_documents [label="chunk_documents\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline1_chromadb.py:28)", style="filled", fillcolor="#feeaccb2", fontcolor="#000000", group="1"];
+            RAG_pipeline1_chromadb__load_documents [label="load_documents\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline1_chromadb.py:23)", style="filled", fillcolor="#feeaccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_RAG_pipeline2_crossencoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="RAG_pipeline2_crossencoder"];
+            RAG_pipeline2_crossencoder__clean_text_list [label="clean_text_list\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline2_crossencoder.py:46)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="2"];
+            RAG_pipeline2_crossencoder__rag [label="rag\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline2_crossencoder.py:92)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="2"];
+            RAG_pipeline2_crossencoder__rank_doc [label="rank_doc\n(/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline2_crossencoder.py:68)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_dspy_eval_helper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="dspy_eval_helper"];
+            dspy_eval_helper__Assess [label="Assess\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:36)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__CoT [label="CoT\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:28)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__convert_to_dataset [label="convert_to_dataset\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:21)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__llm_metric [label="llm_metric\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:42)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__load_and_prepare_data [label="load_and_prepare_data\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:15)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__load_environment [label="load_environment\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:10)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__optimize_and_evaluate [label="optimize_and_evaluate\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:55)", style="filled", fillcolor="#d6feccb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_dspy_eval_helper__CoT {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="dspy_eval_helper.CoT"];
+            dspy_eval_helper__CoT____init__ [label="__init__\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:29)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+            dspy_eval_helper__CoT__forward [label="forward\n(/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py:33)", style="filled", fillcolor="#adff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_helper_utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="helper_utils"];
+            helper_utils___chunk_texts [label="_chunk_texts\n(/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py:19)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="4"];
+            helper_utils___read_pdf [label="_read_pdf\n(/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py:9)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="4"];
+            helper_utils__load_chroma [label="load_chroma\n(/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py:36)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="4"];
+            helper_utils__project_embeddings [label="project_embeddings\n(/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py:57)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="4"];
+            helper_utils__word_wrap [label="word_wrap\n(/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py:49)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_ragas_pipeline_evaluation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ragas_pipeline_evaluation"];
+            ragas_pipeline_evaluation__clean_text_list [label="clean_text_list\n(/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py:56)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="6"];
+            ragas_pipeline_evaluation__create_ragas_dataset [label="create_ragas_dataset\n(/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py:88)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="6"];
+            ragas_pipeline_evaluation__evaluate_ragas_dataset [label="evaluate_ragas_dataset\n(/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py:72)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="6"];
+            ragas_pipeline_evaluation__process_pdf_texts [label="process_pdf_texts\n(/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py:49)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_reranker_GPT4o_Chatbot {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="reranker_GPT4o_Chatbot"];
+            reranker_GPT4o_Chatbot__clean_text_list [label="clean_text_list\n(/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py:62)", style="filled", fillcolor="#d6ccfeb2", fontcolor="#000000", group="7"];
+            reranker_GPT4o_Chatbot__process_pdf_texts [label="process_pdf_texts\n(/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py:55)", style="filled", fillcolor="#d6ccfeb2", fontcolor="#000000", group="7"];
+            reranker_GPT4o_Chatbot__rag [label="rag\n(/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py:29)", style="filled", fillcolor="#d6ccfeb2", fontcolor="#000000", group="7"];
+            reranker_GPT4o_Chatbot__rank_doc [label="rank_doc\n(/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py:14)", style="filled", fillcolor="#d6ccfeb2", fontcolor="#000000", group="7"];
+        }
+    }
+        dspy_eval_helper -> dspy_eval_helper__load_environment [style="solid",  color="#000000"];
+        dspy_eval_helper -> dspy_eval_helper__optimize_and_evaluate [style="solid",  color="#000000"];
+        dspy_eval_helper__llm_metric -> dspy_eval_helper__Assess [style="solid",  color="#000000"];
+        dspy_eval_helper__optimize_and_evaluate -> dspy_eval_helper__llm_metric [style="solid",  color="#000000"];
+        dspy_eval_helper__optimize_and_evaluate -> dspy_eval_helper__convert_to_dataset [style="solid",  color="#000000"];
+        dspy_eval_helper__optimize_and_evaluate -> dspy_eval_helper__load_and_prepare_data [style="solid",  color="#000000"];
+        RAG_NDCG5 -> RAG_NDCG5__ndcg [style="solid",  color="#000000"];
+        RAG_NDCG5 -> helper_utils__word_wrap [style="solid",  color="#000000"];
+        RAG_NDCG5 -> RAG_NDCG5__rank_relevancy_pairs [style="solid",  color="#000000"];
+        RAG_NDCG5 -> RAG_NDCG5__rag [style="solid",  color="#000000"];
+        RAG_NDCG5 -> RAG_NDCG5__create_query_retrival_pairs [style="solid",  color="#000000"];
+        RAG_NDCG5 -> RAG_NDCG5__true_relevancy [style="solid",  color="#000000"];
+        RAG_NDCG5__create_query_retrival_pairs -> RAG_NDCG5__create_query_retrival_pairs [style="solid",  color="#000000"];
+        rag_ragas_dspy_evaluation -> RAG_pipeline2_crossencoder__rag [style="solid",  color="#000000"];
+        rag_ragas_dspy_evaluation -> dspy_eval_helper__optimize_and_evaluate [style="solid",  color="#000000"];
+        rag_ragas_dspy_evaluation -> helper_utils__word_wrap [style="solid",  color="#000000"];
+        rag_ragas_dspy_evaluation -> RAG_pipeline1_chromadb__chromadb_retrieval_qa [style="solid",  color="#000000"];
+        rag_ragas_dspy_evaluation -> RAG_pipeline2_crossencoder__rank_doc [style="solid",  color="#000000"];
+        reranker_GPT4o_Chatbot -> reranker_GPT4o_Chatbot__rank_doc [style="solid",  color="#000000"];
+        reranker_GPT4o_Chatbot -> reranker_GPT4o_Chatbot__process_pdf_texts [style="solid",  color="#000000"];
+        reranker_GPT4o_Chatbot -> reranker_GPT4o_Chatbot__rag [style="solid",  color="#000000"];
+        reranker_GPT4o_Chatbot__process_pdf_texts -> reranker_GPT4o_Chatbot__clean_text_list [style="solid",  color="#000000"];
+        RAG_pipeline2_crossencoder -> helper_utils__word_wrap [style="solid",  color="#000000"];
+        RAG_pipeline2_crossencoder -> RAG_pipeline2_crossencoder__clean_text_list [style="solid",  color="#000000"];
+        RAG_pipeline2_crossencoder -> RAG_pipeline2_crossencoder__rag [style="solid",  color="#000000"];
+        RAG_pipeline2_crossencoder -> RAG_pipeline2_crossencoder__rank_doc [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> ragas_pipeline_evaluation__evaluate_ragas_dataset [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> ragas_pipeline_evaluation__create_ragas_dataset [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> ragas_pipeline_evaluation__clean_text_list [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> RAG_pipeline2_crossencoder__rag [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> helper_utils__word_wrap [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> RAG_pipeline1_chromadb__chromadb_retrieval_qa [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> RAG_pipeline2_crossencoder__rank_doc [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation -> ragas_pipeline_evaluation__process_pdf_texts [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation__process_pdf_texts -> ragas_pipeline_evaluation__clean_text_list [style="solid",  color="#000000"];
+        ragas_pipeline_evaluation__clean_text_list -> ragas_pipeline_evaluation__clean_text_list [style="solid",  color="#000000"];
+        RAG_pipeline1_chromadb -> RAG_pipeline1_chromadb__chunk_documents [style="solid",  color="#000000"];
+        RAG_pipeline1_chromadb -> RAG_pipeline1_chromadb__load_documents [style="solid",  color="#000000"];
+        RAG_pipeline1_chromadb -> RAG_pipeline1_chromadb__chromadb_retrieval_qa [style="solid",  color="#000000"];
+        helper_utils__load_chroma -> helper_utils___chunk_texts [style="solid",  color="#000000"];
+        helper_utils__load_chroma -> helper_utils___read_pdf [style="solid",  color="#000000"];
+        helper_utils__word_wrap -> helper_utils__word_wrap [style="solid",  color="#000000"];
+    }

@@ -1,0 +1,302 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/stanghong/RAG_Improvement/blob/main/"
+    },
+    "RAG_NDCG5__create_query_retrival_pairs": {
+        "label": "create_query_retrival_pairs",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py",
+        "relativePath": "RAG_NDCG5.py",
+        "lineNo": 84,
+        "endLineNo": 93,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_NDCG5.py%23L84-L93&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]**\n\nThis function searches a \"chroma_collection\" for documents relevant to a given query.  The top 5 most relevant documents are retrieved and paired with the original query, forming question-answer pairs.\n\n**[Inputs]**\n\n* `query`: A string representing the user's search query.\n\n* `chroma_collection`:  Likely an object (e.g., from a library like Langchain) representing a collection of indexed documents.\n\n**[Output]**\n\n* `pairs`: A list of lists, where each inner list contains a query and its corresponding retrieved document. \n* `retrieved_documents`: A list of retrieved documents themselves. \n\n\n\n\n"
+    },
+    "RAG_NDCG5__ndcg": {
+        "label": "ndcg",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py",
+        "relativePath": "RAG_NDCG5.py",
+        "lineNo": 50,
+        "endLineNo": 56,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_NDCG5.py%23L50-L56&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**\n\nThis function calculates the Normalized Discounted Cumulative Gain (NDCG) metric. NDCG measures the ranking quality of a set of retrieved items by comparing the actual ranking to an ideal ranking. It assigns higher scores to relevant items appearing earlier in the ranking.\n\n**[Inputs]**\n\n* **scores:** A list of numerical scores representing the relevance of items.\n* **k:** An integer indicating the number of top items to consider in the calculation.\n* **ideal_scores:** A list of numerical scores representing the ideal relevance ranking of items.\n\n\n**[Output]**\n\n* A float value representing the NDCG score, ranging from 0 to 1. \n"
+    },
+    "RAG_NDCG5__rag": {
+        "label": "rag",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py",
+        "relativePath": "RAG_NDCG5.py",
+        "lineNo": 57,
+        "endLineNo": 75,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_NDCG5.py%23L57-L75&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n[**Quick Summary**] \nThis function takes a user's financial question and a chunk of extracted 10K report data. It then uses the OpenAI API to generate an answer to the question, drawing solely from the provided 10K information.  The function aims to create a question-answering system based on 10K reports.\n\n[**Inputs**]\n* `retrieved_documents`: A list of strings containing the extracted text from the 10K report.\n* `query`: A string representing the user's financial question.\n* `openai_client`: An initialized OpenAI client object.\n* `model`: The name of the OpenAI model to use for the response generation.\n\n[**Output**]\n*  `content`: A string containing the  OpenAI-generated answer to the user's question, based on the 10K report data. \n\n\n"
+    },
+    "RAG_NDCG5__rank_relevancy_pairs": {
+        "label": "rank_relevancy_pairs",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py",
+        "relativePath": "RAG_NDCG5.py",
+        "lineNo": 99,
+        "endLineNo": 120,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_NDCG5.py%23L99-L120&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**[Quick Summary]** This function uses a pre-trained cross-encoder model to rank pairs of texts based on their relevance.  It selects the top `topN` ranked pairs, assigns relevancy scores, and returns the indices, scores, and the selected pairs. The purpose is to identify the most relevant pairs of texts from a given set.\n\n**[Inputs]**\n\n* `pairs`: A list of pairs of texts (likely strings).\n* `topN`: An integer specifying the number of top-ranked pairs to return.\n\n**[Output]**\n\n* `top_indices`: A list of indices corresponding to the top `topN` ranked pairs in the input `pairs`.\n* `predicted_relevance`: A list of relevance scores for each of the top `topN` pairs, with higher scores indicating greater relevance.\n* `top_pairs`: A list containing the actual text pairs corresponding to the `top_indices`. \n\n\n"
+    },
+    "RAG_NDCG5__true_relevancy": {
+        "label": "true_relevancy",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_NDCG5.py",
+        "relativePath": "RAG_NDCG5.py",
+        "lineNo": 121,
+        "endLineNo": 170,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_NDCG5.py%23L121-L170&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function takes a list of question-answer pairs, sends them to an OpenAI API, and receives a relevancy score from ChatGPT for each pair. It then processes the response to ensure valid scores and returns a list of relevancy scores between 0 and 4.\n\n## Inputs\n\n* `pairs`: A list of question-answer pairs.\n* `openai_client`: An initialized OpenAI API client object.\n* `model`: The name or identifier of the OpenAI model to use.\n\n\n## Output\n\n* `true_relevance_score`: A list of 5 relevancy scores, where each score represents the relevance of an answer to its corresponding question in the input `pairs` (between 0 and 4). \n"
+    },
+    "RAG_pipeline1_chromadb__chromadb_retrieval_qa": {
+        "label": "chromadb_retrieval_qa",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline1_chromadb.py",
+        "relativePath": "RAG_pipeline1_chromadb.py",
+        "lineNo": 51,
+        "endLineNo": 64,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_pipeline1_chromadb.py%23L51-L64&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Summary\n\nThis function implements a question-answering system using a language model (GPT-3.5-turbo) and a semantic search engine (Chroma). \n\nIt embeds input texts and queries, allowing for similarity-based retrieval of relevant information from the provided texts.  \n\nThe retrieved context is then used by the language model to generate a response to the query.\n\n\n\n## Inputs\n\n* **texts:** A collection of text documents to be indexed by Chroma.\n* **question:** The user's question to be answered.\n\n## Output\n\n* **result:** A structured response containing the  answer to the question generated by the language model. \n"
+    },
+    "RAG_pipeline1_chromadb__chunk_documents": {
+        "label": "chunk_documents",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline1_chromadb.py",
+        "relativePath": "RAG_pipeline1_chromadb.py",
+        "lineNo": 28,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_pipeline1_chromadb.py%23L28-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis  \n\n**Quick Summary:** This function splits a given text data into smaller chunks using a recursive character-based splitter.  The `chunk_size` parameter determines the size of each chunk, and `chunk_overlap` controls the amount of overlap between consecutive chunks. PDF files are likely loaded and processed within this function to extract the text content. The purpose of this code is likely text pre-processing for analysis or machine learning tasks, enabling efficient handling of large text datasets.\n\n**Inputs:**\n\n* `data`: A string or object representing the text data, potentially loaded from a PDF file.\n\n* `chunk_size`: An integer defining the maximum length of each text chunk.\n\n* `chunk_overlap`: An integer specifying the amount of overlap between consecutive chunks (0 indicates no overlap).\n\n**Output:**\n\n* A list of strings, each representing a processed text chunk. \n"
+    },
+    "RAG_pipeline1_chromadb__load_documents": {
+        "label": "load_documents",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline1_chromadb.py",
+        "relativePath": "RAG_pipeline1_chromadb.py",
+        "lineNo": 23,
+        "endLineNo": 27,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_pipeline1_chromadb.py%23L23-L27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function loads an unstructured PDF file using the `UnstructuredPDFLoader` class and returns the extracted document content. The purpose of this code is to process and prepare a PDF document for further analysis or processing.\n\n\n**Inputs:**\n* `file_path`: A string representing the path to the PDF file to be loaded. \n\n**Output:**\n* The extracted content from the PDF document, potentially as a list of strings, paragraphs, or other suitable data structures. \n\n\n\n"
+    },
+    "RAG_pipeline2_crossencoder__clean_text_list": {
+        "label": "clean_text_list",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline2_crossencoder.py",
+        "relativePath": "RAG_pipeline2_crossencoder.py",
+        "lineNo": 46,
+        "endLineNo": 59,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_pipeline2_crossencoder.py%23L46-L59&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function cleans text data by removing tabs and newlines, splitting text into lines, removing empty lines, and combining the remaining lines back into a single string with newline characters. Its purpose is to prepare text data for further processing, ensuring consistency and removing unnecessary formatting.\n\n## Inputs\n\n* `text_list`: A list of text strings that require cleaning.\n\n## Output\n\n* `cleaned_texts`: A list of cleaned text strings, where each string has been processed as described in the summary.  \n"
+    },
+    "RAG_pipeline2_crossencoder__rag": {
+        "label": "rag",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline2_crossencoder.py",
+        "relativePath": "RAG_pipeline2_crossencoder.py",
+        "lineNo": 92,
+        "endLineNo": 114,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_pipeline2_crossencoder.py%23L92-L114&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown \n\n**[Quick Summary]**\n\nThis function takes a user query and a chunk of text (presumably from a 10K report) as input. It formats these into a message suitable for OpenAI's chat API, sends the query to the API for a response, and returns the generated answer. The overall purpose is to enable question answering about financial information extracted from 10K reports.\n\n**[Inputs]**\n\n* `query`: A string representing the user's question about the 10K report.\n* `retrieved_documents`: A list of strings, each containing a segment of text extracted from the 10K report. \n* `openai_client`: An initialized OpenAI API client object.\n* `model`: The name of the OpenAI model to be used for generating the response (e.g., \"text-davinci-003\").\n\n**[Output]**\n\n* A string containing the answer generated by the OpenAI model based on the provided query and 10K report information. \n\n\n\n\n"
+    },
+    "RAG_pipeline2_crossencoder__rank_doc": {
+        "label": "rank_doc",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/RAG_pipeline2_crossencoder.py",
+        "relativePath": "RAG_pipeline2_crossencoder.py",
+        "lineNo": 68,
+        "endLineNo": 88,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2FRAG_pipeline2_crossencoder.py%23L68-L88&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Here's a breakdown of the provided code snippet:\n\n## Quick Summary\n\nThis function `rank_doc` uses a pre-trained CrossEncoder model to rank a set of text documents (`text_chunks`) based on their relevance to a given query (`query`).  The top `topN` most relevant documents are returned as a list of pairs. \n\nThe purpose of this code is to implement a simple document ranking system utilizing a powerful machine learning model.\n\n## Inputs\n\n* **query**: A string representing the user's search query.\n\n* **text_chunks**: A list of strings, where each string is a document to be ranked.\n* **topN**: An integer specifying the number of top-ranked documents to return.\n\n## Output\n\n* **top_pairs**: A list of pairs where each pair consists of the query and a ranked document.  \n"
+    },
+    "dspy_eval_helper__Assess": {
+        "label": "Assess",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 36,
+        "endLineNo": 41,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L36-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**\n\nThis code defines a simple function for text assessment. It takes a context, a question, and an answer as input.  It then presumably uses some algorithm (not shown) to assess the quality of the answer based on the provided context and question, outputting a rating from 1 to 5.  \n\n**[Inputs]**\n\n*  `context`: The surrounding text relevant to the question.\n*  `assessed_question`: The question being evaluated.\n*  `assessed_answer`: The answer given to the question.\n\n**[Output]**\n\n*  `assessment_answer`: A numerical rating between 1 and 5, representing the quality of the `assessed_answer`.  \n\n\n"
+    },
+    "dspy_eval_helper__CoT": {
+        "label": "CoT",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 28,
+        "endLineNo": 35,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L28-L35&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a Python class that takes a question as input and uses a pre-trained language model (`dspy.ChainOfThought`) to generate an answer. The purpose is to create a simple question-answering system powered by a chain-of-thought reasoning model.\n\n## Inputs\n\n* `question`: A string representing the user's query.\n\n## Output\n\n*  A string containing the generated answer to the question. \n"
+    },
+    "dspy_eval_helper__convert_to_dataset": {
+        "label": "convert_to_dataset",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 21,
+        "endLineNo": 27,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L21-L27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary**\n\nThis function processes a Pandas DataFrame (`df`), converting each row into a `dspy.Example` object that represents a question-answering scenario.  The goal is to prepare this data for use in training or evaluating a question answering model. \n\n**Inputs**\n\n* `df`:  A Pandas DataFrame containing data structured like a question-answer dataset. \n    * It likely has columns named 'question', 'pred_answer', 'context', and 'answer'.\n* `dspy`: An assumed library or module providing the `Example` class (e.g., a library for data structuring in machine learning).\n\n**Output**\n\n* `dataset`: A list of `dspy.Example` objects, each containing a question, predicted answer, context, and actual answer. \n\n\n"
+    },
+    "dspy_eval_helper__llm_metric": {
+        "label": "llm_metric",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 42,
+        "endLineNo": 54,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L42-L54&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function evaluates the quality of a predicted answer (likely from a question answering system) using a combination of three metrics: detail, faithfulness to context, and overall answer quality. The purpose of the code is to provide a quantitative score to assess the performance of the underlying answer generation model.\n\n## Inputs\n\n* **gold:** This likely represents a data structure containing information about the question, context, and the ground truth (correct) answer.\n* **dspy.OpenAI(model='gpt-4o', ...):** This initializes an instance of an OpenAI language model (gpt-4o) for use in the scoring process.\n\n* **detail_score,** **faithful_score,** **overall_score:** These are  results from Dspy's ChainOfThought(Assess) function, which uses the OpenAI model to evaluate the provided answer against specific criteria.\n\n## Output\n\n* **total_score:** This is the average of the three individual scores (detail, faithfulness, overall), providing an overall performance score for the predicted answer. \n\n\n\n"
+    },
+    "dspy_eval_helper__load_and_prepare_data": {
+        "label": "load_and_prepare_data",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 15,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L15-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Summary\n\nThis Python function reads an Excel file containing question-answering data, renames columns for clarity, and selects specific columns for a final DataFrame. It likely prepares data for analysis or evaluation of a question-answering model. \n\n## Inputs\n\n*  `file_path`: A string representing the path to the Excel file.\n\n## Output\n* A Pandas DataFrame with columns: 'question', 'pred_answer', 'context', 'answer'.  \n"
+    },
+    "dspy_eval_helper__load_environment": {
+        "label": "load_environment",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 10,
+        "endLineNo": 14,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L10-L14&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]** \n\nThis code snippet sets up an environment to interact with the GPT-3.5-turbo-instruct model from OpenAI. It initializes the 'dspy' library, configures its settings, connecting it to the specified OpenAI model, and sets a limit on the maximum number of generated tokens (250). The code intends to utilize this model for text generation tasks.\n\n**[Inputs]**\n\n*  `.env` file: Likely contains API keys or other environment variables required to connect to OpenAI.\n*  `dspy.OpenAI(model='gpt-3.5-turbo-instruct', max_tokens=250)`:  Defines the configuration for interacting with the OpenAI model.\n    *  `model='gpt-3.5-turbo-instruct'`: Specifies the OpenAI model to use.\n    *  `max_tokens=250`: Limits the length of the generated text output to 250 tokens.\n\n **[Output]**\n*  A configured 'dspy' instance ready to receive prompts and generate text using the specified OpenAI model. \n\n\n\n"
+    },
+    "dspy_eval_helper__optimize_and_evaluate": {
+        "label": "optimize_and_evaluate",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 55,
+        "endLineNo": 67,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L55-L67&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function calculates the average similarity score of each data point in a DataFrame to itself using a specified LLM metric. It then returns the average of all scores and the updated DataFrame with the calculated scores.\n\n## Inputs\n\n* `file_path`:  The path to a file containing the data. \n* `llm_metric`: A function that takes two data points as input and returns a similarity score.\n\n## Output\n\n* `average_total_score`: The average similarity score across all data points.\n* `df`: The original DataFrame with an added column 'total_score' containing the calculated similarity scores for each data point. \n\n\n"
+    },
+    "dspy_eval_helper__CoT____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 29,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L29-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]**\n\nThis function initializes a new object, likely for a natural language processing task. It uses the `dspy` library and creates a  \"Chain of Thought\" model named \"question -> answer,\" suggesting it's designed for question-answering tasks where the model generates a step-by-step reasoning process.\n\n**[Inputs]**\n\n*  `super().__init__()`: This likely calls the constructor of the parent class,  initializing common attributes and behavior.\n\n* `dspy.ChainOfThought(\"question -> answer\")`: This instantiates a `ChainOfThought` model from the `dspy` library, specifying the task as \"question -> answer.\"\n\n**[Output]**\n\n*  A new object is created, ready to process questions and generate answers with a chain of thought reasoning approach. \n\n\n"
+    },
+    "dspy_eval_helper__CoT__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/dspy_eval_helper.py",
+        "relativePath": "dspy_eval_helper.py",
+        "lineNo": 33,
+        "endLineNo": 35,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fdspy_eval_helper.py%23L33-L35&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**  This function appears to be part of a larger program designed to process and respond to user questions.  It takes a \"question\" as input and passes it to another function called \"prog\" for processing, ultimately returning the result.\n\n**Inputs:**\n\n*  \"question\":  This is likely a string containing the user's query or question.\n\n**Output:**\n\n* The return value of the `prog` function, which could be a string, a list, a dictionary, or any other data type depending on what `prog` is designed to do. \n\n\n"
+    },
+    "helper_utils___chunk_texts": {
+        "label": "_chunk_texts",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py",
+        "relativePath": "helper_utils.py",
+        "lineNo": 19,
+        "endLineNo": 35,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fhelper_utils.py%23L19-L35&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick summary]**\nThis function takes a list of texts, splits them into smaller chunks based on characters and then further splits those chunks into sub-chunks based on sentences using a pre-trained Sentence Transformers model.  The overall purpose is to break down large texts into manageable units for processing by machine learning models.\n\n**[Inputs]**\n\n*  `texts`: A list of strings representing the input text data.\n\n**[Output]**\n\n*  `token_split_texts`: A list of strings where each string represents a sentence-sized chunk extracted from the input texts. \n\n\n"
+    },
+    "helper_utils___read_pdf": {
+        "label": "_read_pdf",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py",
+        "relativePath": "helper_utils.py",
+        "lineNo": 9,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fhelper_utils.py%23L9-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function reads a PDF file, extracts text from each page, removes any empty strings, and returns a list of the text content from all pages. The purpose of the code is to process a PDF document and obtain its textual content.\n\n**Inputs:**\n\n* `filename`: The path to the PDF file being processed.\n\n**Output:**\n\n* A list of strings, where each string represents the extracted text from a page of the PDF document. \n\n\n"
+    },
+    "helper_utils__load_chroma": {
+        "label": "load_chroma",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py",
+        "relativePath": "helper_utils.py",
+        "lineNo": 36,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fhelper_utils.py%23L36-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:**\n\nThis function processes text from a PDF file, breaks it into smaller chunks, and then stores these chunks in a ChromaDB collection for efficient retrieval and semantic search.  Its purpose is to build a vector database for the PDF's content. \n\n**Inputs:**\n\n* `filename`:  The path to the PDF file containing the text.\n* `collection_name`:  The desired name for the ChromaDB collection.\n* `embedding_function`: A function used to generate vector representations of the text chunks.\n\n**Output:**\n\n* `chroma_collection`: A ChromaDB collection containing the processed text chunks indexed with embeddings. \n"
+    },
+    "helper_utils__project_embeddings": {
+        "label": "project_embeddings",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py",
+        "relativePath": "helper_utils.py",
+        "lineNo": 57,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fhelper_utils.py%23L57-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**Quick Summary:**\n\nThis function takes a list of embeddings (likely word or document vectors) and uses the UMAP algorithm to reduce their dimensionality to two dimensions.  The resulting 2D embeddings can be visualized.\n\n**Inputs:**\n\n*  `embeddings`: A list of numerical vectors representing embeddings (e.g., word vectors). \n* `umap_transform`: A pre-trained UMAP transformer instance.\n\n**Output:**\n\n* `umap_embeddings`: A NumPy array of shape (len(embeddings), 2) containing the 2D UMAP-transformed embeddings. \n\n\n"
+    },
+    "helper_utils__word_wrap": {
+        "label": "word_wrap",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/helper_utils.py",
+        "relativePath": "helper_utils.py",
+        "lineNo": 49,
+        "endLineNo": 56,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fhelper_utils.py%23L49-L56&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function recursively wraps a string at the next space after a given number of characters (`n_chars`).  It effectively divides a long string into lines with a maximum width specified by `n_chars`. \n\n**[Inputs]**\n\n* `string`: The input string to be wrapped.\n* `n_chars`: The maximum number of characters allowed on each line.\n\n**[Outputs]**\n\n* A modified string with line breaks (`\\n`) inserted to wrap the text according to the specified `n_chars` limit. \n\n\n\n"
+    },
+    "ragas_pipeline_evaluation__clean_text_list": {
+        "label": "clean_text_list",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py",
+        "relativePath": "ragas_pipeline_evaluation.py",
+        "lineNo": 56,
+        "endLineNo": 66,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fragas_pipeline_evaluation.py%23L56-L66&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown:\n\n**Quick Summary:** This Python function takes a list of potentially messy text strings, cleans them up by standardizing whitespace and removing empty lines, and returns a new list of cleaned text strings. Its purpose is to prepare text data for further processing, ensuring consistency and readability.\n\n**Inputs:**\n\n* `text_list`: A list of strings, each potentially containing inconsistent whitespace (tabs, newlines) and empty lines.\n\n**Output:**\n\n* `cleaned_texts`: A list of strings, where each string is the cleaned version of the corresponding input text. \n\n\n"
+    },
+    "ragas_pipeline_evaluation__create_ragas_dataset": {
+        "label": "create_ragas_dataset",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py",
+        "relativePath": "ragas_pipeline_evaluation.py",
+        "lineNo": 88,
+        "endLineNo": 125,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fragas_pipeline_evaluation.py%23L88-L125&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown \n\n**Quick Summary:** This function processes an existing dataset (`eval_dataset`), extracts information using a pre-defined pipeline (`rag_pipeline`), formats it, and converts the results into an Arrow Dataset (`rag_eval_dataset`) suitable for machine learning tasks. The purpose is to prepare a dataset for evaluation with a RAG (Retrieval-Augmented Generation) model.\n\n**Inputs:**\n* `eval_dataset`: Likely a pandas DataFrame or similar data structure containing questions, contexts, and ground truth answers.\n* `rag_pipeline`: A function designed to retrieve relevant information from a set of documents (`retrieved_documents`) given a question.\n\n**Output:**\n* `rag_eval_dataset`: An Arrow Dataset containing processed question-answer pairs along with their contexts and ground truth labels. \n\n\n"
+    },
+    "ragas_pipeline_evaluation__evaluate_ragas_dataset": {
+        "label": "evaluate_ragas_dataset",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py",
+        "relativePath": "ragas_pipeline_evaluation.py",
+        "lineNo": 72,
+        "endLineNo": 87,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fragas_pipeline_evaluation.py%23L72-L87&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function evaluates the performance of a RAG (Retrieval-Augmented Generation) system on a dataset of questions and answers. It computes various metrics to assess the quality and relevance of the generated answers, considering both the context and the accuracy.\n\n## Inputs:\n\n* **ragas_dataset:** A dataset containing questions, context passages, and expected answers.\n* **metrics:** A list of metric functions to evaluate the RAG system, including:\n    * `context_precision`\n    * `faithfulness`\n    * `answer_relevancy`\n    * `context_recall`\n    * `context_relevancy`\n    * `answer_correctness`\n    * `answer_similarity`\n\n## Output:\n\n* **result:** A dictionary or object containing the calculated scores for each metric. \n\n\n"
+    },
+    "ragas_pipeline_evaluation__process_pdf_texts": {
+        "label": "process_pdf_texts",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/ragas_pipeline_evaluation.py",
+        "relativePath": "ragas_pipeline_evaluation.py",
+        "lineNo": 49,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Fragas_pipeline_evaluation.py%23L49-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function processes a PDF file, extracts its text, splits it into smaller chunks based on specific separators, and then returns a list of cleaned text chunks. The purpose likely is to prepare text data from a PDF for further processing, such as analysis or machine learning.\n\n**Inputs:**\n\n* `pdf_file`: Path to the PDF file to be processed.\n\n**Output:**\n\n* A list of cleaned text strings, each representing a chunk extracted from the PDF. \n\n\n"
+    },
+    "reranker_GPT4o_Chatbot__clean_text_list": {
+        "label": "clean_text_list",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py",
+        "relativePath": "reranker_GPT4o_Chatbot.py",
+        "lineNo": 62,
+        "endLineNo": 70,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Freranker_GPT4o_Chatbot.py%23L62-L70&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:  \n\nThis function cleans up a list of texts by removing unnecessary whitespace (tabs and newlines), stripping leading/trailing whitespace from each line, and joining the lines back together. Its purpose is to prepare text data for further processing, ensuring consistent formatting and removing potential noise.\n\n## Inputs:\n\n*  `text_list`: A list of strings, where each string represents a piece of text potentially containing formatting issues.\n\n## Output:\n\n* `cleaned_texts`: A new list of strings, where each string is the cleaned version of the corresponding text in the input list. \n\n\n\n"
+    },
+    "reranker_GPT4o_Chatbot__process_pdf_texts": {
+        "label": "process_pdf_texts",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py",
+        "relativePath": "reranker_GPT4o_Chatbot.py",
+        "lineNo": 55,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Freranker_GPT4o_Chatbot.py%23L55-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**\n\nThis function extracts text from a PDF file, splits it into smaller chunks based on various delimiters, and then cleans up the resulting text. The purpose is to process and analyze large PDF documents by breaking them down into more manageable pieces.\n\n**[Inputs]**\n\n*  `pdf_file`: The path to the PDF file to be processed. \n\n**[Output]**\n\n* A list of cleaned and processed text strings, each representing a chunk extracted from the PDF. \n"
+    },
+    "reranker_GPT4o_Chatbot__rag": {
+        "label": "rag",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py",
+        "relativePath": "reranker_GPT4o_Chatbot.py",
+        "lineNo": 29,
+        "endLineNo": 53,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Freranker_GPT4o_Chatbot.py%23L29-L53&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Here's a breakdown of the provided code snippet:\n\n**[Quick Summary]**\n\nThis function leverages the GPT-4 OpenAI model to answer user questions about financial information contained within a 10K report.  It processes user queries and relevant report text to generate informative financial insights.\n\n**[Inputs]**\n\n*  `api_key`: Your OpenAI API key, essential for authenticating with the OpenAI API.\n*  `retrieved_documents`: A list of strings, presumably containing the extracted text from the 10K report.\n* `query`:  A string representing the user's question about the financial data.\n\n**[Output]**\n\n* `content`: A string containing the AI's generated response to the user's question, based on the provided 10K report information. \n\n\n\nLet me know if you have any more code snippets you'd like analyzed!\n"
+    },
+    "reranker_GPT4o_Chatbot__rank_doc": {
+        "label": "rank_doc",
+        "systemPath": "/home/sanjay/Development/explore/RAG_Improvement/reranker_GPT4o_Chatbot.py",
+        "relativePath": "reranker_GPT4o_Chatbot.py",
+        "lineNo": 14,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fstanghong%2FRAG_Improvement%2Fblob%2Fmain%2Freranker_GPT4o_Chatbot.py%23L14-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function ranks text documents based on their relevance to a given query using a pre-trained CrossEncoder model. This is a common technique in search engines to retrieve the most relevant results for a user's search.  \n\n**Inputs:**\n* `query`: The user's search query.\n* `text_chunks`: A list of text documents or passages to be ranked.\n* `topN`: The desired number of top-ranked documents to return. \n\n**Output:**\n* `top_pairs`: A list containing the top `topN` text documents ranked by relevance to the query. \n\n\n"
+    }
+}
