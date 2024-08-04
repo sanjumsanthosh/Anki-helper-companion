@@ -5,6 +5,9 @@ from groq import Groq
 from dotenv import load_dotenv
 import os
 import time
+import matplotlib.pyplot as plt
+import json
+
 
 load_dotenv()
 
@@ -117,14 +120,14 @@ client = Groq(
     api_key=KEY
 )
 
-def summarize_with_llama(function):
+def summarize_with_llama(function, force_skip=False):
     function_def = function.function_def
     function_name = function.function_name
     max_retries = 3
     retry_delay = 2  # seconds
 
-    if skip:
-        return "Summary not available"
+    if skip or force_skip:
+        return "Summary not available or SKIPPED"
 
     prompt = '''
 You are an expert programmer. read though the selection below and give the following
@@ -181,6 +184,58 @@ JSON_OUTPUT = {}
 
 JSON_OUTPUT["ANKIConfig"] = {"GIT_URL": GITHUB_URL}
 
+
+function_lengths = [function.end - function.start for function in get_all_function_start_end]
+
+def plot_histogram_with_threshold(top_n):
+    # Sort function lengths and get the top N
+    sorted_lengths = sorted(function_lengths, reverse=True)
+    top_n_lengths = sorted_lengths[:top_n]
+    threshold = top_n_lengths[-1]  # The length of the Nth longest function
+
+    # Calculate averages
+    above_threshold = [length for length in function_lengths if length >= threshold]
+    below_threshold = [length for length in function_lengths if length < threshold]
+
+    average_above_threshold = sum(above_threshold) / len(above_threshold) if above_threshold else 0
+    average_below_threshold = sum(below_threshold) / len(below_threshold) if below_threshold else 0
+
+    # Plot histogram of all function lengths
+    plt.figure(figsize=(10, 6))
+    plt.hist(function_lengths, bins=50, edgecolor='black')
+    plt.xlabel("Function Length")
+    plt.ylabel("Frequency")
+    plt.title("Histogram of Function Lengths")
+
+    # Draw a vertical line at the threshold
+    plt.axvline(threshold, color='red', linestyle='dashed', linewidth=1, label=f'Top {top_n} Threshold: {threshold} lines')
+    plt.legend()
+
+    # Add text annotations for averages
+    plt.text(0.95, 0.95, f'Avg above threshold: {average_above_threshold:.2f}', 
+             horizontalalignment='right', verticalalignment='top', transform=plt.gca().transAxes, fontsize=10, color='blue')
+    plt.text(0.95, 0.90, f'Avg below threshold: {average_below_threshold:.2f}', 
+             horizontalalignment='right', verticalalignment='top', transform=plt.gca().transAxes, fontsize=10, color='blue')
+
+    # Save the plot
+    plt.savefig("function_lengths.png")
+    plt.close()
+    print(f"Saved plot as {os.path.abspath('function_lengths.png')}")
+
+
+# Interactive loop to ask for top N functions
+TOP_X = 20
+plot_histogram_with_threshold(TOP_X)
+while True:
+    user_input = input("Enter the number of top functions to analyze (or a non-number to exit): ")
+    if not user_input.isdigit():
+        break
+    TOP_X = int(user_input)
+    plot_histogram_with_threshold(TOP_X)
+
+
+print(f"Only the top {TOP_X} functions will be summarized with Llama. The rest will be skipped.")
+
 def create_emgithub_link(relativePath, start, end):
     target = GITHUB_URL + relativePath+ f"#L{start}-L{end}"
     encoded_target = target.replace(':', '%3A').replace('/', '%2F').replace('#', '%23')
@@ -190,24 +245,50 @@ def calculate_relative_path(project_path, file):
     project_path = project_path.replace('\\', '/')
     return file.replace(project_path, '').lstrip('/').lstrip('\\')
 
-for function in tqdm(get_all_function_start_end, desc="Processing functions"):
-    relative_path = calculate_relative_path(PROJECT_PATH, function.file)
-    JSON_OUTPUT[function.full_fn_name] = {
-        "label": function.function_name,
-        "systemPath": function.file,
-        "relativePath": relative_path,
-        "lineNo": function.start,
-        "endLineNo": function.end,
-        "emgithubIframeLink": create_emgithub_link(relative_path, function.start, function.end),
-        "description": summarize_with_llama(function)
-    }
+# Sort functions by length
+sorted_functions = sorted(get_all_function_start_end, key=lambda f: f.end - f.start, reverse=True)
 
-    # sleep for 1 second to avoid rate limiting
-    
-    if not skip: time.sleep(1)
+processed_count = 0
 
+post_fix = {
+    "processed_count": 0,
+    "skip_counter" : 0,
+    "message": "Processing functions"
+}
 
-    save_path = JSON_FILE
-    import json
-    with open(save_path, 'w') as f:
-        json.dump(JSON_OUTPUT, f, indent=4)
+with tqdm(total=len(sorted_functions), desc="Processing functions") as pbar:
+    for i, function in enumerate(sorted_functions):
+        relative_path = calculate_relative_path(PROJECT_PATH, function.file)
+
+        # if function_name is same as file name, skip as it might be a class
+        if function.function_name.lower() == function.file.split('/')[-1].split('.')[0].lower():
+            post_fix["skip_counter"] += 1
+            post_fix["message"] = f"Skpd {function.function_name}"
+            continue
+
+        skip = processed_count >= TOP_X
+
+        JSON_OUTPUT[function.full_fn_name] = {
+            "label": function.function_name,
+            "systemPath": function.file,
+            "relativePath": relative_path,
+            "lineNo": function.start,
+            "endLineNo": function.end,
+            "emgithubIframeLink": create_emgithub_link(relative_path, function.start, function.end),
+            "description": summarize_with_llama(function, force_skip=skip)
+        }
+
+        # sleep for 1 second to avoid rate limiting
+        if not skip:
+            time.sleep(1)
+
+        processed_count += 1
+
+        # Update the progress bar
+        post_fix["processed_count"] = processed_count
+        pbar.set_postfix(post_fix)
+        pbar.update(1)
+
+        save_path = JSON_FILE
+        with open(save_path, 'w') as f:
+            json.dump(JSON_OUTPUT, f, indent=4)
