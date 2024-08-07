@@ -1,0 +1,116 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        minbpe [label="minbpe", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        minbpe__base [label="minbpe.base", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        minbpe__basic [label="minbpe.basic", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        minbpe__gpt4 [label="minbpe.gpt4", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        minbpe__regex [label="minbpe.regex", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        subgraph cluster_minbpe__base {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.base"];
+            minbpe__base__Tokenizer [label="Tokenizer\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:66)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            minbpe__base__get_stats [label="get_stats\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:13)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            minbpe__base__merge [label="merge\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:25)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            minbpe__base__render_token [label="render_token\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:57)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            minbpe__base__replace_control_characters [label="replace_control_characters\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:44)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_minbpe__base__Tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.base.Tokenizer"];
+            minbpe__base__Tokenizer____init__ [label="__init__\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:69)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+            minbpe__base__Tokenizer___build_vocab [label="_build_vocab\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:88)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+            minbpe__base__Tokenizer__decode [label="decode\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:84)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+            minbpe__base__Tokenizer__encode [label="encode\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:80)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+            minbpe__base__Tokenizer__load [label="load\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:140)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+            minbpe__base__Tokenizer__save [label="save\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:97)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+            minbpe__base__Tokenizer__train [label="train\n(/home/sanjay/Development/explore/minbpe/minbpe/base.py:76)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_minbpe__basic {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.basic"];
+            minbpe__basic__BasicTokenizer [label="BasicTokenizer\n(/home/sanjay/Development/explore/minbpe/minbpe/basic.py:15)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_minbpe__basic__BasicTokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.basic.BasicTokenizer"];
+            minbpe__basic__BasicTokenizer____init__ [label="__init__\n(/home/sanjay/Development/explore/minbpe/minbpe/basic.py:17)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="2"];
+            minbpe__basic__BasicTokenizer__decode [label="decode\n(/home/sanjay/Development/explore/minbpe/minbpe/basic.py:51)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="2"];
+            minbpe__basic__BasicTokenizer__encode [label="encode\n(/home/sanjay/Development/explore/minbpe/minbpe/basic.py:57)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="2"];
+            minbpe__basic__BasicTokenizer__train [label="train\n(/home/sanjay/Development/explore/minbpe/minbpe/basic.py:20)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_minbpe__gpt4 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.gpt4"];
+            minbpe__gpt4__GPT4Tokenizer [label="GPT4Tokenizer\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:57)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__bpe [label="bpe\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:11)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__recover_merges [label="recover_merges\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:29)", style="filled", fillcolor="#99feffb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_minbpe__gpt4__GPT4Tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.gpt4.GPT4Tokenizer"];
+            minbpe__gpt4__GPT4Tokenizer____init__ [label="__init__\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:60)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__GPT4Tokenizer___encode_chunk [label="_encode_chunk\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:81)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__GPT4Tokenizer__decode [label="decode\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:87)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__GPT4Tokenizer__load [label="load\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:106)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__GPT4Tokenizer__save [label="save\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:103)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__GPT4Tokenizer__save_vocab [label="save_vocab\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:109)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+            minbpe__gpt4__GPT4Tokenizer__train [label="train\n(/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py:95)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_minbpe__regex {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.regex"];
+            minbpe__regex__RegexTokenizer [label="RegexTokenizer\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:22)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_minbpe__regex__RegexTokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="minbpe.regex.RegexTokenizer"];
+            minbpe__regex__RegexTokenizer____init__ [label="__init__\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:24)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            minbpe__regex__RegexTokenizer___encode_chunk [label="_encode_chunk\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:92)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            minbpe__regex__RegexTokenizer__decode [label="decode\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:78)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            minbpe__regex__RegexTokenizer__encode [label="encode\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:123)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            minbpe__regex__RegexTokenizer__encode_ordinary [label="encode_ordinary\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:111)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            minbpe__regex__RegexTokenizer__register_special_tokens [label="register_special_tokens\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:72)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            minbpe__regex__RegexTokenizer__train [label="train\n(/home/sanjay/Development/explore/minbpe/minbpe/regex.py:36)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+        }
+    }
+        minbpe__gpt4 -> minbpe__regex__RegexTokenizer [style="solid",  color="#000000"];
+        minbpe__gpt4__recover_merges -> minbpe__gpt4__bpe [style="solid",  color="#000000"];
+        minbpe__gpt4__GPT4Tokenizer -> minbpe__regex__RegexTokenizer [style="solid",  color="#000000"];
+        minbpe__gpt4__GPT4Tokenizer____init__ -> minbpe__gpt4__recover_merges [style="solid",  color="#000000"];
+        minbpe__gpt4__GPT4Tokenizer____init__ -> minbpe__regex__RegexTokenizer____init__ [style="solid",  color="#000000"];
+        minbpe__gpt4__GPT4Tokenizer____init__ -> minbpe__regex__RegexTokenizer__register_special_tokens [style="solid",  color="#000000"];
+        minbpe__gpt4__GPT4Tokenizer___encode_chunk -> minbpe__regex__RegexTokenizer___encode_chunk [style="solid",  color="#000000"];
+        minbpe__gpt4__GPT4Tokenizer__save_vocab -> minbpe__base__render_token [style="solid",  color="#000000"];
+        minbpe -> minbpe__basic__BasicTokenizer [style="solid",  color="#000000"];
+        minbpe -> minbpe__base__Tokenizer [style="solid",  color="#000000"];
+        minbpe -> minbpe__regex__RegexTokenizer [style="solid",  color="#000000"];
+        minbpe -> minbpe__gpt4__GPT4Tokenizer [style="solid",  color="#000000"];
+        minbpe__basic -> minbpe__base__merge [style="solid",  color="#000000"];
+        minbpe__basic -> minbpe__base__Tokenizer [style="solid",  color="#000000"];
+        minbpe__basic -> minbpe__base__get_stats [style="solid",  color="#000000"];
+        minbpe__basic__BasicTokenizer -> minbpe__base__Tokenizer [style="solid",  color="#000000"];
+        minbpe__basic__BasicTokenizer__train -> minbpe__base__merge [style="solid",  color="#000000"];
+        minbpe__basic__BasicTokenizer__train -> minbpe__base__get_stats [style="solid",  color="#000000"];
+        minbpe__basic__BasicTokenizer__encode -> minbpe__base__merge [style="solid",  color="#000000"];
+        minbpe__basic__BasicTokenizer__encode -> minbpe__base__get_stats [style="solid",  color="#000000"];
+        minbpe__regex -> minbpe__base__merge [style="solid",  color="#000000"];
+        minbpe__regex -> minbpe__base__Tokenizer [style="solid",  color="#000000"];
+        minbpe__regex -> minbpe__base__get_stats [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer -> minbpe__base__Tokenizer [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer____init__ -> minbpe__base__Tokenizer____init__ [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer__train -> minbpe__base__merge [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer__train -> minbpe__base__get_stats [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer___encode_chunk -> minbpe__base__merge [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer___encode_chunk -> minbpe__base__get_stats [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer__encode_ordinary -> minbpe__regex__RegexTokenizer___encode_chunk [style="solid",  color="#000000"];
+        minbpe__regex__RegexTokenizer__encode -> minbpe__regex__RegexTokenizer__encode_ordinary [style="solid",  color="#000000"];
+        minbpe__base__render_token -> minbpe__base__replace_control_characters [style="solid",  color="#000000"];
+        minbpe__base__Tokenizer____init__ -> minbpe__base__Tokenizer___build_vocab [style="solid",  color="#000000"];
+        minbpe__base__Tokenizer__save -> minbpe__base__render_token [style="solid",  color="#000000"];
+        minbpe__base__Tokenizer__save -> minbpe__base__Tokenizer___build_vocab [style="solid",  color="#000000"];
+        minbpe__base__Tokenizer__load -> minbpe__base__Tokenizer___build_vocab [style="solid",  color="#000000"];
+        minbpe__basic__BasicTokenizer____init__ -> minbpe__base__Tokenizer____init__ [style="solid",  color="#000000"];
+    }
