@@ -1,0 +1,320 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/karpathy/minbpe/blob/master/"
+    },
+    "minbpe__regex__RegexTokenizer": {
+        "label": "RegexTokenizer",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 22,
+        "endLineNo": 164,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L22-L164&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary, Inputs, and Output\n\n**[Quick Summary]** \n\nThis code defines a class for encoding and decoding text based on a provided pattern and vocabulary. The purpose is to implement a custom tokenization scheme inspired by GPT-4's token splitting, allowing for the creation of specialized tokenization strategies for specific text types or applications.  \n\n**[Inputs]** \n\n- `text`: The input text to be encoded.\n- `allowed_special`: Controls how special tokens are handled. Can be \"all\", \"none\", \"none_raise\", a custom set, or None.\n\n\n**[Output]** \n\n- A list of integers representing the tokenized version of the input text. \n- Special tokens are encoded as integers based on their predefined mapping."
+    },
+    "minbpe__base__Tokenizer": {
+        "label": "Tokenizer",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 66,
+        "endLineNo": 165,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L66-L165&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis: Tokenizer\n\n**Summary**\n\nThis code defines a base class for tokenizers, essential components in natural language processing used to break down text into smaller units (tokens). The class provides the fundamental structure and methods for training, encoding, and decoding text, along with saving and loading the tokenizer's learned vocabulary and merges. \n\n**Inputs**\n\n* `text`: The training text used to build the vocabulary.\n* `vocab_size`: The desired size of the vocabulary to be learned.\n* `verbose`: A boolean flag indicating whether to display progress information during training.\n\n**Output**\n\n*  No direct output is specified in the provided code.\n*  The primary output is a trained tokenizer object that can be used to encode and decode text.\n*   The `save()` method writes two files: \n    * `file_prefix.model`: Stores the tokenizer's internal state for later loading.\n    * `file_prefix.vocab`: A human-readable representation of the learned vocabulary. \n\n\n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer": {
+        "label": "GPT4Tokenizer",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 57,
+        "endLineNo": 130,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L57-L130&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## GPT4Tokenizer Analysis \n\n**[Quick Summary]**\n\nThis Python code defines a custom tokenizer called `GPT4Tokenizer` designed to mimic the tokenization behavior of GPT-4. It achieves this by reconstructing GPT-4's vocabulary and applying a specific byte permutation based on internal GPT-4 workings.\n\n**[Inputs]**\n\n* `text`: The input text string to be tokenized.\n* `vocab_size`:  *Not directly used* but suggests potential for future vocabulary expansion/adjustments.\n\n**[Output]**\n\n*  `ids`:  A list of integer IDs representing the tokens of the input text.\n"
+    },
+    "minbpe__basic__BasicTokenizer": {
+        "label": "BasicTokenizer",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/basic.py",
+        "relativePath": "minbpe/basic.py",
+        "lineNo": 15,
+        "endLineNo": 74,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbasic.py%23L15-L74&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a simple text compression algorithm that learns to represent common byte sequences as single tokens. \n\nIt iteratively merges the most frequent pairs of bytes into new tokens, effectively creating a custom vocabulary tailored to the input text.\n\nThis process aims to reduce the overall size of the text representation.\n\n\n## Inputs\n\n* **text:** The input text string to be compressed.\n* **vocab_size:** The desired size of the final vocabulary (including the initial 256 ASCII characters).\n* **verbose:** A boolean flag indicating whether to print merge statistics during the training process.\n\n## Output\n\n* A compressed representation of the input text as a list of integers (token IDs). \n\n\n"
+    },
+    "minbpe__base__Tokenizer__save": {
+        "label": "save",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 97,
+        "endLineNo": 139,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L97-L139&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function saves the state of a MinBPE model to two files: a human-readable vocabulary file and a model file containing the essential data for loading and using the model. \n\nIt aims to provide a way to store and later reload a trained MinBPE model efficiently.\n\n## Inputs\n\n* `self`: Refers to an instance of the MinBPE class, presumably containing the trained model parameters.\n* `file_prefix`: A string representing the base name for the saved files (e.g., \"my_model\").\n\n## Output\n\n* `file_prefix + \".model\"`:  A file containing the MinBPE model in a format suitable for loading.\n* `file_prefix + \".vocab\"`:  A file listing the vocabulary of the MinBPE model in a human-readable format.  \n\n\n"
+    },
+    "minbpe__regex__RegexTokenizer__encode": {
+        "label": "encode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 123,
+        "endLineNo": 164,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L123-L164&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function handles encoding text with special tokens, accommodating various user-defined policies for handling these tokens. It splits the text based on special tokens, encodes them separately, and combines the results. This allows for flexible control over special token representation in encoded text.\n\n[Inputs]\n- text: The input string to be encoded.\n- allowed_special: A string or set specifying how to handle special tokens.\n\n[Output]\n- ids: A list of integer IDs representing the encoded text, including special tokens handled according to the `allowed_special` policy.\n\n\n\n\n\n"
+    },
+    "minbpe__regex__RegexTokenizer__train": {
+        "label": "train",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 36,
+        "endLineNo": 71,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L36-L71&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]** This Python function builds a vocabulary for text encoding, starting with a fixed size and iteratively merging the most frequent character pairs into new tokens. This process aims to compress the text representation and learn a more efficient encoding scheme.\n\n**[Inputs]**\n\n* `text`: The input text to be encoded.\n* `compiled_pattern`: A regular expression pattern used to split the text into chunks. Likely for easier processing of large texts.\n* `vocab_size`:  The desired size of the final vocabulary.\n* `verbose`: A boolean flag indicating whether to print merge information during the process.\n* `get_stats`  A function likely used to analyze the frequency of character pairs in the text.\n\n\n**[Output]**\n\n* `self.merges`: A dictionary mapping character pairs to their corresponding newly created token IDs.\n* `self.vocab`: A dictionary mapping token IDs to their byte representations (likely for encoding). \n"
+    },
+    "minbpe__basic__BasicTokenizer__train": {
+        "label": "train",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/basic.py",
+        "relativePath": "minbpe/basic.py",
+        "lineNo": 20,
+        "endLineNo": 50,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbasic.py%23L20-L50&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function  builds a custom vocabulary by iteratively merging the most frequent pairs of characters/tokens in a given text.  This process effectively reduces the number of unique tokens while preserving the information within the text.\n\n## Inputs\n\n* `text`: The input text string to be processed.\n* `vocab_size`: The desired size of the final vocabulary.  \n* `verbose`: A boolean flag to control print output during the merging process.\n\n## Output\n\n\n* `self.merges`: A dictionary mapping original character pairs to their newly created merged token IDs.\n* `self.vocab`: A dictionary mapping token IDs to their corresponding byte representations. \n\n\n"
+    },
+    "minbpe__base__Tokenizer__load": {
+        "label": "load",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 140,
+        "endLineNo": 165,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L140-L165&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function loads and reconstructs a vocabulary from a MinBPE model file. Its purpose is to deserialize the model's internal representation for further use in text processing tasks like encoding and decoding.\n\n## Inputs\n\n* **`model_file`:** A file path pointing to a MinBPE model file (presumably ending in \".model\").\n\n## Output\n\n* **`self`:** The object is modified in-place to store the loaded vocabulary data:\n    * `merges`: A dictionary mapping pairs of subword indices to merged indices.\n    * `special_tokens`: A dictionary mapping special tokens (e.g., `<START>`, `<END>`) to their corresponding numerical indices.\n    * `vocab`: A built vocabulary from the `merges` and `special_tokens` data. \n\n\n\n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer__save_vocab": {
+        "label": "save_vocab",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 109,
+        "endLineNo": 130,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L109-L130&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown \n\n**Quick Summary:** This code snippet defines a method to generate a vocabulary file for a tokenizer, likely based on the GPT-4 architecture. It builds a mapping of integers to byte sequences according to the tokenizer's merging rules and formats the output for human readability. The purpose is to create a representation of the tokenizer's vocabulary for use in encoding and decoding text.\n\n**Inputs:**\n\n* `vocab_file`: The path to the output file where the vocabulary will be saved.\n* `self.merges`: A dictionary containing pairs of indices and their merged index. This structure defines the token merging rules used by the tokenizer.\n* `self.inverse_byte_shuffle`: A mapping to reverse a byte shuffle applied to the vocabulary \n\n**Output:**\n\n* A text file (`vocab_file`) containing:\n    *  Pairs of indices and their corresponding byte sequences, grouped by merging rules.\n    *  A format that indicates which tokens are merged and their resulting token. \n\n\n\n\n\n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 60,
+        "endLineNo": 80,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L60-L80&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function creates a custom tokenizer for a GPT-like language model, likely based on the 'cl100k_base' encoding. It reconstructs the vocabulary and handles specific tokenizing quirks related to byte-level representation and special token registration.\n\n## Inputs\n\n* `GPT4_SPLIT_PATTERN`:  Likely a regular expression pattern used for splitting text during tokenization. \n* `GPT4_SPECIAL_TOKENS`: A list or dictionary defining special tokens (e.g., `<start>`, `<end>`, etc.) used by the model. \n\n## Output\n\n*  A custom tokenizer object with:\n    * `vocab`: A dictionary mapping token indices to byte representations.\n    * `merges`: A dictionary mapping merged token pairs to their corresponding indices.\n    * `byte_shuffle`: A dictionary mapping individual byte indices to their shuffled position in the vocabulary.\n    * `inverse_byte_shuffle`: A dictionary to reverse the byte shuffle mapping. \n    * Registered special tokens.  \n\n"
+    },
+    "minbpe__base__merge": {
+        "label": "merge",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 25,
+        "endLineNo": 43,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L25-L43&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis\n\n**Quick Summary:**\n\nThis Python function replaces consecutive occurrences of a given integer pair (`pair`) in a list of integers (`ids`) with a new integer token (`idx`). Its purpose is likely tokenization in natural language processing, where pairs of words might be replaced with a single unique identifier.\n\n**Inputs:**\n\n* `ids`: A list of integers representing a sequence of tokens.\n* `pair`: A tuple of two integers representing the pair to be replaced.\n* `idx`: An integer representing the new token to use for replacements.\n\n**Output:**\n\n* `newids`: A  new list of integers where consecutive occurrences of `pair` have been replaced by `idx`.\n\n\n"
+    },
+    "minbpe__gpt4__recover_merges": {
+        "label": "recover_merges",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 29,
+        "endLineNo": 47,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L29-L47&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function aims to reconstruct the original BPE (Byte Pair Encoding) merging pairs from a list of merged tokens and their corresponding ranks. It utilizes a small BPE training run on the tokens to figure out the pairings. This is crucial for tasks like understanding tokenization history or decoding encoded text.\n\n**Inputs:**\n\n* `mergeable_ranks`: A dictionary mapping tokens to their ranks. Higher ranks suggest more probable merges.\n* \n\n**Output:**\n\n* `merges`: A dictionary mapping pairs of integer ranks to the corresponding rank value. This represents the original BPE merging pairs.  \n\n\n\n\n"
+    },
+    "minbpe__regex__RegexTokenizer___encode_chunk": {
+        "label": "_encode_chunk",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 92,
+        "endLineNo": 110,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L92-L110&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Python Code Analysis\n\n**Quick Summary**\n\nThis function takes a sequence of bytes as input and tokenizes it by identifying and merging pairs of bytes based on a predefined set of \"merge rules\".  It iteratively finds the pair with the lowest merge index and merges them until no further merging is possible.  The final output is a list of token IDs representing the segmented byte sequence.\n\n**Inputs**\n\n*  `text_bytes`: A sequence of bytes. \n*  `self.merges`: A dictionary mapping byte pairs to corresponding merge indices.  LOWER merge index implies \"stronger\" merging.\n\n\n**Output**\n\n*  `ids`: A list of integers representing the token IDs of the segmented byte sequence. \n"
+    },
+    "minbpe__basic__BasicTokenizer__encode": {
+        "label": "encode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/basic.py",
+        "relativePath": "minbpe/basic.py",
+        "lineNo": 57,
+        "endLineNo": 74,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbasic.py%23L57-L74&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary:**\n\nThis function takes a string, tokenizes it into bytes, and then attempts to merge these byte pairs based on a predefined \"merge\" strategy (likely a set of rules or indices). The goal is to progressively reduce the number of tokens by merging compatible pairs, potentially aiming for a compressed or optimized representation.\n\n**Inputs:**\n\n*  `text`:  The input string to be tokenized and merged.\n*  `get_stats`: A function that analyzes the byte pairs and returns some kind of statistical information about them (likely related to their potential for merging).\n*  `merges`: A dictionary mapping byte pairs to their corresponding merge indices (presumably indicating the order or priority for merging).\n*  `merge`: A function that takes the list of byte tokens, a pair to merge, and an index, and merges the specified pair based on the provided rules.\n\n**Output:**\n\n*  `ids`: A list of integer byte tokens, potentially more compact than the original list after merging.\n\n\n\n\n"
+    },
+    "minbpe__gpt4__bpe": {
+        "label": "bpe",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 11,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L11-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function reconstructs a \"merge forest\" from a list of byte sequences. It iteratively merges adjacent pairs of bytes based on a pre-defined \"mergeabilty\" ranking, ultimately producing a single, merged sequence. This process likely represents a step in decoding a compressed or tokenized representation of text using the GPT-4 model.\n\n## Inputs\n\n* **`token`**: A byte sequence, potentially representing a tokenized chunk of text.\n* **`mergeable_ranks`**: A dictionary mapping pairs of byte sequences to their \"mergeability\" rank. This rank determines the order in which pairs can be merged. \n\n## Output\n\n* **`parts`**: A list of byte sequences, representing the merged \"merge forest\" of the original input.  "
+    },
+    "minbpe__regex__RegexTokenizer__decode": {
+        "label": "decode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 78,
+        "endLineNo": 91,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L78-L91&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]**\nThis function converts a list of integer token IDs into a human-readable string. It utilizes a vocabulary mapping and handles special tokens. The code's purpose is likely part of a larger text processing pipeline, decoding generated or encoded text.\n\n\n**[Inputs]**\n\n*  `ids`: A list of integers representing token IDs.\n\n**[Output]**\n\n\n* A string containing the decoded text representation of the input token IDs. \n\n\n\n"
+    },
+    "minbpe__base__replace_control_characters": {
+        "label": "replace_control_characters",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 44,
+        "endLineNo": 56,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L44-L56&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary \n\nThis function cleans a string (`s`) by removing control characters and replacing them with their Unicode escape sequences. This ensures that the output string will be displayed correctly without any formatting issues caused by control characters. \n\n## Inputs\n\n* `s`: A string that might contain control characters.\n\n## Output\n* A cleaned string  where all control characters have been replaced with their corresponding Unicode escape sequences. \n\n\n\n"
+    },
+    "minbpe__base__get_stats": {
+        "label": "get_stats",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 13,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L13-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis \n\n**Quick Summary:**\n\nThis function takes a list of integers and calculates the frequency of consecutive pairs within the list. It returns a dictionary where keys are consecutive pairs, and values are the number of times each pair appears. \n\n**Inputs:**\n\n*  `ids`: A list of integers. \n\n*  `counts`:  An optional dictionary. If provided, it's updated with the new pair counts. If not provided, an empty dictionary is created.\n\n\n**Output:**\n\n* A dictionary where: \n    * Keys are tuples of consecutive integer pairs (e.g., (1, 2)).\n    * Values are the count of how many times each pair occurs in the input list. \n"
+    },
+    "minbpe__regex__RegexTokenizer____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 24,
+        "endLineNo": 35,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L24-L35&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Summary\n\nThis function initializes an object that seems designed for splitting and handling text data likely in the context of a language model, perhaps similar to GPT-4. It sets up a pattern for splitting text and allows for the definition of special tokens.\n\n## Inputs\n\n* `pattern`: An optional string defining a regular expression pattern for splitting text. Defaults to a GPT-4 specific pattern.\n* `special_tokens`: A dictionary mapping string representations of special tokens to integer IDs.\n\n\n## Output\n\n*  A new instance of the class is created, initialized with the provided pattern and special tokens. This instance is likely used for subsequent text processing tasks. \n\n"
+    },
+    "minbpe__regex__RegexTokenizer__encode_ordinary": {
+        "label": "encode_ordinary",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 111,
+        "endLineNo": 122,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L111-L122&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**\nThis function encodes text into numerical IDs, ignoring any special tokens. It accomplishes this by splitting the text according to a defined regex pattern, encoding each chunk separately, and concatenating the resulting IDs. The ultimate goal is to represent text data in a format suitable for machine learning models.\n\n**[Inputs]**\n\n*  `text`: The input text to be encoded.\n*  `self.compiled_pattern`: A compiled regular expression pattern used to split the text into chunks.\n\n**[Output]**\n\n*  `ids`: A list of numerical IDs representing the encoded text. \n\n\n"
+    },
+    "minbpe__base__render_token": {
+        "label": "render_token",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 57,
+        "endLineNo": 65,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L57-L65&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function takes a token (likely encoded in bytes) and returns its decoded and prettified representation as a string. It specifically handles control characters by replacing them with more printable equivalents. This function aims to provide a user-friendly way to display tokens. \n\n## Inputs\n\n* **t**: A token, likely in bytes format.\n\n## Output\n\n* **A string**: The decoded and prettified representation of the token, with control characters appropriately escaped. \n\n\n"
+    },
+    "minbpe__base__Tokenizer___build_vocab": {
+        "label": "_build_vocab",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 88,
+        "endLineNo": 96,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L88-L96&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function builds a vocabulary dictionary for a text encoding model. It initializes a vocabulary with individual characters (0-255) and then populates it with merged tokens based on predefined merge pairs. Finally, it adds special tokens with their corresponding encodings.\n\n## Inputs\n\n* `self.merges`: A dictionary mapping merge pairs of indices to new index identifiers.\n* `self.special_tokens`:  A dictionary mapping special tokens (e.g., start, end, pad) to their corresponding index identifiers.\n\n\n## Output\n\n* `vocab`: A dictionary mapping integer indices to their corresponding byte-encoded tokens. \n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer__decode": {
+        "label": "decode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 87,
+        "endLineNo": 94,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L87-L94&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Quick Summary:** This function decodes a list of integers (`ids`) representing text, which has been previously encoded and shuffled using a custom byte-shuffling technique.  The purpose is to reverse this encoding process and retrieve the original text.\n\n**Inputs:**\n\n* `ids`: A list of integers representing the encoded text.\n\n**Output:**\n\n* A string containing the decoded text. \n\n\n\n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer__train": {
+        "label": "train",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 95,
+        "endLineNo": 102,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L95-L102&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick summary:** This code snippet discusses the challenges of implementing a \"byte_shuffle\" functionality within a tokenizer class, likely designed for processing text data. It highlights the complexities of integrating this feature while maintaining the clean design of the tokenizer. The comment suggests exploring alternatives like modifying the base tokenizer class or moving \"byte_shuffle\" to a separate module.\n\n**Inputs:** Not explicitly defined in the provided text. However, based on the context, likely involves text data or representations thereof that are fed into the tokenizer for processing.\n\n**Output:** \n\n*  No direct output is given in the code snippet.\n*  The code aims to establish a conceptual understanding and potential solutions for incorporating \"byte_shuffle\" into an existing tokenizer design. \n\n\n\n"
+    },
+    "minbpe__base__Tokenizer____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 69,
+        "endLineNo": 75,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L69-L75&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code snippet initializes an object likely used for tokenization in a natural language processing (NLP) task. \n\nIt sets up data structures to handle merges between subword units, patterns for tokenization, special tokens, and a vocabulary mapping integers to byte representations.\n\nThe purpose is to provide a foundation for efficiently breaking down text into units for processing by a machine learning model.\n\n\n\n\n## Inputs\n\n* **None.** This code snippet seems to be a class initialization, meaning it doesn't directly take inputs. It might rely on constructor arguments passed during object creation.\n\n\n\n\n## Output\n\n*  **An object** with:\n    * `merges`: A dictionary mapping pairs of integers to integers, potentially representing subword merges.\n    * `pattern`: A string defining a tokenization pattern.\n    * `special_tokens`: A dictionary mapping strings representing special tokens to integer IDs.\n    * `vocab`: A dictionary mapping integers to byte representations, likely the vocabulary of tokens. \n"
+    },
+    "minbpe__basic__BasicTokenizer__decode": {
+        "label": "decode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/basic.py",
+        "relativePath": "minbpe/basic.py",
+        "lineNo": 51,
+        "endLineNo": 56,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbasic.py%23L51-L56&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function takes a list of integers (likely representing word indices in a vocabulary) and converts them into a human-readable string. It uses a vocabulary mapping to look up the corresponding words for each index and joins them together. The purpose is to decode numerical representations of text back into its original form.\n\n[Inputs]\n* `ids`: A list of integers.\n    \n[Output]\n*  A string representing the decoded text. \n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer___encode_chunk": {
+        "label": "_encode_chunk",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 81,
+        "endLineNo": 86,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L81-L86&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function encodes a piece of text into numerical IDs. It first shuffles the bytes of the text based on a predefined rule (`self.byte_shuffle`), then encodes the shuffled bytes using a parent class method (`super()._encode_chunk`). \n\n**Inputs:**\n\n*  `text_bytes`: A byte sequence representing the text to be encoded.\n*  `self.byte_shuffle`: A dictionary or mapping used to rearrange the order of bytes before encoding.\n\n**Output:**\n\n* `ids`: A sequence of numerical IDs representing the encoded text. \n\n\n"
+    },
+    "minbpe__regex__RegexTokenizer__register_special_tokens": {
+        "label": "register_special_tokens",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/regex.py",
+        "relativePath": "minbpe/regex.py",
+        "lineNo": 72,
+        "endLineNo": 77,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fregex.py%23L72-L77&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown\n\n**Quick Summary:**  This code snippet defines a part of a class (likely related to natural language processing) that handles special tokens. It stores a dictionary mapping special token strings (like \"<|endoftext|>\") to unique integer IDs and creates an inverse mapping for looking up tokens by their IDs. This is crucial for tokenizing and processing text in models that utilize special tokens.\n\n**Inputs:**\n\n* `special_tokens`:  A dictionary where keys are strings representing special tokens and values are their corresponding integer IDs.\n\n**Output:**\n\n*  `self.special_tokens`: The input dictionary is stored as an attribute of the class, allowing access to the special token mappings.\n*  `self.inverse_special_tokens`: A new dictionary is created, inverting the `special_tokens` mapping, enabling token retrieval by ID.  \n\n\n"
+    },
+    "minbpe__base__Tokenizer__decode": {
+        "label": "decode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 84,
+        "endLineNo": 87,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L84-L87&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis\n\n**[Quick Summary]**\n\nThis function is designed to decode a list of integers, likely representing tokenized data, back into a human-readable string.  The purpose is to reconstruct the original text from its numerical representation. This is a common operation in natural language processing tasks. The `NotImplementedError` indicates that the function's implementation is missing. \n\n**[Inputs]**\n\n*  `list of integers`:  Represents a sequence of numerical tokens derived from  text.\n\n**[Output]**\n\n* `string`: The reconstructed text corresponding to the input list of integers.  \n\n\n"
+    },
+    "minbpe__base__Tokenizer__encode": {
+        "label": "encode",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 80,
+        "endLineNo": 83,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L80-L83&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis \n\n**Summary:** This function is designed to tokenize a string, which means breaking it down into individual units (like words or characters) and representing each unit as an integer. Tokenization is a crucial step in many natural language processing (NLP) tasks, as it allows computers to understand and work with text data.\n\n**Inputs:**\n\n*  `string`: The input text that needs to be tokenized.\n\n**Output:**\n\n*  A list of integers, where each integer represents a token from the input string. \n\n\n"
+    },
+    "minbpe__base__Tokenizer__train": {
+        "label": "train",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/base.py",
+        "relativePath": "minbpe/base.py",
+        "lineNo": 76,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbase.py%23L76-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function is designed to train a tokenizer, which is used in natural language processing (NLP) to convert text into numerical representations (tokens).  The tokenizer learns a vocabulary of size `vocab_size` from the provided text data. This allows for the efficient processing and analysis of text by machine learning models.\n\n[Inputs]\n*  Text: The input text data used to train the vocabulary.\n\n\n[Output]\nThere is no explicit output listed. However,  the function is expected to modify an internal state (likely a vocabulary mapping) based on the training text.\n\n\n\n"
+    },
+    "minbpe__basic__BasicTokenizer____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/basic.py",
+        "relativePath": "minbpe/basic.py",
+        "lineNo": 17,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fbasic.py%23L17-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]  \nThis function initializes an object by calling the constructor of its parent class using the `super().__init__()` statement. It's a common practice in object-oriented programming to ensure proper inheritance and initialization of base class attributes. \n\n[Inputs]\n* None - This appears to be a constructor, meaning it's called when a new object of this class is created.\n\n[Output]\n*  None - Constructors typically don't return a value. The primary purpose is to set up the initial state of the object.  \n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer__load": {
+        "label": "load",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 106,
+        "endLineNo": 108,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L106-L108&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\n\nThis function is designed to load a GPT-4 tokenizer, but it raises a `NotImplementedError`, indicating that the loading functionality hasn't been implemented yet. This suggests the code is a placeholder or incomplete.\n\n**Inputs**\n\n* None explicitly listed in the code snippet.\n\n\n**Output**\n\n* Raises a `NotImplementedError` with the message \"GPT4Tokenizer cannot be loaded.\" \n"
+    },
+    "minbpe__gpt4__GPT4Tokenizer__save": {
+        "label": "save",
+        "systemPath": "/home/sanjay/Development/explore/minbpe/minbpe/gpt4.py",
+        "relativePath": "minbpe/gpt4.py",
+        "lineNo": 103,
+        "endLineNo": 105,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fkarpathy%2Fminbpe%2Fblob%2Fmaster%2Fminbpe%2Fgpt4.py%23L103-L105&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Please provide the code selection you'd like me to analyze.  \n\n"
+    }
+}

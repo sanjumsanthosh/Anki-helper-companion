@@ -1,0 +1,32 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/yoheinakajima/prettygraph/blob/main/"
+    },
+    "main__update_graphX": {
+        "label": "update_graph",
+        "systemPath": "/home/sanjay/Development/explore/prettygraph/main.py",
+        "relativePath": "main.py",
+        "lineNo": 27,
+        "endLineNo": 67,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fyoheinakajima%2Fprettygraph%2Fblob%2Fmain%2Fmain.py%23L27-L67&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Summary\n\nThis function processes user-provided text and uses the LiteLLM API (specifically the \"gpt-4-turbo-preview\" model) to generate a JSON representation of a knowledge graph based on the input. The purpose is to extract relationships and entities from the text and visualize them as a graph.\n\n## Inputs\n\n*  `request.json.get('text', '')`: \n    *  This is likely user input submitted as part of a web request, potentially in JSON format. \n    *  It represents the text data from which the knowledge graph should be constructed.\n\n## Outputs\n\n*  `jsonify(graph_data)`: \n    * A JSON object containing the structure of the knowledge graph. \n    * This JSON should be parsable and suitable for displaying the graph using a library like Cytoscape.js. \n\n\n"
+    },
+    "main__generate_text_completion": {
+        "label": "generate_text_completion",
+        "systemPath": "/home/sanjay/Development/explore/prettygraph/main.py",
+        "relativePath": "main.py",
+        "lineNo": 10,
+        "endLineNo": 21,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fyoheinakajima%2Fprettygraph%2Fblob%2Fmain%2Fmain.py%23L10-L21&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis \n\n**[Quick Summary]** \n\nThis function aims to generate text completions based on a given set of messages using a specified LiteLLM model.  It attempts to use the `completion` function from LiteLLM to generate the response and returns the generated text. If an error occurs during the process, it returns an error message.\n\n**[Inputs]**\n\n*  `model`: The name or identifier of the LiteLLM model to be used for text generation.\n*  `messages`: A list of messages to be used as context for text completion.\n\n **[Output]**\n\n*  A dictionary containing either:\n    *  `\"response\"`: The generated text completion.\n    *  `\"error\"`: A string describing the error encountered during generation. \n\n\n"
+    },
+    "main__index": {
+        "label": "index",
+        "systemPath": "/home/sanjay/Development/explore/prettygraph/main.py",
+        "relativePath": "main.py",
+        "lineNo": 23,
+        "endLineNo": 25,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fyoheinakajima%2Fprettygraph%2Fblob%2Fmain%2Fmain.py%23L23-L25&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**Quick Summary:** \n\nThis function, likely part of a web application using the Flask framework, renders an 'index.html' template. Its purpose is to display content defined within the 'index.html' file to the user's web browser. \n\n**Inputs:**\n\n* None explicitly mentioned. It may rely on data passed from other parts of the application.\n\n**Output:**\n\n* Renders the 'index.html' template as an HTTP response to the user's request. \n\n\n"
+    }
+}

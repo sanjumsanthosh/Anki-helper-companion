@@ -1,0 +1,24 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        cookbook__llms__groq__news_articles [label="cookbook.llms.groq.news_articles", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        cookbook__llms__groq__news_articles__a [label="cookbook.llms.groq.news_articles.a", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        cookbook__llms__groq__news_articles__assistants [label="cookbook.llms.groq.news_articles.assistants", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        subgraph cluster_cookbook__llms__groq__news_articles__a {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="cookbook.llms.groq.news_articles.a"];
+            cookbook__llms__groq__news_articles__a__main [label="main\n(/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/app.py:24)", style="filled", fillcolor="#7fff00b2", fontcolor="#000000", group="1"];
+            cookbook__llms__groq__news_articles__a__truncate_text [label="truncate_text\n(/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/app.py:20)", style="filled", fillcolor="#7fff00b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_cookbook__llms__groq__news_articles__assistants {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="cookbook.llms.groq.news_articles.assistants"];
+            cookbook__llms__groq__news_articles__assistants__get_article_summarizer [label="get_article_summarizer\n(/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/assistants.py:7)", style="filled", fillcolor="#00feffb2", fontcolor="#000000", group="2"];
+            cookbook__llms__groq__news_articles__assistants__get_article_writer [label="get_article_writer\n(/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/assistants.py:46)", style="filled", fillcolor="#00feffb2", fontcolor="#000000", group="2"];
+        }
+    }
+        cookbook__llms__groq__news_articles__a -> cookbook__llms__groq__news_articles__a__main [style="solid",  color="#000000"];
+        cookbook__llms__groq__news_articles__a__main -> cookbook__llms__groq__news_articles__a__truncate_text [style="solid",  color="#000000"];
+    }

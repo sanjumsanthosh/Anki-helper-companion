@@ -1,0 +1,41 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/phidatahq/phidata/blob/main/"
+    },
+    "cookbook__llms__groq__news_articles__a__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/app.py",
+        "relativePath": "cookbook/llms/groq/news_articles/app.py",
+        "lineNo": 24,
+        "endLineNo": 161,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fphidatahq%2Fphidata%2Fblob%2Fmain%2Fcookbook%2Fllms%2Fgroq%2Fnews_articles%2Fapp.py%23L24-L161&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:** This code creates a web application that allows users to select language models (summarizer and writer), define a topic, and generate a draft news article based on summarized news results. \n\n**Inputs:**\n*  `summary_model`:  The name of a language model used for summarizing news articles.\n*  `writer_model`:  The name of a language model used for writing the final draft.\n*  `article_topic`: A string representing the topic for which news articles will be searched and summarized. \n*  `num_search_results`: An integer specifying the maximum number of news results to retrieve.\n*  `per_article_summary_length`: An integer defining the maximum length (in words) of each article summary.\n*  `news_summary_length`: An integer defining the maximum length (in words) of the overall news summary section.\n\n**Output:**\n* A draft news article written based on summarized news articles related to the specified topic.   \n"
+    },
+    "cookbook__llms__groq__news_articles__assistants__get_article_writer": {
+        "label": "get_article_writer",
+        "systemPath": "/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/assistants.py",
+        "relativePath": "cookbook/llms/groq/news_articles/assistants.py",
+        "lineNo": 46,
+        "endLineNo": 93,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fphidatahq%2Fphidata%2Fblob%2Fmain%2Fcookbook%2Fllms%2Fgroq%2Fnews_articles%2Fassistants.py%23L46-L93&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a specialized AI assistant named 'Article Summarizer'.  It utilizes a large language model (LLM) to generate a New York Times-style article based on provided topic and summaries. The goal is to produce a polished and informative article resembling a NYT cover story.\n\n## Inputs\n* `model`: (string) Type of LLM to use, likely a pre-trained model from the LLAMA family.\n* `debug_mode`: (boolean)  Determines if additional debugging information is output.\n\n## Output\n* An instance of the 'Assistant' class,  configured with specific parameters for generating NYT-style articles. \n\n\n"
+    },
+    "cookbook__llms__groq__news_articles__assistants__get_article_summarizer": {
+        "label": "get_article_summarizer",
+        "systemPath": "/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/assistants.py",
+        "relativePath": "cookbook/llms/groq/news_articles/assistants.py",
+        "lineNo": 7,
+        "endLineNo": 45,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fphidatahq%2Fphidata%2Fblob%2Fmain%2Fcookbook%2Fllms%2Fgroq%2Fnews_articles%2Fassistants.py%23L7-L45&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary**\n\nThis function defines a class called `Assistant`  which is designed to summarize newspaper articles. It configures the assistant with specific instructions and a designated format for the summary. \n\n**Inputs**\n\n*  `model`: Specifies the language model to use for summarization (likely a large language model).\n*  `length`: Sets the desired maximum word count for the summary.\n*  `debug_mode`: A boolean flag indicating whether to enable debug logging.\n\n**Output**\n\n*  An instance of the `Assistant` class, ready to process newspaper articles and generate summaries.  \n\n\n"
+    },
+    "cookbook__llms__groq__news_articles__a__truncate_text": {
+        "label": "truncate_text",
+        "systemPath": "/home/sanjay/Development/explore/phidata/cookbook/llms/groq/news_articles/app.py",
+        "relativePath": "cookbook/llms/groq/news_articles/app.py",
+        "lineNo": 20,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fphidatahq%2Fphidata%2Fblob%2Fmain%2Fcookbook%2Fllms%2Fgroq%2Fnews_articles%2Fapp.py%23L20-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis function takes a string (`text`) and an integer (`words`) as input. It splits the string into words, selects the first `words` number of words, and then joins them back together into a single string with spaces separating each word. Essentially, it truncates a string after a specified number of words.  \n\n**Inputs:**\n\n* `text`:  String containing the text to be processed.\n* `words`: Integer specifying the maximum number of words to keep.\n\n**Output:**\n\n* A truncated string containing the first `words` words from the input `text`. \n"
+    }
+}

@@ -1,0 +1,16 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        subgraph cluster_main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="main"];
+            main__generate_text_completion [label="generate_text_completion\n(/home/sanjay/Development/explore/prettygraph/main.py:10)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            main__index [label="index\n(/home/sanjay/Development/explore/prettygraph/main.py:23)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            main__update_graphX [label="update_graph\n(/home/sanjay/Development/explore/prettygraph/main.py:27)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+    }
+        main__update_graphX -> main__generate_text_completion [style="solid",  color="#000000"];
+    }
