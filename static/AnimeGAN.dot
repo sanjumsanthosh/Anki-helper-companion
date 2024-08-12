@@ -1,0 +1,298 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        AnimeGAN [label="AnimeGAN", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        adjust_brightness [label="adjust_brightness", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        data_loader [label="data_loader", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        data_mean [label="data_mean", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        discriminator [label="discriminator", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        edge_smooth [label="edge_smooth", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        generator [label="generator", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        get_generator_ckpt [label="get_generator_ckpt", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        ops [label="ops", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        test [label="test", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        train [label="train", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        utils [label="utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        vgg19 [label="vgg19", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        video2anime [label="video2anime", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        subgraph cluster_AnimeGAN {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="AnimeGAN"];
+            AnimeGAN__AnimeGAN [label="AnimeGAN\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:11)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_AnimeGAN__AnimeGAN {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="AnimeGAN.AnimeGAN"];
+            AnimeGAN__AnimeGAN____init__ [label="__init__\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:12)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__build_model [label="build_model\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:134)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__discriminator [label="discriminator\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:98)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__generator [label="generator\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:88)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__gradient_panalty [label="gradient_panalty\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:107)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__load [label="load\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:314)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__model_dir [label="model_dir\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:301)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__save [label="save\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:306)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            AnimeGAN__AnimeGAN__train [label="train\n(/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py:191)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_adjust_brightness {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="adjust_brightness"];
+            adjust_brightness__adjust_brightness_from_src_to_dst [label="adjust_brightness_from_src_to_dst\n(/home/sanjay/Development/explore/AnimeGAN/tools/adjust_brightness.py:22)", style="filled", fillcolor="#fee0ccb2", fontcolor="#000000", group="1"];
+            adjust_brightness__calculate_average_brightness [label="calculate_average_brightness\n(/home/sanjay/Development/explore/AnimeGAN/tools/adjust_brightness.py:12)", style="filled", fillcolor="#fee0ccb2", fontcolor="#000000", group="1"];
+            adjust_brightness__read_img [label="read_img\n(/home/sanjay/Development/explore/AnimeGAN/tools/adjust_brightness.py:4)", style="filled", fillcolor="#fee0ccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_data_loader {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="data_loader"];
+            data_loader__ImageGenerator [label="ImageGenerator\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py:7)", style="filled", fillcolor="#fef4ccb2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_data_loader__ImageGenerator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="data_loader.ImageGenerator"];
+            data_loader__ImageGenerator____init__ [label="__init__\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py:9)", style="filled", fillcolor="#ffea99b2", fontcolor="#000000", group="2"];
+            data_loader__ImageGenerator__get_image_paths_train [label="get_image_paths_train\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py:16)", style="filled", fillcolor="#ffea99b2", fontcolor="#000000", group="2"];
+            data_loader__ImageGenerator__load_image [label="load_image\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py:53)", style="filled", fillcolor="#ffea99b2", fontcolor="#000000", group="2"];
+            data_loader__ImageGenerator__load_images [label="load_images\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py:59)", style="filled", fillcolor="#ffea99b2", fontcolor="#000000", group="2"];
+            data_loader__ImageGenerator__read_image [label="read_image\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py:32)", style="filled", fillcolor="#ffea99b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_data_mean {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="data_mean"];
+            data_mean__get_mean [label="get_mean\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py:21)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="3"];
+            data_mean__main [label="main\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py:41)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="3"];
+            data_mean__parse_args [label="parse_args\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py:6)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="3"];
+            data_mean__read_img [label="read_img\n(/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py:13)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_discriminator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="discriminator"];
+            discriminator__D_net [label="D_net\n(/home/sanjay/Development/explore/AnimeGAN/net/discriminator.py:4)", style="filled", fillcolor="#e0feccb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_edge_smooth {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="edge_smooth"];
+            edge_smooth__main [label="main\n(/home/sanjay/Development/explore/AnimeGAN/tools/edge_smooth.py:53)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="5"];
+            edge_smooth__make_edge_smooth [label="make_edge_smooth\n(/home/sanjay/Development/explore/AnimeGAN/tools/edge_smooth.py:16)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="5"];
+            edge_smooth__parse_args [label="parse_args\n(/home/sanjay/Development/explore/AnimeGAN/tools/edge_smooth.py:8)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_generator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="generator"];
+            generator__Conv2D [label="Conv2D\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:5)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__Conv2DNormLReLU [label="Conv2DNormLReLU\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:19)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__Conv2DTransposeLReLU [label="Conv2DTransposeLReLU\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:52)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__Downsample [label="Downsample\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:76)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__G_net [label="G_net\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:93)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__Separable_conv2d [label="Separable_conv2d\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:36)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__Unsample [label="Unsample\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:63)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+            generator__dwise_conv [label="dwise_conv\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:24)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_generator__G_net {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="generator.G_net"];
+            generator__G_net__InvertedRes_block [label="InvertedRes_block\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:134)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="6"];
+            generator__G_net____init__ [label="__init__\n(/home/sanjay/Development/explore/AnimeGAN/net/generator.py:95)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_get_generator_ckpt {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="get_generator_ckpt"];
+            get_generator_ckpt__main [label="main\n(/home/sanjay/Development/explore/AnimeGAN/tools/get_generator_ckpt.py:25)", style="filled", fillcolor="#ccfef4b2", fontcolor="#000000", group="7"];
+            get_generator_ckpt__parse_args [label="parse_args\n(/home/sanjay/Development/explore/AnimeGAN/tools/get_generator_ckpt.py:8)", style="filled", fillcolor="#ccfef4b2", fontcolor="#000000", group="7"];
+            get_generator_ckpt__save [label="save\n(/home/sanjay/Development/explore/AnimeGAN/tools/get_generator_ckpt.py:19)", style="filled", fillcolor="#ccfef4b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_ops {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ops"];
+            ops__Huber_loss [label="Huber_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:181)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__L1_loss [label="L1_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:173)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__L2_loss [label="L2_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:177)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__batch_norm [label="batch_norm\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:132)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__color_loss [label="color_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:277)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__con_loss [label="con_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:245)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__con_sty_loss [label="con_sty_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:261)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__conv [label="conv\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:18)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__deconv [label="deconv\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:55)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__discriminator_loss [label="discriminator_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:184)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__flatten [label="flatten\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:96)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__generator_loss [label="generator_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:219)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__gram [label="gram\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:238)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__instance_norm [label="instance_norm\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:121)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__l2_norm [label="l2_norm\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:166)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__layer_norm [label="layer_norm\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:127)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__lrelu [label="lrelu\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:103)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__relu [label="relu\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:107)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__resblock [label="resblock\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:79)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__rgb2yuv [label="rgb2yuv\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:283)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__sigmoid [label="sigmoid\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:114)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__spectral_norm [label="spectral_norm\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:139)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__style_loss [label="style_loss\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:258)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+            ops__tanh [label="tanh\n(/home/sanjay/Development/explore/AnimeGAN/tools/ops.py:111)", style="filled", fillcolor="#ccf4feb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_test {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="test"];
+            test__parse_args [label="parse_args\n(/home/sanjay/Development/explore/AnimeGAN/test.py:11)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="9"];
+            test__stats_graphX [label="stats_graph\n(/home/sanjay/Development/explore/AnimeGAN/test.py:26)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="9"];
+            test__test [label="test\n(/home/sanjay/Development/explore/AnimeGAN/test.py:31)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_train {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="train"];
+            train__check_args [label="check_args\n(/home/sanjay/Development/explore/AnimeGAN/train.py:51)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="10"];
+            train__main [label="main\n(/home/sanjay/Development/explore/AnimeGAN/train.py:76)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="10"];
+            train__parse_args [label="parse_args\n(/home/sanjay/Development/explore/AnimeGAN/train.py:9)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="utils"];
+            utils__check_folder [label="check_folder\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:85)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__imsave [label="imsave\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:49)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__inverse_transform [label="inverse_transform\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:40)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__load_test_data [label="load_test_data\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:8)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__preprocessing [label="preprocessing\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:15)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__random_crop [label="random_crop\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:54)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__save_images [label="save_images\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:33)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__show_all_variables [label="show_all_variables\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:76)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+            utils__str2bool [label="str2bool\n(/home/sanjay/Development/explore/AnimeGAN/tools/utils.py:90)", style="filled", fillcolor="#e0ccfeb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_vgg19 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="vgg19"];
+            vgg19__Vgg19 [label="Vgg19\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:11)", style="filled", fillcolor="#f4ccfeb2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_vgg19__Vgg19 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="vgg19.Vgg19"];
+            vgg19__Vgg19____init__ [label="__init__\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:12)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__avg_pool [label="avg_pool\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:81)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__build [label="build\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:22)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__conv_layer [label="conv_layer\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:87)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__fc_layer [label="fc_layer\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:110)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__get_bias [label="get_bias\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:130)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__get_conv_filter [label="get_conv_filter\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:127)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__get_fc_weight [label="get_fc_weight\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:133)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__max_pool [label="max_pool\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:84)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+            vgg19__Vgg19__no_activation_conv_layer [label="no_activation_conv_layer\n(/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py:99)", style="filled", fillcolor="#ea99ffb2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_video2anime {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="video2anime"];
+            video2anime__convert_image [label="convert_image\n(/home/sanjay/Development/explore/AnimeGAN/video2anime.py:34)", style="filled", fillcolor="#feccf4b2", fontcolor="#000000", group="13"];
+            video2anime__cvt2anime_video [label="cvt2anime_video\n(/home/sanjay/Development/explore/AnimeGAN/video2anime.py:46)", style="filled", fillcolor="#feccf4b2", fontcolor="#000000", group="13"];
+            video2anime__inverse_image [label="inverse_image\n(/home/sanjay/Development/explore/AnimeGAN/video2anime.py:41)", style="filled", fillcolor="#feccf4b2", fontcolor="#000000", group="13"];
+            video2anime__parse_args [label="parse_args\n(/home/sanjay/Development/explore/AnimeGAN/video2anime.py:18)", style="filled", fillcolor="#feccf4b2", fontcolor="#000000", group="13"];
+        }
+    }
+        video2anime -> video2anime__cvt2anime_video [style="solid",  color="#000000"];
+        video2anime -> video2anime__parse_args [style="solid",  color="#000000"];
+        video2anime__cvt2anime_video -> video2anime__convert_image [style="solid",  color="#000000"];
+        video2anime__cvt2anime_video -> video2anime__inverse_image [style="solid",  color="#000000"];
+        test -> test__parse_args [style="solid",  color="#000000"];
+        test -> test__test [style="solid",  color="#000000"];
+        test__test -> utils__load_test_data [style="solid",  color="#000000"];
+        test__test -> utils__check_folder [style="solid",  color="#000000"];
+        test__test -> utils__save_images [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN____init__ -> utils__check_folder [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN____init__ -> AnimeGAN__AnimeGAN__model_dir [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__gradient_panalty -> ops__flatten [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__gradient_panalty -> AnimeGAN__AnimeGAN__discriminator [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> ops__discriminator_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> ops__color_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> ops__con_sty_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> ops__con_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> ops__generator_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> AnimeGAN__AnimeGAN__gradient_panalty [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> AnimeGAN__AnimeGAN__generator [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__build_model -> AnimeGAN__AnimeGAN__discriminator [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> ops__con_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> ops__generator_loss [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> utils__save_images [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> utils__load_test_data [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> AnimeGAN__AnimeGAN__generator [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> AnimeGAN__AnimeGAN__model_dir [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> utils__check_folder [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> AnimeGAN__AnimeGAN__load [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__train -> AnimeGAN__AnimeGAN__save [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__save -> AnimeGAN__AnimeGAN__model_dir [style="solid",  color="#000000"];
+        AnimeGAN__AnimeGAN__load -> AnimeGAN__AnimeGAN__model_dir [style="solid",  color="#000000"];
+        train -> AnimeGAN__AnimeGAN [style="solid",  color="#000000"];
+        train -> train__main [style="solid",  color="#000000"];
+        train__parse_args -> utils__str2bool [style="solid",  color="#000000"];
+        train__parse_args -> train__check_args [style="solid",  color="#000000"];
+        train__check_args -> utils__check_folder [style="solid",  color="#000000"];
+        train__main -> train__parse_args [style="solid",  color="#000000"];
+        train__main -> AnimeGAN__AnimeGAN____init__ [style="solid",  color="#000000"];
+        train__main -> utils__show_all_variables [style="solid",  color="#000000"];
+        train__main -> AnimeGAN__AnimeGAN [style="solid",  color="#000000"];
+        train__main -> AnimeGAN__AnimeGAN__build_model [style="solid",  color="#000000"];
+        train__main -> AnimeGAN__AnimeGAN__train [style="solid",  color="#000000"];
+        generator__Conv2DNormLReLU -> ops__instance_norm [style="solid",  color="#000000"];
+        generator__Conv2DNormLReLU -> generator__Conv2D [style="solid",  color="#000000"];
+        generator__Conv2DNormLReLU -> ops__lrelu [style="solid",  color="#000000"];
+        generator__Separable_conv2d -> ops__lrelu [style="solid",  color="#000000"];
+        generator__Conv2DTransposeLReLU -> ops__lrelu [style="solid",  color="#000000"];
+        generator__Unsample -> generator__Separable_conv2d [style="solid",  color="#000000"];
+        generator__Downsample -> generator__Separable_conv2d [style="solid",  color="#000000"];
+        generator__G_net____init__ -> generator__Conv2D [style="solid",  color="#000000"];
+        generator__G_net____init__ -> generator__G_net__InvertedRes_block [style="solid",  color="#000000"];
+        generator__G_net____init__ -> generator__Unsample [style="solid",  color="#000000"];
+        generator__G_net____init__ -> generator__Separable_conv2d [style="solid",  color="#000000"];
+        generator__G_net____init__ -> generator__Conv2DNormLReLU [style="solid",  color="#000000"];
+        generator__G_net____init__ -> generator__Downsample [style="solid",  color="#000000"];
+        generator__G_net__InvertedRes_block -> generator__Conv2D [style="solid",  color="#000000"];
+        generator__G_net__InvertedRes_block -> ops__lrelu [style="solid",  color="#000000"];
+        generator__G_net__InvertedRes_block -> ops__instance_norm [style="solid",  color="#000000"];
+        generator__G_net__InvertedRes_block -> generator__dwise_conv [style="solid",  color="#000000"];
+        generator__G_net__InvertedRes_block -> generator__Conv2DNormLReLU [style="solid",  color="#000000"];
+        discriminator__D_net -> ops__conv [style="solid",  color="#000000"];
+        discriminator__D_net -> ops__lrelu [style="solid",  color="#000000"];
+        discriminator__D_net -> ops__instance_norm [style="solid",  color="#000000"];
+        get_generator_ckpt -> get_generator_ckpt__main [style="solid",  color="#000000"];
+        get_generator_ckpt -> get_generator_ckpt__parse_args [style="solid",  color="#000000"];
+        get_generator_ckpt__main -> utils__check_folder [style="solid",  color="#000000"];
+        get_generator_ckpt__main -> get_generator_ckpt__save [style="solid",  color="#000000"];
+        data_mean -> data_mean__main [style="solid",  color="#000000"];
+        data_mean__get_mean -> data_mean__read_img [style="solid",  color="#000000"];
+        data_mean__main -> data_mean__get_mean [style="solid",  color="#000000"];
+        data_mean__main -> data_mean__parse_args [style="solid",  color="#000000"];
+        ops__conv -> ops__spectral_norm [style="solid",  color="#000000"];
+        ops__deconv -> ops__spectral_norm [style="solid",  color="#000000"];
+        ops__resblock -> ops__instance_norm [style="solid",  color="#000000"];
+        ops__resblock -> ops__relu [style="solid",  color="#000000"];
+        ops__resblock -> ops__conv [style="solid",  color="#000000"];
+        ops__spectral_norm -> ops__l2_norm [style="solid",  color="#000000"];
+        ops__discriminator_loss -> ops__relu [style="solid",  color="#000000"];
+        ops__con_loss -> ops__L1_loss [style="solid",  color="#000000"];
+        ops__style_loss -> ops__gram [style="solid",  color="#000000"];
+        ops__style_loss -> ops__L1_loss [style="solid",  color="#000000"];
+        ops__con_sty_loss -> ops__style_loss [style="solid",  color="#000000"];
+        ops__con_sty_loss -> ops__L1_loss [style="solid",  color="#000000"];
+        ops__color_loss -> ops__Huber_loss [style="solid",  color="#000000"];
+        ops__color_loss -> ops__rgb2yuv [style="solid",  color="#000000"];
+        ops__color_loss -> ops__L1_loss [style="solid",  color="#000000"];
+        vgg19__Vgg19__build -> vgg19__Vgg19__fc_layer [style="solid",  color="#000000"];
+        vgg19__Vgg19__build -> vgg19__Vgg19__no_activation_conv_layer [style="solid",  color="#000000"];
+        vgg19__Vgg19__build -> vgg19__Vgg19__max_pool [style="solid",  color="#000000"];
+        vgg19__Vgg19__build -> vgg19__Vgg19__conv_layer [style="solid",  color="#000000"];
+        vgg19__Vgg19__conv_layer -> vgg19__Vgg19__get_bias [style="solid",  color="#000000"];
+        vgg19__Vgg19__conv_layer -> vgg19__Vgg19__get_conv_filter [style="solid",  color="#000000"];
+        vgg19__Vgg19__no_activation_conv_layer -> vgg19__Vgg19__get_bias [style="solid",  color="#000000"];
+        vgg19__Vgg19__no_activation_conv_layer -> vgg19__Vgg19__get_conv_filter [style="solid",  color="#000000"];
+        vgg19__Vgg19__fc_layer -> vgg19__Vgg19__get_fc_weight [style="solid",  color="#000000"];
+        vgg19__Vgg19__fc_layer -> vgg19__Vgg19__get_bias [style="solid",  color="#000000"];
+        adjust_brightness -> adjust_brightness__read_img [style="solid",  color="#000000"];
+        adjust_brightness -> adjust_brightness__adjust_brightness_from_src_to_dst [style="solid",  color="#000000"];
+        adjust_brightness__adjust_brightness_from_src_to_dst -> adjust_brightness__calculate_average_brightness [style="solid",  color="#000000"];
+        utils__load_test_data -> utils__preprocessing [style="solid",  color="#000000"];
+        utils__save_images -> utils__imsave [style="solid",  color="#000000"];
+        utils__save_images -> utils__inverse_transform [style="solid",  color="#000000"];
+        data_loader__ImageGenerator____init__ -> data_loader__ImageGenerator__get_image_paths_train [style="solid",  color="#000000"];
+        data_loader__ImageGenerator__get_image_paths_train -> data_loader__ImageGenerator__get_image_paths_train [style="solid",  color="#000000"];
+        data_loader__ImageGenerator__load_image -> data_loader__ImageGenerator__read_image [style="solid",  color="#000000"];
+        data_loader__ImageGenerator__load_images -> data_loader__ImageGenerator__get_image_paths_train [style="solid",  color="#000000"];
+        data_loader__ImageGenerator__load_images -> data_loader__ImageGenerator__load_image [style="solid",  color="#000000"];
+        edge_smooth -> edge_smooth__main [style="solid",  color="#000000"];
+        edge_smooth__main -> edge_smooth__make_edge_smooth [style="solid",  color="#000000"];
+        edge_smooth__main -> edge_smooth__parse_args [style="solid",  color="#000000"];
+    }

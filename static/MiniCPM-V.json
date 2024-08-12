@@ -1,0 +1,1031 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/OpenBMB/MiniCPM-V/blob/main/"
+    },
+    "omnilmm__model__omnilmm__OmniLMMModel": {
+        "label": "OmniLMMModel",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 56,
+        "endLineNo": 268,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L56-L268&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function `forward`  within the `OmniLMMModel` class processes  text and image inputs, potentially blending them  into a unified representation. It leverages pre-trained vision modules and fine-tuned language modeling capabilities.  This code aims to perform multimodal understanding, where both text and image information are processed jointly.\n\n## Inputs\n\n* **`input_ids`:** Sequence of integers representing input tokens (text).\n* **`attention_mask`:**  Binary mask indicating which tokens are relevant (e.g., for padding).\n* **`past_key_values`:**  Potentially from previous interactions, carry context information (used for sequence generation).\n* **`inputs_embeds`:** Already-embedded representations of input tokens.\n* **`use_cache`:**  Boolean controlling caching of intermediate states.\n* **`output_attentions`:**  Boolean affecting whether attention scores are returned.\n* **`output_hidden_states`:** Boolean affecting whether hidden states are returned.\n* **`images`:**  Tensor containing image features.\n* **`return_dict`:** Boolean controlling the output format (dict or tuple).\n\n## Output\n\n*  Depending on the `return_dict` flag:\n    * **Dictionary:** Contains outputs like predicted text, attention scores, hidden states.\n    * **Tuple:** Contains the same outputs as the dictionary, but in a tuple format. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMForCausalLM": {
+        "label": "OmniLMMForCausalLM",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 269,
+        "endLineNo": 455,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L269-L455&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## MistralForCausalLM Breakdown\n\n**[Quick Summary]**\n\nThis Python function defines the `MistralForCausalLM` class, which is a transformer model for causal language modeling (predicting the next token in a sequence). It takes text input and generates text output, potentially incorporating image input via a vision encoder. \n\n**[Inputs]**\n\n* `config`: A configuration object likely defining model parameters (hidden size, vocab size, etc.)\n* `mm_vision_tower`:  An optional vision encoder model that processes image input.\n* `tune_clip`: A boolean flag potentially controlling fine-tuning of CLIP (Contrastive Language-Image Pretraining) components.\n* `input_ids`: A tensor of integers representing the input sequence (words or tokens).\n* `attention_mask`:  A tensor indicating which input tokens are valid.\n* `past_key_values`:  A list of tensors containing cached information from previous steps, used for efficient generation.\n* `inputs_embeds`: Optional embeddings for the input sequence.\n* `labels`:  A tensor of integers representing the target sequence (for training).\n* `use_cache`: A boolean indicating whether to use past key values for caching.\n* `output_attentions`:  A boolean controlling output of attention scores during inference.\n* `output_hidden_states`: A boolean controlling output of hidden states during inference.\n* `images`: Optional tensor of image data (potentially pre-processed).\n\n\n**[Output]**\n\n*  `logits`: A tensor of predicted probabilities over the vocabulary for the next token.\n* `loss`: A scalar value representing the loss (only if labels are provided).\n* `past_key_values`:  Cached key-value pairs for efficient generation (if `use_cache` is True).\n*  `hidden_states`:  A list of hidden states at each layer of the model. \n* `attentions`: A list of attention weights at each layer of the model.  \n\n\n\n"
+    },
+    "omnilmm__train__train_utils__omni_preprocess": {
+        "label": "omni_preprocess",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/train/train_utils.py",
+        "relativePath": "omnilmm/train/train_utils.py",
+        "lineNo": 50,
+        "endLineNo": 153,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Ftrain%2Ftrain_utils.py%23L50-L153&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function takes a list of conversations, tokenizes them using a specified tokenizer, and formats them for training a dialogue model. It specifically marks user and assistant turns and prepares input and label tensors for supervised learning.  \n\n**[Inputs]**\n- `sources`: A list of conversations, each conversation represented as a list of conversation turns.\n- `tokenizer`: A pre-trained tokenizer from the Transformers library.\n- `generation=False`: A boolean indicating whether to include a generation prompt in the tokenization.\n\n**[Output]**\n- A dictionary containing two keys:\n    - `input_ids`: A list of tokenized input sequences for each conversation.\n    - `labels`:  A list of tokenized label sequences, where labels correspond to the desired outputs.  \n\n\n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMModel__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 184,
+        "endLineNo": 268,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L184-L268&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## OmniLMMModel forward() function analysis\n\n**[Quick summary]** This function defines the forward pass of the `OmniLMMModel` which is likely a multimodal language model. It handles special token embeddings for images, potentially allowing the model to process both text and visual input. The code adapts the standard embedding process based on the presence of image data and specific tokens.\n\n**[Inputs]**\n\n* `input_ids`:  Token IDs representing the textual input.\n* `attention_mask`:  Mask tensor indicating which tokens are relevant.\n* `past_key_values`:  Cached past key-value pairs for efficient decoding.\n* `inputs_embeds`:  Precomputed embeddings for the input tokens (can be overridden).\n* `use_cache`:  Flag indicating whether to use cached key-value pairs.\n* `output_attentions`:  Flag controlling attention output generation.\n* `output_hidden_states`: Flag controlling hidden state output generation.\n* `images`: Image features (possibly extracted using a vision encoder).\n* `return_dict`:  Flag indicating whether to return a dictionary-based output.\n* `**kwargs`:  Additional keyword arguments for the model.\n\n**[Output]**\n\n\n*  Dictionary-based output containing:\n    * `last_hidden_state`: The final hidden state of the model.\n    * `past`:  Cached key-value pairs for future steps.\n    * `attention_weights`:  Attention weights at each layer (if `output_attentions` is True).\n    * `hidden_states`:  Intermediate hidden states at each layer (if `output_hidden_states` is True).  \n\n\n\n"
+    },
+    "omnilmm__chat__MiniCPMV2_6": {
+        "label": "MiniCPMV2_6",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 186,
+        "endLineNo": 258,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L186-L258&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function  `chat`  loads a pre-trained language model and tokenizer, then uses them to generate a response to a multi-turn conversational input containing both text and optionally images.  Its purpose is to provide an interface for interacting with a powerful language model capable of understanding and responding to conversations that include visual elements. \n\n## Inputs\n\n* **input:** A dictionary containing the conversational input.\n\n    *  **\"question\":**  A JSON-encoded list of message dictionaries, each containing:\n        *  **\"content\":**  A string or list of dictionaries, each representing either text or an image.\n            *  If a string, it's treated as a single text message.\n            *  If a list of dictionaries, each dictionary can have:\n                *  **\"type\":** \"text\" or \"image\".\n                *  **\"pairs\":**  The text content or base64-encoded image data.\n    *  **\"image\"**: (Optional) A base64-encoded string representing an image.\n\n## Output\n\n* **answer:**  The language model's generated response, potentially containing text and/or image data. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMForCausalLM__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 283,
+        "endLineNo": 349,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L283-L349&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function processes input text (`input_ids`) and generates predicted text (`logits`).  It leverages a pre-trained language model (`self.model`)  and applies a specialized head (`self.lm_head`) for text prediction. It also calculates a loss value when provided with target labels (`labels`) for training purposes.\n\n## Inputs\n\n* `input_ids`: Input tokens representing the text to be processed.\n* `attention_mask`:  A mask indicating which tokens are relevant for attention.\n* `past_key_values`:  Cached key-value pairs from previous time steps for efficient processing (especially useful in decoding).\n* `inputs_embeds`: Pre-computed embeddings for the input tokens (can be used instead of `input_ids`).\n* `labels`: Target tokens used for calculating the loss during training.\n* `use_cache`:  Flag indicating whether to use cached key-value pairs.\n* `output_attentions`: Flag controlling whether to return attention weights.\n* `output_hidden_states`: Flag controlling whether to return hidden states.\n* `images`: Additional image input (suggests a multimodal model).\n* `return_dict`: Flag determining if the output should be returned as a dictionary or a tuple.\n\n## Output\n\n* `logits`: Predicted probabilities for the next token in the sequence.\n* `loss`:  Calculated loss value (only when `labels` are provided).\n* `past_key_values`:  Cached key-value pairs for future time steps.\n* `hidden_states`:  Hidden states from each layer of the model.\n* `attentions`:  Attention weights from each layer of the model. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMModel__get_vllm_embedding": {
+        "label": "get_vllm_embedding",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 123,
+        "endLineNo": 183,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L123-L183&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function processes input data for a multimodal model, likely in the context of LLaVA or a similar architecture. It extracts and embeds vision features (pixel values or hidden states) and combines them with text embeddings from the input text.  \n\n## Inputs\n\n* `data`: This likely contains various components related to a single data sample, including:\n    * `pixel_values`: Raw pixel data for an image.\n    * `input_ids`: Tokenized text input. \n* `self`:  This refers to the instance of the class containing this function, which likely has knowledge about the model's architectures and parameters.\n\n## Output\n\n* `inputs_embeds`: A tensor of embedded representations for both the text and the vision components, ready to be fed into the model.\n* `vision_hidden_states`:  A list of vision features, potentially hidden states from a visual encoder. \n\n\n"
+    },
+    "omnilmm__conversation__Conversation__get_images": {
+        "label": "get_images",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 54,
+        "endLineNo": 109,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L54-L109&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**[Quick Summary]**\n\nThis function processes a sequence of messages, extracting images from them and applying various transformations like resizing, padding, or cropping.  It can return the images as PIL Image objects or as base64-encoded strings. The purpose appears to be preparing images for a downstream task, possibly image classification or analysis. \n\n**[Inputs]**\n\n*   `self.messages`: A list of messages, each potentially containing an image.\n*   `self.offset`: An integer indicating the starting point within the `self.messages` list.\n*   `return_pil`: A boolean flag determining whether to return PIL images or base64 strings. \n\n**[Output]**\n\n*   A list of processed images. \n    *   If `return_pil` is True, the list contains PIL Image objects.\n    *   If `return_pil` is False, the list contains base64-encoded strings representing the images.\n\n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMForCausalLM__initialize_vision_tokenizer": {
+        "label": "initialize_vision_tokenizer",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 400,
+        "endLineNo": 455,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L400-L455&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary, Inputs, and Output Analysis \n\n**[Quick Summary]** This function integrates an image processing pipeline with a language model. It modifies the language model's tokenizer and embeddings to accommodate image patches and potentially new special tokens for image region information, likely for tasks like visual question answering or image captioning.\n\n**[Inputs]**\n\n* `mm_use_im_start_end`: Boolean indicating whether to use special tokens for image start and end.\n\n* `tokenizer`: A pre-trained tokenizer, probably from a library like Hugging Face Transformers.\n* `mm_mm_mlp_adapter`: Boolean controlling whether to create an adapter for the MLP layers (likely for fine-tuning or task specialization).\n* `device`:  The hardware device to use for computations (e.g., \"cuda\" for GPU).\n\n**[Output]**\n\n* A modified language model with updated tokenizer and embeddings to handle image data. \n* Potential modifications to the model's MLP layers depending on `tune_mm_mlp_adapter`. \n\n\n\n"
+    },
+    "omnilmm__chat__OmniLMM12B": {
+        "label": "OmniLMM12B",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 86,
+        "endLineNo": 133,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L86-L133&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This code defines a class that leverages an \"omni-lmm\" model (likely a multimodal large language model) to generate text descriptions based on both an input image and a textual prompt. \n\n**Inputs:**\n\n* `input`: A dictionary containing:\n    * `image`: A base64 encoded image string.\n    * `question`: A JSON-encoded list of messages (likely the text prompt).\n\n**Output:**\n\n* A string: The generated text description from the model. \n\n\n"
+    },
+    "omnilmm__model__utils__build_transform": {
+        "label": "build_transform",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 421,
+        "endLineNo": 464,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L421-L464&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown \n\n**Quick Summary:**\n\nThis function defines a data transformation pipeline for images, adjusting parameters based on training mode (`is_train`) and user-defined image normalization standards (`std_mode`). The purpose is to prepare images for use in a machine learning model, particularly for computer vision tasks.\n\n**Inputs:**\n\n*  `std_mode`: A string specifying the desired image normalization standard (e.g., \"IMAGENET_INCEPTION\" or \"OPENAI_CLIP\").\n* `is_train`: A boolean indicating whether the transformation pipeline is for training data or not.\n* `input_size`: An integer defining the desired target size for the images.\n* `randaug`: A boolean indicating whether to apply random augmentations during training.\n\n**Output:**\n\n* A PyTorch `transforms.Compose` object containing the complete image transformation pipeline.\n\n\n\n"
+    },
+    "omnilmm__model__utils__all_gather": {
+        "label": "all_gather",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 503,
+        "endLineNo": 545,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L503-L545&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\n\nThis function enables the distribution of arbitrary picklable data (like lists, dictionaries, etc.) across multiple GPUs or processes. It leverages PyTorch's `dist.all_gather` to gather data from each rank in a distributed environment, effectively collecting all instances of the input data.\n\n[Inputs]\n\n* `data`:  The picklable object to be distributed. It could represent any data structure that can be serialized using Python's `pickle` module. \n\n[Output]\n\n*  `list[data]`: A list containing the distributed data. Each element in the list corresponds to the input `data` gathered from a different rank. \n   \n"
+    },
+    "omnilmm__utils__build_logger": {
+        "label": "build_logger",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 17,
+        "endLineNo": 59,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L17-L59&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this Python code snippet.\n\n**Quick Summary:**\n\nThis function sets up a comprehensive logging system for a Python application. It formats log messages, redirects standard output and error streams to loggers, and configures a rotating file handler to store logs persistently.  The purpose is to provide structured, easily readable, and manageable logging for debugging, monitoring, and auditing. \n\n**Inputs:**\n\n*  `handler`: A pre-existing logging handler (optional).\n*  `logger_name`: The name of the specific logger you want to use.\n* `logger_filename`: The filename for the rotating log file.\n* `LOGDIR`: The directory where the log file will be stored.\n\n**Output:**\n\n* Returns a configured logger instance associated with `logger_name`. \n\n\n"
+    },
+    "omnilmm__chat__init_omni_lmm": {
+        "label": "init_omni_lmm",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 22,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L22-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function loads a pre-trained OmniLMM language model, tokenizer, and image processing pipeline for multimodal text generation.  It configures the model for use with image inputs and sets up the necessary components for processing both text and image data. The purpose is to enable the generation of text that is contextually relevant to provided images. \n\n## Inputs\n\n*  `model_path`:  Path to the directory containing the pre-trained OmniLMM model and tokenizer files.\n* `device`:  Specifies the hardware device to use (likely a GPU).\n\n## Output\n\n* `model`: The loaded OmniLMM language model.\n* `image_processor`: A function for transforming image inputs into a format suitable for the model.\n* `image_token_len`: The number of tokens representing an image input.\n* `tokenizer`: The tokenizer for converting text into numerical representations. \n\n\n"
+    },
+    "omnilmm__web_demo__respond": {
+        "label": "respond",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py",
+        "relativePath": "omnilmm/web_demo.py",
+        "lineNo": 178,
+        "endLineNo": 216,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fweb_demo.py%23L178-L216&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis:\n\n**[Quick Summary]** This function handles the interaction between a user and a chatbot powered by a visual understanding model. \n\nIt takes a user question, processes it within the context of a previously uploaded image, generates a response using a chosen text generation method, and stores the conversation history.\n\n**[Inputs]**\n\n*  `_app_cfg`: Likely a dictionary containing application configuration settings, potentially including the uploaded image and previous conversation context.\n*  `_question`: The user's input question as a string.\n*  `params_form`:  A string specifying the text generation method (e.g., 'Beam Search', 'Sampling').\n*  `num_beams`:  Integer parameter used in Beam Search text generation.\n*  `repetition_penalty`:  Floating-point parameter controlling repetition in the generated text.\n*  `top_p`:  Floating-point parameter used in sampling-based text generation.\n* `top_k`:  Integer parameter used in sampling-based text generation.\n*  `temperature`:  Floating-point parameter controlling the randomness of the generated text.\n* `repetition_penalty_2`: Floating-point parameter controlling repetition in the generated text (possibly a different value than `repetition_penalty`).\n\n\n**[Output]**\n\n* `_chat_bot`: A likely a list of tuples, each containing a user question and the corresponding chatbot response. \n* `_app_cfg`: Updated dictionary containing the latest conversation context.\n\n\n"
+    },
+    "omnilmm__chat__MiniCPMV2_6____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 187,
+        "endLineNo": 222,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L187-L222&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function loads a pre-trained language model (potentially a large language model like GPT) and its tokenizer. It intelligently distributes the model across available GPUs for multi-GPU inference, if specified. \n\n**Inputs:**\n\n* `model_path`: Path to the directory containing the pre-trained model files.\n* `multi_gpus`: A boolean indicating whether to use multiple GPUs for inference.\n\n**Output:**\n\n* `self.model`: The loaded and initialized language model, potentially distributed across GPUs.\n* `self.tokenizer`: The tokenizer used to encode and decode text for the model. \n\n\n\nLet me know if you'd like a deeper dive into any specific part of the code!"
+    },
+    "omnilmm__model__resampler__Resampler____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 104,
+        "endLineNo": 139,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L104-L139&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a transformer-based attention mechanism tailored for grid-like input data. It learns to attend to spatial relationships between grid locations, effectively capturing contextual information within the grid. The purpose of this code is likely to be part of a model for image understanding or spatial reasoning tasks. \n\n## Inputs\n\n*  `grid_size`:  Represents the dimensions of the grid input (e.g., height and width).\n*  `embed_dim`:  Defines the dimensionality of the embedding vectors for each grid location.\n*  `num_heads`:  Specifies the number of attention heads used in the multi-head attention mechanism.\n*  `kv_dim`:  (Optional) Allows specifying a different dimensionality for the key and value vectors compared to the embedding dimension. \n*  `norm_layer`: A function used for layer normalization, likely `nn.LayerNorm`.\n\n## Output\n\n*  A tensor representing the attended output at each grid location, enriched with spatial context. \n\n\n"
+    },
+    "omnilmm__utils__StreamToLogger": {
+        "label": "StreamToLogger",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 60,
+        "endLineNo": 93,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L60-L93&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a class that acts as a fake file-like stream.  It redirects all write operations to a specified logger object, allowing you to log messages instead of writing them to a file. The code essentially intercepts output destined for a file and sends it to a logger instance.\n\n\n## Inputs\n\n*  `logger`: An instance of a logging module, likely `logging.Logger`.\n*  `log_level`: An integer representing the severity level of the log messages, e.g., `logging.INFO`, `logging.WARNING`, `logging.ERROR`.\n\n\n## Output\n\n* The output is not a direct return value but rather a side effect: all write operations performed on the stream object are logged at the specified log level. \n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMModel__initialize_vision_modules": {
+        "label": "initialize_vision_modules",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 75,
+        "endLineNo": 107,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L75-L107&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Summary\n\nThis function configures and initializes a vision component for a multimodal model, likely used for image understanding in tasks like text-image retrieval or captioning. It potentially fine-tunes a pre-trained CLIP vision model and defines data transforms for image input.\n\n## Inputs\n\n*  `vision_tower`:  The vision model architecture.\n*  `num_query`: The number of image tokens to generate.\n*  `image_size`: The target image size for processing.\n*  `tune_clip`:  A boolean indicating whether to fine-tune the pre-trained CLIP model.\n*  `no_randaug`: A boolean indicating whether to exclude RandAugment data augmentation.\n\n## Output\n\n*  A dictionary containing:\n    *  `image_processor`: Transforms for training and evaluation images.\n    *  `image_token_len`: The length of image tokens.\n    *  `vision_config`: Configuration details for the vision component. \n\n\n"
+    },
+    "omnilmm__conversation__Conversation__to_gradio_chatbot": {
+        "label": "to_gradio_chatbot",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 110,
+        "endLineNo": 141,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L110-L141&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function processes a list of messages, specifically those containing image data within a '<image>' placeholder. It extracts, resizes, and encodes these images as base64 strings, inserting them back into the messages as HTML image tags. The overall purpose is to embed images directly within textual messages. \n\n## Inputs\n\n* `self.messages`: A list of messages, presumably containing both text and image data.\n* `self.offset`: An integer indicating the starting point for processing within `self.messages`.\n\n## Output\n\n* `ret`: A list of lists, where each inner list contains:\n    * The processed message (with embedded image HTML).\n    *  A `None` value, potentially for additional data associated with the message. \n\n\n\n\n,"
+    },
+    "omnilmm__model__utils__autocontrast_func": {
+        "label": "autocontrast_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 86,
+        "endLineNo": 117,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L86-L117&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Image Autocontrast Function Analysis\n\n**Quick Summary:** \n\nThis function attempts to mimic the functionality of PIL.ImageOps.autocontrast, applying a form of auto-contrast to a given image. It analyzes the histogram of each color channel and adjusts the contrast by mapping pixel intensity values to a new range.\n\n**Inputs:**\n\n* `img`: A NumPy array representing an image.\n* `cutoff`: A floating-point value representing the percentage of image pixels that should be considered above or below the specified contrast threshold.\n\n**Output:**\n\n* A NumPy array representing the auto-contrasted image. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMForCausalLM__generate_vllm": {
+        "label": "generate_vllm",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 372,
+        "endLineNo": 399,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L372-L399&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis\n\n**Quick summary:**\n\nThis Python function generates text using a pre-trained vision-language model (VLLM). It takes input text (`input_ids`) and optionally image features (`images` or `vision_hidden_states`) to guide the text generation process.  The generated text is returned, along with optional image embeddings if requested.\n\n**Inputs:**\n\n* `input_ids`:  Tokenized text input representing the starting point for text generation.\n* `images`: Raw image data, likely in the form of a tensor containing pixel values.\n* `vision_hidden_states`: Pre-computed image embeddings from a separate vision model.\n* `kwargs`: Additional keyword arguments that might be used to customize the text generation process (e.g., length, temperature). \n\n**Output:**\n\n* `result`: The generated text, likely in a tokenized format.\n* `vision_hidden_states` (optional):  Pre-computed image embeddings used during generation. \n\n\n"
+    },
+    "omnilmm__train__train_utils___tokenize_fn": {
+        "label": "_tokenize_fn",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/train/train_utils.py",
+        "relativePath": "omnilmm/train/train_utils.py",
+        "lineNo": 22,
+        "endLineNo": 49,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Ftrain%2Ftrain_utils.py%23L22-L49&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function tokenizes a list of strings using a pre-trained tokenizer from the transformers library. It pads the tokens to the maximum length supported by the model and returns the input IDs, corresponding labels, and lengths of the input and label sequences. The purpose is to prepare text data for processing by a transformer model.\n\n**[Inputs]**\n\n* `strings`: A list of strings to be tokenized.\n\n* `tokenizer`: A pre-trained tokenizer object from the transformers library.\n\n**[Output]**\n\n* `input_ids`: A list of tokenized input IDs for each string.\n* `labels`: A list of labels (presumably corresponding to the input strings).\n* `input_ids_lens`: A list of lengths of the tokenized input sequences for each string.\n* `labels_lens`: A list of lengths of the corresponding label sequences for each string. \n\n\n"
+    },
+    "omnilmm__model__utils__RandomAugment": {
+        "label": "RandomAugment",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 394,
+        "endLineNo": 420,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L394-L420&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this Python code snippet.\n\n**Quick Summary:**\n\nThis code defines a class that applies random image augmentations to an input image. It draws randomly from a list of augmentation operations and applies them with varying probabilities and levels of intensity.\n\nThe purpose of this kind of code is to generate variations of images during training, improving the robustness and generalizability of machine learning models.\n\n**Inputs:**\n\n*  `img`: The input image that will be augmented.  It can be either a PIL Image object or a NumPy array.\n*  `N`: The number of augmentations to apply to the image (default is 2).\n*  `M`: A scaling factor used by certain augmentations to control their intensity (default is 10).\n*  `isPIL`: A boolean indicating whether the input `img` is a PIL Image object (default is False).\n*  `augs`: An optional list of specific augmentation operations to use. If not provided, it defaults to a predefined set of augmentations.\n\n**Output:**\n\n* A modified (augmented) version of the input image as a NumPy array. \n\n\n"
+    },
+    "omnilmm__web_demo__chat": {
+        "label": "chat",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py",
+        "relativePath": "omnilmm/web_demo.py",
+        "lineNo": 141,
+        "endLineNo": 167,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fweb_demo.py%23L141-L167&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Response:\n\n**[Quick Summary]** \nThis function processes an image and a list of messages (`msgs`) to generate a textual response using a language model. It handles potential errors and cleans up the output by removing HTML-like tags. \n\n**[Inputs]**\n\n*  `params`: A dictionary of parameters for the language model (defaults to `num_beams=3`, `repetition_penalty=1.2`, `max_new_tokens=1024`).\n*  `img`: An image object that will be processed by the model.\n*  `msgs`: A list of messages used as context for the model's response.\n\n**[Output]**\n\n*  An integer representing the success or failure of the function. \n*  The generated textual response from the language model.\n* `None` values for any additional outputs. \n\n\n\n\n"
+    },
+    "omnilmm__conversation__Conversation__get_prompt": {
+        "label": "get_prompt",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 26,
+        "endLineNo": 50,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L26-L50&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function formats a collection of messages based on a specified separator style. It takes a system message and a list of role-message pairs, then constructs a string combining them with appropriate separators. The purpose seems to be generating structured messages for logging or display.\n\n\n## Inputs\n\n* `self.sep_style`: An enum value determining the separator style (SINGLE, TWO).\n* `self.sep`: A string representing the primary separator.\n* `self.sep2`: A string representing a secondary separator (used only in TWO style).\n* `self.system`: A string containing a main system message.\n* `self.messages`: A list of tuples, where each tuple likely contains a role (string) and a message (string).\n\n\n## Output\n\n* `ret`: A formatted string containing the system message, followed by role-message pairs separated by the chosen separators. \n"
+    },
+    "omnilmm__chat__MiniCPMV": {
+        "label": "MiniCPMV",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 139,
+        "endLineNo": 162,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L139-L162&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]** \nThis function loads a pre-trained image-captioning model, decodes a base64-encoded image, processes a list of messages (likely a question), uses the model to generate a response based on the image and context, and returns the generated answer. \n\nThis code aims to build a simple image question answering system.\n\n**[Inputs]**\n\n*  `input`: A dictionary containing:\n    *  `image`: A base64-encoded string representing an image.\n    *  `question`: A JSON-formatted string containing a list of messages (likely the user's question).\n\n**[Output]**\n\n*  A string containing the model's generated answer to the question based on the image.  \n\n\n\n"
+    },
+    "omnilmm__model__omnilmm__create_vision_module": {
+        "label": "create_vision_module",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 32,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L32-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary**\n\nThis function initializes and modifies a vision transformer model for use in a specific application (likely a vision-and-language model). It removes the original classification head, modifies the final transformer block to pass through its input, and creates a resampler for spatial attention.\n\n**Inputs**\n\n* `config`: This likely contains hyperparameters for the model, including the hidden size (`hidden_size`) and number of attention heads.\n* `timm`: This is assumed to be an object referencing the timm library, used for loading pre-trained models.\n \n\n**Output**\n\n* `vision_tower`:  A modified vision transformer model, ready for integration into a larger system.\n* `resampler`: A resampler object, likely used to process the transformer's output for spatial attention. \n\n\n\n\n"
+    },
+    "omnilmm__model__utils__equalize_func": {
+        "label": "equalize_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 118,
+        "endLineNo": 141,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L118-L141&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function aims to equalize the histogram of an image, similar to PIL's ImageOps.equalize, but using OpenCV's cv2 library.  It achieves this by calculating the histogram of each color channel,  adaptively adjusting the intensity levels to distribute them more evenly.\n\n[Inputs]\n* `img`: A multi-channel image (e.g., RGB or grayscale) represented as a NumPy array.\n\n[output]\n* `out`: The modified image with equalized histogram distribution, also as a NumPy array. \n\n\n\n"
+    },
+    "omnilmm__web_demo__create_component": {
+        "label": "create_component",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py",
+        "relativePath": "omnilmm/web_demo.py",
+        "lineNo": 117,
+        "endLineNo": 140,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fweb_demo.py%23L117-L140&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** \n\nThis Python function dynamically creates graphical user interface (GUI) elements using the `graph`   library (`gr`). It takes component type and configuration parameters as input and returns the corresponding GUI element.  The purpose is to provide a flexible way to build interactive visualizations with user controls.\n\n**[Inputs]**\n\n* `comp`: String representing the type of GUI component to create (e.g., 'Slider', 'Radio', 'Button').\n* `params`:  A dictionary containing configuration parameters specific to the requested component type. \n\n**[Output]**\n\n* A `graph` library component (e.g., `gr.Slider`, `gr.Radio`, `gr.Button`) initialized with the provided parameters. \n\n\n"
+    },
+    "omnilmm__chat__MiniCPMV2_5": {
+        "label": "MiniCPMV2_5",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 163,
+        "endLineNo": 185,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L163-L185&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary**\nThis function processes an image and a series of messages, using a pre-trained AI model to generate a response based on the input image and context provided in the messages.  The purpose of the code is to enable image-based conversational AI.\n\n**Inputs**\n\n*  `input`:  A dictionary containing two keys:\n   * `image`: A base64 encoded image.\n   * `question`: A JSON-encoded string representing a series of messages.\n\n**Output**\n* A string containing the AI-generated response. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMForCausalLM__prepare_inputs_for_generation": {
+        "label": "prepare_inputs_for_generation",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 350,
+        "endLineNo": 371,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L350-L371&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]**\n\nThis function prepares input data for a transformer-based language model, potentially used in text generation or other NLP tasks. It handles various input options like `input_ids`, `past_key_values` (for caching), `attention_mask`, and `images`. It determines which inputs to use based on the presence of `past_key_values` and `inputs_embeds` and assembles them into a dictionary suitable for the model.\n\n**[Inputs]**\n\n* **`input_ids`**: A sequence of token IDs representing the input text. \n* **`past_key_values`**: Optional: Previously computed key and value pairs for efficient continuation in autoregressive tasks.\n* **`attention_mask`**: Optional: A mask indicating which tokens in the input should be attended to.\n* **`inputs_embeds`**: Optional:  Pre-computed embeddings for the input tokens, potentially bypassing tokenization.\n* **`kwargs`**:  Additional keyword arguments, likely containing options like `use_cache` (whether to utilize past key-values) and `images` (for multimodal models).\n\n**[Output]**\n\n*  A dictionary (`model_inputs`) containing the prepared input data for the transformer model, formatted according to its requirements. \n\n\n"
+    },
+    "omnilmm__model__utils__color_func": {
+        "label": "color_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 163,
+        "endLineNo": 184,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L163-L184&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function enhances the color of an image by adjusting the intensity of its colors. \n\nIt aims to mimic the behavior of PIL.ImageEnhance.Color, achieving a similar color boost effect.\n\n## Inputs\n\n\n* **img:** A NumPy array representing a color image.\n\n* **factor:** A floating-point number between 0 and 1 controlling the intensity of the color enhancement.  A value of 1 retains the original colors, while values less than 1 reduce color saturation.\n\n\n\n\n## Output\n\n* **out:** A NumPy array representing the color-enhanced image, also likely a color image."
+    },
+    "omnilmm__model__utils__sharpness_func": {
+        "label": "sharpness_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 208,
+        "endLineNo": 229,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L208-L229&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Pyhton Code Analysis \n\n**Quick Summary:** \nThis function applies a weighted blurring filter to an image. It allows for interpolation between the blurred (\"degenerate\") and original image based on a \"factor\" input, providing a method for controlled image smoothing. The purpose is likely to soften image edges or textures while retaining some detail. \n\n**Inputs:**\n* `img`:  The input image (likely a NumPy array).\n* `factor`: A floating-point value between 0.0 and 1.0 controlling the blend between the original and blurred image.\n\n**Output:**\n*  `out`: The output image, a modified version of the input image with varying degrees of blurring based on the `factor`. \n"
+    },
+    "omnilmm__chat__OmniLMM12B__decode": {
+        "label": "decode",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 95,
+        "endLineNo": 115,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L95-L115&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**  This function generates text using a pre-trained language model (VLLM) conditioned on image input. It takes an image as input, generates text based on the image, and returns the generated text. The purpose is to create a system that can understand images and produce descriptive or narrative text about them. \n\n**[Inputs]**\n\n*   `input_ids`: Likely a tokenized input, potentially serving as a starting prompt for the text generation.\n*   `image`:  A visual input, likely in a suitable format for the model (e.g., preprocessed image).\n*   `temperature`: Controls the randomness of the generated text. \n*   `max_new_tokens`: Limits the maximum length of the generated text.\n*   `do_sample`:  Indicates whether to use sampling during text generation (introduces randomness).\n*   `output_scores`: Indicates whether to include scores for the generated tokens.\n*   `return_dict_in_generate`: Specifies how to return the generation output.\n*   `repetition_penalty`:  A parameter to discourage repetition of words in the generated text.\n*   `top_k`: Limits the number of candidate tokens considered at each step.\n*   `top_p`:  Nucleus sampling method, limiting candidate tokens based on probability.\n\n**[Output]**\n\n*   `response`: A string containing the generated text description of the image.   \n\n\n"
+    },
+    "omnilmm__model__resampler__get_1d_sincos_pos_embed_from_grid": {
+        "label": "get_1d_sincos_pos_embed_from_grid",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 75,
+        "endLineNo": 95,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L75-L95&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function implements a sinusoidal positional encoding scheme. \n\nIt maps a sequence of positions to a continuous vector embedding, capturing the relative order of the positions. This embedding is commonly used in transformer models to provide positional information to the input sequence. \n\n  \n## Inputs:\n* `embed_dim`:  The desired dimensionality of the output embedding vector for each position.\n* `pos`: A list of integer positions to be encoded. \n\n## Output:\n\n* `emb`: A NumPy array of shape (M, D), where M is the number of positions and D is the embedding dimension. Each row in this array represents the embedding for a single position. \n"
+    },
+    "omnilmm__model__resampler__Resampler__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 149,
+        "endLineNo": 169,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L149-L169&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**[Quick summary]**\n\nThis code implements a Transformer attention layer. It takes input embeddings, applies positional embeddings, projects them into query, key, and value matrices, computes attention scores, and then combines the results with a final projection. This process allows the model to attend to different parts of the input sequence, capturing contextual relationships.\n\n**[Inputs]**\n\n* `x`: Input embeddings of shape (sequence_length, batch_size, embedding_dim).\n* `attn_mask`: A tensor used to mask out certain positions in the input sequence, preventing the model from attending to irrelevant information.\n* `query`: Parameters for the query projection (possibly initialized during model construction).\n* `pos_embed`:  Pre-computed positional embeddings for each position in the sequence.\n\n\n**[Output]**\n\n*  `x`: Modified input embeddings of shape (sequence_length, batch_size, embedding_dim), enriched with contextual information from the attention mechanism. \n"
+    },
+    "omnilmm__model__utils__auto_upgrade": {
+        "label": "auto_upgrade",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 61,
+        "endLineNo": 81,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L61-L81&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]**\n\nThis code snippet handles compatibility between older and newer versions of the LLaVA codebase. It checks if a configuration file (`config`) refers to an older version and prompts the user to upgrade the corresponding checkpoint. The upgrade modifies the configuration to reflect the newer LLaVA model structure.\n\n**[Inputs]**\n\n* `config`: A configuration file presumably containing information about the LLaVA model and its architecture. \n\n**[Output]**\n\n* Prints messages to the user indicating the compatibility status.\n* Upgrades the checkpoint if the user confirms, modifying the `config` file.\n* Aborts the process if the user declines the upgrade. \n\n\n\n"
+    },
+    "omnilmm__model__utils__autocontrast_func__tune_channel": {
+        "label": "tune_channel",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 92,
+        "endLineNo": 112,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L92-L112&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function performs histogram equalization on a single channel of an image. It redistributes pixel intensities to improve contrast and enhance visibility of details.\n\n## Inputs\n\n* `ch`:  A NumPy array representing a single channel of an image.\n* `cutoff`: A floating-point number (percentage) determining the desired contrast level.\n* `n_bins`: An integer representing the number of bins used in the histogram.\n\n\n## Output\n\n*  `table`: A NumPy array of size `n_bins` containing the mapping for pixel intensity values, adjusted for enhanced contrast. \n"
+    },
+    "omnilmm__utils__violates_moderation": {
+        "label": "violates_moderation",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 103,
+        "endLineNo": 123,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L103-L123&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis \n\n**Quick Summary:** This function checks if a given text input violates OpenAI's moderation guidelines using their API. The function sends the text to OpenAI's moderation endpoint and returns `True` if the text is flagged as violating the guidelines, and `False` otherwise.\n\n**Inputs:**\n\n*  `text`: The input text to be checked for violations.\n\n* `os.environ[\"OPENAI_API_KEY\"]`:  An API key for accessing OpenAI's services. \n\n**Output:**\n\n*  `flagged`: A boolean value (`True` or `False`) indicating whether the text is flagged as violating OpenAI's moderation policies. \n"
+    },
+    "omnilmm__conversation__Conversation__dict": {
+        "label": "dict",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 152,
+        "endLineNo": 171,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L152-L171&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function prepares a structured dataset for a conversational AI model. It packs information about the system, character roles, conversation messages (including potential image associations), and formatting parameters into a concise dictionary.  The conditional logic suggests it handles cases where images are present or absent in the conversation data.\n\n**Inputs:**\n\n*  `self.system`:  Likely a string describing the system's purpose or identity.\n*  `self.roles`: Likely a list of strings defining the roles of different participants in the conversation.\n*  `self.messages`:  A list of tuples or strings, representing the individual messages in the conversation.\n*  `self.offset`:  An integer possibly indicating a starting point for indexing or slicing data.\n*  `self.sep` and `self.sep2`: Strings used as separators within the conversation data.\n\n**Output:**\n\n* A dictionary containing:\n   *  `system`: System description \n   *  `roles`: Role definitions\n   *  `messages`:  Formatted conversation data (potentially with image associations)\n   *  `offset`: Starting point index\n   *  `sep`: Separator string\n   *  `sep2`:  Another separator string \n\n\n"
+    },
+    "omnilmm__model__resampler__get_abs_pos": {
+        "label": "get_abs_pos",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 23,
+        "endLineNo": 42,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L23-L42&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function scales absolute position embeddings to a target size while preserving the original information. Its purpose is to adjust the size of position embeddings to match the dimensions of the input data.\n\n## Inputs\n\n* `abs_pos`: A tensor representing absolute position embeddings of shape (N, ...)\n* `tgt_size`: An integer specifying the desired target size for the embeddings\n\n## Output\n\n* A tensor containing the upscaled (or downscaled) absolute position embeddings. The shape will be (tgt_size * tgt_size, C) where C is the number of channels in the input. \n\n\n\n\n"
+    },
+    "omnilmm__model__resampler__get_2d_sincos_pos_embed": {
+        "label": "get_2d_sincos_pos_embed",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 43,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L43-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis: \n\n**[Quick summary]** This function generates a 2D positional embedding matrix for a grid-based input. It calculates sinusoidal positional encodings inspired by the Transformer architecture based on the grid's coordinates. An optional classification token is prepended to the output if `cls_token` is True.\n\nThis code serves to provide spatial context to model inputs represented as grids, enabling the model to understand the relative positions of elements within the grid.\n\n**[Inputs]**\n\n* `grid_size`: An integer representing the height and width of the grid.\n* `embed_dim`: An integer specifying the dimension of the positional embeddings.\n* `cls_token`: A boolean indicating whether to include a special classification token.\n\n **[Output]**\n \n*  `pos_embed`: A 2D numpy array of shape `[grid_size*grid_size, embed_dim]` or `[1+grid_size*grid_size, embed_dim]` (if `cls_token` is True). Each row represents a unique grid position with its corresponding positional embedding. \n\n\n\n\n"
+    },
+    "omnilmm__model__utils__KeywordsStoppingCriteria": {
+        "label": "KeywordsStoppingCriteria",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 42,
+        "endLineNo": 60,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L42-L60&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary**\n\nThis function checks if a generated text output contains a specific set of keywords. It operates after a text generation process, examining the generated text and comparing it against a predefined list of keywords. \n\n**Inputs**\n\n*  `output_ids`: Likely a tensor containing numerical representations of generated text tokens.\n*  `scores`: A tensor of likelihood scores associated with each token in `output_ids`.\n* `**kwargs`: Potentially additional keyword arguments that might be used by the function, although their specifics aren't provided.\n\n**Output**\n\n* `bool`: Returns `True` if any of the provided keywords are found within the generated text, and `False` otherwise. \n"
+    },
+    "omnilmm__conversation__Conversation__get_images__expand2square": {
+        "label": "expand2square",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 64,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L64-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function takes an image as input and resizes it to a square shape while preserving its aspect ratio. It does this by creating a new square image with a specified background color and pasting the original image into the center.\n\n**Inputs:**\n* `pil_img`:  An image object (likely from the Pillow library).\n\n* `background_color`: A color value used for the background of the squared image.\n\n**Output:**\n* A new square Image object. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMModel____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 59,
+        "endLineNo": 74,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L59-L74&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function initializes an OmniLMMModel object. It handles the creation and potential finetuning of a vision tower module based on the provided configuration. \n\nThe code likely implements a multimodal model where vision features are processed by this vision tower.\n\n\n## Inputs\n\n*  `config`: A configuration object containing parameters for the model, possibly including details about the vision tower.\n* `tune_clip`: A boolean flag indicating whether the vision tower should be fine-tuned (likely for contrastive learning).\n\n## Output\n\n* Initializes an instance of `OmniLMMModel` with potentially:\n    * A `vision_tower` module for processing visual input.\n    * A `resampler` module for manipulating feature representations (if applicable).\n* Sets `vision_config` to a lambda function that returns `None` (suggests no immediate further configuration). \n"
+    },
+    "omnilmm__chat__MiniCPMVChat": {
+        "label": "MiniCPMVChat",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 259,
+        "endLineNo": 273,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L259-L273&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis Python code defines a class that loads and uses different language models (OmniLMM12B, MiniCPMV2_5, MiniCPMV2_6, MiniCPMV) based on the provided model path. It provides a simple \"chat\" method to interact with the loaded model. The purpose is to create a flexible and reusable interface for different language models.\n\n[Inputs]\n- `model_path`:  The path to the model file (likely a checkpoint or directory).\n- `multi_gpus`: A boolean flag indicating whether to use multiple GPUs for inference.\n\n[Output]\n- The output of the `chat` method is the response generated by the chosen language model when given the input text.  \n"
+    },
+    "omnilmm__chat__wrap_question_for_omni_lmm": {
+        "label": "wrap_question_for_omni_lmm",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 71,
+        "endLineNo": 85,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L71-L85&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown\n\n**[Quick Summary]** This Python function processes a user's question to prepare it for multimodal text-to-image generation. It expands the question to include image information, preprocesses it using an `omni_preprocess` function, and returns a dictionary containing input IDs and labels for training a generative model.  The purpose is to create a suitable input format for a model that can generate images based on textual descriptions.\n\n**[Inputs]**\n* `question`: The user's text query. \n* `image_token_len`:  Likely the length of a token representing an image, used for embedding image information in the question.\n* `DEFAULT_IM_START_TOKEN`, `DEFAULT_IM_END_TOKEN`, `DEFAULT_IMAGE_PATCH_TOKEN`:  Tokens used to mark the beginning, end, and parts of the image representation within the question.\n\n**[Output]**\n* `data_dict`: A dictionary containing:\n    * `input_ids`:  Tokenized representation of the expanded question, possibly including image tokens.\n    * `labels`:  Likely a placeholder or target value for the model to generate, potentially related to the desired image. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMModel__get_vision_embedding": {
+        "label": "get_vision_embedding",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 108,
+        "endLineNo": 122,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L108-L122&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:** This function processes image data through a Vision Transformer model, potentially handling prefix tokens, and then resamples the resulting image embedding. Its purpose likely involves preparing image features for downstream tasks in a computer vision model.\n\n**Inputs:**\n\n*  `pixel_values`:  Likely a tensor representing raw pixel data from an image.\n*  `self.vision_tower`: A Vision Transformer model, potentially with support for prefix tokens.\n*  `self.resampler`:  A module likely responsible for resizing or modifying the shape of the image embedding.\n\n**Output:**\n\n* `res`: A modified tensor containing the resampled image embedding, ready for further processing. \n\n\n\n\n"
+    },
+    "omnilmm__model__utils__cutout_func": {
+        "label": "cutout_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 276,
+        "endLineNo": 289,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L276-L289&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]**\n\nThis function crops a random rectangular region within an image and replaces it with a specified replacement array. Its purpose is likely to simulate image augmentations, introducing artificial modifications for tasks like training machine learning models.\n\n**[Inputs]**\n\n*   `img`: A NumPy array representing the input image.\n*   `replace`: A NumPy array potentially containing the data to replace the cropped region, likely of similar dimensions to the cropped area.\n*   `pad_size`: An integer determining the size of the padding applied around the randomly selected region, influencing the size of the final replaced area.\n\n**[Output]**\n\n*   A modified NumPy array representing the image with the random rectangular region replaced by the `replace` array. \n\n\n"
+    },
+    "omnilmm__utils__StreamToLogger__write": {
+        "label": "write",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 74,
+        "endLineNo": 87,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L74-L87&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis  \n\n**Quick Summary**\n\nThis function reads input (`buf`) and appends it to an internal buffer (`self.linebuf`).  It then processes the buffer, stripping trailing newlines and logging each complete line to a logger (`self.logger`). Incomplete lines are retained within `self.linebuf` for subsequent processing. The purpose is to manage and log text input in a way that handles line endings consistently across different platforms.\n\n**Inputs**\n\n*  `buf`: This likely represents a string containing new text input.\n*  `self.linebuf`: An internal buffer, possibly a string, holding previously received but unprocessed text.\n*  `self.log_level`: A constant or variable determining the logging verbosity (e.g., DEBUG, INFO, ERROR).\n\n**Output**\n\n*  Lines of text are logged to `self.logger` with any trailing newlines removed.\n*  Incomplete lines are carried over to `self.linebuf` for future processing. \n\n\n\n\n"
+    },
+    "omnilmm__web_demo__regenerate_button_clicked": {
+        "label": "regenerate_button_clicked",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py",
+        "relativePath": "omnilmm/web_demo.py",
+        "lineNo": 217,
+        "endLineNo": 230,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fweb_demo.py%23L217-L230&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function manages a chat history, filters out regeneration requests, retrieves the last user question, and prepares context for a chatbot response. It likely aims to build a conversational AI by tracking dialogue and using previous interactions to generate relevant replies. \n\n**Inputs:**\n\n* `_chat_bot`: A list of tuples representing the chat history, likely with format (question, answer).\n* `_app_cfg`: A dictionary containing application configuration, including potentially a context variable (`ctx`).\n* `params_form`:  Likely a dictionary containing parameters for the chatbot response generation, including things like temperature.\n* `num_beams`, `repetition_penalty`, `repetition_penalty_2`, `top_p`, `top_k`, `temperature`:  These are likely numerical parameters used for controlling the chatbot's response generation process.\n\n**Output:**\n\n*  A string (presumably an empty string in certain cases).\n*   The updated `_chat_bot` list after removing the last regeneration request.\n*   The updated `_app_cfg` dictionary. \n\n\n\n"
+    },
+    "omnilmm__model__resampler__get_2d_sincos_pos_embed_from_grid": {
+        "label": "get_2d_sincos_pos_embed_from_grid",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 62,
+        "endLineNo": 74,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L62-L74&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis function generates a positional embedding for a grid of data. It divides the embedding dimension in half and creates separate sin-cos positional embeddings for the height and width of the grid. These are then concatenated to produce a final embedding for each grid point. This pattern derives from the transformer architecture used in models like BERT and GPT, where positional information is crucial for understanding sequential data.\n\n**Inputs:**\n\n* `grid`: A list or tuple containing two arrays representing the height and width of the grid. \n* `embed_dim`: An integer specifying the total dimensionality of the embedding.\n\n**Output:**\n\n* A NumPy array representing the positional embeddings for each point in the grid. This array will have shape `(H*W, embed_dim)` where H and W are the height and width of the grid. \n\n\n"
+    },
+    "omnilmm__model__utils__contrast_func": {
+        "label": "contrast_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 185,
+        "endLineNo": 197,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L185-L197&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function enhances the contrast of an image by applying a lookup table that re-scales pixel intensities around the image's overall mean. This is similar to the functionality of PIL.ImageEnhance.Contrast but implemented using NumPy.\n\n[Inputs]\n* `img`: A NumPy array representing the image data.\n* `factor`: A float value controlling the degree of contrast enhancement. A value greater than 1 increases contrast, while a value less than 1 decreases it.\n\n[output]\n* A NumPy array representing the enhanced image data. \n\n\n"
+    },
+    "omnilmm__model__utils__KeywordsStoppingCriteria____call__": {
+        "label": "__call__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 49,
+        "endLineNo": 60,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L49-L60&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function checks if a given text sequence contains specific keywords within a defined starting position. It utilizes a tokenizer and pre-calculated output IDs to efficiently determine keyword presence. The purpose is likely  to identify the occurrence of certain terms within a generated text output.\n\n**Inputs:**\n\n* `self.start_len`: An integer representing the starting position within the text sequence.\n* `self.input_ids`: A tensor-like object containing numerical representations of the text input.\n* `self.tokenizer`: A tokenizer object used for converting text to and from numerical representations.\n* `self.keywords`: A list of strings containing the desired keywords to search for.\n\n**Output:**\n\n* `True`: if at least one keyword is found within the specified text range.\n* `False`: if none of the keywords are found. \n\n\n"
+    },
+    "omnilmm__model__utils__RandomAugment____call__": {
+        "label": "__call__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 409,
+        "endLineNo": 420,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L409-L420&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]** This function applies a set of random image transformations (operations) to an input image.  It leverages dictionaries to store transformation functions, probabilities, and  level arguments, allowing for diverse and randomized image augmentation.  The goal is likely to enhance the generalizability of a machine learning model by exposing it to variations of the input data.\n\n**[Inputs]**\n\n*  `img`: The input image. Potentially of PIL image format.\n*  `self.isPIL`: A boolean flag indicating whether the input image is in PIL format.\n*  `self.get_random_ops()`: A method that returns a list of tuples, each containing a transformation name, its probability, and a corresponding level.\n*  `arg_dict`: A dictionary mapping transformation names to functions that generate arguments for the transformations. \n*  `func_dict`: A dictionary mapping transformation names to their corresponding function implementations.\n\n **[Output]**\n\n*  A modified (transformed) image. \n"
+    },
+    "omnilmm__model__utils__equalize_func__tune_channel": {
+        "label": "tune_channel",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 125,
+        "endLineNo": 136,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L125-L136&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:**\n\nThis function analyzes the histogram of a grayscale image channel (`ch`) and applies a quantization process to reduce its color range to 256 levels, with potential emphasis on preserving the most frequent pixel values.\n\n\n**Inputs:**\n\n\n* **ch:** A single grayscale image channel (e.g., a numpy array) representing intensity values.\n* **n_bins:**  An integer specifying the number of bins in the binned histogram calculated from the input channel.\n\n**Output:**\n\n* **table:** A numpy array of size 256 containing the quantized lookup table for the given image channel. Each element represents the intensity value to which a corresponding input intensity will be mapped. \n\n\n"
+    },
+    "omnilmm__model__omnilmm__OmniLMMForCausalLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 272,
+        "endLineNo": 282,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L272-L282&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Code Snippet\n\n**Quick Summary:** This code snippet initializes a new class inheriting from `MistralForCausalLM`.  It creates a multimodal language model (`OmniLMMModel`) by combining a vision tower (`mm_vision_tower`) and a text encoder (`config`).  It also adds a linear layer (`lm_head`) for text generation and applies final weight initialization.  The purpose is to set up a multimodal causal language model for tasks like text generation and dialogue.\n\n**Inputs:**\n\n* `config`: Likely a configuration dictionary or object containing hyperparameters for the model, such as hidden size, vocab size, etc.\n* `mm_vision_tower`: A pre-trained vision encoder or tower used for processing image input.\n* `tune_clip`: A boolean flag, possibly used to control whether weights in the vision tower are fine-tuned during training.\n\n\n**Output:**\n\n* A new instance of the class `MistralForCausalLM` initialized with the specified components.\n"
+    },
+    "omnilmm__model__utils__rotate_func": {
+        "label": "rotate_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 142,
+        "endLineNo": 152,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L142-L152&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:**\n\nThis function rotates a given image (`img`) by a specified `degree` around its center. It utilizes OpenCV's `cv2.getRotationMatrix2D` to generate a rotation matrix and `cv2.warpAffine` to apply the rotation while ensuring the output image maintains the same dimensions (`W`, `H`). \n\n**Inputs:**\n\n* `img`: The input image to be rotated.\n* `degree`: The angle of rotation in degrees.\n* `fill`:  (optional) The color value used to fill any border areas after rotation.\n\n**Output:**\n\n* `out`: The rotated version of the input image. \n\n\n"
+    },
+    "omnilmm__model__utils__translate_x_func": {
+        "label": "translate_x_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 238,
+        "endLineNo": 248,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L238-L248&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function takes an image and offsets it horizontally. It accomplishes this using affine transformations and OpenCV's `warpAffine` function.  The purpose is to simulate the behavior of PIL's `Image.transform` method for horizontal shifting. \n\n## Inputs\n\n* **img:** Input image (presumably a NumPy array).\n* **offset:** Horizontal offset value (in pixels). Positive values shift right, negative values shift left.\n* **fill:** Value used to fill pixels outside the original image bounds (presumably a color or value).\n\n## Output\n\n* **out:** Transformed image (a NumPy array) with the applied horizontal offset. \n\n\n"
+    },
+    "omnilmm__model__utils__translate_y_func": {
+        "label": "translate_y_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 249,
+        "endLineNo": 259,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L249-L259&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function applies a vertical translation to an image using OpenCV's affine transformation. It simulates the vertical shift functionality found in PIL's `transform` method, effectively moving the image content up or down by a specified offset.\n\n## Inputs\n\n* `img`: A NumPy array representing the input image.\n* `offset`:  An integer representing the vertical displacement in pixels. A positive value shifts the image downwards, while a negative value shifts it upwards.\n* `fill`:  A tuple representing the color value (BGR) to fill the edges of the image after translation.\n\n## Output\n\n* A NumPy array representing the vertically translated image. \n"
+    },
+    "omnilmm__chat__MiniCPMVChat____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 260,
+        "endLineNo": 269,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L260-L269&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown:\n\n**[Quick Summary]** \n\nThis function initializes a language model based on a provided `model_path`. It dynamically loads one of several pre-trained models (OmniLMM12B, MiniCPMV2_5, MiniCPMV2_6, or MiniCPMV) depending on the string contained within the `model_path`.  The `multi_gpus` input likely indicates whether to utilize multiple GPUs for training. \n\n**[Inputs]**\n\n* `model_path`: A string specifying the location of the pre-trained model file.\n* `multi_gpus`: A boolean value indicating whether to use multiple GPUs.\n\n**[Output]**\n\n* `self.model`:  An initialized instance of a chosen language model.  \n\n\n"
+    },
+    "omnilmm__conversation__Conversation__copy": {
+        "label": "copy",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 142,
+        "endLineNo": 151,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L142-L151&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary \n\nThis function constructs a Conversation object. Its purpose is likely to represent a dialogue or series of interactions, commonly used in the context of chatbots or conversational AI. \n\n## Inputs\n\n*  `self.system`:  Likely a string containing instructions or guidelines for the conversation.\n*  `self.roles`:  Probably a list of participant roles in the conversation (e.g., 'user', 'assistant').\n*  `self.messages`: A list of message pairs (likely where each pair represents [user input, system response]).\n*  `self.offset`:  Could be an integer indicating a starting point within a larger conversation.\n*  `self.sep_style`:  Might be a string specifying the style of separator used between messages. \n*  `self.sep`:  Likely the actual string separator used in the conversation representation.\n*  `self.sep2`:  Possibly a secondary separator used within messages or for specific delimiters.\n\n## Output\n\n*  `Conversation`: A new object representing the conversation, containing the structured data from the inputs.\n\n\n\n\n"
+    },
+    "omnilmm__model__utils__brightness_func": {
+        "label": "brightness_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 198,
+        "endLineNo": 207,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L198-L207&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:**\n\nThis function enhances the contrast of an image. It multiplies each pixel's intensity by a specified `factor`, clips the result to the valid pixel range (0-255), and returns the modified image as a new array. The goal is to visually amplify the differences between light and dark areas in the input image.\n\n**Inputs:**\n\n* `img`:  A NumPy array representing an image.\n* `factor`: A float value controlling the contrast enhancement. Higher values increase contrast more.\n\n**Output:**\n\n* A NumPy array representing the image with enhanced contrast.  \n"
+    },
+    "omnilmm__model__utils__img2b64": {
+        "label": "img2b64",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 465,
+        "endLineNo": 474,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L465-L474&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function takes an image file path as input, reads the image, converts it into a byte stream, encodes it in base64, and returns the resulting base64 encoded string. The purpose is to represent the image data as a text string, which can be easily transmitted or stored. \n\n## Inputs\n\n*  `img_path`: This is a string representing the path to the image file on the system.\n\n## Output\n\n* `base64_str`: A string containing the base64 encoded representation of the image. \n\n\n"
+    },
+    "omnilmm__model__utils__rotate_level_to_args": {
+        "label": "rotate_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 342,
+        "endLineNo": 351,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L342-L351&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function, `level_to_args`, transforms a given level value into a pair of arguments for some other function. It first scales the level to a range between -15 and 15, then randomly decides (with a 50% chance) to negate the result.\n\n## Inputs\n\n* `level`:  A numerical value likely representing a character or entity's level. \n   \n* `replace_value`:  A numerical value, possibly a placeholder or default value used later in the process.\n\n\n\n## Output\n\n* A tuple containing:\n    * A scaled and possibly negated version of the input `level`.\n    *  `replace_value`. \n"
+    },
+    "omnilmm__model__utils__shear_level_to_args": {
+        "label": "shear_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 296,
+        "endLineNo": 305,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L296-L305&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis  \n\n**Quick Summary:** This function takes a \"level\" value, scales it based on a maximum level, applies a random sign (positive or negative), and returns a tuple containing the adjusted level and a constant value 'replace_value'. It seems designed to introduce randomness and potentially variation in a game or simulation.\n\n**Inputs:**\n* `level`: A numerical value likely representing some in-game or simulation metric.\n* `MAX_LEVEL`:  A constant defining the maximum possible value for the `level` input.\n\n**Output:**\n* A tuple containing:\n    *  The adjusted `level` value.\n    * The `replace_value` constant. \n\n\n"
+    },
+    "omnilmm__model__utils__solarize_func": {
+        "label": "solarize_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 153,
+        "endLineNo": 162,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L153-L162&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function simulates the PIL.ImageOps.posterize effect.  It takes an image and a threshold value, reducing the image's color palette by creating distinct color bands.  \n\n**Inputs:**\n\n* `img`: A 2D NumPy array representing an image.\n\n* `thresh`: A threshold value, typically between 0 and 255, determining the number of color bands.\n\n**Output:**\n\n* A 2D NumPy array representing the posterized image. \n\n\n"
+    },
+    "omnilmm__model__utils__translate_level_to_args": {
+        "label": "translate_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 306,
+        "endLineNo": 315,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L306-L315&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown: level_to_args \n\n**Quick Summary**\n\nThis function transforms a given 'level' value, potentially inverting it randomly and scaling it. The purpose is likely to introduce variability and randomisation into a game or simulation mechanic based on player level.\n\n**Inputs**\n\n* `level`:  A numerical value representing a player's level.\n* `MAX_LEVEL`: A constant representing the maximum achievable level.\n* `translate_const`: A numerical constant used for scaling the level value.\n* `replace_value`:  A placeholder value, likely meant to be replaced with a specific value during function usage.\n\n**Output**\n\n* A tuple containing:\n    * A modified `level` value, potentially inverted and scaled.\n    * `replace_value`  (which should be replaced with a concrete value before function use)\n\n\n\n\n"
+    },
+    "omnilmm__web_demo__upload_img": {
+        "label": "upload_img",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py",
+        "relativePath": "omnilmm/web_demo.py",
+        "lineNo": 168,
+        "endLineNo": 177,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fweb_demo.py%23L168-L177&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function processes an uploaded image, stores it in the application session, clears previous conversation data, and indicates successful image upload to the user. Its purpose is to initiate an image-based interaction with a chatbot. \n\n**Inputs:**\n\n* `image`: A likely NumPy array representing the image data.\n*  `_app_session`: A dictionary (probably using a session library) to store application state.\n* `_chatbot`:  A list or similar data structure, probably used to store the conversation history.\n* `_chatbot`: A list or similar data structure, probably used to store the conversation history. \n\n\n**Output:**\n\n* `_chatbot`: Updated with a message confirming successful image upload.\n* `_app_session`: \n    * `sts`: Set to `None`.\n    * `ctx`: Cleared to an empty list.\n    * `img`:  Contains the uploaded image data. \n"
+    },
+    "omnilmm__chat__expand_question_into_multimodal": {
+        "label": "expand_question_into_multimodal",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 62,
+        "endLineNo": 70,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L62-L70&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary:** This function modifies a list of dictionary entries (`question_text`)  likely containing text questions.  It inserts special tokens (`im_*` tokens) indicating the presence of an image and its location within the text. \n\n**Inputs:**\n* `question_text`: A list of dictionaries, potentially containing question text.\n* `image_token_len`: An integer likely determining the number of image-related tokens to be inserted.\n* `im_st_token`: A string representing a start token for an image.\n* `im_patch_token`: A string representing a token used to represent the image content.\n* `im_ed_token`: A string representing an end token for an image.\n\n**Output:**\n* A modified list of dictionaries (`question_text`), where the text of each question has been adjusted to include the image tokens. \n\n\n\n"
+    },
+    "omnilmm__model__resampler__Resampler___init_weights": {
+        "label": "_init_weights",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 140,
+        "endLineNo": 148,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L140-L148&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]**\n\nThis function initializes the weights of layers in a PyTorch neural network. Specifically, it sets the weights of linear layers using truncated normal distribution and biases to zero. For LayerNorm layers, it initializes biases to zero and weights to 1.0. The purpose is to provide sensible starting values for the weights during training.\n\n**[Inputs]**\n\n* **m:** This represents an instance of a PyTorch neural network layer (likely a module).\n\n**[Output]**\n\n* The function does not explicitly return a value.\n* It modifies the input layer `m` in-place by initializing its weights and biases. \n\n\n"
+    },
+    "omnilmm__model__utils__RandomAugment____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 396,
+        "endLineNo": 404,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L396-L404&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown \n\n**Quick Summary:** This function likely initializes a class or object designed for data augmentation in the context of image processing. It sets up parameters for the augmentation process, including the image size (N, M), whether to use PIL library (isPIL), and a list of available augmentation techniques (augs or arg_dict).\n\n**Inputs:**\n\n* **N:** Height of the images\n* **M:** Width of the images\n* **isPIL:** Boolean indicating whether to use the PIL image processing library\n* **augs:** Either a list of augmentation techniques or a dictionary mapping technique names to their configurations.\n\n**Output:**\n\n* Initializes the internal state of the object with the provided parameters. \n\n\n"
+    },
+    "omnilmm__utils__disable_torch_init": {
+        "label": "disable_torch_init",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 94,
+        "endLineNo": 102,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L94-L102&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code disables the default parameter initialization for `torch.nn.Linear` and `torch.nn.LayerNorm`  layers in PyTorch. This optimization speeds up model creation by avoiding unnecessary initialization steps.\n\n## Inputs\n\n*  **torch:** The PyTorch library.\n* **torch.nn.Linear:** The PyTorch class for linear transformation layers.\n* **torch.nn.LayerNorm:** The PyTorch class for layer normalization.\n* **lambda:** An anonymous function used to redefine the `reset_parameters` method.\n\n## Output\n\n* Modified `torch.nn.Linear` and `torch.nn.LayerNorm` classes with their `reset_parameters` methods replaced by no-op lambda functions. \n"
+    },
+    "omnilmm__chat__OmniLMM12B____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 87,
+        "endLineNo": 94,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L87-L94&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary**\n\nThis code snippet initializes an image-text multimodal language model called OmniLMM. It loads the pre-trained model weights, image processing pipeline, token lengths, and tokenizer. The function sets the model to evaluation mode, preparing it for generating responses based on input images.\n\n**Inputs**\n\n* `model_path`:  Path to the pre-trained OmniLMM model file.\n\n**Output**\n\n* `self.model`:  The loaded OmniLMM model instance.\n* `self.image_token_len`:  The length (number of tokens) representing an image input.\n* `self.image_transform`:  The image processing function used to prepare images for the model.\n* `self.tokenizer`: The tokenizer used to convert text into numerical tokens.\n\n\n"
+    },
+    "omnilmm__model__utils__cutout_level_to_args": {
+        "label": "cutout_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 316,
+        "endLineNo": 323,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L316-L323&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## level_to_args function analysis\n\n**Quick Summary:** This function takes a \"level\" value, scales it down based on `MAX_LEVEL` and `cutout_const`, and returns a tuple containing the scaled level and a constant value `replace_value`. The purpose appears to be preparing level information for some other function or process.\n\n\n**Inputs:**\n\n*  `level`: A numerical value likely representing some kind of user progress or status.\n*  `MAX_LEVEL`: A constant defining the maximum possible level. \n*  `replace_value`: A constant value to be included in the output tuple.\n\n**Output:**\n\n* A tuple containing:\n    *  The scaled `level` value.\n    *  The `replace_value` constant. \n"
+    },
+    "omnilmm__model__utils__is_dist_avail_and_initialized": {
+        "label": "is_dist_avail_and_initialized",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 483,
+        "endLineNo": 490,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L483-L490&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]** This function checks if a distributed environment setup (likely using a library like `mpi4py`) is properly configured and initialized. \n\nIt verifies if the distribution module (`dist`) is available and if it has been initialized successfully. \n\nReturning `True` indicates a ready-to-use distributed environment, otherwise `False`.\n\n**[Inputs]**\n\n*  `dist`: This likely represents a distributed environment module or object. \n\n**[Output]**\n\n*  `True`: The distributed environment is available and initialized.\n*  `False`: The distributed environment is either unavailable or not initialized. \n\n\n"
+    },
+    "omnilmm__model__utils__posterize_func": {
+        "label": "posterize_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 260,
+        "endLineNo": 267,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L260-L267&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Python Code Snippet\n\n**Quick Summary**\n\nThis function simulates the PIL `ImageOps.posterize` functionality, achieving posterization by reducing the number of distinct colors in an image based on the specified 'bits' value.  Lower 'bits' values result in more dramatic posterization.\n\n**Inputs**\n\n*  `img`:  A NumPy array representing the input image.\n*  `bits`: An integer representing the number of bits to use for posterization.\n\n**Output**\n\n* `out`: A NumPy array containing the posterized image. \n\n\n"
+    },
+    "omnilmm__model__utils__shear_x_func": {
+        "label": "shear_x_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 230,
+        "endLineNo": 237,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L230-L237&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\n\nThis Python function scales an image vertically by a specified factor.  It uses OpenCV's `warpAffine` function to apply a scaling transformation to the image, preserving its aspect ratio. This is commonly used in image processing to resize images for display, analysis, or further processing.\n\n[Inputs]\n*  `img`: The input image as a NumPy array.\n* `factor`: A float representing the scaling factor for vertical dimensions.\n* `fill`:  The value used to fill pixels outside the scaled image (likely a color).\n\n[Output]\n* `out`: The vertically scaled image as a NumPy array with `uint8` data type. \n\n\n\n\n"
+    },
+    "omnilmm__model__utils__shear_y_func": {
+        "label": "shear_y_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 268,
+        "endLineNo": 275,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L268-L275&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown \n\n**[Quick Summary]**\nThis function takes an image (`img`) and scales it horizontally by a given `factor`.  It uses OpenCV's `warpAffine` function to perform the scaling while maintaining the image's original height. The resulting scaled image is returned as a uint8 numpy array.\n\n**[Inputs]**\n\n*   `img`: A NumPy array representing an image.\n*   `factor`: A float value representing the scaling factor for the horizontal dimension.\n*   `fill`: The value to use for pixels outside the original image boundaries (for handling potential overflow).\n\n**[Output]**\n\n*   A NumPy array (`out`) of type uint8 representing the horizontally scaled image. \n"
+    },
+    "omnilmm__model__utils__posterize_level_to_args": {
+        "label": "posterize_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 335,
+        "endLineNo": 341,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L335-L341&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick Summary]\nThis function, `level_to_args`, scales a given `level` value (presumably representing a character's level or a similar numerical progression) to a range of 0 to 3. It then packs this scaled value into a tuple and returns it. This transformation likely prepares the argument for a function that expects a specific numerical range.\n\n\n[Inputs]\n* `level`: A numerical value representing a level or progression.\n\n[Output]\n* A tuple containing a single integer between 0 and 3, resulting from the scaling of the input `level`. \n"
+    },
+    "omnilmm__model__utils__solarize_level_to_args": {
+        "label": "solarize_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 324,
+        "endLineNo": 330,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L324-L330&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis: \n\n**[Quick Summary]**\nThis function `level_to_args` converts a normalized level value into a format suitable for use as function arguments. It scales the input level to a range of 0-255 and returns a tuple containing a single element representing this scaled level.\n\n**(Inputs)**\n* `level`: A floating point number representing a level value likely between 0 and MAX_LEVEL (a constant assumed to be defined elsewhere).\n\n**(Output)**\n* A tuple containing a single integer representing the scaled level value. \n\n\n\n\n"
+    },
+    "omnilmm__conversation__SeparatorStyle": {
+        "label": "SeparatorStyle",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 6,
+        "endLineNo": 11,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L6-L11&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis code defines two constants, `SINGLE` and `TWO`, representing different separator styles. The `auto()` function likely determines the appropriate separator based on context or previous settings.  The purpose seems to be providing flexibility in handling separators within a larger system.\n\n[Inputs]\n- None explicitly defined\n\n[Output]\n- `SINGLE`:  A string representing a single-character separator.\n- `TWO`: A string representing a two-character separator. \n\n\n\n"
+    },
+    "omnilmm__model__utils__enhance_level_to_args": {
+        "label": "enhance_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 290,
+        "endLineNo": 295,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L290-L295&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis: level_to_args\n\n**Quick Summary:**\n\nThis function scales a given \"level\" value (presumably representing a character's level in a game) to a point-like argument for another system. The output is a tuple containing a single argument, likely used for modifying game mechanics, stats, or progression.\n\n**Inputs:**\n\n* `level`: An integer or float representing a character's level.\n\n**Output:**\n\n* A tuple containing a single float value.  \n\n\n\nLet me know if you'd like a deeper dive into any specific aspect of the function!\n"
+    },
+    "omnilmm__model__utils__get_rank": {
+        "label": "get_rank",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 497,
+        "endLineNo": 502,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L497-L502&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function checks if a distributed environment is available and initialized. If it is, it returns the rank of the current process within the distributed system. Otherwise, it returns 0. The purpose of this code is likely to determine the node's role within a larger distributed computation. \n\n## Inputs\n\n* `is_dist_avail_and_initialized()`: This function likely checks the status of a distributed computing library (e.g., MPI, Ray) to see if it is ready for use.\n\n## Output\n\n* `0`: Indicates the distributed environment is not available or initialized.\n*  An integer: Represents the rank of the current process within the distributed system.  "
+    },
+    "omnilmm__model__utils__get_world_size": {
+        "label": "get_world_size",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 491,
+        "endLineNo": 496,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L491-L496&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary] \nThis function checks if a distributed computing environment is available and initialized. If not, it returns an error code (1). Otherwise, it returns the total number of processes participating in the distributed computation. The code likely aims to determine if distributed training or execution is possible.\n\n[Inputs]\n*  `is_dist_avail_and_initialized()`: A boolean function that presumably checks the availability and initialization status of a distributed training framework (like PyTorch Distributed).\n\n[Output]\n* An integer representing the world size (number of processes) in the distributed environment.\n*  1 (an error code) if the distributed environment is not available or initialized. \n\n\n"
+    },
+    "omnilmm__model__utils__stop_gradient_by_name": {
+        "label": "stop_gradient_by_name",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 550,
+        "endLineNo": 555,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L550-L555&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function, `apply_fn`, iterates through the attributes of a given `module` and modifies the `requires_grad_` attribute of any attribute with the specified `name`. It essentially freezes the gradient calculations for specific parts of the module during training.\n\n## Inputs \n\n* **module:**  A PyTorch module object. \n* **name:** A string representing the name of the attribute within the module to freeze.\n\n\n## Output\n\n* **A modified function**: The `apply_fn` function itself is returned, allowing it to be applied to PyTorch modules. \n"
+    },
+    "omnilmm__model__utils__KeywordsStoppingCriteria____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 43,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L43-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown \n\n**[Quick summary]** This code snippet likely initializes a class designed for text processing tasks, especially those involving keyword extraction and tokenization. It stores keywords for analysis, a pretrained tokenizer for text breakdown, and instance variables for tracking input length and tokenized input.\n\n**[Inputs]**\n* `keywords`: A list or set of terms to be identified within the input text.\n* `tokenizer`: A pre-trained tokenizer model for converting text into numerical representations.\n* `start_len`:  The length of an initial segment of the input text (purpose unknown without more context).\n* `input_ids`:  Numerical token representations of the input text, potentially generated by the tokenizer.\n\n**[Output]**\n\nThere is no explicit output defined in the snippet.  The purpose is likely to prepare data for further text processing within the class. \n\n\n"
+    },
+    "omnilmm__model__utils__translate_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 307,
+        "endLineNo": 312,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L307-L312&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function scales a numerical `level` value, potentially reverses it with a 50/50 chance, and returns the adjusted level along with a `replace_value`. It seems designed to introduce randomness and potentially negativity to a level parameter.\n\n**Inputs:**\n\n* `level`: A numerical value representing the initial level.\n* `MAX_LEVEL`:  A numerical constant representing the maximum possible level.\n* `translate_const`: A numerical constant used to scale the level.\n\n**Output:**\n\n* `level`: The scaled and potentially reversed level value.\n* `replace_value`: This value's purpose is unclear without further context. \n\n\n"
+    },
+    "omnilmm__utils__StreamToLogger____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 65,
+        "endLineNo": 70,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L65-L70&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this code snippet.\n\n**Quick Summary**\n\nThis code initializes a logging system.  It sets up a targeted output (likely the console) for log messages, configures the logging verbosity level, and creates an internal buffer for potential line continuation logging.\n\n**Inputs**\n\n* `sys.stdout`:  Refers to the standard output stream (typically the console).\n* `logger`: An instance of a logging object, likely providing the functionality to record and format log messages.\n* `log_level`: An integer or string representing the severity level for logging (e.g., DEBUG, INFO, WARNING, ERROR).\n\n**Output**\n\n* The code itself doesn't produce direct output. It sets up the environment for future logging operations. \n"
+    },
+    "omnilmm__utils__StreamToLogger__flush": {
+        "label": "flush",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 88,
+        "endLineNo": 93,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L88-L93&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__chat__img2base64": {
+        "label": "img2base64",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 134,
+        "endLineNo": 138,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L134-L138&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__chat__MiniCPMV____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 140,
+        "endLineNo": 144,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L140-L144&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__chat__MiniCPMV2_5____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/chat.py",
+        "relativePath": "chat.py",
+        "lineNo": 164,
+        "endLineNo": 168,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fchat.py%23L164-L168&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__omnilmm__Identity": {
+        "label": "Identity",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 27,
+        "endLineNo": 31,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L27-L31&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__omnilmm__OmniLMMConfig": {
+        "label": "OmniLMMConfig",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 23,
+        "endLineNo": 26,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L23-L26&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__omnilmm__Identity__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py",
+        "relativePath": "omnilmm/model/omnilmm.py",
+        "lineNo": 28,
+        "endLineNo": 31,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fomnilmm.py%23L28-L31&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__b642str": {
+        "label": "b642str",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 479,
+        "endLineNo": 482,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L479-L482&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__identity_func": {
+        "label": "identity_func",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 82,
+        "endLineNo": 85,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L82-L85&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__mean": {
+        "label": "mean",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 546,
+        "endLineNo": 549,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L546-L549&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__none_level_to_args": {
+        "label": "none_level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 331,
+        "endLineNo": 334,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L331-L334&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__str2b64": {
+        "label": "str2b64",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 475,
+        "endLineNo": 478,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L475-L478&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__RandomAugment__get_random_ops": {
+        "label": "get_random_ops",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 405,
+        "endLineNo": 408,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L405-L408&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__cutout_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 317,
+        "endLineNo": 320,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L317-L320&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__solarize_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 317,
+        "endLineNo": 320,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L317-L320&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__stop_gradient_by_name__apply_fn": {
+        "label": "apply_fn",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 551,
+        "endLineNo": 554,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L551-L554&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__utils__pretty_print_semaphore": {
+        "label": "pretty_print_semaphore",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 124,
+        "endLineNo": 127,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L124-L127&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__conversation__Conversation__append_message": {
+        "label": "append_message",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py",
+        "relativePath": "omnilmm/conversation.py",
+        "lineNo": 51,
+        "endLineNo": 53,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fconversation.py%23L51-L53&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__posterize_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 336,
+        "endLineNo": 338,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L336-L338&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__rotate_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 336,
+        "endLineNo": 338,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L336-L338&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__utils__StreamToLogger____getattr__": {
+        "label": "__getattr__",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py",
+        "relativePath": "omnilmm/utils.py",
+        "lineNo": 71,
+        "endLineNo": 73,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Futils.py%23L71-L73&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__resampler__Resampler___repeat": {
+        "label": "_repeat",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py",
+        "relativePath": "omnilmm/model/resampler.py",
+        "lineNo": 170,
+        "endLineNo": 171,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Fresampler.py%23L170-L171&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__enhance_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 291,
+        "endLineNo": 292,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L291-L292&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "omnilmm__model__utils__shear_level_to_args__level_to_args": {
+        "label": "level_to_args",
+        "systemPath": "/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py",
+        "relativePath": "omnilmm/model/utils.py",
+        "lineNo": 291,
+        "endLineNo": 292,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FOpenBMB%2FMiniCPM-V%2Fblob%2Fmain%2Fomnilmm%2Fmodel%2Futils.py%23L291-L292&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    }
+}

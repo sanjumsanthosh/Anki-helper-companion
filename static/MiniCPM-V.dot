@@ -1,0 +1,385 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        omnilmm [label="omnilmm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        omnilmm__chat [label="omnilmm.chat", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        omnilmm__constants [label="omnilmm.constants", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        omnilmm__conversation [label="omnilmm.conversation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        omnilmm__model [label="omnilmm.model", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        omnilmm__model__omnilmm [label="omnilmm.model.omnilmm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        omnilmm__model__resampler [label="omnilmm.model.resampler", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        omnilmm__model__utils [label="omnilmm.model.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        omnilmm__train__train_utils [label="omnilmm.train.train_utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        omnilmm__utils [label="omnilmm.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        omnilmm__web_demo [label="omnilmm.web_demo", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        subgraph cluster_omnilmm__chat {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.chat"];
+            omnilmm__chat__MiniCPMV [label="MiniCPMV\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:139)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMV2_5 [label="MiniCPMV2_5\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:163)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMV2_6 [label="MiniCPMV2_6\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:186)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMVChat [label="MiniCPMVChat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:259)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__OmniLMM12B [label="OmniLMM12B\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:86)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__expand_question_into_multimodal [label="expand_question_into_multimodal\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:62)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__img2base64 [label="img2base64\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:134)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__init_omni_lmm [label="init_omni_lmm\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:22)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__wrap_question_for_omni_lmm [label="wrap_question_for_omni_lmm\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:71)", style="filled", fillcolor="#ffcc99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_omnilmm__chat__MiniCPMV {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.chat.MiniCPMV"];
+            omnilmm__chat__MiniCPMV____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:140)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMV__chat [label="chat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:145)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_omnilmm__chat__MiniCPMV2_5 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.chat.MiniCPMV2_5"];
+            omnilmm__chat__MiniCPMV2_5____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:164)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMV2_5__chat [label="chat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:169)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_omnilmm__chat__MiniCPMV2_6 {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.chat.MiniCPMV2_6"];
+            omnilmm__chat__MiniCPMV2_6____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:187)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMV2_6__chat [label="chat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:223)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_omnilmm__chat__MiniCPMVChat {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.chat.MiniCPMVChat"];
+            omnilmm__chat__MiniCPMVChat____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:260)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__MiniCPMVChat__chat [label="chat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:270)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_omnilmm__chat__OmniLMM12B {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.chat.OmniLMM12B"];
+            omnilmm__chat__OmniLMM12B____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:87)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__OmniLMM12B__chat [label="chat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:116)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+            omnilmm__chat__OmniLMM12B__decode [label="decode\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/chat.py:95)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_omnilmm__conversation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.conversation"];
+            omnilmm__conversation__Conversation [label="Conversation\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:13)", style="filled", fillcolor="#ccff99b2", fontcolor="#000000", group="3"];
+            omnilmm__conversation__SeparatorStyle [label="SeparatorStyle\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:6)", style="filled", fillcolor="#ccff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_omnilmm__conversation__Conversation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.conversation.Conversation"];
+            omnilmm__conversation__Conversation__append_message [label="append_message\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:51)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="3"];
+            omnilmm__conversation__Conversation__copy [label="copy\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:142)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="3"];
+            omnilmm__conversation__Conversation__dict [label="dict\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:152)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="3"];
+            omnilmm__conversation__Conversation__get_images [label="get_images\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:54)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="3"];
+            omnilmm__conversation__Conversation__get_prompt [label="get_prompt\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:26)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="3"];
+            omnilmm__conversation__Conversation__to_gradio_chatbot [label="to_gradio_chatbot\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:110)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_omnilmm__conversation__Conversation__get_images {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.conversation.Conversation.get_images"];
+            omnilmm__conversation__Conversation__get_images__expand2square [label="expand2square\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/conversation.py:64)", style="filled", fillcolor="#99ff32b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_omnilmm__model__omnilmm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.omnilmm"];
+            omnilmm__model__omnilmm__Identity [label="Identity\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:27)", style="filled", fillcolor="#65ffb2b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMConfig [label="OmniLMMConfig\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:23)", style="filled", fillcolor="#65ffb2b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMForCausalLM [label="OmniLMMForCausalLM\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:269)", style="filled", fillcolor="#65ffb2b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMModel [label="OmniLMMModel\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:56)", style="filled", fillcolor="#65ffb2b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__create_vision_module [label="create_vision_module\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:32)", style="filled", fillcolor="#65ffb2b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_omnilmm__model__omnilmm__Identity {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.omnilmm.Identity"];
+            omnilmm__model__omnilmm__Identity__forward [label="forward\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:28)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_omnilmm__model__omnilmm__OmniLMMForCausalLM {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.omnilmm.OmniLMMForCausalLM"];
+            omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:272)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMForCausalLM__forward [label="forward\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:283)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMForCausalLM__generate_vllm [label="generate_vllm\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:372)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMForCausalLM__initialize_vision_tokenizer [label="initialize_vision_tokenizer\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:400)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMForCausalLM__prepare_inputs_for_generation [label="prepare_inputs_for_generation\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:350)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_omnilmm__model__omnilmm__OmniLMMModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.omnilmm.OmniLMMModel"];
+            omnilmm__model__omnilmm__OmniLMMModel____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:59)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMModel__forward [label="forward\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:184)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMModel__get_vision_embedding [label="get_vision_embedding\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:108)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMModel__get_vllm_embedding [label="get_vllm_embedding\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:123)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+            omnilmm__model__omnilmm__OmniLMMModel__initialize_vision_modules [label="initialize_vision_modules\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/omnilmm.py:75)", style="filled", fillcolor="#32ff99b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_omnilmm__model__resampler {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.resampler"];
+            omnilmm__model__resampler__Resampler [label="Resampler\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:96)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__get_1d_sincos_pos_embed_from_grid [label="get_1d_sincos_pos_embed_from_grid\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:75)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__get_2d_sincos_pos_embed [label="get_2d_sincos_pos_embed\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:43)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__get_2d_sincos_pos_embed_from_grid [label="get_2d_sincos_pos_embed_from_grid\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:62)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__get_abs_pos [label="get_abs_pos\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:23)", style="filled", fillcolor="#65feffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_omnilmm__model__resampler__Resampler {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.resampler.Resampler"];
+            omnilmm__model__resampler__Resampler____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:104)", style="filled", fillcolor="#32feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__Resampler___init_weights [label="_init_weights\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:140)", style="filled", fillcolor="#32feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__Resampler___repeat [label="_repeat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:170)", style="filled", fillcolor="#32feffb2", fontcolor="#000000", group="6"];
+            omnilmm__model__resampler__Resampler__forward [label="forward\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/resampler.py:149)", style="filled", fillcolor="#32feffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_omnilmm__model__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils"];
+            omnilmm__model__utils__KeywordsStoppingCriteria [label="KeywordsStoppingCriteria\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:42)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__RandomAugment [label="RandomAugment\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:394)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__all_gather [label="all_gather\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:503)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__auto_upgrade [label="auto_upgrade\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:61)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__autocontrast_func [label="autocontrast_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:86)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__b642str [label="b642str\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:479)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__brightness_func [label="brightness_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:198)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__build_transform [label="build_transform\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:421)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__color_func [label="color_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:163)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__contrast_func [label="contrast_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:185)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__cutout_func [label="cutout_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:276)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__cutout_level_to_args [label="cutout_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:316)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__enhance_level_to_args [label="enhance_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:290)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__equalize_func [label="equalize_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:118)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__get_rank [label="get_rank\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:497)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__get_world_size [label="get_world_size\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:491)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__identity_func [label="identity_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:82)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__img2b64 [label="img2b64\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:465)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__is_dist_avail_and_initialized [label="is_dist_avail_and_initialized\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:483)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__mean [label="mean\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:546)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__none_level_to_args [label="none_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:331)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__posterize_func [label="posterize_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:260)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__posterize_level_to_args [label="posterize_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:335)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__rotate_func [label="rotate_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:142)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__rotate_level_to_args [label="rotate_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:342)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__sharpness_func [label="sharpness_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:208)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__shear_level_to_args [label="shear_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:296)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__shear_x_func [label="shear_x_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:230)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__shear_y_func [label="shear_y_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:268)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__solarize_func [label="solarize_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:153)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__solarize_level_to_args [label="solarize_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:324)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__stop_gradient_by_name [label="stop_gradient_by_name\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:550)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__str2b64 [label="str2b64\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:475)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__translate_level_to_args [label="translate_level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:306)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__translate_x_func [label="translate_x_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:238)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__translate_y_func [label="translate_y_func\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:249)", style="filled", fillcolor="#65b2ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__KeywordsStoppingCriteria {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.KeywordsStoppingCriteria"];
+            omnilmm__model__utils__KeywordsStoppingCriteria____call__ [label="__call__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:49)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__KeywordsStoppingCriteria____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:43)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__RandomAugment {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.RandomAugment"];
+            omnilmm__model__utils__RandomAugment____call__ [label="__call__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:409)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__RandomAugment____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:396)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+            omnilmm__model__utils__RandomAugment__get_random_ops [label="get_random_ops\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:405)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__autocontrast_func {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.autocontrast_func"];
+            omnilmm__model__utils__autocontrast_func__tune_channel [label="tune_channel\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:92)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__cutout_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.cutout_level_to_args"];
+            omnilmm__model__utils__cutout_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:317)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__enhance_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.enhance_level_to_args"];
+            omnilmm__model__utils__enhance_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:291)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__equalize_func {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.equalize_func"];
+            omnilmm__model__utils__equalize_func__tune_channel [label="tune_channel\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:125)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__posterize_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.posterize_level_to_args"];
+            omnilmm__model__utils__posterize_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:336)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__rotate_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.rotate_level_to_args"];
+            omnilmm__model__utils__rotate_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:343)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__shear_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.shear_level_to_args"];
+            omnilmm__model__utils__shear_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:297)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__solarize_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.solarize_level_to_args"];
+            omnilmm__model__utils__solarize_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:325)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__stop_gradient_by_name {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.stop_gradient_by_name"];
+            omnilmm__model__utils__stop_gradient_by_name__apply_fn [label="apply_fn\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:551)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__model__utils__translate_level_to_args {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.model.utils.translate_level_to_args"];
+            omnilmm__model__utils__translate_level_to_args__level_to_args [label="level_to_args\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/model/utils.py:307)", style="filled", fillcolor="#3298ffb2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_omnilmm__train__train_utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.train.train_utils"];
+            omnilmm__train__train_utils___tokenize_fn [label="_tokenize_fn\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/train/train_utils.py:22)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="8"];
+            omnilmm__train__train_utils__omni_preprocess [label="omni_preprocess\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/train/train_utils.py:50)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_omnilmm__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.utils"];
+            omnilmm__utils__StreamToLogger [label="StreamToLogger\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:60)", style="filled", fillcolor="#cb99ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__build_logger [label="build_logger\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:17)", style="filled", fillcolor="#cb99ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__disable_torch_init [label="disable_torch_init\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:94)", style="filled", fillcolor="#cb99ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__pretty_print_semaphore [label="pretty_print_semaphore\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:124)", style="filled", fillcolor="#cb99ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__violates_moderation [label="violates_moderation\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:103)", style="filled", fillcolor="#cb99ffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_omnilmm__utils__StreamToLogger {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.utils.StreamToLogger"];
+            omnilmm__utils__StreamToLogger____getattr__ [label="__getattr__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:71)", style="filled", fillcolor="#b265ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__StreamToLogger____init__ [label="__init__\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:65)", style="filled", fillcolor="#b265ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__StreamToLogger__flush [label="flush\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:88)", style="filled", fillcolor="#b265ffb2", fontcolor="#000000", group="9"];
+            omnilmm__utils__StreamToLogger__write [label="write\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/utils.py:74)", style="filled", fillcolor="#b265ffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_omnilmm__web_demo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="omnilmm.web_demo"];
+            omnilmm__web_demo__chat [label="chat\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py:141)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="10"];
+            omnilmm__web_demo__create_component [label="create_component\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py:117)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="10"];
+            omnilmm__web_demo__regenerate_button_clicked [label="regenerate_button_clicked\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py:217)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="10"];
+            omnilmm__web_demo__respond [label="respond\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py:178)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="10"];
+            omnilmm__web_demo__upload_img [label="upload_img\n(/home/sanjay/Development/explore/MiniCPM-V/omnilmm/web_demo.py:168)", style="filled", fillcolor="#ff99feb2", fontcolor="#000000", group="10"];
+        }
+    }
+        omnilmm__conversation -> omnilmm__conversation__Conversation__get_prompt [style="solid",  color="#000000"];
+        omnilmm__conversation -> omnilmm__conversation__Conversation [style="solid",  color="#000000"];
+        omnilmm__conversation__Conversation__get_images -> omnilmm__conversation__Conversation__get_images__expand2square [style="solid",  color="#000000"];
+        omnilmm__conversation__Conversation__dict -> omnilmm__conversation__Conversation__get_images [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__utils__disable_torch_init [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__model__omnilmm__OmniLMMForCausalLM [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__chat__MiniCPMVChat__chat [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__model__utils__build_transform [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__train__train_utils__omni_preprocess [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__chat__MiniCPMVChat [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__chat__img2base64 [style="solid",  color="#000000"];
+        omnilmm__chat -> omnilmm__chat__MiniCPMVChat____init__ [style="solid",  color="#000000"];
+        omnilmm__chat__init_omni_lmm -> omnilmm__model__omnilmm__OmniLMMModel [style="solid",  color="#000000"];
+        omnilmm__chat__init_omni_lmm -> omnilmm__utils__disable_torch_init [style="solid",  color="#000000"];
+        omnilmm__chat__init_omni_lmm -> omnilmm__model__omnilmm__OmniLMMForCausalLM [style="solid",  color="#000000"];
+        omnilmm__chat__init_omni_lmm -> omnilmm__model__utils__build_transform [style="solid",  color="#000000"];
+        omnilmm__chat__init_omni_lmm -> omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ [style="solid",  color="#000000"];
+        omnilmm__chat__wrap_question_for_omni_lmm -> omnilmm__chat__expand_question_into_multimodal [style="solid",  color="#000000"];
+        omnilmm__chat__wrap_question_for_omni_lmm -> omnilmm__conversation__Conversation__dict [style="solid",  color="#000000"];
+        omnilmm__chat__wrap_question_for_omni_lmm -> omnilmm__train__train_utils__omni_preprocess [style="solid",  color="#000000"];
+        omnilmm__chat__OmniLMM12B____init__ -> omnilmm__chat__init_omni_lmm [style="solid",  color="#000000"];
+        omnilmm__chat__OmniLMM12B__chat -> omnilmm__chat__wrap_question_for_omni_lmm [style="solid",  color="#000000"];
+        omnilmm__chat__OmniLMM12B__chat -> omnilmm__chat__init_omni_lmm [style="solid",  color="#000000"];
+        omnilmm__chat__OmniLMM12B__chat -> omnilmm__chat__OmniLMM12B__decode [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMV2_6__chat -> omnilmm__conversation__Conversation__dict [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__MiniCPMV2_5____init__ [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__MiniCPMV [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__MiniCPMV2_6 [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__MiniCPMV2_6____init__ [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__MiniCPMV2_5 [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__OmniLMM12B [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__MiniCPMV____init__ [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat____init__ -> omnilmm__chat__OmniLMM12B____init__ [style="solid",  color="#000000"];
+        omnilmm__chat__MiniCPMVChat__chat -> omnilmm__chat__MiniCPMV__chat [style="solid",  color="#000000"];
+        omnilmm__web_demo -> omnilmm__web_demo__upload_img [style="solid",  color="#000000"];
+        omnilmm__web_demo -> omnilmm__web_demo__respond [style="solid",  color="#000000"];
+        omnilmm__web_demo -> omnilmm__web_demo__regenerate_button_clicked [style="solid",  color="#000000"];
+        omnilmm__web_demo -> omnilmm__web_demo__create_component [style="solid",  color="#000000"];
+        omnilmm__web_demo__respond -> omnilmm__web_demo__chat [style="solid",  color="#000000"];
+        omnilmm__web_demo__regenerate_button_clicked -> omnilmm__web_demo__respond [style="solid",  color="#000000"];
+        omnilmm__utils__build_logger -> omnilmm__utils__StreamToLogger____init__ [style="solid",  color="#000000"];
+        omnilmm__utils__build_logger -> omnilmm__utils__StreamToLogger [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__brightness_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__autocontrast_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__equalize_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__translate_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__sharpness_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__shear_x_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__identity_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__translate_y_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__solarize_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__solarize_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__translate_x_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__none_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__posterize_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__posterize_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__rotate_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__color_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__shear_y_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__enhance_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__contrast_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__rotate_func [style="solid",  color="#000000"];
+        omnilmm__model__utils -> omnilmm__model__utils__shear_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__autocontrast_func -> omnilmm__model__utils__autocontrast_func__tune_channel [style="solid",  color="#000000"];
+        omnilmm__model__utils__equalize_func -> omnilmm__model__utils__equalize_func__tune_channel [style="solid",  color="#000000"];
+        omnilmm__model__utils__enhance_level_to_args -> omnilmm__model__utils__enhance_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__shear_level_to_args -> omnilmm__model__utils__shear_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__translate_level_to_args -> omnilmm__model__utils__translate_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__cutout_level_to_args -> omnilmm__model__utils__cutout_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__solarize_level_to_args -> omnilmm__model__utils__solarize_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__posterize_level_to_args -> omnilmm__model__utils__posterize_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__rotate_level_to_args -> omnilmm__model__utils__rotate_level_to_args__level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__RandomAugment____call__ -> omnilmm__model__utils__RandomAugment__get_random_ops [style="solid",  color="#000000"];
+        omnilmm__model__utils__RandomAugment____call__ -> omnilmm__model__utils__shear_y_func [style="solid",  color="#000000"];
+        omnilmm__model__utils__RandomAugment____call__ -> omnilmm__model__utils__shear_level_to_args [style="solid",  color="#000000"];
+        omnilmm__model__utils__build_transform -> omnilmm__model__utils__RandomAugment [style="solid",  color="#000000"];
+        omnilmm__model__utils__build_transform -> omnilmm__model__utils__RandomAugment____init__ [style="solid",  color="#000000"];
+        omnilmm__model__utils__get_world_size -> omnilmm__model__utils__is_dist_avail_and_initialized [style="solid",  color="#000000"];
+        omnilmm__model__utils__get_rank -> omnilmm__model__utils__is_dist_avail_and_initialized [style="solid",  color="#000000"];
+        omnilmm__model__utils__all_gather -> omnilmm__model__utils__get_world_size [style="solid",  color="#000000"];
+        omnilmm__model__utils__stop_gradient_by_name -> omnilmm__model__utils__stop_gradient_by_name__apply_fn [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm -> omnilmm__model__resampler__Resampler [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm -> omnilmm__model__omnilmm__OmniLMMForCausalLM [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm -> omnilmm__model__utils__build_transform [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm -> omnilmm__model__omnilmm__OmniLMMConfig [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__create_vision_module -> omnilmm__model__omnilmm__Identity [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__create_vision_module -> omnilmm__model__resampler__Resampler [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__create_vision_module -> omnilmm__model__resampler__Resampler____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel -> omnilmm__model__omnilmm__OmniLMMConfig [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel____init__ -> omnilmm__model__omnilmm__create_vision_module [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__initialize_vision_modules -> omnilmm__model__utils__build_transform [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__initialize_vision_modules -> omnilmm__conversation__Conversation__dict [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__initialize_vision_modules -> omnilmm__model__omnilmm__create_vision_module [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__get_vision_embedding -> omnilmm__model__omnilmm__create_vision_module [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__get_vllm_embedding -> omnilmm__model__omnilmm__OmniLMMModel____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__get_vllm_embedding -> omnilmm__model__omnilmm__OmniLMMModel__get_vision_embedding [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__forward -> omnilmm__model__omnilmm__OmniLMMModel__get_vision_embedding [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMModel__forward -> omnilmm__model__omnilmm__OmniLMMModel____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM -> omnilmm__model__omnilmm__OmniLMMConfig [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ -> omnilmm__model__omnilmm__OmniLMMModel____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ -> omnilmm__model__omnilmm__OmniLMMModel [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ -> omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM__forward -> omnilmm__model__omnilmm__OmniLMMModel____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM__forward -> omnilmm__model__omnilmm__OmniLMMModel [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM__generate_vllm -> omnilmm__model__omnilmm__OmniLMMModel__get_vllm_embedding [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM__generate_vllm -> omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ [style="solid",  color="#000000"];
+        omnilmm__model__omnilmm__OmniLMMForCausalLM__initialize_vision_tokenizer -> omnilmm__model__omnilmm__OmniLMMForCausalLM____init__ [style="solid",  color="#000000"];
+        omnilmm__model__resampler__get_2d_sincos_pos_embed -> omnilmm__model__resampler__get_2d_sincos_pos_embed_from_grid [style="solid",  color="#000000"];
+        omnilmm__model__resampler__get_2d_sincos_pos_embed_from_grid -> omnilmm__model__resampler__get_1d_sincos_pos_embed_from_grid [style="solid",  color="#000000"];
+        omnilmm__model__resampler__Resampler____init__ -> omnilmm__model__resampler__Resampler____init__ [style="solid",  color="#000000"];
+        omnilmm__model__resampler__Resampler____init__ -> omnilmm__model__resampler__get_2d_sincos_pos_embed [style="solid",  color="#000000"];
+        omnilmm__model__resampler__Resampler____init__ -> omnilmm__model__resampler__Resampler___init_weights [style="solid",  color="#000000"];
+        omnilmm__model__resampler__Resampler__forward -> omnilmm__model__resampler__get_abs_pos [style="solid",  color="#000000"];
+        omnilmm__model__resampler__Resampler__forward -> omnilmm__model__resampler__Resampler___repeat [style="solid",  color="#000000"];
+        omnilmm__train__train_utils -> omnilmm__conversation [style="solid",  color="#000000"];
+        omnilmm__train__train_utils___tokenize_fn -> omnilmm__conversation__Conversation__dict [style="solid",  color="#000000"];
+        omnilmm__train__train_utils__omni_preprocess -> omnilmm__conversation__Conversation__dict [style="solid",  color="#000000"];
+        omnilmm__train__train_utils__omni_preprocess -> omnilmm__train__train_utils___tokenize_fn [style="solid",  color="#000000"];
+    }

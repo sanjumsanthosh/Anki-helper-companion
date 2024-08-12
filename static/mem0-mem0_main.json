@@ -1,0 +1,1607 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/mem0ai/mem0/blob/main/"
+    },
+    "mem0__memory__main__Memory": {
+        "label": "Memory",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 29,
+        "endLineNo": 416,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L29-L416&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThe code defines a `Memory` class responsible for managing and interacting with a collection of memories. It allows users to add, retrieve, update, delete, and search for memories based on textual content and associated metadata. The purpose is to provide a persistent and searchable memory store for an application, potentially within a conversational AI context.\n\n## Inputs\n\n* `data` (str): The textual data to be stored as a memory.\n* `user_id` (str, optional): Unique identifier of the user creating the memory.\n* `agent_id` (str, optional): Unique identifier of the agent creating the memory.\n* `run_id` (str, optional): Unique identifier of the run generating the memory.\n* `metadata` (dict, optional): Additional key-value metadata associated with the memory.\n* `filters` (dict, optional): Filters to apply to the search for existing memories.\n* `prompt` (str, optional): A prompt to use for memory deduction (likely for the LLM).\n\n## Output\n\n* Memory ID (str): The unique identifier of the newly created memory. \n\n\n"
+    },
+    "mem0__client__main__MemoryClient": {
+        "label": "MemoryClient",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 40,
+        "endLineNo": 285,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L40-L285&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function prepares data for API requests to the Mem0 AI, specifically handling memory creation and related actions. It formats input messages, incorporates additional parameters, and ensures correct data structures for API interactions.\n\n## Inputs\n\n* `messages`: Can be a string or a list of dictionaries, representing the content to be added as a memory.\n* `kwargs`: A dictionary of optional keyword arguments, likely including metadata, user IDs, session IDs, etc., to customize the API request.\n\n## Output\n\n* A dictionary (`payload`) containing the formatted data ready for sending to the Mem0 API. \n\n\n"
+    },
+    "mem0__vector_stores__chroma__ChromaDB": {
+        "label": "ChromaDB",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 21,
+        "endLineNo": 224,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L21-L224&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of the Code Snippet\n\n**Quick Summary:**\n\nThis code defines a class for interacting with a Chromadb vector store. It allows you to create collections, insert vectors, query for similar vectors, update and delete vectors, and manage collections. The overarching purpose is to provide a Pythonic interface for utilizing a Chromadb database.\n\n**Inputs:**\n\n* `collection_name`: The name of the desired Chromadb collection.\n* `client`: An optional existing Chromadb client instance.\n* `host`:  The address of the Chromadb server (if not using an existing client).\n* `port`: The port number of the Chromadb server (if not using an existing client).\n* `path`:  The local directory path for persistent storage of the Chromadb database (if not using a remote server).\n\n**Output:**\n\n*  **Methods:** Methods like `insert()`, `search()`, `delete()`,  `update()`, `get()`, `list_cols()`, `delete_col()`, and `col_info()`  that operate on the Chromadb vector store, each returning various types of data depending on the specific action.\n\n\n\nLet me know if you have any more code snippets you'd like me to analyze!\n"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM": {
+        "label": "AWSBedrockLLM",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 13,
+        "endLineNo": 208,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L13-L208&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Breakdown of the Code\n\n**[Quick summary]** This function connects to AWS Bedrock and generates a response to a given set of messages. It handles formatting the messages, interacting with the selected model (specified in `self.config.model`), and parsing the response accordingly.\n\n**[Inputs]**\n\n*  `messages`: A list of dictionaries, each representing a message with 'role' and 'content' keys.\n*  `tools`:  (Optional) A list of tools the model can use. If provided, it uses the `converse` method.\n*  `tool_choice`: (Optional) Specifies the method for choosing tools. Currently, only \"auto\" is supported.\n\n**[Outputs]** \n\n* A string containing the generated response from the model. \n\n\n"
+    },
+    "mem0__proxy__main__Completions": {
+        "label": "Completions",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 29,
+        "endLineNo": 155,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L29-L155&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:** This function interacts with an LLM and a memory database (Mem0) to enhance conversational responses. \n\nIt retrieves relevant past conversations from Mem0, incorporates them into the user's query, and sends the updated query to the LLM for a more context-aware response. \n\nThe function aims to improve the LLM's understanding of the conversation history and generate more relevant and coherent replies.\n\n**Inputs:**\n\n*  `model`: The name of the LLM model to be used.\n* `messages`: A list of dictionaries representing the conversation history.\n*  `mem0_client`: An object for interacting with the Mem0 memory database.\n*  Various optional parameters for customizing the LLM interaction (temperature, top_p, timeout, etc.), as well as parameters for specifying filters, limits, and other settings for interacting with Mem0.\n\n**Output**:\n\n* A response generated by the LLM, enriched with context from the Mem0 database. \n\n\n"
+    },
+    "mem0__memory__storage__SQLiteManager": {
+        "label": "SQLiteManager",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 6,
+        "endLineNo": 131,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L6-L131&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary\n\nThis Python code defines a class for managing a history table in an SQLite database. Its purpose is to track changes to memory values, such as old and new values, associated events, timestamps, and deletion status.\n\n## Inputs\n\n- `memory_id`: A unique identifier for the memory being tracked.\n- `old_memory`: The previous value of the memory.\n- `new_memory`: The updated value of the memory.\n- `event`: A string describing the type of change (e.g., \"update\", \"delete\").\n- `created_at`: A datetime object representing when the change occurred. Defaults to the current time.\n- `updated_at`: A datetime object representing when the change was updated. Defaults to the current time.\n- `is_deleted`: An integer (0 or 1) indicating whether the memory record is deleted. Defaults to 0.\n\n## Output\n\n- A list of dictionaries, each containing details about a specific memory change:\n    - `id`: A unique identifier for the history entry.\n    - `memory_id`: ID of the memory being tracked.\n    - `old_memory`: Previous value of the memory.\n    - `new_memory`: Updated value of the memory.\n    - `event`: Type of change.\n    - `created_at`: Timestamp of the change.\n    - `updated_at`: Timestamp of the last update.\n\n\n"
+    },
+    "mem0__memory__main__Memory__add": {
+        "label": "add",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 49,
+        "endLineNo": 161,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L49-L161&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function creates and manages memories within a system, leveraging a language model and vector search. It allows users to add new memories related to specific contexts (user, agent, run) and retrieve existing memories based on similarity and filters.\n\n## Inputs\n\n* **data:** Textual data to be stored as a memory.\n* **user_id:** Identifier for the user creating the memory.\n* **agent_id:** Identifier for the agent creating the memory.\n* **run_id:** Identifier for the specific run associated with the memory.\n* **metadata:**  Dictionary of additional information about the memory.\n* **filters:** Dictionary of filters to refine memory retrieval.\n* **prompt:**  A prompt used to guide the language model in deducing relevant memories. \n\n## Output\n\n* **Response:**  \n\n    * Includes an \"id\" of the created memory.\n    * May contain additional information about the memory event (e.g., \"add\", \"update\", \"delete\").\n    * Might also include the \"data\" associated with the memory.\n"
+    },
+    "mem0__llms__openai__OpenAILLM": {
+        "label": "OpenAILLM",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/openai.py",
+        "relativePath": "mem0/llms/openai.py",
+        "lineNo": 10,
+        "endLineNo": 100,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fopenai.py%23L10-L100&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function, `generate_response`, leverages an OpenAI API client to produce a textual response based on a given set of messages. It utilizes configurations from an instance of `BaseLlmConfig` and potentially integrates with tools defined by the user,  adjusting its output format accordingly. \n\n## Inputs\n\n*  `messages` (List[Dict[str, str]]):  A list of message dictionaries, each containing 'role' and 'content' keys, likely representing conversational turns.\n* `response_format`:  (str or object, optional) Specifies the desired format (e.g., \"text\", \"json\") of the generated response.\n* `tools` (List[Dict], optional):  A list of dictionaries defining tools the model can access and utilize within its response generation process.\n* `tool_choice`: (str, optional) Dictates the strategy used to select tools from the provided list (e.g., \"auto\").\n\n## Output\n\n* A processed string or dictionary containing the generated response:\n    * If `tools` are used, the output will be a dictionary with \"content\" and \"tool_calls\" keys.  \"content\" holds the main text response, while \"tool_calls\" lists details about invoked tools (name and arguments). \n    * If no tools are used,  the output will be only the generated text content. \n\n\n\n"
+    },
+    "mem0__proxy__main__Completions__create": {
+        "label": "create",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 33,
+        "endLineNo": 121,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L33-L121&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function interfaces with a large language model (LLM) like those offered by OpenAI. It constructs a prompt incorporating user-provided messages and potentially relevant memories, then sends it to the LLM for processing. The function returns the LLM's generated response.\n\n**Inputs:**\n\n* `model`: The name of the LLM to use.\n* `messages`: A list of message objects, likely containing user input and system prompts.\n* `user_id`, `agent_id`, `run_id`: Unique identifiers for the user, agent, and interaction session.\n*  Various optional parameters for customizing the LLM interaction (temperature, top_p, timeout, etc.).\n* `base_url`, `api_version`, `api_key`:  Authentication and connection details for the LLM API.\n\n**Output:**\n\n* The generated response from the LLM, likely as text.\n\n\n\n"
+    },
+    "mem0__llms__ollama__OllamaLLM": {
+        "label": "OllamaLLM",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/ollama.py",
+        "relativePath": "mem0/llms/ollama.py",
+        "lineNo": 11,
+        "endLineNo": 90,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Follama.py%23L11-L90&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This Python function utilizes an OpenAI client to generate responses from a pre-selected large language model (\"llama3.1:70b\") based on a list of user messages. It handles tool integration and formatting options for the generated response. The overall purpose is to provide an interface for interacting with a powerful language model. \n\n**Inputs:**\n\n* `messages`: A list of dictionaries, each representing a message with 'role' and 'content' keys.\n* `response_format`:  An optional string specifying the desired format of the response.\n* `tools`: An optional list of dictionaries, each defining a tool that can be used by the model.\n* `tool_choice`: A string indicating the method for selecting which tools to use.\n\n**Output:**\n\n* A string containing the generated response, potentially formatted according to the specified `response_format`.\n* If tools are used, the output will be a dictionary containing the response and a list of tool calls made by the model. \n\n\n\n"
+    },
+    "mem0__llms__azure_openai__AzureOpenAILLM": {
+        "label": "AzureOpenAILLM",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/azure_openai.py",
+        "relativePath": "mem0/llms/azure_openai.py",
+        "lineNo": 9,
+        "endLineNo": 80,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fazure_openai.py%23L9-L80&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function, `generate_response`, uses the Azure OpenAI API to generate a response based on a list of conversation messages. It handles tool integration, allowing the model to call external tools if provided, and customizes the response format and generation parameters.\n\n## Inputs\n\n* `messages`: A list of dictionaries, each representing a message in the conversation with 'role' and 'content' keys.\n* `response_format`:  (Optional) Specifies the desired format of the output response.\n* `tools`: (Optional) A list of dictionaries describing the tools available to the model.\n* `tool_choice`: (Optional) A string indicating how the model should choose tools (\"auto\" is the default).\n\n## Output\n\n* A string containing the generated response, or a dictionary if tools are used. \n\n\n"
+    },
+    "mem0__llms__groq__GroqLLM": {
+        "label": "GroqLLM",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/groq.py",
+        "relativePath": "mem0/llms/groq.py",
+        "lineNo": 13,
+        "endLineNo": 82,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fgroq.py%23L13-L82&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis  ##\n\n**[Quick Summary]** This function `generate_response` uses a Groq client to interact with an AI language model, generating a response based on a list of messages and optionally utilizing specified tools. It parses the response, potentially extracting tool calls if used. The purpose is to provide a framework for conversational AI interactions.\n\n**[Inputs]**\n\n* `messages`: A list of dictionaries, each containing 'role' and 'content' for the conversation context.\n* `response_format`:  Defines the desired format of the response (e.g., \"text\", \"json\").\n* `tools`: An optional list of dictionaries representing available tools for the model to use.\n* `tool_choice`:  Specifies how the model should choose a tool (\"auto\" for automatic selection).\n\n**[Output]**\n\n*  A string representing the generated AI response, or a dictionary containing \"content\" and potentially a list of \"tool_calls\" if tools were used. \n\n\n\n"
+    },
+    "mem0__llms__together__TogetherLLM": {
+        "label": "TogetherLLM",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/together.py",
+        "relativePath": "mem0/llms/together.py",
+        "lineNo": 12,
+        "endLineNo": 81,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Ftogether.py%23L12-L81&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function, named `generate_response`,  is designed to interact with the TogetherAI API to generate responses based on a sequence of user messages. It leverages the power of a large language model (LLM) and allows for the optional use of external tools to enhance the response capabilities. \n\n## Inputs\n\n* **messages:** A list of dictionaries, each representing a message with 'role' and 'content' keys.\n* **response_format:**  Specifies the desired format of the output response (e.g., \"text\"). Defaults to \"text\".\n* **tools:** An optional list of dictionaries containing information about tools to be used by the LLM.\n* **tool_choice:**  Determines the method for selecting tools. Defaults to \"auto\", suggesting automatic tool selection.\n\n## Output\n\n* **str:** A string containing the generated response from the LLM, potentially processed based on the tools used.\n\n\n\nLet me know if you need further explanation on any specific aspect!\n"
+    },
+    "mem0__configs__llms__base__BaseLlmConfig": {
+        "label": "BaseLlmConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/llms/base.py",
+        "relativePath": "mem0/configs/llms/base.py",
+        "lineNo": 4,
+        "endLineNo": 70,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fllms%2Fbase.py%23L4-L70&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]** This function initializes a configuration object for interacting with various Large Language Models (LLMs).  It allows for customization of parameters like model selection, temperature, and output length, as well as configuration for specific platforms like OpenRouter and Ollama. \n\n**[Inputs]**\n\n*  `model`:  The specific OpenAI model to use.\n*  `temperature`: Controls the randomness of the model's output.\n*  `max_tokens`: Limits the maximum number of tokens generated in the output.\n*  `top_p`:  Influences the diversity of words chosen by the model.\n*  `top_k`:  Another parameter affecting word diversity.\n*  `models`: A list of models to use with OpenRouter.\n*  `route`: Specifies the OpenRouter route.\n*  `openrouter_base_url`:  The base URL for the OpenRouter API.\n*  `site_url`:  The URL of the OpenRouter site.\n*  `app_name`:  The name of the application using OpenRouter.\n*  `ollama_base_url`:  The base URL for the Ollama LLM service.\n\n**[Output]**\n\n*  An initialized configuration object containing all the set parameters. \n\n\n\n"
+    },
+    "mem0__configs__llms__base__BaseLlmConfig____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/llms/base.py",
+        "relativePath": "mem0/configs/llms/base.py",
+        "lineNo": 9,
+        "endLineNo": 70,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fllms%2Fbase.py%23L9-L70&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## LLmConfig Function Analysis\n\n**[Quick Summary]**\n\nThis Python function initializes a configuration object for interacting with a Large Language Model (LLM). It allows customization of generation parameters and specifies the underlying LLM system (OpenAI, Openrouter, or Ollama) by taking relevant parameters.  The purpose is to provide a flexible and configurable interface for using different LLMs.\n\n**[Inputs]**\n\n* **model**: Specifies the desired OpenAI model.\n* **temperature**: Controls the randomness of the generated text.\n* **max_tokens**: Limits the length of the generated text.\n* **top_p**: Influences the diversity of words used in generation.\n* **top_k**:  Another parameter influencing word diversity.\n* **models**: A list of Openrouter model names to use.\n* **route**: Specifies the Openrouter API route.\n* **openrouter_base_url**: The base URL for the Openrouter API.\n* **site_url**: The Openrouter site URL.\n* **app_name**:  The name of the Openrouter application.\n* **ollama_base_url**: The base URL for the Ollama API. \n\n**[Output]**\n\n* An initialized `LlmConfig` object containing all the provided parameters. This object will be used to interact with the selected LLM. \n"
+    },
+    "mem0__memory__base__MemoryBase": {
+        "label": "MemoryBase",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/base.py",
+        "relativePath": "mem0/memory/base.py",
+        "lineNo": 4,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fbase.py%23L4-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary:\n\nThis code defines an abstract base class for a memory storage system. It outlines the expected methods for interacting with a memory repository, including retrieving, listing, updating, deleting memories, and accessing their history.\n\n## Inputs:\n\n* **memory_id (str):**  A unique identifier for a specific memory.\n* **data (dict):**  A dictionary containing the updated data for a memory.\n* **history_id (str):** Likely a unique identifier for a specific memory's history entry.\n\n## Output:\n\n* **dict:** A dictionary representing a retrieved memory.\n* **list:**  A list of all memories within the storage system.\n* **dict:** A dictionary representing the updated memory. \n* **None:** A successful deletion response.\n* **list:** A list of changes made to a specific memory. \n\n\n\n Let me know if you'd like a more in-depth explanation!\n"
+    },
+    "mem0__memory__storage__SQLiteManager___migrate_history_table": {
+        "label": "_migrate_history_table",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 12,
+        "endLineNo": 67,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L12-L67&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Database Schema Migration Code Analysis \n\n**Quick Summary**\n\nThis function ensures a database table named \"history\" has a specific schema. If the table exists with a different schema, it renames the old table, creates a new table with the correct schema, copies data from the old table, and then drops the old table. \n\nThis is a common pattern for database migrations, ensuring data consistency across different versions of a system.\n\n**Inputs**\n\n* **self.connection:** A database connection object, likely to a SQLite database.\n\n**Output**\n\n* **Modified Database:** The \"history\" table in the database will:\n    * Have the expected schema defined in the code.\n    * Contain the data from the old \"history\" table if it existed with a different schema. \n    * The old table with the differing schema will be deleted.\n"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM___prepare_input": {
+        "label": "_prepare_input",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 74,
+        "endLineNo": 124,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L74-L124&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**[Quick Summary]**\n\nThis function prepares a text prompt and associated parameters for interaction with a language model from a specific provider. It maps input parameters to the correct names expected by the chosen provider and formats the data appropriately. This ensures compatibility and successful communication with various AI models.\n\n**[Inputs]**\n\n*  `provider`: The name of the AI service provider (e.g., \"meta\", \"ai21\", \"mistral\").\n* `model`: The identifier of the specific language model to be used.\n* `prompt`: The text prompt that will be given to the model for processing.\n* `model_kwargs`: A dictionary of additional keyword arguments specific to the chosen model's requirements (e.g., `max_tokens_to_sample`, `top_p`).\n\n**[Output]**\n\n* A dictionary containing the formatted input data ready to be sent to the AI provider's API. \n    * \n    *  This dictionary will have the keys and values expected by the chosen provider based on the provided `provider` and `model` parameters. \n\n\n"
+    },
+    "mem0__llms__openai__OpenAILLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/openai.py",
+        "relativePath": "mem0/llms/openai.py",
+        "lineNo": 50,
+        "endLineNo": 100,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fopenai.py%23L50-L100&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function generates a response using OpenAI's API based on a list of conversation messages. It allows customization of response format, available tools, and tool selection method.  \n\n**Inputs:**\n\n* **messages:** A list of dictionaries, each containing \"role\" (e.g., \"user\" or \"system\") and \"content\" of a conversation message.\n* **response_format:**  Optional. Specifies the desired output format for the response (e.g., \"text\").\n* **tools:** Optional. A list of available tools the model can utilize.\n* **tool_choice:** Optional.  Determines how the model selects a tool from the provided list (\"auto\" is a common choice).\n\n**Output:**\n\n*  A string containing the generated response from the OpenAI model.\n\n\n\n\nLet me know if you'd like me to elaborate on any specific aspect!"
+    },
+    "mem0__memory__main__Memory__search": {
+        "label": "search",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 235,
+        "endLineNo": 284,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L235-L284&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function searches for memories within a vector store based on a given query. It applies user, agent, and run ID filters if provided, retrieves matching memories, and returns them as a list of dictionaries containing memory details, metadata, and identifier information.  The purpose is to allow for efficient retrieval of relevant memories from a stored knowledge base. \n\n**Inputs:**\n\n* `query (str)`: The text string used to search for memories.\n* `user_id (str, optional)`: ID of the user associated with the memories to search.\n* `agent_id (str, optional)`: ID of the agent associated with the memories to search.\n* `run_id (str, optional)`: ID of the run associated with the memories to search.\n* `limit (int, optional)`: Maximum number of memories to return.\n* `filters (dict, optional)`: Additional filters to refine the search.\n\n**Output:**\n\n* A list of dictionaries, where each dictionary represents a retrieved memory with the following fields:\n    * `id`:  Unique identifier of the memory.\n    * `memory`: The actual content of the memory.\n    * `hash`:  Hash value of the memory content.\n    * `created_at`, `updated_at`: Timestamps indicating memory creation and last modification.\n    * `score`: Relevance score of the memory to the query.\n    * `user_id`, `agent_id`, `run_id`:  Identifiers associated with the memory.\n    * `metadata`: Additional key-value pairs stored with the memory.  \n\n\n\n\n\n"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 164,
+        "endLineNo": 208,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L164-L208&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Quick Summary:**\n\nThis function generates a response using an AWS Bedrock model based on a list of messages.  It intelligently chooses between two methods (\"converse\" or \"invoke_model\") depending on whether tools are provided as input.  The goal is to provide a flexible interface for interacting with various Bedrock models.\n\n**Inputs:**\n\n*  `messages`: A list of dictionaries, each containing 'role' (e.g., 'user') and 'content' (the message text).\n* `tools`: An optional list of dictionaries, each representing a tool the model can use.\n\n* `tool_choice`: A string specifying the method for selecting tools (\"auto\" implies tool selection based on context).\n\n**Output:**\n\n* A string containing the generated response from the Bedrock model. \n\n\n"
+    },
+    "mem0__vector_stores__base__VectorStoreBase": {
+        "label": "VectorStoreBase",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 4,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L4-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "This code defines a list of abstract methods for interacting with a vector database. The purpose is to provide a common interface for different vector database implementations.\n\n**Inputs**\n\n*  `name`: The name of the collection.\n* `vector_size`: The dimensionality of the vectors.\n* `distance`: A metric for measuring similarity between vectors.\n* `vectors`: A list of vectors to insert.\n* `payloads`: (Optional) An associated payload for each vector.\n* `ids`: (Optional) Unique identifiers for each vector.\n* `query`: A vector to search for similar vectors.\n* `limit`: The maximum number of results to return.\n* `filters`:  (Optional) Additional criteria for filtering search results.\n* `vector_id`: ID of the vector to delete or update.\n* `vector`: (Optional)  New vector to update with.\n* `payload`: (Optional) New payload to update with. \n\n\n**Output**\n    \n*  Returns a new collection object. \n*  No direct output from search, delete, update, or get methods. \n*  Returns a list of similar vectors.\n* `None` (for delete, update, etc.).\n* Additional information about the collection, such as size or schema.\n\n"
+    },
+    "mem0__vector_stores__qdrant__Qdrant____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 21,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L21-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown \n\n**Quick summary:** \n\nThis function initializes a Qdrant vector store, optionally connecting to an existing server instance or setting up a new local database. It then creates a new collection in the store, specifying the dimensions of embeddings to be used. \n\n**Inputs:**\n\n*  `collection_name`: The name of the collection to be created.\n* `embedding_model_dims`: The dimensionality of the embedding vectors.\n* `client`: (Optional) An existing QdrantClient instance to connect to a server.\n* `host`: (Optional) The hostname or IP address of the Qdrant server.\n* `port`: (Optional) The port number of the Qdrant server.\n* `path`: (Optional) The local path for the Qdrant database.\n* `url`: (Optional) The full URL of the Qdrant server.\n* `api_key`: (Optional) An API key for authentication with the Qdrant server.\n\n**Output:** \n\n* A QdrantClient instance connected to the specified server or a new local database.\n* A new collection within the vector store, named `collection_name` with specified embedding dimensions. \n\n\n"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM___convert_tool_format": {
+        "label": "_convert_tool_format",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 125,
+        "endLineNo": 163,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L125-L163&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function converts a list of tools defined in an original format into a standardized format suitable for other systems. The purpose is likely to facilitate interoperability and data exchange between different tools and platforms. \n\n## Inputs:\n\n* `original_tools`: A list of dictionaries, each representing a tool with a 'type' key indicating it's a function and details about its parameters and functionality.\n\n## Output:\n\n* A list of dictionaries, each representing a tool in the standardized format. \n* Each standardized tool description will include \"toolSpec\" with information about its name, description, and input schema. \n* The input schema will be in JSON format, defining the expected data types and structure for the tool's inputs. \n\n\n"
+    },
+    "mem0__vector_stores__configs__VectorStoreConfig": {
+        "label": "VectorStoreConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/configs.py",
+        "relativePath": "mem0/vector_stores/configs.py",
+        "lineNo": 4,
+        "endLineNo": 42,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fconfigs.py%23L4-L42&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function `validate_and_create_config` ensures valid configuration for a vector store (like Qdrant or Chromadb). It dynamically loads the appropriate config class based on the provider and validates input. Finally, it creates and stores a configured instance of the vector store.\n\n## Inputs\n\n*  `provider`: A string describing the type of vector store being used (e.g., \"qdrant\", \"chromadb\").\n*  `config`: An optional dictionary containing configuration parameters specific to the chosen vector store.\n\n## Output\n\n* An instance of `VectorStoreConfig` with validated and configured settings for the specified vector store.\n"
+    },
+    "mem0__llms__litellm__LiteLLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/litellm.py",
+        "relativePath": "mem0/llms/litellm.py",
+        "lineNo": 45,
+        "endLineNo": 81,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Flitellm.py%23L45-L81&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown:\n\n**Quick Summary:**  This function generates a textual response based on a conversation history (`messages`) using the `litellm` library. It offers flexibility in response format, tool integration, and  tool selection strategy.\n\n**Inputs:**\n\n* `messages`: A list of dictionaries, each representing a message with 'role' and 'content' keys.\n* `response_format`:  (Optional) Specifies the desired format of the response.\n* `tools`:  (Optional) A list of tools available for the model to use.\n* `tool_choice`: (Optional) Determines the method for selecting a tool when available.\n\n**Output:**\n\n* A string containing the generated response. \n\n\n"
+    },
+    "mem0__memory__main__Memory__get_all": {
+        "label": "get_all",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 198,
+        "endLineNo": 234,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L198-L234&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary] \n\nThis function retrieves memories from a vector store based on user-defined filters (user_id, agent_id, run_id). It processes the retrieved memories, excluding certain fields, and structures them into a list of dictionaries, each representing a memory with additional metadata. The purpose of this code is to provide an interface for accessing and retrieving memories from a centralized storage system.\n\n[Inputs]\n\n* **user_id:**  (optional) An identifier for the user associated with the memories.\n* **agent_id:** (optional) An identifier for the agent that generated or utilized the memories.\n* **run_id:** (optional) An identifier for a specific execution or run associated with the memories.\n* **limit:** (optional) An integer specifying the maximum number of memories to return.\n\n[Output]\n\n* A list of dictionaries, where each dictionary represents a memory and includes:\n    * **id:** A unique identifier for the memory.\n    * **memory:** The content of the memory.\n    * **hash:** (optional) A hash value associated with the memory content.\n    * **created_at:** (optional) Timestamp indicating when the memory was created. \n    * **updated_at:** (optional) Timestamp indicating when the memory was last updated.\n    * **user_id:** The user associated with the memory.\n    * **agent_id:** The agent associated with the memory. \n    * **run_id:** The run associated with the memory.\n    * **metadata:**  Additional key-value pairs related to the memory. \n\n\n\n\n"
+    },
+    "mem0__vector_stores__chroma__ChromaDB____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 22,
+        "endLineNo": 58,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L22-L58&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function initializes a ChromaDB vector store, either connecting to an existing server or creating a local one. It allows loading and managing vectors in the specified collection.\n\n[Inputs]\n- `collection_name`: Name of the ChromaDB collection to use.\n- `client`: (optional) An existing ChromaDB client instance.\n- `host`: (optional) Host address for the ChromaDB server.\n- `port`: (optional) Port number for the ChromaDB server.\n- `path`: (optional) Local path for the ChromaDB database.\n\n[Output]\n- A ChromaDB client object initialized and ready to interact with the specified collection. \n\n\n"
+    },
+    "mem0__memory__main__Memory__get": {
+        "label": "get",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 162,
+        "endLineNo": 197,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L162-L197&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]**\nThis function retrieves a memory item from a vector store based on its ID. It fetches the underlying data, populates a `MemoryItem` object, and enriches it with additional metadata and filters related to user, agent, and run IDs.\n\n**[Inputs]**\n\n* `memory_id (str)`: A unique identifier for the specific memory to be retrieved.\n\n**[Output]**\n\n* `dict`: A dictionary containing the retrieved memory data, including:\n    * `id`: The memory's unique identifier.\n    * `memory`: The actual content of the memory.\n    * `hash`: A cryptographic hash of the memory content.\n    * `created_at`: The timestamp when the memory was created.\n    * `updated_at`: The timestamp when the memory was last updated.\n    * `metadata`: A dictionary of additional key-value pairs associated with the memory.\n    * Filters: A dictionary containing the user ID, agent ID, and run ID extracted from the memory's payload. \n\n\n"
+    },
+    "mem0__llms__ollama__OllamaLLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/ollama.py",
+        "relativePath": "mem0/llms/ollama.py",
+        "lineNo": 56,
+        "endLineNo": 90,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Follama.py%23L56-L90&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This Python function utilizes the OpenAI API to generate a response based on a provided list of messages. It allows for customization of the response format, includes optional tool functionality, and parameters like temperature and maximum tokens for controlling the response.\n\n**[Inputs]**\n\n* `messages`: A list of dictionaries, each containing 'role' and 'content' keys, representing the conversation history.\n* `response_format`: Specifies the desired format for the output response (e.g., \"text\", \"json\").\n* `tools`: A list of dictionaries defining available tools for the model to utilize.\n* `tool_choice`:  Determines the method for selecting a tool, with \"auto\" being the default.\n\n **[Output]** \n\n* A string containing the generated response from the OpenAI model. \n\n\n"
+    },
+    "mem0__llms__azure_openai__AzureOpenAILLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/azure_openai.py",
+        "relativePath": "mem0/llms/azure_openai.py",
+        "lineNo": 47,
+        "endLineNo": 80,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fazure_openai.py%23L47-L80&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function generates a response using Azure OpenAI's chat completion API. It takes a list of messages, formatting parameters, and optional tool information to generate a text-based response. \n\nThe purpose of this code is to provide a simplified interface for interacting with Azure OpenAI's conversational AI model.\n\n## Inputs\n\n* **messages:** A list of dictionaries, each containing 'role' and 'content' keys, defining the conversation context.\n* **response_format:** An optional string or object specifying the desired response format.\n* **tools:** An optional list of dictionaries defining available tools for the model to use.\n* **tool_choice:** An optional string indicating the method for selecting tools.\n\n## Output\n\n* **str:** A generated text response based on the input messages and parameters. \n\n\n"
+    },
+    "mem0__llms__groq__GroqLLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/groq.py",
+        "relativePath": "mem0/llms/groq.py",
+        "lineNo": 49,
+        "endLineNo": 82,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fgroq.py%23L49-L82&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:**\n\nThis function generates a response to a given set of messages using a language model via an API. It takes into account user-specified parameters like response format, available tools, and tool selection strategy. The purpose is to provide a flexible interface for interacting with a language model and incorporating external tools into the response generation process.\n\n**Inputs:**\n\n* `messages`: A list of dictionaries, each containing 'role' and 'content' fields, representing the conversation history.\n* `response_format`:  Determines the structure of the output (e.g., \"text\", \"json\").\n* `tools`: An optional list of dictionaries, defining available external tools for the model to utilize.\n* `tool_choice`: Specifies how the model should choose a tool from the provided list (e.g., \"auto\").\n\n**Output:**\n\n* A string containing the generated response from the language model. \n\n\n"
+    },
+    "mem0__llms__together__TogetherLLM__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/together.py",
+        "relativePath": "mem0/llms/together.py",
+        "lineNo": 48,
+        "endLineNo": 81,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Ftogether.py%23L48-L81&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function uses the TogetherAI API to generate a response based on a list of messages, taking into account specified parameters like temperature, maximum tokens, and potential tool integration. The main purpose of the code is to facilitate conversational interactions with a Language Model through TogetherAI.\n\n## Inputs\n\n*  **messages:** List of dictionaries containing 'role' (indicating user or assistant) and 'content' (the text of the message).\n*  **response_format:** (Optional) Specifies the desired format for the output response (e.g., \"text\", \"json\").\n*  **tools:** (Optional) List of dictionaries representing available tools the model can utilize for processing.\n*  **tool_choice:** (Optional)  Determines the method used for selecting tools (\"auto\" is a default).\n\n## Output\n\n*  A string containing the generated response from the TogetherAI model. \n\n\n"
+    },
+    "mem0__memory__telemetr__AnonymousTelemetry": {
+        "label": "AnonymousTelemetry",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 9,
+        "endLineNo": 41,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L9-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## AnonymousTelemetry Code Analysis\n\n**Quick Summary:** This code defines a class `AnonymousTelemetry` that interacts with a Posthog analytics platform. It enables recording user events and identifying users anonymously, enriching events with system information. The purpose is to track user interactions and system details within an application.  \n\n\n**Inputs:**\n\n* `project_api_key`:  A unique key provided by Posthog to authenticate with their platform.\n* `host`:  The URL or hostname of the Posthog instance to connect to. \n* `event_name`:  A string describing the type of user event being captured (e.g., \"button_click\", \"page_view\").\n* `properties`: A dictionary containing additional event-specific information.\n* `user_id`: A unique identifier for the user being tracked. \n\n\n\n**Output:**\n\n* Event data is sent to the Posthog platform, including:\n    * User-specific information (`distinct_id`) \n    * The event name \n    * Additional properties \n* User identification records are sent to the Posthog platform linked to the given `user_id`.\n"
+    },
+    "mem0__vector_stores__chroma__ChromaDB___parse_output": {
+        "label": "_parse_output",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 59,
+        "endLineNo": 91,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L59-L91&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function parses structured output data from a source (e.g., a search engine, a similarity algorithm) into a list of OutputData objects. Each OutputData object represents a result with an ID, a score (distance), and optional metadata.\n\n## Inputs:\n- `data`: A dictionary containing keys 'ids', 'distances', and 'metadatas'. \n\n    Each key likely represents a different aspect of the search results.\n\n## Output:\n- A list of `OutputData` objects, each containing:\n    - `id`:  The ID of the result.\n    - `score`: A numerical score reflecting the relevance or similarity of the result.\n    - `payload`: Optional metadata associated with the result. \n\n\n"
+    },
+    "mem0__embeddings__ollama__OllamaEmbedding": {
+        "label": "OllamaEmbedding",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/ollama.py",
+        "relativePath": "mem0/embeddings/ollama.py",
+        "lineNo": 12,
+        "endLineNo": 43,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Follama.py%23L12-L43&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis code defines a class for embedding text using the Ollama platform.  It automatically downloads the specified model if it's not locally available and provides a simple `embed` function to generate embeddings for given text input. The overall purpose is to provide an easy way to interact with Ollama's embedding capabilities.\n\n## Inputs\n\n* `text` (str): The string you want to convert into an embedding vector.\n\n## Output\n\n* `list`: A numerical list representing the embedding vector for the input text. \n\n\n"
+    },
+    "mem0__configs__vector_stores__qdrant__QdrantConfig": {
+        "label": "QdrantConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/vector_stores/qdrant.py",
+        "relativePath": "mem0/configs/vector_stores/qdrant.py",
+        "lineNo": 5,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fvector_stores%2Fqdrant.py%23L5-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code snippet defines a class which represents configuration settings for a Qdrant client. It ensures that the user specifies either a local database path or connection details (host, port, url, api_key) to connect to a Qdrant server.\n\n## Inputs\n\n*  `host`:  Address of the Qdrant server\n*  `port`: Port number of the Qdrant server\n*  `path`: Local file path for a Qdrant database \n*  `url`: Full URL for a remote Qdrant server\n*  `api_key`: API key for authentication with the remote Qdrant server\n\n## Output\n\n*  A validated dictionary of configuration values for a Qdrant client. \n\n\n\n"
+    },
+    "mem0__configs__embeddings__base__BaseEmbedderConfig": {
+        "label": "BaseEmbedderConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/embeddings/base.py",
+        "relativePath": "mem0/configs/embeddings/base.py",
+        "lineNo": 4,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fembeddings%2Fbase.py%23L4-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Embeddings Config\n\n**Quick Summary:**\n\nThis code defines a configuration class for embedding models. It allows users to specify the model to use, the desired embedding dimension, and the base URL for an Ollama API. The purpose is to streamline the setup process for embedding applications. \n\n**Inputs:**\n\n* `model`: (Optional String) The name or identifier of the embedding model to use.\n* `embedding_dims`: (Optional Integer) The desired number of dimensions for the embeddings.\n* `base_url`: (Optional String) The base URL for an Ollama API, used for Ollama-specific embeddings.\n\n**Output:**\n\n* An instance of the `Embeddings` configuration class. \n"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 45,
+        "endLineNo": 73,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L45-L73&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function processes a raw API response, discerning whether it involves the use of tools. If tools were used, it extracts information about each tool call (name and arguments) and returns them in a structured format. Otherwise, it parses the response body and returns the main text content. The purpose is likely to analyze and understand the results generated by an AI system that might utilize external tools.  \n\n**[Inputs]** \n* `response`: The raw API response object. \n* `tools`: A list of tools potentially used by the API.\n\n**[Output]**\n* `processed_response`: A dictionary containing information about tool calls if tools were used, otherwise, a string containing the main text content of the response.  \n\n\n"
+    },
+    "mem0__llms__azure_openai__AzureOpenAILLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/azure_openai.py",
+        "relativePath": "mem0/llms/azure_openai.py",
+        "lineNo": 18,
+        "endLineNo": 46,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fazure_openai.py%23L18-L46&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]**\n\nThis function processes the API response, intelligently extracting the generated content and information about any tools used. If tools were employed in the response generation, it returns a structured dictionary containing the content and details of the tool calls. Otherwise, it simply returns the plain text content. \n\nThe purpose is to standardize the output from an API that may or may not utilize tools, making it easier to work with in subsequent processing.\n\n**[Inputs]**\n\n*   `response`: The raw response object from an API call.\n*   `tools`: A list of tools specified in the original API request.\n\n**[Output]**\n\n*   `str`: If no tools were used, the text content of the API response.\n*   `dict`: If tools were used, a dictionary containing:\n    *   `\"content\"`: The text content of the API response.\n    *   `\"tool_calls\"`: A list of dictionaries, each describing a tool call made during response generation.  Each tool call dictionary contains:\n        *   `\"name\"`: The name of the tool function.\n        *   `\"arguments\"`: The arguments passed to the tool function, parsed as JSON.\n\n\n\n"
+    },
+    "mem0__llms__groq__GroqLLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/groq.py",
+        "relativePath": "mem0/llms/groq.py",
+        "lineNo": 21,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fgroq.py%23L21-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**[Quick Summary]** This Python function processes the output from an API, specifically designed for responses that might include tool calls. If tools are used, it extracts the content of the response and the details of each tool function call (name and arguments) into a structured dictionary. Otherwise, it simply returns the raw content of the response.\n\n**[Inputs]**\n\n*  `response`:  The raw, unprocessed response object from an API. \n*  `tools`: A list indicating whether tools were used in the API request. \n\n**[Output]**\n\n*  If `tools` is provided (tools were used): A dictionary containing:\n    * `content`: The main content of the response.\n    * `tool_calls`: A list of dictionaries, each describing a tool call with `name` and `arguments`. \n* If `tools` is not provided (no tools used): The raw content (as a string) of the response. \n\n\n\n"
+    },
+    "mem0__llms__litellm__LiteLLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/litellm.py",
+        "relativePath": "mem0/llms/litellm.py",
+        "lineNo": 17,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Flitellm.py%23L17-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function processes a response from an API, likely a large language model, and extracts relevant information based on whether tools were used in the generation process. \n\nIt separates the content of the response and, if tools were used, also provides a list of the tools invoked and their arguments. \n\n## Inputs\n* `response`: The raw output from the API call.\n* `tools`: A list of tools specified in the original API request.\n\n## Output\n* If `tools` is provided:\n    * A dictionary containing:\n        * `content`: The main text generated by the model.\n        * `tool_calls`: A list of dictionaries, each describing a tool invocation with:\n            * `name`: The name of the tool function.\n            * `arguments`: The arguments passed to the tool function (as JSON).\n* If `tools` is not provided:\n    * The main text content of the API response. \n\n\n"
+    },
+    "mem0__llms__ollama__OllamaLLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/ollama.py",
+        "relativePath": "mem0/llms/ollama.py",
+        "lineNo": 28,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Follama.py%23L28-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function processes an API response,  extracting the main message content and any tool calls made if tools were used in the request.  It then structures the response in a specific format for easier use.\n\n**Inputs:**\n* `response`: The raw data returned by an API. \n* `tools`:  A list indicating whether tools were used in the original request.\n\n**Output:**\n* If `tools` is provided, a dictionary containing:\n    * `\"content\"`: The main message text.\n    * `\"tool_calls\"`: A list of dictionaries, each describing a tool used:\n        * `\"name\"`: The name of the tool function.\n        * `\"arguments\"`: The arguments passed to the tool function. \n* If `tools` is not provided, the function returns only the main message content as a string. \n\n\n"
+    },
+    "mem0__llms__openai__OpenAILLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/openai.py",
+        "relativePath": "mem0/llms/openai.py",
+        "lineNo": 22,
+        "endLineNo": 49,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fopenai.py%23L22-L49&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick Summary]\nThis function processes a response from an API, specifically designed for scenarios where AI tools were used. If tools were employed, it extracts the generated content and details about the tool calls, structuring them into a dictionary. Otherwise, it simply returns the raw content. \n\n[Inputs]\n* `response`: The raw API response object.\n* `tools`: A list indicating whether AI tools were used in the request.\n\n[Output]\n* If `tools` is True:  A dictionary containing the generated content and a list of tool calls, each with the tool's name and arguments.\n* If `tools` is False: The raw text content generated by the API. \n"
+    },
+    "mem0__llms__together__TogetherLLM___parse_response": {
+        "label": "_parse_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/together.py",
+        "relativePath": "mem0/llms/together.py",
+        "lineNo": 20,
+        "endLineNo": 47,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Ftogether.py%23L20-L47&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function processes an API response, extracting its content and information about any tools used in its generation. If tools were used, it returns a dictionary containing the content and a list of tool calls with their names and arguments; otherwise, it simply returns the content. The purpose is likely to provide a structured and informative representation of API responses, especially when dealing with responses that leverage external tools for processing.\n\n## Inputs\n\n* **response:**  The raw, unprocessed response received from an API. This likely contains structured data about the API's output.\n* **tools:**  A list specifying the tools potentially used by the API during the response generation.  \n\n## Output\n\n* **str or dict:**  \n    * If `tools` is provided, a dictionary containing:\n        * `\"content\"`:  The main content of the API response.\n        * `\"tool_calls\"`: A list of dictionaries, each describing a tool call with:\n            * `\"name\"`: The name of the tool function used.\n            * `\"arguments\"`: The arguments passed to the tool function (as a JSON-encoded string).\n    * If `tools` is not provided, a string containing the main content of the API response. \n\n\n\n"
+    },
+    "mem0__memory__main__Memory___update_memory_tool": {
+        "label": "_update_memory_tool",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 370,
+        "endLineNo": 397,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L370-L397&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function updates an existing memory entry within a vector store.  It retrieves the previous data, merges it with new input data, calculates new embeddings, and stores the updated entry back into the vector store.  This could be part of a system that uses semantic search or knowledge representation. \n\n## Inputs\n\n* **memory_id:**  Unique identifier for the memory entry to be updated.\n* **data:** The new data to be incorporated into the memory entry.\n* **metadata (optional):** A dictionary containing additional metadata about the memory entry (e.g., user_id, agent_id, run_id). \n\n## Output \n\n* The updated memory entry is stored back into the vector store. \n* The function also logs a message indicating the successful update and adds history of the update to a database (`self.db`). \n"
+    },
+    "mem0__memory__main__Memory__delete_all": {
+        "label": "delete_all",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 311,
+        "endLineNo": 338,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L311-L338&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary**\n\nThis function deletes all memories associated with a specific user, agent, or run within a vector store. It provides a targeted way to remove memories based on user-defined criteria. \n\n**Inputs**\n\n*  `user_id` (str, optional): Unique identifier of the user.\n*  `agent_id` (str, optional): Unique identifier of the agent.\n*  `run_id` (str, optional): Unique identifier of the run.\n\n**Output**\n\n*  `{'message': 'Memories deleted successfully!'}` : A dictionary confirming successful memory deletion. \n\n\n\n\n"
+    },
+    "mem0__embeddings__openai__OpenAIEmbedding": {
+        "label": "OpenAIEmbedding",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/openai.py",
+        "relativePath": "mem0/embeddings/openai.py",
+        "lineNo": 8,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fopenai.py%23L8-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function embeds text into a numerical vector using the OpenAI API.  Its purpose is to provide a way to represent text as a numerical entity that can be used for various downstream tasks like semantic similarity search or clustering.\n\n## Inputs\n\n* `text` (str):  The input text to be embedded.\n\n* `config`: (Optional)`BaseEmbedderConfig`]: A configuration object that can specify the OpenAI model and embedding dimensions.\n\n## Output\n\n* `list`: A numerical list representing the embedding vector of the input text. \n"
+    },
+    "mem0__client__main__MemoryClient____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 52,
+        "endLineNo": 76,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L52-L76&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary:\n\nThis function initializes a client for interacting with the Mem0 API. It uses an API key for authentication and sets up an HTTP client to make requests to the Mem0 API endpoints. This is essential for accessing and utilizing Mem0's functionalities.\n\n\n## Inputs:\n\n* **api_key:** This is the unique identifier used to authenticate with the Mem0 API. \n* **host:** This specifies the base URL for the Mem0 API, defaulting to \"https://api.mem0.ai/v1\". \n\n\n## Output:\n\n* A functional `Mem0Client` object ready to make API requests.\n* This object likely handles interactions with the Mem0 API, enabling tasks like data retrieval, model deployment, etc. \n*  The function initialization also includes error handling to ensure a valid API key is provided. \n"
+    },
+    "mem0__configs__embeddings__base__BaseEmbedderConfig____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/embeddings/base.py",
+        "relativePath": "mem0/configs/embeddings/base.py",
+        "lineNo": 9,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fembeddings%2Fbase.py%23L9-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Embeddings Configuration Initialization\n\n**Quick Summary:** This function initializes a configuration object for embedding models, allowing you to specify parameters like the model name, embedding dimensions, and for Ollama, the API base URL. It sets up the groundwork for interacting with an embedding model and using its functionalities.\n\n**Inputs:**\n\n*   `model`:  The name or identifier of the desired embedding model.\n*   `embedding_dims`:  The desired dimensionality of the generated embeddings.\n*   `base_url`:  The base URL for the Ollama API, necessary for interacting with Ollama-hosted models.\n\n**Output:**\n\n*   A configuration object with the specified parameters, ready to be used for embedding tasks. \n\n\n\n\n"
+    },
+    "mem0__embeddings__base__EmbeddingBase": {
+        "label": "EmbeddingBase",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/base.py",
+        "relativePath": "mem0/embeddings/base.py",
+        "lineNo": 7,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fbase.py%23L7-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis Python code defines a base class for LLMs (Large Language Models) that handle embedding text. It provides a basic structure with a configuration initialization method `__init__` and an abstract method `embed` for getting text embeddings. \n\n## Inputs\n\n* **`config: Optional[BaseEmbedderConfig] = None`**: This is optional configuration for the embedding process.  \n* **`text (str)`**:  The textual input for which you want to obtain an embedding vector.  \n\n## Output\n\n* **`list`**: A numerical list representing the embedding vector for the given text.  \n"
+    },
+    "mem0__llms__base__LLMBase": {
+        "label": "LLMBase",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/base.py",
+        "relativePath": "mem0/llms/base.py",
+        "lineNo": 7,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fbase.py%23L7-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**Quick summary:** This Python code defines a base class for Large Language Models (LLMs). The `__init__` method initializes the LLM with a configuration object, and the `generate_response` method is meant to be implemented by subclasses to produce textual responses based on a list of conversation messages.  \n\n**Inputs:**\n* `config`: An optional `BaseLlmConfig` object that specifies parameters for the LLM.\n* `messages`: A list of dictionaries, each representing a message with \"role\" and \"content\" keys.\n\n**Output:**\n* A string containing the generated LLM response. \n"
+    },
+    "mem0__memory__storage__SQLiteManager__get_history": {
+        "label": "get_history",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 105,
+        "endLineNo": 128,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L105-L128&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Python Code Analysis:\n\n**[Quick Summary]**  This function retrieves history records associated with a specific memory_id from a database. It returns a list of dictionaries, each representing a history record containing details about the changes made to the memory. The purpose is to provide a chronological record of memory modifications.\n\n\n**[Inputs]**\n*  `memory_id`: An identifier unique to a particular memory entry. \n\n**[Output]**\n* A list of dictionaries, where each dictionary contains:\n    * \"id\":  The unique identifier of the history record.\n    * \"memory_id\": The identifier of the memory associated with this history entry.\n    * \"old_memory\": The previous value of the memory.\n    * \"new_memory\": The updated value of the memory.\n    * \"event\": A description of the event that triggered the memory change.\n    * \"created_at\": The timestamp when the history record was created.\n    * \"updated_at\": The timestamp when the history record was last updated. \n\n\n\n"
+    },
+    "mem0__vector_stores__qdrant__Qdrant___create_filter": {
+        "label": "_create_filter",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 105,
+        "endLineNo": 128,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L105-L128&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary:\n\nThis Python function takes a dictionary of filter criteria and constructs a Filter object suitable for querying a database or search index.  The filter defines conditions like \"greater than or equal to\", \"less than or equal to\" or exact value matches for different fields.\n\n## Inputs:\n\n*  `filters (dict)`: A dictionary where keys are field names and values are either individual values for exact matching or dictionaries containing \"gte\" (greater than or equal to) and \"lte\" (less than or equal to) keys for range filtering.\n\n## Output:\n\n*  `Filter`: A Filter object that encapsulates the defined conditions. \n*  `None`: If no filters are provided in the input dictionary.  \n\n\n\n"
+    },
+    "mem0__vector_stores__configs__VectorStoreConfig__validate_and_create_config": {
+        "label": "validate_and_create_config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/configs.py",
+        "relativePath": "mem0/vector_stores/configs.py",
+        "lineNo": 20,
+        "endLineNo": 42,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fconfigs.py%23L20-L42&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function initializes a vector store from a configuration. \n\nIt takes a provider type (e.g., \"FAISS\") and an optional configuration dictionary, determines the appropriate vector store implementation, initializes the configuration, and updates the object's internal state.  The purpose is to provide a flexible way to instantiate different types of vector stores.\n\n**Inputs:**\n\n* `provider`: A string indicating the type of vector store provider (e.g., \"FAISS\", \"Pinecone\").\n* `config`: An optional dictionary containing configuration parameters specific to the chosen provider.\n\n**Output:**\n\n* The instance of the object itself, with its internal `config` attribute updated to reflect the initialized vector store configuration. \n\n\n\n"
+    },
+    "mem0__client__main__MemoryClient__get_all": {
+        "label": "get_all",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 128,
+        "endLineNo": 149,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L128-L149&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]**\nThis function fetches all memories from an API.  It allows optional filtering based on user, agent, or session identifiers, and limits the number of retrieved memories. The purpose is to provide a convenient way to access and manage memories within a system.\n\n**[Inputs]**\n* **kwargs:** \n    *  `user_id`: Identifier for a specific user associated with the memories.\n    * `agent_id`: Identifier for a specific agent involved in generating the memories.\n    * `session_id`: Identifier for a particular session related to the memories.\n    * `limit`: Maximum number of memories to retrieve (defaults to 100).\n\n**[Output]**\n* A dictionary containing a list of retrieved memories. \n\n\n"
+    },
+    "mem0__configs__vector_stores__chroma__ChromaDbConfig": {
+        "label": "ChromaDbConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/vector_stores/chroma.py",
+        "relativePath": "mem0/configs/vector_stores/chroma.py",
+        "lineNo": 5,
+        "endLineNo": 26,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fvector_stores%2Fchroma.py%23L5-L26&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\n\nThis code defines a Pydantic model for interacting with a ChromaDB database. It handles connection settings (host, port, path) and enforces that at least one of them is provided for establishing a connection.\n\n**Inputs**\n\n- `host`: String representing the remote host for the ChromaDB server.\n- `port`: Integer representing the port number for the ChromaDB server connection.\n- `path`: String representing the local path to the ChromaDB database directory.\n\n**Output**\n\n- None.  The code defines a model and validation rules, but doesn't produce a direct output. It's intended to be used to validate and structure configuration data for connecting to ChromaDB. \n\n\n"
+    },
+    "mem0__utils__factor__LlmFactory": {
+        "label": "LlmFactory",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 12,
+        "endLineNo": 33,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L12-L33&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary:**\n\nThis function dynamically creates an instance of a specific Large Language Model (LLM) based on a provided provider name and configuration. It maps provider names to corresponding LLM classes and instantiates the chosen class with the given configuration. \n\n**Inputs:**\n\n* `provider_name`: A string representing the name of the LLM provider (e.g., \"ollama\", \"openai\").\n* `config`: A dictionary containing configuration parameters for the LLM.\n\n**Output:**\n\n* An instance of the selected LLM class, initialized with the provided configuration. \n* A `ValueError` is raised if the provided provider name is not supported. \n\n\n\n"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__search": {
+        "label": "search",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 129,
+        "endLineNo": 150,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L129-L150&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__add": {
+        "label": "add",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 88,
+        "endLineNo": 108,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L88-L108&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__create_col": {
+        "label": "create_col",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 64,
+        "endLineNo": 84,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L64-L84&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient___prepare_payload": {
+        "label": "_prepare_payload",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 256,
+        "endLineNo": 275,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L256-L275&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__search": {
+        "label": "search",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 151,
+        "endLineNo": 170,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L151-L170&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__create_col": {
+        "label": "create_col",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 92,
+        "endLineNo": 111,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L92-L111&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__insert": {
+        "label": "insert",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 85,
+        "endLineNo": 104,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L85-L104&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__list": {
+        "label": "list",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 225,
+        "endLineNo": 244,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L225-L244&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM___format_messages": {
+        "label": "_format_messages",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 26,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L26-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__storage__SQLiteManager__add_history": {
+        "label": "add_history",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 86,
+        "endLineNo": 104,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L86-L104&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__delete_all": {
+        "label": "delete_all",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 204,
+        "endLineNo": 221,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L204-L221&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory___create_memory_tool": {
+        "label": "_create_memory_tool",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 352,
+        "endLineNo": 369,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L352-L369&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__storage__SQLiteManager___create_history_table": {
+        "label": "_create_history_table",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 68,
+        "endLineNo": 85,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L68-L85&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__api_error_handler": {
+        "label": "api_error_handler",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 23,
+        "endLineNo": 39,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L23-L39&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__delete": {
+        "label": "delete",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 186,
+        "endLineNo": 202,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L186-L202&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__get": {
+        "label": "get",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 110,
+        "endLineNo": 126,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L110-L126&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__history": {
+        "label": "history",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 223,
+        "endLineNo": 239,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L223-L239&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__configs__base__MemoryConfig": {
+        "label": "MemoryConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/base.py",
+        "relativePath": "mem0/configs/base.py",
+        "lineNo": 23,
+        "endLineNo": 39,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fbase.py%23L23-L39&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__configs__EmbedderConfig": {
+        "label": "EmbedderConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/configs.py",
+        "relativePath": "mem0/embeddings/configs.py",
+        "lineNo": 6,
+        "endLineNo": 22,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fconfigs.py%23L6-L22&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__search": {
+        "label": "search",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 125,
+        "endLineNo": 141,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L125-L141&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__openai__OpenAIEmbedding__embed": {
+        "label": "embed",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/openai.py",
+        "relativePath": "mem0/embeddings/openai.py",
+        "lineNo": 19,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fopenai.py%23L19-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__configs__LlmConfig": {
+        "label": "LlmConfig",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/configs.py",
+        "relativePath": "mem0/llms/configs.py",
+        "lineNo": 6,
+        "endLineNo": 21,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fconfigs.py%23L6-L21&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__telemetr__capture_event": {
+        "label": "capture_event",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 48,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L48-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__telemetr__AnonymousTelemetry__capture_event": {
+        "label": "capture_event",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 16,
+        "endLineNo": 31,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L16-L31&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__utils__factor__VectorStoreFactory": {
+        "label": "VectorStoreFactory",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 49,
+        "endLineNo": 64,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L49-L64&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__get": {
+        "label": "get",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 179,
+        "endLineNo": 194,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L179-L194&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__huggingface__HuggingFaceEmbedding": {
+        "label": "HuggingFaceEmbedding",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/huggingface.py",
+        "relativePath": "mem0/embeddings/huggingface.py",
+        "lineNo": 5,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fhuggingface.py%23L5-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory__update": {
+        "label": "update",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 285,
+        "endLineNo": 299,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L285-L299&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Mem0": {
+        "label": "Mem0",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 9,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L9-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__utils__factor__EmbedderFactory": {
+        "label": "EmbedderFactory",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 34,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L34-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__list": {
+        "label": "list",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 210,
+        "endLineNo": 224,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L210-L224&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__delete": {
+        "label": "delete",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 151,
+        "endLineNo": 165,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L151-L165&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__configs__vector_stores__qdrant__QdrantConfig__check_host_port_or_path": {
+        "label": "check_host_port_or_path",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/vector_stores/qdrant.py",
+        "relativePath": "mem0/configs/vector_stores/qdrant.py",
+        "lineNo": 19,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fvector_stores%2Fqdrant.py%23L19-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Mem0____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 10,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L10-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__get": {
+        "label": "get",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 166,
+        "endLineNo": 179,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L166-L179&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__update": {
+        "label": "update",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 172,
+        "endLineNo": 184,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L172-L184&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__configs__base__MemoryItem": {
+        "label": "MemoryItem",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/base.py",
+        "relativePath": "mem0/configs/base.py",
+        "lineNo": 10,
+        "endLineNo": 22,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fbase.py%23L10-L22&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__base__MemoryBase__update": {
+        "label": "update",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/base.py",
+        "relativePath": "mem0/memory/base.py",
+        "lineNo": 29,
+        "endLineNo": 41,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fbase.py%23L29-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory__history": {
+        "label": "history",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 339,
+        "endLineNo": 351,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L339-L351&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Completions___fetch_relevant_memories": {
+        "label": "_fetch_relevant_memories",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 140,
+        "endLineNo": 152,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L140-L152&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__insert": {
+        "label": "insert",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 112,
+        "endLineNo": 124,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L112-L124&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__update": {
+        "label": "update",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 153,
+        "endLineNo": 165,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L153-L165&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__update": {
+        "label": "update",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 166,
+        "endLineNo": 178,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L166-L178&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__ollama__OllamaEmbedding__embed": {
+        "label": "embed",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/ollama.py",
+        "relativePath": "mem0/embeddings/ollama.py",
+        "lineNo": 32,
+        "endLineNo": 43,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Follama.py%23L32-L43&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__aws_bedrock__AWSBedrockLLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/aws_bedrock.py",
+        "relativePath": "mem0/llms/aws_bedrock.py",
+        "lineNo": 14,
+        "endLineNo": 25,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Faws_bedrock.py%23L14-L25&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__base__MemoryBase__get": {
+        "label": "get",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/base.py",
+        "relativePath": "mem0/memory/base.py",
+        "lineNo": 6,
+        "endLineNo": 17,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fbase.py%23L6-L17&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Completions___async_add_to_memory": {
+        "label": "_async_add_to_memory",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 128,
+        "endLineNo": 139,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L128-L139&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__col_info": {
+        "label": "col_info",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 198,
+        "endLineNo": 209,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L198-L209&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__col_info": {
+        "label": "col_info",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 213,
+        "endLineNo": 224,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L213-L224&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__base__EmbeddingBase____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/base.py",
+        "relativePath": "mem0/embeddings/base.py",
+        "lineNo": 8,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fbase.py%23L8-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__base__EmbeddingBase__embed": {
+        "label": "embed",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/base.py",
+        "relativePath": "mem0/embeddings/base.py",
+        "lineNo": 20,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fbase.py%23L20-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__huggingface__HuggingFaceEmbedding__embed": {
+        "label": "embed",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/huggingface.py",
+        "relativePath": "mem0/embeddings/huggingface.py",
+        "lineNo": 9,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fhuggingface.py%23L9-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__ollama__OllamaEmbedding____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/ollama.py",
+        "relativePath": "mem0/embeddings/ollama.py",
+        "lineNo": 13,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Follama.py%23L13-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__base__LLMBase____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/base.py",
+        "relativePath": "mem0/llms/base.py",
+        "lineNo": 8,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fbase.py%23L8-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__base__LLMBase__generate_response": {
+        "label": "generate_response",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/base.py",
+        "relativePath": "mem0/llms/base.py",
+        "lineNo": 20,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fbase.py%23L20-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__openai__OpenAILLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/openai.py",
+        "relativePath": "mem0/llms/openai.py",
+        "lineNo": 11,
+        "endLineNo": 21,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fopenai.py%23L11-L21&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__base__MemoryBase__history": {
+        "label": "history",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/base.py",
+        "relativePath": "mem0/memory/base.py",
+        "lineNo": 53,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fbase.py%23L53-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory__delete": {
+        "label": "delete",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 300,
+        "endLineNo": 310,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L300-L310&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__delete": {
+        "label": "delete",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 142,
+        "endLineNo": 152,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L142-L152&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient___prepare_params": {
+        "label": "_prepare_params",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 276,
+        "endLineNo": 285,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L276-L285&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient___validate_api_key": {
+        "label": "_validate_api_key",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 77,
+        "endLineNo": 86,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L77-L86&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__api_error_handler__wrapper": {
+        "label": "wrapper",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 27,
+        "endLineNo": 36,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L27-L36&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__openai__OpenAIEmbedding____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/openai.py",
+        "relativePath": "mem0/embeddings/openai.py",
+        "lineNo": 9,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fopenai.py%23L9-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 30,
+        "endLineNo": 39,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L30-L39&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__base__MemoryBase__delete": {
+        "label": "delete",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/base.py",
+        "relativePath": "mem0/memory/base.py",
+        "lineNo": 43,
+        "endLineNo": 51,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fbase.py%23L43-L51&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__base__MemoryBase__get_all": {
+        "label": "get_all",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/base.py",
+        "relativePath": "mem0/memory/base.py",
+        "lineNo": 19,
+        "endLineNo": 27,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fbase.py%23L19-L27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory___delete_memory_tool": {
+        "label": "_delete_memory_tool",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 398,
+        "endLineNo": 406,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L398-L406&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__setu__get_user_id": {
+        "label": "get_user_id",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/setup.py",
+        "relativePath": "mem0/memory/setup.py",
+        "lineNo": 20,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fsetup.py%23L20-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__setu__setup_config": {
+        "label": "setup_config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/setup.py",
+        "relativePath": "mem0/memory/setup.py",
+        "lineNo": 11,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fsetup.py%23L11-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Completions___async_add_to_memory__add_task": {
+        "label": "add_task",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 129,
+        "endLineNo": 137,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L129-L137&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__utils__factor__LlmFactory__create": {
+        "label": "create",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 25,
+        "endLineNo": 33,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L25-L33&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__utils__factor__VectorStoreFactory__create": {
+        "label": "create",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 56,
+        "endLineNo": 64,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L56-L64&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__delete_col": {
+        "label": "delete_col",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 189,
+        "endLineNo": 197,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L189-L197&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__ChromaDB__list_cols": {
+        "label": "list_cols",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 180,
+        "endLineNo": 188,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L180-L188&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__delete_col": {
+        "label": "delete_col",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 204,
+        "endLineNo": 212,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L204-L212&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__qdrant__Qdrant__list_cols": {
+        "label": "list_cols",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/qdrant.py",
+        "relativePath": "mem0/vector_stores/qdrant.py",
+        "lineNo": 195,
+        "endLineNo": 203,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fqdrant.py%23L195-L203&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__chat": {
+        "label": "chat",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 248,
+        "endLineNo": 255,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L248-L255&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__MemoryClient__reset": {
+        "label": "reset",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 240,
+        "endLineNo": 247,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L240-L247&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__ollama__OllamaEmbedding___ensure_model_exists": {
+        "label": "_ensure_model_exists",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/ollama.py",
+        "relativePath": "mem0/embeddings/ollama.py",
+        "lineNo": 24,
+        "endLineNo": 31,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Follama.py%23L24-L31&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__azure_openai__AzureOpenAILLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/azure_openai.py",
+        "relativePath": "mem0/llms/azure_openai.py",
+        "lineNo": 10,
+        "endLineNo": 17,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fazure_openai.py%23L10-L17&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__ollama__OllamaLLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/ollama.py",
+        "relativePath": "mem0/llms/ollama.py",
+        "lineNo": 12,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Follama.py%23L12-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__ollama__OllamaLLM___ensure_model_exists": {
+        "label": "_ensure_model_exists",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/ollama.py",
+        "relativePath": "mem0/llms/ollama.py",
+        "lineNo": 20,
+        "endLineNo": 27,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Follama.py%23L20-L27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory__from_config": {
+        "label": "from_config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 41,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L41-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory__reset": {
+        "label": "reset",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 407,
+        "endLineNo": 414,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L407-L414&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__telemetr__capture_client_event": {
+        "label": "capture_client_event",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 64,
+        "endLineNo": 71,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L64-L71&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__utils__factor__EmbedderFactory__create": {
+        "label": "create",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 41,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L41-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__configs__EmbedderConfig__validate_config": {
+        "label": "validate_config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/configs.py",
+        "relativePath": "mem0/embeddings/configs.py",
+        "lineNo": 16,
+        "endLineNo": 22,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fconfigs.py%23L16-L22&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__configs__LlmConfig__validate_config": {
+        "label": "validate_config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/configs.py",
+        "relativePath": "mem0/llms/configs.py",
+        "lineNo": 15,
+        "endLineNo": 21,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fconfigs.py%23L15-L21&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__groq__GroqLLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/groq.py",
+        "relativePath": "mem0/llms/groq.py",
+        "lineNo": 14,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Fgroq.py%23L14-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__together__TogetherLLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/together.py",
+        "relativePath": "mem0/llms/together.py",
+        "lineNo": 13,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Ftogether.py%23L13-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__utils__get_update_memory_messages": {
+        "label": "get_update_memory_messages",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/utils.py",
+        "relativePath": "mem0/memory/utils.py",
+        "lineNo": 8,
+        "endLineNo": 14,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Futils.py%23L8-L14&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__client__main__APIError": {
+        "label": "APIError",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/client/main.py",
+        "relativePath": "mem0/client/main.py",
+        "lineNo": 17,
+        "endLineNo": 22,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fclient%2Fmain.py%23L17-L22&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__configs__vector_stores__chroma__ChromaDbConfig__check_host_port_or_path": {
+        "label": "check_host_port_or_path",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/vector_stores/chroma.py",
+        "relativePath": "mem0/configs/vector_stores/chroma.py",
+        "lineNo": 19,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fvector_stores%2Fchroma.py%23L19-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__llms__litellm__LiteLLM____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/llms/litellm.py",
+        "relativePath": "mem0/llms/litellm.py",
+        "lineNo": 11,
+        "endLineNo": 16,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fllms%2Flitellm.py%23L11-L16&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__telemetr__AnonymousTelemetry____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 10,
+        "endLineNo": 15,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L10-L15&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Completions___prepare_messages": {
+        "label": "_prepare_messages",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 122,
+        "endLineNo": 127,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L122-L127&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__utils__factor__load_class": {
+        "label": "load_class",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/utils/factory.py",
+        "relativePath": "mem0/utils/factory.py",
+        "lineNo": 6,
+        "endLineNo": 11,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Futils%2Ffactory.py%23L6-L11&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__chroma__OutputData": {
+        "label": "OutputData",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/chroma.py",
+        "relativePath": "mem0/vector_stores/chroma.py",
+        "lineNo": 15,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fchroma.py%23L15-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__storage__SQLiteManager____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 7,
+        "endLineNo": 11,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L7-L11&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__telemetr__AnonymousTelemetry__close": {
+        "label": "close",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 37,
+        "endLineNo": 41,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L37-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__telemetr__AnonymousTelemetry__identify_user": {
+        "label": "identify_user",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/telemetry.py",
+        "relativePath": "mem0/memory/telemetry.py",
+        "lineNo": 32,
+        "endLineNo": 36,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Ftelemetry.py%23L32-L36&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Chat": {
+        "label": "Chat",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 24,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L24-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__utils__get_update_memory_prompt": {
+        "label": "get_update_memory_prompt",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/utils.py",
+        "relativePath": "mem0/memory/utils.py",
+        "lineNo": 4,
+        "endLineNo": 7,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Futils.py%23L4-L7&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Chat____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 25,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L25-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Completions____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 25,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L25-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__create_col": {
+        "label": "create_col",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 6,
+        "endLineNo": 9,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L6-L9&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__delete": {
+        "label": "delete",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 21,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L21-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__delete_col": {
+        "label": "delete_col",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 41,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L41-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__get": {
+        "label": "get",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 31,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L31-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__insert": {
+        "label": "insert",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 11,
+        "endLineNo": 14,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L11-L14&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__list_cols": {
+        "label": "list_cols",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 36,
+        "endLineNo": 39,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L36-L39&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__search": {
+        "label": "search",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 16,
+        "endLineNo": 19,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L16-L19&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__update": {
+        "label": "update",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 26,
+        "endLineNo": 29,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L26-L29&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__embeddings__huggingface__HuggingFaceEmbedding____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/embeddings/huggingface.py",
+        "relativePath": "mem0/embeddings/huggingface.py",
+        "lineNo": 6,
+        "endLineNo": 8,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fembeddings%2Fhuggingface.py%23L6-L8&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__storage__SQLiteManager__reset": {
+        "label": "reset",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/storage.py",
+        "relativePath": "mem0/memory/storage.py",
+        "lineNo": 129,
+        "endLineNo": 131,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fstorage.py%23L129-L131&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__proxy__main__Completions___format_query_with_memories": {
+        "label": "_format_query_with_memories",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/proxy/main.py",
+        "relativePath": "mem0/proxy/main.py",
+        "lineNo": 153,
+        "endLineNo": 155,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fproxy%2Fmain.py%23L153-L155&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__vector_stores__base__VectorStoreBase__col_info": {
+        "label": "col_info",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/vector_stores/base.py",
+        "relativePath": "mem0/vector_stores/base.py",
+        "lineNo": 46,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fvector_stores%2Fbase.py%23L46-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__configs__vector_stores__chroma__ChromaDbConfig__Config": {
+        "label": "Config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/vector_stores/chroma.py",
+        "relativePath": "mem0/configs/vector_stores/chroma.py",
+        "lineNo": 25,
+        "endLineNo": 26,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fvector_stores%2Fchroma.py%23L25-L26&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__configs__vector_stores__qdrant__QdrantConfig__Config": {
+        "label": "Config",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/configs/vector_stores/qdrant.py",
+        "relativePath": "mem0/configs/vector_stores/qdrant.py",
+        "lineNo": 33,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fconfigs%2Fvector_stores%2Fqdrant.py%23L33-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    },
+    "mem0__memory__main__Memory__chat": {
+        "label": "chat",
+        "systemPath": "/home/sanjay/Development/explore/mem0/mem0/memory/main.py",
+        "relativePath": "mem0/memory/main.py",
+        "lineNo": 415,
+        "endLineNo": 416,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmem0ai%2Fmem0%2Fblob%2Fmain%2Fmem0%2Fmemory%2Fmain.py%23L415-L416&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Summary not available or SKIPPED"
+    }
+}

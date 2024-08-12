@@ -1,0 +1,662 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/hacksider/Deep-Live-Cam/blob/main/"
+    },
+    "modules__ui__create_root": {
+        "label": "create_root",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 45,
+        "endLineNo": 117,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L45-L117&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:**\n\nThis Python function creates the graphical user interface (GUI) for a face processing application. It defines widgets like buttons, labels, and switches to allow users to select files, configure processing options, and control the application flow. \n\n**Inputs:**\n\n*  `modules`: Likely a module containing metadata about the application and global settings.\n*  `ctk`:  Represents a CustomTkinter library used for building the GUI. \n\n**Outputs:**\n\n*  `root`: The main window object of the GUI. \n\n\n"
+    },
+    "modules__core__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 31,
+        "endLineNo": 101,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L31-L101&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Python Code Snippet\n\n**Quick Summary:** \nThis Python function parses command-line arguments for a program, handles deprecated arguments, and configures global variables based on user input. The purpose is to provide a flexible and customizable way to control program behavior through arguments. It sets up options for input/output files, frame processing, encoding, and resource allocation.\n\n**Inputs:**\n\n* `program`: An `argparse.ArgumentParser` object used to define and interpret command-line arguments.\n* `modules`: A module object likely containing global variables and utility functions.\n*  **Command-line arguments (string values):**\n    * `-s` or `--source`: Path to the source image or video.\n    * `-t` or `--target`: Path to the target image or video.\n    * `-o` or `--output`: Path to the output file or directory.\n    * `--frame-processor`: A list of frame processing pipelines to apply (e.g., 'face_swapper').\n    * `--keep-fps`:  Boolean flag to keep the original frames per second.\n    * `--keep-audio`: Boolean flag to retain original audio.\n    * `--keep-frames`: Boolean flag to keep temporary frames.\n    * `--many-faces`:  Boolean flag to process every face detected.\n    * `--video-encoder`: Video encoding library (e.g., 'libx264', 'libx265').\n    * `--video-quality`: Video quality setting (integer).\n    * `--max-memory`: Maximum RAM usage in GB.\n    * `--execution-provider`:  Execution provider (e.g., 'cpu', 'cuda').\n    * `--execution-threads`: Number of threads for execution.\n    * `-v` or `--version`:  Display program version information.\n    * **Deprecated arguments:** \n        * `-f` or `--face`:  Replaced by `-s` or `--source`.\n        * `--cpu-cores`: Replaced by `--execution-threads`.\n        * `--gpu-vendor`: Replaced with `--execution-provider` specifying vendor (e.g., 'cuda').\n\n\n\n\n**Output:**\n\n* Modified `modules.globals` object containing parsed arguments as global variables.\n\n"
+    },
+    "modules__core__start": {
+        "label": "start",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 169,
+        "endLineNo": 228,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L169-L228&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function processes either an image or a video based on user-defined parameters and global settings.  It applies pre-processing steps, calls frame processors for image and video manipulation, and finally generates the processed output.  The purpose is to provide a flexible framework for image and video transformation using a set of configurable modules.\n\n## Inputs\n\n*   **modules.globals.frame_processors:** A collection of modules likely responsible for image/video processing tasks (e.g., filters, enhancements, effects).\n*   **modules.globals.target_path:** The path to the input image or video file.\n*   **modules.globals.nsfw:**  A boolean flag indicating whether the content is NSFW (Not Safe For Work).\n*   **modules.globals.source_path:** The path to the source image or video file.\n*   **modules.globals.output_path:** The desired path for the processed output file.\n*   **modules.globals.keep_fps:** A boolean flag indicating whether to preserve the original frame rate of the input video.\n*   **modules.globals.keep_audio:** A boolean flag indicating whether to keep the original audio track from the input video.\n\n\n## Output \n\n*   **modules.globals.output_path:** Contains the processed image or video file.\n*   **Status updates:**  Likely displayed to the user, indicating progress and success/failure of each stage.\n"
+    },
+    "modules__ui__webcam_preview": {
+        "label": "webcam_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 252,
+        "endLineNo": 296,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L252-L296&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function opens a live video feed from the webcam and processes each frame using a set of specified frame processors. It then displays the processed frame in a preview window. The purpose is likely to showcase real-time image processing applied to live video.\n\n## Inputs:\n\n* `modules.globals.source_path`:  A file path to an image to be used as the source face.\n* `modules.globals.frame_processors`:  A list of frame processing modules (likely containing functions) to be applied.\n* `preview_label`: A Tkinter label to display the preview image.\n\n\n\n## Output:\n\n* Live preview of the webcam feed displayed in `preview_label`,  \nprocessed by the provided frame processors.\n* The preview window remains open until the program is interrupted.\n"
+    },
+    "modules__ui__select_target_path": {
+        "label": "select_target_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 160,
+        "endLineNo": 179,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L160-L179&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick Summary]**\n\nThis function prompts the user to select an image or video file. It then displays a preview of the selected file in a designated label.  The function also stores the path to the selected file and its directory for future use. \n\n**[Inputs]**\n\n* `PREVIOUS_DIRECTORY_TARGET`: The directory from where the last file was chosen.\n* `img_ft`: A file type tuple for image files (e.g., ('.png', '.jpg')).\n* `vid_ft`: A file type tuple for video files (e.g., ('.mp4', '.avi')).\n* `target_label`: The label widget where the preview will be displayed.\n\n**[Output]**\n\n* Updates `modules.globals.target_path` with the selected file's path.\n* Updates `RECENT_DIRECTORY_TARGET` with the directory of the selected file.\n* Displays a preview of the selected image or video in `target_label`.\n \n"
+    },
+    "modules__core__limit_resources": {
+        "label": "limit_resources",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 129,
+        "endLineNo": 147,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L129-L147&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick summary:** This code snippet aims to prevent TensorFlow memory leaks and limit memory usage during execution. It configures TensorFlow to use dynamically allocated GPU memory and, depending on the operating system, sets memory limits for the process.  \n\n**Inputs:**\n* `modules.globals.max_memory`: A numerical value representing the maximum allowed memory usage in bytes.\n\n**Output:**\n*  Memory management configuration for TensorFlow and the Python process.\n\n\n\n\n"
+    },
+    "modules__ui__create_preview": {
+        "label": "create_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 118,
+        "endLineNo": 135,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L118-L135&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick summary]**\n\nThis function creates an overlay window titled \"Preview\" that displays an image or content. It contains a slider for user interaction, triggering updates to the displayed content. This is likely part of a larger application for image/video preview or similar dynamic content.\n\n\n**[Inputs]**\n\n* `parent`:  Likely a reference to the main window or container this preview window will be associated with.\n\n**[Output]**\n\n* `preview`:  Returns the created `CTkToplevel` (a type of top-level window) object, allowing interaction with the preview window within the calling code. \n"
+    },
+    "modules__ui__update_preview": {
+        "label": "update_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 235,
+        "endLineNo": 251,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L235-L251&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This code processes frames from a source image and a target video, applies frame processors, and displays a preview of the processed result. It appears to be part of a tool that manipulates images and videos, potentially for content filtering or aesthetic enhancement.\n\n**Inputs:**\n\n* `modules.globals.source_path`: Path to the source image file.\n* `modules.globals.target_path`: Path to the target video file.\n* `frame_number`:  Integer specifying the target frame number within the video.\n* `modules.globals.nsfw`: Boolean flag indicating whether the content should be classified as NSFW (Not Safe for Work).\n* `modules.globals.frame_processors`: A collection of frame processing modules (likely a list of classes).\n* `PREVIEW_MAX_WIDTH`, `PREVIEW_MAX_HEIGHT`: Constants defining the maximum dimensions for the preview image.\n\n**Output:**\n\n* An image preview displayed in a widget named `preview_label`. \n"
+    },
+    "modules__processors__frame__core__set_frame_processors_modules_from_ui": {
+        "label": "set_frame_processors_modules_from_ui",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py",
+        "relativePath": "modules/processors/frame/core.py",
+        "lineNo": 43,
+        "endLineNo": 57,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fcore.py%23L43-L57&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis: \n\n**[Quick Summary]** This code snippet dynamically loads and unloads frame processor modules based on their enabled/disabled state stored in `modules.globals.fp_ui`. It maintains a list of active frame processors in `FRAME_PROCESSORS_MODULES` and `modules.globals.frame_processors`.\n\n**[Inputs]**\n\n*  `modules.globals.fp_ui`: A dictionary mapping frame processor names to boolean values (True/False) representing their enabled/disabled states.\n\n**[Output]**\n\n* Updates `FRAME_PROCESSORS_MODULES` by appending active modules and removing inactive ones.\n* Updates `modules.globals.frame_processors` by adding active processor names and removing inactive ones. \n\n\n"
+    },
+    "modules__ui__select_output_path": {
+        "label": "select_output_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 180,
+        "endLineNo": 194,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L180-L194&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n[Quick summary]\nThis code snippet presents a dialogue to the user for saving an output file (image or video) based on the type of the original file. It then updates the global variable `RECENT_DIRECTORY_OUTPUT` with the directory of the chosen output path and triggers a function named `start()`. This suggests a file processing or generation workflow.\n\n[Inputs]\n* `modules.globals.target_path`: The path to the original input file.\n\n[Output]\n* `modules.globals.output_path`: The user-selected path to save the output file.\n* `RECENT_DIRECTORY_OUTPUT`: The directory of the chosen output path, updated globally. \n\n\n"
+    },
+    "modules__ui__select_source_path": {
+        "label": "select_source_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 145,
+        "endLineNo": 159,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L145-L159&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis\n\n**[Quick Summary]** This code function allows a user to select an image file. It retrieves the selected file path, validates if it's an image, and updates a preview label with the image. The purpose is to enable image loading and display within a graphical application.\n\n**[Inputs]**\n\n*  `ctk.filedialog.askopenfilename()`: This function prompts the user to choose a file from their system. \n* `title='select an source image'`: Sets the title of the file dialog window.\n* `initialdir=RECENT_DIRECTORY_SOURCE`: Opens the file dialog in the directory previously used by the user.\n* `filetypes=[img_ft]`: Restricts the file selection to image types defined by `img_ft`.\n\n**[Output]**\n\n*  `source_path`: The full path to the selected image file, if chosen. \n* `modules.globals.source_path`:  An update to a global variable with the selected image's path.\n* `source_label.configure(image=...)`: Updates a label in the graphical interface to display the chosen image (if valid) or no image (if invalid).  \n\n\n"
+    },
+    "modules__processors__frame__face_enhancer__get_face_enhancer": {
+        "label": "get_face_enhancer",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 33,
+        "endLineNo": 46,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L33-L46&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function initializes a face enhancer model (GFPGAN), ensuring it's loaded only once across multiple executions. It distinguishes between Windows and other operating systems for proper model path resolution. \n\n**Inputs:**\n\n* `resolve_relative_path`: A function likely used to construct the absolute path to the model file based on the script's location.\n* `os.name`: A string indicating the operating system (e.g., 'nt' for Windows).\n\n**Output:**\n\n* `FACE_ENHANCER`: A `GFPGANer` object initialized with the loaded face enhancement model. \n\n\n"
+    },
+    "modules__processors__frame__face_swapper__process_frames": {
+        "label": "process_frames",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 64,
+        "endLineNo": 77,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L64-L77&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Breakdown of Code Snippet\n\n**Quick Summary**\nThis function processes a set of temporary video frames by applying an image processing operation (`process_frame`) to each frame, incorporating a source face. It saves the processed frames back to the original file paths. This likely aims to composite or manipulate the source face within each video frame.\n\n**Inputs**\n\n*  `source_path`: Path to an image containing a single face.\n*  `temp_frame_paths`: A list of paths to temporary video frames.\n*  `progress`: An object presumably used to track progress (e.g., a progress bar).\n\n\n**Output**\n\n* Modified versions of the temporary video frames, with the source face integrated.  \n* Prints any exceptions encountered during processing. \n\n\n"
+    },
+    "modules__ui__render_video_preview": {
+        "label": "render_video_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 202,
+        "endLineNo": 215,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L202-L215&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** \n\nThis function reads a video file at a specific frame number (if provided) and returns a processed image. It converts the frame from BGR to RGB color space, resizes it if a target size is given, and presents it as a `ctk.CTkImage` object. The primary purpose is to extract and display a single frame from a video.\n\n**Inputs:**\n\n* `video_path`: Path to the video file.\n* `frame_number`: (Optional) Integer specifying the frame to read from the video.\n* `size`: (Optional) Tuple representing the desired width and height of the output image.\n\n**Output:**\n\n* `ctk.CTkImage`: An instance of the `ctk.CTkImage` class representing the processed frame. \n\n\nLet me know if you have any more code snippets you'd like me to analyze. \n"
+    },
+    "modules__core__run": {
+        "label": "run",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 235,
+        "endLineNo": 247,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L235-L247&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis Python function likely sets up and runs a graphical user interface (GUI) application. It performs initial checks, loads frame processors (potentially for image or video processing), manages resources, and either starts the application directly in headless mode or creates a window using a UI framework (like Tkinter).\n\n**Inputs:**\n\n*  `modules.globals.frame_processors`: A likely dictionary or list containing module names or classes for frame processors, used for image/video processing tasks.\n*  `modules.globals.headless`: A boolean flag indicating whether the application should run without a visible window.\n\n**Output:**\n\n* Runs the application, either in headless mode or with a visible GUI window. \n* Potentially processes frames using the specified frame processors.\n\n\n\n\n"
+    },
+    "modules__processors__frame__face_swapper__pre_start": {
+        "label": "pre_start",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 24,
+        "endLineNo": 36,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L24-L36&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function validates user input paths for a face-manipulation task. It checks if the source path points to an image containing a face and if the target path points to either an image or a video.\n\n**Inputs:**\n\n* `modules.globals.source_path`: Path to the image containing the face.\n* `modules.globals.target_path`: Path to either an image or a video for the modified outcome.\n\n**Output:**\n\n* `True`: If both paths are valid and a face is detected in the source image.\n* `False`: If either path is invalid or a face is not detected. \n\n\n"
+    },
+    "modules__processors__frame__face_swapper__process_frame": {
+        "label": "process_frame",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 51,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L51-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function attempts to swap the face in a temporary frame image. It first checks if multiple faces are detected (`many_faces`). If so, it iterates through each detected face and swaps it with a `source_face`. If only one face is detected, it swaps that face with the `source_face`.\n\n**Inputs:**\n\n* `temp_frame`: Likely an image frame containing a face.\n* `modules.globals.many_faces`:  A boolean flag indicating whether multiple faces were detected in the `temp_frame`.\n* `source_face`: An image or data representation of the face to be swapped in.\n* `get_many_faces()`:  A function presumably used to detect multiple faces within the `temp_frame`.\n* `get_one_face()`: A function presumably used to detect a single face within the `temp_frame`.\n* `swap_face()`: A function that performs the actual face swapping operation.\n\n**Output:**\n\n* `temp_frame`: The modified frame with the `source_face` swapped in.  \n\n\n\n"
+    },
+    "modules__processors__frame__core__load_frame_processor_module": {
+        "label": "load_frame_processor_module",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py",
+        "relativePath": "modules/processors/frame/core.py",
+        "lineNo": 21,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fcore.py%23L21-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Snippet Analysis: \n\n**[Quick Summary]**\n\nThis function aims to dynamically load and validate a specific frame processor module based on the provided `frame_processor` string. It ensures that the loaded module implements all methods defined in the `FRAME_PROCESSORS_INTERFACE` before returning the module.\n\n**[Inputs]**\n* `frame_processor`: A string representing the name of the frame processor module (e.g., \"blur\", \"resize\").\n\n**[Output]**\n*  A module object representing the successfully loaded and validated frame processor module. \n   \n    \n\n"
+    },
+    "modules__utilities__conditional_download": {
+        "label": "conditional_download",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 128,
+        "endLineNo": 139,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L128-L139&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this code snippet:\n\n**[Quick Summary]**\n\nThis Python function downloads files from a list of URLs. It creates a designated download directory if it doesn't exist and tracks the download progress using a progress bar. \n\n **[Inputs]**\n\n*  `download_directory_path`: The path to the folder where downloaded files should be saved.\n*  `urls`: A list of URLs pointing to the files to be downloaded.\n\n**[Output]**\n\n*  Downloaded files are saved in the specified `download_directory_path`.\n*  A progress bar displays the download status for each file. \n\n\n"
+    },
+    "modules__capturer__get_video_frame": {
+        "label": "get_video_frame",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/capturer.py",
+        "relativePath": "modules/capturer.py",
+        "lineNo": 5,
+        "endLineNo": 15,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcapturer.py%23L5-L15&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]** This function reads a specific frame from a video file.  Given a video path, a desired frame number, and the video capture object, it locates and returns the requested frame. If the frame is not found, it returns `None`.\n\n\n**[Inputs]**\n\n* `video_path`:  The path to the video file.\n* `frame_number`: The index of the desired frame (0-based indexing).\n\n**[Output]** \n\n* The selected frame as a NumPy array, if found.\n* `None` if the specified frame does not exist in the video. \n"
+    },
+    "modules__utilities__detect_fps": {
+        "label": "detect_fps",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 34,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L34-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function attempts to extract and return the frame rate of a video file. It uses the `ffprobe` command to get the frame rate information and then parses the output to convert it into a decimal value.\n\n## Inputs\n\n* `target_path`:  The path to the video file.\n\n## Output\n\n* A float value representing the frame rate of the video. Defaults to 30.0 if frame rate extraction fails. \n\n\n"
+    },
+    "modules__utilities__run_ffmpeg": {
+        "label": "run_ffmpeg",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 23,
+        "endLineNo": 33,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L23-L33&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Review:\n\n**Quick Summary:**\n\nThis function attempts to execute an FFmpeg command using a predefined set of arguments (`-hide_banner`, `-hwaccel auto`, `-loglevel`). It appends any additional arguments provided (`args`) to the command. The function checks for successful execution and returns `True` if successful, otherwise it returns `False`. The purpose is likely to perform a specific video processing task using FFmpeg.\n\n**Inputs:**\n\n* `modules.globals.log_level`: This likely refers to a variable holding the desired logging level for FFmpeg (e.g., debug, info, warning).\n* `args`: A list of additional arguments to be passed to the FFmpeg command.\n\n**Output:**\n\n* `True`:  Indicates successful execution of the FFmpeg command.\n* `False`: Indicates an error occurred during the execution of the FFmpeg command. \n\n\n\n"
+    },
+    "modules__core__pre_check": {
+        "label": "pre_check",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 153,
+        "endLineNo": 162,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L153-L162&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Python Code Analysis:\n\n**Quick Summary:**\nThis function checks for the required system dependencies (Python version 3.9+ and ffmpeg) before proceeding. It returns `True` if both conditions are met, indicating readiness to continue, and `False` otherwise along with an appropriate error message.\n\n**Inputs:**\n\n* `sys.version_info`:  Likely a tuple containing Python's major and minor version numbers.\n* `shutil.which('ffmpeg')`:  Searches the system for the `ffmpeg` executable.\n\n**Output:**\n\n* `True`:   Indicates successful dependency checks.\n* `False`:  Indicates a missing dependency with a corresponding error message. \n\n\n\n"
+    },
+    "modules__processors__frame__core__get_frame_processors_modules": {
+        "label": "get_frame_processors_modules",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py",
+        "relativePath": "modules/processors/frame/core.py",
+        "lineNo": 33,
+        "endLineNo": 42,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fcore.py%23L33-L42&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]**\n\nThis function manages a list of frame processor modules. It first checks if the module list is empty, and if so, it loads each frame processor defined in the `frame_processors` variable using the `load_frame_processor_module` function.  It then updates the module list based on user interface settings and returns the final list of frame processor modules. \n\n**[Inputs]**\n\n* `frame_processors`:  A collection or list of frame processor names or identifiers.\n* `set_frame_processors_modules_from_ui`: A function presumably responsible for modifying the `FRAME_PROCESSORS_MODULES` list based on user interface choices.\n\n**[Output]**\n\n* `FRAME_PROCESSORS_MODULES`: A list of loaded frame processor modules.  \n\n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!"
+    },
+    "modules__processors__frame__core__multi_process_frame": {
+        "label": "multi_process_frame",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py",
+        "relativePath": "modules/processors/frame/core.py",
+        "lineNo": 58,
+        "endLineNo": 67,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fcore.py%23L58-L67&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis code snippet processes multiple video frames concurrently using a thread pool. It takes a list of temporary frame paths, processes each frame in parallel, and waits for all processing to complete.  \n\n## Inputs\n\n*  `source_path`: The path to the original source video file.\n*  `temp_frame_paths`: A list of paths to temporary video frames.\n*  `progress`: A function or object used to track and display processing progress. \n*  `modules.globals.execution_threads`:  A variable controlling the maximum number of worker threads used in the thread pool.\n\n## Output\n\n*  Processed video frames: Each frame specified in `temp_frame_paths` is processed individually.\n*   Potential Progress Updates:  The `progress` function might be called to provide feedback on the processing progress. \n\n\n"
+    },
+    "modules__processors__frame__face_swapper__get_face_swapper": {
+        "label": "get_face_swapper",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 37,
+        "endLineNo": 46,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L37-L46&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function initializes a face swapping model using the InsightFace library. It uses a threading lock to ensure only one thread loads the model at a time, avoiding race conditions. The purpose is to provide a single, shared instance of the face swapping model across the application.  \n\n**[Inputs]**\n* `model_path`: A string representing the path to the `.onnx` model file.\n* `providers`: A collection of execution providers for the model (e.g., CPU, GPU).\n\n\n**[Output]**\n* A `FACE_SWAPPER` object: This is the loaded face swapping model from InsightFace, ready for use.  \n\n\n"
+    },
+    "modules__ui__init_preview": {
+        "label": "init_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 225,
+        "endLineNo": 234,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L225-L234&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function handles displaying previews based on the file type of `modules.globals.target_path`. If it's an image, it packs away the preview slider. If it's a video, it calculates the total number of frames, configures the slider's range, packs it into the layout, and sets its initial position. \n\n[Its purpose is likely to provide a way to preview either a single image or a video by allowing users to step through frames.]\n\n## Inputs\n\n*  `modules.globals.target_path`: A string representing the path to a file. \n\n## Output\n\n*  Dynamically adjusts the layout based on file type.\n*  If video:\n    * Displays a preview slider with a range spanning the total number of video frames.\n*  If image: \n    * Hides the preview slider. \n\n\n\n\n"
+    },
+    "modules__face_analyser__get_face_analyser": {
+        "label": "get_face_analyser",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/face_analyser.py",
+        "relativePath": "modules/face_analyser.py",
+        "lineNo": 10,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fface_analyser.py%23L10-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Breakdown\n\n**[Quick Summary]** This function initializes a face analyzer using the InsightFace library. It first checks if an instance of the analyzer already exists. If not, it creates one, configures it with the specified model and resolution, and stores the instance for later use. This ensures efficient and consistent face analysis across the program.\n\n**[Inputs]**\n\n* `modules.globals.execution_providers`: Likely a list or set of hardware devices or environments suitable for running the InsightFace model (e.g., CPU, GPU).\n\n**[Output]**\n\n* `FACE_ANALYSER`: An instance of the `insightface.app.FaceAnalysis` class, ready to perform face detection and analysis. \n\n\n"
+    },
+    "modules__predicter__predict_frame": {
+        "label": "predict_frame",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/predicter.py",
+        "relativePath": "modules/predicter.py",
+        "lineNo": 10,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fpredicter.py%23L10-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down the Python code snippet:\n\n**[Quick summary]** This function  determines if an image potentially contains NSFW (Not Safe For Work) content using the OpenNSFW2 model. It does this by pre-processing the image, running it through the NSFW detection model, and returning `True` if the probability of NSFW content exceeds a defined threshold (`MAX_PROBABILITY`), otherwise `False`.\n\n**[Inputs]**\n\n-  `target_frame`: This is likely a NumPy array representing a single image frame.\n\n-  `MAX_PROBABILITY`: This is a threshold value (e.g., 0.85) used to determine if the model's NSFW classification is strong enough.\n\n\n**[Output]**\n\n- `True`:  The image is predicted to likely contain NSFW content based on the model's output probability.\n-  `False`: The image is predicted to be safe for work (not likely NSFW). \n"
+    },
+    "modules__processors__frame__face_enhancer__enhance_face": {
+        "label": "enhance_face",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 47,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L47-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function enhances a given video frame using a face enhancer component. It likely focuses on improving facial features in a video frame, possibly for aesthetic purposes or to enhance recognition. The use of `THREAD_SEMAPHORE` suggests it's designed for multi-threaded operation, ensuring safe access to resources.\n\n\n## Inputs\n\n*  `temp_frame`: This is a video frame, likely a NumPy array or a similar data structure representing the image.\n*  `paste_back`: A boolean flag indicating whether the enhanced face should be pasted back onto the original frame.\n\n\n## Output\n\n* `temp_frame`: The modified video frame with potentially enhanced facial features. \n"
+    },
+    "modules__processors__frame__face_enhancer__process_frames": {
+        "label": "process_frames",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 63,
+        "endLineNo": 71,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L63-L71&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function iterates through a list of temporary image paths (`temp_frame_paths`), processes each image using a function called `process_frame`, and saves the processed images back to their original paths.  The `progress` variable likely represents a progress bar or similar indicator for tracking progress. \n\n**Inputs:**\n\n* `temp_frame_paths`: A list of paths to temporary image files.\n* `process_frame`: A function that takes two arguments (likely a previous frame and the current frame) and returns the processed frame.\n* `progress`:  Potentially a progress bar or update function to track processing progress.\n\n**Output:**\n\n* Processed versions of each image in `temp_frame_paths` are saved back to their original locations. \n\n\n"
+    },
+    "modules__ui__init": {
+        "label": "init",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 36,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L36-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**[Quick Summary]**\n\nThis function creates a root element and a preview associated with it. It likely sets up the foundational structure for a graphical user interface or visual representation, leveraging functions `create_root` and `create_preview`.\n\n**[Inputs]**\n\n- `start`: This likely represents a starting point or configuration for the root element.\n- `destroy`: This argument might define a function or method used to destroy or release resources associated with the root element.\n\n**[Output]**\n\n- `ROOT`:  The function returns the created root element, presumably ready to be further manipulated or populated. \n\n\n"
+    },
+    "modules__ui__toggle_preview": {
+        "label": "toggle_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 216,
+        "endLineNo": 224,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L216-L224&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick summary**\nThis function manages the visibility of a preview window (`PREVIEW`).  It hides the window if it's in a \"normal\" state  and displays it if source and target paths are defined, initializing and updating the preview content.\n\n**Inputs**\n\n* `PREVIEW`: A likely object representing the preview window.\n* `PREVIEW.state()`: A function call on the `PREVIEW` object that returns a string indicating its current state (e.g., \"normal\", \"minimized\").\n* `modules.globals.source_path`:  A string variable likely holding the path to a source file or directory.\n* `modules.globals.target_path`: A string variable likely holding the path to a target file or directory.\n\n**Output**\n\n* The `PREVIEW` window will either be hidden or displayed, depending on the conditions.\n* The preview content within the window will be initialized and updated if the window is displayed. \n"
+    },
+    "modules__utilities__clean_temp": {
+        "label": "clean_temp",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 101,
+        "endLineNo": 109,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L101-L109&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]**\n\nThis code snippet aims to clean up temporary files and directories. It creates a temporary directory, potentially removes it and its parent directory if the `keep_frames` flag is false and the directories are empty. This helps manage disk space and avoid clutter.\n\n**[Inputs]**\n\n*  `target_path`:  Likely a path string indicating where some temporary files/directories should be created. \n* `modules.globals.keep_frames`: A boolean value (True/False) that determines whether temporary files and directories should be preserved.\n\n**[Output]**\n\n* A cleaned-up state. Temporary directories are removed if they are empty and the `keep_frames` flag is False. \n* Potentially an empty parent directory for the temporary one if both the temporary directory and its parent are empty. \n\n\n\n\n"
+    },
+    "modules__utilities__normalize_output_path": {
+        "label": "normalize_output_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 79,
+        "endLineNo": 87,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L79-L87&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function aims to generate a unique file path for a processed file. It takes source and target file paths, combines relevant parts of their names, and adds a '-` to differentiate them. \n\n## Inputs\n\n* `source_path`: Full path to the original file.\n* `target_path`: Full path to the destination file (where the processed version will be saved).\n* `output_path`: Directory where the processed file will be saved.\n\n## Output\n\n* A string representing the full path to the saved processed file.  \n\n\n\n"
+    },
+    "modules__core__suggest_execution_threads": {
+        "label": "suggest_execution_threads",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 121,
+        "endLineNo": 128,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L121-L128&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis\n\n**[Quick summary]**\n\nThis function checks if specific execution providers, 'DmlExecutionProvider' and 'ROCMExecutionProvider', are available in a global dictionary called `modules.globals.execution_providers`. It returns 1 if either provider is found, indicating their presence, and 8 if neither is found. The purpose is likely to determine the available hardware acceleration for a machine learning task.\n\n**[Inputs]**\n\n* `modules.globals.execution_providers`: A global dictionary presumably containing information about available execution providers for various tasks.\n\n\n**[Output]**\n\n* 1: Indicates that either 'DmlExecutionProvider' or 'ROCMExecutionProvider' are available.\n* 8: Indicates that neither 'DmlExecutionProvider' nor 'ROCMExecutionProvider' are available.  \n"
+    },
+    "modules__face_analyser__get_one_face": {
+        "label": "get_one_face",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/face_analyser.py",
+        "relativePath": "modules/face_analyser.py",
+        "lineNo": 19,
+        "endLineNo": 26,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fface_analyser.py%23L19-L26&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function analyzes a frame of video (presumably) for faces and returns the face that appears furthest to the left. This likely serves as a way to prioritize or track the leftmost face in sequential frames.\n\n**[Inputs]**\n* `frame`: A single frame of video.\n* `get_face_analyser()`: A function that likely returns an object capable of detecting faces within an image. \n\n**[Output]**\n* `None`: If no faces are detected in the frame.\n* A face object: Representing the leftmost detected face in the frame. \n"
+    },
+    "modules__utilities__move_temp": {
+        "label": "move_temp",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 93,
+        "endLineNo": 100,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L93-L100&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This code snippet manages the output file for a process. It first generates a temporary output path, checks if it exists, and then moves the file to the desired final output location if it does exist and the target output path is also present.\n\n**Inputs:**\n\n* `target_path`:  The intended destination path for the output file.\n*  `output_path`: The potentially existing final output file path.\n\n\n**Output:**\n\n*  The `output_path` will contain the file.\n* If a file already exists at `output_path`, it will be deleted. \n*  A temporary file will be moved to `output_path`.  \n\n\n\n\n\n\n\n"
+    },
+    "modules__processors__frame__face_enhancer__pre_start": {
+        "label": "pre_start",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 26,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L26-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Quick Summary:**\n\nThis function checks if the specified `target_path` points to an image or video file. If it doesn't, it displays an error message and returns `False`. Otherwise, it returns `True`, indicating successful validation.  The purpose is to ensure that the script is operating on the correct type of media.\n\n**Inputs:**\n\n* `modules.globals.target_path`:  This likely refers to a global variable holding the path to a file. \n*  `is_image()` and `is_video()`: These are assumed to be functions that determine if a given path points to an image or video file, respectively.\n\n**Output:**\n\n* `False`: Indicates an invalid target path (not an image or video).\n* `True`: Indicates a valid target path (either an image or a video). \n\n\n"
+    },
+    "modules__processors__frame__face_enhancer__process_frame": {
+        "label": "process_frame",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 56,
+        "endLineNo": 62,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L56-L62&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This function processes a video frame (`temp_frame`). It attempts to locate and isolate a face within the frame using `get_one_face()`. If a face is found, it's enhanced using `enhance_face()`. The processed frame is then returned. The purpose is likely to improve the quality and visibility of faces in a video stream.\n\n**Inputs:**\n* `temp_frame`: A single frame from a video.\n\n**Output:**\n* An enhanced version of the `temp_frame` if a face is detected, otherwise the original frame. \n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "modules__processors__frame__face_swapper__process_image": {
+        "label": "process_image",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 78,
+        "endLineNo": 84,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L78-L84&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function processes an image containing a single face (sourced from `source_path`) and merges it into a target image (`target_path`). The resulting image with the face integrated is saved to `output_path`.  This likely serves as a step in a face swapping or image manipulation pipeline. \n\n## Inputs\n*  `source_path`: Path to an image containing a single face.\n*  `target_path`: Path to the image where the face will be merged.\n*  `process_frame`:  A custom function responsible for merging the source face into the target image.\n\n## Output\n\n*  `output_path`: A new image file containing the target image with the source face integrated.  \n\n\n"
+    },
+    "modules__ui__render_image_preview": {
+        "label": "render_image_preview",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 195,
+        "endLineNo": 201,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L195-L201&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Summary:** This function opens an image, optionally resizes it to a specified `size` using bicubic interpolation, and then creates a Qt image widget (`ctk.CTkImage`) containing the processed image. Its purpose is likely to display an image in a graphical application using a specific Qt framework.\n\n**Inputs:**\n\n* `image_path`:  The path to the image file.\n* `size`: (Optional) A tuple specifying the desired width and height of the resized image in pixels.\n\n**Output:**\n\n* A `ctk.CTkImage` object representing the image, potentially resized according to the provided `size`. \n\n\n"
+    },
+    "modules__utilities__is_image": {
+        "label": "is_image",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 114,
+        "endLineNo": 120,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L114-L120&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick summary]**\nThis Python function checks if a given path points to a valid image file. It utilizes the `mimetypes` module to determine the file type based on its extension and returns `True` if it's an image, otherwise `False`. \n\n**[Inputs]**\n* `image_path`: A string representing the path to the file you want to check.\n\n**[Output]**\n* `bool`: A boolean value, `True` if the file is an image, `False` otherwise. \n\n\nLet me know if you'd like a more in-depth explanation of any specific part of the code!"
+    },
+    "modules__utilities__is_video": {
+        "label": "is_video",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 121,
+        "endLineNo": 127,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L121-L127&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function checks if a given file path points to a valid video file. It uses the `mimetypes` module to determine the file's MIME type and returns `True` if the type starts with \"video/,\" indicating a video file, otherwise `False`. \n\n**Inputs:**\n\n* `video_path`: A string representing the path to the file being checked.\n\n**Output:**\n\n* A boolean value: `True` if the file is a video, `False` otherwise. \n\n\n\n"
+    },
+    "modules__utilities__restore_audio": {
+        "label": "restore_audio",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 56,
+        "endLineNo": 62,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L56-L62&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This function takes a temporary output path and a target path as input. It uses ffmpeg to combine the video from the temporary output with the audio from the target path, effectively merging them into a new output file. \n\n**Inputs:**\n\n*  `target_path`: The path to the audio file.\n*  `temp_output_path`: The path to a temporary video file.\n\n\n**Output:**\n\n*  A new file at `output_path` containing the combined video and audio. \n"
+    },
+    "modules__core__destroy": {
+        "label": "destroy",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 229,
+        "endLineNo": 234,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L229-L234&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This code snippet checks if a variable `target_path` exists within the global scope (`modules.globals`). If it does, it calls a function `clean_temp` to clean up files or directories at that location.  Afterward, the program terminates. The purpose likely involves temporary file/directory cleanup before exiting the program.\n\n**Inputs:**\n\n* `modules.globals.target_path`: A string representing a file path or directory.\n\n**Output:**\n\n* Program termination.\n* Potential removal of files or directories at `target_path` if it exists.  \n\n\n Let me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "modules__core__suggest_max_memory": {
+        "label": "suggest_max_memory",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 111,
+        "endLineNo": 116,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L111-L116&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function determines the number returned based on the operating system. If the system is MacOS (Darwin), it returns 4; otherwise, it returns 16.  This likely helps tailor behavior or configurations based on the platform.\n\n**Inputs:**\n\n* `platform.system()`:  This function likely returns a string representing the operating system (e.g., 'Darwin', 'Windows', 'Linux').\n\n**Output:**\n\n*  `4`:  Returned if the operating system is MacOS.\n*  `16`: Returned if the operating system is not MacOS. \n\n\n"
+    },
+    "modules__core__update_status": {
+        "label": "update_status",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 163,
+        "endLineNo": 168,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L163-L168&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary** \n\nThis function likely logs a message with a scope identifier and updates a user interface status bar if the environment is not headless. Its purpose seems to be providing both programmatic logging and visual feedback during program execution. \n\n**Inputs**\n\n* `scope`: A string indicating the context or origin of the message.\n* `message`: A string containing the log message itself.\n* `modules.globals.headless`: A boolean value determining whether the program is running in a headless environment (lacking a visual UI).\n\n**Output**\n\n*  Logs a formatted message to the console containing the `scope` and `message`.\n* If not running in headless mode, updates a `ui.update_status()` function with the `message`. \n\n\n\n"
+    },
+    "modules__processors__frame__core__process_video": {
+        "label": "process_video",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py",
+        "relativePath": "modules/processors/frame/core.py",
+        "lineNo": 68,
+        "endLineNo": 73,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fcore.py%23L68-L73&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick summary:**\n\nThis code processes a sequence of frames using multiprocessing. It utilizes the `tqdm` library to display a progress bar indicating the processing status, total frames, elapsed time, remaining time, and processing rate.\n\n**Inputs:**\n\n* `source_path`:  The path to the source location of the frames (e.g., a video file).\n* `frame_paths`: A list of paths to individual frames.\n* `process_frames`: A function that processes a single frame.\n* `modules.globals`:  Likely a global namespace containing configuration variables like `execution_providers`, `execution_threads`, and `max_memory`.\n\n**Output:**\n\n* Processed frames:  The output of the `process_frames` function applied to each frame in `frame_paths`. \n* Progress bar: A visual progress indicator showing the processing completion.\n\n\n\n\n"
+    },
+    "modules__processors__frame__face_enhancer__pre_check": {
+        "label": "pre_check",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 20,
+        "endLineNo": 25,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L20-L25&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick summary:** This function downloads a specific model file (\"GFPGANv1.4.pth\") from the given URL and saves it to a directory relative to the script's location. The purpose is to ensure the model is available locally for use in a subsequent program. \n\n\n**Inputs:**\n\n* `download_directory_path`: A string representing the relative path to the directory where the model should be saved. \n* `['https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth']`: A list containing the URL of the model file to be downloaded. \n\n\n**Output:**\n\n*  `True`: A boolean value indicating successful download and saving of the model. \n\n\n\nLet me know if you have any further questions!\n"
+    },
+    "modules__processors__frame__face_enhancer__process_image": {
+        "label": "process_image",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 72,
+        "endLineNo": 77,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L72-L77&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This function takes an image located at `target_path`, processes it using a function called `process_frame`, and saves the processed image to a file at `output_path`. The purpose is likely image manipulation or analysis.\n\n**Inputs:**\n\n*  `target_path`:  A string representing the path to the input image file.\n*  `None`:  A placeholder indicating that the function likely expects an additional input argument (maybe a video stream), but is currently not utilizing it.\n* `target_frame`: The image data read from the specified path.\n\n**Output:**\n\n*  `result`: The processed image data, likely a NumPy array.\n* `output_path`: A string representing the path to the file where the processed image will be saved.  \n\n\n"
+    },
+    "modules__processors__frame__face_swapper__pre_check": {
+        "label": "pre_check",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 18,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L18-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick summary:** This function downloads a pre-trained ONNX model file  \"inswapper_128_fp16.onnx\" from HuggingFace, storing it in a specified directory (`../models`). It aims to provide a convenient way to access and use the deep-live-cam model within a local environment. \n\n**Inputs:**\n\n- `download_directory_path`:  A path string specifying the directory where the model should be downloaded and stored. This uses `resolve_relative_path` to ensure the path is correctly interpreted relative to the script's location.\n\n- `['https://huggingface.co/hacksider/deep-live-cam/blob/main/inswapper_128_fp16.onnx']`: A list containing the URL of the ONNX model file to be downloaded from HuggingFace.\n\n\n**Output:**\n\n- `True`:  This indicates the successful completion of the download process. \n"
+    },
+    "modules__utilities__create_video": {
+        "label": "create_video",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 50,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L50-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis code snippet uses the FFmpeg library to convert a sequence of PNG images into a video file. It specifies the desired frame rate, video encoder, quality, pixel format, and color space conversion.\n\n**Inputs:**\n\n* `target_path`: The desired path for the output video file.\n* `fps`: The desired frame rate for the output video.\n* `modules.globals.video_encoder`:  The video codec to use for encoding (e.g., 'libx264').\n* `modules.globals.video_quality`: An integer representing the video quality (CRF value).\n\n**Output:**\n\n*  A video file  located at `temp_output_path` \n    * based on the provided `target_path`.\n    * encoded at the specified `fps`, `video_encoder`, and `video_quality`.\n\n\n\n"
+    },
+    "modules__utilities__get_temp_directory_path": {
+        "label": "get_temp_directory_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 68,
+        "endLineNo": 73,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L68-L73&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**Quick Summary:** This function takes a file path as input and generates a new path by moving the file to a temporary directory within the file's original directory. \n\n**Inputs:**\n\n* `target_path`: The full path to the file to be moved. \n\n**Output:**\n\n* A new file path where the file has been moved to a temporary directory within its original directory. \n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "modules__capturer__get_video_frame_total": {
+        "label": "get_video_frame_total",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/capturer.py",
+        "relativePath": "modules/capturer.py",
+        "lineNo": 16,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcapturer.py%23L16-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick summary]** This function determines the total number of frames in a video file. \n\nIt opens the video file, retrieves the frame count property, releases the video capture object, and returns the total frame count as an integer. This information can be useful for tasks like estimating video duration or processing the entire video frame by frame.\n\n\n**[Inputs]**\n\n*  `video_path`:  A string representing the path to the video file.\n\n**[Output]**\n\n*  `video_frame_total`: An integer representing the total number of frames in the video. \n\n\n"
+    },
+    "modules__core__decode_execution_providers": {
+        "label": "decode_execution_providers",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 106,
+        "endLineNo": 110,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L106-L110&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function returns a list of available ONNX Runtime providers that match a given set of desired execution providers. It essentially filters the available providers based on whether they are included in the list of `execution_providers`.\n\nThe purpose is to dynamically select appropriate ONNX Runtime execution providers based on specific requirements.\n\n## Inputs\n\n* `onnxruntime.get_available_providers()`: A list of all available ONNX Runtime execution providers.\n* `encode_execution_providers()`: A function that takes a list of execution providers and returns an encoded representation of them.\n* `execution_providers`: A list of desired execution providers to filter by.\n\n## Output\n\n*  A list of ONNX Runtime providers from the original list that match the provided `execution_providers`. Each provider in the output list will be a string representing the provider name."
+    },
+    "modules__core__release_resources": {
+        "label": "release_resources",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 148,
+        "endLineNo": 152,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L148-L152&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This code checks if a CUDA execution provider is available in the current environment. If found, it empties the CUDA cache, freeing up memory resources. The purpose is to optimize GPU memory usage and potentially improve performance.\n\n**Inputs:**\n\n* `modules.globals.execution_providers`: A global dictionary likely containing registered execution providers for PyTorch, potentially including a CUDA provider.\n\n**Output:**\n\n* None. The code executes a side effect (emptying the CUDA cache) and doesn't directly return a value. \n"
+    },
+    "modules__face_analyser__get_many_faces": {
+        "label": "get_many_faces",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/face_analyser.py",
+        "relativePath": "modules/face_analyser.py",
+        "lineNo": 27,
+        "endLineNo": 31,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fface_analyser.py%23L27-L31&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis \n\n**Quick Summary:**\n\nThis function attempts to analyze a given frame (likely an image) for faces using a pre-existing `get_face_analyser()` function. If successful, it returns the results of the analysis; if an error occurs (specifically an `IndexError`), it returns `None`. This suggests a process for facial detection and potential feature extraction within a larger system.\n\n**Inputs:**\n- `frame`: An image or video frame presumably represented as a data structure suitable for processing by the `get_face_analyser()` function.\n\n**Output:**\n- The result of the facial analysis performed by `get_face_analyser()` on the provided `frame`. \n- `None` if an `IndexError` occurs during the analysis process. \n\n\n"
+    },
+    "modules__ui__update_status": {
+        "label": "update_status",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 136,
+        "endLineNo": 140,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L136-L140&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis Python code snippet updates the text content of a GUI element called \"status_label\". The line `ROOT.update()` likely ensures that the UI reflects the change immediately. This code is probably part of a larger application that uses a status label to display information to the user.\n\n[Inputs]\n- `status_label`:  A GUI widget (likely a label) responsible for displaying text.\n- `text`: A string variable containing the new text to be displayed in the status_label.\n\n[Output]\n-  The \"status_label\" widget will display the text provided in the \"text\" variable. \n- The application's graphical user interface (GUI) will be updated to show the change in the status label. \n\n\n"
+    },
+    "modules__utilities__create_temp": {
+        "label": "create_temp",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 88,
+        "endLineNo": 92,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L88-L92&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick Summary]**  This code creates a temporary directory. It first determines the path for this directory using `get_temp_directory_path(target_path)`. Then, it ensures the directory exists by creating it if needed using `Path(temp_directory_path).mkdir(parents=True, exist_ok=True)`.\n\n**[Inputs]**\n*  `target_path`:  This likely represents the original or intended destination path for data processing. \n\n**[Output]**\n* Creates a temporary directory at the path determined by `get_temp_directory_path(target_path)`. \n\n\nLet me know if you'd like me to elaborate on any specific aspect!\n"
+    },
+    "modules__utilities__extract_frames": {
+        "label": "extract_frames",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 45,
+        "endLineNo": 49,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L45-L49&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis code snippet uses FFmpeg to extract a sequence of images from a video file.  It converts the video to RGB24 format and saves each frame as a PNG image sequentially numbered. This process is likely used for creating a frame-by-frame animation or analyzing the video content.\n\n## Inputs:\n\n* `target_path`: The path to the input video file.\n* `get_temp_directory_path(target_path)`: A function likely responsible for creating a temporary directory path based on the input video file's location.\n\n## Output:\n\n* A sequence of PNG image files in the temporary directory, each numbered sequentially (e.g., 0001.png, 0002.png, etc.).\n* Each image represents a frame from the input video. \n\n\n"
+    },
+    "modules__utilities__get_temp_frame_paths": {
+        "label": "get_temp_frame_paths",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 63,
+        "endLineNo": 67,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L63-L67&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function locates and returns a list of all PNG image files within a temporary directory created from a provided target path. \n\nThe purpose of the code is to efficiently find and manage PNG images for processing or storage in a temporary space.\n\n## Inputs\n\n- `target_path`: This is likely a string representing the base directory location where a temporary directory will be derived from.\n\n## Output\n\n- A list of strings: Each string represents the full path to a PNG image file found within the temporary directory. \n"
+    },
+    "modules__utilities__get_temp_output_path": {
+        "label": "get_temp_output_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 74,
+        "endLineNo": 78,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L74-L78&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]** This function creates a temporary file path by combining a platform-specific temporary directory with a fixed filename prefix (\"TEMP_FILE\").  It likely manages temporary files used during a process, ensuring a predictable location and cleanup.\n\n**[Inputs]**\n\n* **target_path:** This likely refers to some target location relevant to the process, perhaps where the temporary file will be ultimately used or accessed.\n\n**[Output]**\n\n* A string representing the complete path to the temporary file. \n\n\n"
+    },
+    "modules__core__encode_execution_providers": {
+        "label": "encode_execution_providers",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 102,
+        "endLineNo": 105,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L102-L105&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick Summary]** This function processes a list of strings representing execution providers, removing the \"ExecutionProvider\" prefix and converting each string to lowercase. \n\n**[Inputs]**\n\n*  `execution_providers`: A list of strings.\n*  These strings likely represent names of different execution providers used in a system or framework. \n\n**[Output]**\n\n*  A new list of strings.\n*  Each string in the output list is the lowercase version of the input string with \"ExecutionProvider\" removed. \n\n\n"
+    },
+    "modules__core__suggest_execution_providers": {
+        "label": "suggest_execution_providers",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py",
+        "relativePath": "modules/core.py",
+        "lineNo": 117,
+        "endLineNo": 120,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fcore.py%23L117-L120&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]**\n\nThis function retrieves a list of available ONNX Runtime execution providers and encodes them into a suitable format for use elsewhere. The purpose of this code is likely to dynamically configure or select an execution provider based on system capabilities or user preferences. \n\n**[Inputs]**\n\n*  `onnxruntime.get_available_providers()`: This likely returns a list of available execution providers supported by the ONNX Runtime library.\n\n**[Output]**\n\n*  A potentially encoded or formatted representation of the list of execution providers. This could be a string, list, or another data structure suitable for storage, transmission, or further processing. \n\n\n"
+    },
+    "modules__predicter__predict_image": {
+        "label": "predict_image",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/predicter.py",
+        "relativePath": "modules/predicter.py",
+        "lineNo": 19,
+        "endLineNo": 22,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fpredicter.py%23L19-L22&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function analyzes an image located at \"target_path\" using the \"opennsfw2\" model to determine if it contains NSFW (Not Safe For Work) content.  It returns `True` if the model's prediction exceeds a predefined \"MAX_PROBABILITY\" threshold, indicating a high likelihood of NSFW content, otherwise `False`.\n\n**Inputs:**\n\n*  `target_path`: The path to the image file that needs to be analyzed.\n\n**Output:**\n\n* A boolean value (`True` or `False`) indicating whether the image is predicted to contain NSFW content. \n\n\n"
+    },
+    "modules__processors__frame__face_swapper__swap_face": {
+        "label": "swap_face",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 47,
+        "endLineNo": 50,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L47-L50&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function is likely part of a facial swapping application. It uses a pre-existing face swapping utility (`get_face_swapper()`) to swap the face in a temporary frame (`temp_frame`) with a target face (`target_face`), replacing the original source face (`source_face`). The `paste_back=True` argument indicates it should reconstruct the full swapped image.\n\n\n**Inputs:**\n* `temp_frame`:  An image frame (likely from a video) where the face swap will occur.\n* `target_face`: The image of the face to be pasted onto `temp_frame`.\n* `source_face`: The image of the face currently present in `temp_frame` that will be replaced.  \n\n**Output:**\n* A modified image frame with the `target_face` swapped into `temp_frame`, replacing the `source_face`. \n"
+    },
+    "modules__ui__update_tumbler": {
+        "label": "update_tumbler",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py",
+        "relativePath": "modules/ui.py",
+        "lineNo": 141,
+        "endLineNo": 144,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fui.py%23L141-L144&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Please provide the code selection! I need to see the code snippet to give you a summary, inputs, and expected output. \ud83d\ude0a  \n"
+    },
+    "modules__utilities__has_image_extension": {
+        "label": "has_image_extension",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 110,
+        "endLineNo": 113,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L110-L113&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** \n\nThis function checks if a given image path string ends with a common image file extension (`.png`, `.jpg`, `.jpeg`). It helps determine if the path likely points to a valid image file. The code's purpose is to validate image file paths before processing or displaying them.\n\n**[Inputs]**\n\n*  `image_path`: A string representing the path to an image file.\n\n**[Output]**\n\n*  `True`: If the image path ends with one of the specified image file extensions.\n*  `False`: If the image path does not end with a supported image file extension. \n\n\n"
+    },
+    "modules__predicter__predict_video": {
+        "label": "predict_video",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/predicter.py",
+        "relativePath": "modules/predicter.py",
+        "lineNo": 23,
+        "endLineNo": 25,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fpredicter.py%23L23-L25&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\n\nThis function analyzes a video to determine if it contains NSFW (Not Safe For Work) content. It uses a pre-trained model (`opennsfw2`) to evaluate individual frames of the video and combines the results to make a final decision. If any frame has a probability of containing NSFW content exceeding a certain threshold (`MAX_PROBABILITY`), the function returns `True`, indicating the video likely contains NSFW content.\n\n**Inputs**\n\n\n- `target_path`: The path to the video file to be analyzed.\n- `frame_interval`: The number of frames to skip between evaluations.\n\n**Output**\n\n- `True`:  If any frame's NSFW probability exceeds `MAX_PROBABILITY`.\n- `False`: If no frame's NSFW probability exceeds `MAX_PROBABILITY`. \n"
+    },
+    "modules__processors__frame__face_enhancer__process_video": {
+        "label": "process_video",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py",
+        "relativePath": "modules/processors/frame/face_enhancer.py",
+        "lineNo": 78,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_enhancer.py%23L78-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\n\nThis code snippet processes a sequence of video frames. It likely takes a series of temporary file paths (`temp_frame_paths`) and applies a function `process_frames` to each frame, possibly for tasks like image enhancement, object detection, or analysis. The ultimate purpose is to manipulate the video frames in some way before further processing or output. \n\n[Inputs]\n\n* `None`:  Indicates a potential missing or unused first argument. \n* `temp_frame_paths`: A list or iterable containing file paths to temporary video frames.\n* `process_frames`: A function that takes a single frame (presumably an image) as input and performs some operation on it.\n\n[Output]\n\n* The output is not explicitly stated, but likely involves modified versions of the video frames after the `process_frames` function has been applied to each one. \n\n\n"
+    },
+    "modules__processors__frame__face_swapper__process_video": {
+        "label": "process_video",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py",
+        "relativePath": "modules/processors/frame/face_swapper.py",
+        "lineNo": 85,
+        "endLineNo": 86,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Fprocessors%2Fframe%2Fface_swapper.py%23L85-L86&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function processes a video by extracting and processing individual frames. It likely performs some type of image manipulation or analysis on each frame before potentially recombining them into a new video. The purpose is to apply custom image processing to a video.  \n\n## Inputs\n\n* **source_path:** The path to the input video file.\n* **temp_frame_paths:** A list of paths where temporary frame files will be stored during processing.\n* **process_frames:** A function that takes a single frame as input and returns the processed frame.\n\n## Output\n\n\n*  Potentially a modified video or a set of processed frames.  \n"
+    },
+    "modules__utilities__resolve_relative_path": {
+        "label": "resolve_relative_path",
+        "systemPath": "/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py",
+        "relativePath": "modules/utilities.py",
+        "lineNo": 140,
+        "endLineNo": 141,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fhacksider%2FDeep-Live-Cam%2Fblob%2Fmain%2Fmodules%2Futilities.py%23L140-L141&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:**  This function takes a relative file path as input and returns the absolute path of that file, ensuring it's located within the same directory as the script. This is useful for accessing resources (like data files or configuration files)  relative to the current script.\n\n**Inputs:**\n\n*  `path`: A string representing a relative file path from the current script's location.\n\n**Output:**\n\n* A string representing the absolute file path. \n\n\n"
+    }
+}

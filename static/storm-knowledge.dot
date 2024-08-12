@@ -1,0 +1,878 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        knowledge_storm [label="knowledge_storm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        knowledge_storm__interface [label="knowledge_storm.interface", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        knowledge_storm__lm [label="knowledge_storm.lm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        knowledge_storm__rm [label="knowledge_storm.rm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        knowledge_storm__storm_wiki [label="knowledge_storm.storm_wiki", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        knowledge_storm__storm_wiki__engine [label="knowledge_storm.storm_wiki.engine", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        knowledge_storm__storm_wiki__modules [label="knowledge_storm.storm_wiki.modules", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        knowledge_storm__storm_wiki__modules__article_generation [label="knowledge_storm.storm_wiki.modules.article_generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        knowledge_storm__storm_wiki__modules__article_polish [label="knowledge_storm.storm_wiki.modules.article_polish", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        knowledge_storm__storm_wiki__modules__callback [label="knowledge_storm.storm_wiki.modules.callback", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation [label="knowledge_storm.storm_wiki.modules.knowledge_curation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        knowledge_storm__storm_wiki__modules__outline_generation [label="knowledge_storm.storm_wiki.modules.outline_generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        knowledge_storm__storm_wiki__modules__persona_generator [label="knowledge_storm.storm_wiki.modules.persona_generator", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        knowledge_storm__storm_wiki__modules__retriever [label="knowledge_storm.storm_wiki.modules.retriever", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass [label="knowledge_storm.storm_wiki.modules.storm_dataclass", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        knowledge_storm__utils [label="knowledge_storm.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        subgraph cluster_knowledge_storm__interface {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface"];
+            knowledge_storm__interface__Article [label="Article\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:69)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__ArticleGenerationModule [label="ArticleGenerationModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:259)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__ArticlePolishingModule [label="ArticlePolishingModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:280)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__ArticleSectionNode [label="ArticleSectionNode\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:43)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine [label="Engine\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:363)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Information [label="Information\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:12)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__InformationTable [label="InformationTable\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:25)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__KnowledgeCurationModule [label="KnowledgeCurationModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:211)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__LMConfigs [label="LMConfigs\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:312)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__OutlineGenerationModule [label="OutlineGenerationModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:236)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Retriever [label="Retriever\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:163)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__log_execution_time [label="log_execution_time\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:296)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__Article {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.Article"];
+            knowledge_storm__interface__Article____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:70)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Article__find_section [label="find_section\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:73)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Article__from_string [label="from_string\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:145)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Article__get_first_level_section_names [label="get_first_level_section_names\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:137)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Article__get_outline_tree [label="get_outline_tree\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:98)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Article__prune_empty_nodeXs [label="prune_empty_nodes\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:151)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Article__to_string [label="to_string\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:93)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__Article__get_outline_tree {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.Article.get_outline_tree"];
+            knowledge_storm__interface__Article__get_outline_tree__build_tree [label="build_tree\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:129)", style="filled", fillcolor="#ff7a32b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__ArticleGenerationModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.ArticleGenerationModule"];
+            knowledge_storm__interface__ArticleGenerationModule__generate_article [label="generate_article\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:266)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__ArticlePolishingModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.ArticlePolishingModule"];
+            knowledge_storm__interface__ArticlePolishingModule__polish_article [label="polish_article\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:287)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__ArticleSectionNode {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.ArticleSectionNode"];
+            knowledge_storm__interface__ArticleSectionNode____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:49)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__ArticleSectionNode__add_child [label="add_child\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:59)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__ArticleSectionNode__remove_child [label="remove_child\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:65)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__Engine {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.Engine"];
+            knowledge_storm__interface__Engine____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:364)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__apply_decorators [label="apply_decorators\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:388)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage [label="log_execution_time_and_lm_rm_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:370)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__reset [label="reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:432)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__run [label="run\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:414)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__run_article_generation_module [label="run_article_generation_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:406)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__run_article_polishing_module [label="run_article_polishing_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:410)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__run_knowledge_curation_module [label="run_knowledge_curation_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:398)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__run_outline_generation_module [label="run_outline_generation_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:402)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Engine__summary [label="summary\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:417)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.Engine.log_execution_time_and_lm_rm_usage"];
+            knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage__wrapper [label="wrapper\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:374)", style="filled", fillcolor="#ff7a32b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__Information {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.Information"];
+            knowledge_storm__interface__Information____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:20)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__InformationTable {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.InformationTable"];
+            knowledge_storm__interface__InformationTable____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:35)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__InformationTable__retrieve_information [label="retrieve_information\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:39)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__KnowledgeCurationModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.KnowledgeCurationModule"];
+            knowledge_storm__interface__KnowledgeCurationModule____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:216)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__KnowledgeCurationModule__research [label="research\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:223)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__LMConfigs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.LMConfigs"];
+            knowledge_storm__interface__LMConfigs____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:317)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__LMConfigs__collect_and_reset_lm_history [label="collect_and_reset_lm_history\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:327)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__LMConfigs__collect_and_reset_lm_usage [label="collect_and_reset_lm_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:336)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__LMConfigs__init_check [label="init_check\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:320)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__LMConfigs__log [label="log\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:353)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__OutlineGenerationModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.OutlineGenerationModule"];
+            knowledge_storm__interface__OutlineGenerationModule__generate_outline [label="generate_outline\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:243)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__Retriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.Retriever"];
+            knowledge_storm__interface__Retriever____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:172)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Retriever__collect_and_reset_rm_usage [label="collect_and_reset_rm_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:178)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Retriever__retrieve [label="retrieve\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:195)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+            knowledge_storm__interface__Retriever__update_search_top_k [label="update_search_top_k\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:175)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__interface__log_execution_time {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.interface.log_execution_time"];
+            knowledge_storm__interface__log_execution_time__wrapper [label="wrapper\n(/home/sanjay/Development/explore/storm/knowledge_storm/interface.py:300)", style="filled", fillcolor="#ff9b65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_knowledge_storm__lm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm"];
+            knowledge_storm__lm__AzureOpenAIModel [label="AzureOpenAIModel\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:197)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__ClaudeModel [label="ClaudeModel\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:236)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__DeepSeekModel [label="DeepSeekModel\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:108)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__GoogleModel [label="GoogleModel\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:599)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__OllamaClient [label="OllamaClient\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:406)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__OpenAIModel [label="OpenAIModel\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:21)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__TGIClient [label="TGIClient\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:419)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__TogetherClient [label="TogetherClient\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:475)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__VLLMClient [label="VLLMClient\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:361)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__AzureOpenAIModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.AzureOpenAIModel"];
+            knowledge_storm__lm__AzureOpenAIModel____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:200)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__AzureOpenAIModel__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:224)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__AzureOpenAIModel__log_usage [label="log_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:215)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__ClaudeModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.ClaudeModel"];
+            knowledge_storm__lm__ClaudeModel____call__ [label="__call__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:331)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__ClaudeModel____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:239)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__ClaudeModel__basic_request [label="basic_request\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:286)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__ClaudeModel__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:275)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__ClaudeModel__log_usage [label="log_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:267)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__ClaudeModel__request [label="request\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:327)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__DeepSeekModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.DeepSeekModel"];
+            knowledge_storm__lm__DeepSeekModel____call__ [label="__call__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:168)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__DeepSeekModel____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:111)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__DeepSeekModel___create_completion [label="_create_completion\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:153)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__DeepSeekModel__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:136)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__DeepSeekModel__log_usage [label="log_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:128)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__GoogleModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.GoogleModel"];
+            knowledge_storm__lm__GoogleModel____call__ [label="__call__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:698)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__GoogleModel____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:602)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__GoogleModel__basic_request [label="basic_request\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:664)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__GoogleModel__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:653)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__GoogleModel__log_usage [label="log_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:645)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__GoogleModel__request [label="request\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:694)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__OllamaClient {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.OllamaClient"];
+            knowledge_storm__lm__OllamaClient____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:409)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__OpenAIModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.OpenAIModel"];
+            knowledge_storm__lm__OpenAIModel____call__ [label="__call__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:55)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__OpenAIModel____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:24)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__OpenAIModel__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:44)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__OpenAIModel__log_usage [label="log_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:36)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__TGIClient {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.TGIClient"];
+            knowledge_storm__lm__TGIClient____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:420)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__TGIClient___generate [label="_generate\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:423)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__TogetherClient {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.TogetherClient"];
+            knowledge_storm__lm__TogetherClient____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:478)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__TogetherClient___generate [label="_generate\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:539)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__TogetherClient__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:522)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__TogetherClient__log_usage [label="log_usage\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:514)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__lm__VLLMClient {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.lm.VLLMClient"];
+            knowledge_storm__lm__VLLMClient____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:364)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+            knowledge_storm__lm__VLLMClient___generate [label="_generate\n(/home/sanjay/Development/explore/storm/knowledge_storm/lm.py:371)", style="filled", fillcolor="#ffd265b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_knowledge_storm__rm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.rm"];
+            knowledge_storm__rm__BingSearch [label="BingSearch\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:75)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__BraveRM [label="BraveRM\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:446)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__SerperRM [label="SerperRM\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:310)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM [label="VectorRM\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:166)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__YouRM [label="YouRM\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:15)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_knowledge_storm__rm__BingSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.rm.BingSearch"];
+            knowledge_storm__rm__BingSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:76)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__BingSearch__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:121)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__BingSearch__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:115)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_knowledge_storm__rm__BraveRM {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.rm.BraveRM"];
+            knowledge_storm__rm__BraveRM____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:447)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__BraveRM__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:469)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__BraveRM__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:463)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_knowledge_storm__rm__SerperRM {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.rm.SerperRM"];
+            knowledge_storm__rm__SerperRM____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:313)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__SerperRM__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:373)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__SerperRM__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:368)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__SerperRM__serper_runner [label="serper_runner\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:349)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_knowledge_storm__rm__VectorRM {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.rm.VectorRM"];
+            knowledge_storm__rm__VectorRM____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:178)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM___check_collection [label="_check_collection\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:210)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:278)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:263)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM__get_vector_count [label="get_vector_count\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:269)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM__init_offline_vector_db [label="init_offline_vector_db\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:247)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__VectorRM__init_online_vector_db [label="init_online_vector_db\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:226)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_knowledge_storm__rm__YouRM {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.rm.YouRM"];
+            knowledge_storm__rm__YouRM____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:16)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__YouRM__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:38)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+            knowledge_storm__rm__YouRM__get_usage_and_reset [label="get_usage_and_reset\n(/home/sanjay/Development/explore/storm/knowledge_storm/rm.py:32)", style="filled", fillcolor="#f6ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__engine {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.engine"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs [label="STORMWikiLMConfigs\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:22)", style="filled", fillcolor="#89ff65b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner [label="STORMWikiRunner\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:122)", style="filled", fillcolor="#89ff65b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunnerArguments [label="STORMWikiRunnerArguments\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:86)", style="filled", fillcolor="#89ff65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.engine.STORMWikiLMConfigs"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:30)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__init_openai_model [label="init_openai_model\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:37)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__set_article_gen_lm [label="set_article_gen_lm\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:78)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__set_article_polish_lm [label="set_article_polish_lm\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:81)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__set_conv_simulator_lm [label="set_conv_simulator_lm\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:69)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__set_outline_gen_lm [label="set_outline_gen_lm\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:75)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__set_question_asker_lm [label="set_question_asker_lm\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:72)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__engine__STORMWikiRunner {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.engine.STORMWikiRunner"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:125)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_draft_article_from_local_fs [label="_load_draft_article_from_local_fs\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:246)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_information_table_from_local_fs [label="_load_information_table_from_local_fs\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:236)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_outline_from_local_fs [label="_load_outline_from_local_fs\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:241)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner__post_run [label="post_run\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:220)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner__run [label="run\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:255)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_generation_module [label="run_article_generation_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:192)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_polishing_module [label="run_article_polishing_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:207)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_knowledge_curation_module [label="run_knowledge_curation_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:161)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+            knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_outline_generation_module [label="run_outline_generation_module\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/engine.py:178)", style="filled", fillcolor="#62ff32b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__article_generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.article_generation"];
+            knowledge_storm__storm_wiki__modules__article_generation__ConvToSection [label="ConvToSection\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:109)", style="filled", fillcolor="#32ff93b2", fontcolor="#000000", group="7"];
+            knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule [label="StormArticleGenerationModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:15)", style="filled", fillcolor="#32ff93b2", fontcolor="#000000", group="7"];
+            knowledge_storm__storm_wiki__modules__article_generation__WriteSection [label="WriteSection\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:132)", style="filled", fillcolor="#32ff93b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__article_generation__ConvToSection {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.article_generation.ConvToSection"];
+            knowledge_storm__storm_wiki__modules__article_generation__ConvToSection____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:112)", style="filled", fillcolor="#00ff78b2", fontcolor="#000000", group="7"];
+            knowledge_storm__storm_wiki__modules__article_generation__ConvToSection__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:117)", style="filled", fillcolor="#00ff78b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.article_generation.StormArticleGenerationModule"];
+            knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:21)", style="filled", fillcolor="#00ff78b2", fontcolor="#000000", group="7"];
+            knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article [label="generate_article\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:42)", style="filled", fillcolor="#00ff78b2", fontcolor="#000000", group="7"];
+            knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_section [label="generate_section\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_generation.py:31)", style="filled", fillcolor="#00ff78b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__article_polish {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.article_polish"];
+            knowledge_storm__storm_wiki__modules__article_polish__PolishPage [label="PolishPage\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:63)", style="filled", fillcolor="#32ffdbb2", fontcolor="#000000", group="8"];
+            knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule [label="PolishPageModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:70)", style="filled", fillcolor="#32ffdbb2", fontcolor="#000000", group="8"];
+            knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule [label="StormArticlePolishingModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:11)", style="filled", fillcolor="#32ffdbb2", fontcolor="#000000", group="8"];
+            knowledge_storm__storm_wiki__modules__article_polish__WriteLeadSection [label="WriteLeadSection\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:52)", style="filled", fillcolor="#32ffdbb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.article_polish.PolishPageModule"];
+            knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:71)", style="filled", fillcolor="#00ffd2b2", fontcolor="#000000", group="8"];
+            knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:79)", style="filled", fillcolor="#00ffd2b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.article_polish.StormArticlePolishingModule"];
+            knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:17)", style="filled", fillcolor="#00ffd2b2", fontcolor="#000000", group="8"];
+            knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule__polish_article [label="polish_article\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/article_polish.py:28)", style="filled", fillcolor="#00ffd2b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__callback {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.callback"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [label="BaseCallbackHandler\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:1)", style="filled", fillcolor="#32daffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.callback.BaseCallbackHandler"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_dialogue_turn_end [label="on_dialogue_turn_end\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:16)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_direct_outline_generation_end [label="on_direct_outline_generation_end\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:28)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_identify_perspective_end [label="on_identify_perspective_end\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:8)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_identify_perspective_start [label="on_identify_perspective_start\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:4)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_information_gathering_end [label="on_information_gathering_end\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:20)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_information_gathering_start [label="on_information_gathering_start\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:12)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_information_organization_start [label="on_information_organization_start\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:24)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+            knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler__on_outline_refinement_end [label="on_outline_refinement_end\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/callback.py:32)", style="filled", fillcolor="#00d1ffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__knowledge_curation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.knowledge_curation"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__AnswerQuestion [label="AnswerQuestion\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:134)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__AskQuestion [label="AskQuestion\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:99)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__AskQuestionWithPersona [label="AskQuestionWithPersona\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:109)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator [label="ConvSimulator\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:25)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__QuestionToQuery [label="QuestionToQuery\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:121)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule [label="StormKnowledgeCurationModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:198)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert [label="TopicExpert\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:148)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter [label="WikiWriter\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:68)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.knowledge_curation.ConvSimulator"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:28)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:41)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.knowledge_curation.StormKnowledgeCurationModule"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:203)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___get_considered_personas [label="_get_considered_personas\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:230)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation [label="_run_conversation\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:233)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research [label="research\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:283)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.knowledge_curation.StormKnowledgeCurationModule._run_conversation"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation__run_conv [label="run_conv\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:258)", style="filled", fillcolor="#005fcbb2", fontcolor="#ffffff", group="10"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.knowledge_curation.TopicExpert"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:156)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:167)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.knowledge_curation.WikiWriter"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:73)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+            knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py:79)", style="filled", fillcolor="#0077ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__outline_generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.outline_generation"];
+            knowledge_storm__storm_wiki__modules__outline_generation__NaiveOutlineGen [label="NaiveOutlineGen\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:112)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule [label="StormOutlineGenerationModule\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:11)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline [label="WriteOutline\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:66)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__WritePageOutline [label="WritePageOutline\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:100)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__WritePageOutlineFromConv [label="WritePageOutlineFromConv\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:125)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__outline_generation__NaiveOutlineGen {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.outline_generation.NaiveOutlineGen"];
+            knowledge_storm__storm_wiki__modules__outline_generation__NaiveOutlineGen____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:115)", style="filled", fillcolor="#001dffb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__NaiveOutlineGen__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:119)", style="filled", fillcolor="#001dffb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.outline_generation.StormOutlineGenerationModule"];
+            knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:17)", style="filled", fillcolor="#001dffb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline [label="generate_outline\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:23)", style="filled", fillcolor="#001dffb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.outline_generation.WriteOutline"];
+            knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:69)", style="filled", fillcolor="#001dffb2", fontcolor="#000000", group="11"];
+            knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/outline_generation.py:75)", style="filled", fillcolor="#001dffb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__persona_generator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.persona_generator"];
+            knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona [label="CreateWriterWithPersona\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:58)", style="filled", fillcolor="#6332ffb2", fontcolor="#000000", group="12"];
+            knowledge_storm__storm_wiki__modules__persona_generator__FindRelatedTopic [label="FindRelatedTopic\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:40)", style="filled", fillcolor="#6332ffb2", fontcolor="#000000", group="12"];
+            knowledge_storm__storm_wiki__modules__persona_generator__GenPersona [label="GenPersona\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:48)", style="filled", fillcolor="#6332ffb2", fontcolor="#000000", group="12"];
+            knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator [label="StormPersonaGenerator\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:98)", style="filled", fillcolor="#6332ffb2", fontcolor="#000000", group="12"];
+            knowledge_storm__storm_wiki__modules__persona_generator__get_wiki_page_title_and_toc [label="get_wiki_page_title_and_toc\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:10)", style="filled", fillcolor="#6332ffb2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.persona_generator.CreateWriterWithPersona"];
+            knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:61)", style="filled", fillcolor="#3c00ffb2", fontcolor="#000000", group="12"];
+            knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona__forward [label="forward\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:67)", style="filled", fillcolor="#3c00ffb2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.persona_generator.StormPersonaGenerator"];
+            knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:115)", style="filled", fillcolor="#3c00ffb2", fontcolor="#000000", group="12"];
+            knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator__generate_persona [label="generate_persona\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/persona_generator.py:118)", style="filled", fillcolor="#3c00ffb2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__retriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.retriever"];
+            knowledge_storm__storm_wiki__modules__retriever__StormRetriever [label="StormRetriever\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/retriever.py:236)", style="filled", fillcolor="#aa32ffb2", fontcolor="#000000", group="13"];
+            knowledge_storm__storm_wiki__modules__retriever__is_valid_wikipedia_source [label="is_valid_wikipedia_source\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/retriever.py:225)", style="filled", fillcolor="#aa32ffb2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__retriever__StormRetriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.retriever.StormRetriever"];
+            knowledge_storm__storm_wiki__modules__retriever__StormRetriever____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/retriever.py:237)", style="filled", fillcolor="#9500ffb2", fontcolor="#000000", group="13"];
+            knowledge_storm__storm_wiki__modules__retriever__StormRetriever__retrieve [label="retrieve\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/retriever.py:243)", style="filled", fillcolor="#9500ffb2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn [label="DialogueTurn\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:63)", style="filled", fillcolor="#f232ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [label="StormArticle\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:191)", style="filled", fillcolor="#f232ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation [label="StormInformation\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:14)", style="filled", fillcolor="#f232ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [label="StormInformationTable\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:96)", style="filled", fillcolor="#f232ffb2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.DialogueTurn"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:64)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn__log [label="log\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:81)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormArticle"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:192)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle___merge_new_info_to_references [label="_merge_new_info_to_references\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:218)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_article_as_plain_text [label="dump_article_as_plain_text\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:480)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_outline_to_file [label="dump_outline_to_file\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:470)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_reference_to_file [label="dump_reference_to_file\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:474)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__find_section [label="find_section\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:199)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_file [label="from_outline_file\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:424)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_str [label="from_outline_str\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:432)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_string [label="from_string\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:485)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_first_level_section_names [label="get_first_level_section_names\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:417)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list [label="get_outline_as_list\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:309)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree [label="get_outline_tree\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:408)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section [label="insert_or_create_section\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:248)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__post_processing [label="post_processing\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:494)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index [label="reorder_reference_index\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:372)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string [label="to_string\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:350)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__update_section [label="update_section\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:271)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormArticle.get_outline_as_list"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list__preorder_traverse [label="preorder_traverse\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:336)", style="filled", fillcolor="#bf00cbb2", fontcolor="#ffffff", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormArticle.get_outline_tree"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree__build_tree [label="build_tree\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:409)", style="filled", fillcolor="#bf00cbb2", fontcolor="#ffffff", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormArticle.reorder_reference_index"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_find_index [label="pre_order_find_index\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:376)", style="filled", fillcolor="#bf00cbb2", fontcolor="#ffffff", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_update_index [label="pre_order_update_index\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:391)", style="filled", fillcolor="#bf00cbb2", fontcolor="#ffffff", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormArticle.to_string"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string__preorder_traverse [label="preorder_traverse\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:359)", style="filled", fillcolor="#bf00cbb2", fontcolor="#ffffff", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormInformation"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:27)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation__from_dict [label="from_dict\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:43)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation__to_dict [label="to_dict\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:56)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.storm_wiki.modules.storm_dataclass.StormInformationTable"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:106)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_log_dict [label="construct_log_dict\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:127)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_url_to_info [label="construct_url_to_info\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:112)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__dump_url_to_info [label="dump_url_to_info\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:138)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__from_conversation_log_file [label="from_conversation_log_file\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:145)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__prepare_table_for_retrieval [label="prepare_table_for_retrieval\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:154)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+            knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__retrieve_information [label="retrieve_information\n(/home/sanjay/Development/explore/storm/knowledge_storm/storm_wiki/modules/storm_dataclass.py:164)", style="filled", fillcolor="#ef00ffb2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_knowledge_storm__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.utils"];
+            knowledge_storm__utils__ArticleTextProcessing [label="ArticleTextProcessing\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:245)", style="filled", fillcolor="#ff99e0b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper [label="FileIOHelper\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:510)", style="filled", fillcolor="#ff99e0b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__QdrantVectorStoreManager [label="QdrantVectorStoreManager\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:43)", style="filled", fillcolor="#ff99e0b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__WebPageHelper [label="WebPageHelper\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:546)", style="filled", fillcolor="#ff99e0b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__load_api_key [label="load_api_key\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:24)", style="filled", fillcolor="#ff99e0b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__makeStringRed [label="makeStringRed\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:39)", style="filled", fillcolor="#ff99e0b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_knowledge_storm__utils__ArticleTextProcessing {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.utils.ArticleTextProcessing"];
+            knowledge_storm__utils__ArticleTextProcessing__clean_up_citation [label="clean_up_citation\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:370)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__clean_up_outline [label="clean_up_outline\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:388)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__clean_up_section [label="clean_up_section\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:426)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__limit_word_count_preserve_newline [label="limit_word_count_preserve_newline\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:247)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__parse_article_into_dict [label="parse_article_into_dict\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:466)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__parse_citation_indices [label="parse_citation_indices\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:297)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__remove_citations [label="remove_citations\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:281)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations [label="remove_uncompleted_sentences_with_citations\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:311)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__update_citation_index [label="update_citation_index\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:456)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.utils.ArticleTextProcessing.remove_uncompleted_sentences_with_citations"];
+            knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations__deduplicate_group [label="deduplicate_group\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:332)", style="filled", fillcolor="#ff32c2b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations__replace_with_individual_brackets [label="replace_with_individual_brackets\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:327)", style="filled", fillcolor="#ff32c2b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_knowledge_storm__utils__FileIOHelper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.utils.FileIOHelper"];
+            knowledge_storm__utils__FileIOHelper__dump_json [label="dump_json\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:512)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper__dump_pickle [label="dump_pickle\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:536)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper__handle_non_serializable [label="handle_non_serializable\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:517)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper__load_json [label="load_json\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:521)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper__load_pickle [label="load_pickle\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:541)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper__load_str [label="load_str\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:531)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__FileIOHelper__write_str [label="write_str\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:526)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_knowledge_storm__utils__QdrantVectorStoreManager {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.utils.QdrantVectorStoreManager"];
+            knowledge_storm__utils__QdrantVectorStoreManager___check_create_collection [label="_check_create_collection\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:51)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__QdrantVectorStoreManager___init_offline_vector_db [label="_init_offline_vector_db\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:97)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__QdrantVectorStoreManager___init_online_vector_db [label="_init_online_vector_db\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:76)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__QdrantVectorStoreManager__create_or_update_vector_store [label="create_or_update_vector_store\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:113)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_knowledge_storm__utils__WebPageHelper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="knowledge_storm.utils.WebPageHelper"];
+            knowledge_storm__utils__WebPageHelper____init__ [label="__init__\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:552)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__WebPageHelper__download_webpage [label="download_webpage\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:582)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__WebPageHelper__urls_to_articles [label="urls_to_articles\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:592)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+            knowledge_storm__utils__WebPageHelper__urls_to_snippets [label="urls_to_snippets\n(/home/sanjay/Development/explore/storm/knowledge_storm/utils.py:612)", style="filled", fillcolor="#ff65d1b2", fontcolor="#000000", group="15"];
+        }
+    }
+        knowledge_storm__interface__ArticleSectionNode__add_child -> knowledge_storm__interface__ArticleSectionNode____init__ [style="solid",  color="#000000"];
+        knowledge_storm__interface__ArticleSectionNode__remove_child -> knowledge_storm__interface__ArticleSectionNode____init__ [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article____init__ -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article____init__ -> knowledge_storm__interface__ArticleSectionNode____init__ [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__find_section -> knowledge_storm__interface__Article__find_section [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__get_outline_tree__build_tree -> knowledge_storm__interface__Article__get_outline_tree__build_tree [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__get_outline_tree -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__get_outline_tree -> knowledge_storm__interface__Article__get_outline_tree__build_tree [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__get_first_level_section_names -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__prune_empty_nodeXs -> knowledge_storm__interface__Article__prune_empty_nodeXs [style="solid",  color="#000000"];
+        knowledge_storm__interface__Article__prune_empty_nodeXs -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__interface__log_execution_time -> knowledge_storm__interface__log_execution_time__wrapper [style="solid",  color="#000000"];
+        knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage -> knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage__wrapper [style="solid",  color="#000000"];
+        knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage__wrapper -> knowledge_storm__interface__Engine____init__ [style="solid",  color="#000000"];
+        knowledge_storm__interface__Engine__apply_decorators -> knowledge_storm__interface__Engine__log_execution_time_and_lm_rm_usage [style="solid",  color="#000000"];
+        knowledge_storm__interface__Engine__summary -> knowledge_storm__interface__Engine____init__ [style="solid",  color="#000000"];
+        knowledge_storm -> knowledge_storm__storm_wiki__engine__STORMWikiRunner [style="solid",  color="#000000"];
+        knowledge_storm -> knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs [style="solid",  color="#000000"];
+        knowledge_storm -> knowledge_storm__storm_wiki__engine__STORMWikiRunnerArguments [style="solid",  color="#000000"];
+        knowledge_storm__rm -> knowledge_storm__utils__WebPageHelper [style="solid",  color="#000000"];
+        knowledge_storm__rm__BingSearch____init__ -> knowledge_storm__utils__WebPageHelper____init__ [style="solid",  color="#000000"];
+        knowledge_storm__rm__BingSearch____init__ -> knowledge_storm__utils__WebPageHelper [style="solid",  color="#000000"];
+        knowledge_storm__rm__BingSearch__forward -> knowledge_storm__utils__WebPageHelper__urls_to_snippets [style="solid",  color="#000000"];
+        knowledge_storm__rm__VectorRM__init_online_vector_db -> knowledge_storm__rm__VectorRM___check_collection [style="solid",  color="#000000"];
+        knowledge_storm__rm__VectorRM__init_offline_vector_db -> knowledge_storm__rm__VectorRM___check_collection [style="solid",  color="#000000"];
+        knowledge_storm__rm__SerperRM__forward -> knowledge_storm__rm__SerperRM____init__ [style="solid",  color="#000000"];
+        knowledge_storm__rm__SerperRM__forward -> knowledge_storm__rm__SerperRM__serper_runner [style="solid",  color="#000000"];
+        knowledge_storm__lm__OpenAIModel__get_usage_and_reset -> knowledge_storm__lm__OpenAIModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__lm__OpenAIModel____call__ -> knowledge_storm__lm__OpenAIModel__log_usage [style="solid",  color="#000000"];
+        knowledge_storm__lm__OpenAIModel____call__ -> knowledge_storm__lm__OpenAIModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__lm__DeepSeekModel____call__ -> knowledge_storm__lm__DeepSeekModel__log_usage [style="solid",  color="#000000"];
+        knowledge_storm__lm__DeepSeekModel____call__ -> knowledge_storm__lm__DeepSeekModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__lm__DeepSeekModel____call__ -> knowledge_storm__lm__DeepSeekModel___create_completion [style="solid",  color="#000000"];
+        knowledge_storm__lm__AzureOpenAIModel__get_usage_and_reset -> knowledge_storm__lm__AzureOpenAIModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__lm__ClaudeModel__basic_request -> knowledge_storm__lm__ClaudeModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__lm__ClaudeModel__request -> knowledge_storm__lm__ClaudeModel__basic_request [style="solid",  color="#000000"];
+        knowledge_storm__lm__ClaudeModel____call__ -> knowledge_storm__lm__ClaudeModel__log_usage [style="solid",  color="#000000"];
+        knowledge_storm__lm__ClaudeModel____call__ -> knowledge_storm__lm__ClaudeModel__request [style="solid",  color="#000000"];
+        knowledge_storm__lm__TogetherClient___generate -> knowledge_storm__lm__TogetherClient__log_usage [style="solid",  color="#000000"];
+        knowledge_storm__lm__GoogleModel__basic_request -> knowledge_storm__lm__GoogleModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__lm__GoogleModel__request -> knowledge_storm__lm__GoogleModel__basic_request [style="solid",  color="#000000"];
+        knowledge_storm__lm__GoogleModel____call__ -> knowledge_storm__lm__GoogleModel__log_usage [style="solid",  color="#000000"];
+        knowledge_storm__lm__GoogleModel____call__ -> knowledge_storm__lm__GoogleModel__request [style="solid",  color="#000000"];
+        knowledge_storm__utils__QdrantVectorStoreManager___init_online_vector_db -> knowledge_storm__utils__QdrantVectorStoreManager___check_create_collection [style="solid",  color="#000000"];
+        knowledge_storm__utils__QdrantVectorStoreManager___init_offline_vector_db -> knowledge_storm__utils__QdrantVectorStoreManager___check_create_collection [style="solid",  color="#000000"];
+        knowledge_storm__utils__QdrantVectorStoreManager__create_or_update_vector_store -> knowledge_storm__utils__QdrantVectorStoreManager___init_offline_vector_db [style="solid",  color="#000000"];
+        knowledge_storm__utils__QdrantVectorStoreManager__create_or_update_vector_store -> knowledge_storm__utils__QdrantVectorStoreManager___init_online_vector_db [style="solid",  color="#000000"];
+        knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations -> knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations__replace_with_individual_brackets [style="solid",  color="#000000"];
+        knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations -> knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations__deduplicate_group [style="solid",  color="#000000"];
+        knowledge_storm__utils__ArticleTextProcessing__clean_up_citation -> knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations [style="solid",  color="#000000"];
+        knowledge_storm__utils__ArticleTextProcessing__clean_up_section -> knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations [style="solid",  color="#000000"];
+        knowledge_storm__utils__FileIOHelper__dump_json -> knowledge_storm__utils__FileIOHelper__handle_non_serializable [style="solid",  color="#000000"];
+        knowledge_storm__utils__WebPageHelper__urls_to_articles -> knowledge_storm__utils__WebPageHelper__download_webpage [style="solid",  color="#000000"];
+        knowledge_storm__utils__WebPageHelper__urls_to_snippets -> knowledge_storm__utils__WebPageHelper__urls_to_articles [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__lm__OpenAIModel [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__utils__makeStringRed [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__interface__LMConfigs [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__retriever__StormRetriever [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__utils__FileIOHelper [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine -> knowledge_storm__interface__Engine [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs -> knowledge_storm__interface__LMConfigs [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__init_openai_model -> knowledge_storm__lm__OpenAIModel [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiLMConfigs__init_openai_model -> knowledge_storm__lm__OpenAIModel____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner -> knowledge_storm__interface__Engine [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__interface__Engine____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__interface__Engine__apply_decorators [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__retriever__StormRetriever [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__retriever__StormRetriever____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_knowledge_curation_module -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_knowledge_curation_module -> knowledge_storm__utils__FileIOHelper__dump_json [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_knowledge_curation_module -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_outline_generation_module -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_outline_generation_module -> knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_generation_module -> knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_generation_module -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_generation_module -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_polishing_module -> knowledge_storm__utils__FileIOHelper__write_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_polishing_module -> knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule__polish_article [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__post_run -> knowledge_storm__utils__FileIOHelper__dump_json [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_information_table_from_local_fs -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__from_conversation_log_file [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_information_table_from_local_fs -> knowledge_storm__utils__makeStringRed [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_outline_from_local_fs -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_file [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_outline_from_local_fs -> knowledge_storm__utils__makeStringRed [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_draft_article_from_local_fs -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_string [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_draft_article_from_local_fs -> knowledge_storm__utils__FileIOHelper__load_json [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_draft_article_from_local_fs -> knowledge_storm__utils__FileIOHelper__load_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_draft_article_from_local_fs -> knowledge_storm__utils__makeStringRed [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_generation_module [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__utils__makeStringRed [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_draft_article_from_local_fs [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_knowledge_curation_module [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_outline_from_local_fs [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_outline_generation_module [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner___load_information_table_from_local_fs [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__engine__STORMWikiRunner__run -> knowledge_storm__storm_wiki__engine__STORMWikiRunner__run_article_polishing_module [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation -> knowledge_storm__interface__OutlineGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation -> knowledge_storm__utils__ArticleTextProcessing [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule -> knowledge_storm__interface__OutlineGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule____init__ -> knowledge_storm__interface__OutlineGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline -> knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline -> knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__StormOutlineGenerationModule__generate_outline -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__WritePageOutline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__WritePageOutlineFromConv [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline__forward -> knowledge_storm__utils__ArticleTextProcessing__remove_citations [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline__forward -> knowledge_storm__utils__ArticleTextProcessing__clean_up_outline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline__forward -> knowledge_storm__utils__ArticleTextProcessing__limit_word_count_preserve_newline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__WriteOutline__forward -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__outline_generation__NaiveOutlineGen____init__ -> knowledge_storm__storm_wiki__modules__outline_generation__WritePageOutline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass -> knowledge_storm__interface__Article [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass -> knowledge_storm__interface__InformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass -> knowledge_storm__interface__Information [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass -> knowledge_storm__utils__FileIOHelper [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass -> knowledge_storm__utils__ArticleTextProcessing [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation -> knowledge_storm__interface__Information [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation____init__ -> knowledge_storm__interface__Information____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation__from_dict -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn____init__ -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation__from_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn____init__ -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable -> knowledge_storm__interface__InformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_url_to_info [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ -> knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ -> knowledge_storm__interface__InformationTable____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_url_to_info -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_url_to_info [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__dump_url_to_info -> knowledge_storm__utils__FileIOHelper__dump_json [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__dump_url_to_info -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_url_to_info [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__from_conversation_log_file -> knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__from_conversation_log_file -> knowledge_storm__utils__FileIOHelper__load_json [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__from_conversation_log_file -> knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__from_conversation_log_file -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__prepare_table_for_retrieval -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__retrieve_information -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_url_to_info [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle -> knowledge_storm__interface__Article [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle____init__ -> knowledge_storm__interface__Article____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__find_section -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__find_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section -> knowledge_storm__interface__ArticleSectionNode____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__find_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__update_section -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__update_section -> knowledge_storm__utils__ArticleTextProcessing__update_citation_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__update_section -> knowledge_storm__utils__ArticleTextProcessing__parse_article_into_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__update_section -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__update_section -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle___merge_new_info_to_references [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list__preorder_traverse [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__find_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list__preorder_traverse -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list__preorder_traverse [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string__preorder_traverse -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string__preorder_traverse [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string__preorder_traverse [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_find_index -> knowledge_storm__utils__ArticleTextProcessing__parse_citation_indices [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_find_index -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_find_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_update_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_find_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_update_index -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_update_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index__pre_order_update_index -> knowledge_storm__utils__ArticleTextProcessing__update_citation_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree__build_tree -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree__build_tree [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_tree__build_tree [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_first_level_section_names -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_file -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_file -> knowledge_storm__utils__FileIOHelper__load_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_str -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_str -> knowledge_storm__interface__ArticleSectionNode____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_outline_str -> knowledge_storm__interface__ArticleSectionNode [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_outline_to_file -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_outline_to_file -> knowledge_storm__utils__FileIOHelper__write_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_reference_to_file -> knowledge_storm__utils__FileIOHelper__dump_json [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_article_as_plain_text -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__to_string [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__dump_article_as_plain_text -> knowledge_storm__utils__FileIOHelper__write_str [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_string -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation__from_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_string -> knowledge_storm__utils__ArticleTextProcessing__parse_article_into_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_string -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__insert_or_create_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__from_string -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__post_processing -> knowledge_storm__interface__Article__prune_empty_nodeXs [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__post_processing -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__reorder_reference_index [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever -> knowledge_storm__interface__Information [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever -> knowledge_storm__interface__Retriever [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever -> knowledge_storm__utils__ArticleTextProcessing [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever__StormRetriever -> knowledge_storm__interface__Retriever [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever__StormRetriever____init__ -> knowledge_storm__interface__Retriever____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever__StormRetriever____init__ -> knowledge_storm__storm_wiki__modules__retriever__is_valid_wikipedia_source [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever__StormRetriever__retrieve -> knowledge_storm__utils__ArticleTextProcessing__remove_citations [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__retriever__StormRetriever__retrieve -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation__from_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__interface__KnowledgeCurationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__utils__ArticleTextProcessing [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation -> knowledge_storm__interface__Retriever [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward -> knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward -> knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward -> knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward -> knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward -> knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator__forward -> knowledge_storm__storm_wiki__modules__storm_dataclass__DialogueTurn [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__AskQuestionWithPersona [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__AskQuestion [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter__forward -> knowledge_storm__utils__ArticleTextProcessing__remove_citations [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__WikiWriter__forward -> knowledge_storm__utils__ArticleTextProcessing__limit_word_count_preserve_newline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__QuestionToQuery [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__AnswerQuestion [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert__forward -> knowledge_storm__utils__ArticleTextProcessing__remove_uncompleted_sentences_with_citations [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__TopicExpert__forward -> knowledge_storm__utils__ArticleTextProcessing__limit_word_count_preserve_newline [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule -> knowledge_storm__interface__KnowledgeCurationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule____init__ -> knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation -> knowledge_storm__utils__ArticleTextProcessing__clean_up_citation [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation__run_conv [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable__construct_log_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___run_conversation [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research -> knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule___get_considered_personas [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__knowledge_curation__StormKnowledgeCurationModule__research -> knowledge_storm__storm_wiki__modules__knowledge_curation__ConvSimulator [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish -> knowledge_storm__interface__ArticlePolishingModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish -> knowledge_storm__utils__ArticleTextProcessing [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule -> knowledge_storm__interface__ArticlePolishingModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule____init__ -> knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule____init__ -> knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule__polish_article -> knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule__polish_article -> knowledge_storm__utils__ArticleTextProcessing__parse_article_into_dict [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__StormArticlePolishingModule__polish_article -> knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule____init__ -> knowledge_storm__storm_wiki__modules__article_polish__WriteLeadSection [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_polish__PolishPageModule____init__ -> knowledge_storm__storm_wiki__modules__article_polish__PolishPage [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona____init__ -> knowledge_storm__storm_wiki__modules__persona_generator__GenPersona [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona____init__ -> knowledge_storm__storm_wiki__modules__persona_generator__FindRelatedTopic [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona__forward -> knowledge_storm__storm_wiki__modules__persona_generator__get_wiki_page_title_and_toc [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator____init__ -> knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator____init__ -> knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator__generate_persona -> knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__persona_generator__StormPersonaGenerator__generate_persona -> knowledge_storm__storm_wiki__modules__persona_generator__CreateWriterWithPersona [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation -> knowledge_storm__interface__ArticleGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformation [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormInformationTable [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation -> knowledge_storm__utils__ArticleTextProcessing [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule -> knowledge_storm__interface__ArticleGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule____init__ -> knowledge_storm__interface__ArticleGenerationModule [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule____init__ -> knowledge_storm__storm_wiki__modules__article_generation__ConvToSection____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule____init__ -> knowledge_storm__storm_wiki__modules__article_generation__ConvToSection [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_section -> knowledge_storm__storm_wiki__modules__article_generation__ConvToSection [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_section -> knowledge_storm__storm_wiki__modules__article_generation__ConvToSection____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle____init__ [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article -> knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_outline_as_list [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article -> knowledge_storm__storm_wiki__modules__callback__BaseCallbackHandler [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle__get_first_level_section_names [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__StormArticleGenerationModule__generate_article -> knowledge_storm__storm_wiki__modules__storm_dataclass__StormArticle [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__ConvToSection____init__ -> knowledge_storm__storm_wiki__modules__article_generation__WriteSection [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__ConvToSection__forward -> knowledge_storm__utils__ArticleTextProcessing__clean_up_section [style="solid",  color="#000000"];
+        knowledge_storm__storm_wiki__modules__article_generation__ConvToSection__forward -> knowledge_storm__utils__ArticleTextProcessing__limit_word_count_preserve_newline [style="solid",  color="#000000"];
+    }

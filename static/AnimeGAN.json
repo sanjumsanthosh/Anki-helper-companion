@@ -1,0 +1,824 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/TachibanaYoshino/AnimeGAN/blob/master/"
+    },
+    "AnimeGAN__AnimeGAN__train": {
+        "label": "train",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 191,
+        "endLineNo": 299,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L191-L299&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick summary]**\nThis Python function appears to train a Generative Adversarial Network (GAN) to generate anime-style images.  It loads image data, defines the model architecture, trains the generator and discriminator, and saves checkpoints and generated images. The purpose is likely to create a model capable of producing realistic anime-style visuals.\n\n**[Inputs]**\n\n*  `self.real_image_generator`, `self.anime_image_generator`, `self.anime_smooth_generator`: Data loaders for real images and two types of anime-style images (likely various levels of smoothness).\n*  `self.dataset_num`: Total number of images in the dataset.\n*  `self.batch_size`: Number of images processed in each training step.\n*  `self.epoch`: Number of training epochs.\n*  `self.init_epoch`: Epochs for initializing the GAN generator. \n*  `self.training_rate`: Ratio between generator training and discriminator training steps.\n*  `self.save_freq`: Frequency at which to save model checkpoints.\n\n**[Output]**\n\n*  Trained GAN model capable of generating anime-style images.\n*  Log files tracking training progress (loss values).\n*  Generated anime images saved to a directory. \n\n\n\n"
+    },
+    "AnimeGAN__AnimeGAN____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 12,
+        "endLineNo": 87,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L12-L87&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down the provided code snippet.\n\n**Quick Summary:**\n\nThis Python function initializes the parameters and variables necessary for training a generative adversarial network (GAN). Specifically, it's likely part of a project aiming to convert photographs into anime-style images using a model called AnimeGAN. \n\n**Inputs:**\n\n*  `args`: This is likely a namespace or dictionary-like object containing command-line arguments passed to the program. \n    *  It defines settings like the dataset, training epochs, learning rates, and model architecture.\n\n**Output:**\n\n* None (The function likely modifies instance variables within the class rather than directly returning a value.)\n\n\nLet me know if you'd like me to elaborate on any specific part of the code!\n"
+    },
+    "data_loader__ImageGenerator": {
+        "label": "ImageGenerator",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py",
+        "relativePath": "tools/data_loader.py",
+        "lineNo": 7,
+        "endLineNo": 78,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_loader.py%23L7-L78&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python code defines a class that loads and preprocesses image data for a deep learning application. It specifically aims to read image paths, load, resize, normalize, and batch images in a way suitable for TensorFlow.  \n\n## Inputs\n\n- `image_dir`:  The directory containing the image files.\n- `size`: Desired image size (likely width and height).\n- `batch_size`: Number of images to combine into a single batch during training.\n- `num_cpus`: Number of CPU cores to utilize for parallel image processing.\n\n\n## Output\n\n- Batched image pairs:\n    - `img1`:  A batch of preprocessed color images.\n    - `img2`:  A batch of preprocessed grayscale images. \n"
+    },
+    "video2anime__cvt2anime_video": {
+        "label": "cvt2anime_video",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/video2anime.py",
+        "relativePath": "video2anime.py",
+        "lineNo": 46,
+        "endLineNo": 117,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fvideo2anime.py%23L46-L117&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Python Code Snippet\n\n**[Quick Summary]** \nThis function processes a video, frame by frame, using a TensorFlow-based generator model to create modified versions of the frames.  It likely aims to generate a transformed video, possibly for tasks like upscaling, style transfer, or image enhancement. The specific transformation depends on the implemented generator model. \n\n\n**[Inputs]**\n\n*  `video`: The path to the input video file.\n*  `output_format`: A 4-letter code specifying the codec to use for the output video file (e.g., \"H264\").\n*  `output`: The directory where the output video should be saved.\n*  `img_size`: The desired size for the input images (likely used for preprocessing).\n*  `checkpoint_dir`: The directory containing the TensorFlow model checkpoints.\n*  `if_adjust_brightness`: A boolean flag indicating whether to adjust brightness based on the original frame.\n*  `preprocess` and `inverse_image`: Placeholder functions assumed to handle image preprocessing and postprocessing. \n\n**[Output]**\n\n*  The full path to the generated output video file. \n\n\n\n"
+    },
+    "generator__G_net": {
+        "label": "G_net",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 93,
+        "endLineNo": 153,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L93-L153&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick summary]** \nThis is a function defining the structure of a Generative Adversarial Network (GAN) generator. \n\nIt defines a deep convolutional neural network that takes an input and transforms it into a synthetic image. The specific architecture includes multiple convolutional and upsampling layers, making use of novel techniques like Separable convolutions and Inverted Residual Blocks for efficient learning. \n\nThe goal is to generate realistic images resembling real data.\n\n**[Inputs]**\n* `inputs`: A tensor representing the initial input noise or random data fed into the generator.\n\n**[Outputs]** \n* `fake`:  A tensor representing the generated synthetic image, likely in a similar format as the input but containing generated content. \n\n\n"
+    },
+    "vgg19__Vgg19__build": {
+        "label": "build",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 22,
+        "endLineNo": 80,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L22-L80&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Okay, here's a breakdown of the code you provided:\n\n**[Quick Summary]**\n\nThis function constructs a convolutional neural network (CNN) architecture based on the VGG16 model. \n\nIt processes input RGB images, normalizes them using VGG-specific mean values, and performs a series of convolutional and pooling operations to extract features. Depending on the `include_fc` flag, it may also include fully connected layers at the end for classification.\n\n**[Inputs]**\n\n* `rgb`: A tensor representing an RGB image with shape `[batch_size, h, w, 3]`. It is assumed to have pixel values in the range [-1, 1].\n* `include_fc`: A boolean flag indicating whether to include fully connected layers in the network.\n\n **[Output]**\n * If `include_fc` is True:\n    * `prob`: A tensor representing the network's predicted class probabilities.\n* `data_dict`: This output is not defined in the code snippet and its meaning is unclear. \n\n\nLet me know if you have any more code snippets you'd like analyzed.\n"
+    },
+    "AnimeGAN__AnimeGAN__build_model": {
+        "label": "build_model",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 134,
+        "endLineNo": 190,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L134-L190&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of the Code Snippet\n\n**[Quick Summary]**\n\nThis function defines a class likely used for training a Generative Adversarial Network (GAN) for image style transfer. It sets up the generator and discriminator neural networks, defines loss functions (content, style, color, adversarial), and optimizers for both networks. It also includes TensorFlow summaries for visualizing training progress.\n\n**[Inputs]**\n\n* `self.generator`: The generator neural network.\n* `self.discriminator`: The discriminator neural network.\n* `self.real`: Real anime images.\n* `self.test_real`: Test anime images.\n* `self.anime`: Target anime images for style transfer.\n* `self.anime_gray`: Grayscale version of the anime images.\n* `self.anime_smooth`: Smoothed version of the anime images.\n* `self.vgg`: A pretrained VGG network used for content loss calculation.\n* `self.gan_type`:  A string specifying the type of GAN being used (e.g., 'wgangp').\n\n**[Output]**\n\n* `self.Generator_loss`:  Combined loss for the generator network.\n* `self.Discriminator_loss`: Combined loss for the discriminator network.\n* `self.init_loss`: Initial content loss for the generator.\n* TensorFlow summaries (`self.G_loss_merge`, `self.D_loss_merge`) for visualizing training progress.\n\n\n\n"
+    },
+    "adjust_brightness__adjust_brightness_from_src_to_dst": {
+        "label": "adjust_brightness_from_src_to_dst",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/adjust_brightness.py",
+        "relativePath": "tools/adjust_brightness.py",
+        "lineNo": 22,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fadjust_brightness.py%23L22-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This function aims to adjust the brightness of a target image (`dst`) to match the average brightness of an original image (`src`). It performs this adjustment by calculating brightness ratios and applying them to each color channel of the target image. The function then displays the original, target, and adjusted images.\n\n**Inputs:**\n\n* `src`:  The original image (presumably a numpy array representing an image).\n* `dst`: The target image (presumably a numpy array representing an image)\n* `if_info`:  A boolean flag indicating whether to print brightness information (average values).\n* `if_show`:  A boolean flag indicating whether to display the resulting images.\n* `path`:  A string representing the path to save the result image, if provided.\n\n**Output:**\n\n* `dstf`: The adjusted target image (numpy array). \n\n\n"
+    },
+    "train__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/train.py",
+        "relativePath": "train.py",
+        "lineNo": 9,
+        "endLineNo": 49,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftrain.py%23L9-L49&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## AnimeGAN Argument Parser \n\n**Quick Summary:** This Python function defines an argument parser to handle user input for training the AnimeGAN model. It parses command-line arguments related to dataset, training parameters, model architecture, and output directories. The purpose is to provide a structured way to configure the AnimeGAN training process.\n\n**Inputs:**\n\n* `--dataset`: The name of the dataset to use for training.\n* `--epoch`: Number of training epochs.\n* `--init_epoch`: Number of epochs for weight initialization.\n* `--batch_size`: Batch size for training.\n* `--save_freq`: Frequency of saving checkpoints.\n* `--init_lr`: Initial learning rate.\n* `--g_lr`: Generator learning rate.\n* `--d_lr`: Discriminator learning rate.\n* `--ld`: Gradient penalty lambda.\n* `--g_adv_weight`: Weight for GAN loss affecting the generator.\n* `--d_adv_weight`: Weight for GAN loss affecting the discriminator.\n* `--con_weight`: Weight for perceptual loss (using VGG19).\n* `--sty_weight`: Weight for style loss.\n* `--color_weight`: Weight for color loss.\n* `--training_rate`: Training rate for Generator and Discriminator.\n* `--gan_type`: Type of GAN to use (e.g., lsgan, wgan-gp).\n* `--img_size`: Image height and width.\n* `--img_ch`: Number of image channels (e.g., 3 for RGB).\n* `--ch`: Base channel number for layers in the network.\n* `--n_dis`: Number of discriminator layers.\n* `--sn`: Use spectral normalization in the network.\n* `--checkpoint_dir`: Directory to save checkpoints.\n* `--log_dir`: Directory to save training logs.\n* `--sample_dir`: Directory to save generated samples.\n\n**Output:**\n\n* Processed command-line arguments (potentially modified or validated) as an object that can be used to configure the AnimeGAN training script.  \n\n\n"
+    },
+    "generator__G_net____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 95,
+        "endLineNo": 133,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L95-L133&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]**\nThis function defines a generator network (named 'G_MODEL') in TensorFlow, likely for use in a Generative Adversarial Network (GAN).  It progressively upsamples noise into a high-resolution image and applies activation functions to produce realistic-looking images.\n\n**[Inputs]**\n\n*   The input to the generator, most likely a vector of random noise\n\n**[Output]**\n\n*   A tensor representing a generated image (likely of size 256x256x3)\n\n\n\n"
+    },
+    "ops__conv": {
+        "label": "conv",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 18,
+        "endLineNo": 54,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L18-L54&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown\n\n**[Quick Summary]** This function implements a convolutional layer in TensorFlow. It handles padding, kernel calculation, and bias application, allowing for both standard and spectral normalization of the weights. \n\n**[Inputs] **\n\n*  `x`: The input tensor to the convolutional layer.\n*  `kernel`:  The size of the convolutional kernel (filter).\n*  `stride`: The stride of the convolution operation.\n*  `pad`: The amount of padding to apply along the spatial dimensions.\n*  `pad_type`: The type of padding ('zero' for zero padding, 'reflect' for reflection padding).\n*  `sn`: A boolean flag indicating whether to apply spectral normalization to the weights.\n*  `channels`: The number of output channels (filters) in the convolutional layer. \n*  `weight_init`: The initializer for the convolutional kernel weights.\n*  `weight_regularizer`: The regularizer to apply to the convolutional kernel weights.\n*  `use_bias`: A boolean flag indicating whether to use a bias term in the convolutional layer.\n\n**[Output]**\n*  `x`: The output tensor of the convolutional layer after applying all operations. \n\n\n"
+    },
+    "edge_smooth__make_edge_smooth": {
+        "label": "make_edge_smooth",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/edge_smooth.py",
+        "relativePath": "tools/edge_smooth.py",
+        "lineNo": 16,
+        "endLineNo": 51,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fedge_smooth.py%23L16-L51&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This code processes images within a specified 'style' directory,  enhancing edges by applying a Gaussian blur to areas identified as edges using the Canny edge detection algorithm. The purpose is likely to improve edge definition and smoothing while preserving style characteristics.\n\n\n**Inputs:**\n\n* `dataset_name`:  A string representing the name of the dataset.\n* `img_size`: An integer specifying the desired size (width and height) for resizing images.\n* `kernel_size`: An integer determining the size of the kernel used for dilation and Gaussian blurring.\n\n**Output:**\n\n* Processed images saved within a 'smooth' subdirectory within the dataset directory. \n\n\n"
+    },
+    "ops__discriminator_loss": {
+        "label": "discriminator_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 184,
+        "endLineNo": 218,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L184-L218&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Summary:\n\nThis function calculates the loss for a Generative Adversarial Network (GAN) based on the specified loss function (`loss_func`).  It handles different GAN loss functions like WGAN-GP, LSGAN, hinge, and regular GAN, incorporating real image, blurred image, and generated image outputs.\n\n## Inputs:\n* `real`: Tensor representing real image data.\n* `gray`: Tensor representing a grayscale version of real image data.\n* `fake`: Tensor representing generated image data.\n* `real_blur`: Tensor representing a blurred version of real image data.\n* `loss_func`: String indicating the type of GAN loss function to use.\n\n## Output:\n* `loss`: Tensor representing the total calculated loss value. \n"
+    },
+    "get_generator_ckpt__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/get_generator_ckpt.py",
+        "relativePath": "tools/get_generator_ckpt.py",
+        "lineNo": 25,
+        "endLineNo": 57,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fget_generator_ckpt.py%23L25-L57&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function loads a pre-trained image generation model from a specified directory (checkpoint_dir) and saves its state with an incremental counter. It uses TensorFlow and assumes the existence of a defined `generator` object and a `G_net` function within it.\n\n## Inputs\n\n* `style_name`:  A string representing the desired art style for the generated images.\n* `checkpoint_dir`:  Path to the directory containing saved model checkpoints.\n\n## Output\n\n* Information (likely a path) about the saved model checkpoint. \n\n\n"
+    },
+    "AnimeGAN__AnimeGAN__gradient_panalty": {
+        "label": "gradient_panalty",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 107,
+        "endLineNo": 133,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L107-L133&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick summary:** This function calculates the Gradient Penalty (GP) term used in certain types of Generative Adversarial Networks (GANs), specifically WGAN-LP and WGAN-GP, to stabilize the training process.  GP penalizes the discriminator for making too drastic changes in its output when interpolating between real and generated data.\n\n\n**Inputs:**\n\n*  `self.gan_type`:  A string indicating the type of GAN being used (e.g., 'dragan', 'wgan-gp').\n*  `real`: A tensor representing real data samples.\n*  `self.batch_size`: An integer specifying the number of samples in each batch.\n*  `self.ld`: A scalar value representing the weight of the Gradient Penalty term.\n\n**Output:**\n\n* `GP`: A scalar tensor representing the calculated Gradient Penalty value. \n\n\n"
+    },
+    "ops__spectral_norm": {
+        "label": "spectral_norm",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 139,
+        "endLineNo": 165,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L139-L165&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function performs power iteration on a weight matrix `w` to calculate its left singular vector and normalize the original weight matrix. This process is likely used for dimensionality reduction or noise removal in a machine learning context.\n\n\n## Inputs\n\n* `w`: A weight matrix (likely representing feature relationships)\n* `iteration`:  The number of iterations for the power iteration algorithm (usually 1 is sufficient)\n\n\n## Output\n\n* `w_norm`: The normalized weight matrix after singular value decomposition-like operation. \n"
+    },
+    "discriminator__D_net": {
+        "label": "D_net",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/discriminator.py",
+        "relativePath": "net/discriminator.py",
+        "lineNo": 4,
+        "endLineNo": 27,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fdiscriminator.py%23L4-L27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function defines a convolutional neural network (CNN) architecture likely used as a discriminator in a Generative Adversarial Network (GAN). The network progressively downsamples the input image, extracting features at different resolutions before producing a single-channel output representing the likelihood of the input being real. \n\n## Inputs\n\n* **x_init:** The input image data, potentially a batch of images.\n* **scope:** A string used for variable scope management within TensorFlow, ensuring proper parameter sharing and reuse.\n* **reuse:** A boolean flag indicating whether the variables in the scope should be reused or not.\n* **n_dis:**  An integer specifying the number of downsampling stages in the discriminator.\n* **sn:**  Likely a boolean indicating whether Spectral Normalization should be applied to the convolutional layers.\n* **channels:** The number of output channels in the final layer (representing the likelihood of the input being real).\n\n## Output\n\n* **x:** A tensor containing the discriminator's output for each input image, representing the probability of it being real. \n"
+    },
+    "ops__deconv": {
+        "label": "deconv",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 55,
+        "endLineNo": 78,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L55-L78&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function implements a 2D transposed convolution operation (also known as deconvolution) as part of a neural network architecture. It  can be used to upsample an input tensor while learning spatial features. The function includes an option for applying spectral normalization to the convolution weights, which helps improve the stability and performance of the network.   \n\n## Inputs\n\n* **x:** The input tensor to be upsampled.\n* **kernel:** The size of the convolution kernel.\n* **stride:** The upsampling factor (how much the output size should be increased).\n* **channels:** The number of output channels.\n* **weight_init:** An initializer for the convolution weights.\n* **weight_regularizer:** A regularizer to apply to the convolution weights (e.g., L2).\n* **sn:** A boolean flag indicating whether to apply spectral normalization to the weights.\n* **use_bias:** A boolean flag indicating whether to use a bias term in the convolution.\n\n## Output\n\n* **x:** The output tensor after the transposed convolution operation, upsampled by a factor of `stride`. \n\n\n\n"
+    },
+    "train__check_args": {
+        "label": "check_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/train.py",
+        "relativePath": "train.py",
+        "lineNo": 51,
+        "endLineNo": 74,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftrain.py%23L51-L74&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function validates user-provided arguments (like directories and epochs) for a machine learning training process. It ensures these values are reasonable and safe to use, preventing potential errors.\n\n**Inputs:**\n\n* `args` : This likely represents a namedtuple or dictionary containing user-provided arguments for the training process. \n    * `checkpoint_dir`:  Directory path to store model checkpoints.\n    * `log_dir`: Directory path to store training logs.\n    * `sample_dir`: Directory path to store generated samples (e.g., images).\n    * `epoch`: Number of training iterations over the entire dataset.\n    * `batch_size`: Number of samples processed in each training step.\n\n**Output:**\n\n*  `args`: The validated arguments, now ready to be used for training. \n\n\n"
+    },
+    "train__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/train.py",
+        "relativePath": "train.py",
+        "lineNo": 76,
+        "endLineNo": 98,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftrain.py%23L76-L98&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary] \nThis Python code defines a function that trains a Generative Adversarial Network (GAN) specifically designed for anime image generation. It utilizes TensorFlow and configures a GPU session for efficient training. The overall purpose is to create a GAN model capable of generating new anime-style images.\n\n[Inputs]\n* `args`:  Likely parsed command-line arguments containing configuration parameters for the training process (e.g., data paths, model architecture, training epochs). \n*  \n[Outputs]\n* A trained `AnimeGAN` model.\n* A message \" [*] Training finished!\" in the console indicating successful completion of training. \n\n\n\n"
+    },
+    "utils__random_crop": {
+        "label": "random_crop",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 54,
+        "endLineNo": 75,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L54-L75&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]**  This function randomly crops two images (`img1` and `img2`) to the same size. It ensures the cropped region fits within the boundaries of the original images. The purpose is likely to create pairs of aligned image crops for tasks like image comparison or training supervised learning models.\n\n**[Inputs]**\n\n* `img1`:  The first image.\n* `img2`: The second image.\n* `crop_W`: The desired width of the cropped region.\n* `crop_H`: The desired height of the cropped region.\n\n**[Output]**\n\n* `crop_1`: The cropped version of the first image.\n* `crop_2`: The cropped version of the second image. \n\n\n\n"
+    },
+    "data_loader__ImageGenerator__read_image": {
+        "label": "read_image",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py",
+        "relativePath": "tools/data_loader.py",
+        "lineNo": 32,
+        "endLineNo": 52,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_loader.py%23L32-L52&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Quick Summary:** This function prepares two image arrays for processing.  If the input image path contains \"style\" or \"smooth\", it loads a color image for image1 and a grayscale image for image2. Otherwise, it loads a color image for both image1 and image2.\n\n**Inputs:**\n* `img_path1`:  A string representing the path to an image file.\n\n**Output:**\n* `image1`: A color image array (RGB).\n* `image2`: An image array (potentially grayscale or filled with zeros).  \n\n\n\n"
+    },
+    "data_loader__ImageGenerator__load_images": {
+        "label": "load_images",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py",
+        "relativePath": "tools/data_loader.py",
+        "lineNo": 59,
+        "endLineNo": 78,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_loader.py%23L59-L78&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function defines a TensorFlow data pipeline for loading and preprocessing image data. It reads a list of image paths, shuffles them, maps each path to a loaded image and corresponding metadata (likely labels), batches the data, and finally yields a single batch of image pairs. The purpose is to efficiently handle the loading and preparation of image data for training a machine learning model.\n\n**[Inputs]**\n\n* `self.paths`: A list of file paths to image files.\n* `self.batch_size`: An integer specifying the number of image pairs per batch.\n* `self.num_cpus`: An integer specifying the number of CPU cores to use for parallel image loading.\n\n**[Output]**\n\n* `img1`, `img2`:  Two tensors representing a batch of image pairs. \n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "generator__G_net__InvertedRes_block": {
+        "label": "InvertedRes_block",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 134,
+        "endLineNo": 153,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L134-L153&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function implements a modified bottleneck block commonly found in convolutional neural networks, especially in architectures like MobileNet. It performs depthwise convolution, followed by pointwise convolutions and instance normalization, aiming to reduce the computational cost while preserving accuracy.\n\n## Inputs\n\n* **input:** The input tensor to the block.\n* **output_dim:** The desired number of output channels.\n* **kernel_size:** Kernel size of the initial and final convolutions (likely 1x1). \n* **stride:** Stride of the depthwise convolution.\n* **expansion_ratio:**  A factor determining the dimensionality increase after the initial pointwise convolution.\n* **bias:** Boolean indicating whether to include bias terms in the convolutions.\n* **name:**  Name scope for TensorFlow variables.\n* **reuse:** Boolean indicating whether to reuse existing variables.\n\n## Output\n\n* **net:** The modified input tensor after applying the bottleneck block operations. \n\n\n"
+    },
+    "data_mean__get_mean": {
+        "label": "get_mean",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py",
+        "relativePath": "tools/data_mean.py",
+        "lineNo": 21,
+        "endLineNo": 39,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_mean.py%23L21-L39&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**[Quick Summary]**\n\nThis function calculates the mean difference between the average RGB color of a dataset and the respective individual color channels. It essentially quantifies how much each color channel deviates from the overall average color. This could be used to analyze color bias in a dataset or for image processing tasks. \n\n**[Inputs]**\n\n* `dataset_name`:  A string indicating the specific dataset directory.\n*  `read_img`:  A function that reads an image file and returns its RGB color data as a tuple (B, G, R).\n\n\n**[Output]**\n\n*  A tuple containing three floats:  \n    * The mean difference between the overall mean color and the blue channel.\n    * The mean difference between the overall mean color and the green channel.\n    * The mean difference between the overall mean color and the red channel. \n"
+    },
+    "ops__generator_loss": {
+        "label": "generator_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 219,
+        "endLineNo": 237,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L219-L237&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function calculates the loss for the Generator in a Generative Adversarial Network (GAN).  It dynamically determines the loss function based on the specified `loss_func` argument, which determines how well the generated data (represented by 'fake')  mimics real data.\n\n## Inputs\n\n*  `loss_func`:  A string specifying the type of loss function to use (e.g., 'wgan-gp', 'lsgan', 'gan', 'hinge').\n* `fake`: A Tensor representing the output of the Generator.\n\n## Output\n\n* `loss`: A Tensor representing the calculated Generator loss.  \n"
+    },
+    "utils__preprocessing": {
+        "label": "preprocessing",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 15,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L15-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown\n\n**Quick Summary:** This function resizes an image to a specified size while ensuring that the new dimensions are multiples of 32. It normalizes the pixel values to be between -1 and 1, a common preprocessing step for machine learning models.\n\nThe purpose of this code is to prepare an image for use in a machine learning model, specifically one that expects images in a normalized format. \n\n**Inputs:**\n* `img`: The input image, likely represented as a NumPy array.\n* `size`: A tuple containing the desired width and height of the resized image.\n\n**Output:**\n* A resized version of the input image, transformed to have pixel values between -1 and 1. \n\n\n"
+    },
+    "generator__Downsample": {
+        "label": "Downsample",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 76,
+        "endLineNo": 92,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L76-L92&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function implements an alternative to transposed convolution, resizing the input image before applying a standard convolution operation. It aims to upsample the input while preserving some spatial information.\n\n## Inputs\n\n*  `inputs`: A tensor representing the input image. \n \n## Output\n\n*  A tensor representing the output of the convolution operation applied to the resized input image. \n\n\n\n"
+    },
+    "ops__resblock": {
+        "label": "resblock",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 79,
+        "endLineNo": 95,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L79-L95&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Code Snippet\n\n**[Quick Summary]** This code defines a residual  block commonly used in deep convolutional neural networks, specifically in generative adversarial networks (GANs).  Residual blocks help address the vanishing gradient problem and enable the training of deeper networks.\n\n**[Inputs]**\n\n*  `x_init`: Input tensor to the residual block.\n*  `channels`: Number of output channels for the convolutional layers.\n*  `kernel`: Size of the convolutional kernel.\n*  `stride`: Stride of the convolutional operation.\n*  `pad`: Padding size for the convolutional operation.\n*  `pad_type`: Type of padding used ('reflect' in this case).\n*  `use_bias`: Flag indicating whether to use biases in the convolutional layers.\n\n**[Output]**\n\n* A tensor `x` which represents the output of the residual block. This output is the sum of the input tensor `x_init` and the output of the convolutional layers. \n\n\nLet me know if you'd like me to elaborate on any particular aspect of the code! \n"
+    },
+    "vgg19__Vgg19__fc_layer": {
+        "label": "fc_layer",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 110,
+        "endLineNo": 126,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L110-L126&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function implements a fully connected (dense) layer in a neural network. It takes a multi-dimensional input tensor, flattens it into a one-dimensional vector, performs a matrix multiplication with a weight matrix, adds biases, and returns the resulting output vector. The purpose is to learn a linear transformation from the input data, enabling the network to capture complex relationships.\n\n## Inputs\n\n* **bottom**: A multi-dimensional TensorFlow tensor representing the input to the fully connected layer.\n\n* **name**: A string representing the name of the layer.\n\n## Output\n\n* **fc**: A one-dimensional TensorFlow tensor representing the output of the fully connected layer. \n\n\n\n\n\n"
+    },
+    "data_loader__ImageGenerator__get_image_paths_train": {
+        "label": "get_image_paths_train",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py",
+        "relativePath": "tools/data_loader.py",
+        "lineNo": 16,
+        "endLineNo": 31,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_loader.py%23L16-L31&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function iterates through a directory of images, identifies image files (`.jpg`, `.jpeg`, `.png`, `.gif`), and constructs a list of their complete file paths.  Its purpose is to locate all image files within a specified directory.\n\n## Inputs\n\n* `image_dir`: A string representing the path to the directory containing the images.\n\n## Output\n\n* `paths`: A list of strings, where each string is the complete path to a found image file. \n\n\n"
+    },
+    "generator__Separable_conv2d": {
+        "label": "Separable_conv2d",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 36,
+        "endLineNo": 51,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L36-L51&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a modified separable convolutional operation. It applies padding based on the kernel size and strides, followed by a depth-wise separable convolution with instance normalization, leakyReLU activation, and optionally biases. This operation likely aims to extract features from an input tensor, possibly within a deeper convolutional network architecture.\n\n## Inputs\n\n*  `inputs`: A multi-dimensional tensor representing the input data (likely an image).\n*  `num_outputs`: An integer specifying the desired number of output channels.\n*  `kernel_size`: An integer or tuple representing the size of the convolution kernel.\n*  `strides`: An integer or tuple specifying the step size of the convolution.\n*  `filters`:  An integer specifying the number of filters to use in the separable convolution.\n*  `depth_multiplier`: An integer specifying the expansion factor for the depth-wise convolution.\n*  `biases_initializer`:  A function to initialize the biases of the convolution.\n*  `padding`: A string specifying the padding mode (likely \"SAME\" for preserving input size). \n*  `normalizer_fn`: A function to apply normalization (instance normalization in this case).\n*  `activation_fn`: A function to apply activation (leakyReLU in this case).\n\n\n\n## Output\n\n*  A multi-dimensional tensor representing the output feature maps of the separable convolution. \n"
+    },
+    "ops__con_sty_loss": {
+        "label": "con_sty_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 261,
+        "endLineNo": 276,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L261-L276&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]** This function calculates the content and style loss between a generated image (\"fake\") and both a real image and an anime-style reference image.  The goal is to train a model to generate images that are both visually similar to real images and retain the stylistic elements of the anime reference.\n\n**[Inputs]**\n* `real`: A real image used as a ground truth for content similarity.\n* `fake`: The generated image whose content and style are being evaluated.\n* `anime`: An anime-style reference image that provides the desired stylistic elements.\n\n**[Output]**\n* `c_loss`: The content loss, a measure of how different the generated image's content is from the real image.\n* `s_loss`: The style loss, a measure of how different the generated image's style is from the anime reference image. \n\n\n"
+    },
+    "video2anime__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/video2anime.py",
+        "relativePath": "video2anime.py",
+        "lineNo": 18,
+        "endLineNo": 33,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fvideo2anime.py%23L18-L33&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function defines command-line arguments for a Tensorflow implementation of AnimeGAN, likely a program that takes a video as input and outputs an anime-style version of it. The goal is to allow users to customize settings like the input video, output directory, and video encoding format.\n\n[Inputs]\n- `--video`:  Path to the video file or a number indicating webcam usage\n- `--checkpoint_dir`: Directory to store the trained model checkpoints\n- `--output`: Directory where the anime-style output video will be saved\n- `--output_format`: Video codec to use for the output file (e.g., MP4V)\n- `--if_adjust_brightness`:  A boolean flag to control brightness adjustment based on the input video\n\n[Output]\n- `args`: An object containing the parsed command-line arguments. \n\n\n"
+    },
+    "AnimeGAN__AnimeGAN__load": {
+        "label": "load",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 314,
+        "endLineNo": 328,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L314-L328&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown\n\n**[Quick Summary]**\n\nThis function attempts to restore a pre-trained machine learning model from a checkpoint file. \n\nIt checks for the existence of a checkpoint, reads the model parameters from it, and if successful, returns `True` along with the counter from the checkpoint indicating the training progress. If no checkpoint is found, it returns `False` and 0.\n\nThe purpose is to resume training from a previously saved state, avoiding the need to start from scratch.\n\n**[Inputs]**\n- `self.model_dir`: Likely a string specifying the directory where the model checkpoints are stored.\n- `checkpoint_dir`: Likely a string specifying the path to the directory containing the `self.model_dir`.\n- `self.saver`: A TensorFlow saver object used to save and restore model checkpoints.\n- `self.sess`: A TensorFlow session object used to execute TensorFlow operations.\n\n**[Output]**\n- `True`: Indicates successful checkpoint restoration.\n- `False`: Indicates failure to find a checkpoint.\n- `counter`: An integer representing the training step number from the checkpoint. \n\n\nLet me know if you'd like more details on any specific aspect of this code!\n"
+    },
+    "test__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/test.py",
+        "relativePath": "test.py",
+        "lineNo": 11,
+        "endLineNo": 25,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftest.py%23L11-L25&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]**\n\nThis Python function defines command-line arguments for an AnimeGAN program. It allows users to specify directories for checkpoints and test images, choose a desired anime style, and control brightness adjustments. The purpose is to provide flexible configuration options for running the AnimeGAN model.\n\n**[Inputs]**\n\n* `--checkpoint_dir`: Path to a directory containing pre-trained model weights.\n* `--test_dir`: Path to a directory holding input photos for anime style transformation.\n* `--style_name`: Name of the anime style to apply (e.g., \"Hayao\").\n* `--if_adjust_brightness`: Boolean flag indicating whether to adjust brightness based on the input photo.\n\n**[Output]**\n\n* A Namespace object containing the parsed command-line arguments. \n\n\n"
+    },
+    "generator__Conv2D": {
+        "label": "Conv2D",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 5,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L5-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Okay, here's a breakdown of the code snippet:\n\n**Quick Summary**\n\nThis function defines a convolutional layer in a neural network. It first adds padding to the input data using \"REFLECT\" mode.  Then, it applies a 2D convolution operation with specified parameters (number of filters, kernel size, strides, bias usage, normalization, and activation function) and returns the convolved output.  The purpose is to learn spatial features from the input data.\n\n**Inputs**\n\n* `inputs`: A multi-dimensional tensor representing the input data (likely feature maps).\n* `num_outputs`: An integer specifying the number of output filters (feature maps) to generate.\n* `kernel_size`: An integer representing the size of the convolutional kernel (filter).\n* `strides`:  An integer or tuple specifying the stride of the convolution.\n* `Use_bias`: A boolean indicating whether to use bias terms in the convolution operation.\n* `padding`: A string indicating the padding mode (e.g., \"SAME\", \"VALID\").\n\n**Output**\n\n* A multi-dimensional tensor representing the convolved output (feature maps) from the convolutional operation. \n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "ops__rgb2yuv": {
+        "label": "rgb2yuv",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 283,
+        "endLineNo": 296,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L283-L296&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function converts a RGB image tensor to its YUV equivalent. This type of transformation is often used in computer vision tasks for tasks like color space manipulation or compression, as YUV is better suited for representing luminance and chrominance information separately.\n\n**[Inputs]**\n\n* `rgb`: A tensor representing the input RGB image. \n\n**[Outputs]**\n\n* A tensor representing the equivalent YUV image. \n\n\n"
+    },
+    "generator__Unsample": {
+        "label": "Unsample",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 63,
+        "endLineNo": 75,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L63-L75&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]**\n\nThis function performs an upsampling operation similar to transposed convolution but using image resizing and a standard convolution. It first doubles the height and width of the input image using `tf.image.resize_images`. Then, it applies a separable convolution (likely a depthwise followed by a pointwise convolution) to the upsampled image.  The \"training\" argument suggests  the function is designed to handle different scenarios, potentially with variations in image size or upsampling strategy during training and inference.\n\n**[Inputs]**\n\n* `inputs`:  A multi-dimensional tensor representing an image.\n* `filters`: An integer representing the number of output filters for the separable convolution.\n* `kernel_size`: An integer or tuple representing the size of the convolution kernel.\n* `training`: A boolean flag, likely indicating whether the function is being used for training or inference. This might influence the upsampling method or other aspects of the operation.\n\n**[Output]**\n\n* A multi-dimensional tensor representing the output of the separable convolution applied to the upsampled image. \n\n\n\n\n"
+    },
+    "ops__con_loss": {
+        "label": "con_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 245,
+        "endLineNo": 257,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L245-L257&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\n\nThis function calculates the L1 loss between the feature maps extracted from a pre-trained VGG network at the `conv4_4` layer for real and generated (fake) images.  It is likely used in a generative adversarial network (GAN) to measure the similarity of the generated image to real images in the feature space.\n\n**Inputs**\n* `real`: A real image or batch of real images.\n* `fake`: A generated (fake) image or batch of generated images.\n\n**Output**\n* `loss`: A scalar value representing the L1 loss between the real and fake feature maps. \n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "generator__dwise_conv": {
+        "label": "dwise_conv",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 24,
+        "endLineNo": 35,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L24-L35&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function implements a depthwise separable convolution operation. It takes an input tensor, applies a depthwise convolution followed by a pointwise convolution, potentially adding bias. This is a technique used in efficient convolutional neural networks to reduce the number of parameters while preserving accuracy.\n\n**Inputs:**\n\n* `input`: The input tensor to the convolution operation.\n* `k_h`: Height of the convolution kernel.\n* `k_w`: Width of the convolution kernel.\n* `strides`: Strides of the convolution operation.\n* `channel_multiplier`:  A factor multiplying the number of input channels in the pointwise convolution.\n* `padding`:  Type of padding applied (\"VALID\" or \"SAME\").\n* `stddev`: Standard deviation used for initialization of convolutional weights.\n* `bias`: Boolean indicating whether to add bias to the output.\n\n**Output:**\n\n* A tensor representing the output of the depthwise separable convolution operation. \n\n\n"
+    },
+    "vgg19__Vgg19__conv_layer": {
+        "label": "conv_layer",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 87,
+        "endLineNo": 98,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L87-L98&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a convolutional layer within a neural network. It applies a learned convolutional filter to the input 'bottom', adds biases, and then applies the ReLU activation function to produce the output 'relu'. The purpose is to extract features from the input data through spatial convolutions.\n\n## Inputs\n\n* **bottom:**  This is the input tensor going into the convolutional layer.\n* **name:** A string used to identify the layer within the TensorFlow graph.\n\n## Output\n\n* **relu:** The output tensor after convolution, bias addition, and ReLU activation. \n"
+    },
+    "generator__Conv2DTransposeLReLU": {
+        "label": "Conv2DTransposeLReLU",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 52,
+        "endLineNo": 62,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L52-L62&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis\n\n**[Quick Summary]:** This code defines a function implementing a 2D transposed convolution layer using TensorFlow.  This type of layer is commonly used in generative adversarial networks (GANs) and image upsampling tasks to increase the spatial resolution of feature maps.  The function uses instance normalization, LeakyReLU activation, and allows for the control of bias, kernel size, stride, and padding parameters. \n\n**[Inputs]:**\n\n* `inputs`: Tensor representing the input feature map.\n* `num_outputs`: Integer, specifying the number of filters (output channels) in the transposed convolution layer.\n* `kernel_size`:  Tuple of integers, defining the height and width of the convolution kernel.\n* `strides`: Tuple of integers, controlling the stride of the convolution operation.\n* `biases_initializer`: Boolean, indicating whether to use bias terms in the layer.\n* `normalizer_fn`: Normalization function to apply to the output. Here, it's instance normalization.\n* `activation_fn`: Activation function to apply after the convolution and normalization.  Here, it's LeakyReLU.\n* `padding`: String, specifying the padding type used during convolution (e.g., 'SAME', 'VALID').\n\n**[Output]:**\n\n* Tensor representing the output feature map after transposed convolution, normalization, and activation.  \n\n\n"
+    },
+    "get_generator_ckpt__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/get_generator_ckpt.py",
+        "relativePath": "tools/get_generator_ckpt.py",
+        "lineNo": 8,
+        "endLineNo": 18,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fget_generator_ckpt.py%23L8-L18&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function defines command-line arguments for an AnimeGAN model, allowing users to specify the model checkpoint directory and the desired anime style.  It's likely part of a script to run the AnimeGAN model for image generation.\n\n**Inputs:**\n\n* `--checkpoint_dir`: Path to the directory containing saved model checkpoints.\n* `--style_name`: Name of the desired anime style (e.g., 'Hayao').\n\n**Output:**\n\n* A namespace object containing the parsed command-line arguments. \n"
+    },
+    "vgg19__Vgg19__no_activation_conv_layer": {
+        "label": "no_activation_conv_layer",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 99,
+        "endLineNo": 109,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L99-L109&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown \n\n**[Quick Summary]** This function defines a convolutional layer within a neural network. It applies a learned convolution filter to input data (\"bottom\"), adds biases, and returns the resulting output.  This layer is a fundamental building block for extracting features from image or grid-like data.\n\n**[Inputs]**\n\n* `bottom`:  The input tensor, presumably a multi-dimensional array representing the data to be convolved. \n* `name`: A string used to scope the variables (filters and biases) within the TensorFlow graph.\n\n**[Output]**\n\n* An output tensor representing the result of the convolution operation, potentially with higher-level features extracted.  \n\n\n"
+    },
+    "AnimeGAN__AnimeGAN__generator": {
+        "label": "generator",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 88,
+        "endLineNo": 97,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L88-L97&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary:**\nThis code defines a function for training a Generative Adversarial Network (GAN). It creates both a generator and a discriminator network, using specific architectures (`G_net`) and provides a mechanism to re-use variables across multiple network instances.\n\n**Inputs:**\n\n*  `scope`: Likely a string specifying the scope of the variable creation within TensorFlow.  \n*  `reuse`: A boolean indicating whether variables defined within the `scope` should be reused.\n*  `x_init`: The input data to the generator network, likely a Tensor representing the initial latent vector or noise. \n\n**Output:**\n\n*  `G.fake`: The output generated by the generator network, intended to be fake data mimicking the real data distribution. \n\n\n"
+    },
+    "adjust_brightness__calculate_average_brightness": {
+        "label": "calculate_average_brightness",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/adjust_brightness.py",
+        "relativePath": "tools/adjust_brightness.py",
+        "lineNo": 12,
+        "endLineNo": 21,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fadjust_brightness.py%23L12-L21&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\n\nThis function calculates the average brightness of a target image by processing its red, green, and blue (RGB) color channels. It then compares this average brightness to that of a source image and adjusts the target image's brightness accordingly. \n\n**Inputs**\n\n*  `img`:  A multi-dimensional array representing an image. It likely has a shape like (height, width, 3) where each 3 represents the RGB channels.\n\n\n**Output**\n\n* `brightness`: The average brightness of the target image.\n* `B`: The average value of the blue color channel.\n* `G`: The average value of the green color channel. \n* `R`: The average value of the red color channel. \n\n\n\n\n"
+    },
+    "vgg19__Vgg19____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 12,
+        "endLineNo": 21,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L12-L21&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\nThis function loads pre-trained weights for the VGG19 model from a .npy file. If the file is found, it successfully loads the weights into the `self.data_dict` attribute. If the file is not found, it prints an error message and exits the program.  The purpose of the code is to initialize the VGG19 model with pre-trained weights for image classification or other tasks.\n\n**Inputs**\n\n*  `vgg19_npy_path`: A string representing the path to the .npy file containing the VGG19 model weights.\n\n**Output**\n\n*  `self.data_dict`: A dictionary containing the pre-trained VGG19 model weights if the .npy file was loaded successfully.\n* Print statements:\n   *  \"npy file loaded ------- \", followed by the path to the .npy file, if loading is successful.\n   *  \"npy file load error!\", if the .npy file is not found. \n\n\n\n"
+    },
+    "AnimeGAN__AnimeGAN__discriminator": {
+        "label": "discriminator",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 98,
+        "endLineNo": 106,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L98-L106&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**Quick Summary:** \n\nThis function defines a Deep Convolutional Generative Adversarial Network (DCGAN) Discriminator (`D`) model. It takes initial input data (`x_init`), channel information (`ch`), number of discriminator layers (`n_dis`), stride size (`sn`), and reuse and scope parameters for TensorFlow, and returns the constructed discriminator model. \n\nThe purpose of the code is to create the discriminator component of a DCGAN, which aims to distinguish between real and generated data.\n\n\n**Inputs:**\n\n* `x_init`:  Initial input data (likely real data samples).\n* `self.ch`:  Number or configuration of channels in the input data.\n* `self.n_dis`: Number of discriminator layers.\n* `self.sn`: Stride size used in convolutional layers.\n* `reuse`:  A TensorFlow flag for reusing variables across different model calls.\n* `scope`: A TensorFlow scope for organizing the model's variables.\n\n**Output:**\n\n*  `D`: The constructed DCGAN discriminator model. \n"
+    },
+    "edge_smooth__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/edge_smooth.py",
+        "relativePath": "tools/edge_smooth.py",
+        "lineNo": 53,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fedge_smooth.py%23L53-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**\n\nThis function processes a dataset of images by smoothing out their edges. It first parses command-line arguments to determine the dataset path and desired image size.  The `make_edge_smooth` function then applies an edge smoothing technique to the images, likely preparing them for further processing or analysis.\n\n\n**[Inputs]**\n\n*  `args`: A parsed object representing command-line arguments.\n   *  `dataset`: The path to the directory containing the images.\n   * `img_size`: The desired width and height of the output images. \n\n**[Output]**\n\n*  Modified images with smoothed edges.\n\n\n\n"
+    },
+    "utils__inverse_transform": {
+        "label": "inverse_transform",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 40,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L40-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Quick Summary:**\n\nThis function takes image data, normalizes its pixel values to the range 0-255, and ensures they stay within this range to prevent display issues.  This is a common step in image processing pipelines.\n\n\n**Inputs:**\n\n- `images`: This is likely a NumPy array representing image data.\n  \n**Output:**\n\n- A NumPy array of unsigned 8-bit integers (uint8) representing the processed image data. \n\n\n"
+    },
+    "utils__show_all_variables": {
+        "label": "show_all_variables",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 76,
+        "endLineNo": 84,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L76-L84&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**Quick Summary:**\n\nThis code snippet analyzes the weights and structure of a TensorFlow model, potentially a Generative Adversarial Network (GAN). It first analyzes the entire model and then focuses specifically on the weights within components named \"generator\".\n\n**Inputs:**\n\n* `tf.trainable_variables()`: Returns a list of all trainable variables (weights) within the TensorFlow model.\n\n\n**Output:**\n\n* Informative analysis of the model's weights:  \n    * Total number of parameters\n    * Size of weight tensors\n    * Memory consumption\n* Detailed analysis of the \"generator\" component's weights, similar to the overall model analysis.  \n\n\n\n"
+    },
+    "AnimeGAN__AnimeGAN__save": {
+        "label": "save",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 306,
+        "endLineNo": 313,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L306-L313&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function saves a deep learning model's weights to a specified directory. It ensures the directory exists and uses the model name and step count to create a unique filename. This is crucial for tracking training progress and resuming training later.\n\n## Inputs:\n\n* `checkpoint_dir`: A directory path where the model will be saved.\n* `self.model_dir`:  A subdirectory within `checkpoint_dir`  for organizing models.\n* `self.saver`: A TensorFlow object used to save and restore model weights.\n* `self.sess`: A TensorFlow session object used for executing operations.\n* `step`: An integer representing the current training step.\n* `self.model_name`: A string defining the name of the model. \n\n## Output:\n\n* The model weights are saved to a file in `checkpoint_dir` with a name like \"model_name.model\".  \n* The file includes information about the global step at which the model was saved.  \n"
+    },
+    "adjust_brightness__read_img": {
+        "label": "read_img",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/adjust_brightness.py",
+        "relativePath": "tools/adjust_brightness.py",
+        "lineNo": 4,
+        "endLineNo": 11,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fadjust_brightness.py%23L4-L11&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:**\n\nThis function loads an image from a given path (`image_path`), converts it from BGR to RGB color space, ensures it's a 3-dimensional array (representing height, width, and color channels), and returns the image. The purpose is likely to prepare an image for further processing, such as analysis or display.\n\n**Inputs:**\n\n* `image_path`:  A string representing the path to the image file.\n\n\n**Output:**\n\n*  `img`: A NumPy ndarray representing the loaded image in RGB color space. \n"
+    },
+    "data_mean__read_img": {
+        "label": "read_img",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py",
+        "relativePath": "tools/data_mean.py",
+        "lineNo": 13,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_mean.py%23L13-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**[Quick Summary]**\nThis function takes an image path as input and reads the image. It then calculates the average values of blue, green, and red color channels within the image. The purpose is to determine the overall color composition of the image.\n\n**[Inputs]**\n* `image_path`: A string representing the path to the image file.\n\n**[Output]**\n* `B`: A float representing the average blue intensity.\n* `G`: A float representing the average green intensity.\n* `R`: A float representing the average red intensity.  \n\n\n"
+    },
+    "edge_smooth__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/edge_smooth.py",
+        "relativePath": "tools/edge_smooth.py",
+        "lineNo": 8,
+        "endLineNo": 15,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fedge_smooth.py%23L8-L15&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function defines an argument parser to handle command-line arguments for a program. It allows users to specify the dataset to use (`Paprika` by default) and the desired image size (256 pixels by default).\n\n## Inputs\n\n* `--dataset`: The name of the dataset to be used.\n* `--img_size`: The size of the images to be processed.\n\n## Output\n\n*  An object containing the parsed command-line arguments. This object can be used to access the specified dataset and image size.\n\n\n"
+    },
+    "data_loader__ImageGenerator____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py",
+        "relativePath": "tools/data_loader.py",
+        "lineNo": 9,
+        "endLineNo": 15,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_loader.py%23L9-L15&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "The snippet initializes an object's attributes related to image processing for a machine learning task.\n\n## Inputs\n- `image_dir`: A string representing the directory containing images used for training.\n- `num_cpus`: An integer specifying the number of CPU cores to utilize.\n- `size`: Likely an integer defining the desired size (width and height) for image resizing.\n- `batch_size`: An integer determining the number of images processed in each training batch.\n\n## Output\n- `self.paths`: A list of file paths to the training images.\n- `self.num_images`: The total number of images in the training set.\n- `self.num_cpus`:  The number of CPU cores to be used.\n- `self.size`: The resized image size.\n- `self.batch_size`: The batch size for training.  \n"
+    },
+    "data_mean__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py",
+        "relativePath": "tools/data_mean.py",
+        "lineNo": 41,
+        "endLineNo": 47,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_mean.py%23L41-L47&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown \n\n**Quick Summary:** This function parses command-line arguments, likely related to a dataset, and then calculates the mean value for that dataset. It exits if argument parsing fails. \n\n**Inputs:**\n\n*  `args`: This is likely an object containing parsed command-line arguments.\n*  `args.dataset`:  This specifies the dataset from which the mean should be calculated. \n\n**Output:**\n\n*  The mean value of the specified dataset. \n\n\n"
+    },
+    "data_mean__parse_args": {
+        "label": "parse_args",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_mean.py",
+        "relativePath": "tools/data_mean.py",
+        "lineNo": 6,
+        "endLineNo": 12,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_mean.py%23L6-L12&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick summary:** This function defines a command-line argument parser to accept a dataset name as input. Its purpose is to retrieve the mean values of the blue (b), green (g), and red (r) channels for the specified dataset.\n\n**Inputs:**\n* `--dataset`: A string representing the name of the dataset to analyze.\n\n\n**Output:**\n* A namespace object containing parsed command-line arguments, including the dataset name. \n"
+    },
+    "ops__batch_norm": {
+        "label": "batch_norm",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 132,
+        "endLineNo": 138,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L132-L138&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Batch Normalization Layer\n\n**Quick Summary:**\n\nThis function implements a batch normalization layer from the TensorFlow Contrib library. It normalizes the input data using the mean and variance calculated across each batch, which helps stabilize training and improve generalization.\n\n**Inputs:**\n\n* `x`: The input tensor to be normalized.\n* `decay`: The decay rate for moving averages (0.9 in this case).\n* `epsilon`:  A small constant added to the variance to avoid division by zero (1e-05 here).\n* `center`:  If True, the layer calculates and uses the batch mean.\n* `scale`:  If True, the layer learns a scaling factor for each feature. \n* `updates_collections`: Collection to add the trainable variables to during training. \n* `is_training`: A boolean indicating whether the layer is in training mode.\n* `scope`:  The variable scope for the layer.\n\n**Output:**\n\n*  A tensor representing the normalized input data.  "
+    },
+    "ops__flatten": {
+        "label": "flatten",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 96,
+        "endLineNo": 102,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L96-L102&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This code snippet flattens a multi-dimensional tensor (`x`) into a one-dimensional vector. This is a common operation in neural networks to transition between different tensor shapes for processing. \n\n**Inputs:**\n\n*  `x`: A multi-dimensional tensor (likely representing features or activations from a previous layer in a neural network).\n\n**Output:**\n\n* A one-dimensional tensor representing the flattened version of the input `x`. \n\n\n\n"
+    },
+    "ops__gram": {
+        "label": "gram",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 238,
+        "endLineNo": 244,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L238-L244&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function calculates a kind of average similarity matrix for a batch of data, treating each data point as a \"vector\" and comparing them pairwise. \n\n## Inputs\n\n* `x`: A tensor likely representing a batch of data. Each element in the batch is probably a multi-dimensional vector.\n\n## Output\n\n* A tensor representing a similarity matrix. Each element (i, j) in the matrix represents the similarity between the ith and jth data points in the batch.  \n\n\n\n"
+    },
+    "ops__l2_norm": {
+        "label": "l2_norm",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 166,
+        "endLineNo": 172,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L166-L172&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function normalizes a vector `v` using a modified version of the Euclidean norm.  The addition of a small epsilon term (`eps`) prevents division by zero. This type of normalization is often used in machine learning for tasks like word embeddings or document representations.\n\n## Inputs\n\n* `v`: A tensor (vector) containing numerical values.\n\n* `eps`: A small constant value (e.g., 1e-12) used to avoid division by zero.\n\n## Output\n\n* A tensor (vector) containing the normalized values of `v`. \n\n\n"
+    },
+    "ops__sigmoid": {
+        "label": "sigmoid",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 114,
+        "endLineNo": 120,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L114-L120&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this code snippet.\n\n**Quick Summary**\n\nThis code defines a function that takes a tensor `x` as input and applies the sigmoid activation function to it using TensorFlow (`tf.sigmoid(x)`).  The sigmoid function squashes the input values to a range between 0 and 1, which is commonly used in neural networks for binary classification tasks. \n\n **Inputs**\n\n* `x`: A tensor representing the input data.\n\n **Output**\n\n* A tensor representing the output after applying the sigmoid function to the input `x`.  The output values will be between 0 and 1. \n\n\nLet me know if you'd like a deeper dive into the sigmoid function itself or its applications in machine learning!"
+    },
+    "utils__load_test_data": {
+        "label": "load_test_data",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 8,
+        "endLineNo": 14,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L8-L14&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function preprocesses an image for use in a machine learning model. It reads the image, converts it from BGR to RGB color space, applies a preprocessing function, resizes it, and optionally adds a batch dimension. \n\n[Inputs]\n* `image_path`: The path to the image file.\n* `size`: A tuple specifying the desired output image size (width, height).\n\n[Output]\n* A NumPy array representing the preprocessed image, potentially with an added batch dimension. \n\n\n"
+    },
+    "utils__save_images": {
+        "label": "save_images",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 33,
+        "endLineNo": 39,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L33-L39&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary:** This function takes an image (or generates one), potentially adjusts its brightness based on a source image, and saves the processed image to a specified file path. It acts as a post-processing step for images, likely used in image generation, manipulation, or style transfer applications. \n\n**Inputs:**\n\n* `images.squeeze()`: A 3D tensor containing an image, squeezed into 2D.\n* `photo_path`: (Optional) A string representing the path to an image file used for brightness adjustment.\n\n* `image_path`: A string representing the path to save the processed image file.\n\n**Output:**\n\n* None (although the processed image is saved to the specified file path). \n\n\n\n\n"
+    },
+    "video2anime__convert_image": {
+        "label": "convert_image",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/video2anime.py",
+        "relativePath": "video2anime.py",
+        "lineNo": 34,
+        "endLineNo": 40,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fvideo2anime.py%23L34-L40&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**[Quick Summary]**\n\nThis function preprocesses an image (`img`) for use in a machine learning model. It converts the image from BGR to RGB color space, resizes it to a specified `img_size`, adds an extra dimension for batch processing, and converts it to a NumPy array. This is a common preprocessing step to ensure image data is in a format compatible with deep learning frameworks. \n\n**[Inputs]**\n\n* `img`: A BGR color image (likely a NumPy array).\n* `preprocessing`:  A function that performs specific image transformations (e.g., resizing, normalization).\n* `img_size`: An integer tuple specifying the desired width and height of the processed image.\n\n**[Output]**\n\n* A NumPy array containing a single preprocessed image, ready to be fed into a machine learning model. \n"
+    },
+    "data_loader__ImageGenerator__load_image": {
+        "label": "load_image",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/data_loader.py",
+        "relativePath": "tools/data_loader.py",
+        "lineNo": 53,
+        "endLineNo": 58,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fdata_loader.py%23L53-L58&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Code Snippet\n\n**[Quick Summary]**\n\nThis function reads two images (`img1`), processes them by scaling pixel values to a range between -1 and 1, and returns the processed images. This normalization is a common preprocessing step in machine learning for image data, often improving model performance.\n\n**[Inputs]**\n\n*  `img1`: A likely path or object representation of the first image to be processed.\n\n**[Output]**\n\n*  `(processing_image1, processing_image2)`: Two NumPy arrays representing the processed versions of the input images, with pixel values normalized to the range [-1, 1]. \n"
+    },
+    "get_generator_ckpt__save": {
+        "label": "save",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/get_generator_ckpt.py",
+        "relativePath": "tools/get_generator_ckpt.py",
+        "lineNo": 19,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fget_generator_ckpt.py%23L19-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary\n\nThis function saves a machine learning model to a specified checkpoint directory. The `model_name` identifies the model, and `write_meta_graph=True` ensures the model's architecture is saved alongside the weights.\n\n## Inputs\n\n* `checkpoint_dir`:  The directory where the model will be saved.\n* `model_name`: A string representing the name of the model.\n* `saver`: A TensorFlow `Saver` object used to handle model saving. \n* `sess`: A TensorFlow `Session` object containing the model and its weights.\n\n## Output\n\n* `save_path`: A string representing the full file path to the saved model checkpoint. \n\n\n"
+    },
+    "ops__color_loss": {
+        "label": "color_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 277,
+        "endLineNo": 282,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L277-L282&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function calculates the loss between two images, `con` and `fake`, after converting them to YUV color space. It employs a combination of L1 and Huber loss functions to compare the luminance (Y) and chromaticity (U and V) channels of the images. The purpose is likely to evaluate the difference between a real image (`con`) and a generated image (`fake`) during the training of a generative model.\n\n## Inputs\n\n* `con`: A 4D numpy array representing a real image in RGB color space.\n* `fake`: A 4D numpy array representing a generated image in RGB color space.\n\n## Output\n\n* A single float value representing the total loss between the real and generated images. \n\n\n"
+    },
+    "ops__instance_norm": {
+        "label": "instance_norm",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 121,
+        "endLineNo": 126,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L121-L126&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Function Analysis \n\n**[Quick Summary]**\n\nThis function applies Instance Normalization (IN) to an input tensor `x` using the TF-Contrib library. IN normalizes the activations within each instance (e.g., image) across all channels, aiming to stabilize training and improve generalization.  \n\n**[Inputs]**\n\n* `x`: The input tensor to be normalized. \n* `epsilon`: A small value added to the variance for numerical stability.\n* `center`: Boolean indicating if a learnable bias is used.\n* `scale`: Boolean indicating if a learnable scale factor is used.\n* `scope`: Name scope for the layer.\n\n**[Output]**\n\n* A normalized tensor with the same shape as the input `x`. \n\n\n\n\n"
+    },
+    "AnimeGAN__AnimeGAN__model_dir": {
+        "label": "model_dir",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/AnimeGAN.py",
+        "relativePath": "AnimeGAN.py",
+        "lineNo": 301,
+        "endLineNo": 305,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2FAnimeGAN.py%23L301-L305&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function generates a unique identifier string for a specific model configuration. It combines various parameters like model name, dataset, GAN type, and weighting factors used in training.  This identifier is likely used to organize different model versions for tracking and reproducibility.\n\n[Inputs]\n*  `self.model_name`: The name of the deep learning model used.\n*  `self.dataset_name`: The name of the dataset the model was trained on.\n*  `self.gan_type`: The type of Generative Adversarial Network (GAN) architecture employed.\n*  `self.g_adv_weight`: Weighting factor for the generator's adversarial loss.\n*  `self.d_adv_weight`: Weighting factor for the discriminator's adversarial loss.\n*  `self.con_weight`: Weighting factor for a content loss function. \n*  `self.sty_weight`: Weighting factor for a style loss function. \n*  `self.color_weight`: Weighting factor for a color loss function.\n\n[Output]\n* A string consisting of underscores separated values representing all the input parameters in a specific order. \n\n\n\n\n"
+    },
+    "generator__Conv2DNormLReLU": {
+        "label": "Conv2DNormLReLU",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/net/generator.py",
+        "relativePath": "net/generator.py",
+        "lineNo": 19,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fnet%2Fgenerator.py%23L19-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis: \n\n**[Quick summary]**\n\nThis code snippet defines a function that performs convolutional operation, followed by instance normalization and LeakyReLU activation. Its purpose likely lies within a deeper neural network architecture, used for tasks like image processing or generation. \n\n**[Inputs]**\n\n* `inputs`: The input tensor, presumably a representation of an image or feature map.\n* `filters`: The number of filters (output channels) in the convolutional layer.\n* `kernel_size`: The size of the convolutional kernel (e.g., 3x3).\n* `strides`:  The step size of the convolution operation.\n* `padding`: The type and amount of padding applied to the input.\n* `Use_bias`: A boolean indicating whether to use bias terms in the convolutional layer.\n\n**[Output]**\n\n*  A tensor representing the output of the convolutional layer after instance normalization and LeakyReLU activation.   \n"
+    },
+    "ops__layer_norm": {
+        "label": "layer_norm",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 127,
+        "endLineNo": 131,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L127-L131&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function applies layer normalization to a tensor `x`. Layer normalization is a technique used in neural networks to normalize the activations of each layer. This helps stabilize training and improve performance.\n\n## Inputs:\n\n* **x:** This is the input tensor to which layer normalization will be applied. It likely represents the output of a previous layer in a neural network.\n* **center:** A boolean indicating whether to use a center term (the mean of the input) in the normalization. \n* **scale:** A boolean indicating whether to use a scale term (the standard deviation of the input) in the normalization.\n* **scope:**  A string defining the scope of the operation for TensorFlow's variable management.\n\n## Output:\n\n* A tensor representing the normalized version of the input `x`.  \n\n\n\n"
+    },
+    "test__stats_graphX": {
+        "label": "stats_graph",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/test.py",
+        "relativePath": "test.py",
+        "lineNo": 26,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftest.py%23L26-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick summary]**\n\nThis Python function utilizes TensorFlow's profiling capabilities to calculate the number of floating-point operations (FLOPs) performed by a given computational graph (`graph`).  FLOPs are a common metric for measuring the computational complexity of a machine learning model.  The purpose of this code is to estimate the computational cost of the model. \n\n**[Inputs]**\n\n* `graph`:  A TensorFlow computational graph representing the model's architecture. \n\n**[Output]**\n\n* `flops.total_float_ops`:  An integer representing the total number of floating-point operations executed by the model.   \n\n\n\n"
+    },
+    "utils__check_folder": {
+        "label": "check_folder",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 85,
+        "endLineNo": 89,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L85-L89&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function creates a directory named `log_dir` if it doesn't already exist. Its purpose is to ensure a dedicated location for logging data, files, or messages. \n\n## Inputs\n\n* `log_dir`: A string representing the desired path for the log directory.\n\n## Outputs\n\n* Returns the string `log_dir` which now represents the path to the created (or existing) log directory.   \n\n\n"
+    },
+    "video2anime__inverse_image": {
+        "label": "inverse_image",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/video2anime.py",
+        "relativePath": "video2anime.py",
+        "lineNo": 41,
+        "endLineNo": 45,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Fvideo2anime.py%23L41-L45&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function processes a NumPy array likely representing an image, normalizes its pixel values to a range of 0-255, and converts it to an 8-bit unsigned integer format suitable for display. Its purpose is to prepare a numerical image representation for visual output.\n\n## Inputs\n\n*  `img`: A NumPy array representing an image.\n\n## Output\n\n*  A NumPy array of type `uint8` containing the image data, scaled to the 0-255 range. \n\n\n"
+    },
+    "ops__L1_loss": {
+        "label": "L1_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 173,
+        "endLineNo": 176,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L173-L176&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**[Quick Summary]**\nThis function calculates the Mean Absolute Error (MAE) between two tensors, `x` and `y`.  MAE is a common metric for evaluating the performance of regression models by measuring the average absolute difference between predicted values (`x`) and actual values (`y`).\n\n**[Inputs]**\n* **x:** A tensor representing the predicted values.\n* **y:** A tensor representing the actual values.\n\n**[Output]**\n* A scalar tensor representing the Mean Absolute Error (MAE). \n\n\n"
+    },
+    "ops__L2_loss": {
+        "label": "L2_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 177,
+        "endLineNo": 180,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L177-L180&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Quick Summary\n\nThis function calculates the mean squared error (MSE) between two tensors, `x` and `y`, treating each element as a real number.  It's a common metric for evaluating the difference between predicted and actual values, especially in regression tasks. \n\n## Inputs\n\n*  `x`:  A TensorFlow tensor likely representing predicted values.\n* `y`: A TensorFlow tensor likely representing actual values.\n\n## Output\n\n*  A single floating-point value representing the mean squared error between `x` and `y`. \n\n\n\n\n"
+    },
+    "ops__lrelu": {
+        "label": "lrelu",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 103,
+        "endLineNo": 106,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L103-L106&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**\n\nThis function applies the Leaky ReLU activation function to an input tensor `x` with a specified slope `alpha`. Leaky ReLU is a modified version of the standard ReLU function, allowing a small non-zero gradient for negative inputs to address the \"dying ReLU\" problem.\n\n**[Inputs]**\n\n* `x`: A tensor (matrix or vector) representing the input data.\n* `alpha`: A floating-point value representing the slope of the linear part for negative inputs. Typically set to 0.01.\n\n**[Output]**\n\n* A tensor of the same shape as `x`, containing the activations after applying the Leaky ReLU function.  \n\n\n\n"
+    },
+    "ops__relu": {
+        "label": "relu",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 107,
+        "endLineNo": 110,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L107-L110&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown: \n\n**[Quick Summary]**\n\nThis function applies the ReLU (Rectified Linear Unit) activation function to an input tensor `x`. ReLU introduces non-linearity into a neural network, helping it learn complex patterns. This is a common activation function used in deep learning models.\n\n**[Inputs]**\n\n* `x`: A tensor representing the input data. This could be the output of a previous layer in a neural network.\n\n**[Output]**\n\n*  A new tensor, where each element is the maximum of zero and the corresponding element in the input tensor.  \n\n\n\n\nLet me know if you have any other code snippets you'd like me to analyze! \n"
+    },
+    "utils__str2bool": {
+        "label": "str2bool",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 90,
+        "endLineNo": 93,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L90-L93&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function takes a single input, converts it to lowercase, and checks if it matches the string \"true\". Its purpose is to determine if a given input represents a boolean value of true.\n\n**Inputs:**\n\n* `x`:  A string variable.\n\n**Output:**\n\n*  `True`: If the lowercase version of `x` is \"true\".\n*  `False`: If the lowercase version of `x` is not \"true\". \n\n\n\n"
+    },
+    "ops__Huber_loss": {
+        "label": "Huber_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 181,
+        "endLineNo": 183,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L181-L183&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  tf.losses.huber_loss(x, y)\n\n**Quick Summary**\n\nThis function calculates the Huber loss between two tensors `x` and `y`.  Huber loss is a  loss function that is less sensitive to outliers than the standard quadratic loss (mean squared error). It's commonly used in robust regression tasks.\n\n**Inputs**\n\n* `x`:  The predicted values.\n* `y`: The true values.\n\n**Output**\n\n* A scalar tensor representing the Huber loss value.   "
+    },
+    "ops__style_loss": {
+        "label": "style_loss",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 258,
+        "endLineNo": 260,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L258-L260&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function calculates the L1 loss between the Gram matrices of a \"style\" image and a \"fake\" image. This loss is often used in neural style transfer to measure how closely the generated image matches the style of the target image.\n\n[Inputs]\n*  `gram(style)`: The Gram matrix of a reference \"style\" image.\n    * `gram(fake)`: The Gram matrix of a generated \"fake\" image.\n\n[Output]\n* A float value representing the L1 loss between the two Gram matrices. \n"
+    },
+    "ops__tanh": {
+        "label": "tanh",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/ops.py",
+        "relativePath": "tools/ops.py",
+        "lineNo": 111,
+        "endLineNo": 113,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fops.py%23L111-L113&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick summary]**\n\nThis function takes a tensor `x` as input and applies the hyperbolic tangent activation function (`tf.tanh`) to it. The hyperbolic tangent function squashes the input values to a range between -1 and 1, often used in neural networks for introducing non-linearity.\n\n**[Inputs]**\n\n* `x`: A tensor, likely representing a numerical input or intermediate result within a neural network.\n\n**[Output]**\n\n* A tensor of the same shape as `x`, containing the hyperbolic tangent of each element in `x`. \n"
+    },
+    "utils__imsave": {
+        "label": "imsave",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/utils.py",
+        "relativePath": "tools/utils.py",
+        "lineNo": 49,
+        "endLineNo": 51,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Futils.py%23L49-L51&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Snippet Analysis \n\n**Quick Summary:** This function saves an image (or a list of images) to a specified file path. It first converts the image from the OpenCV default BGR (Blue-Green-Red) color space to RGB (Red-Green-Blue) format, ensuring compatibility with many image processing libraries and applications. \n\n**Inputs:**\n\n*  `images`: This likely represents either a single image or a list of images. \n*  `path`: This is a string specifying the full file path where the image(s) should be saved.\n\n**Output:**\n\n*  None: The function likely doesn't return any explicit value but saves the image to the provided path. \n"
+    },
+    "vgg19__Vgg19__avg_pool": {
+        "label": "avg_pool",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 81,
+        "endLineNo": 83,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L81-L83&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function performs a 2x2 average pooling operation on a 4-dimensional tensor (likely image data). It reduces the spatial dimensions (height and width) by a factor of 2 while maintaining the number of channels and batch size, resulting in a smaller representation of the input. This is a common technique in convolutional neural networks to downsample feature maps, reducing computational complexity and extracting more robust features.\n\n\n## Inputs\n\n* **bottom**: A 4-dimensional tensor representing the input data (e.g., feature maps from a convolutional layer).\n\n\n* **ksize**:  A list defining the kernel size for pooling. Here, it's [1, 2, 2, 1], indicating a 2x2 kernel across height and width dimensions. \n* **strides**: A list defining the step size for pooling. [1, 2, 2, 1] means moving the kernel by 2 units in height and width, while staying at 1 in channels and batch size.\n* **padding**: 'SAME' ensures the output has the same spatial dimensions as the input.\n* **name**:  A string used to name this operation within the TensorFlow graph. \n\n## Output\n\n* A 4-dimensional tensor representing the pooled output, with reduced height and width. \n"
+    },
+    "vgg19__Vgg19__get_bias": {
+        "label": "get_bias",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 130,
+        "endLineNo": 132,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L130-L132&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown \n\n**[Quick Summary]** \nThis function retrieves a bias value associated with a given name from a dictionary stored within an object. It then converts this bias value into a TensorFlow constant tensor and assigns it a name \"biases\". The purpose is likely to initialize bias values for a neural network layer.\n\n**[Inputs]**\n*  `name`: A string representing the name of the bias parameter to be retrieved.\n\n**[Output]**\n* `tf.constant(self.data_dict[name][1], name=\"biases\")`: A TensorFlow constant tensor holding the bias value, named \"biases\". \n\n\n\n"
+    },
+    "vgg19__Vgg19__get_conv_filter": {
+        "label": "get_conv_filter",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 127,
+        "endLineNo": 129,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L127-L129&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function retrieves a specific value from a dictionary (`self.data_dict`) based on the provided `name` key. It then converts that value into a TensorFlow constant and assigns it the name \"filter\".  \n\nThis function likely serves to initialize a filter value within a larger TensorFlow model or computation. \n\n## Inputs\n\n* `name`: A string representing the key used to access a value within the `self.data_dict` dictionary.\n\n## Output\n\n* `tf.constant(self.data_dict[name][0])`: A TensorFlow constant tensor containing the first element (index 0) of the value associated with the given `name` in `self.data_dict`. \n"
+    },
+    "vgg19__Vgg19__max_pool": {
+        "label": "max_pool",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 84,
+        "endLineNo": 86,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L84-L86&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis function applies a 2x2 max pooling operation to a tensor (referred to as 'bottom') with a stride of 2. This operation downsamples the data by taking the maximum value within each 2x2 window, effectively reducing its spatial dimensions. This type of operation is commonly used in convolutional neural networks for feature extraction and dimensionality reduction.\n\n**Inputs:**\n\n* `bottom`:  A 4-dimensional tensor representing the input data.  \n* `ksize=[1, 2, 2, 1]`: Defines the size of the pooling window (height, width, in_channels, out_channels).  \n* `strides=[1, 2, 2, 1]`:  Specifies the step size of the pooling operation (height, width, in_channels, out_channels).\n* `padding='SAME'`: Ensures output has the same spatial dimensions as the input after pooling.\n* `name`: An optional string name for the operation.\n\n**Output:**\n\n* A 4-dimensional tensor, downsampled version of the input data.\n\n\n"
+    },
+    "vgg19__Vgg19__get_fc_weight": {
+        "label": "get_fc_weight",
+        "systemPath": "/home/sanjay/Development/explore/AnimeGAN/tools/vgg19.py",
+        "relativePath": "tools/vgg19.py",
+        "lineNo": 133,
+        "endLineNo": 134,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FTachibanaYoshino%2FAnimeGAN%2Fblob%2Fmaster%2Ftools%2Fvgg19.py%23L133-L134&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Here's a breakdown of the provided code snippet:\n\n**[Quick Summary]**\n\nThis function retrieves a weight value associated with a given `name` from a dictionary (`self.data_dict`) and returns it as a TensorFlow constant (`tf.constant`).  Its purpose is likely to fetch pre-defined weights used in a neural network model.\n\n**[Inputs]**\n\n* `name`: A string representing the identifier of the weight to retrieve.\n\n**[Output]**\n\n* A TensorFlow constant (`tf.constant`) containing the numerical value of the weight associated with the input `name`. \n\n\nLet me know if you have any other code snippets you'd like me to analyze! \n"
+    }
+}

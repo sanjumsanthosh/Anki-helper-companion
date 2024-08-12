@@ -1,0 +1,321 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        modules [label="modules", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        modules__capturer [label="modules.capturer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        modules__core [label="modules.core", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        modules__face_analyser [label="modules.face_analyser", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        modules__globals [label="modules.globals", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        modules__metadata [label="modules.metadata", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        modules__predicter [label="modules.predicter", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        modules__processors [label="modules.processors", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        modules__processors__frame [label="modules.processors.frame", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        modules__processors__frame__core [label="modules.processors.frame.core", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        modules__processors__frame__face_enhancer [label="modules.processors.frame.face_enhancer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        modules__processors__frame__face_swapper [label="modules.processors.frame.face_swapper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        modules__typing [label="modules.typing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        modules__ui [label="modules.ui", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        modules__utilities [label="modules.utilities", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        run [label="run", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        subgraph cluster_modules__capturer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.capturer"];
+            modules__capturer__get_video_frame [label="get_video_frame\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/capturer.py:5)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+            modules__capturer__get_video_frame_total [label="get_video_frame_total\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/capturer.py:16)", style="filled", fillcolor="#ffbd99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_modules__core {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.core"];
+            modules__core__decode_execution_providers [label="decode_execution_providers\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:106)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__destroy [label="destroy\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:229)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__encode_execution_providers [label="encode_execution_providers\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:102)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__limit_resources [label="limit_resources\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:129)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__parse_args [label="parse_args\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:31)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__pre_check [label="pre_check\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:153)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__release_resources [label="release_resources\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:148)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__run [label="run\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:235)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__start [label="start\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:169)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__suggest_execution_providers [label="suggest_execution_providers\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:117)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__suggest_execution_threads [label="suggest_execution_threads\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:121)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__suggest_max_memory [label="suggest_max_memory\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:111)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+            modules__core__update_status [label="update_status\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/core.py:163)", style="filled", fillcolor="#ffe199b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_modules__face_analyser {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.face_analyser"];
+            modules__face_analyser__get_face_analyser [label="get_face_analyser\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/face_analyser.py:10)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+            modules__face_analyser__get_many_faces [label="get_many_faces\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/face_analyser.py:27)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+            modules__face_analyser__get_one_face [label="get_one_face\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/face_analyser.py:19)", style="filled", fillcolor="#f9ff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_modules__predicter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.predicter"];
+            modules__predicter__predict_frame [label="predict_frame\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/predicter.py:10)", style="filled", fillcolor="#99ffa5b2", fontcolor="#000000", group="6"];
+            modules__predicter__predict_image [label="predict_image\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/predicter.py:19)", style="filled", fillcolor="#99ffa5b2", fontcolor="#000000", group="6"];
+            modules__predicter__predict_video [label="predict_video\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/predicter.py:23)", style="filled", fillcolor="#99ffa5b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_modules__processors__frame__core {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.processors.frame.core"];
+            modules__processors__frame__core__get_frame_processors_modules [label="get_frame_processors_modules\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py:33)", style="filled", fillcolor="#32daffb2", fontcolor="#000000", group="9"];
+            modules__processors__frame__core__load_frame_processor_module [label="load_frame_processor_module\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py:21)", style="filled", fillcolor="#32daffb2", fontcolor="#000000", group="9"];
+            modules__processors__frame__core__multi_process_frame [label="multi_process_frame\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py:58)", style="filled", fillcolor="#32daffb2", fontcolor="#000000", group="9"];
+            modules__processors__frame__core__process_video [label="process_video\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py:68)", style="filled", fillcolor="#32daffb2", fontcolor="#000000", group="9"];
+            modules__processors__frame__core__set_frame_processors_modules_from_ui [label="set_frame_processors_modules_from_ui\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/core.py:43)", style="filled", fillcolor="#32daffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_modules__processors__frame__face_enhancer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.processors.frame.face_enhancer"];
+            modules__processors__frame__face_enhancer__enhance_face [label="enhance_face\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:47)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__get_face_enhancer [label="get_face_enhancer\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:33)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__pre_check [label="pre_check\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:20)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__pre_start [label="pre_start\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:26)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__process_frame [label="process_frame\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:56)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__process_frames [label="process_frames\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:63)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__process_image [label="process_image\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:72)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+            modules__processors__frame__face_enhancer__process_video [label="process_video\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_enhancer.py:78)", style="filled", fillcolor="#3292ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_modules__processors__frame__face_swapper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.processors.frame.face_swapper"];
+            modules__processors__frame__face_swapper__get_face_swapper [label="get_face_swapper\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:37)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__pre_check [label="pre_check\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:18)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__pre_start [label="pre_start\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:24)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__process_frame [label="process_frame\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:51)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__process_frames [label="process_frames\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:64)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__process_image [label="process_image\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:78)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__process_video [label="process_video\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:85)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+            modules__processors__frame__face_swapper__swap_face [label="swap_face\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/processors/frame/face_swapper.py:47)", style="filled", fillcolor="#324affb2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_modules__ui {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.ui"];
+            modules__ui__create_preview [label="create_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:118)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__create_root [label="create_root\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:45)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__init [label="init\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:36)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__init_preview [label="init_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:225)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__render_image_preview [label="render_image_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:195)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__render_video_preview [label="render_video_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:202)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__select_output_path [label="select_output_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:180)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__select_source_path [label="select_source_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:145)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__select_target_path [label="select_target_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:160)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__toggle_preview [label="toggle_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:216)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__update_preview [label="update_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:235)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__update_status [label="update_status\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:136)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__update_tumbler [label="update_tumbler\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:141)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+            modules__ui__webcam_preview [label="webcam_preview\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/ui.py:252)", style="filled", fillcolor="#d499ffb2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_modules__utilities {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="modules.utilities"];
+            modules__utilities__clean_temp [label="clean_temp\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:101)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__conditional_download [label="conditional_download\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:128)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__create_temp [label="create_temp\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:88)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__create_video [label="create_video\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:50)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__detect_fps [label="detect_fps\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:34)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__extract_frames [label="extract_frames\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:45)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__get_temp_directory_path [label="get_temp_directory_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:68)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__get_temp_frame_paths [label="get_temp_frame_paths\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:63)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__get_temp_output_path [label="get_temp_output_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:74)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__has_image_extension [label="has_image_extension\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:110)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__is_image [label="is_image\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:114)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__is_video [label="is_video\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:121)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__move_temp [label="move_temp\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:93)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__normalize_output_path [label="normalize_output_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:79)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__resolve_relative_path [label="resolve_relative_path\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:140)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__restore_audio [label="restore_audio\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:56)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+            modules__utilities__run_ffmpeg [label="run_ffmpeg\n(/home/sanjay/Development/explore/Deep-Live-Cam/modules/utilities.py:23)", style="filled", fillcolor="#f899ffb2", fontcolor="#000000", group="14"];
+        }
+    }
+        run -> modules__core__run [style="solid",  color="#000000"];
+        run -> modules__core [style="solid",  color="#000000"];
+        modules__utilities -> modules__globals [style="solid",  color="#000000"];
+        modules__utilities__run_ffmpeg -> modules [style="solid",  color="#000000"];
+        modules__utilities__extract_frames -> modules__utilities__run_ffmpeg [style="solid",  color="#000000"];
+        modules__utilities__extract_frames -> modules__utilities__get_temp_directory_path [style="solid",  color="#000000"];
+        modules__utilities__create_video -> modules [style="solid",  color="#000000"];
+        modules__utilities__create_video -> modules__utilities__get_temp_output_path [style="solid",  color="#000000"];
+        modules__utilities__create_video -> modules__utilities__run_ffmpeg [style="solid",  color="#000000"];
+        modules__utilities__create_video -> modules__utilities__get_temp_directory_path [style="solid",  color="#000000"];
+        modules__utilities__restore_audio -> modules__utilities__move_temp [style="solid",  color="#000000"];
+        modules__utilities__restore_audio -> modules__utilities__get_temp_output_path [style="solid",  color="#000000"];
+        modules__utilities__restore_audio -> modules__utilities__run_ffmpeg [style="solid",  color="#000000"];
+        modules__utilities__get_temp_frame_paths -> modules__utilities__get_temp_directory_path [style="solid",  color="#000000"];
+        modules__utilities__get_temp_output_path -> modules__utilities__get_temp_directory_path [style="solid",  color="#000000"];
+        modules__utilities__create_temp -> modules__utilities__get_temp_directory_path [style="solid",  color="#000000"];
+        modules__utilities__move_temp -> modules__utilities__get_temp_output_path [style="solid",  color="#000000"];
+        modules__utilities__clean_temp -> modules [style="solid",  color="#000000"];
+        modules__utilities__clean_temp -> modules__utilities__get_temp_directory_path [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__create_video [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__extract_frames [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__has_image_extension [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__clean_temp [style="solid",  color="#000000"];
+        modules__core -> modules__metadata [style="solid",  color="#000000"];
+        modules__core -> modules__ui [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__detect_fps [style="solid",  color="#000000"];
+        modules__core -> modules__processors__frame__core__get_frame_processors_modules [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__move_temp [style="solid",  color="#000000"];
+        modules__core -> modules [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__create_temp [style="solid",  color="#000000"];
+        modules__core -> modules__globals [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__normalize_output_path [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__get_temp_frame_paths [style="solid",  color="#000000"];
+        modules__core -> modules__utilities__restore_audio [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules__core__suggest_max_memory [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules__core__suggest_execution_providers [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules__core__destroy [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules__core__suggest_execution_threads [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules__core__decode_execution_providers [style="solid",  color="#000000"];
+        modules__core__parse_args -> modules__utilities__normalize_output_path [style="solid",  color="#000000"];
+        modules__core__decode_execution_providers -> modules__core__encode_execution_providers [style="solid",  color="#000000"];
+        modules__core__suggest_execution_providers -> modules__core__encode_execution_providers [style="solid",  color="#000000"];
+        modules__core__suggest_execution_threads -> modules [style="solid",  color="#000000"];
+        modules__core__limit_resources -> modules [style="solid",  color="#000000"];
+        modules__core__release_resources -> modules [style="solid",  color="#000000"];
+        modules__core__pre_check -> modules__core__update_status [style="solid",  color="#000000"];
+        modules__core__update_status -> modules__ui__update_status [style="solid",  color="#000000"];
+        modules__core__update_status -> modules [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__create_video [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__extract_frames [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__has_image_extension [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__clean_temp [style="solid",  color="#000000"];
+        modules__core__start -> modules__core__update_status [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__detect_fps [style="solid",  color="#000000"];
+        modules__core__start -> modules__processors__frame__core__get_frame_processors_modules [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__move_temp [style="solid",  color="#000000"];
+        modules__core__start -> modules [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__create_temp [style="solid",  color="#000000"];
+        modules__core__start -> modules__predicter__predict_image [style="solid",  color="#000000"];
+        modules__core__start -> modules__predicter__predict_video [style="solid",  color="#000000"];
+        modules__core__start -> modules__core__release_resources [style="solid",  color="#000000"];
+        modules__core__start -> modules__core__destroy [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__get_temp_frame_paths [style="solid",  color="#000000"];
+        modules__core__start -> modules__utilities__restore_audio [style="solid",  color="#000000"];
+        modules__core__destroy -> modules [style="solid",  color="#000000"];
+        modules__core__destroy -> modules__utilities__clean_temp [style="solid",  color="#000000"];
+        modules__core__run -> modules__core__start [style="solid",  color="#000000"];
+        modules__core__run -> modules__core__pre_check [style="solid",  color="#000000"];
+        modules__core__run -> modules__ui__init [style="solid",  color="#000000"];
+        modules__core__run -> modules__processors__frame__core__get_frame_processors_modules [style="solid",  color="#000000"];
+        modules__core__run -> modules__core__parse_args [style="solid",  color="#000000"];
+        modules__core__run -> modules__core__destroy [style="solid",  color="#000000"];
+        modules__core__run -> modules [style="solid",  color="#000000"];
+        modules__core__run -> modules__core__limit_resources [style="solid",  color="#000000"];
+        modules__face_analyser -> modules__globals [style="solid",  color="#000000"];
+        modules__face_analyser__get_face_analyser -> modules [style="solid",  color="#000000"];
+        modules__face_analyser__get_one_face -> modules__face_analyser__get_face_analyser [style="solid",  color="#000000"];
+        modules__face_analyser__get_many_faces -> modules__face_analyser__get_face_analyser [style="solid",  color="#000000"];
+        modules__ui -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__ui -> modules__capturer__get_video_frame [style="solid",  color="#000000"];
+        modules__ui -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__ui -> modules__metadata [style="solid",  color="#000000"];
+        modules__ui -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__ui -> modules__processors__frame__core__get_frame_processors_modules [style="solid",  color="#000000"];
+        modules__ui -> modules [style="solid",  color="#000000"];
+        modules__ui -> modules__globals [style="solid",  color="#000000"];
+        modules__ui -> modules__capturer__get_video_frame_total [style="solid",  color="#000000"];
+        modules__ui -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__ui__init -> modules__ui__create_root [style="solid",  color="#000000"];
+        modules__ui__init -> modules__ui__create_preview [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__ui__select_source_path [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__ui__update_tumbler [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__ui__webcam_preview [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__ui__toggle_preview [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__ui__select_output_path [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__ui__create_root -> modules__ui__select_target_path [style="solid",  color="#000000"];
+        modules__ui__create_preview -> modules__ui__toggle_preview [style="solid",  color="#000000"];
+        modules__ui__create_preview -> modules__ui__update_preview [style="solid",  color="#000000"];
+        modules__ui__update_tumbler -> modules [style="solid",  color="#000000"];
+        modules__ui__select_source_path -> modules__ui__render_image_preview [style="solid",  color="#000000"];
+        modules__ui__select_source_path -> modules [style="solid",  color="#000000"];
+        modules__ui__select_source_path -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__ui__select_target_path -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__ui__select_target_path -> modules__ui__render_image_preview [style="solid",  color="#000000"];
+        modules__ui__select_target_path -> modules [style="solid",  color="#000000"];
+        modules__ui__select_target_path -> modules__ui__render_video_preview [style="solid",  color="#000000"];
+        modules__ui__select_target_path -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__ui__select_output_path -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__ui__select_output_path -> modules [style="solid",  color="#000000"];
+        modules__ui__select_output_path -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__ui__toggle_preview -> modules__ui__init_preview [style="solid",  color="#000000"];
+        modules__ui__toggle_preview -> modules__ui__update_preview [style="solid",  color="#000000"];
+        modules__ui__toggle_preview -> modules [style="solid",  color="#000000"];
+        modules__ui__init_preview -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__ui__init_preview -> modules__capturer__get_video_frame_total [style="solid",  color="#000000"];
+        modules__ui__init_preview -> modules [style="solid",  color="#000000"];
+        modules__ui__init_preview -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__ui__update_preview -> modules__capturer__get_video_frame [style="solid",  color="#000000"];
+        modules__ui__update_preview -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__ui__update_preview -> modules__predicter__predict_frame [style="solid",  color="#000000"];
+        modules__ui__update_preview -> modules__processors__frame__core__get_frame_processors_modules [style="solid",  color="#000000"];
+        modules__ui__update_preview -> modules [style="solid",  color="#000000"];
+        modules__ui__webcam_preview -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__ui__webcam_preview -> modules__processors__frame__core__get_frame_processors_modules [style="solid",  color="#000000"];
+        modules__ui__webcam_preview -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__core__update_status [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__globals [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__processors__frame__core [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__face_analyser__get_many_faces [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper -> modules__utilities__conditional_download [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_check -> modules__utilities__conditional_download [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_check -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_start -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_start -> modules__core__update_status [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_start -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_start -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__pre_start -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__get_face_swapper -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__get_face_swapper -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__swap_face -> modules__processors__frame__face_swapper__get_face_swapper [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_frame -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_frame -> modules__processors__frame__face_swapper__swap_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_frame -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_frame -> modules__face_analyser__get_many_faces [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_frames -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_frames -> modules__processors__frame__face_swapper__process_frame [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_image -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_image -> modules__processors__frame__face_swapper__process_frame [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_video -> modules__processors__frame__face_swapper__process_frames [style="solid",  color="#000000"];
+        modules__processors__frame__face_swapper__process_video -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__core -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__core -> modules__globals [style="solid",  color="#000000"];
+        modules__processors__frame__core__get_frame_processors_modules -> modules__processors__frame__core__load_frame_processor_module [style="solid",  color="#000000"];
+        modules__processors__frame__core__get_frame_processors_modules -> modules__processors__frame__core__set_frame_processors_modules_from_ui [style="solid",  color="#000000"];
+        modules__processors__frame__core__set_frame_processors_modules_from_ui -> modules__processors__frame__core__load_frame_processor_module [style="solid",  color="#000000"];
+        modules__processors__frame__core__process_video -> modules__processors__frame__core__multi_process_frame [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__core__update_status [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__globals [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__processors__frame__core [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer -> modules__utilities__conditional_download [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__pre_check -> modules__utilities__conditional_download [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__pre_check -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__pre_start -> modules__utilities__is_video [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__pre_start -> modules__core__update_status [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__pre_start -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__pre_start -> modules__utilities__is_image [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__get_face_enhancer -> modules__utilities__resolve_relative_path [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__enhance_face -> modules__processors__frame__face_enhancer__get_face_enhancer [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__process_frame -> modules__face_analyser__get_one_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__process_frame -> modules__processors__frame__face_enhancer__enhance_face [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__process_frames -> modules__processors__frame__face_enhancer__process_frame [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__process_image -> modules__processors__frame__face_enhancer__process_frame [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__process_video -> modules [style="solid",  color="#000000"];
+        modules__processors__frame__face_enhancer__process_video -> modules__processors__frame__face_enhancer__process_frames [style="solid",  color="#000000"];
+    }
