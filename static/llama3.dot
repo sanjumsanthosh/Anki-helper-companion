@@ -1,0 +1,198 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        example_chat_completion [label="example_chat_completion", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        example_text_completion [label="example_text_completion", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        llama [label="llama", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        llama__generation [label="llama.generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        llama__model [label="llama.model", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        llama__test_tokenizer [label="llama.test_tokenizer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        llama__tokenizer [label="llama.tokenizer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        setu [label="setu", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        subgraph cluster_example_chat_completion {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="example_chat_completion"];
+            example_chat_completion__main [label="main\n(/home/sanjay/Development/explore/llama3/example_chat_completion.py:11)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_example_text_completion {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="example_text_completion"];
+            example_text_completion__main [label="main\n(/home/sanjay/Development/explore/llama3/example_text_completion.py:11)", style="filled", fillcolor="#feeeccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_llama__generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.generation"];
+            llama__generation__ChatPrediction [label="ChatPrediction\n(/home/sanjay/Development/explore/llama3/llama/generation.py:29)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="3"];
+            llama__generation__CompletionPrediction [label="CompletionPrediction\n(/home/sanjay/Development/explore/llama3/llama/generation.py:23)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama [label="Llama\n(/home/sanjay/Development/explore/llama3/llama/generation.py:35)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama [label="Llama\n(/home/sanjay/Development/explore/llama3/llama/generation.py:35)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="3"];
+            llama__generation__sample_top_p [label="sample_top_p\n(/home/sanjay/Development/explore/llama3/llama/generation.py:343)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_llama__generation__Llama {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.generation.Llama"];
+            llama__generation__Llama____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/generation.py:115)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama__build [label="build\n(/home/sanjay/Development/explore/llama3/llama/generation.py:37)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama__build [label="build\n(/home/sanjay/Development/explore/llama3/llama/generation.py:37)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama__chat_completion [label="chat_completion\n(/home/sanjay/Development/explore/llama3/llama/generation.py:280)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama__generate [label="generate\n(/home/sanjay/Development/explore/llama3/llama/generation.py:121)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="3"];
+            llama__generation__Llama__text_completion [label="text_completion\n(/home/sanjay/Development/explore/llama3/llama/generation.py:229)", style="filled", fillcolor="#65ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_llama__model {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.model"];
+            llama__model__Attention [label="Attention\n(/home/sanjay/Development/explore/llama3/llama/model.py:90)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__FeedForward [label="FeedForward\n(/home/sanjay/Development/explore/llama3/llama/model.py:193)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__ModelArgs [label="ModelArgs\n(/home/sanjay/Development/explore/llama3/llama/model.py:20)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__RMSNorm [label="RMSNorm\n(/home/sanjay/Development/explore/llama3/llama/model.py:35)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__Transformer [label="Transformer\n(/home/sanjay/Development/explore/llama3/llama/model.py:251)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__TransformerBlock [label="TransformerBlock\n(/home/sanjay/Development/explore/llama3/llama/model.py:222)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__apply_rotary_emb [label="apply_rotary_emb\n(/home/sanjay/Development/explore/llama3/llama/model.py:65)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__precompute_freqs_cis [label="precompute_freqs_cis\n(/home/sanjay/Development/explore/llama3/llama/model.py:49)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__repeat_kv [label="repeat_kv\n(/home/sanjay/Development/explore/llama3/llama/model.py:78)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+            llama__model__reshape_for_broadcast [label="reshape_for_broadcast\n(/home/sanjay/Development/explore/llama3/llama/model.py:57)", style="filled", fillcolor="#99ffddb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_llama__model__Attention {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.model.Attention"];
+            llama__model__Attention____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/model.py:91)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+            llama__model__Attention__forward [label="forward\n(/home/sanjay/Development/explore/llama3/llama/model.py:146)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_llama__model__FeedForward {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.model.FeedForward"];
+            llama__model__FeedForward____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/model.py:194)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+            llama__model__FeedForward__forward [label="forward\n(/home/sanjay/Development/explore/llama3/llama/model.py:218)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_llama__model__RMSNorm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.model.RMSNorm"];
+            llama__model__RMSNorm____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/model.py:36)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+            llama__model__RMSNorm___norm [label="_norm\n(/home/sanjay/Development/explore/llama3/llama/model.py:41)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+            llama__model__RMSNorm__forward [label="forward\n(/home/sanjay/Development/explore/llama3/llama/model.py:44)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_llama__model__Transformer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.model.Transformer"];
+            llama__model__Transformer____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/model.py:252)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+            llama__model__Transformer__forward [label="forward\n(/home/sanjay/Development/explore/llama3/llama/model.py:278)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_llama__model__TransformerBlock {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.model.TransformerBlock"];
+            llama__model__TransformerBlock____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/model.py:223)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+            llama__model__TransformerBlock__forward [label="forward\n(/home/sanjay/Development/explore/llama3/llama/model.py:239)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_llama__test_tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.test_tokenizer"];
+            llama__test_tokenizer__TokenizerTests [label="TokenizerTests\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:10)", style="filled", fillcolor="#99dcffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_llama__test_tokenizer__TokenizerTests {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.test_tokenizer.TokenizerTests"];
+            llama__test_tokenizer__TokenizerTests__setUp [label="setUp\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:11)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="5"];
+            llama__test_tokenizer__TokenizerTests__test_decode [label="test_decode\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:31)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="5"];
+            llama__test_tokenizer__TokenizerTests__test_encode [label="test_encode\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:21)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="5"];
+            llama__test_tokenizer__TokenizerTests__test_encode_dialog [label="test_encode_dialog\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:56)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="5"];
+            llama__test_tokenizer__TokenizerTests__test_encode_message [label="test_encode_message\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:39)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="5"];
+            llama__test_tokenizer__TokenizerTests__test_special_tokens [label="test_special_tokens\n(/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py:15)", style="filled", fillcolor="#65cbffb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_llama__tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.tokenizer"];
+            llama__tokenizer__ChatFormat [label="ChatFormat\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:202)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__Message [label="Message\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:30)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__Tokenizer [label="Tokenizer\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:38)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_llama__tokenizer__ChatFormat {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.tokenizer.ChatFormat"];
+            llama__tokenizer__ChatFormat____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:203)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__ChatFormat__encode_dialog_prompt [label="encode_dialog_prompt\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:222)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__ChatFormat__encode_header [label="encode_header\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:206)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__ChatFormat__encode_message [label="encode_message\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:214)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_llama__tokenizer__Tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama.tokenizer.Tokenizer"];
+            llama__tokenizer__Tokenizer____init__ [label="__init__\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:49)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__Tokenizer___split_whitespaces_or_nonwhitespaces [label="_split_whitespaces_or_nonwhitespaces\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:176)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__Tokenizer__decode [label="decode\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:162)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+            llama__tokenizer__Tokenizer__encode [label="encode\n(/home/sanjay/Development/explore/llama3/llama/tokenizer.py:99)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_setu {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="setu"];
+            setu__get_requirements [label="get_requirements\n(/home/sanjay/Development/explore/llama3/setup.py:7)", style="filled", fillcolor="#eeccfeb2", fontcolor="#000000", group="7"];
+        }
+    }
+        setu -> setu__get_requirements [style="solid",  color="#000000"];
+        example_text_completion -> llama__generation__Llama [style="solid",  color="#000000"];
+        example_text_completion -> example_text_completion__main [style="solid",  color="#000000"];
+        example_text_completion__main -> llama__generation__Llama__build [style="solid",  color="#000000"];
+        example_chat_completion -> llama__generation__Llama [style="solid",  color="#000000"];
+        example_chat_completion -> example_chat_completion__main [style="solid",  color="#000000"];
+        example_chat_completion__main -> llama__generation__Llama__build [style="solid",  color="#000000"];
+        llama__model__RMSNorm__forward -> llama__model__RMSNorm___norm [style="solid",  color="#000000"];
+        llama__model__apply_rotary_emb -> llama__model__reshape_for_broadcast [style="solid",  color="#000000"];
+        llama__model__Attention__forward -> llama__model__repeat_kv [style="solid",  color="#000000"];
+        llama__model__Attention__forward -> llama__model__apply_rotary_emb [style="solid",  color="#000000"];
+        llama__model__TransformerBlock____init__ -> llama__model__RMSNorm [style="solid",  color="#000000"];
+        llama__model__TransformerBlock____init__ -> llama__model__FeedForward [style="solid",  color="#000000"];
+        llama__model__TransformerBlock____init__ -> llama__model__Attention [style="solid",  color="#000000"];
+        llama__model__TransformerBlock____init__ -> llama__model__FeedForward____init__ [style="solid",  color="#000000"];
+        llama__model__TransformerBlock____init__ -> llama__model__RMSNorm____init__ [style="solid",  color="#000000"];
+        llama__model__TransformerBlock____init__ -> llama__model__Attention____init__ [style="solid",  color="#000000"];
+        llama__model__TransformerBlock__forward -> llama__model__RMSNorm [style="solid",  color="#000000"];
+        llama__model__TransformerBlock__forward -> llama__model__FeedForward [style="solid",  color="#000000"];
+        llama__model__TransformerBlock__forward -> llama__model__Attention [style="solid",  color="#000000"];
+        llama__model__TransformerBlock__forward -> llama__model__RMSNorm____init__ [style="solid",  color="#000000"];
+        llama__model__TransformerBlock__forward -> llama__model__FeedForward____init__ [style="solid",  color="#000000"];
+        llama__model__TransformerBlock__forward -> llama__model__Attention____init__ [style="solid",  color="#000000"];
+        llama__model__Transformer____init__ -> llama__model__RMSNorm____init__ [style="solid",  color="#000000"];
+        llama__model__Transformer____init__ -> llama__model__precompute_freqs_cis [style="solid",  color="#000000"];
+        llama__model__Transformer____init__ -> llama__model__RMSNorm [style="solid",  color="#000000"];
+        llama__model__Transformer____init__ -> llama__model__TransformerBlock____init__ [style="solid",  color="#000000"];
+        llama__model__Transformer____init__ -> llama__model__TransformerBlock [style="solid",  color="#000000"];
+        llama__model__Transformer__forward -> llama__model__RMSNorm____init__ [style="solid",  color="#000000"];
+        llama__model__Transformer__forward -> llama__model__RMSNorm [style="solid",  color="#000000"];
+        llama__test_tokenizer -> llama__tokenizer__ChatFormat [style="solid",  color="#000000"];
+        llama__test_tokenizer -> llama__tokenizer__Tokenizer [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__setUp -> llama__tokenizer__Tokenizer____init__ [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__setUp -> llama__tokenizer__ChatFormat____init__ [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__setUp -> llama__tokenizer__ChatFormat [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__setUp -> llama__tokenizer__Tokenizer [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__test_encode -> llama__tokenizer__Tokenizer__encode [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__test_decode -> llama__tokenizer__Tokenizer__decode [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__test_encode_message -> llama__tokenizer__ChatFormat__encode_message [style="solid",  color="#000000"];
+        llama__test_tokenizer__TokenizerTests__test_encode_dialog -> llama__tokenizer__ChatFormat__encode_dialog_prompt [style="solid",  color="#000000"];
+        llama -> llama__model__ModelArgs [style="solid",  color="#000000"];
+        llama -> llama__generation__Llama [style="solid",  color="#000000"];
+        llama -> llama__tokenizer__Tokenizer [style="solid",  color="#000000"];
+        llama -> llama__model__Transformer [style="solid",  color="#000000"];
+        llama__generation -> llama__tokenizer__ChatFormat [style="solid",  color="#000000"];
+        llama__generation -> llama__tokenizer__Tokenizer [style="solid",  color="#000000"];
+        llama__generation -> llama__model__Transformer [style="solid",  color="#000000"];
+        llama__generation -> llama__model__ModelArgs [style="solid",  color="#000000"];
+        llama__generation -> llama__tokenizer__Message [style="solid",  color="#000000"];
+        llama__generation__Llama__build -> llama__tokenizer__Tokenizer____init__ [style="solid",  color="#000000"];
+        llama__generation__Llama__build -> llama__generation__Llama____init__ [style="solid",  color="#000000"];
+        llama__generation__Llama__build -> llama__model__ModelArgs [style="solid",  color="#000000"];
+        llama__generation__Llama__build -> llama__tokenizer__Tokenizer [style="solid",  color="#000000"];
+        llama__generation__Llama__build -> llama__model__Transformer [style="solid",  color="#000000"];
+        llama__generation__Llama__build -> llama__model__Transformer____init__ [style="solid",  color="#000000"];
+        llama__generation__Llama____init__ -> llama__tokenizer__ChatFormat____init__ [style="solid",  color="#000000"];
+        llama__generation__Llama____init__ -> llama__tokenizer__ChatFormat [style="solid",  color="#000000"];
+        llama__generation__Llama__generate -> llama__generation__sample_top_p [style="solid",  color="#000000"];
+        llama__generation__Llama__text_completion -> llama__generation__Llama__generate [style="solid",  color="#000000"];
+        llama__generation__Llama__chat_completion -> llama__tokenizer__ChatFormat__encode_dialog_prompt [style="solid",  color="#000000"];
+        llama__generation__Llama__chat_completion -> llama__generation__Llama__generate [style="solid",  color="#000000"];
+        llama__tokenizer -> llama__tokenizer__Message [style="solid",  color="#000000"];
+        llama__tokenizer__Tokenizer__encode -> llama__tokenizer__Tokenizer___split_whitespaces_or_nonwhitespaces [style="solid",  color="#000000"];
+        llama__tokenizer__ChatFormat__encode_message -> llama__tokenizer__ChatFormat__encode_header [style="solid",  color="#000000"];
+        llama__tokenizer__ChatFormat__encode_dialog_prompt -> llama__tokenizer__ChatFormat__encode_header [style="solid",  color="#000000"];
+        llama__tokenizer__ChatFormat__encode_dialog_prompt -> llama__tokenizer__ChatFormat__encode_message [style="solid",  color="#000000"];
+    }

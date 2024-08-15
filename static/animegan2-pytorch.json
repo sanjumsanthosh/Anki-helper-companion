@@ -1,0 +1,149 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/bryandlee/animegan2-pytorch/blob/main/"
+    },
+    "convert_weights__convert_keys": {
+        "label": "convert_keys",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/convert_weights.py",
+        "relativePath": "convert_weights.py",
+        "lineNo": 35,
+        "endLineNo": 95,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fconvert_weights.py%23L35-L95&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]**\n\nThis function converts a TensorFlow (TF) weight name into a PyTorch-compatible key format. It accomplishes this by dissecting the TF name into its constituent parts, making adjustments based on TF-specific conventions, and then reconstructing the string in PyTorch's expected manner. The purpose is to facilitate weight transfer between models built with these different deep learning frameworks.\n\n**[Inputs]**\n\n*  `k`: A string representing a TensorFlow weight name. \n\n**[Outputs]**\n\n* A string representing a PyTorch-compatible weight key. \n* A boolean indicating whether the original TF weight was a dilated convolution. \n\n\n\n\n"
+    },
+    "model__Generator": {
+        "label": "Generator",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 50,
+        "endLineNo": 110,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L50-L110&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a neural network architecture likely designed for image processing or segmentation.  It takes an input image, processes it through multiple convolutional blocks with increasing complexity, and outputs a segmented or classified image.\n\n## Inputs\n\n* `input`: The input image tensor.\n* `align_corners`: A boolean flag controlling the interpolation method used when upsampling the image.\n\n## Output\n\n* A processed image tensor, potentially containing segmentation labels or a classified output. \n\n\n"
+    },
+    "model__Generator____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 51,
+        "endLineNo": 89,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L51-L89&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary \n\nThis code defines a neural network architecture, likely for image segmentation or depth prediction. It employs a series of convolutional, normalization, and activation layers, with specific block structures aimed at learning hierarchical features from input images. \n\n## Inputs\n\n* **Images:** The primary input is likely a multi-channel image (e.g., RGB) representing the input scene.\n\n* **Other parameters:**  The code may also accept additional parameters during initialization, such as learning rate, batch size, etc.\n\n## Output\n\n* **Segmented Image/Depth Map:** The output is predicted probability map or depth values corresponding to each pixel in the input image.\n\n\n\n"
+    },
+    "hubconf__generator": {
+        "label": "generator",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/hubconf.py",
+        "relativePath": "hubconf.py",
+        "lineNo": 4,
+        "endLineNo": 36,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fhubconf.py%23L4-L36&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis \n\n**[Quick Summary]**\n\nThis function initializes and loads a pre-trained image generation model (likely from the AnimeGAN2 repository) onto a specified device. It allows for loading pre-trained weights either by name or URL and provides options for progress tracking and hash verification. The purpose is to make it easy to use a powerful anime-style image generation model.\n\n**[Inputs]**\n\n* `device`: Specifies the device to run the model on (e.g., 'cpu' or 'cuda').\n* `pretrained`:  Either a string (model name) or boolean (`True` if pre-trained weights are desired).\n\n* `progress`: A boolean indicating whether to display download progress.\n* `check_hash`: A boolean indicating whether to verify the downloaded weights hash.\n\n**[Output]**\n\n* A pre-trained `Generator` model instance loaded on the specified device. \n\n\n\n"
+    },
+    "convert_weights__convert_and_save": {
+        "label": "convert_and_save",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/convert_weights.py",
+        "relativePath": "convert_weights.py",
+        "lineNo": 96,
+        "endLineNo": 124,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fconvert_weights.py%23L96-L124&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code converts weights from a TensorFlow model (saved in a checkpoint file) to a compatible PyTorch model. It ensures that the weights have the correct shape and layout before loading them into the PyTorch model and finally saves the PyTorch model to a specified file. \n\nThe purpose is to allow using pre-trained TensorFlow models in PyTorch frameworks.\n\n## Inputs\n\n*  `tf_checkpoint_path`:  Path to the TensorFlow checkpoint file containing the pre-trained weights.\n* `Generator()`: An instance of a PyTorch model class (likely a generator model) where the weights will be loaded.\n* `save_name`:  Desired filename for saving the converted PyTorch model.\n\n## Output\n\n* A saved PyTorch model file (`save_name`) containing the converted TensorFlow weights. \n\n\n"
+    },
+    "hubconf__face2paint": {
+        "label": "face2paint",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/hubconf.py",
+        "relativePath": "hubconf.py",
+        "lineNo": 37,
+        "endLineNo": 64,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fhubconf.py%23L37-L64&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick summary\n\nThis Python function `face2paint` takes an image, processes it through a pre-trained machine learning model (likely a style transfer model), and returns a new image representing the painted version of the input face. The purpose is to apply artistic styles to facial images.\n\n## Inputs\n\n* **model:**  A pre-trained PyTorch neural network model.\n* **img:** An PIL Image object containing a face.\n* **size:**  An integer specifying the desired output image size.\n* **side_by_side:** A boolean indicating whether to display both the original and painted images side-by-side.\n* **device:** A string specifying the device to run the model on (e.g., 'cpu', 'cuda').\n\n## Output\n\n*  An PIL Image object containing the painted version of the input face. \n\n\n\n"
+    },
+    "hubconf__face2paint__face2paint": {
+        "label": "face2paint",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/hubconf.py",
+        "relativePath": "hubconf.py",
+        "lineNo": 37,
+        "endLineNo": 64,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fhubconf.py%23L37-L64&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  face2paint Function Breakdown\n\n**[Quick summary]**\n\nThis function takes an image as input, processes it through a pre-trained machine learning model, and generates a modified image representing a painted rendition of the input face. The purpose is to demonstrate or utilize a model capable of artistic image transformation.\n\n**[Inputs]**\n\n* `model`: A PyTorch neural network model, presumably trained for image-to-painting style transfer.\n* `img`: An Image.Image object, representing the input facial image.\n* `size`: An integer specifying the desired output image size.\n* `side_by_side`: A boolean indicating whether to display the original and painted versions side-by-side.\n* `device`: A string indicating the target hardware device (e.g., 'cpu', 'cuda') for model execution.\n\n**[Output]**\n\n* An Image.Image object containing the transformed, painted version of the input face.\n\n\n"
+    },
+    "model__InvertedResBlock": {
+        "label": "InvertedResBlock",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 25,
+        "endLineNo": 49,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L25-L49&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## InvertedResBlock Code Analysis\n\n**Quick Summary:**\n\nThis Python code defines a class called `InvertedResBlock`, which implements an inverted residual block commonly used in mobile and efficient deep learning architectures.  The purpose is to perform feature extraction and transformation while maintaining efficiency by reducing the number of parameters.\n\n**Inputs:**\n\n*  `in_ch`: Number of input channels\n*  `out_ch`: Number of output channels\n*  `expansion_ratio`:  Integer value determining the expansion factor for intermediate channels  \n\n**Output:**\n\n*  A tensor representing the transformed feature map after the residual connection."
+    },
+    "convert_weights__load_tf_weights": {
+        "label": "load_tf_weights",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/convert_weights.py",
+        "relativePath": "convert_weights.py",
+        "lineNo": 13,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fconvert_weights.py%23L13-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis function loads a pre-trained TensorFlow model from a specified path, evaluates all its trainable variables, and returns a dictionary containing the variable names and their corresponding values. This is likely used for analyzing or fine-tuning an existing GAN model.\n\n**Inputs:**\n\n* `tf_path`:  Path to the directory containing the TensorFlow model checkpoint files.\n* `tf_generator`: An object likely representing the generator network of a GAN model.\n\n**Output:**\n\n* `tf_weights`:  A dictionary where keys are variable names from the model and values are the numerical values of those variables. \n\n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!\n"
+    },
+    "model__Generator__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 90,
+        "endLineNo": 110,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L90-L110&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]** \n\nThis function likely implements a specific block or module within a larger deep learning model. It takes an input tensor, processes it through a series of convolutional blocks (`block_a` to `block_e`), upsamples it twice using bilinear interpolation, and finally outputs a processed tensor. This upsampling and processing structure suggests the function might be involved in tasks like image segmentation or super-resolution.\n\n**[Inputs]**\n\n* `input`: A tensor representing the input data (likely an image).\n\n* `align_corners`: A boolean flag controlling the interpolation method used for upsampling.\n\n**[Output]**\n\n* `out`: A tensor representing the processed output data, potentially upsampled to the input's size. \n\n\n"
+    },
+    "model__ConvNormLReLU": {
+        "label": "ConvNormLReLU",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 6,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L6-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis Python code defines a custom convolutional neural network (CNN) layer called `ConvNormLReLU`. This layer combines a 2D convolution operation, a Group Normalization layer, and a Leaky ReLU activation function. The purpose is to apply a learnable nonlinear transformation to input features, often used in image processing and computer vision tasks.\n\n## Inputs\n\n* `in_ch`: Number of input channels in the input data.\n* `out_ch`: Number of output channels in the output data. \n* `kernel_size`:  Size of the convolutional kernel.\n* `stride`: Step size for the convolution operation.\n* `padding`: Padding to apply before convolution.\n* `pad_mode`: Method for padding (`zero`, `same`, or `reflect`).\n* `groups`: Number of groups to use in the convolution and normalization.\n* `bias`: Whether to include a bias term in the convolution operation.\n\n## Output\n\n* A transformed tensor representing the output features after convolution, normalization, and activation.  \n"
+    },
+    "model__ConvNormLReLU____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 7,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L7-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## ConvNormLReLU Function Breakdown\n\n**Quick Summary:**\n\nThis code defines a custom convolutional neural network layer called `ConvNormLReLU`. This layer combines a 2D convolution, group normalization, and Leaky ReLU activation function.  It's likely designed for feature extraction in image-based deep learning tasks.\n\n**Inputs:**\n\n* `pad_mode`:  A string indicating the padding method to be used (\"zero\", \"same\", or \"reflect\").\n* `in_ch`: The number of input channels for the convolution.\n* `out_ch`: The number of output channels for the convolution.\n* `kernel_size`:  The size of the convolutional kernel (e.g., 3 for a 3x3 kernel).\n* `stride`:  The stride of the convolution (e.g., 1 for no skipping of pixels).\n\n\n**Output:**\n\n* A tensor representing the output of the convolution operation after applying the group normalization and Leaky ReLU activations. .\n\n\n\n"
+    },
+    "model__InvertedResBlock____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 26,
+        "endLineNo": 42,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L26-L42&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary:** This Python function defines an `InvertedResBlock` class, likely used in a deep learning model, particularly for image processing. It implements an inverted residual block with a bottleneck layer, designed to reduce computational costs while maintaining performance. \n\n**Inputs:**\n\n* `in_ch`: Number of input channels\n* `out_ch`: Number of output channels\n* `expansion_ratio`: A scaling factor for the bottleneck layer width. \n\n**Output:** \n\n* A sequential module (`nn.Sequential`) containing the operations of the inverted residual block. \n"
+    },
+    "test__load_image": {
+        "label": "load_image",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/test.py",
+        "relativePath": "test.py",
+        "lineNo": 18,
+        "endLineNo": 29,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Ftest.py%23L18-L29&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function opens an image, converts it to RGB format, and optionally resizes it to have dimensions that are multiples of 32. This is likely done for compatibility with a machine learning model or other system that expects specific input dimensions.\n\n## Inputs:\n* `image_path`: A string representing the path to the image file.\n* `x32`: A boolean flag indicating whether to resize the image.\n\n## Output:\n* `img`: An Pillow Image object representing the loaded and possibly resized image. \n"
+    },
+    "model__InvertedResBlock__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/model.py",
+        "relativePath": "model.py",
+        "lineNo": 43,
+        "endLineNo": 49,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Fmodel.py%23L43-L49&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis \n\n**Quick Summary** \n\nThis function processes an input through a series of layers (`self.layers`), potentially applying a residual connection (`self.use_res_connect`) to improve training stability and performance. It's likely a core component of a deeper neural network, such as a ResNet.\n\n**Inputs**\n\n*  `input`: This is the data being processed by the function, likely a multi-dimensional array representing a sample from a dataset.\n\n**Output**\n\n*  `out`: The processed data after passing through the layers and potential residual connection. \n\n\n"
+    },
+    "test__load_image__to_32s": {
+        "label": "to_32s",
+        "systemPath": "/home/sanjay/Development/explore/animegan2-pytorch/test.py",
+        "relativePath": "test.py",
+        "lineNo": 22,
+        "endLineNo": 23,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fbryandlee%2Fanimegan2-pytorch%2Fblob%2Fmain%2Ftest.py%23L22-L23&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function modifies an integer input (`x`) based on its relationship to 256. If the input is less than 256, it returns 256. Otherwise, it returns the input after removing any remainder when divided by 32.  This likely implements a specific bit manipulation or formatting rule.\n\n**Inputs:**\n\n* `x`: An integer value.\n\n**Output:**\n\n*  An integer value:\n    * 256 if `x` is less than 256\n    * `x` minus the remainder of `x` divided by 32 if `x` is 256 or greater\n\n\n"
+    }
+}

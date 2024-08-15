@@ -1,0 +1,667 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        gpt_researcher [label="gpt_researcher", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        gpt_researcher__config [label="gpt_researcher.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        gpt_researcher__config__config [label="gpt_researcher.config.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        gpt_researcher__context [label="gpt_researcher.context", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        gpt_researcher__context__compression [label="gpt_researcher.context.compression", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        gpt_researcher__context__retriever [label="gpt_researcher.context.retriever", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        gpt_researcher__document [label="gpt_researcher.document", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        gpt_researcher__document__document [label="gpt_researcher.document.document", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        gpt_researcher__document__langchain_document [label="gpt_researcher.document.langchain_document", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        gpt_researcher__llm_provider [label="gpt_researcher.llm_provider", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        gpt_researcher__llm_provider__generic [label="gpt_researcher.llm_provider.generic", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        gpt_researcher__llm_provider__generic__base [label="gpt_researcher.llm_provider.generic.base", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        gpt_researcher__master [label="gpt_researcher.master", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        gpt_researcher__master__actions [label="gpt_researcher.master.actions", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        gpt_researcher__master__agent [label="gpt_researcher.master.agent", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        gpt_researcher__master__prompts [label="gpt_researcher.master.prompts", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        gpt_researcher__memory [label="gpt_researcher.memory", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="16"];
+        gpt_researcher__memory__embeddings [label="gpt_researcher.memory.embeddings", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="17"];
+        gpt_researcher__retrievers [label="gpt_researcher.retrievers", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="18"];
+        gpt_researcher__retrievers__arxiv [label="gpt_researcher.retrievers.arxiv", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="19"];
+        gpt_researcher__retrievers__arxiv__arxiv [label="gpt_researcher.retrievers.arxiv.arxiv", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="20"];
+        gpt_researcher__retrievers__bing [label="gpt_researcher.retrievers.bing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="21"];
+        gpt_researcher__retrievers__bing__bing [label="gpt_researcher.retrievers.bing.bing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="22"];
+        gpt_researcher__retrievers__custom [label="gpt_researcher.retrievers.custom", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="23"];
+        gpt_researcher__retrievers__custom__custom [label="gpt_researcher.retrievers.custom.custom", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="24"];
+        gpt_researcher__retrievers__duckduckgo [label="gpt_researcher.retrievers.duckduckgo", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="25"];
+        gpt_researcher__retrievers__duckduckgo__duckduckgo [label="gpt_researcher.retrievers.duckduckgo.duckduckgo", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="26"];
+        gpt_researcher__retrievers__exa [label="gpt_researcher.retrievers.exa", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="27"];
+        gpt_researcher__retrievers__exa__exa [label="gpt_researcher.retrievers.exa.exa", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="28"];
+        gpt_researcher__retrievers__google [label="gpt_researcher.retrievers.google", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="29"];
+        gpt_researcher__retrievers__google__google [label="gpt_researcher.retrievers.google.google", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="30"];
+        gpt_researcher__retrievers__pubmed_central [label="gpt_researcher.retrievers.pubmed_central", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="31"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central [label="gpt_researcher.retrievers.pubmed_central.pubmed_central", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="32"];
+        gpt_researcher__retrievers__searx [label="gpt_researcher.retrievers.searx", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="33"];
+        gpt_researcher__retrievers__searx__searx [label="gpt_researcher.retrievers.searx.searx", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="34"];
+        gpt_researcher__retrievers__semantic_scholar [label="gpt_researcher.retrievers.semantic_scholar", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="35"];
+        gpt_researcher__retrievers__semantic_scholar__semantic_scholar [label="gpt_researcher.retrievers.semantic_scholar.semantic_scholar", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="36"];
+        gpt_researcher__retrievers__serpapi [label="gpt_researcher.retrievers.serpapi", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="37"];
+        gpt_researcher__retrievers__serpapi__serpapi [label="gpt_researcher.retrievers.serpapi.serpapi", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="38"];
+        gpt_researcher__retrievers__serper [label="gpt_researcher.retrievers.serper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="39"];
+        gpt_researcher__retrievers__serper__serper [label="gpt_researcher.retrievers.serper.serper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="40"];
+        gpt_researcher__retrievers__tavily [label="gpt_researcher.retrievers.tavily", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="41"];
+        gpt_researcher__retrievers__tavily__tavily_search [label="gpt_researcher.retrievers.tavily.tavily_search", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="42"];
+        gpt_researcher__retrievers__utils [label="gpt_researcher.retrievers.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="43"];
+        gpt_researcher__scraper [label="gpt_researcher.scraper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="44"];
+        gpt_researcher__scraper__arxiv [label="gpt_researcher.scraper.arxiv", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="45"];
+        gpt_researcher__scraper__arxiv__arxiv [label="gpt_researcher.scraper.arxiv.arxiv", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="46"];
+        gpt_researcher__scraper__beautiful_soup [label="gpt_researcher.scraper.beautiful_soup", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="47"];
+        gpt_researcher__scraper__beautiful_soup__beautiful_sou [label="gpt_researcher.scraper.beautiful_soup.beautiful_sou", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="48"];
+        gpt_researcher__scraper__pymupdf [label="gpt_researcher.scraper.pymupdf", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="49"];
+        gpt_researcher__scraper__pymupdf__pymupdf [label="gpt_researcher.scraper.pymupdf.pymupdf", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="50"];
+        gpt_researcher__scraper__scraper [label="gpt_researcher.scraper.scraper", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="51"];
+        gpt_researcher__scraper__web_base_loader [label="gpt_researcher.scraper.web_base_loader", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="52"];
+        gpt_researcher__scraper__web_base_loader__web_base_loader [label="gpt_researcher.scraper.web_base_loader.web_base_loader", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="53"];
+        gpt_researcher__utils [label="gpt_researcher.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="54"];
+        gpt_researcher__utils__costs [label="gpt_researcher.utils.costs", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="55"];
+        gpt_researcher__utils__enum [label="gpt_researcher.utils.enum", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="56"];
+        gpt_researcher__utils__llm [label="gpt_researcher.utils.llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="57"];
+        gpt_researcher__utils__validators [label="gpt_researcher.utils.validators", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="58"];
+        subgraph cluster_gpt_researcher__config__config {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.config.config"];
+            gpt_researcher__config__config__Config [label="Config\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/config/config.py:6)", style="filled", fillcolor="#ff8465b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_gpt_researcher__config__config__Config {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.config.config.Config"];
+            gpt_researcher__config__config__Config____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/config/config.py:9)", style="filled", fillcolor="#ff5b32b2", fontcolor="#000000", group="2"];
+            gpt_researcher__config__config__Config__load_config_file [label="load_config_file\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/config/config.py:64)", style="filled", fillcolor="#ff5b32b2", fontcolor="#000000", group="2"];
+            gpt_researcher__config__config__Config__parse_retrievers [label="parse_retrievers\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/config/config.py:47)", style="filled", fillcolor="#ff5b32b2", fontcolor="#000000", group="2"];
+            gpt_researcher__config__config__Config__validate_doc_path [label="validate_doc_path\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/config/config.py:60)", style="filled", fillcolor="#ff5b32b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_gpt_researcher__context__compression {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.context.compression"];
+            gpt_researcher__context__compression__ContextCompressor [label="ContextCompressor\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:16)", style="filled", fillcolor="#ffa365b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__WrittenContentCompressor [label="WrittenContentCompressor\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:60)", style="filled", fillcolor="#ffa365b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_gpt_researcher__context__compression__ContextCompressor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.context.compression.ContextCompressor"];
+            gpt_researcher__context__compression__ContextCompressor____get_contextual_retriever [label="__get_contextual_retriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:24)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__ContextCompressor____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:17)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__ContextCompressor____pretty_print_docs [label="__pretty_print_docs\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:39)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__ContextCompressor__async_get_context [label="async_get_context\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:52)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__ContextCompressor__get_context [label="get_context\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:45)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_gpt_researcher__context__compression__WrittenContentCompressor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.context.compression.WrittenContentCompressor"];
+            gpt_researcher__context__compression__WrittenContentCompressor____get_contextual_retriever [label="__get_contextual_retriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:67)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__WrittenContentCompressor____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:61)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__WrittenContentCompressor____pretty_docs_list [label="__pretty_docs_list\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:82)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__WrittenContentCompressor__async_get_context [label="async_get_context\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:92)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+            gpt_researcher__context__compression__WrittenContentCompressor__get_context [label="get_context\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/compression.py:85)", style="filled", fillcolor="#ff8432b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_gpt_researcher__context__retriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.context.retriever"];
+            gpt_researcher__context__retriever__SearchAPIRetriever [label="SearchAPIRetriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/retriever.py:10)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="5"];
+            gpt_researcher__context__retriever__SectionRetriever [label="SectionRetriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/retriever.py:31)", style="filled", fillcolor="#ffb265b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_gpt_researcher__context__retriever__SearchAPIRetriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.context.retriever.SearchAPIRetriever"];
+            gpt_researcher__context__retriever__SearchAPIRetriever___get_relevant_documents [label="_get_relevant_documents\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/retriever.py:14)", style="filled", fillcolor="#ff9932b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_gpt_researcher__context__retriever__SectionRetriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.context.retriever.SectionRetriever"];
+            gpt_researcher__context__retriever__SectionRetriever___get_relevant_documents [label="_get_relevant_documents\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/context/retriever.py:48)", style="filled", fillcolor="#ff9932b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_gpt_researcher__document__document {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.document.document"];
+            gpt_researcher__document__document__DocumentLoader [label="DocumentLoader\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/document.py:15)", style="filled", fillcolor="#ffd165b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_gpt_researcher__document__document__DocumentLoader {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.document.document.DocumentLoader"];
+            gpt_researcher__document__document__DocumentLoader____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/document.py:17)", style="filled", fillcolor="#ffc132b2", fontcolor="#000000", group="7"];
+            gpt_researcher__document__document__DocumentLoader___load_document [label="_load_document\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/document.py:43)", style="filled", fillcolor="#ffc132b2", fontcolor="#000000", group="7"];
+            gpt_researcher__document__document__DocumentLoader__load [label="load\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/document.py:20)", style="filled", fillcolor="#ffc132b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_gpt_researcher__document__langchain_document {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.document.langchain_document"];
+            gpt_researcher__document__langchain_document__LangChainDocumentLoader [label="LangChainDocumentLoader\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/langchain_document.py:10)", style="filled", fillcolor="#ffe065b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_gpt_researcher__document__langchain_document__LangChainDocumentLoader {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.document.langchain_document.LangChainDocumentLoader"];
+            gpt_researcher__document__langchain_document__LangChainDocumentLoader____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/langchain_document.py:12)", style="filled", fillcolor="#ffd632b2", fontcolor="#000000", group="8"];
+            gpt_researcher__document__langchain_document__LangChainDocumentLoader__load [label="load\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/document/langchain_document.py:15)", style="filled", fillcolor="#ffd632b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_gpt_researcher__llm_provider__generic__base {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.llm_provider.generic.base"];
+            gpt_researcher__llm_provider__generic__base__GenericLLMProvider [label="GenericLLMProvider\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/llm_provider/generic/base.py:7)", style="filled", fillcolor="#eaff32b2", fontcolor="#000000", group="11"];
+            gpt_researcher__llm_provider__generic__base___check_pkg [label="_check_pkg\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/llm_provider/generic/base.py:141)", style="filled", fillcolor="#eaff32b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_gpt_researcher__llm_provider__generic__base__GenericLLMProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.llm_provider.generic.base.GenericLLMProvider"];
+            gpt_researcher__llm_provider__generic__base__GenericLLMProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/llm_provider/generic/base.py:9)", style="filled", fillcolor="#e5ff00b2", fontcolor="#000000", group="11"];
+            gpt_researcher__llm_provider__generic__base__GenericLLMProvider__from_provider [label="from_provider\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/llm_provider/generic/base.py:13)", style="filled", fillcolor="#e5ff00b2", fontcolor="#000000", group="11"];
+            gpt_researcher__llm_provider__generic__base__GenericLLMProvider__get_chat_response [label="get_chat_response\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/llm_provider/generic/base.py:94)", style="filled", fillcolor="#e5ff00b2", fontcolor="#000000", group="11"];
+            gpt_researcher__llm_provider__generic__base__GenericLLMProvider__stream_response [label="stream_response\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/llm_provider/generic/base.py:104)", style="filled", fillcolor="#e5ff00b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_gpt_researcher__master__actions {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.actions"];
+            gpt_researcher__master__actions__add_source_urls [label="add_source_urls\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:607)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__choose_agent [label="choose_agent\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:119)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__extract_headers [label="extract_headers\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:511)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__extract_json_with_regex [label="extract_json_with_regex\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:183)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__extract_sections [label="extract_sections\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:547)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__generate_draft_section_titles [label="generate_draft_section_titles\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:361)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__generate_report [label="generate_report\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:391)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__get_default_retriever [label="get_default_retriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:113)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__get_report_introduction [label="get_report_introduction\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:480)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__get_retriever [label="get_retriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:15)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__get_retrievers [label="get_retrievers\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:81)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__get_sub_queries [label="get_sub_queries\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:190)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__handle_json_error [label="handle_json_error\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:160)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__scrape_urls [label="scrape_urls\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:240)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__stream_output [label="stream_output\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:454)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__summarize [label="summarize\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:266)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__summarize_url [label="summarize_url\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:325)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__table_of_contents [label="table_of_contents\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:579)", style="filled", fillcolor="#d1ff65b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_gpt_researcher__master__actions__summarize {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.actions.summarize"];
+            gpt_researcher__master__actions__summarize__chunk_content [label="chunk_content\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:300)", style="filled", fillcolor="#c1ff32b2", fontcolor="#000000", group="13"];
+            gpt_researcher__master__actions__summarize__handle_task [label="handle_task\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:288)", style="filled", fillcolor="#c1ff32b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_gpt_researcher__master__actions__table_of_contents {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.actions.table_of_contents"];
+            gpt_researcher__master__actions__table_of_contents__generate_table_of_contents [label="generate_table_of_contents\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/actions.py:582)", style="filled", fillcolor="#c1ff32b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_gpt_researcher__master__agent {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.agent"];
+            gpt_researcher__master__agent__GPTResearcher [label="GPTResearcher\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:15)", style="filled", fillcolor="#c1ff65b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_gpt_researcher__master__agent__GPTResearcher {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.agent.GPTResearcher"];
+            gpt_researcher__master__agent__GPTResearcher____get_context_by_search [label="__get_context_by_search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:238)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____get_context_by_urls [label="__get_context_by_urls\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:222)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____get_new_urls [label="__get_new_urls\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:315)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query [label="__get_similar_content_by_query\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:384)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query [label="__get_similar_written_contents_by_query\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:499)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:20)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____process_sub_query [label="__process_sub_query\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:279)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query [label="__scrape_data_by_query\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:338)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__add_costs [label="add_costs\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:417)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__conduct_research [label="conduct_research\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:92)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__get_costs [label="get_costs\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:411)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles [label="get_draft_section_titles\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:470)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__get_research_context [label="get_research_context\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:408)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles [label="get_similar_written_contents_by_draft_section_titles\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:535)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__get_source_urls [label="get_source_urls\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:405)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__get_subtopics [label="get_subtopics\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:439)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__set_verbose [label="set_verbose\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:414)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__write_introduction [label="write_introduction\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:426)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+            gpt_researcher__master__agent__GPTResearcher__write_report [label="write_report\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:160)", style="filled", fillcolor="#adff32b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.agent.GPTResearcher.get_similar_written_contents_by_draft_section_titles"];
+            gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles__process_query [label="process_query\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/agent.py:556)", style="filled", fillcolor="#98ff00b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_gpt_researcher__master__prompts {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.master.prompts"];
+            gpt_researcher__master__prompts__auto_agent_instructions [label="auto_agent_instructions\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:163)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_custom_report_prompt [label="generate_custom_report_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:128)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_draft_titles_prompt [label="generate_draft_titles_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:305)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_outline_report_prompt [label="generate_outline_report_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:134)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_report_introduction [label="generate_report_introduction\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:338)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_report_prompt [label="generate_report_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:38)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_resource_report_prompt [label="generate_resource_report_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:90)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_search_queries_prompt [label="generate_search_queries_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:7)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_subtopic_report_prompt [label="generate_subtopic_report_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:233)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_subtopics_prompt [label="generate_subtopics_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:210)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__generate_summary_prompt [label="generate_summary_prompt\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:191)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__get_prompt_by_report_type [label="get_prompt_by_report_type\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:358)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+            gpt_researcher__master__prompts__get_report_by_type [label="get_report_by_type\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/master/prompts.py:152)", style="filled", fillcolor="#b2ff65b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_gpt_researcher__memory__embeddings {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.memory.embeddings"];
+            gpt_researcher__memory__embeddings__Memory [label="Memory\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/memory/embeddings.py:5)", style="filled", fillcolor="#93ff65b2", fontcolor="#000000", group="17"];
+        }
+        subgraph cluster_gpt_researcher__memory__embeddings__Memory {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.memory.embeddings.Memory"];
+            gpt_researcher__memory__embeddings__Memory____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/memory/embeddings.py:6)", style="filled", fillcolor="#70ff32b2", fontcolor="#000000", group="17"];
+            gpt_researcher__memory__embeddings__Memory__get_embeddings [label="get_embeddings\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/memory/embeddings.py:36)", style="filled", fillcolor="#70ff32b2", fontcolor="#000000", group="17"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__arxiv__arxiv {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.arxiv.arxiv"];
+            gpt_researcher__retrievers__arxiv__arxiv__ArxivSearch [label="ArxivSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/arxiv/arxiv.py:4)", style="filled", fillcolor="#32ff32b2", fontcolor="#000000", group="20"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__arxiv__arxiv__ArxivSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.arxiv.arxiv.ArxivSearch"];
+            gpt_researcher__retrievers__arxiv__arxiv__ArxivSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/arxiv/arxiv.py:8)", style="filled", fillcolor="#00ff00b2", fontcolor="#000000", group="20"];
+            gpt_researcher__retrievers__arxiv__arxiv__ArxivSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/arxiv/arxiv.py:15)", style="filled", fillcolor="#00ff00b2", fontcolor="#000000", group="20"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__bing__bing {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.bing.bing"];
+            gpt_researcher__retrievers__bing__bing__BingSearch [label="BingSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/bing/bing.py:9)", style="filled", fillcolor="#32ff5bb2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__bing__bing__BingSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.bing.bing.BingSearch"];
+            gpt_researcher__retrievers__bing__bing__BingSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/bing/bing.py:13)", style="filled", fillcolor="#00ff32b2", fontcolor="#000000", group="22"];
+            gpt_researcher__retrievers__bing__bing__BingSearch__get_api_key [label="get_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/bing/bing.py:22)", style="filled", fillcolor="#00ff32b2", fontcolor="#000000", group="22"];
+            gpt_researcher__retrievers__bing__bing__BingSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/bing/bing.py:34)", style="filled", fillcolor="#00ff32b2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__custom__custom {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.custom.custom"];
+            gpt_researcher__retrievers__custom__custom__CustomRetriever [label="CustomRetriever\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/custom/custom.py:6)", style="filled", fillcolor="#32ff84b2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__custom__custom__CustomRetriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.custom.custom.CustomRetriever"];
+            gpt_researcher__retrievers__custom__custom__CustomRetriever____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/custom/custom.py:11)", style="filled", fillcolor="#00ff66b2", fontcolor="#000000", group="24"];
+            gpt_researcher__retrievers__custom__custom__CustomRetriever___populate_params [label="_populate_params\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/custom/custom.py:19)", style="filled", fillcolor="#00ff66b2", fontcolor="#000000", group="24"];
+            gpt_researcher__retrievers__custom__custom__CustomRetriever__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/custom/custom.py:29)", style="filled", fillcolor="#00ff66b2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__duckduckgo__duckduckgo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.duckduckgo.duckduckgo"];
+            gpt_researcher__retrievers__duckduckgo__duckduckgo__Duckduckgo [label="Duckduckgo\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/duckduckgo/duckduckgo.py:5)", style="filled", fillcolor="#32ffadb2", fontcolor="#000000", group="26"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__duckduckgo__duckduckgo__Duckduckgo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.duckduckgo.duckduckgo.Duckduckgo"];
+            gpt_researcher__retrievers__duckduckgo__duckduckgo__Duckduckgo____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/duckduckgo/duckduckgo.py:9)", style="filled", fillcolor="#00ff99b2", fontcolor="#000000", group="26"];
+            gpt_researcher__retrievers__duckduckgo__duckduckgo__Duckduckgo__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/duckduckgo/duckduckgo.py:15)", style="filled", fillcolor="#00ff99b2", fontcolor="#000000", group="26"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__exa__exa {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.exa.exa"];
+            gpt_researcher__retrievers__exa__exa__ExaSearch [label="ExaSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/exa/exa.py:5)", style="filled", fillcolor="#32ffd6b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__exa__exa__ExaSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.exa.exa.ExaSearch"];
+            gpt_researcher__retrievers__exa__exa__ExaSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/exa/exa.py:10)", style="filled", fillcolor="#00ffccb2", fontcolor="#000000", group="28"];
+            gpt_researcher__retrievers__exa__exa__ExaSearch___retrieve_api_key [label="_retrieve_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/exa/exa.py:23)", style="filled", fillcolor="#00ffccb2", fontcolor="#000000", group="28"];
+            gpt_researcher__retrievers__exa__exa__ExaSearch__find_similar [label="find_similar\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/exa/exa.py:66)", style="filled", fillcolor="#00ffccb2", fontcolor="#000000", group="28"];
+            gpt_researcher__retrievers__exa__exa__ExaSearch__get_contents [label="get_contents\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/exa/exa.py:85)", style="filled", fillcolor="#00ffccb2", fontcolor="#000000", group="28"];
+            gpt_researcher__retrievers__exa__exa__ExaSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/exa/exa.py:40)", style="filled", fillcolor="#00ffccb2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__google__google {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.google.google"];
+            gpt_researcher__retrievers__google__google__GoogleSearch [label="GoogleSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/google/google.py:9)", style="filled", fillcolor="#32feffb2", fontcolor="#000000", group="30"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__google__google__GoogleSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.google.google.GoogleSearch"];
+            gpt_researcher__retrievers__google__google__GoogleSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/google/google.py:13)", style="filled", fillcolor="#00feffb2", fontcolor="#000000", group="30"];
+            gpt_researcher__retrievers__google__google__GoogleSearch__get_api_key [label="get_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/google/google.py:24)", style="filled", fillcolor="#00feffb2", fontcolor="#000000", group="30"];
+            gpt_researcher__retrievers__google__google__GoogleSearch__get_cx_key [label="get_cx_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/google/google.py:38)", style="filled", fillcolor="#00feffb2", fontcolor="#000000", group="30"];
+            gpt_researcher__retrievers__google__google__GoogleSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/google/google.py:52)", style="filled", fillcolor="#00feffb2", fontcolor="#000000", group="30"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__pubmed_central__pubmed_central {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.pubmed_central.pubmed_central"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch [label="PubMedCentralSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:7)", style="filled", fillcolor="#32d6ffb2", fontcolor="#000000", group="32"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.pubmed_central.pubmed_central.PubMedCentralSearch"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:12)", style="filled", fillcolor="#00cbffb2", fontcolor="#000000", group="32"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch___retrieve_api_key [label="_retrieve_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:21)", style="filled", fillcolor="#00cbffb2", fontcolor="#000000", group="32"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__fetch [label="fetch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:83)", style="filled", fillcolor="#00cbffb2", fontcolor="#000000", group="32"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__has_body_content [label="has_body_content\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:107)", style="filled", fillcolor="#00cbffb2", fontcolor="#000000", group="32"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__parse_xml [label="parse_xml\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:134)", style="filled", fillcolor="#00cbffb2", fontcolor="#000000", group="32"];
+            gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/pubmed_central/pubmed_central.py:38)", style="filled", fillcolor="#00cbffb2", fontcolor="#000000", group="32"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__searx__searx {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.searx.searx"];
+            gpt_researcher__retrievers__searx__searx__SearxSearch [label="SearxSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/searx/searx.py:8)", style="filled", fillcolor="#32adffb2", fontcolor="#000000", group="34"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__searx__searx__SearxSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.searx.searx.SearxSearch"];
+            gpt_researcher__retrievers__searx__searx__SearxSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/searx/searx.py:12)", style="filled", fillcolor="#0098ffb2", fontcolor="#000000", group="34"];
+            gpt_researcher__retrievers__searx__searx__SearxSearch__get_api_key [label="get_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/searx/searx.py:21)", style="filled", fillcolor="#0098ffb2", fontcolor="#000000", group="34"];
+            gpt_researcher__retrievers__searx__searx__SearxSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/searx/searx.py:35)", style="filled", fillcolor="#0098ffb2", fontcolor="#000000", group="34"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__semantic_scholar__semantic_scholar {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.semantic_scholar.semantic_scholar"];
+            gpt_researcher__retrievers__semantic_scholar__semantic_scholar__SemanticScholarSearch [label="SemanticScholarSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/semantic_scholar/semantic_scholar.py:6)", style="filled", fillcolor="#3284ffb2", fontcolor="#000000", group="36"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__semantic_scholar__semantic_scholar__SemanticScholarSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.semantic_scholar.semantic_scholar.SemanticScholarSearch"];
+            gpt_researcher__retrievers__semantic_scholar__semantic_scholar__SemanticScholarSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/semantic_scholar/semantic_scholar.py:14)", style="filled", fillcolor="#0065ffb2", fontcolor="#000000", group="36"];
+            gpt_researcher__retrievers__semantic_scholar__semantic_scholar__SemanticScholarSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/semantic_scholar/semantic_scholar.py:25)", style="filled", fillcolor="#0065ffb2", fontcolor="#000000", group="36"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__serpapi__serpapi {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.serpapi.serpapi"];
+            gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch [label="SerpApiSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serpapi/serpapi.py:9)", style="filled", fillcolor="#325bffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.serpapi.serpapi.SerpApiSearch"];
+            gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serpapi/serpapi.py:13)", style="filled", fillcolor="#0032ffb2", fontcolor="#000000", group="38"];
+            gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch__get_api_key [label="get_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serpapi/serpapi.py:22)", style="filled", fillcolor="#0032ffb2", fontcolor="#000000", group="38"];
+            gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serpapi/serpapi.py:35)", style="filled", fillcolor="#0032ffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__serper__serper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.serper.serper"];
+            gpt_researcher__retrievers__serper__serper__SerperSearch [label="SerperSearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serper/serper.py:9)", style="filled", fillcolor="#3232ffb2", fontcolor="#000000", group="40"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__serper__serper__SerperSearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.serper.serper.SerperSearch"];
+            gpt_researcher__retrievers__serper__serper__SerperSearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serper/serper.py:13)", style="filled", fillcolor="#0000ffb2", fontcolor="#000000", group="40"];
+            gpt_researcher__retrievers__serper__serper__SerperSearch__get_api_key [label="get_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serper/serper.py:22)", style="filled", fillcolor="#0000ffb2", fontcolor="#000000", group="40"];
+            gpt_researcher__retrievers__serper__serper__SerperSearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/serper/serper.py:35)", style="filled", fillcolor="#0000ffb2", fontcolor="#000000", group="40"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__tavily__tavily_search {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.tavily.tavily_search"];
+            gpt_researcher__retrievers__tavily__tavily_search__TavilySearch [label="TavilySearch\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/tavily/tavily_search.py:10)", style="filled", fillcolor="#5b32ffb2", fontcolor="#000000", group="42"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__tavily__tavily_search__TavilySearch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.tavily.tavily_search.TavilySearch"];
+            gpt_researcher__retrievers__tavily__tavily_search__TavilySearch____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/tavily/tavily_search.py:14)", style="filled", fillcolor="#3200ffb2", fontcolor="#000000", group="42"];
+            gpt_researcher__retrievers__tavily__tavily_search__TavilySearch___search [label="_search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/tavily/tavily_search.py:43)", style="filled", fillcolor="#3200ffb2", fontcolor="#000000", group="42"];
+            gpt_researcher__retrievers__tavily__tavily_search__TavilySearch__get_api_key [label="get_api_key\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/tavily/tavily_search.py:29)", style="filled", fillcolor="#3200ffb2", fontcolor="#000000", group="42"];
+            gpt_researcher__retrievers__tavily__tavily_search__TavilySearch__search [label="search\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/tavily/tavily_search.py:82)", style="filled", fillcolor="#3200ffb2", fontcolor="#000000", group="42"];
+        }
+        subgraph cluster_gpt_researcher__retrievers__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.retrievers.utils"];
+            gpt_researcher__retrievers__utils__check_pkg [label="check_pkg\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/retrievers/utils.py:4)", style="filled", fillcolor="#9365ffb2", fontcolor="#000000", group="43"];
+        }
+        subgraph cluster_gpt_researcher__scraper__arxiv__arxiv {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.arxiv.arxiv"];
+            gpt_researcher__scraper__arxiv__arxiv__ArxivScraper [label="ArxivScraper\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/arxiv/arxiv.py:4)", style="filled", fillcolor="#ad32ffb2", fontcolor="#000000", group="46"];
+        }
+        subgraph cluster_gpt_researcher__scraper__arxiv__arxiv__ArxivScraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.arxiv.arxiv.ArxivScraper"];
+            gpt_researcher__scraper__arxiv__arxiv__ArxivScraper____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/arxiv/arxiv.py:6)", style="filled", fillcolor="#9900ffb2", fontcolor="#000000", group="46"];
+            gpt_researcher__scraper__arxiv__arxiv__ArxivScraper__scrape [label="scrape\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/arxiv/arxiv.py:10)", style="filled", fillcolor="#9900ffb2", fontcolor="#000000", group="46"];
+        }
+        subgraph cluster_gpt_researcher__scraper__beautiful_soup__beautiful_sou {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.beautiful_soup.beautiful_sou"];
+            gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper [label="BeautifulSoupScraper\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/beautiful_soup/beautiful_soup.py:4)", style="filled", fillcolor="#d632ffb2", fontcolor="#000000", group="48"];
+        }
+        subgraph cluster_gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.beautiful_soup.beautiful_sou.BeautifulSoupScraper"];
+            gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/beautiful_soup/beautiful_soup.py:6)", style="filled", fillcolor="#cb00ffb2", fontcolor="#000000", group="48"];
+            gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper__get_content_from_url [label="get_content_from_url\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/beautiful_soup/beautiful_soup.py:40)", style="filled", fillcolor="#cb00ffb2", fontcolor="#000000", group="48"];
+            gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper__scrape [label="scrape\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/beautiful_soup/beautiful_soup.py:10)", style="filled", fillcolor="#cb00ffb2", fontcolor="#000000", group="48"];
+        }
+        subgraph cluster_gpt_researcher__scraper__pymupdf__pymupdf {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.pymupdf.pymupdf"];
+            gpt_researcher__scraper__pymupdf__pymupdf__PyMuPDFScraper [label="PyMuPDFScraper\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/pymupdf/pymupdf.py:4)", style="filled", fillcolor="#ff32feb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_gpt_researcher__scraper__pymupdf__pymupdf__PyMuPDFScraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.pymupdf.pymupdf.PyMuPDFScraper"];
+            gpt_researcher__scraper__pymupdf__pymupdf__PyMuPDFScraper____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/pymupdf/pymupdf.py:6)", style="filled", fillcolor="#ff00feb2", fontcolor="#000000", group="50"];
+            gpt_researcher__scraper__pymupdf__pymupdf__PyMuPDFScraper__scrape [label="scrape\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/pymupdf/pymupdf.py:10)", style="filled", fillcolor="#ff00feb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_gpt_researcher__scraper__scraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.scraper"];
+            gpt_researcher__scraper__scraper__Scraper [label="Scraper\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/scraper.py:14)", style="filled", fillcolor="#ff65efb2", fontcolor="#000000", group="51"];
+        }
+        subgraph cluster_gpt_researcher__scraper__scraper__Scraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.scraper.Scraper"];
+            gpt_researcher__scraper__scraper__Scraper____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/scraper.py:19)", style="filled", fillcolor="#ff32eab2", fontcolor="#000000", group="51"];
+            gpt_researcher__scraper__scraper__Scraper__extract_data_from_link [label="extract_data_from_link\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/scraper.py:40)", style="filled", fillcolor="#ff32eab2", fontcolor="#000000", group="51"];
+            gpt_researcher__scraper__scraper__Scraper__get_scraper [label="get_scraper\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/scraper.py:56)", style="filled", fillcolor="#ff32eab2", fontcolor="#000000", group="51"];
+            gpt_researcher__scraper__scraper__Scraper__run [label="run\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/scraper.py:30)", style="filled", fillcolor="#ff32eab2", fontcolor="#000000", group="51"];
+        }
+        subgraph cluster_gpt_researcher__scraper__web_base_loader__web_base_loader {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.web_base_loader.web_base_loader"];
+            gpt_researcher__scraper__web_base_loader__web_base_loader__WebBaseLoaderScraper [label="WebBaseLoaderScraper\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/web_base_loader/web_base_loader.py:2)", style="filled", fillcolor="#ff32c1b2", fontcolor="#000000", group="53"];
+        }
+        subgraph cluster_gpt_researcher__scraper__web_base_loader__web_base_loader__WebBaseLoaderScraper {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.scraper.web_base_loader.web_base_loader.WebBaseLoaderScraper"];
+            gpt_researcher__scraper__web_base_loader__web_base_loader__WebBaseLoaderScraper____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/web_base_loader/web_base_loader.py:4)", style="filled", fillcolor="#ff00b2b2", fontcolor="#000000", group="53"];
+            gpt_researcher__scraper__web_base_loader__web_base_loader__WebBaseLoaderScraper__scrape [label="scrape\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/scraper/web_base_loader/web_base_loader.py:8)", style="filled", fillcolor="#ff00b2b2", fontcolor="#000000", group="53"];
+        }
+        subgraph cluster_gpt_researcher__utils__costs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.utils.costs"];
+            gpt_researcher__utils__costs__estimate_embedding_cost [label="estimate_embedding_cost\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/costs.py:21)", style="filled", fillcolor="#ff65b2b2", fontcolor="#000000", group="55"];
+            gpt_researcher__utils__costs__estimate_llm_cost [label="estimate_llm_cost\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/costs.py:12)", style="filled", fillcolor="#ff65b2b2", fontcolor="#000000", group="55"];
+        }
+        subgraph cluster_gpt_researcher__utils__enum {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.utils.enum"];
+            gpt_researcher__utils__enum__ReportSource [label="ReportSource\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/enum.py:13)", style="filled", fillcolor="#ff65a3b2", fontcolor="#000000", group="56"];
+            gpt_researcher__utils__enum__ReportType [label="ReportType\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/enum.py:4)", style="filled", fillcolor="#ff65a3b2", fontcolor="#000000", group="56"];
+            gpt_researcher__utils__enum__Tone [label="Tone\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/enum.py:21)", style="filled", fillcolor="#ff65a3b2", fontcolor="#000000", group="56"];
+        }
+        subgraph cluster_gpt_researcher__utils__llm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.utils.llm"];
+            gpt_researcher__utils__llm__construct_subtopics [label="construct_subtopics\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/llm.py:75)", style="filled", fillcolor="#ff6593b2", fontcolor="#000000", group="57"];
+            gpt_researcher__utils__llm__create_chat_completion [label="create_chat_completion\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/llm.py:22)", style="filled", fillcolor="#ff6593b2", fontcolor="#000000", group="57"];
+            gpt_researcher__utils__llm__get_llm [label="get_llm\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/llm.py:17)", style="filled", fillcolor="#ff6593b2", fontcolor="#000000", group="57"];
+        }
+        subgraph cluster_gpt_researcher__utils__validators {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gpt_researcher.utils.validators"];
+            gpt_researcher__utils__validators__Subtopic [label="Subtopic\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/validators.py:5)", style="filled", fillcolor="#ff6584b2", fontcolor="#000000", group="58"];
+            gpt_researcher__utils__validators__Subtopics [label="Subtopics\n(/home/sanjay/Development/explore/gpt-researcher/gpt_researcher/utils/validators.py:8)", style="filled", fillcolor="#ff6584b2", fontcolor="#000000", group="58"];
+        }
+    }
+        gpt_researcher__retrievers__tavily__tavily_search__TavilySearch____init__ -> gpt_researcher__retrievers__tavily__tavily_search__TavilySearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__tavily__tavily_search__TavilySearch___search -> gpt_researcher__retrievers__tavily__tavily_search__TavilySearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__tavily__tavily_search__TavilySearch__search -> gpt_researcher__retrievers__tavily__tavily_search__TavilySearch___search [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch____init__ -> gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch___retrieve_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__search -> gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch___retrieve_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__search -> gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__has_body_content [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__search -> gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__fetch [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__search -> gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__parse_xml [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch__fetch -> gpt_researcher__retrievers__pubmed_central__pubmed_central__PubMedCentralSearch___retrieve_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__searx__searx__SearxSearch____init__ -> gpt_researcher__retrievers__searx__searx__SearxSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__serper__serper__SerperSearch____init__ -> gpt_researcher__retrievers__serper__serper__SerperSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__serper__serper__SerperSearch__search -> gpt_researcher__retrievers__serper__serper__SerperSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__duckduckgo__duckduckgo -> gpt_researcher__retrievers__utils__check_pkg [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__duckduckgo__duckduckgo__Duckduckgo____init__ -> gpt_researcher__retrievers__utils__check_pkg [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__exa__exa -> gpt_researcher__retrievers__utils__check_pkg [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__exa__exa__ExaSearch____init__ -> gpt_researcher__retrievers__exa__exa__ExaSearch___retrieve_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__exa__exa__ExaSearch____init__ -> gpt_researcher__retrievers__utils__check_pkg [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__bing__bing__BingSearch____init__ -> gpt_researcher__retrievers__bing__bing__BingSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__bing__bing__BingSearch__search -> gpt_researcher__retrievers__bing__bing__BingSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__custom__custom__CustomRetriever____init__ -> gpt_researcher__retrievers__custom__custom__CustomRetriever___populate_params [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__custom__custom__CustomRetriever__search -> gpt_researcher__retrievers__custom__custom__CustomRetriever___populate_params [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__google__google__GoogleSearch____init__ -> gpt_researcher__retrievers__google__google__GoogleSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__google__google__GoogleSearch____init__ -> gpt_researcher__retrievers__google__google__GoogleSearch__get_cx_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__google__google__GoogleSearch__search -> gpt_researcher__retrievers__google__google__GoogleSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__google__google__GoogleSearch__search -> gpt_researcher__retrievers__google__google__GoogleSearch__get_cx_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch____init__ -> gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch__search -> gpt_researcher__retrievers__serpapi__serpapi__SerpApiSearch__get_api_key [style="solid",  color="#000000"];
+        gpt_researcher__config__config__Config____init__ -> gpt_researcher__config__config__Config__parse_retrievers [style="solid",  color="#000000"];
+        gpt_researcher__config__config__Config____init__ -> gpt_researcher__config__config__Config__load_config_file [style="solid",  color="#000000"];
+        gpt_researcher__config__config__Config____init__ -> gpt_researcher__config__config__Config__validate_doc_path [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm -> gpt_researcher__utils__validators__Subtopics [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm -> gpt_researcher__utils__costs__estimate_llm_cost [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm -> gpt_researcher__master__prompts__generate_subtopics_prompt [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm__create_chat_completion -> gpt_researcher__utils__costs__estimate_llm_cost [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm__create_chat_completion -> gpt_researcher__utils__llm__get_llm [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm__construct_subtopics -> gpt_researcher__utils__validators__Subtopics [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm__construct_subtopics -> gpt_researcher__master__prompts__generate_subtopics_prompt [style="solid",  color="#000000"];
+        gpt_researcher__utils__llm__construct_subtopics -> gpt_researcher__utils__llm__get_llm [style="solid",  color="#000000"];
+        gpt_researcher__document__document__DocumentLoader__load -> gpt_researcher__document__document__DocumentLoader___load_document [style="solid",  color="#000000"];
+        gpt_researcher__context__compression -> gpt_researcher__utils__costs__estimate_embedding_cost [style="solid",  color="#000000"];
+        gpt_researcher__context__compression -> gpt_researcher__context__retriever__SearchAPIRetriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression -> gpt_researcher__context__retriever__SectionRetriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor____get_contextual_retriever -> gpt_researcher__context__retriever__SearchAPIRetriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__get_context -> gpt_researcher__utils__costs__estimate_embedding_cost [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__get_context -> gpt_researcher__context__compression__ContextCompressor____init__ [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__get_context -> gpt_researcher__context__compression__ContextCompressor____get_contextual_retriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__get_context -> gpt_researcher__context__compression__ContextCompressor____pretty_print_docs [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__async_get_context -> gpt_researcher__utils__costs__estimate_embedding_cost [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__async_get_context -> gpt_researcher__context__compression__ContextCompressor____init__ [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__async_get_context -> gpt_researcher__context__compression__ContextCompressor____get_contextual_retriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__ContextCompressor__async_get_context -> gpt_researcher__context__compression__ContextCompressor____pretty_print_docs [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor____get_contextual_retriever -> gpt_researcher__context__retriever__SectionRetriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__get_context -> gpt_researcher__utils__costs__estimate_embedding_cost [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__get_context -> gpt_researcher__context__compression__WrittenContentCompressor____init__ [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__get_context -> gpt_researcher__context__compression__WrittenContentCompressor____get_contextual_retriever [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__async_get_context -> gpt_researcher__utils__costs__estimate_embedding_cost [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__async_get_context -> gpt_researcher__context__compression__WrittenContentCompressor____pretty_docs_list [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__async_get_context -> gpt_researcher__context__compression__WrittenContentCompressor____init__ [style="solid",  color="#000000"];
+        gpt_researcher__context__compression__WrittenContentCompressor__async_get_context -> gpt_researcher__context__compression__WrittenContentCompressor____get_contextual_retriever [style="solid",  color="#000000"];
+        gpt_researcher__llm_provider__generic__base__GenericLLMProvider__from_provider -> gpt_researcher__llm_provider__generic__base___check_pkg [style="solid",  color="#000000"];
+        gpt_researcher__llm_provider__generic__base__GenericLLMProvider__from_provider -> gpt_researcher__llm_provider__generic__base__GenericLLMProvider____init__ [style="solid",  color="#000000"];
+        gpt_researcher__llm_provider__generic__base__GenericLLMProvider__get_chat_response -> gpt_researcher__llm_provider__generic__base__GenericLLMProvider__stream_response [style="solid",  color="#000000"];
+        gpt_researcher__scraper__scraper__Scraper__run -> gpt_researcher__scraper__scraper__Scraper__extract_data_from_link [style="solid",  color="#000000"];
+        gpt_researcher__scraper__scraper__Scraper__extract_data_from_link -> gpt_researcher__scraper__scraper__Scraper__get_scraper [style="solid",  color="#000000"];
+        gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper__scrape -> gpt_researcher__scraper__beautiful_soup__beautiful_sou__BeautifulSoupScraper__get_content_from_url [style="solid",  color="#000000"];
+        gpt_researcher__master__actions -> gpt_researcher__scraper__scraper__Scraper [style="solid",  color="#000000"];
+        gpt_researcher__master__actions -> gpt_researcher__utils__enum__Tone [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__get_retrievers -> gpt_researcher__master__actions__get_retriever [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__get_retrievers -> gpt_researcher__master__actions__get_default_retriever [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__choose_agent -> gpt_researcher__utils__llm__create_chat_completion [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__choose_agent -> gpt_researcher__master__actions__handle_json_error [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__choose_agent -> gpt_researcher__master__prompts__auto_agent_instructions [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__handle_json_error -> gpt_researcher__master__actions__extract_json_with_regex [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__get_sub_queries -> gpt_researcher__master__prompts__generate_search_queries_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__get_sub_queries -> gpt_researcher__utils__llm__create_chat_completion [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__scrape_urls -> gpt_researcher__scraper__scraper__Scraper [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__scrape_urls -> gpt_researcher__scraper__scraper__Scraper____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__summarize -> gpt_researcher__master__actions__summarize__handle_task [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__summarize -> gpt_researcher__master__actions__summarize__chunk_content [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__summarize__handle_task -> gpt_researcher__master__actions__summarize_url [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__summarize__handle_task -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__summarize_url -> gpt_researcher__master__prompts__generate_summary_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__summarize_url -> gpt_researcher__utils__llm__create_chat_completion [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__generate_draft_section_titles -> gpt_researcher__master__prompts__generate_draft_titles_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__generate_draft_section_titles -> gpt_researcher__utils__llm__create_chat_completion [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__generate_report -> gpt_researcher__master__prompts__get_prompt_by_report_type [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__generate_report -> gpt_researcher__utils__llm__create_chat_completion [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__get_report_introduction -> gpt_researcher__master__prompts__generate_report_introduction [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__get_report_introduction -> gpt_researcher__utils__llm__create_chat_completion [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__table_of_contents__generate_table_of_contents -> gpt_researcher__master__actions__table_of_contents__generate_table_of_contents [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__table_of_contents -> gpt_researcher__master__actions__table_of_contents__generate_table_of_contents [style="solid",  color="#000000"];
+        gpt_researcher__master__actions__table_of_contents -> gpt_researcher__master__actions__extract_headers [style="solid",  color="#000000"];
+        gpt_researcher__master__agent -> gpt_researcher__utils__enum__ReportType [style="solid",  color="#000000"];
+        gpt_researcher__master__agent -> gpt_researcher__context__compression__WrittenContentCompressor [style="solid",  color="#000000"];
+        gpt_researcher__master__agent -> gpt_researcher__utils__enum__ReportSource [style="solid",  color="#000000"];
+        gpt_researcher__master__agent -> gpt_researcher__context__compression__ContextCompressor [style="solid",  color="#000000"];
+        gpt_researcher__master__agent -> gpt_researcher__utils__enum__Tone [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____init__ -> gpt_researcher__master__actions__get_retrievers [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____init__ -> gpt_researcher__master__prompts__get_prompt_by_report_type [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____init__ -> gpt_researcher__utils__enum__Tone [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__agent__GPTResearcher____get_context_by_search [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__agent__GPTResearcher__get_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__agent__GPTResearcher [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__agent__GPTResearcher____get_context_by_urls [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__actions__choose_agent [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__conduct_research -> gpt_researcher__master__agent__GPTResearcher____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_report -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_report -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_report -> gpt_researcher__master__agent__GPTResearcher [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_report -> gpt_researcher__master__actions__generate_report [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_report -> gpt_researcher__master__actions__choose_agent [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_report -> gpt_researcher__master__agent__GPTResearcher____get_context_by_search [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_urls -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_urls -> gpt_researcher__master__agent__GPTResearcher____get_new_urls [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_urls -> gpt_researcher__master__actions__scrape_urls [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_urls -> gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_urls -> gpt_researcher__master__agent__GPTResearcher____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_search -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_search -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_search -> gpt_researcher__master__actions__choose_agent [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_search -> gpt_researcher__master__agent__GPTResearcher____process_sub_query [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_search -> gpt_researcher__master__actions__get_sub_queries [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_context_by_search -> gpt_researcher__master__agent__GPTResearcher____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____process_sub_query -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____process_sub_query -> gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____process_sub_query -> gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____process_sub_query -> gpt_researcher__master__agent__GPTResearcher____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_new_urls -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query -> gpt_researcher__master__agent__GPTResearcher____get_new_urls [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query -> gpt_researcher__master__actions__scrape_urls [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query -> gpt_researcher__master__actions__get_retrievers [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____scrape_data_by_query -> gpt_researcher__master__agent__GPTResearcher____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query -> gpt_researcher__context__compression__ContextCompressor____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query -> gpt_researcher__context__compression__ContextCompressor__async_get_context [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_content_by_query -> gpt_researcher__context__compression__ContextCompressor [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_research_context -> gpt_researcher__master__agent__GPTResearcher____get_context_by_search [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_research_context -> gpt_researcher__master__agent__GPTResearcher [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_introduction -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_introduction -> gpt_researcher__master__agent__GPTResearcher [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_introduction -> gpt_researcher__master__actions__choose_agent [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_introduction -> gpt_researcher__master__actions__get_report_introduction [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__write_introduction -> gpt_researcher__master__agent__GPTResearcher____get_context_by_search [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_subtopics -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_subtopics -> gpt_researcher__master__agent__GPTResearcher [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_subtopics -> gpt_researcher__utils__llm__construct_subtopics [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_subtopics -> gpt_researcher__master__agent__GPTResearcher____get_context_by_search [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles -> gpt_researcher__master__actions__generate_draft_section_titles [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles -> gpt_researcher__master__agent__GPTResearcher [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles -> gpt_researcher__master__actions__choose_agent [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_draft_section_titles -> gpt_researcher__master__agent__GPTResearcher____get_context_by_search [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query -> gpt_researcher__context__compression__WrittenContentCompressor [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query -> gpt_researcher__context__compression__WrittenContentCompressor____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query -> gpt_researcher__master__agent__GPTResearcher__add_costs [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query -> gpt_researcher__context__compression__WrittenContentCompressor__async_get_context [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles -> gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles__process_query [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles -> gpt_researcher__master__actions__stream_output [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles__process_query -> gpt_researcher__master__agent__GPTResearcher____init__ [style="solid",  color="#000000"];
+        gpt_researcher__master__agent__GPTResearcher__get_similar_written_contents_by_draft_section_titles__process_query -> gpt_researcher__master__agent__GPTResearcher____get_similar_written_contents_by_query [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__utils__enum__ReportType [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__master__prompts__generate_outline_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__master__prompts__generate_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__utils__enum__ReportSource [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__master__prompts__generate_subtopic_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__master__prompts__generate_resource_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__utils__enum__Tone [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts -> gpt_researcher__master__prompts__generate_custom_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts__get_report_by_type -> gpt_researcher__master__prompts__generate_outline_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts__get_report_by_type -> gpt_researcher__master__prompts__generate_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts__get_report_by_type -> gpt_researcher__master__prompts__generate_subtopic_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts__get_report_by_type -> gpt_researcher__master__prompts__generate_resource_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts__get_report_by_type -> gpt_researcher__master__prompts__generate_custom_report_prompt [style="solid",  color="#000000"];
+        gpt_researcher__master__prompts__generate_subtopic_report_prompt -> gpt_researcher__utils__enum__Tone [style="solid",  color="#000000"];
+    }

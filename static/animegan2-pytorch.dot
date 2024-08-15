@@ -1,0 +1,85 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        convert_weights [label="convert_weights", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        hubconf [label="hubconf", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        model [label="model", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        test [label="test", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        subgraph cluster_convert_weights {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="convert_weights"];
+            convert_weights__convert_and_save [label="convert_and_save\n(/home/sanjay/Development/explore/animegan2-pytorch/convert_weights.py:96)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            convert_weights__convert_keys [label="convert_keys\n(/home/sanjay/Development/explore/animegan2-pytorch/convert_weights.py:35)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            convert_weights__load_tf_weights [label="load_tf_weights\n(/home/sanjay/Development/explore/animegan2-pytorch/convert_weights.py:13)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_hubconf {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="hubconf"];
+            hubconf__face2paint [label="face2paint\n(/home/sanjay/Development/explore/animegan2-pytorch/hubconf.py:37)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="1"];
+            hubconf__generator [label="generator\n(/home/sanjay/Development/explore/animegan2-pytorch/hubconf.py:4)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_hubconf__face2paint {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="hubconf.face2paint"];
+            hubconf__face2paint__face2paint [label="face2paint\n(/home/sanjay/Development/explore/animegan2-pytorch/hubconf.py:41)", style="filled", fillcolor="#eaff99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_model {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="model"];
+            model__ConvNormLReLU [label="ConvNormLReLU\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:6)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+            model__Generator [label="Generator\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:50)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+            model__InvertedResBlock [label="InvertedResBlock\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:25)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_model__ConvNormLReLU {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="model.ConvNormLReLU"];
+            model__ConvNormLReLU____init__ [label="__init__\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:7)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_model__Generator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="model.Generator"];
+            model__Generator____init__ [label="__init__\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:51)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="2"];
+            model__Generator__forward [label="forward\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:90)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_model__InvertedResBlock {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="model.InvertedResBlock"];
+            model__InvertedResBlock____init__ [label="__init__\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:26)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="2"];
+            model__InvertedResBlock__forward [label="forward\n(/home/sanjay/Development/explore/animegan2-pytorch/model.py:43)", style="filled", fillcolor="#99ffc1b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_test {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="test"];
+            test__load_image [label="load_image\n(/home/sanjay/Development/explore/animegan2-pytorch/test.py:18)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="3"];
+            test__test [label="test\n(/home/sanjay/Development/explore/animegan2-pytorch/test.py:30)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_test__load_image {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="test.load_image"];
+            test__load_image__to_32s [label="to_32s\n(/home/sanjay/Development/explore/animegan2-pytorch/test.py:22)", style="filled", fillcolor="#99c1ffb2", fontcolor="#000000", group="3"];
+        }
+    }
+        model__InvertedResBlock____init__ -> model__ConvNormLReLU [style="solid",  color="#000000"];
+        model__InvertedResBlock____init__ -> model__ConvNormLReLU____init__ [style="solid",  color="#000000"];
+        model__Generator____init__ -> model__ConvNormLReLU [style="solid",  color="#000000"];
+        model__Generator____init__ -> model__InvertedResBlock____init__ [style="solid",  color="#000000"];
+        model__Generator____init__ -> model__InvertedResBlock [style="solid",  color="#000000"];
+        model__Generator____init__ -> model__ConvNormLReLU____init__ [style="solid",  color="#000000"];
+        convert_weights -> model__Generator [style="solid",  color="#000000"];
+        convert_weights -> convert_weights__convert_and_save [style="solid",  color="#000000"];
+        convert_weights__convert_and_save -> convert_weights__load_tf_weights [style="solid",  color="#000000"];
+        convert_weights__convert_and_save -> model__Generator [style="solid",  color="#000000"];
+        convert_weights__convert_and_save -> convert_weights__convert_keys [style="solid",  color="#000000"];
+        convert_weights__convert_and_save -> model__Generator____init__ [style="solid",  color="#000000"];
+        test -> model__Generator [style="solid",  color="#000000"];
+        test -> test__test [style="solid",  color="#000000"];
+        test__load_image -> test__load_image__to_32s [style="solid",  color="#000000"];
+        test__test -> model__Generator [style="solid",  color="#000000"];
+        test__test -> test__load_image [style="solid",  color="#000000"];
+        test__test -> model__Generator____init__ [style="solid",  color="#000000"];
+        hubconf__generator -> model__Generator [style="solid",  color="#000000"];
+        hubconf__generator -> model__Generator____init__ [style="solid",  color="#000000"];
+        hubconf__face2paint -> hubconf__face2paint__face2paint [style="solid",  color="#000000"];
+    }

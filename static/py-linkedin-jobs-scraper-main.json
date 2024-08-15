@@ -1,0 +1,815 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/spinlud/py-linkedin-jobs-scraper/blob/master/"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy": {
+        "label": "AuthenticatedStrategy",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 45,
+        "endLineNo": 625,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L45-L625&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\nThis function is a part of a web scraper that  retrieves and emits job data from LinkedIn using a webdriver.  It navigates through pagination, extracts various job details, processes them, and emits the details as Events.\n\n\n## Inputs\n* `driver: webdriver`: This is likely a Selenium webdriver object used to control the browser.\n* `search_url: str`: This is the URL of the LinkedIn search page.\n* `query: Query`:  An object presumably containing search criteria.\n* `location: str`: This is location filter for the job search (e.g., 'London, UK'.\n* `page_offset: int`: Pagination offset to start at a specific point in the search results.\n\n## Output\n* None\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy__run": {
+        "label": "run",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 265,
+        "endLineNo": 625,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L265-L625&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Feedback on Python Function \n\n**[Quick Summary]**\n\nThis Python function is designed to scrape job listings from LinkedIn, based on a search query and location. It iterates through paginated results, extracts job details (title, company, location, date, description, skills, etc.), and sends them to an event emitter for further processing or analysis.  The primary purpose is to automate the collection of job data from LinkedIn for parsing or storage. \n\n**[Inputs]**\n\n\n* **`driver`**: A Selenium WebDriver instance, used to control a browser and interact with the LinkedIn website.\n* **`search_url`**:  The URL of the LinkedIn search page, potentially with initial query parameters.\n* **`query`**: A `Query` object containing the search keyword(s) and optional filtering criteria.\n* **`location`**: A string specifying the desired job location.\n* **`page_offset`**: An integer indicating the starting index for fetching jobs in pagination.\n\n**[Output]**\n\n* **Events**: The function emits various events to signal its progress and findings:\n    * **`Events.DATA`**:  Contains `EventData` objects with extracted job details for each scraped listing.\n    * **`Events.METRICS`**: Reports aggregated statistics on processed, skipped, and failed jobs.\n    * **`Events.ERROR`**:  Signals an encountered error during scraping, along with the error traceback.\n    * **`Events.INVALID_SESSION`**:  Indicates a problem with the authentication session, potentially due to an invalid cookie.  \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper": {
+        "label": "LinkedinScraper",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 20,
+        "endLineNo": 368,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L20-L368&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Certainly, let's break down the provided Python code snippet.\n\n**[Quick Summary]**\n\nThis function initializes and manages a LinkedIn job scraper. It handles configuration, driver instantiation, query execution, and event emission for capturing scraping data, errors, and metrics. Its purpose is to automate the process of fetching job information from LinkedIn based on user-defined queries.\n\n**[Inputs]**\n\n* `chrome_executable_path`: Path to the executable for the Chrome browser.\n* `chrome_binary_location`: Path to the Chrome binary.\n* `chrome_options`: Options for the Chrome driver (e.g., headless mode).\n* `headless`: Boolean flag for running Chrome in headless mode.\n* `max_workers`: Number of concurrent threads for processing queries.\n* `slow_mo`: Sleep time between actions to avoid rate-limiting.\n* `page_load_timeout`: Timeout for page loading.\n* `queries`: Either a single `Query` object or a list of `Query` objects defining the search criteria.\n* `options`: (Optional) `QueryOptions` object containing global search parameters (locations, limit, etc.).\n\n**[Output]**\n\n * None (The function executes tasks and emits events)\n\n\n\nLet me know if you have any more questions or would like further clarification on any aspect of the code!\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy": {
+        "label": "AnonymousStrategy",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 64,
+        "endLineNo": 381,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L64-L381&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]**\n\nThis function (`AnonymousStrategy.run`) scrapes job postings from LinkedIn, using an anonymous (non-authenticated) session. It follows pagination links and extracts key job details like title, company, location, date, description, and apply link for each found job.\n\n**[Inputs]**\n\n* `driver`: A Selenium WebDriver instance used to interact with the LinkedIn website.\n* `search_url`: The URL of the LinkedIn search results page.\n* `query`: A Query object containing search criteria.\n* `location`: The geographic location for filtering jobs.\n* `page_offset`:  An integer indicating the current page number.\n\n**[Output]**\n\n* Emits events containing extracted job data (`Events.DATA`) for each scraped job.\n* Emits an error event (`Events.ERROR`) if any issues occur during scraping. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy__run": {
+        "label": "run",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 181,
+        "endLineNo": 381,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L181-L381&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Python Code Snippet\n\n**[Quick Summary]**\n\nThis Python function is designed to scrape job listings from a website, likely LinkedIn, using a headless web driver. It iterates through search results, extracts job details (title, company, location, date, description, apply link), and outputs this data as structured events.  \n\n**[Inputs]**\n\n* `driver`: A webdriver instance (e.g., Selenium) to interact with the website.\n* `search_url`: The URL of the search page containing job listings.\n* `query`: A `Query` object containing the search keywords and other criteria.\n* `location`: A string specifying the desired job location.\n* `page_offset`: An integer indicating the page number to start scraping from.\n\n**[Output]**\n\n* Events (`EventData` objects) containing extracted job information, emitted through the `scraper` object. \n    *  These events likely have fields for `job_id`, `title`, `company`, `location`, `date`, `link`, `apply_link`, `description`, and `description_html`. \n\n\n\nLet me know if you'd like me to delve into any specific aspect of the code in more detail!\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper____run": {
+        "label": "__run",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 149,
+        "endLineNo": 217,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L149-L217&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## LinkedIn Scraper Code Analysis\n\n**[Quick summary]**\n\nThis Python function executes a LinkedIn search query in parallel threads for each specified location. It utilizes a headless Chrome browser controlled by the Selenium library and a customized scraping strategy to retrieve data.  \n\n**[Inputs]**\n\n* **`query`**:  A structured object containing the search query details.\n* **`chrome_executable_path`**: Path to the ChromeDriver executable.\n* **`chrome_binary_location`**: Path to the Chrome browser binary.\n* **`chrome_options`**: Additional options for configuring the Chrome browser.\n* **`headless`**: Boolean indicating whether to use a headless (invisible) browser.\n* **`page_load_timeout`**: Timeout for page loading. \n\n**[Output]**\n\n*  **Data extracted from LinkedIn**: Based on the `query` and obtained page sources. The type and format of this data depend on the scraping strategy  (`self._strategy`).\n* **Events**: The function emits events (using a mechanism like signals) to indicate the progress of the scraping process (e.g., `START`, `END`, `ERROR`). \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper____build_search_url": {
+        "label": "__build_search_url",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 85,
+        "endLineNo": 148,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L85-L148&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function builds a URL for searching jobs on a platform (likely LinkedIn) based on user-provided keywords, location, and optional filter criteria.  It aims to dynamically create specific search URLs for efficient job searching.\n\n**Inputs:**\n\n* `query`: Contains the search keywords and potentially other query options.\n* `location`: The geographic location to search for jobs.\n\n\n**Output:**\n\n* A formatted URL string ready for job searching on the platform, incorporating the query, location, and filtering options.  \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryFilters": {
+        "label": "QueryFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 16,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L16-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\n\nThis Python code defines a class that likely represents a filter object for searching job postings on LinkedIn.  The code validates the filter parameters and ensures they adhere to the expected data types.  This is a common practice in software development to ensure data integrity and prevent unexpected errors during processing.\n\n[Inputs]\n\n* `company_jobs_url`: A string potentially containing a URL for a specific company's job postings on LinkedIn.\n* `relevance`: An object of type `RelevanceFilters` specifying the desired relevance score for job results.\n* `time`: An object of type `TimeFilters`  specifying the desired timeframe for job postings (e.g., posted in the last week, last month).\n* `type`:  Either a single `TypeFilters` object or a list of `TypeFilters` objects, defining the type of jobs to filter (e.g., full-time, part-time, contract).\n* `experience`: Either a single `ExperienceLevelFilters` object or a list of `ExperienceLevelFilters` objects,  specifying the desired experience level for job candidates (e.g., entry-level, mid-level, senior).\n* `on_site_or_remote`: Either a single `OnSiteOrRemoteFilters` object or a list of `OnSiteOrRemoteFilters` objects, specifying whether jobs should be on-site, remote, or hybrid.\n* `base_salary`: An object od type `SalaryBaseFilters` specifying the desired salary range for job results.\n* `industry`: Either a single `IndustryFilters` object or a list of `IndustryFilters` objects, defining the industry sectors for job results.\n\n[Output]\n\n* The  `validate` method raises a `ValueError` if any of the input parameters are not provided in the expected format or data type.\n* If all parameters are valid, the method does not return any explicit output. Its primary function is to ensure the correctness of the filter data before further processing   \n\n\n\nLet me know if you need help understanding specific parts of the code.\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 33,
+        "endLineNo": 83,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L33-L83&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function initializes a browser automation object for scraping websites. It sets up a pool of worker threads, defines event handlers, and selects a strategy for authentication based on configuration settings. \n\nThe code's purpose is likely to streamline and manage the process of web scraping using Selenium, potentially with features like parallel execution and data/error handling.\n\n\n\n## Inputs\n\n*  `chrome_executable_path`: Path to the Chrome executable file.\n*  `chrome_binary_location`: Location of the Chrome binary (alternative to executable path).\n*  `chrome_options`: Selenium options object for customizing Chrome browser behavior.\n*  `headless`: Boolean indicating whether to run Chrome in headless mode (no visible window).\n*  `max_workers`: Number of worker threads to use for parallel execution.\n*  `slow_mo`:  Factor to slow down script execution for debugging.\n*  `page_load_timeout`: Timeout for page loading.\n\n## Output\n\n*  Instance of a browser automation object ready to execute scraping tasks. \n*  The object likely has methods for navigating, extracting data, and handling events. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors": {
+        "label": "Selectors",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 15,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L15-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary:\n\nThis code defines a set of properties for a web scraper, likely targeting a job search website. Each property uses CSS selectors to identify specific elements on the page, allowing the scraper to extract data like job titles, company names, locations, and more.\n\n## Inputs:\n\n* **Selectors.switch_selectors:** A boolean flag determining which set of CSS selectors to use.\n\n## Output:\n\n* **Selectors:**  A set of CSS selectors for various elements on the job search webpage.\n  \n"
+    },
+    "linkedin_jobs_scraper__utils__chrome_driver__get_default_driver_options": {
+        "label": "get_default_driver_options",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/chrome_driver.py",
+        "relativePath": "linkedin_jobs_scraper/utils/chrome_driver.py",
+        "lineNo": 10,
+        "endLineNo": 57,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Fchrome_driver.py%23L10-L57&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "# Quick Summary\n\nThis function generates a set of default options for the Chrome browser when using Selenium.  The options are designed for automated testing scenarios, potentially focusing on security and download management. \n\n# Inputs\n\n* **width**:  Defines the window width in pixels for the browser.\n* **height**:  Defines the window height in pixels for the browser.\n* **headless**: A boolean (True/False) indicating whether Chrome should run in headless mode (without a visible window).\n\n\n# Output \n\n* A ChromeOptions object containing the configured settings. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy____load_more_jobs": {
+        "label": "__load_more_jobs",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 113,
+        "endLineNo": 157,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L113-L157&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function attempts to load more job listings on a web page by repeatedly clicking a \"See More Jobs\" button and scrolling to the bottom of the page. It continues until a timeout is reached or all the desired job links have loaded. The purpose is to automate the process of loading all available job listings on a webpage.\n\n## Inputs\n\n*  **driver:**  A webdriver instance, likely for controlling a web browser.\n*  **job_links_tot:** The total number of job links expected on the page.\n*  **timeout:** The maximum time (in seconds) to wait for the job listings to load.\n\n## Output\n\n*  **{'success': True}:**  Returned if all job links are loaded within the timeout.\n*  **{'success': False, 'error': 'Timeout on loading more jobs'}:** Returned if the timeout is reached before all job links are loaded. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____extract_apply_link": {
+        "label": "__extract_apply_link",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 220,
+        "endLineNo": 264,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L220-L264&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:**\n\nThis function attempts to locate and click an \"apply\" button on a webpage. If successful, it then checks for new browser windows/tabs opened by the button click and returns the URL of the new tab.\n\n**Inputs:**\n\n* `driver`: A WebDriver instance presumably controlling a web browser.\n* `Selectors.applyBtn`: A CSS selector string targeting the \"apply\" button on the page.\n* `timeout`: A numerical value representing the maximum time the function will wait for a new tab (in seconds).\n* `tag`:  A string used for debugging log messages. \n\n**Output:**\n\n* A dictionary containing:\n    * `success`: A boolean indicating whether the task was successful.\n    * `apply_link`: The URL of the newly opened tab if successful.\n    * `error`: An error message if the task failed. \n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryOptions": {
+        "label": "QueryOptions",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 80,
+        "endLineNo": 123,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L80-L123&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a class (like a blueprint for creating objects) that likely represents job search parameters. It initializes the parameters, validates their format and types, ensuring proper input for a job search function. \n\nThis class helps ensure that the job search function receives valid and well-formatted data, preventing errors and improving the reliability of the search. \n\n## Inputs\n\n* **limit (int):**  The maximum number of jobs to return in the search result.\n\n* **locations (List[str]):**  A list of location strings where the job seeker is interested in.\n* **filters (QueryFilters):**  Likely an object containing additional criteria for filtering the job search results (e.g., keywords, experience level, salary range).\n* **apply_link (bool):**  Indicates whether to include a \"Apply\" link for each job in the results.\n* **skip_promoted_jobs (bool):**  Indicates whether to exclude promoted or sponsored job listings from the results.\n* **page_offset (int):**  An integer specifying the starting index for retrieving results from a potentially large result set (used for pagination).\n\n\n\n## Output\n\n* `None`: The method itself doesn't directly produce any output. Its purpose is to initialize and validate the job search parameters before they are used in another function. \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__run": {
+        "label": "run",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 218,
+        "endLineNo": 252,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L218-L252&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function processes a query or a list of queries, merging them with global options and then executes each query asynchronously in a thread pool. The result is not explicitly returned, as exceptions are handled during the asynchronous execution. \n\n## Inputs\n\n* `queries`:\n    * Can be a single `Query` object or a list of `Query` objects.\n    * Represents the search or data retrieval request.\n* `options`:\n    * An optional `QueryOptions` object.\n    * Specifies parameters controlling the query execution, like location and result limit.\n\n## Output\n\n* None: The function itself doesn't return a value. \n* Exceptions: Any exceptions raised during query execution are handled internally."
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____load_job_details": {
+        "label": "__load_job_details",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 87,
+        "endLineNo": 121,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L87-L121&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary** \n\nThis function waits for specific job details to load on a web page. It repeatedly checks if elements with the job ID, a `detailsPanel`, and a `description` are present and contain the expected content.\n\n**Inputs**\n\n*  `driver`: A web browser driver instance (e.g., Selenium).\n*  `job_id`:  A string representing the unique identifier of the job.\n*  `timeout`: An integer specifying the maximum time (in seconds) to wait for the job details to load.\n\n**Output**\n\n* A dictionary containing:\n    * `success`: A boolean indicating whether the job details loaded successfully within the timeout.\n    * `error`: A string describing any errors encountered (only if `success` is False). \n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryFilters__validate": {
+        "label": "validate",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 46,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L46-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis Python function appears to be a constructor (or possibly a validation function) for an object related to searching for jobs on LinkedIn. It checks the types and structure of various input parameters to ensure they conform to the expected format. This helps prevent errors and ensures data integrity during the job search process. \n\n\n## Inputs\n\n*  `company_jobs_url`: A string representing a URL from LinkedIn that leads to a company's job postings.\n* `relevance`: An object of type `RelevanceFilters`, likely used to specify criteria for job relevance (e.g., seniority level, skill match)\n* `time`: An object of type `TimeFilters`,  likely used to filter jobs by posting date or experience required (e.g., \"past week\", \"last month\")\n* `base_salary`: An object of type `SalaryBaseFilters`, probably used to define salary expectations  (e.g., minimum or maximum salary).\n* `type`: This can be either a single object of type `TypeFilters` or a list of `TypeFilters`, likely used to specify job categories (e.g., \"software engineer\", \"data analyst\").\n* `experience`: Similar to `type`, this can be either a single `ExperienceLevelFilters` object or a list of them, probably used to filter by required experience level (e.g., \"entry-level\", \"mid-level\").\n* `on_site_or_remote`:  Similar to `type` and `experience`, this can be a single `OnSiteOrRemoteFilters` object or a list of them, likely used to filter by job location type (e.g., \"on-site\", \"remote\").\n\n\n\n## Output\n\n* None (This code snippet likely raises exceptions upon encountering invalid input rather than producing a direct output.)\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy____load_job_details": {
+        "label": "__load_job_details",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 81,
+        "endLineNo": 111,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L81-L111&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function waits for specific job details to load on a webpage. It checks for the presence of a job ID within a designated panel and text content within a description element. If the details load within a specified timeout, it returns success; otherwise, it returns a timeout error. The purpose is to ensure the job details are fully loaded before proceeding with further actions.\n\n**Inputs:**\n\n* `driver`: A webdriver object, likely for interacting with a web browser.\n* `job_id`: A string representing the unique identifier of the job.\n* `timeout`: An integer representing the maximum time (in seconds) to wait for job details to load.\n\n**Output:**\n\n* A dictionary containing:\n    *  `success`: A boolean indicating whether the job details loaded successfully.\n    *  `error`: A string describing any errors encountered, if `success` is False. \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____paginate": {
+        "label": "__paginate",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 123,
+        "endLineNo": 150,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L123-L150&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick summary]** This function attempts to paginate through job listings on a website. It waits for new job entries to load after navigating to a specific URL with a given offset. The function times out if new jobs don't appear within a specified timeframe.\n\n**[Inputs]**\n\n* `current_url`: The base URL of the job listings page.\n* `override_query_params`: A function that modifies query parameters of a URL.\n* `offset`: An integer representing the starting point for pagination (index).\n* `Selectors.jobs`: A selector used to identify job elements on the webpage (likely a CSS selector).\n* `timeout`: A time limit (in seconds) for waiting for new jobs to load.\n\n**[Output]**\n\n* A dictionary containing:\n    * `success`: A boolean indicating whether pagination was successful.\n    * `error`: A string describing the error if pagination failed (e.g., \"Timeout on pagination\"). \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__chrome_driver__build_driver": {
+        "label": "build_driver",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/chrome_driver.py",
+        "relativePath": "linkedin_jobs_scraper/utils/chrome_driver.py",
+        "lineNo": 76,
+        "endLineNo": 103,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Fchrome_driver.py%23L76-L103&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown \n\n**Quick Summary:**\n\nThis function creates an instance of a Chrome WebDriver, configuring it with specified options like executable path, binary location, headless mode, and timeout.  The aim is to provide a customizable way to launch and control a Chrome browser instance programmatically.\n\n**Inputs:**\n\n* `executable_path`: Path to the chromedriver executable.\n* `binary_location`: Path to the Chrome or Chromium binary.\n* `options`:  A ChromeOptions object containing customization settings for the browser.\n* `headless`:  Boolean indicating whether to run Chrome in headless mode (no visible window).\n* `timeout`:  Integer representing the page load timeout in seconds.\n\n**Output:**\n\n* A webdriver object that controls a Chrome browser instance. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____load_jobs": {
+        "label": "__load_jobs",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 59,
+        "endLineNo": 85,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L59-L85&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]**\n\nThis Python function  simulates manually loading more job listings on a webpage. It continuously checks the number of displayed jobs against a desired total, waiting a small duration between checks. If the desired count is reached, it returns success and the count; otherwise, it indicates failure. \n\n**[Inputs]**\n\n* `driver`: A Selenium webdriver object, likely controlling a web browser instance.\n* `job_tot`: An integer representing the target number of job listings to be loaded.\n* `timeout`: An integer specifying the maximum time (in seconds) to wait for job loading.\n\n\n**[Output]**\n\n* A dictionary containing:\n    * `success`: A boolean indicating whether the target job count was reached within the timeout.\n    * `count`: An integer representing the number of jobs loaded (either the target or the final count before the timeout). \n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__on": {
+        "label": "on",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 253,
+        "endLineNo": 277,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L253-L277&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function allows you to register callbacks to be executed when specific events occur. It ensures the callback function has the correct number of arguments based on the event type. \n\n## Inputs\n\n*  `event`:  An event type from an enumerated class `Events`, indicating the trigger for the callback.\n*  `cb`: A function that will be executed when the specified event occurs.\n*  `once`: A boolean flag indicating whether the callback should be executed only once.\n\n## Output\n\n*  None (The function doesn't return a value) \n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryOptions__validate": {
+        "label": "validate",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 101,
+        "endLineNo": 123,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L101-L123&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python code snippet validates user-defined parameters passed to a function, likely related to retrieving and filtering job listings. It ensures data types are correct and specific constraints are met to avoid errors and handle invalid inputs gracefully.\n\n## Inputs\n\n*  `self.limit`: Likely an integer specifying the maximum number of jobs to retrieve.\n*  `self.locations`: A list of strings representing desired job locations.\n*  `self.apply_link`: A boolean indicating whether to include application links in the results.\n*  `self.skip_promoted_jobs`: A boolean indicating whether to exclude promoted jobs from the results.\n*  `self.page_offset`: An integer specifying the starting point (page offset) for retrieving jobs.\n*  `self.filters`: Likely a custom object containing additional job filtering criteria.\n\n## Output\n\n*  No direct output is produced by this snippet.\n*  It raises `ValueError` exceptions if any input parameters are invalid.\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__Selectors": {
+        "label": "Selectors",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 22,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L22-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a set of selectors (using CSS syntax) targeting specific elements within a web page. These selectors likely serve as the foundation for a web scraper or automation script aimed at extracting job data from a website.\n\n## Inputs\n\n* \n  No direct inputs are defined in this code snippet.\n  \n* It relies on context\u2014presumably interacting with a webpage's HTML structure to locate elements using the given selectors. \n\n* Each selector targets a unique part of a job listing (e.g., title, company, description).\n\n## Output\n\n*  \n A parsed HTML structure or list of extracted data elements. \n  *  Data could include job title, company name, location, posting date, description, required skills, etc.\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____accept_privacy": {
+        "label": "__accept_privacy",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 175,
+        "endLineNo": 197,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L175-L197&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analyze Your Code:\n\n**Quick Summary:**\n\nThis function attempts to automate the acceptance of website privacy terms. It searches for a button that says \"Accept\" using a provided selector and clicks it if found. If unsuccessful, it logs an error message.  Ultimately, it aims to bypass the manual privacy acceptance process.  \n\n**Inputs:**\n\n* **driver:** Likely refers to a web browser automation driver (e.g., Selenium) used to interact with the website.\n* **tag:**  Possibly a string used for logging or identifying this specific function's execution.\n* **Selectors.privacyAcceptBtn:**  A variable or pre-defined selector string that targets the \"Accept\" privacy button on the website.\n\n**Output:**\n\n*  Successful acceptance of privacy terms on the website.\n*  An error message logged if the \"Accept\" button is not found or cannot be clicked. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy____accept_cookies": {
+        "label": "__accept_cookies",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 159,
+        "endLineNo": 180,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L159-L180&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Here's a breakdown of the code:\n\n**Quick Summary**\n\nThis function attempts to programmatically accept cookie banners on a webpage. It searches for a button that mentions \"Accept cookies\" and clicks it if found.  The purpose is to automate the process of interacting with cookie banners, allowing the script to proceed with its tasks without being blocked. \n\n**Inputs**\n\n* `driver`: This likely refers to a web browser automation driver (e.g., Selenium). It provides the interface to control the browser.\n* `tag`:  This is probably a string used for debugging purposes, identifying the specific part of the code that might be failing.\n\n**Output**\n\n* Successful acceptance of cookies: The function would execute without errors.\n* Failure to accept cookies: The function might raise an exception, logging a message (\"Failed to accept cookies\") to the debug output. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____accept_cookies": {
+        "label": "__accept_cookies",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 152,
+        "endLineNo": 173,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L152-L173&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Cookie Acceptance Code\n\n**[Quick Summary]**\n\nThis function attempts to automatically accept cookies on a website being controlled by a web driver. It searches for a button labelled \"Accept cookies\" and clicks it. If the button is not found, it logs an error.\n\n**[Inputs]**\n\n* `driver`: A web driver instance, likely Selenium, used to interact with the website.\n* `tag`:  A string used for debugging purposes, possibly identifying the function or the script it's running in.\n\n**[Output]**\n\n* Successful cookie acceptance: No explicit output, but the cookies will be accepted on the website.\n* Failure to accept cookies: A debug message indicating the failure will be logged using the provided `tag`. \n\n\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryFilters____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 25,
+        "endLineNo": 45,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L25-L45&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick summary:** This Python function likely defines an object or class that represents filters for searching job postings. It initializes various filter parameters, such as company URLs, relevance levels, job types, experience requirements, and salary ranges. The purpose is to create a structured way to define and apply these filters when searching for suitable jobs.\n\n**Inputs:**\n\n* `company_jobs_url`: A string potentially specifying a specific company's job board URL.\n* `relevance`: An object of type `RelevanceFilters` used to filter jobs based on their perceived relevance.\n* `time`: An object of type `TimeFilters` used to filter jobs based on posting date or time range.\n* `type`: Either a single `TypeFilters` object or a list of them, used to filter jobs based on their category or type.\n* `experience`:  Similar to `type`, this can be a single `ExperienceLevelFilters` object or a list, used to filter by required job experience level.\n* `on_site_or_remote`: Similarly, this filters jobs based on location preferences (on-site, remote, etc.) using an object or list of `OnSiteOrRemoteFilters`.\n* `base_salary`: An object of type `SalaryBaseFilters` used to define salary range filters.\n* `industry`: Similar to `type`, this filters by industry using a single `IndustryFilters` object or a list of them.\n\n**Output:**\n\n*  The function itself does not directly produce output. It initializes an object with the provided filter parameters, which can then be used later in a job search process. \n\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__IndustryFilters": {
+        "label": "IndustryFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 42,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L42-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\nThis code appears to define a mapping of industry codes to industry names. It likely serves as a lookup table for identifying industries based on numerical codes.\n\n**Inputs:** \n*  None explicitly defined, but it seems designed to be used for looking up industry names based on a numerical code.\n\n**Output:**\n*  A string representing the industry name corresponding to a given numerical code.  \n\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__emit": {
+        "label": "emit",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 288,
+        "endLineNo": 307,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L288-L307&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function, likely part of an event-driven system, executes callbacks registered for a specific event. It iterates through registered listeners, calls their callback functions with provided arguments, and removes \"once\" callbacks after execution. The purpose is to manage and trigger actions in response to predefined events.\n\n\n## Inputs\n\n* `event`: Represents the event that is triggering the callback execution. It should be an instance of an `Events` enum.\n* `args`: A tuple of arguments to be passed to the callback functions.\n\n## Output\n\n* None (This function doesn't explicitly return a value)  \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryOptions____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 81,
+        "endLineNo": 100,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L81-L100&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis Python function constructs a configuration object for querying job listings. It accepts parameters to refine the search based on location, filters, and other criteria, enabling users to retrieve specific job data. \n\n**Inputs:**\n\n* `limit`:  An integer specifying the maximum number of jobs to return.\n* `locations`: A list of strings representing desired geographical locations for jobs.\n* `filters`: A `QueryFilters` object containing search criteria to narrow down job results (e.g., job title, experience level).\n* `apply_link`: A boolean indicating whether to include a link for applying to the jobs.\n* `skip_promoted_jobs`: A boolean specifying whether to exclude promoted job postings.\n* `page_offset`: An integer representing the starting point for retrieving jobs from a potentially large result set.\n\n\n**Output:**\n\n* A configured object that can be used to perform a job search query, likely returning a list of job postings matching the specified criteria. "
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____close_chat_panel": {
+        "label": "__close_chat_panel",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 199,
+        "endLineNo": 218,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L199-L218&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown: \n\n**Quick Summary:** This function attempts to hide a chat panel element on a webpage using JavaScript executed within the context of a web driver. The purpose is likely to dismiss or minimize the chat panel during automated testing or script execution.\n\n**Inputs:**\n* `driver`: A web driver object (likely from Selenium) used to interact with the web browser.\n* `tag`:  Possibly a debugging identifier or tag for logging purposes.\n\n**Output:**\n* The chat panel element is hidden if found.\n* A debug message is logged if the element is not found, indicating failure. \n"
+    },
+    "linkedin_jobs_scraper__events__events__EventData": {
+        "label": "EventData",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/events/events.py",
+        "relativePath": "linkedin_jobs_scraper/events/events.py",
+        "lineNo": 14,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fevents%2Fevents.py%23L14-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick Summary]\n\nThis Python code defines a structure to store information about a job posting.  It likely parses job data from a website and organizes it into a structured format for further processing or analysis.   \n\n[Inputs]\n\n*  `query`: The user's search query.\n*  `location`: The job's location.\n*  `job_id`:  A unique identifier for the job.\n*  `job_index`:  An index likely used during debugging.\n*  `link`: The URL of the job posting.\n*  `apply_link`: The URL to apply for the job.\n*  `title`:  The job title.\n*  `company`: The name of the company offering the job.\n*  `company_link`:  The URL of the company's website.\n*  `company_img_link`: The URL of the company's logo or image.\n*  `place`: The job location (could be more specific than `location`).\n*  `description`: The text description of the job.\n*  `description_html`: The HTML version of the job description.\n*  `date`: The date the job was posted.\n*  `insights`: A list of  additional insights or notes about the job.\n*  `skills`: A list of skills required for the job. \n\n\n[Output]\n\n*  A structured representation of a job posting, ready to be used in a program. This might involve further analysis, storage in a database, or display in a user interface.\n"
+    },
+    "linkedin_jobs_scraper__utils__chrome_driver__get_driver_proxy_capabilities": {
+        "label": "get_driver_proxy_capabilities",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/chrome_driver.py",
+        "relativePath": "linkedin_jobs_scraper/utils/chrome_driver.py",
+        "lineNo": 58,
+        "endLineNo": 75,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Fchrome_driver.py%23L58-L75&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function configures a Selenium WebDriver to use a provided proxy server for web browsing activities. It sets up Chrome's capabilities with proxy information, allowing it to route internet traffic through the specified proxy. The purpose is to ensure web interactions occur anonymously or from a different geographic location.\n\n## Inputs\n\n* `proxy`: \n    * A proxy object, likely containing details like IP address, port, and authentication information.\n\n## Output\n\n* `capabilities`:\n    * A dictionary containing WebDriver configurations, including the proxy settings.  \n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__Query__merge_options": {
+        "label": "merge_options",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 131,
+        "endLineNo": 146,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L131-L146&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function updates an object's `options` attribute by merging default values with values provided in an `options` argument. It handles optional parameters like `limit`, `apply_link`, `skip_promoted_jobs`, `locations`, and `filters`, prioritizing provided values where applicable. The purpose is to configure search/retrieval options based on user input or defaults.\n\n**Inputs:**\n* `self`: The object instance on which the function is called.\n* `options`:  A dictionary containing optional search parameters.\n\n**Output:**\n* Updates the `options` attribute of the object instance with merged values from `self.options` and `options`. \n"
+    },
+    "linkedin_jobs_scraper__utils__url__override_query_params": {
+        "label": "override_query_params",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/url.py",
+        "relativePath": "linkedin_jobs_scraper/utils/url.py",
+        "lineNo": 27,
+        "endLineNo": 42,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Furl.py%23L27-L42&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Python Code Breakdown\n\n**Quick Summary:**\n\nThis function modifies the query parameters of an existing URL by replacing existing parameters with specified values.  It's designed to dynamically adjust URLs before making requests or constructing links.\n\n**Inputs:**\n\n*  `url`: The original URL string.\n*  `override_params`: A dictionary containing key-value pairs representing the new query parameters to be used.\n\n**Output:**\n\n*  A modified URL string with the updated query parameters. \n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__remove_listener": {
+        "label": "remove_listener",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 308,
+        "endLineNo": 322,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L308-L322&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]**\n\nThis function removes a specific callback function (`cb`) associated with a given event (`event`) from a listener registry. It aims to allow fine-grained control over event subscriptions.\n\n**[Inputs]**\n\n*  `event`:  An instance of the `Events` enum, defining the type of event to listen for.\n*  `cb`: A callable object (function), representing the callback function to be removed.\n\n**[Output]**\n\n*  A boolean value: `True` if the callback was successfully removed, `False` otherwise. \n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__remove_all_listeners": {
+        "label": "remove_all_listeners",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 323,
+        "endLineNo": 334,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L323-L334&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis \n\n**Quick summary**\n\nThis function removes all listeners registered for a specific event in an event emitter system. It ensures that no actions are triggered when the specified event occurs. This is crucial for cleaning up event subscriptions when they are no longer needed.\n\n**Inputs**\n\n*  `event`: A string representing the name of the event to remove listeners from. It is expected to be an instance of a predefined enumeration class `Events`.\n\n**Output**\n\n* `None`: The function does not return a value. It modifies the internal state of the `self._emitter` by clearing the list of listeners associated with the given event. \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__chrome_driver__get_debugger_url": {
+        "label": "get_debugger_url",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/chrome_driver.py",
+        "relativePath": "linkedin_jobs_scraper/utils/chrome_driver.py",
+        "lineNo": 104,
+        "endLineNo": 115,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Fchrome_driver.py%23L104-L115&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** \nThis function retrieves the unique debug URL for a Chrome browser instance controlled by a Selenium WebDriver. This URL is used to connect to the browser's debugger for inspection and control during development.\n\n**[Inputs]**\n- `driver`:  A Selenium WebDriver object representing the connected Chrome browser instance.\n\n**[Output]**\n- `chrome_debugger_url`:  A string containing the Chrome debugger URL formatted as \"http://[IP]:[Port]\". \n\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__chrome_driver__get_websocket_debugger_url": {
+        "label": "get_websocket_debugger_url",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/chrome_driver.py",
+        "relativePath": "linkedin_jobs_scraper/utils/chrome_driver.py",
+        "lineNo": 116,
+        "endLineNo": 127,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Fchrome_driver.py%23L116-L127&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary: \n\nThis function retrieves the WebSocket debugger URL for a running Chrome instance. This is used to connect to the browser's debugging protocol, allowing remote control and inspection of the browser's activity.\n\n## Inputs: \n\n* `driver`: A WebDriver instance, likely controlling a Chrome browser.\n\n## Output:\n\n* `response[0]['webSocketDebuggerUrl']`:  The WebSocket debugger URL specific to the connected Chrome instance. \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__url__get_url_no_query_params": {
+        "label": "get_url_no_query_params",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/url.py",
+        "relativePath": "linkedin_jobs_scraper/utils/url.py",
+        "lineNo": 15,
+        "endLineNo": 26,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Furl.py%23L15-L26&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis \n\n**[Quick Summary]** \nThis function takes a URL as input and removes any query parameters from it. The purpose is to extract the base URL without the dynamic parts added by query parameters.\n\n**[Inputs]**\n*   `url`:  A string representing a full URL.\n\n**[Output]**\n*  A string representing the base URL without query parameters. \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__url__get_query_params": {
+        "label": "get_query_params",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/url.py",
+        "relativePath": "linkedin_jobs_scraper/utils/url.py",
+        "lineNo": 4,
+        "endLineNo": 14,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Furl.py%23L4-L14&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:** This function takes a URL as input and extracts its query parameters into a dictionary.  The purpose is to easily access and manipulate the data passed as query parameters within a web address.\n\n**Inputs:**\n\n* `url`: A string representing a complete URL.\n\n**Output:**\n\n* A dictionary where keys are parameter names and values are their corresponding parameter values. \n\n\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__SalaryBaseFilters": {
+        "label": "SalaryBaseFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 62,
+        "endLineNo": 71,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L62-L71&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick summary:** This code defines a set of string constants representing different salary ranges. These constants likely serve as codes for categorizing salary levels in a data structure or application.  \n\n**Inputs:**  There are no explicit inputs defined in this code snippet.\n\n**Output:** The output is a set of string constants representing salary ranges. \n* `SALARY_40K` - '1'\n* `SALARY_60K` - '2'\n* `SALARY_80K` - '3'\n* `SALARY_100K` - '4'\n* `SALARY_120K` - '5'\n* `SALARY_140K` - '6'\n* `SALARY_160K` - '7'\n* `SALARY_180K` - '8'\n* `SALARY_200K` - '9' \n\n\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__TypeFilters": {
+        "label": "TypeFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 17,
+        "endLineNo": 26,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L17-L26&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Summary, Inputs, and Output\n\n**[Quick Summary]** This code defines a set of constants representing different types of job arrangements. These constants likely represent categories for classifying job types in a larger system, potentially for data analysis, storage, or user interface display.\n\n\n**[Inputs]**\n\n* **None:** This code snippet only defines constants and does not take any inputs.\n\n**[Output]**\n\n* **A set of defined constants:**  \n    * FULL_TIME\n    * PART_TIME\n    * TEMPORARY\n    * CONTRACT\n    * INTERNSHIP\n    * VOLUNTEER\n    * OTHER  \n\n\nThis provides named identifiers for different job types, making the code more readable and maintainable. \n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__once": {
+        "label": "once",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 278,
+        "endLineNo": 287,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L278-L287&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]** \nThis function adds a callback function to be executed once when a specific event occurs. It's a way to trigger an action only after a single instance of an event.\n\n**[Inputs]**\n\n* `event`: A string representing the name of the event to listen for.\n* `cb`: A callable object (function) that will be executed when the event occurs.\n\n**[Output]**\n\n\nNone. The function likely modifies internal state within the class to track the callback without explicitly returning a value.\n"
+    },
+    "linkedin_jobs_scraper__query__quer____Base": {
+        "label": "__Base",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 6,
+        "endLineNo": 15,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L6-L15&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a custom `__str__` method and a helper static method `__is_empty_list` for a Python class. The `__str__` method provides a string representation of the object by listing its non-null and non-empty attributes in a user-friendly format.  \n\n## Inputs\n\n*  `self`: Refers to an instance of the class.\n\n* `k`: Represents the name of an attribute within the instance's `__dict__`.\n* `v`: Represents the value of an attribute within the instance's `__dict__`.\n* `List`:  Likely refers to a custom list implementation or a generic list type.\n\n\n## Output\n\n* A string representation of the class instance, formatted as `<class_name>(attribute1=value1 attribute2=value2 ...)` where:\n    * `<class_name>` is the name of the class.\n    *  `attribute1=value1`, `attribute2=value2`, etc. are the non-null and non-empty attributes of the instance, separated by spaces."
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy____require_authentication": {
+        "label": "__require_authentication",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 70,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L70-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis:\n\n**[Quick Summary]** This function checks if the web driver is currently on an authentication wall page. It does this by parsing the URL and looking for the string \"authwall\" in the path.  If found, it indicates authentication is required.\n\n\n**[Inputs]**\n* `driver`: This is likely a Selenium WebDriver object, representing an instance controlled by the programmer.\n\n**[Output]**\n* `bool`:  True if the URL path contains \"authwall\" (case-insensitive), indicating the need for authentication. False otherwise. \n"
+    },
+    "linkedin_jobs_scraper__utils__url__get_domain": {
+        "label": "get_domain",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/url.py",
+        "relativePath": "linkedin_jobs_scraper/utils/url.py",
+        "lineNo": 43,
+        "endLineNo": 52,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Furl.py%23L43-L52&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary:\n\nThis function extracts the Second Level Domain (SLD) from a given URL. It does this by parsing the URL and then joining the last two parts of the domain name separated by a period (.). The purpose of the code is likely to isolate the primary domain name component for use in further analysis or processing.\n\n## Inputs:\n\n*  `url`: A string representing a complete URL (e.g., \"https://www.example.com\").\n\n## Output:\n\n* A string representing the SLD of the given URL (e.g., \"example.com\"). \n\n\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__ExperienceLevelFilters": {
+        "label": "ExperienceLevelFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 27,
+        "endLineNo": 35,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L27-L35&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis:\n\n**[Quick Summary]** This code snippet defines a series of constants representing different career level designations, likely used to categorize job roles or employee experience. These constants could be employed in a larger program to streamline role-based logic or data organization.\n\n**[Inputs]**\n\n* **None** - This is a purely definitional section, it does not directly accept inputs.\n\n**[Output]**\n\n* **Constants:** \n    * `INTERNSHIP`:  '1'\n    * `ENTRY_LEVEL`: '2'\n    * `ASSOCIATE`: '3'\n    * `MID_SENIOR`: '4'\n    * `DIRECTOR`: '5'\n    * `EXECUTIVE`: '6' \n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__add_proxy": {
+        "label": "add_proxy",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 352,
+        "endLineNo": 360,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L352-L360&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function adds a proxy to a list of proxies stored within an object.  It's likely part of a larger system or class that utilizes proxies for tasks like web scraping, accessing restricted content, or anonymizing network requests.\n\n## Inputs\n\n* **proxy:** Represents a single proxy server address and port configuration.\n\n## Output\n\n* None. The function modifies the internal state (list of proxies) of the object, not returning any direct value. \n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__set_proxies": {
+        "label": "set_proxies",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 343,
+        "endLineNo": 351,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L343-L351&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function, likely part of a larger class, sets proxy configuration for network requests. Its purpose is to manage how the class interacts with online resources by utilizing proxy servers.\n\n**Inputs:**\n\n* `proxies`: This is likely a dictionary containing proxy configurations.  It probably maps proxy server types (e.g.,  'http', 'https') to their respective proxy server addresses and ports.\n\n**Output:** None\n\n\nLet me know if you'd like me to elaborate on any aspect of this!\n"
+    },
+    "linkedin_jobs_scraper__strategies__strateg__Strategy__run": {
+        "label": "run",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/strategy.py",
+        "lineNo": 9,
+        "endLineNo": 17,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fstrategy.py%23L9-L17&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this Python function snippet.\n\n**Quick Summary**\n\nThis function is a placeholder or template designed to be extended by subclasses. Its purpose is likely to define a standardized way for different types of web search engines or platforms to be interacted with programmatically.  The function sets up the essential components for performing a search using a WebDriver (like Selenium), but the actual search logic would be implemented in the subclass.\n\n**Inputs**\n\n* `self`: A reference to the instance of the class that the function belongs to. This is standard Python syntax for \"instance variables\".\n*  `driver`: A webdriver object (e.g., from Selenium). This is used to control a web browser.\n* `search_url`: A string representing the URL of the search engine.\n* `query`: An object likely holding the search keywords or terms.\n* `location`: Probably a string specifying a geographical location to filter the search. \n* `page_offset`: An integer indicating which page of search results to retrieve.\n\n**Output** \n\n*  The function raises a `NotImplementedError` because it's an abstract base. \n\n\nLet me know if you'd like me to elaborate on any specific aspect!\n"
+    },
+    "linkedin_jobs_scraper__utils__url__get_location": {
+        "label": "get_location",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/url.py",
+        "relativePath": "linkedin_jobs_scraper/utils/url.py",
+        "lineNo": 53,
+        "endLineNo": 61,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Furl.py%23L53-L61&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function extracts the location from a given URL, including the scheme (e.g., \"http\" or \"https\") and the network location (domain name), effectively providing the base URL. Its purpose is to simplify URL manipulation by isolating the core location information.\n\n## Inputs\n* `url`: A string representing the full URL to be processed.\n\n## Output\n*  A string containing the location from the input URL, including the scheme and network location. \n"
+    },
+    "linkedin_jobs_scraper__events__events__EventMetrics": {
+        "label": "EventMetrics",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/events/events.py",
+        "relativePath": "linkedin_jobs_scraper/events/events.py",
+        "lineNo": 33,
+        "endLineNo": 40,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fevents%2Fevents.py%23L33-L40&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary**\n\nThis Python code defines a class (likely for managing job processing) with counters for successfully processed jobs, failed jobs, missed jobs, and skipped jobs. The `__str__` method provides a string representation of these counters, useful for displaying or logging job processing statistics.\n\n**Inputs**\n\n* None - This code defines the structure of a class, not a function that takes inputs.\n\n**Output**\n\n* A string representation in the format: \n\"{{ processed: {processed_count}, failed: {failed_count}, missed: {missed_count}, skipped: {skipped_count} }}\"\n     where  '{processed_count}', '{failed_count}', '{missed_count}', and '{skipped_count}' are replaced by the actual numerical values of the corresponding attributes. \n\n\n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__get_proxies": {
+        "label": "get_proxies",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 335,
+        "endLineNo": 342,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L335-L342&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary:\n\nThis function retrieves a list of proxies maintained within the object it belongs to. The purpose appears to be providing a way to access and utilize these proxies for tasks like web scraping or anonymizing internet traffic.\n\n## Inputs:\n\n* None. The function doesn't take any explicit inputs.\n\n## Output:\n\n*  A list of strings, where each string represents a proxy server address.  \n"
+    },
+    "linkedin_jobs_scraper__linkedin_scraper__LinkedinScraper__remove_proxy": {
+        "label": "remove_proxy",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/linkedin_scraper.py",
+        "relativePath": "linkedin_jobs_scraper/linkedin_scraper.py",
+        "lineNo": 361,
+        "endLineNo": 368,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Flinkedin_scraper.py%23L361-L368&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function removes a specified proxy from a list of proxies stored within the object. Its purpose is likely part of a larger system that manages and utilizes proxies for tasks like network requests.\n\n**Inputs:**\n\n* `proxy`: This parameter represents the proxy to be removed from the list.\n\n**Output:**\n\n*  None: The function modifies the internal `_proxies` list directly without returning a new value. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____is_authenticated_session": {
+        "label": "__is_authenticated_session",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 50,
+        "endLineNo": 57,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L50-L57&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**\n\nThis function checks if a specific cookie called 'li_at' is present on a web driver's session, indicating a potentially authenticated user. The purpose is to determine if a user has already been logged in to a website.\n\n**[Inputs]**\n\n*  `driver`: A web driver instance used for interacting with a web browser.\n\n**[Output]**\n*  `True`: If the 'li_at' cookie exists in the session.\n*  `False`: If the 'li_at' cookie is missing from the session. \n\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__exceptions__exceptions__CallbackException": {
+        "label": "CallbackException",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/exceptions/exceptions.py",
+        "relativePath": "linkedin_jobs_scraper/exceptions/exceptions.py",
+        "lineNo": 1,
+        "endLineNo": 7,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fexceptions%2Fexceptions.py%23L1-L7&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function likely defines a custom exception class called `ScraperCallbackException`.  It inherits from a base exception class (probably `Exception`) and is intended to be raised specifically when an error happens during the execution of a callback function within a web scraping process.\n\n## Inputs\n\n* `*args`: \n    * This indicates that the constructor (`__init__`) can accept a variable number of positional arguments.\n    * These arguments are likely used to provide details about the exception that occurred, such as error messages or traceback information.\n\n## Output\n\n* Does not explicitly return any value.\n* Instead, it raises an exception of the type `ScraperCallbackException`, halting the normal flow of the program. \n\n\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__TimeFilters": {
+        "label": "TimeFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 10,
+        "endLineNo": 16,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L10-L16&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis\n\n**Quick Summary:** This code snippet defines constants representing time durations in seconds.  \n\nThe `ANY, DAY, WEEK, MONTH` constants likely store numerical representations of time intervals, aiming to simplify calculations involving different periods. \n\nThe code likely intends to make calculations with time periods more readable and maintainable.\n\n**Inputs:**\n\n* **None:** This code segment doesn't take any explicit inputs.\n\n**Output:**\n\n* **Constants:** Four string values: \n    * `ANY`: An empty string (possibly a placeholder for all time units)\n    * `DAY`:  \"r86400\" (likely representing 86400 seconds, which is one day)\n    * `WEEK`: \"r604800\" (likely representing 604800 seconds, which is one week)\n    * `MONTH`: \"r2592000\" (likely representing 2592000 seconds, which is approximately one month) \n\n\n\n\n,"
+    },
+    "linkedin_jobs_scraper__query__quer__QueryFilters__process_filter": {
+        "label": "process_filter",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 18,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L18-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function processes a potential filter input. If the input `filter` is not `None` and is a valid list, it returns the list. Otherwise, if `filter` is not `None` it returns the single filter as a list. If `filter` is `None`, it returns an empty list. The purpose is likely to handle different ways a filter might be specified in the calling code.\n\n**Inputs:**\n\n* `filter`: This could be:\n    *  `None`:  Indicates no filter should be applied.\n    *  A single item (not a list): Represents a single filter criteria.\n    *  A list: Represents multiple filter criteria.\n\n**Output:**\n\n* A list containing:\n    * The single `filter` value if it's not a list and not `None`.\n    * The `filter` list itself if it's a list.\n    * An empty list (`[]`) if `filter` is `None`. \n\n\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__OnSiteOrRemoteFilters": {
+        "label": "OnSiteOrRemoteFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 36,
+        "endLineNo": 41,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L36-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis:\n\n**[Quick Summary]**\n\n This code snippet defines three constants: ON_SITE, REMOTE, and HYBRID,  likely representing different work arrangements. These constants could be used to categorize employment types or job settings within a larger program.\n\n**[Inputs]**\n\n*  There are no explicit inputs presented in this code.\n\n**[Output]**\n\n*  The code defines three constant values: \n    *  ON_SITE = '1'\n    *  REMOTE = '2' \n    *  HYBRID = '3' \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__Query____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 125,
+        "endLineNo": 130,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L125-L130&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick Summary]** \nThis code snippet likely initializes a class method or instance. It takes a `query`  and a list of `options` as input,  probably preparing for tasks related to searching, selecting, or interacting with these options based on the given query. The purpose is likely to structure data for a selection or decision process.\n\n**[Inputs]**\n\n*  `query`: This likely represents the input string or criteria used to search or filter the options. \n*  `options`: This is probably a list or collection of possible choices or items that the `query` will be used to evaluate against.\n\n**[Output]**\n\nThe direct output here is the initialization of the class instance or method. The real \"output\" would be the result of further processing that utilizes the  `query` and `options`, such as finding matching options, ranking them, or presenting them to a user. \n"
+    },
+    "linkedin_jobs_scraper__exceptions__exceptions__InvalidCookieException": {
+        "label": "InvalidCookieException",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/exceptions/exceptions.py",
+        "relativePath": "linkedin_jobs_scraper/exceptions/exceptions.py",
+        "lineNo": 8,
+        "endLineNo": 12,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fexceptions%2Fexceptions.py%23L8-L12&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown:\n\n**[Quick Summary]**\n\nThis code defines a custom exception class likely used in a web application.  It's designed to be raised when the application detects an invalid session cookie, indicating a user might be trying to access protected content without proper authentication.\n\n**[Inputs]**\n\n*  `*args`: This suggests the constructor accepts a variable number of positional arguments. These arguments may be used to provide additional context about the invalid session cookie (e.g., the cookie value, the expected value, etc.).\n\n\n**[Output]**\n\n*  None: This code only defines the exception class itself. It doesn't directly produce any output when executed. \n\n\nLet me know if you'd like me to elaborate on any aspect!\n"
+    },
+    "linkedin_jobs_scraper__filters__filters__RelevanceFilters": {
+        "label": "RelevanceFilters",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/filters/filters.py",
+        "relativePath": "linkedin_jobs_scraper/filters/filters.py",
+        "lineNo": 5,
+        "endLineNo": 9,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Ffilters%2Ffilters.py%23L5-L9&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis code snippet defines two constants, `RELEVANT` and `RECENT`, representing string values likely used as filters or tags in a larger program.  The purpose of the code is to provide a standardized way to represent these concepts, enhancing code readability and maintainability.\n\n[Inputs]\n* None. These are constant definitions, not functions that take inputs.\n\n[Output]\n* `RELEVANT`: A string constant with the value 'R'.\n* `RECENT`: A string constant with the value 'DD'. \n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer__Query__validate": {
+        "label": "validate",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 147,
+        "endLineNo": 151,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L147-L151&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary**\n\nThis code snippet appears to be part of an initialization method for a class. It first checks if the input `query` is a string. If it's not, it raises a `ValueError` indicating that the parameter must be a string.  Then, it calls a method `validate()` on an object named `self.options`.  This suggests the class handles some kind of query processing, requiring a string input and likely utilizing options that need to be validated.\n\n**Inputs**\n\n* `self.query`: This is expected to be a string representing the user's query or input.\n* `self.options`: This is likely an object containing configuration or parameter settings for the class.\n\n**Output**\n\n* Raises a `ValueError` if `self.query` is not a string.\n* Calls `self.options.validate()`  to ensure the options are valid. \n\n\n"
+    },
+    "linkedin_jobs_scraper__exceptions__exceptions__CallbackException____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/exceptions/exceptions.py",
+        "relativePath": "linkedin_jobs_scraper/exceptions/exceptions.py",
+        "lineNo": 4,
+        "endLineNo": 7,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fexceptions%2Fexceptions.py%23L4-L7&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]**\n\nThis function is a constructor for a class that inherits from another class. It calls the constructor of the parent class (`super().__init__(*args)`) to initialize inherited attributes and then potentially initializes additional attributes specific to this subclass using the provided `*args`.\n\n**[Inputs]**\n\n*  `*args`:  Arbitrary positional arguments that can be passed to the class constructor\n\n**[Output]**\n\n\n*  Initializes the object according to the parent class's constructor and any additional attributes defined in the subclass. \n"
+    },
+    "linkedin_jobs_scraper__exceptions__exceptions__InvalidCookieException____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/exceptions/exceptions.py",
+        "relativePath": "linkedin_jobs_scraper/exceptions/exceptions.py",
+        "lineNo": 4,
+        "endLineNo": 7,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fexceptions%2Fexceptions.py%23L4-L7&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this code snippet.\n\n**Quick Summary**\n\nThis function is likely a Python class constructor ( `__init__` method). It initializes an object of that class, calling the constructor of its parent class (`super().__init__(*args)`) to handle common initialization tasks.  The `*args` suggests it can accept a variable number of additional arguments during object creation.\n\n**Inputs**\n\n* `*args`: A variable-length tuple of arguments passed to the constructor. These arguments likely correspond to attributes or parameters specific to the class being initialized.\n\n**Output**\n\n* The function doesn't directly produce a visible \"output\". \n* It sets up the initial state (attributes) of the object based on the provided `*args`. \n\n\n\n\nLet me know if you'd like a more in-depth explanation of constructor functions or how `super()` is used!\n"
+    },
+    "linkedin_jobs_scraper__query__quer____Base____is_empty_list": {
+        "label": "__is_empty_list",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 12,
+        "endLineNo": 15,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L12-L15&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** This function checks if a given variable `v` is a list and if that list is empty. Its purpose is likely to determine if a variable holds an empty list data structure.\n\n**[Inputs]**\n* `v`:  The variable to be examined. Presumably, it is expected to be a list-like object.\n\n**[Output]**\n*  `True`: If `v` is a list with zero elements.\n*  `False`: If `v` is not a list or if it contains elements. \n\n\n"
+    },
+    "linkedin_jobs_scraper__query__quer____Base____str__": {
+        "label": "__str__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/query/query.py",
+        "relativePath": "linkedin_jobs_scraper/query/query.py",
+        "lineNo": 7,
+        "endLineNo": 10,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fquery%2Fquery.py%23L7-L10&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]** This function generates a string representation of an object, excluding attributes with `None` values or empty lists. It aims to provide a concise description of the object's state.\n\n**[Inputs]** \n*  `self`:  A reference to the object itself.\n*  `self.__dict__`:  A dictionary containing the object's attributes and their values.\n\n**[Output]**\n* A string representation of the object in the format  `ClassName(attribute1=value1 attribute2=value2 ... )`\n   \n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__AnonymousStrategy____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 65,
+        "endLineNo": 68,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L65-L68&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown \n\n**Quick Summary**\n\nThis function, likely part of a LinkedIn jobs scraper, initializes a scraper object but warns the user against using an outdated \"AnonymousStrategy\". It recommends using an authenticated session for better functionality and provides a link to further documentation.\n\n**Inputs**\n\n* `scraper`: This is likely the main scraper object that handles the interaction with LinkedIn. \n\n**Output**\n\n*  No explicit output is provided. The function initializes an instance of itself, which is presumably designed to handle the scraping process using the provided \"scraper\" object.   \n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__companies": {
+        "label": "companies",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 42,
+        "endLineNo": 45,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L42-L45&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick summary]**\n\nThis function dynamically determines a CSS selector for a subtitle element, choosing between two options based on the value of a boolean variable `Selectors.switch_selectors`.  If `Selectors.switch_selectors` is `False`, it returns a selector specific to \"job result cards\". Otherwise, it returns a more general selector for \"base search cards\". \n\n**[Inputs]**\n\n*  `Selectors.switch_selectors`: A boolean variable.\n\n**[Output]**\n\n* A string containing a CSS selector for a subtitle element.\n   \n    *  If `Selectors.switch_selectors` is `False`: `.result-card__subtitle.job-result-card__subtitle`\n    *  If `Selectors.switch_selectors` is `True`: `.base-search-card__subtitle` \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__container": {
+        "label": "container",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 19,
+        "endLineNo": 22,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L19-L22&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function dynamically determines the CSS selector for the search results container based on a boolean variable `Selectors.switch_selectors`. If `Selectors.switch_selectors` is False, it returns '.results__container.results__container--two-pane', otherwise, it returns '.two-pane-serp-page__results-list'. This likely signifies a switch between different UI layouts for search results.\n\n**Inputs:**\n\n* `Selectors.switch_selectors`: A boolean variable indicating whether to use a specific selector.\n\n**Output:**\n\n* A string containing a CSS selector targeting the search results container. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__jobs": {
+        "label": "jobs",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 24,
+        "endLineNo": 27,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L24-L27&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function determines the CSS selector to be used for extracting job listings from a website. It prioritizes a specific selector (`'.jobs-search__results-list li'`) unless a preference for alternative selectors is set through the `Selectors.switch_selectors` variable.\n\n\n## Inputs \n\n* `Selectors.switch_selectors`: A boolean variable (likely a flag).\n\n## Output\n\n* A string representing a CSS selector: `'.jobs-search__results-list li'`.\n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__links": {
+        "label": "links",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 29,
+        "endLineNo": 32,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L29-L32&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis code snippet determines the CSS selector to use for finding job links based on a flag (`Selectors.switch_selectors`). If `Selectors.switch_selectors` is `False`, it uses one selector; otherwise, it uses a different one.\n\n## Inputs\n * `Selectors.switch_selectors`: A boolean flag.\n \n\n## Output\n *  A string representing a CSS selector string.\n    *  `.jobs-search__results-list li a.result-card__full-card-link` if `Selectors.switch_selectors` is False.\n    *  `a.base-card__full-link` if `Selectors.switch_selectors` is True. \n\n\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__places": {
+        "label": "places",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 47,
+        "endLineNo": 50,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L47-L50&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** \n\nThis function dynamically determines a CSS selector for a job location element based on whether a certain switch (`Selectors.switch_selectors`) is enabled. If the switch is off, it uses '.job-result-card__location'; otherwise, it uses '.job-search-card__location'. It's likely used in web scraping or automated testing to target the location information of job postings.\n\n\n**Inputs:**\n\n* `Selectors.switch_selectors`: A boolean variable (likely a flag) controlling which CSS selector is used.\n\n**Output:**\n\n* A string representing the CSS selector targeting the job location. \n    *  '.job-result-card__location'  if `Selectors.switch_selectors` is `False`\n    *  '.job-search-card__location' if `Selectors.switch_selectors` is `True` \n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__seeMoreJobs": {
+        "label": "seeMoreJobs",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 60,
+        "endLineNo": 63,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L60-L63&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**Quick Summary**\n\nThis function returns a CSS selector string, likely targeting a button with the class \"infinite-scroller__show-more-button\". It's probably used to locate this button within a webpage for purposes like clicking it programmatically or applying CSS styles.\n\n**Inputs**\n\n\n*  There are no explicit inputs listed in the code snippet.\n\n**Output**\n\n*  A string: 'button.infinite-scroller__show-more-button' \n\n\n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__logger____format": {
+        "label": "__format",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/logger.py",
+        "relativePath": "linkedin_jobs_scraper/utils/logger.py",
+        "lineNo": 13,
+        "endLineNo": 16,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Flogger.py%23L13-L16&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function takes a variable number of arguments (`args`) and formats them as a string, truncating any argument longer than  `max_length`  characters and appending \"...\".  The resulting formatted strings are then joined together with a tab character (`\\t`) as a separator. This likely aims to create a concise and visually structured representation of multiple values, particularly in situations where exceeding a certain length might lead to poor readability.\n\n**Inputs:**\n\n* `args`: A variable number of arguments (can be integers, strings, etc.).\n* `max_length`: An integer specifying the maximum allowed length for each argument before truncation.\n\n**Output:**\n\n* A single string containing the formatted arguments. \n    * Each argument is either displayed in its entirety or truncated to `max_length` characters, followed by \"...\".\n    * All formatted arguments are separated by tab characters (`\\t`). \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__logger__debug": {
+        "label": "debug",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/logger.py",
+        "relativePath": "linkedin_jobs_scraper/utils/logger.py",
+        "lineNo": 17,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Flogger.py%23L17-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary**\nThis function logs formatted arguments to a debug log.  The formatting likely uses the format string provided with this function call. The purpose is to record details about function calls and their inputs for debugging purposes.\n\n**Inputs**\n\n*  `args`: This is a variable (likely a tuple or list) containing the arguments passed into the function being debugged.\n*  `__format__`: This is a special string formatting method. It allows you to define how the `args` should be formatted as a string before being logged.\n\n**Output**\n\n*  A formatted string representation of the `args` is written to the logger's debug log.  The format depends on the implementation of `__format__` \n"
+    },
+    "linkedin_jobs_scraper__utils__logger__info": {
+        "label": "info",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/logger.py",
+        "relativePath": "linkedin_jobs_scraper/utils/logger.py",
+        "lineNo": 21,
+        "endLineNo": 24,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Flogger.py%23L21-L24&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**Quick Summary** \n\nThis code snippet logs a formatted list of arguments (`args`) to an info log level. The purpose is to record and track the values passed to a function for debugging, analysis, or monitoring. \n\n**Inputs**\n* `args`: A collection of values (likely a tuple or list) representing the arguments passed to the function.\n\n**Output**\n\n* A formatted string containing the arguments` values is written to an info log message. \n"
+    },
+    "linkedin_jobs_scraper__utils__logger__warn": {
+        "label": "warn",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/logger.py",
+        "relativePath": "linkedin_jobs_scraper/utils/logger.py",
+        "lineNo": 25,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Flogger.py%23L25-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## code breakdown:\n\n[Quick summary]\nThis function logs a warning message using a logger. The message is formatted using an `args` tuple, which likely contains variable arguments representing the warning details. The purpose is to capture and record potentially problematic events within the program for debugging or monitoring purposes.\n\n[Inputs]\n\n* `args`: A tuple of variable arguments containing the details of the warning.\n\n[Output]\n\n\n* A warning message is logged to the configured logger, displaying the formatted information from `args`.\n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__applyLink": {
+        "label": "applyLink",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 34,
+        "endLineNo": 36,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L34-L36&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis\n\n**Quick Summary:** This function is likely used for web scraping. It searches for HTML elements (specifically anchor tags,  `<a>`) that have the attribute `data-is-offsite-apply=true`. This suggests it's looking for job applications that lead to external websites. \n\n**Inputs:**  \n\n* None explicitly listed. It likely operates on the parsed HTML content of a webpage.\n\n**Output:**\n\n* A string that selects the HTML element(s) matching the criteria. This string can then be used with other web scraping tools to extract and process the data within those elements. \n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__dates": {
+        "label": "dates",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 38,
+        "endLineNo": 40,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L38-L40&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Analysis \n\n**Quick summary:** This function simply returns the string \"time\".  Its purpose is unclear without more context, but it might be a placeholder or a basic function used within a larger program. \n\n**Inputs:** \n\n* There are no explicit inputs to this function.\n\n**Output:**\n\n* \"time\" (a string)  \n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__description": {
+        "label": "description",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 56,
+        "endLineNo": 58,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L56-L58&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**Quick Summary** \n\nThis function likely selects a specific HTML element within a webpage.  It returns the CSS selector  `.description__text` ,  which likely targets a class named \"description__text\" on an element intended to hold text describing something. \n\n**Inputs**\n\n* None explicitly stated. It could be part of a larger function that takes webpage content or HTML as input.\n\n**Output**\n\n* A string: `.description__text` \n* This string is likely used to identify and manipulate an HTML element with the class \"description__text\".  \n\n\n\n\nLet me know if you'd like more in-depth analysis or have any other code snippets! \n"
+    },
+    "linkedin_jobs_scraper__strategies__anonymous_strateg__Selectors__detailsPanel": {
+        "label": "detailsPanel",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/anonymous_strategy.py",
+        "lineNo": 52,
+        "endLineNo": 54,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fanonymous_strategy.py%23L52-L54&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary**\n\nThis function returns a string, likely used as a CSS selector.  It's purpose is to target a specific element within a webpage, possibly within a \"details\" panel or component.\n\n**Inputs**\n\n* There are no explicit inputs to this function. \n\n**Output**\n\n* The function returns the string  '.details-pane__content' \n    * This is a CSS selector targeting an element with the class \"details-pane__content\". \n\n\n\n\nLet me know if you have any more code snippets you'd like me to analyze!"
+    },
+    "linkedin_jobs_scraper__strategies__authenticated_strateg__AuthenticatedStrategy____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/authenticated_strategy.py",
+        "lineNo": 46,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fauthenticated_strategy.py%23L46-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis line of code within a Python class likely initializes a new instance of the class. It calls the `__init__` method of the parent class (`super().__init__(scraper)`), passing in an object named `scraper` as an argument. This suggests the class likely handles data scraping tasks, and `scraper` is an object containing the necessary tools or configurations.\n\n**Inputs:**\n\n* `scraper`: An object presumably holding the logic and settings for performing data scraping.\n\n**Output:**\n\n* None (it doesn't directly return a value, but initializes the object's internal state). \n"
+    },
+    "linkedin_jobs_scraper__strategies__strateg__Strategy____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/strategies/strategy.py",
+        "relativePath": "linkedin_jobs_scraper/strategies/strategy.py",
+        "lineNo": 6,
+        "endLineNo": 8,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fstrategies%2Fstrategy.py%23L6-L8&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Breakdown \n\n**[Quick Summary]** This function initializes a `scraper` object, likely an instance of a web scraping library or class. This suggests the purpose of the code is to set up a tool for extracting data from websites. \n\n**[Inputs]**\n*  `self`:  Refers to the instance of the class the function belongs to.\n\n* `scraper`: An object representing a web scraper.  This could be an instance of a library like BeautifulSoup or Scrapy. \n\n**[Output]**\n* None: The function does not explicitly return a value.  \n*  The initialization of the `scraper` attribute within the instance likely prepares it for subsequent data extraction operations. \n\n\n\nLet me know if you'd like a deeper explanation of any specific aspect.\n"
+    },
+    "linkedin_jobs_scraper__events__events__EventMetrics____str__": {
+        "label": "__str__",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/events/events.py",
+        "relativePath": "linkedin_jobs_scraper/events/events.py",
+        "lineNo": 39,
+        "endLineNo": 40,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Fevents%2Fevents.py%23L39-L40&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function generates a formatted string summarizing the execution results of a process. It likely keeps track of how many items were processed, failed, missed, and skipped during the process execution. The purpose is to provide a concise overview of the process's performance and potential issues.\n\n## Inputs\n\n* `self.processed`: Number of items successfully processed.\n* `self.failed`: Number of items that encountered errors during processing.\n* `self.missed`: Number of items that were not processed for some reason (e.g., not found, invalid).\n* `self.skipped`: Number of items that were intentionally not processed. \n\n## Output\n\n* A formatted string containing the values of `processed`, `failed`, `missed`, and `skipped` variables, enclosed in curly braces. \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__logger__error": {
+        "label": "error",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/logger.py",
+        "relativePath": "linkedin_jobs_scraper/utils/logger.py",
+        "lineNo": 29,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Flogger.py%23L29-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:  logger.error(__format(args), exc_info=exc_info)\n\n**[Quick Summary]** This code snippet logs an error message using a logger. The message is formatted using the `args` variable, and additional context from a potential exception (`exc_info`) is included.  The purpose is to record detailed error information for debugging and monitoring.\n\n**[Inputs]**\n\n*  `args`: A variable likely containing a string or tuple of strings to be formatted into the error message.\n*  `exc_info`:  Information about a raised exception, potentially including the exception type, value, and traceback. \n\n**[Output]** A logged error message containing the formatted `args` and, if available, details from the `exc_info` about the exception that occurred.  \n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__text__normalize_spaces": {
+        "label": "normalize_spaces",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/text.py",
+        "relativePath": "linkedin_jobs_scraper/utils/text.py",
+        "lineNo": 4,
+        "endLineNo": 5,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Ftext.py%23L4-L5&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\n\nThis function uses regular expressions to remove excess whitespace (newline characters, tabs, and multiple spaces) from a given text, replacing them with a single space. Its purpose is to clean up text by standardizing whitespace, making it more consistent and easier to work with.  \n\n[Inputs]\n\n* **text:** This is the input string that contains the text to be cleaned up.\n\n[output]\n\n* **Modified text:** A string with excess whitespace removed and replaced with single spaces.  \n\n\n\n"
+    },
+    "linkedin_jobs_scraper__utils__user_agent__get_random_user_agent": {
+        "label": "get_random_user_agent",
+        "systemPath": "/home/sanjay/Development/explore/py-linkedin-jobs-scraper/linkedin_jobs_scraper/utils/user_agent.py",
+        "relativePath": "linkedin_jobs_scraper/utils/user_agent.py",
+        "lineNo": 16,
+        "endLineNo": 17,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fspinlud%2Fpy-linkedin-jobs-scraper%2Fblob%2Fmaster%2Flinkedin_jobs_scraper%2Futils%2Fuser_agent.py%23L16-L17&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function randomly selects a user agent from a predefined list (`_user_agents`). This is likely used to mimic different web browsers when making requests, potentially for web scraping or testing purposes.\n\n## Inputs\n\n* `_user_agents`: A list of strings, each representing a different user agent.\n\n## Output\n\n* A randomly selected string representing a user agent.  \n\n\n"
+    }
+}

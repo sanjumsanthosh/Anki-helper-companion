@@ -1,0 +1,455 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/meta-llama/llama3/blob/main/"
+    },
+    "llama__generation__Llama": {
+        "label": "Llama",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 35,
+        "endLineNo": 342,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L35-L342&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function `chat_completion` generates assistant responses to a list of conversational dialogs using a pre-trained language model. It takes the context of each dialog, processes it, and generates a suitable response based on the provided information. \n\n## Inputs\n\n*  `dialogs`: A list of conversational dialogs, where each dialog is a list of messages (likely containing user and assistant turns).\n*  `temperature`: A float value controlling randomness in the generated text (higher values = more randomness).\n*  `top_p`: A float value controlling which tokens are considered in the sampling process (higher values = more diverse sampling).\n*  `max_gen_len`: An optional integer specifying the maximum length of the generated response (defaults to the model's maximum sequence length minus 1).\n*  `logprobs`: A boolean flag indicating whether to return log probabilities along with the generated tokens (for potential fine-tuning or analysis).\n\n## Output\n\n*  A list of `ChatPrediction` objects, each containing:\n    *  `generation`: A dictionary with a \"role\" (assistant) and \"content\" (the generated text response).\n    *  `tokens`: (Optional) A list of decoded tokens representing the generated response.\n    *  `logprobs`: (Optional) A list of log probabilities for each generated token. \n\n\n"
+    },
+    "llama__generation__Llama__generate": {
+        "label": "generate",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 121,
+        "endLineNo": 228,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L121-L228&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function generates text sequences based on given prompts using a language model. It employs nucleus sampling to control randomness and offers the option to return token log probabilities. The purpose is to provide a controlled and flexible method for text generation based on user-provided prompts. \n\n## Inputs\n\n* `prompt_tokens`: A list of tokenized prompts, where each prompt is represented as a list of integers.\n* `max_gen_len`: The maximum length of the generated text sequence.\n* `temperature`: A float controlling the randomness of the generated text (higher values lead to more randomness).\n* `top_p`: A float representing the nucleus sampling threshold (determines the proportion of most likely tokens considered).\n* `logprobs`: A boolean indicating whether to return token log probabilities along with the generated sequences.\n* `echo`: A boolean indicating whether to include the original prompt tokens in the generated output.\n\n## Output\n\n* `out_tokens`: A list of generated token sequences, where each sequence is a list of integers.\n* `out_logprobs`: An optional list of token log probabilities corresponding to the generated sequences, if `logprobs` is set to True. \n\n\n"
+    },
+    "llama__model__Attention": {
+        "label": "Attention",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 90,
+        "endLineNo": 192,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L90-L192&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**Quick Summary**\n\nThis function implements a Transformer decoder self-attention layer with support for model parallelism and cached key-value pairs. It computes attention scores, applies attention weights, and projects the output. The purpose is to enable efficient attention computations within a larger Transformer model.\n\n**Inputs**\n\n* `x`:  Input tensor likely representing word embeddings or hidden states.\n* `start_pos`:  Integer indicating the starting position for new sequence tokens within the cached keys and values.\n* `freqs_cis`: Tensor containing positional frequency encodings used for rotary embeddings.\n* `mask`:  Optional tensor for masking out invalid attention connections (e.g., padding).\n\n**Output**\n\n*  Projected output tensor representing the context-aware representations after self-attention.\n\n\n\n"
+    },
+    "llama__test_tokenizer__TokenizerTests": {
+        "label": "TokenizerTests",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 10,
+        "endLineNo": 88,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L10-L88&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this code snippet. \n\n**[Quick Summary]** \n\nThis Python code defines tests for a `Tokenizer` and `ChatFormat` class, likely designed for handling text input and output in a conversational AI system. The tests verify the functionality of special tokens, encoding and decoding text, and formatting messages and dialogs.\n\n**[Inputs]**\n\n* `os.environ[\"TOKENIZER_PATH\"]`:  Likely a string containing the path to a file or directory holding the vocabulary and tokenization rules for the tokenizer.\n* Text strings: Used for testing the `encode` and `decode` methods of the tokenizer.\n* Dictionaries and lists: Used to represent messages and dialogs in the `encode_message` and `encode_dialog` tests.\n\n**[Output]**\n\n* Integer token IDs:  Expected output from the `encode` method, representing the numerical tokens corresponding to the input text.\n* String: Expected output from the `decode` method, reconstructing the original text from the given token IDs.\n* Integer token IDs: Expected output from the `encode_message` and `encode_dialog` methods, representing the encoded messages and dialogs according to the defined chat format. \n\n\n\nLet me know if you'd like a deeper dive into any specific aspect of the code!\n"
+    },
+    "llama__generation__Llama__build": {
+        "label": "build",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 37,
+        "endLineNo": 114,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L37-L114&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summar y\n\nThis function builds an instance of the Llama class, which likely represents a language model. It initializes a distributed process group, loads a pre-trained model checkpoint from a specified directory, and initializes the tokenizer. This allows for inference using the loaded Llama model.\n\n## Inputs\n\n* `ckpt_dir`: Path to the directory containing the model checkpoint files.\n* `tokenizer_path`: Path to the tokenizer file used for text processing. \n* `max_seq_len`: Maximum sequence length the model can handle.\n* `max_batch_size`: Maximum number of samples processed in a single batch.\n* `model_parallel_size`: Number of processes used for model parallelism (optional).\n* `seed`: Random seed for reproducibility.\n\n## Output\n\n*  Returns an instance of the `Llama` class containing the loaded model and tokenizer.  \n"
+    },
+    "llama__generation__Llama__chat_completion": {
+        "label": "chat_completion",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 280,
+        "endLineNo": 342,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L280-L342&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]**\n\nThis function generates responses from a language model for a given list of conversational dialogues. It utilizes nucleus sampling with customizable temperature and top-p values to control the randomness of the generated responses.  It can also compute token log probabilities for each generated token if requested. \n\n**[Inputs]**\n\n* `dialogs`: A list of conversational dialogues, where each dialogue is a list of messages.\n* `temperature`: A float value controlling the randomness of the generated text.\n* `top_p`: A float value controlling the nucleus sampling distribution.\n* `max_gen_len`: An optional integer specifying the maximum length of the generated response.\n* `logprobs`: A boolean flag indicating whether to compute token log probabilities.\n\n**[Output]**\n\n* A list of chat predictions, each containing the assistant's generated response.\n* If `logprobs` is True, each prediction also includes the generated tokens and their corresponding log probabilities.   \n\n\n\n"
+    },
+    "llama__tokenizer__Tokenizer__encode": {
+        "label": "encode",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 99,
+        "endLineNo": 161,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L99-L161&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function encodes a given string into a list of integer token IDs. It utilizes the `tiktoken` tokenizer to handle the encoding process while accommodating various special token handling options. \n\nThe purpose of this code is to convert natural language text into a numerical representation suitable for processing by machine learning models.\n\n## Inputs\n\n* `s (str)`: The string to be encoded.\n* `bos (bool)`: Whether to add the beginning-of-sequence token.\n* `eos (bool)`: Whether to add the end-of-sequence token.\n* `allowed_special (Union[Literal[\"all\"], AbstractSet[str]])`:  Set of allowed special tokens. If set to \"all\", all tokens are treated as special.\n* `disallowed_special (Union[Literal[\"all\"], Collection[str]])`: Set of disallowed special tokens. If set to \"all\", all tokens are treated as regular.\n\n## Output\n\n* `List[int]`: A list of integer token IDs representing the encoded string. \n\n\n"
+    },
+    "llama__model__Attention____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 91,
+        "endLineNo": 145,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L91-L145&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code initializes the weights and caches for a multi-head attention mechanism within a Transformer model. It's designed to handle model parallelism, splitting the attention heads across multiple devices.\n\n## Inputs\n\n*  `args`: Argument namespace containing hyperparameters for the model, including: \n    * `n_heads`: Total number of attention heads.\n    * `n_kv_heads`: Number of key/value heads (can be different from `n_heads`).\n    * `dim`: Dimensionality of the model's embeddings.\n    * `max_batch_size`: Maximum batch size supported by the model.\n    * `max_seq_len`: Maximum sequence length supported by the model.\n* `fs_init`: An object likely providing functionality for model parallelism initialization, specifically `get_model_parallel_world_size()`.\n\n## Output\n\n* `self.wq`, `self.wk`, `self.wv`, `self.wo`:  Linear layers for query, key, value projections and output transformation, initialized with specified parameters and grouped for parallel processing.\n* `self.cache_k`, `self.cache_v`:  Tensors for caching key and value projections, initialized with zeros and sized for the maximum batch and sequence lengths.   \n\n\n\n"
+    },
+    "example_text_completion__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/llama3/example_text_completion.py",
+        "relativePath": "example_text_completion.py",
+        "lineNo": 11,
+        "endLineNo": 62,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fexample_text_completion.py%23L11-L62&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Summary:\n\nThis function demonstrates the use of a pre-trained Llama model for text generation. It takes several input parameters to control the generation process and provides completions for a list of example prompts.\n\n## Inputs:\n\n*   `ckpt_dir`: Path to the directory containing the model checkpoint files.\n*   `tokenizer_path`: Path to the tokenizer file used to preprocess the text.\n*   `temperature`: A float value controlling the randomness of the generated text (higher = more random).\n*   `top_p`: A float value controlling the probability distribution of token selection (higher = more diverse).\n*   `max_seq_len`: Maximum length of the input sequence (context window) for the model.\n*   `max_gen_len`: Maximum length of the generated text.\n*   `max_batch_size`: Maximum number of prompts processed simultaneously.\n\n## Outputs:\n\n*   `results`: A list of dictionaries, each containing the generated text for a corresponding prompt. \n\n\n\n"
+    },
+    "llama__model__Transformer": {
+        "label": "Transformer",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 251,
+        "endLineNo": 302,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L251-L302&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines the forward pass of a Transformer model, processing input tokens through embedding, multiple transformer layers, normalization, and output projection to generate predictions. Its purpose is to encode a sequence of tokens and produce a representation suitable for downstream tasks like text generation or classification.\n\n## Inputs\n\n* **tokens**: A tensor of token indices representing the input sequence.\n* **start_pos**: An integer indicating the starting position of the input sequence within a potentially larger context.\n\n\n## Output\n\n* **output**: A tensor of predicted probabilities or scores for each token in the input sequence. \n"
+    },
+    "llama__generation__Llama__text_completion": {
+        "label": "text_completion",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 229,
+        "endLineNo": 279,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L229-L279&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis Python function performs text completion for a list of prompts using a pre-trained language generation model. It leverages nucleus sampling to control the randomness of the generated text and optionally returns token log probabilities.\n\n## Inputs\n\n* **prompts**: A list of text strings representing the prompts for completion.\n* **temperature**: A float value controlling the randomness of the generated text (higher values = more randomness).\n*  **top_p**: A float value representing the probability threshold for nucleus sampling. \n* **max_gen_len**: An optional integer specifying the maximum length of the generated text sequence.\n* **logprobs**: A boolean flag determining whether to include token log probabilities in the output.\n* **echo**: A boolean flag indicating whether to include the original prompt tokens in the generated output.\n\n## Output\n\n*  A list of dictionaries, each containing:\n    * **generation**: The generated text completion for a given prompt.\n    * **tokens**: (If logprobs is True) A list of individual decoded tokens. \n    * **logprobs**: (If logprobs is True) The log probabilities for each generated token. \n\n\n\n"
+    },
+    "llama__tokenizer__Tokenizer____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 49,
+        "endLineNo": 98,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L49-L98&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Python Code Summary\n\n**Quick Summary:** This function initializes a Tokenizer object designed to work with Tiktoken. It loads a Tiktoken model from a specified path, defines special tokens, and sets up the tokenizer for processing text into numerical representations.  This tokenization is essential for feeding text data into machine learning models.\n\n**Inputs:**\n\n* `model_path (str)`: The file path to the pre-trained Tiktoken model.\n\n**Output:**\n\n* A `Tokenizer` object configured with the loaded Tiktoken model, special tokens, and vocabulary information. \n\n\n"
+    },
+    "llama__model__Attention__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 146,
+        "endLineNo": 192,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L146-L192&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function implements a self-attention mechanism with cache support, typically found in transformer models. It calculates attention scores based on query, key, and value vectors, allowing the model to weigh the importance of different input tokens. The cache stores previously computed key and value vectors for efficient processing of long sequences.\n\n## Inputs\n\n* **x:** A tensor representing the input sequence.\n* **start_pos:** An integer indicating the starting position for processing the new input tokens.\n* **freqs_cis:** A tensor containing frequency information, likely used for positional embeddings.\n* **mask:** An optional tensor used for masking irrelevant input tokens.\n\n## Output\n\n* A tensor representing the transformed input sequence after self-attention. \n\n\n\n"
+    },
+    "example_chat_completion__main": {
+        "label": "main",
+        "systemPath": "/home/sanjay/Development/explore/llama3/example_chat_completion.py",
+        "relativePath": "example_chat_completion.py",
+        "lineNo": 11,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fexample_chat_completion.py%23L11-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this code snippet.\n\n**[Quick Summary]**\n\nThis function sets up and runs a conversational AI system using a Llama 3 model. It defines parameters for things like the model's location, tokenizer, and generation length, then uses those to create a dialogue system.\n\n**[Inputs]**\n\n\n* `ckpt_dir`: The path to the directory containing the pre-trained Llama 3 model weights.\n* `tokenizer_path`: The path to the tokenizer file used to convert text into numerical representations for the model.\n* `temperature`: A value controlling the randomness of the generated text (higher = more random).\n* `top_p`:  A parameter for nucleus sampling, influencing the diversity of generated text.\n* `max_seq_len`: The maximum length of the input sequence (context window) the model can handle.\n* `max_batch_size`: The number of input sequences processed simultaneously.\n* `max_gen_len`:  An optional limit on the length of the generated response.\n\n**[Output]** \n\n*  Interactive dialogue responses generated by the Llama 3 model. \n"
+    },
+    "llama__test_tokenizer__TokenizerTests__test_encode_dialog": {
+        "label": "test_encode_dialog",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 56,
+        "endLineNo": 88,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L56-L88&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**[Quick summary]** This function encodes a dialogue prompt into a specific numerical format. It assigns numerical IDs to the dialogue roles  (\"system,\" \"user,\" \"assistant\") and represents the text content as a sequence of integers. This formatting is likely used for inputting dialogue data into a machine learning model.\n\n**[Inputs]**\n*  `dialog`: A list of dictionaries, each representing a turn in the dialogue.\n    * \"role\":  The role of the speaker (\"system,\" \"user,\" \"assistant\").\n    * \"content\": The text content of the dialogue turn.\n\n**[Output]**\n* A list of integers representing the encoded dialogue prompt.\n    * These integers likely correspond to:\n        * Special tokens marking the beginning and end of the dialogue.\n        * Numerical IDs for dialogue roles.\n        * Numerical representations of the text content.  \n\n\n\nLet me know if you have any other code snippets you'd like me to analyze!"
+    },
+    "llama__model__FeedForward": {
+        "label": "FeedForward",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 193,
+        "endLineNo": 221,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L193-L221&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a feed-forward neural network (FFNN) block with multiple parallel linear transformations and a non-linear activation function. It's likely part of a larger model, possibly a transformer, designed for sequence processing tasks. \n\n## Inputs\n\n* **`dim`:**  Dimensionality of the input embeddings.\n* **`hidden_dim`:** Number of hidden units in the FFNN.\n* **`multiple_of`:**  Factor used for adjusting `hidden_dim`  to a multiple of a certain value, potentially for memory or performance reasons.\n* **`ffn_dim_multiplier` (optional):**  Multiplies `hidden_dim` if provided, allowing for dynamic scaling of the hidden layer size.\n\n## Output\n\n*  A tensor with the same dimensionality as the input `x` representing the processed output of the FFNN block. \n\n\n\n"
+    },
+    "llama__model__TransformerBlock": {
+        "label": "TransformerBlock",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 222,
+        "endLineNo": 250,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L222-L250&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function defines a Transformer layer, a fundamental building block in Transformer models like GPT. It processes an input tensor (representing text) and applies self-attention and feed-forward networks to enhance its representation. The goal is to learn contextual relationships within the input and improve the model's understanding of language.\n\n## Inputs\n\n*  `x`: A tensor containing the input data (likely word embeddings).\n* `start_pos`: An integer indicating the starting position for calculations.\n* `freqs_cis`:  A tensor likely related to frequency information or cyclical computations.\n* `mask`: An optional tensor used to mask out certain parts of the input, potentially for tasks like text generation where future tokens are unknown.\n\n## Output\n\n*  A tensor containing the transformed input data, now with a richer representation. \n\n\n\n"
+    },
+    "llama__tokenizer__ChatFormat": {
+        "label": "ChatFormat",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 202,
+        "endLineNo": 229,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L202-L229&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Summary\n\nThis Python function encodes a dialog into a format suitable for a language model. It takes a dialog as input, breaks it down into individual messages, encodes each message with a header indicating the role (e.g., user, assistant), and appends special tokens to mark the beginning and end of messages and the dialog.\n\n## Inputs\n\n* **Dialog**: A structure representing a conversation, likely containing a list of messages.\n* **Message**: A structure containing \"role\" (e.g., \"user\", \"assistant\") and \"content\" (the actual text).\n\n## Output\n\n* **List[Int]**:  A numerical representation of the encoded dialog, ready for processing by a language model.  \n"
+    },
+    "llama__tokenizer__Tokenizer___split_whitespaces_or_nonwhitespaces": {
+        "label": "_split_whitespaces_or_nonwhitespaces",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 176,
+        "endLineNo": 201,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L176-L201&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick Summary] \nThis function splits a given string into substrings based on consecutive whitespace or non-whitespace characters. It aims to limit the number of consecutive occurrences of either whitespaces or non-whitespaces within each substring.\n\n[Inputs]\n* `s`:  The input string to be split.\n* `max_consecutive_slice_len`:  The maximum allowed number of consecutive whitespace or non-whitespace characters in each substring.\n\n[Output]\n* An iterator yielding substrings of the input string `s`.  \n    \n"
+    },
+    "llama__model__Transformer____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 252,
+        "endLineNo": 276,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L252-L276&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis code defines a Transformer model architecture with parallel processing capabilities.  It includes token embeddings, multiple Transformer blocks, a normalization layer, a linear output layer, and precomputed values for efficient attention mechanisms using Rope rotations.\n\n- The code aims to build a powerful and scalable Transformer model potentially for natural language processing tasks.\n\n## Inputs\n\n- `params`: A dictionary-like object containing hyperparameters for the model, such as vocabulary size, embedding dimension, number of Transformer layers, etc.\n- `precompute_freqs_cis`: A function that takes parameters related to attention heads, sequence length, and rope rotation  and returns precomputed values for accelerating attention calculations.\n\n## Output\n\n- A Transformer model object ready to be trained.  \n"
+    },
+    "llama__model__Transformer__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 278,
+        "endLineNo": 302,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L278-L302&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis: \n\n**[Quick Summary]**\n\nThis function processes a sequence of tokens through a transformer model. It applies a set of transformer layers, attention mechanisms, and other operations to generate a final output representation of the input sequence. This output might then be used for tasks like language modeling, text classification, or translation.\n\n**[Inputs]**\n\n*  `tokens`: A tensor representing the input sequence of tokens (likely word or subword units).\n*  `start_pos`: An integer indicating the starting position of the input sequence within a larger context.\n\n\n* `freqs_cis`: A tensor potentially containing frequency information related to the input tokens. This could be used for weighting or bias in the transformer. \n\n**[Output]**\n\n*  A tensor representing the processed input sequence. This output could be used for further downstream tasks depending on the model's architecture. \n"
+    },
+    "llama__model__FeedForward____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 194,
+        "endLineNo": 217,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L194-L217&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function defines an attention-like module with parallel linear transformations. Its purpose is likely to process sequential data, similar to transformer networks,  with efficiency through parallelization techniques. Its specific role within a larger system would require further context.\n\n## Inputs\n\n* `dim`:  Size of the input data dimension.\n* `hidden_dim`: Size of the hidden dimension used in the transformation.\n* `multiple_of`: Defines a factor for padding the hidden dimension to a multiple of this value for potential memory efficiency or parallel processing benefits.\n* `ffn_dim_multiplier`:  (Optional) A multiplier to adjust the `hidden_dim` dynamically. This could allow for scaling the hidden dimension based on different task requirements or input sizes.\n\n## Output\n\n*  A transformed representation of the input data, likely output with the same `dim` as the input. \n* The exact output format depends on the specific context and application.\n"
+    },
+    "llama__generation__sample_top_p": {
+        "label": "sample_top_p",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 343,
+        "endLineNo": 365,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L343-L365&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This Python function implements top-p (nucleus) sampling, a technique used to generate text in language models. It selects the most probable tokens while ensuring that their cumulative probability exceeds a given threshold, resulting in a more diverse and creative output. \n\n**Inputs:**\n* `probs`: A PyTorch tensor representing the probability distribution over possible tokens.\n\n* `p`: A float value defining the probability threshold for top-p sampling.\n\n**Output:**\n* A PyTorch tensor containing the index of the sampled token. \n\n\n"
+    },
+    "llama__test_tokenizer__TokenizerTests__test_encode_message": {
+        "label": "test_encode_message",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 39,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L39-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**[Quick summary]** This code defines a test case for a function called `encode_message`. The function takes a message dictionary as input and likely converts it into a numerical representation, possibly for transmission or storage.  \n\n**[Inputs]**\n\n* `message`: A dictionary containing two keys:\n    * `\"role\"`:  A string indicating the type of message (e.g., \"user\", \"system\").\n    * `\"content\"`:  A string containing the actual message text.\n\n**[Output]**\n* A list of integers representing the encoded message. \n\n"
+    },
+    "llama__model__TransformerBlock____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 223,
+        "endLineNo": 238,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L223-L238&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Code Snippet \n\n**Quick Summary:** \n\nThis code snippet defines a Transformer layer. It initializes parameters for attention, feed-forward networks, and normalization layers. The purpose of this code is to build a fundamental building block for a Transformer model, which is used in various natural language processing tasks. \n\n**Inputs:**\n\n* **args:**  A namespace or dictionary containing hyperparameters for the Transformer layer (e.g., number of heads, embedding dimension, etc.).\n* **layer_id:** An integer identifier for this specific layer within a Transformer stack.\n\n**Output:**\n\n* An instance of a Transformer layer, ready to be used in a Transformer network.  \n\n\n\nLet me know if you have any more code snippets you'd like me to analyze! \n"
+    },
+    "llama__model__ModelArgs": {
+        "label": "ModelArgs",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 20,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L20-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:**  This code snippet defines hyperparameters for a Transformer-based deep learning model. The purpose is to configure the architecture and training settings for a powerful language model.  \n\n**Inputs:**\n\n*  **dim:** Represents the hidden dimension of the model's layers.\n*  **n_layers:** Specifies the number of Transformer encoder/decoder layers.\n*  **n_heads:** Number of attention heads used in the multi-head attention mechanism.\n*  **n_kv_heads:** Optional; could specify the number of attention heads for key and value matrices.\n*  **vocab_size:**  Size of the model's vocabulary (number of unique words).\n*  **multiple_of:**  Ensures the hidden dimension is a multiple of a power of 2 for efficiency.\n*  **ffn_dim_multiplier:**  Optional; multiplies the hidden dimension for the feed-forward network.\n*  **norm_eps:**  A small value added to the denominator during normalization to prevent division by zero.\n*  **rope_theta:**  Parameter for the Relaxed Orthogonal Projection (ROPE) technique used in attention.\n*  **max_batch_size:**  Maximum size of the batches used during training.\n*  **max_seq_len:** Maximum length of input sequences the model can handle.\n\n**Output:**\n\n* None. This code snippet only defines parameters, not performs any computation. \n\n\n"
+    },
+    "llama__model__RMSNorm": {
+        "label": "RMSNorm",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 35,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L35-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:** \n\nThis function defines a model layer that normalizes its input using a variant of L2 normalization. It scales the normalized input by a learnable weight parameter. This type of normalization is often used in neural networks to stabilize training and improve performance.\n\n**Inputs:**\n\n* `x`: A tensor representing the input data.\n* `dim`: An integer specifying the dimensionality of the input tensor.\n* `eps`: A small positive float value used to prevent division by zero during normalization.\n\n**Output:**\n\n* A tensor representing the normalized and scaled input.\n\n\n\nLet me know if you'd like a more detailed explanation of any aspect of the code!\n"
+    },
+    "llama__model__apply_rotary_emb": {
+        "label": "apply_rotary_emb",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 65,
+        "endLineNo": 77,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L65-L77&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:**\n\nThis function performs a frequency-domain operation on two complex tensors, `xq` and `xk`, multiplying them by a tensor `freqs_cis` before converting the results back to real numbers.  The code likely aims to manipulate signal representations in the frequency domain.\n\n**Inputs:**\n\n* `xq`: A complex tensor likely representing a signal or data.\n* `xk`: Another complex tensor, possibly representing another signal or data related to `xq`.\n* `freqs_cis`: A tensor of complex frequencies used to weight or modulate the input signals.\n\n**Output:**\n\n* Two real tensors, `xq_out` and `xk_out`, representing the modified signals after frequency multiplication.\n\n\n\n"
+    },
+    "llama__tokenizer__Tokenizer__decode": {
+        "label": "decode",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 162,
+        "endLineNo": 174,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L162-L174&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n[**Quick Summary**]\nThis function decodes a list of numerical token IDs into a human-readable string. It leverages the `decode()` method of a pre-trained language model (likely a large language model like GPT) to perform the conversion. The purpose is to translate the model's internal representation of text back into a format understandable by humans. \n\n[**Inputs**]\n* `t`: A list of integers representing token IDs.\n\n[**Output**]\n* A string, which is the decoded text corresponding to the input token IDs. \n\n\n"
+    },
+    "llama__model__repeat_kv": {
+        "label": "repeat_kv",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 78,
+        "endLineNo": 89,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L78-L89&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function repeats a tensor `x` along a specific dimension (dim=2 in this case) a specified number of times (`n_rep`). This is useful in transformer models for processing sequences where each head of the multi-head attention mechanism needs multiple copies of the key and value tensors.\n\n## Inputs\n\n* **x**: A tensor representing the input data.\n* **dim**: The dimension along which to repeat the tensor (default is 2).\n* **n_rep**: The number of times to repeat the tensor along the specified dimension.\n\n## Output\n\n* A new tensor where the original tensor `x` is repeated `n_rep` times along dimension `dim`. \n"
+    },
+    "llama__model__TransformerBlock__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 239,
+        "endLineNo": 250,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L239-L250&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis \n\n**[Quick Summary]** \n\nThis function likely defines a single layer within a Transformer network. It processes an input tensor (`x`), incorporates attention mechanism with specified start position and frequencies (`start_pos`, `freqs_cis`), and applies a feed-forward network. These operations are normalized at each stage to help stabilize training. \n\n**[Inputs]**\n\n*  `x`: The input tensor, likely representing a sequence of features.\n*  `start_pos`: An integer indicating the starting position for the attention mechanism.\n*  `freqs_cis`: A tensor containing frequencies used in the attention mechanism. \n*  `mask`: An optional tensor for masking out certain elements during attention, potentially handling sequences of varying lengths.\n\n**[Outputs]**\n\n*  `out`: A tensor representing the processed output, likely enriched with contextual information from the attention and feed-forward operations. \n\n\n\n"
+    },
+    "llama__test_tokenizer__TokenizerTests__test_encode": {
+        "label": "test_encode",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 21,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L21-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick summary]**\n\nThis code snippet tests the tokenization functionality of a tokenizer object likely from a library like HuggingFace Transformers. It encodes a sample sentence (\"This is a test sentence.\") into numerical tokens, adding special beginning-of-sentence (bos) and end-of-sequence (eos) tokens. The purpose is to verify that the tokenizer correctly maps words to their corresponding numerical representations.\n\n**[Inputs]**\n\n* `self.tokenizer`:  An instance of a tokenizer object.\n* `\"This is a test sentence.\"`: The input sentence to be tokenized.\n* `bos=True`:  Flag to indicate adding a beginning-of-sentence token.\n* `eos=True`: Flag to indicate adding an end-of-sentence token.\n\n**[Output]**\n\n*  A list of numerical tokens representing the encoded sentence, including bos and eos tokens.  \n\n\n\n"
+    },
+    "llama__model__precompute_freqs_cis": {
+        "label": "precompute_freqs_cis",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 49,
+        "endLineNo": 56,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L49-L56&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick Summary]** \nThis function generates a 2D complex tensor, `freqs_cis`, representing complex frequencies corresponding to a given frequency spacing. It uses a trigonometric transformation to create these frequencies based on a range `t` and a base frequency. The purpose is likely to generate frequency-domain data used in signal processing or related applications.\n\n\n**[Inputs]**\n\n* `theta`: A float likely representing the scaling factor or base frequency.\n* `dim`: An integer defining the dimensions of the frequency tensor.\n* `end`: An integer representing the end point of the frequency range. \n\n**[Output]**\n\n* `freqs_cis`: A 2D tensor containing complex frequencies.  Each element represents a unique frequency. \n\n\n"
+    },
+    "llama__model__reshape_for_broadcast": {
+        "label": "reshape_for_broadcast",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 57,
+        "endLineNo": 64,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L57-L64&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function reshapes a tensor `x` by modifying its dimensions to match the shape of another tensor `freqs_cis`. The goal is likely to align these tensors for further calculations or operations.\n\n## Inputs\n\n*  `x`:  A multi-dimensional tensor.\n* `freqs_cis`: A 2-dimensional tensor.\n\n## Output\n\n* A reshaped tensor with dimensions  matching  `freqs_cis` and `x`. \n\n\n"
+    },
+    "llama__test_tokenizer__TokenizerTests__test_decode": {
+        "label": "test_decode",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 31,
+        "endLineNo": 38,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L31-L38&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick Summary**\nThis function tests the decoding functionality of a tokenizer by comparing the output of decoding a list of numerical tokens with a predefined text string. It essentially checks if the tokenizer can correctly convert numbers back into their corresponding words.\n\n**Inputs**\n* `self.tokenizer.decode(...)`: This takes a list of numerical tokens as input.\n* The list of numerical tokens: `[128000, 2028, 374, 264, 1296, 11914, 13, 128001]` - These likely represent numerical IDs assigned to each word in the sentence.\n\n\n**Output** \n* The expected output is the string: `\"<|begin_of_text|>This is a test sentence.<|end_of_text|>\"` - This signifies the tokenizer should be able to reconstruct the source sentence. \n"
+    },
+    "llama__tokenizer__ChatFormat__encode_dialog_prompt": {
+        "label": "encode_dialog_prompt",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 222,
+        "endLineNo": 229,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L222-L229&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]**  \n\nThis function  prepares a dialogue history for input into a language model. It tokenizes a given dialogue, encoding each message and appending a special token to signal the start of an assistant's response. This prepares the model to continue the conversation.\n\n**[Inputs]**\n\n* `dialog`: A list of messages representing the conversation history.\n* `self.tokenizer`: A tokenizer object used to convert text into numerical tokens.\n* `self.encode_message`: A function responsible for converting a message into a list of tokens.\n* `self.encode_header`: A function responsible for encoding a message header (likely containing role and content) into tokens.\n\n**[Output]**\n\n*  `tokens`: A list of numerical tokens representing the entire prepared dialogue sequence, ready for input to a language model. \n\n\n"
+    },
+    "llama__tokenizer__ChatFormat__encode_header": {
+        "label": "encode_header",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 206,
+        "endLineNo": 213,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L206-L213&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function prepares a message for processing by a language model, specifically by adding special tokens to demarcate the beginning and end of a header section. It aims to structure the input text for better understanding and handling by the model.\n\n[Inputs]\n* `message`:  A dictionary likely containing information about a message, including a \"role\" field.\n\n[Outputs]\n* A list of tokens representing the message with special header delimiters. \n\n\n"
+    },
+    "llama__tokenizer__ChatFormat__encode_message": {
+        "label": "encode_message",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 214,
+        "endLineNo": 221,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L214-L221&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown:\n\n**[Quick summary]**\n\nThis function takes a message as input, encodes its header using a specific method (`self.encode_header`), adds the message content after tokenization, and finishes with a special end-of-text token. The purpose is likely to prepare the message for processing by a language model.\n\n**[Inputs]**\n\n* `message`:  This is presumably a dictionary-like structure containing information about the message.\n    \n**[Output]**\n\n* `tokens`: A list of tokens representing the encoded message, ready for input into a language model.  \n"
+    },
+    "llama__generation__ChatPrediction": {
+        "label": "ChatPrediction",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 29,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L29-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]**\n\nThis function  appears to be designed to handle the output of a text generation model. It expects to receive a generated \"message\" and potentially associated log probabilities for each word in the message. The logprobs could be used for evaluating the model's performance or for selecting the most probable generation.\n\n**[Inputs]**\n\n* `generation`: This is likely the generated text produced by a language model. \n* `tokens`: A list of individual words or subword units that make up the `generation`.\n* `logprobs`:  A list of floating-point numbers, each representing the logarithm of the probability assigned by the model to the corresponding token in the `tokens` list.\n\n**[Output]**\n\n* The function doesn't explicitly return a value.\n* It might store or process the `generation`, `tokens`, and `logprobs` internally.\n*  The purpose likely involves analyzing or using the generated text and its associated probabilities.  \n\n\n\n"
+    },
+    "llama__generation__CompletionPrediction": {
+        "label": "CompletionPrediction",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 23,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L23-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis code snippet defines a function that likely processes or analyzes text generated by a language model. It expects to receive the generated text as `generation` and may also optionally take lists of tokens and log probabilities for further analysis. The purpose is to provide a structured way to handle and  interpret the output of a language model.\n\n[Inputs]\n- `generation`: The text generated by a language model.\n- `tokens`: (Optional) A list of individual words or subword units that make up the `generation`.\n- `logprobs`: (Optional) A list of log probabilities associated with each token in the `generation`.\n\n[Output]\n-  The function does not explicitly return a value. Its purpose is likely to process the input and potentially store or modify data based on  analysis of the `generation`, `tokens`, and `logprobs`.  \n"
+    },
+    "llama__test_tokenizer__TokenizerTests__test_special_tokens": {
+        "label": "test_special_tokens",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 15,
+        "endLineNo": 20,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L15-L20&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**[Quick Summary]** This code snippet asserts that the `<|begin_of_text|>` special token in the tokenizer has an assigned ID of 128000. This likely serves to ensure the tokenizer is configured correctly, as special tokens often have dedicated IDs for specific tasks.\n\n**[Inputs]**\n\n* `self.tokenizer`:  An instance of a tokenizer object, responsible for converting text into numerical representations and vice versa.\n* `self.assertEqual()`:  An assertion method comparing two values for equality.\n\n**[Output]**\n\n* The code expects `True` to be returned by the `assertEqual()` method, confirming the expected ID (128000) is assigned to the `<|begin_of_text|>` token. \n\n\n"
+    },
+    "llama__generation__Llama____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/generation.py",
+        "relativePath": "llama/generation.py",
+        "lineNo": 115,
+        "endLineNo": 119,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fgeneration.py%23L115-L119&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown \n\n**Quick Summary**\n\nThis code snippet initializes a chatbot by setting up three key components: a pre-trained language model ( `model` ), a tokenizer (`tokenizer`), and a message formatter (`formatter`). The purpose is to prepare the system for generating and handling conversational text.\n\n**Inputs**\n\n*  `model`: A pre-trained language model object, likely from frameworks like Transformers.\n*  `tokenizer`: A tokenizer object used to convert text into numerical representations understood by the model.\n\n*  `ChatFormat`: A custom formatter class designed to structure chatbot messages in a specific format.\n\n\n**Output**\n\n*  An instance of `Chatbot` with initialized `model`, `tokenizer` and `formatter` attributes, ready to process and generate conversational text. \n"
+    },
+    "llama__model__RMSNorm____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 36,
+        "endLineNo": 40,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L36-L40&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function initializes a neural network weight parameter with a given dimension and applies a \"learning rate schedule\" by randomly sampling from a distribution with mean 1 and epsilon variance (eps). This helps with exploring different initial parameter configurations during training.\n\n**Inputs:**\n\n* `self`: Refers to the instance of the class.\n* `eps`:  A value representing the variance of the random sampling distribution for the weight parameters.\n* `dim`: An integer specifying the dimension of the weight parameter tensor.\n\n**Output:**\n\n*  `self.weight`: A weight parameter tensor of size `dim` initialized with values sampled from a distribution with mean 1 and variance `eps`. \n\n\n"
+    },
+    "llama__model__RMSNorm__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 44,
+        "endLineNo": 48,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L44-L48&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "This code snippet likely performs a weight-based scaling operation on a normalized input. It aims to adjust the magnitude of the input data based on a learned weight.\n\n\n **Inputs**\n\n*  `x`: This is likely a tensor or array containing input data. Its data type should be suitable for floating-point calculations (e.g., float32).\n* `self.weight`: This represents a learnable parameter (a weight) associated with the function. It's used to scale the normalized input.\n\n **Output**\n* `output`: A tensor or array containing the scaled and normalized input. It has the same data type as the original input (`x`). \n"
+    },
+    "llama__tokenizer__Message": {
+        "label": "Message",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 30,
+        "endLineNo": 34,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L30-L34&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Please provide the code selection you'd like me to analyze. I need the code to understand its functionality and provide the summary, inputs, and output.  \n\n"
+    },
+    "llama__model__FeedForward__forward": {
+        "label": "forward",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 218,
+        "endLineNo": 221,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L218-L221&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown \n\n**Quick Summary:**\n\nThis function implements a neural network layer using two linear transformations (defined by weights `w1` and `w2`),  the SiLU activation function (similar to ReLU), and element-wise multiplication. It likely aims to learn a non-linear mapping from the input data.\n\n**Inputs:**\n\n* **x:** The input tensor to the neural network layer.\n\n**Output:**\n\n* A tensor representing the output of the neural network layer after applying the transformations and activation. \n\n\n\n"
+    },
+    "llama__test_tokenizer__TokenizerTests__setUp": {
+        "label": "setUp",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/test_tokenizer.py",
+        "relativePath": "llama/test_tokenizer.py",
+        "lineNo": 11,
+        "endLineNo": 14,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftest_tokenizer.py%23L11-L14&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\n\nThis code snippet likely initializes components for text processing within a conversational AI or chatbot system. It loads a pre-trained tokenizer from a specified path and creates a `ChatFormat` object, which probably defines rules for structuring chatbot interactions.\n\n[Inputs]\n*  `os.environ[\"TOKENIZER_PATH\"]`:  A string containing the path to a file storing a tokenizer.\n*  \n[Output]\n*  `self.tokenizer`: An initialized tokenizer object.\n*  `self.format`: A `ChatFormat` object configured for chatbot interactions. \n\n\n"
+    },
+    "setu__get_requirements": {
+        "label": "get_requirements",
+        "systemPath": "/home/sanjay/Development/explore/llama3/setup.py",
+        "relativePath": "setup.py",
+        "lineNo": 7,
+        "endLineNo": 10,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fsetup.py%23L7-L10&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**\n\nThis function reads all lines from a file specified by the `path` input and returns a list where each line has been stripped of leading and trailing whitespace. Its purpose is to efficiently process text files, cleaning up line content for further manipulation.\n\n**[Inputs]**\n\n* `path`: A string representing the path to the file to be read.\n\n**[Output]**\n\n*  A list of strings, each representing a line from the input file with leading/trailing whitespace removed.  \n"
+    },
+    "llama__model__RMSNorm___norm": {
+        "label": "_norm",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/model.py",
+        "relativePath": "llama/model.py",
+        "lineNo": 41,
+        "endLineNo": 43,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Fmodel.py%23L41-L43&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis \n\n**Quick summary:** This function normalizes a tensor `x` element-wise by dividing each element by the square root of its mean squared value plus a small epsilon. This is likely used for some form of feature scaling or normalization in a machine learning context.\n\n\n**Inputs:**\n* `x`: A PyTorch tensor of numerical data.\n* `self.eps`:  A small constant value (likely ensuring numerical stability by preventing division by zero).\n\n**Output:**\n* A PyTorch tensor of the same shape as `x`, containing the normalized values. \n"
+    },
+    "llama__tokenizer__ChatFormat____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/llama3/llama/tokenizer.py",
+        "relativePath": "llama/tokenizer.py",
+        "lineNo": 203,
+        "endLineNo": 205,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fmeta-llama%2Fllama3%2Fblob%2Fmain%2Fllama%2Ftokenizer.py%23L203-L205&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Okay, here's a breakdown of the code snippet:\n\n**Quick Summary**\n\nThis code initializes an instance of a tokenizer, likely for processing text data. Tokenizers break down text into smaller units (words, subwords, characters) that can be used by machine learning models. The purpose is likely to prepare text data for use in a natural language processing task.\n\n**Inputs**\n\n* `tokenizer`:  This refers to an object representing a tokenizer model. It has been assumed the tokenizer object is already defined elsewhere in the code.  \n\n**Output**\n\n*  `self.tokenizer`: This line assigns the provided `tokenizer` object to an attribute named `tokenizer` within the current object (presumably a class).  \n\n\nLet me know if you have any other code snippets you'd like me to analyze!  \n"
+    }
+}

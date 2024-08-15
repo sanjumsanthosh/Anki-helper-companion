@@ -1,0 +1,1362 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        src [label="src", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        src____main__ [label="wren-ai-service.src.__main__", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        src__core [label="wren-ai-service.src.core", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        src__core__engine [label="wren-ai-service.src.core.engine", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        src__core__pipeline [label="wren-ai-service.src.core.pipeline", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        src__core__provider [label="wren-ai-service.src.core.provider", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        src__force_deplo [label="wren-ai-service.src.force_deplo", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        src__globals [label="wren-ai-service.src.globals", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        src__pipelines [label="wren-ai-service.src.pipelines", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        src__pipelines__ask [label="wren-ai-service.src.pipelines.ask", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        src__pipelines__ask__components [label="wren-ai-service.src.pipelines.ask.components", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        src__pipelines__ask__components__post_processors [label="wren-ai-service.src.pipelines.ask.components.post_processors", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        src__pipelines__ask__components__prompts [label="wren-ai-service.src.pipelines.ask.components.prompts", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        src__pipelines__ask__followup_generation [label="wren-ai-service.src.pipelines.ask.followup_generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        src__pipelines__ask__generation [label="wren-ai-service.src.pipelines.ask.generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        src__pipelines__ask__historical_question [label="wren-ai-service.src.pipelines.ask.historical_question", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        src__pipelines__ask__retrieval [label="wren-ai-service.src.pipelines.ask.retrieval", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="16"];
+        src__pipelines__ask__sql_correction [label="wren-ai-service.src.pipelines.ask.sql_correction", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="17"];
+        src__pipelines__ask_details [label="wren-ai-service.src.pipelines.ask_details", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="18"];
+        src__pipelines__ask_details__components [label="wren-ai-service.src.pipelines.ask_details.components", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="19"];
+        src__pipelines__ask_details__components__prompts [label="wren-ai-service.src.pipelines.ask_details.components.prompts", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="20"];
+        src__pipelines__ask_details__generation [label="wren-ai-service.src.pipelines.ask_details.generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="21"];
+        src__pipelines__common [label="wren-ai-service.src.pipelines.common", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="22"];
+        src__pipelines__indexing [label="wren-ai-service.src.pipelines.indexing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="23"];
+        src__pipelines__indexing__indexing [label="wren-ai-service.src.pipelines.indexing.indexing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="24"];
+        src__pipelines__sql_explanation [label="wren-ai-service.src.pipelines.sql_explanation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="25"];
+        src__pipelines__sql_explanation__components [label="wren-ai-service.src.pipelines.sql_explanation.components", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="26"];
+        src__pipelines__sql_explanation__components__prompts [label="wren-ai-service.src.pipelines.sql_explanation.components.prompts", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="27"];
+        src__pipelines__sql_explanation__generation [label="wren-ai-service.src.pipelines.sql_explanation.generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="28"];
+        src__pipelines__sql_regeneration [label="wren-ai-service.src.pipelines.sql_regeneration", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="29"];
+        src__pipelines__sql_regeneration__components [label="wren-ai-service.src.pipelines.sql_regeneration.components", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="30"];
+        src__pipelines__sql_regeneration__components__prompts [label="wren-ai-service.src.pipelines.sql_regeneration.components.prompts", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="31"];
+        src__pipelines__sql_regeneration__generation [label="wren-ai-service.src.pipelines.sql_regeneration.generation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="32"];
+        src__providers [label="wren-ai-service.src.providers", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="33"];
+        src__providers__document_store [label="wren-ai-service.src.providers.document_store", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="34"];
+        src__providers__document_store__qdrant [label="wren-ai-service.src.providers.document_store.qdrant", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="35"];
+        src__providers__embedder [label="wren-ai-service.src.providers.embedder", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="36"];
+        src__providers__embedder__azure_openai [label="wren-ai-service.src.providers.embedder.azure_openai", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="37"];
+        src__providers__embedder__ollama [label="wren-ai-service.src.providers.embedder.ollama", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="38"];
+        src__providers__embedder__openai [label="wren-ai-service.src.providers.embedder.openai", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="39"];
+        src__providers__engine [label="wren-ai-service.src.providers.engine", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="40"];
+        src__providers__engine__wren [label="wren-ai-service.src.providers.engine.wren", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="41"];
+        src__providers__llm [label="wren-ai-service.src.providers.llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="42"];
+        src__providers__llm__azure_openai [label="wren-ai-service.src.providers.llm.azure_openai", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="43"];
+        src__providers__llm__ollama [label="wren-ai-service.src.providers.llm.ollama", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="44"];
+        src__providers__llm__openai [label="wren-ai-service.src.providers.llm.openai", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="45"];
+        src__providers__loader [label="wren-ai-service.src.providers.loader", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="46"];
+        src__utils [label="wren-ai-service.src.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="47"];
+        src__web [label="wren-ai-service.src.web", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="48"];
+        src__web__development [label="wren-ai-service.src.web.development", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="49"];
+        src__web__v1 [label="wren-ai-service.src.web.v1", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="50"];
+        src__web__v1__routers [label="wren-ai-service.src.web.v1.routers", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="51"];
+        src__web__v1__services__ask [label="wren-ai-service.src.web.v1.services.ask", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="52"];
+        src__web__v1__services__ask_details [label="wren-ai-service.src.web.v1.services.ask_details", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="53"];
+        src__web__v1__services__indexing [label="wren-ai-service.src.web.v1.services.indexing", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="54"];
+        src__web__v1__services__sql_explanation [label="wren-ai-service.src.web.v1.services.sql_explanation", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="55"];
+        src__web__v1__services__sql_regeneration [label="wren-ai-service.src.web.v1.services.sql_regeneration", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="56"];
+        subgraph cluster_src____main__ {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.__main__"];
+            src____main____exception_handler [label="exception_handler\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/__main__.py:68)", style="filled", fillcolor="#ffa399b2", fontcolor="#000000", group="1"];
+            src____main____health [label="health\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/__main__.py:89)", style="filled", fillcolor="#ffa399b2", fontcolor="#000000", group="1"];
+            src____main____lifespan [label="lifespan\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/__main__.py:34)", style="filled", fillcolor="#ffa399b2", fontcolor="#000000", group="1"];
+            src____main____request_exception_handler [label="request_exception_handler\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/__main__.py:76)", style="filled", fillcolor="#ffa399b2", fontcolor="#000000", group="1"];
+            src____main____root [label="root\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/__main__.py:84)", style="filled", fillcolor="#ffa399b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_src__core__engine {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.engine"];
+            src__core__engine__Engine [label="Engine\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:18)", style="filled", fillcolor="#ff9565b2", fontcolor="#000000", group="3"];
+            src__core__engine__EngineConfig [label="EngineConfig\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:13)", style="filled", fillcolor="#ff9565b2", fontcolor="#000000", group="3"];
+            src__core__engine__add_quotes [label="add_quotes\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:51)", style="filled", fillcolor="#ff9565b2", fontcolor="#000000", group="3"];
+            src__core__engine__clean_generation_result [label="clean_generation_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:29)", style="filled", fillcolor="#ff9565b2", fontcolor="#000000", group="3"];
+            src__core__engine__remove_limit_statement [label="remove_limit_statement\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:44)", style="filled", fillcolor="#ff9565b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_src__core__engine__Engine {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.engine.Engine"];
+            src__core__engine__Engine__dry_run_sql [label="dry_run_sql\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:20)", style="filled", fillcolor="#ff7232b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_src__core__engine__clean_generation_result {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.engine.clean_generation_result"];
+            src__core__engine__clean_generation_result___normalize_whitespace [label="_normalize_whitespace\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/engine.py:30)", style="filled", fillcolor="#ff7232b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_src__core__pipeline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.pipeline"];
+            src__core__pipeline__BasicPipeline [label="BasicPipeline\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/pipeline.py:9)", style="filled", fillcolor="#ffa565b2", fontcolor="#000000", group="4"];
+            src__core__pipeline__async_validate [label="async_validate\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/pipeline.py:18)", style="filled", fillcolor="#ffa565b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_src__core__pipeline__BasicPipeline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.pipeline.BasicPipeline"];
+            src__core__pipeline__BasicPipeline____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/pipeline.py:10)", style="filled", fillcolor="#ff8732b2", fontcolor="#000000", group="4"];
+            src__core__pipeline__BasicPipeline__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/pipeline.py:14)", style="filled", fillcolor="#ff8732b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_src__core__provider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.provider"];
+            src__core__provider__DocumentStoreProvider [label="DocumentStoreProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:34)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="5"];
+            src__core__provider__EmbedderProvider [label="EmbedderProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:18)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="5"];
+            src__core__provider__LLMProvider [label="LLMProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:6)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_src__core__provider__DocumentStoreProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.provider.DocumentStoreProvider"];
+            src__core__provider__DocumentStoreProvider__get_retriever [label="get_retriever\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:40)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+            src__core__provider__DocumentStoreProvider__get_store [label="get_store\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:36)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_src__core__provider__EmbedderProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.provider.EmbedderProvider"];
+            src__core__provider__EmbedderProvider__get_dimensions [label="get_dimensions\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:30)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+            src__core__provider__EmbedderProvider__get_document_embedder [label="get_document_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:24)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+            src__core__provider__EmbedderProvider__get_model [label="get_model\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:27)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+            src__core__provider__EmbedderProvider__get_text_embedder [label="get_text_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:20)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_src__core__provider__LLMProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.core.provider.LLMProvider"];
+            src__core__provider__LLMProvider__get_generator [label="get_generator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:8)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+            src__core__provider__LLMProvider__get_model [label="get_model\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:11)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+            src__core__provider__LLMProvider__get_model_kwargs [label="get_model_kwargs\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/core/provider.py:14)", style="filled", fillcolor="#ff9c32b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_src__force_deplo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.force_deplo"];
+            src__force_deplo__force_deploy [label="force_deploy\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/force_deploy.py:14)", style="filled", fillcolor="#ffd899b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_src__globals {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.globals"];
+            src__globals__init_globals [label="init_globals\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/globals.py:45)", style="filled", fillcolor="#ffe299b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_src__pipelines__ask__components__post_processors {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.components.post_processors"];
+            src__pipelines__ask__components__post_processors__GenerationPostProcessor [label="GenerationPostProcessor\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/components/post_processors.py:19)", style="filled", fillcolor="#dbff00b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_src__pipelines__ask__components__post_processors__GenerationPostProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.components.post_processors.GenerationPostProcessor"];
+            src__pipelines__ask__components__post_processors__GenerationPostProcessor____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/components/post_processors.py:20)", style="filled", fillcolor="#afcb00b2", fontcolor="#ffffff", group="11"];
+            src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results [label="_classify_invalid_generation_results\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/components/post_processors.py:59)", style="filled", fillcolor="#afcb00b2", fontcolor="#ffffff", group="11"];
+            src__pipelines__ask__components__post_processors__GenerationPostProcessor__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/components/post_processors.py:27)", style="filled", fillcolor="#afcb00b2", fontcolor="#ffffff", group="11"];
+        }
+        subgraph cluster_src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.components.post_processors.GenerationPostProcessor._classify_invalid_generation_results"];
+            src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results___task [label="_task\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/components/post_processors.py:65)", style="filled", fillcolor="#839800b2", fontcolor="#ffffff", group="11"];
+        }
+        subgraph cluster_src__pipelines__ask__followup_generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.followup_generation"];
+            src__pipelines__ask__followup_generation__FollowUpGeneration [label="FollowUpGeneration\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:176)", style="filled", fillcolor="#b8ff32b2", fontcolor="#000000", group="13"];
+            src__pipelines__ask__followup_generation__generate [label="generate\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:155)", style="filled", fillcolor="#b8ff32b2", fontcolor="#000000", group="13"];
+            src__pipelines__ask__followup_generation__post_process [label="post_process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:162)", style="filled", fillcolor="#b8ff32b2", fontcolor="#000000", group="13"];
+            src__pipelines__ask__followup_generation__prompt [label="prompt\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:136)", style="filled", fillcolor="#b8ff32b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_src__pipelines__ask__followup_generation__FollowUpGeneration {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.followup_generation.FollowUpGeneration"];
+            src__pipelines__ask__followup_generation__FollowUpGeneration____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:177)", style="filled", fillcolor="#a7ff00b2", fontcolor="#000000", group="13"];
+            src__pipelines__ask__followup_generation__FollowUpGeneration__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:222)", style="filled", fillcolor="#a7ff00b2", fontcolor="#000000", group="13"];
+            src__pipelines__ask__followup_generation__FollowUpGeneration__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/followup_generation.py:194)", style="filled", fillcolor="#a7ff00b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_src__pipelines__ask__generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.generation"];
+            src__pipelines__ask__generation__Generation [label="Generation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:138)", style="filled", fillcolor="#a3ff32b2", fontcolor="#000000", group="14"];
+            src__pipelines__ask__generation__generate [label="generate\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:117)", style="filled", fillcolor="#a3ff32b2", fontcolor="#000000", group="14"];
+            src__pipelines__ask__generation__post_process [label="post_process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:124)", style="filled", fillcolor="#a3ff32b2", fontcolor="#000000", group="14"];
+            src__pipelines__ask__generation__prompt [label="prompt\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:96)", style="filled", fillcolor="#a3ff32b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_src__pipelines__ask__generation__Generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.generation.Generation"];
+            src__pipelines__ask__generation__Generation____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:139)", style="filled", fillcolor="#8cff00b2", fontcolor="#000000", group="14"];
+            src__pipelines__ask__generation__Generation__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:182)", style="filled", fillcolor="#8cff00b2", fontcolor="#000000", group="14"];
+            src__pipelines__ask__generation__Generation__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/generation.py:154)", style="filled", fillcolor="#8cff00b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_src__pipelines__ask__historical_question {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.historical_question"];
+            src__pipelines__ask__historical_question__HistoricalQuestion [label="HistoricalQuestion\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:96)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__OutputFormatter [label="OutputFormatter\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:37)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__ScoreFilter [label="ScoreFilter\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:24)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__embedding [label="embedding\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:61)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__filtered_documents [label="filtered_documents\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:75)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__formatted_output [label="formatted_output\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:84)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__retrieval [label="retrieval\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:68)", style="filled", fillcolor="#8eff32b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_src__pipelines__ask__historical_question__HistoricalQuestion {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.historical_question.HistoricalQuestion"];
+            src__pipelines__ask__historical_question__HistoricalQuestion____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:97)", style="filled", fillcolor="#72ff00b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__HistoricalQuestion__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:138)", style="filled", fillcolor="#72ff00b2", fontcolor="#000000", group="15"];
+            src__pipelines__ask__historical_question__HistoricalQuestion__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:114)", style="filled", fillcolor="#72ff00b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_src__pipelines__ask__historical_question__OutputFormatter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.historical_question.OutputFormatter"];
+            src__pipelines__ask__historical_question__OutputFormatter__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:41)", style="filled", fillcolor="#72ff00b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_src__pipelines__ask__historical_question__ScoreFilter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.historical_question.ScoreFilter"];
+            src__pipelines__ask__historical_question__ScoreFilter__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/historical_question.py:28)", style="filled", fillcolor="#72ff00b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_src__pipelines__ask__retrieval {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.retrieval"];
+            src__pipelines__ask__retrieval__Retrieval [label="Retrieval\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/retrieval.py:47)", style="filled", fillcolor="#79ff32b2", fontcolor="#000000", group="16"];
+            src__pipelines__ask__retrieval__embedding [label="embedding\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/retrieval.py:20)", style="filled", fillcolor="#79ff32b2", fontcolor="#000000", group="16"];
+            src__pipelines__ask__retrieval__retrieval [label="retrieval\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/retrieval.py:27)", style="filled", fillcolor="#79ff32b2", fontcolor="#000000", group="16"];
+        }
+        subgraph cluster_src__pipelines__ask__retrieval__Retrieval {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.retrieval.Retrieval"];
+            src__pipelines__ask__retrieval__Retrieval____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/retrieval.py:48)", style="filled", fillcolor="#57ff00b2", fontcolor="#000000", group="16"];
+            src__pipelines__ask__retrieval__Retrieval__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/retrieval.py:86)", style="filled", fillcolor="#57ff00b2", fontcolor="#000000", group="16"];
+            src__pipelines__ask__retrieval__Retrieval__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/retrieval.py:62)", style="filled", fillcolor="#57ff00b2", fontcolor="#000000", group="16"];
+        }
+        subgraph cluster_src__pipelines__ask__sql_correction {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.sql_correction"];
+            src__pipelines__ask__sql_correction__SQLCorrection [label="SQLCorrection\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:106)", style="filled", fillcolor="#64ff32b2", fontcolor="#000000", group="17"];
+            src__pipelines__ask__sql_correction__generate [label="generate\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:85)", style="filled", fillcolor="#64ff32b2", fontcolor="#000000", group="17"];
+            src__pipelines__ask__sql_correction__post_process [label="post_process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:92)", style="filled", fillcolor="#64ff32b2", fontcolor="#000000", group="17"];
+            src__pipelines__ask__sql_correction__prompt [label="prompt\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:64)", style="filled", fillcolor="#64ff32b2", fontcolor="#000000", group="17"];
+        }
+        subgraph cluster_src__pipelines__ask__sql_correction__SQLCorrection {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask.sql_correction.SQLCorrection"];
+            src__pipelines__ask__sql_correction__SQLCorrection____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:107)", style="filled", fillcolor="#3dff00b2", fontcolor="#000000", group="17"];
+            src__pipelines__ask__sql_correction__SQLCorrection__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:150)", style="filled", fillcolor="#3dff00b2", fontcolor="#000000", group="17"];
+            src__pipelines__ask__sql_correction__SQLCorrection__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask/sql_correction.py:124)", style="filled", fillcolor="#3dff00b2", fontcolor="#000000", group="17"];
+        }
+        subgraph cluster_src__pipelines__ask_details__generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask_details.generation"];
+            src__pipelines__ask_details__generation__Generation [label="Generation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:80)", style="filled", fillcolor="#32ff56b2", fontcolor="#000000", group="21"];
+            src__pipelines__ask_details__generation__generate [label="generate\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:59)", style="filled", fillcolor="#32ff56b2", fontcolor="#000000", group="21"];
+            src__pipelines__ask_details__generation__post_process [label="post_process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:66)", style="filled", fillcolor="#32ff56b2", fontcolor="#000000", group="21"];
+            src__pipelines__ask_details__generation__prompt [label="prompt\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:52)", style="filled", fillcolor="#32ff56b2", fontcolor="#000000", group="21"];
+        }
+        subgraph cluster_src__pipelines__ask_details__generation__Generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.ask_details.generation.Generation"];
+            src__pipelines__ask_details__generation__Generation____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:81)", style="filled", fillcolor="#00ff2bb2", fontcolor="#000000", group="21"];
+            src__pipelines__ask_details__generation__Generation__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:116)", style="filled", fillcolor="#00ff2bb2", fontcolor="#000000", group="21"];
+            src__pipelines__ask_details__generation__Generation__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/ask_details/generation.py:96)", style="filled", fillcolor="#00ff2bb2", fontcolor="#000000", group="21"];
+        }
+        subgraph cluster_src__pipelines__common {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.common"];
+            src__pipelines__common__GenerationPostProcessor [label="GenerationPostProcessor\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/common.py:19)", style="filled", fillcolor="#65ff90b2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_src__pipelines__common__GenerationPostProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.common.GenerationPostProcessor"];
+            src__pipelines__common__GenerationPostProcessor____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/common.py:20)", style="filled", fillcolor="#32ff6bb2", fontcolor="#000000", group="22"];
+            src__pipelines__common__GenerationPostProcessor___build_cte_query [label="_build_cte_query\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/common.py:74)", style="filled", fillcolor="#32ff6bb2", fontcolor="#000000", group="22"];
+            src__pipelines__common__GenerationPostProcessor___check_if_sql_executable [label="_check_if_sql_executable\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/common.py:83)", style="filled", fillcolor="#32ff6bb2", fontcolor="#000000", group="22"];
+            src__pipelines__common__GenerationPostProcessor__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/common.py:26)", style="filled", fillcolor="#32ff6bb2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing"];
+            src__pipelines__indexing__indexing__AsyncDocumentWriter [label="AsyncDocumentWriter\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:333)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DDLConverter [label="DDLConverter\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:134)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DocumentCleaner [label="DocumentCleaner\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:29)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__Indexing [label="Indexing\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:430)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__MDLValidator [label="MDLValidator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:64)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__ViewConverter [label="ViewConverter\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:89)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__clean_document_store [label="clean_document_store\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:350)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__convert_to_ddl [label="convert_to_ddl\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:373)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__convert_to_view [label="convert_to_view\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:401)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__embed_ddl [label="embed_ddl\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:384)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__embed_view [label="embed_view\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:412)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__validate_mdl [label="validate_mdl\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:360)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__write_ddl [label="write_ddl\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:395)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__write_view [label="write_view\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:423)", style="filled", fillcolor="#32ff95b2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__AsyncDocumentWriter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.AsyncDocumentWriter"];
+            src__pipelines__indexing__indexing__AsyncDocumentWriter__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:335)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__DDLConverter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.DDLConverter"];
+            src__pipelines__indexing__indexing__DDLConverter___convert_metrics [label="_convert_metrics\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:300)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DDLConverter___convert_models_and_relationships [label="_convert_models_and_relationships\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:204)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DDLConverter___convert_views [label="_convert_views\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:293)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DDLConverter__get_ddl_commands [label="get_ddl_commands\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:159)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DDLConverter__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:136)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__DDLConverter___convert_views {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.DDLConverter._convert_views"];
+            src__pipelines__indexing__indexing__DDLConverter___convert_views___format [label="_format\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:294)", style="filled", fillcolor="#00cb62b2", fontcolor="#ffffff", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__DocumentCleaner {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.DocumentCleaner"];
+            src__pipelines__indexing__indexing__DocumentCleaner____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:35)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__DocumentCleaner__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:39)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__DocumentCleaner__run {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.DocumentCleaner.run"];
+            src__pipelines__indexing__indexing__DocumentCleaner__run___clear_documents [label="_clear_documents\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:40)", style="filled", fillcolor="#00cb62b2", fontcolor="#ffffff", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__Indexing {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.Indexing"];
+            src__pipelines__indexing__indexing__Indexing____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:431)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__Indexing__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:485)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+            src__pipelines__indexing__indexing__Indexing__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:459)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__MDLValidator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.MDLValidator"];
+            src__pipelines__indexing__indexing__MDLValidator__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:70)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__ViewConverter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.ViewConverter"];
+            src__pipelines__indexing__indexing__ViewConverter__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:102)", style="filled", fillcolor="#00ff7bb2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_src__pipelines__indexing__indexing__ViewConverter__run {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.indexing.indexing.ViewConverter.run"];
+            src__pipelines__indexing__indexing__ViewConverter__run___format [label="_format\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/indexing/indexing.py:103)", style="filled", fillcolor="#00cb62b2", fontcolor="#ffffff", group="24"];
+        }
+        subgraph cluster_src__pipelines__sql_explanation__generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_explanation.generation"];
+            src__pipelines__sql_explanation__generation__Generation [label="Generation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:507)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__GenerationPostProcessor [label="GenerationPostProcessor\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:245)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor [label="SQLAnalysisPreprocessor\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:182)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_filter_type [label="_compose_sql_expression_of_filter_type\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:36)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_groupby_type [label="_compose_sql_expression_of_groupby_type\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:63)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type [label="_compose_sql_expression_of_relation_type\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:76)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_select_type [label="_compose_sql_expression_of_select_type\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:128)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_sortings_type [label="_compose_sql_expression_of_sortings_type\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:162)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___extract_to_str [label="_extract_to_str\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:172)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__generates [label="generates\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:472)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__post_process [label="post_process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:486)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__preprocess [label="preprocess\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:395)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__prompts [label="prompts\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:406)", style="filled", fillcolor="#32ffe9b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_src__pipelines__sql_explanation__generation__Generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_explanation.generation.Generation"];
+            src__pipelines__sql_explanation__generation__Generation____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:508)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__Generation__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:553)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation__Generation__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:525)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_src__pipelines__sql_explanation__generation__GenerationPostProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_explanation.generation.GenerationPostProcessor"];
+            src__pipelines__sql_explanation__generation__GenerationPostProcessor__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:249)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_explanation.generation.SQLAnalysisPreprocessor"];
+            src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:186)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_explanation.generation._compose_sql_expression_of_relation_type"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___collect_relations [label="_collect_relations\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:88)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+            src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___is_subquery_or_has_subquery_child [label="_is_subquery_or_has_subquery_child\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:77)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_src__pipelines__sql_explanation__generation__generates {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_explanation.generation.generates"];
+            src__pipelines__sql_explanation__generation__generates___task [label="_task\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_explanation/generation.py:477)", style="filled", fillcolor="#00ffe4b2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_src__pipelines__sql_regeneration__generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_regeneration.generation"];
+            src__pipelines__sql_regeneration__generation__Generation [label="Generation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:112)", style="filled", fillcolor="#32bfffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__SQLRegenerationRreprocesser [label="SQLRegenerationRreprocesser\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:36)", style="filled", fillcolor="#32bfffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__preprocess [label="preprocess\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:56)", style="filled", fillcolor="#32bfffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__sql_regeneration_generate [label="sql_regeneration_generate\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:81)", style="filled", fillcolor="#32bfffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__sql_regeneration_post_process [label="sql_regeneration_post_process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:95)", style="filled", fillcolor="#32bfffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__sql_regeneration_prompt [label="sql_regeneration_prompt\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:71)", style="filled", fillcolor="#32bfffb2", fontcolor="#000000", group="32"];
+        }
+        subgraph cluster_src__pipelines__sql_regeneration__generation__Generation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_regeneration.generation.Generation"];
+            src__pipelines__sql_regeneration__generation__Generation____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:113)", style="filled", fillcolor="#00afffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__Generation__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:157)", style="filled", fillcolor="#00afffb2", fontcolor="#000000", group="32"];
+            src__pipelines__sql_regeneration__generation__Generation__visualize [label="visualize\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:131)", style="filled", fillcolor="#00afffb2", fontcolor="#000000", group="32"];
+        }
+        subgraph cluster_src__pipelines__sql_regeneration__generation__SQLRegenerationRreprocesser {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.pipelines.sql_regeneration.generation.SQLRegenerationRreprocesser"];
+            src__pipelines__sql_regeneration__generation__SQLRegenerationRreprocesser__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/pipelines/sql_regeneration/generation.py:40)", style="filled", fillcolor="#00afffb2", fontcolor="#000000", group="32"];
+        }
+        subgraph cluster_src__providers__document_store__qdrant {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.document_store.qdrant"];
+            src__providers__document_store__qdrant__AsyncQdrantDocumentStore [label="AsyncQdrantDocumentStore\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:69)", style="filled", fillcolor="#3280ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever [label="AsyncQdrantEmbeddingRetriever\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:291)", style="filled", fillcolor="#3280ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__QdrantProvider [label="QdrantProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:329)", style="filled", fillcolor="#3280ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__convert_haystack_documents_to_qdrant_points [label="convert_haystack_documents_to_qdrant_points\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:32)", style="filled", fillcolor="#3280ffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_src__providers__document_store__qdrant__AsyncQdrantDocumentStore {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.document_store.qdrant.AsyncQdrantDocumentStore"];
+            src__providers__document_store__qdrant__AsyncQdrantDocumentStore____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:70)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__AsyncQdrantDocumentStore___query_by_embedding [label="_query_by_embedding\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:171)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__AsyncQdrantDocumentStore__count_documents [label="count_documents\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:231)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__AsyncQdrantDocumentStore__delete_documents [label="delete_documents\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:218)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__AsyncQdrantDocumentStore__write_documents [label="write_documents\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:240)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.document_store.qdrant.AsyncQdrantEmbeddingRetriever"];
+            src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:292)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:309)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_src__providers__document_store__qdrant__QdrantProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.document_store.qdrant.QdrantProvider"];
+            src__providers__document_store__qdrant__QdrantProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:330)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__QdrantProvider__get_retriever [label="get_retriever\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:381)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+            src__providers__document_store__qdrant__QdrantProvider__get_store [label="get_store\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/document_store/qdrant.py:340)", style="filled", fillcolor="#0060ffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_src__providers__embedder__azure_openai {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.azure_openai"];
+            src__providers__embedder__azure_openai__AsyncDocumentEmbedder [label="AsyncDocumentEmbedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:91)", style="filled", fillcolor="#3256ffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AsyncTextEmbedder [label="AsyncTextEmbedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:27)", style="filled", fillcolor="#3256ffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider [label="AzureOpenAIEmbedderProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:191)", style="filled", fillcolor="#3256ffb2", fontcolor="#000000", group="37"];
+        }
+        subgraph cluster_src__providers__embedder__azure_openai__AsyncDocumentEmbedder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.azure_openai.AsyncDocumentEmbedder"];
+            src__providers__embedder__azure_openai__AsyncDocumentEmbedder____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:92)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AsyncDocumentEmbedder___embed_batch [label="_embed_batch\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:129)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AsyncDocumentEmbedder__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:163)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+        }
+        subgraph cluster_src__providers__embedder__azure_openai__AsyncTextEmbedder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.azure_openai.AsyncTextEmbedder"];
+            src__providers__embedder__azure_openai__AsyncTextEmbedder____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:28)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AsyncTextEmbedder__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:59)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+        }
+        subgraph cluster_src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.azure_openai.AzureOpenAIEmbedderProvider"];
+            src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:192)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_document_embedder [label="get_document_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:227)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+            src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_text_embedder [label="get_text_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/azure_openai.py:219)", style="filled", fillcolor="#002bffb2", fontcolor="#000000", group="37"];
+        }
+        subgraph cluster_src__providers__embedder__ollama {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.ollama"];
+            src__providers__embedder__ollama__AsyncDocumentEmbedder [label="AsyncDocumentEmbedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:68)", style="filled", fillcolor="#3241ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__AsyncTextEmbedder [label="AsyncTextEmbedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:26)", style="filled", fillcolor="#3241ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__OllamaEmbedderProvider [label="OllamaEmbedderProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:161)", style="filled", fillcolor="#3241ffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_src__providers__embedder__ollama__AsyncDocumentEmbedder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.ollama.AsyncDocumentEmbedder"];
+            src__providers__embedder__ollama__AsyncDocumentEmbedder____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:69)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__AsyncDocumentEmbedder___embed_batch [label="_embed_batch\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:93)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__AsyncDocumentEmbedder__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:129)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_src__providers__embedder__ollama__AsyncTextEmbedder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.ollama.AsyncTextEmbedder"];
+            src__providers__embedder__ollama__AsyncTextEmbedder____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:27)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__AsyncTextEmbedder__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:42)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_src__providers__embedder__ollama__OllamaEmbedderProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.ollama.OllamaEmbedderProvider"];
+            src__providers__embedder__ollama__OllamaEmbedderProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:162)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__OllamaEmbedderProvider__get_document_embedder [label="get_document_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:192)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+            src__providers__embedder__ollama__OllamaEmbedderProvider__get_text_embedder [label="get_text_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/ollama.py:182)", style="filled", fillcolor="#0011ffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_src__providers__embedder__openai {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.openai"];
+            src__providers__embedder__openai__AsyncDocumentEmbedder [label="AsyncDocumentEmbedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:83)", style="filled", fillcolor="#3a32ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__AsyncTextEmbedder [label="AsyncTextEmbedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:25)", style="filled", fillcolor="#3a32ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__OpenAIEmbedderProvider [label="OpenAIEmbedderProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:179)", style="filled", fillcolor="#3a32ffb2", fontcolor="#000000", group="39"];
+        }
+        subgraph cluster_src__providers__embedder__openai__AsyncDocumentEmbedder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.openai.AsyncDocumentEmbedder"];
+            src__providers__embedder__openai__AsyncDocumentEmbedder____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:84)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__AsyncDocumentEmbedder___embed_batch [label="_embed_batch\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:117)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__AsyncDocumentEmbedder__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:151)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+        }
+        subgraph cluster_src__providers__embedder__openai__AsyncTextEmbedder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.openai.AsyncTextEmbedder"];
+            src__providers__embedder__openai__AsyncTextEmbedder____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:26)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__AsyncTextEmbedder__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:53)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+        }
+        subgraph cluster_src__providers__embedder__openai__OpenAIEmbedderProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.openai.OpenAIEmbedderProvider"];
+            src__providers__embedder__openai__OpenAIEmbedderProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:180)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__OpenAIEmbedderProvider__get_document_embedder [label="get_document_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:223)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+            src__providers__embedder__openai__OpenAIEmbedderProvider__get_text_embedder [label="get_text_embedder\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:216)", style="filled", fillcolor="#0800ffb2", fontcolor="#000000", group="39"];
+        }
+        subgraph cluster_src__providers__embedder__openai__OpenAIEmbedderProvider____init__ {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.embedder.openai.OpenAIEmbedderProvider.__init__"];
+            src__providers__embedder__openai__OpenAIEmbedderProvider____init_____verify_api_key [label="_verify_api_key\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/embedder/openai.py:193)", style="filled", fillcolor="#0700cbb2", fontcolor="#ffffff", group="39"];
+        }
+        subgraph cluster_src__providers__engine__wren {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.engine.wren"];
+            src__providers__engine__wren__WrenEngine [label="WrenEngine\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:89)", style="filled", fillcolor="#6432ffb2", fontcolor="#000000", group="41"];
+            src__providers__engine__wren__WrenIbis [label="WrenIbis\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:49)", style="filled", fillcolor="#6432ffb2", fontcolor="#000000", group="41"];
+            src__providers__engine__wren__WrenUI [label="WrenUI\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:16)", style="filled", fillcolor="#6432ffb2", fontcolor="#000000", group="41"];
+        }
+        subgraph cluster_src__providers__engine__wren__WrenEngine {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.engine.wren.WrenEngine"];
+            src__providers__engine__wren__WrenEngine____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:90)", style="filled", fillcolor="#3d00ffb2", fontcolor="#000000", group="41"];
+            src__providers__engine__wren__WrenEngine__dry_run_sql [label="dry_run_sql\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:94)", style="filled", fillcolor="#3d00ffb2", fontcolor="#000000", group="41"];
+        }
+        subgraph cluster_src__providers__engine__wren__WrenIbis {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.engine.wren.WrenIbis"];
+            src__providers__engine__wren__WrenIbis____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:50)", style="filled", fillcolor="#3d00ffb2", fontcolor="#000000", group="41"];
+            src__providers__engine__wren__WrenIbis__dry_run_sql [label="dry_run_sql\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:67)", style="filled", fillcolor="#3d00ffb2", fontcolor="#000000", group="41"];
+        }
+        subgraph cluster_src__providers__engine__wren__WrenUI {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.engine.wren.WrenUI"];
+            src__providers__engine__wren__WrenUI____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:17)", style="filled", fillcolor="#3d00ffb2", fontcolor="#000000", group="41"];
+            src__providers__engine__wren__WrenUI__dry_run_sql [label="dry_run_sql\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/engine/wren.py:21)", style="filled", fillcolor="#3d00ffb2", fontcolor="#000000", group="41"];
+        }
+        subgraph cluster_src__providers__llm__azure_openai {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.azure_openai"];
+            src__providers__llm__azure_openai__AsyncGenerator [label="AsyncGenerator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/azure_openai.py:31)", style="filled", fillcolor="#8e32ffb2", fontcolor="#000000", group="43"];
+            src__providers__llm__azure_openai__AzureOpenAILLMProvider [label="AzureOpenAILLMProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/azure_openai.py:118)", style="filled", fillcolor="#8e32ffb2", fontcolor="#000000", group="43"];
+        }
+        subgraph cluster_src__providers__llm__azure_openai__AsyncGenerator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.azure_openai.AsyncGenerator"];
+            src__providers__llm__azure_openai__AsyncGenerator____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/azure_openai.py:32)", style="filled", fillcolor="#7200ffb2", fontcolor="#000000", group="43"];
+            src__providers__llm__azure_openai__AsyncGenerator__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/azure_openai.py:61)", style="filled", fillcolor="#7200ffb2", fontcolor="#000000", group="43"];
+        }
+        subgraph cluster_src__providers__llm__azure_openai__AzureOpenAILLMProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.azure_openai.AzureOpenAILLMProvider"];
+            src__providers__llm__azure_openai__AzureOpenAILLMProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/azure_openai.py:119)", style="filled", fillcolor="#7200ffb2", fontcolor="#000000", group="43"];
+            src__providers__llm__azure_openai__AzureOpenAILLMProvider__get_generator [label="get_generator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/azure_openai.py:143)", style="filled", fillcolor="#7200ffb2", fontcolor="#000000", group="43"];
+        }
+        subgraph cluster_src__providers__llm__ollama {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.ollama"];
+            src__providers__llm__ollama__AsyncGenerator [label="AsyncGenerator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:25)", style="filled", fillcolor="#a332ffb2", fontcolor="#000000", group="44"];
+            src__providers__llm__ollama__OllamaLLMProvider [label="OllamaLLMProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:124)", style="filled", fillcolor="#a332ffb2", fontcolor="#000000", group="44"];
+        }
+        subgraph cluster_src__providers__llm__ollama__AsyncGenerator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.ollama.AsyncGenerator"];
+            src__providers__llm__ollama__AsyncGenerator____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:26)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+            src__providers__llm__ollama__AsyncGenerator___convert_to_response [label="_convert_to_response\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:60)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+            src__providers__llm__ollama__AsyncGenerator___create_json_payload [label="_create_json_payload\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:74)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+            src__providers__llm__ollama__AsyncGenerator___handle_streaming_response [label="_handle_streaming_response\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:48)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+            src__providers__llm__ollama__AsyncGenerator__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:93)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+        }
+        subgraph cluster_src__providers__llm__ollama__OllamaLLMProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.ollama.OllamaLLMProvider"];
+            src__providers__llm__ollama__OllamaLLMProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:125)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+            src__providers__llm__ollama__OllamaLLMProvider__get_generator [label="get_generator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/ollama.py:144)", style="filled", fillcolor="#8c00ffb2", fontcolor="#000000", group="44"];
+        }
+        subgraph cluster_src__providers__llm__openai {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.openai"];
+            src__providers__llm__openai__AsyncGenerator [label="AsyncGenerator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:32)", style="filled", fillcolor="#b832ffb2", fontcolor="#000000", group="45"];
+            src__providers__llm__openai__OpenAILLMProvider [label="OpenAILLMProvider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:118)", style="filled", fillcolor="#b832ffb2", fontcolor="#000000", group="45"];
+        }
+        subgraph cluster_src__providers__llm__openai__AsyncGenerator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.openai.AsyncGenerator"];
+            src__providers__llm__openai__AsyncGenerator____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:33)", style="filled", fillcolor="#a700ffb2", fontcolor="#000000", group="45"];
+            src__providers__llm__openai__AsyncGenerator__run [label="run\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:60)", style="filled", fillcolor="#a700ffb2", fontcolor="#000000", group="45"];
+        }
+        subgraph cluster_src__providers__llm__openai__OpenAILLMProvider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.openai.OpenAILLMProvider"];
+            src__providers__llm__openai__OpenAILLMProvider____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:119)", style="filled", fillcolor="#a700ffb2", fontcolor="#000000", group="45"];
+            src__providers__llm__openai__OpenAILLMProvider__get_generator [label="get_generator\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:149)", style="filled", fillcolor="#a700ffb2", fontcolor="#000000", group="45"];
+        }
+        subgraph cluster_src__providers__llm__openai__OpenAILLMProvider____init__ {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.llm.openai.OpenAILLMProvider.__init__"];
+            src__providers__llm__openai__OpenAILLMProvider____init_____verify_api_key [label="_verify_api_key\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/llm/openai.py:130)", style="filled", fillcolor="#8500cbb2", fontcolor="#ffffff", group="45"];
+        }
+        subgraph cluster_src__providers__loader {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.loader"];
+            src__providers__loader__get_default_embedding_model_dim [label="get_default_embedding_model_dim\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/loader.py:98)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="46"];
+            src__providers__loader__get_provider [label="get_provider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/loader.py:73)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="46"];
+            src__providers__loader__import_mods [label="import_mods\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/loader.py:14)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="46"];
+            src__providers__loader__provider [label="provider\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/loader.py:45)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="46"];
+            src__providers__loader__pull_ollama_model [label="pull_ollama_model\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/loader.py:105)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="46"];
+        }
+        subgraph cluster_src__providers__loader__provider {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.providers.loader.provider"];
+            src__providers__loader__provider__wrapper [label="wrapper\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/providers/loader.py:65)", style="filled", fillcolor="#cd32ffb2", fontcolor="#000000", group="46"];
+        }
+        subgraph cluster_src__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.utils"];
+            src__utils__CustomFormatter [label="CustomFormatter\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:20)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__async_timer [label="async_timer\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:100)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__init_langfuse [label="init_langfuse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:128)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__init_providers [label="init_providers\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:62)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__load_env_vars [label="load_env_vars\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:54)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__remove_trailing_slash [label="remove_trailing_slash\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:124)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__service_metadata [label="service_metadata\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:207)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__setup_custom_logger [label="setup_custom_logger\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:44)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__timer [label="timer\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:80)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+            src__utils__trace_metadata [label="trace_metadata\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:143)", style="filled", fillcolor="#f099ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_src__utils__CustomFormatter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.utils.CustomFormatter"];
+            src__utils__CustomFormatter__format [label="format\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:38)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_src__utils__async_timer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.utils.async_timer"];
+            src__utils__async_timer__process [label="process\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:101)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+            src__utils__async_timer__wrapper_timer [label="wrapper_timer\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:106)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_src__utils__service_metadata {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.utils.service_metadata"];
+            src__utils__service_metadata__get_version_from_pyproject [label="get_version_from_pyproject\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:222)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_src__utils__timer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.utils.timer"];
+            src__utils__timer__wrapper_timer [label="wrapper_timer\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:82)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_src__utils__trace_metadata {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.utils.trace_metadata"];
+            src__utils__trace_metadata__extract [label="extract\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:162)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+            src__utils__trace_metadata__wrapper [label="wrapper\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/utils.py:176)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_src__web__development {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.development"];
+            src__web__development__dummy [label="dummy\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/development.py:70)", style="filled", fillcolor="#ff65f4b2", fontcolor="#000000", group="49"];
+            src__web__development__dummy_ask [label="dummy_ask\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/development.py:84)", style="filled", fillcolor="#ff65f4b2", fontcolor="#000000", group="49"];
+            src__web__development__dummy_ask_task [label="dummy_ask_task\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/development.py:23)", style="filled", fillcolor="#ff65f4b2", fontcolor="#000000", group="49"];
+            src__web__development__get_dummy_ask_result [label="get_dummy_ask_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/development.py:102)", style="filled", fillcolor="#ff65f4b2", fontcolor="#000000", group="49"];
+            src__web__development__get_dummy_ask_task_result [label="get_dummy_ask_task_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/development.py:54)", style="filled", fillcolor="#ff65f4b2", fontcolor="#000000", group="49"];
+        }
+        subgraph cluster_src__web__v1__routers {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.routers"];
+            src__web__v1__routers__ask [label="ask\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:70)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__ask_details [label="ask_details\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:107)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__get_ask_details_result [label="get_ask_details_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:127)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__get_ask_result [label="get_ask_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:102)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__get_prepare_semantics_status [label="get_prepare_semantics_status\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:61)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__get_sql_explanation_result [label="get_sql_explanation_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:151)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__get_sql_regeneration_result [label="get_sql_regeneration_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:177)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__prepare_semantics [label="prepare_semantics\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:43)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__sql_explanation [label="sql_explanation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:134)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__sql_regeneration [label="sql_regeneration\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:160)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+            src__web__v1__routers__stop_ask [label="stop_ask\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/routers.py:88)", style="filled", fillcolor="#ff32c6b2", fontcolor="#000000", group="51"];
+        }
+        subgraph cluster_src__web__v1__services__ask {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask"];
+            src__web__v1__services__ask__AskRequest [label="AskRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:21)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__AskResponse [label="AskResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:46)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__AskResultRequest [label="AskResultRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:69)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__AskResultResponse [label="AskResultResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:73)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__AskService [label="AskService\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:93)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__SQLExplanation [label="SQLExplanation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:14)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__StopAskRequest [label="StopAskRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:51)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__StopAskResponse [label="StopAskResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:64)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+            src__web__v1__services__ask__remove_duplicates [label="remove_duplicates\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:330)", style="filled", fillcolor="#ff009eb2", fontcolor="#000000", group="52"];
+        }
+        subgraph cluster_src__web__v1__services__ask__AskRequest {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask.AskRequest"];
+            src__web__v1__services__ask__AskRequest__AskResponseDetails [label="AskResponseDetails\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:22)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskRequest__query_id [label="query_id\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:42)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+        }
+        subgraph cluster_src__web__v1__services__ask__AskResultResponse {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask.AskResultResponse"];
+            src__web__v1__services__ask__AskResultResponse__AskError [label="AskError\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:80)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskResultResponse__AskResult [label="AskResult\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:74)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+        }
+        subgraph cluster_src__web__v1__services__ask__AskService {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask.AskService"];
+            src__web__v1__services__ask__AskService____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:94)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskService___get_failed_dry_run_results [label="_get_failed_dry_run_results\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:109)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskService___is_stopped [label="_is_stopped\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:101)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskService__ask [label="ask\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:117)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskService__get_ask_result [label="get_ask_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:311)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+            src__web__v1__services__ask__AskService__stop_ask [label="stop_ask\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:303)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+        }
+        subgraph cluster_src__web__v1__services__ask__StopAskRequest {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask.StopAskRequest"];
+            src__web__v1__services__ask__StopAskRequest__query_id [label="query_id\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask.py:60)", style="filled", fillcolor="#cb007eb2", fontcolor="#ffffff", group="52"];
+        }
+        subgraph cluster_src__web__v1__services__ask_details {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask_details"];
+            src__web__v1__services__ask_details__AskDetailsRequest [label="AskDetailsRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:21)", style="filled", fillcolor="#ff0083b2", fontcolor="#000000", group="53"];
+            src__web__v1__services__ask_details__AskDetailsResponse [label="AskDetailsResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:39)", style="filled", fillcolor="#ff0083b2", fontcolor="#000000", group="53"];
+            src__web__v1__services__ask_details__AskDetailsResultRequest [label="AskDetailsResultRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:44)", style="filled", fillcolor="#ff0083b2", fontcolor="#000000", group="53"];
+            src__web__v1__services__ask_details__AskDetailsResultResponse [label="AskDetailsResultResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:48)", style="filled", fillcolor="#ff0083b2", fontcolor="#000000", group="53"];
+            src__web__v1__services__ask_details__AskDetailsService [label="AskDetailsService\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:62)", style="filled", fillcolor="#ff0083b2", fontcolor="#000000", group="53"];
+            src__web__v1__services__ask_details__SQLExplanation [label="SQLExplanation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:14)", style="filled", fillcolor="#ff0083b2", fontcolor="#000000", group="53"];
+        }
+        subgraph cluster_src__web__v1__services__ask_details__AskDetailsRequest {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask_details.AskDetailsRequest"];
+            src__web__v1__services__ask_details__AskDetailsRequest__query_id [label="query_id\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:35)", style="filled", fillcolor="#cb0069b2", fontcolor="#ffffff", group="53"];
+        }
+        subgraph cluster_src__web__v1__services__ask_details__AskDetailsResultResponse {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask_details.AskDetailsResultResponse"];
+            src__web__v1__services__ask_details__AskDetailsResultResponse__AskDetailsError [label="AskDetailsError\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:53)", style="filled", fillcolor="#cb0069b2", fontcolor="#ffffff", group="53"];
+            src__web__v1__services__ask_details__AskDetailsResultResponse__AskDetailsResponseDetails [label="AskDetailsResponseDetails\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:49)", style="filled", fillcolor="#cb0069b2", fontcolor="#ffffff", group="53"];
+        }
+        subgraph cluster_src__web__v1__services__ask_details__AskDetailsService {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.ask_details.AskDetailsService"];
+            src__web__v1__services__ask_details__AskDetailsService____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:63)", style="filled", fillcolor="#cb0069b2", fontcolor="#ffffff", group="53"];
+            src__web__v1__services__ask_details__AskDetailsService__ask_details [label="ask_details\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:73)", style="filled", fillcolor="#cb0069b2", fontcolor="#ffffff", group="53"];
+            src__web__v1__services__ask_details__AskDetailsService__get_ask_details_result [label="get_ask_details_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/ask_details.py:143)", style="filled", fillcolor="#cb0069b2", fontcolor="#ffffff", group="53"];
+        }
+        subgraph cluster_src__web__v1__services__indexing {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.indexing"];
+            src__web__v1__services__indexing__IndexingService [label="IndexingService\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:44)", style="filled", fillcolor="#ff0069b2", fontcolor="#000000", group="54"];
+            src__web__v1__services__indexing__SemanticsPreparationRequest [label="SemanticsPreparationRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:14)", style="filled", fillcolor="#ff0069b2", fontcolor="#000000", group="54"];
+            src__web__v1__services__indexing__SemanticsPreparationResponse [label="SemanticsPreparationResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:22)", style="filled", fillcolor="#ff0069b2", fontcolor="#000000", group="54"];
+            src__web__v1__services__indexing__SemanticsPreparationStatusRequest [label="SemanticsPreparationStatusRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:29)", style="filled", fillcolor="#ff0069b2", fontcolor="#000000", group="54"];
+            src__web__v1__services__indexing__SemanticsPreparationStatusResponse [label="SemanticsPreparationStatusResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:35)", style="filled", fillcolor="#ff0069b2", fontcolor="#000000", group="54"];
+        }
+        subgraph cluster_src__web__v1__services__indexing__IndexingService {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.indexing.IndexingService"];
+            src__web__v1__services__indexing__IndexingService____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:45)", style="filled", fillcolor="#cb0054b2", fontcolor="#ffffff", group="54"];
+            src__web__v1__services__indexing__IndexingService__get_prepare_semantics_status [label="get_prepare_semantics_status\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:90)", style="filled", fillcolor="#cb0054b2", fontcolor="#ffffff", group="54"];
+            src__web__v1__services__indexing__IndexingService__prepare_semantics [label="prepare_semantics\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:55)", style="filled", fillcolor="#cb0054b2", fontcolor="#ffffff", group="54"];
+        }
+        subgraph cluster_src__web__v1__services__indexing__SemanticsPreparationStatusResponse {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.indexing.SemanticsPreparationStatusResponse"];
+            src__web__v1__services__indexing__SemanticsPreparationStatusResponse__SemanticsPreparationError [label="SemanticsPreparationError\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/indexing.py:36)", style="filled", fillcolor="#cb0054b2", fontcolor="#ffffff", group="54"];
+        }
+        subgraph cluster_src__web__v1__services__sql_explanation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_explanation"];
+            src__web__v1__services__sql_explanation__SQLExplanationRequest [label="SQLExplanationRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:20)", style="filled", fillcolor="#ff004fb2", fontcolor="#000000", group="55"];
+            src__web__v1__services__sql_explanation__SQLExplanationResponse [label="SQLExplanationResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:37)", style="filled", fillcolor="#ff004fb2", fontcolor="#000000", group="55"];
+            src__web__v1__services__sql_explanation__SQLExplanationResultRequest [label="SQLExplanationResultRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:42)", style="filled", fillcolor="#ff004fb2", fontcolor="#000000", group="55"];
+            src__web__v1__services__sql_explanation__SQLExplanationResultResponse [label="SQLExplanationResultResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:46)", style="filled", fillcolor="#ff004fb2", fontcolor="#000000", group="55"];
+            src__web__v1__services__sql_explanation__SQLExplanationService [label="SQLExplanationService\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:56)", style="filled", fillcolor="#ff004fb2", fontcolor="#000000", group="55"];
+            src__web__v1__services__sql_explanation__StepWithAnalysisResult [label="StepWithAnalysisResult\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:14)", style="filled", fillcolor="#ff004fb2", fontcolor="#000000", group="55"];
+        }
+        subgraph cluster_src__web__v1__services__sql_explanation__SQLExplanationRequest {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_explanation.SQLExplanationRequest"];
+            src__web__v1__services__sql_explanation__SQLExplanationRequest__query_id [label="query_id\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:33)", style="filled", fillcolor="#cb003fb2", fontcolor="#ffffff", group="55"];
+        }
+        subgraph cluster_src__web__v1__services__sql_explanation__SQLExplanationResultResponse {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_explanation.SQLExplanationResultResponse"];
+            src__web__v1__services__sql_explanation__SQLExplanationResultResponse__SQLExplanationResultError [label="SQLExplanationResultError\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:47)", style="filled", fillcolor="#cb003fb2", fontcolor="#ffffff", group="55"];
+        }
+        subgraph cluster_src__web__v1__services__sql_explanation__SQLExplanationService {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_explanation.SQLExplanationService"];
+            src__web__v1__services__sql_explanation__SQLExplanationService____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:57)", style="filled", fillcolor="#cb003fb2", fontcolor="#ffffff", group="55"];
+            src__web__v1__services__sql_explanation__SQLExplanationService__get_sql_explanation_result [label="get_sql_explanation_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:126)", style="filled", fillcolor="#cb003fb2", fontcolor="#ffffff", group="55"];
+            src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation [label="sql_explanation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:62)", style="filled", fillcolor="#cb003fb2", fontcolor="#ffffff", group="55"];
+        }
+        subgraph cluster_src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_explanation.SQLExplanationService.sql_explanation"];
+            src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation___task [label="_task\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_explanation.py:74)", style="filled", fillcolor="#98002fb2", fontcolor="#ffffff", group="55"];
+        }
+        subgraph cluster_src__web__v1__services__sql_regeneration {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_regeneration"];
+            src__web__v1__services__sql_regeneration__CorrectionPoint [label="CorrectionPoint\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:18)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__DecisionPoint [label="DecisionPoint\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:13)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLExplanation [label="SQLExplanation\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:63)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLExplanationWithUserCorrections [label="SQLExplanationWithUserCorrections\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:30)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationRequest [label="SQLRegenerationRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:37)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationResponse [label="SQLRegenerationResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:54)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationResultRequest [label="SQLRegenerationResultRequest\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:59)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse [label="SQLRegenerationResultResponse\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:69)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationService [label="SQLRegenerationService\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:83)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+            src__web__v1__services__sql_regeneration__UserCorrection [label="UserCorrection\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:25)", style="filled", fillcolor="#ff0034b2", fontcolor="#000000", group="56"];
+        }
+        subgraph cluster_src__web__v1__services__sql_regeneration__SQLRegenerationRequest {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_regeneration.SQLRegenerationRequest"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationRequest__query_id [label="query_id\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:50)", style="filled", fillcolor="#cb002ab2", fontcolor="#ffffff", group="56"];
+        }
+        subgraph cluster_src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_regeneration.SQLRegenerationResultResponse"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse__SQLRegenerationError [label="SQLRegenerationError\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:74)", style="filled", fillcolor="#cb002ab2", fontcolor="#ffffff", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse__SQLRegenerationResponseDetails [label="SQLRegenerationResponseDetails\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:70)", style="filled", fillcolor="#cb002ab2", fontcolor="#ffffff", group="56"];
+        }
+        subgraph cluster_src__web__v1__services__sql_regeneration__SQLRegenerationService {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="wren-ai-service.src.web.v1.services.sql_regeneration.SQLRegenerationService"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationService____init__ [label="__init__\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:84)", style="filled", fillcolor="#cb002ab2", fontcolor="#ffffff", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationService__get_sql_regeneration_result [label="get_sql_regeneration_result\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:141)", style="filled", fillcolor="#cb002ab2", fontcolor="#ffffff", group="56"];
+            src__web__v1__services__sql_regeneration__SQLRegenerationService__sql_regeneration [label="sql_regeneration\n(/home/sanjay/Development/explore/WrenAI/wren-ai-service/src/web/v1/services/sql_regeneration.py:89)", style="filled", fillcolor="#cb002ab2", fontcolor="#ffffff", group="56"];
+        }
+    }
+        src__globals -> src__web__v1__services__ask__AskService [style="solid",  color="#000000"];
+        src__globals -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__globals -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__globals -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__globals -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__ask__followup_generation [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__ask__generation [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__ask__historical_question [style="solid",  color="#000000"];
+        src__globals -> src__web__v1__services__ask_details__AskDetailsService [style="solid",  color="#000000"];
+        src__globals -> src__web__v1__services__indexing__IndexingService [style="solid",  color="#000000"];
+        src__globals -> src__web__v1__services__sql_explanation__SQLExplanationService [style="solid",  color="#000000"];
+        src__globals -> src__web__v1__services__sql_regeneration__SQLRegenerationService [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__ask__retrieval [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__ask__sql_correction [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__ask_details__generation [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__indexing__indexing [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__sql_explanation__generation [style="solid",  color="#000000"];
+        src__globals -> src__pipelines__sql_regeneration__generation [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__sql_regeneration__SQLRegenerationService____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__indexing__IndexingService____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__ask__AskService [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__historical_question__HistoricalQuestion____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__ask__AskService____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__ask_details__AskDetailsService [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__indexing__IndexingService [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__sql_explanation__SQLExplanationService [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__sql_regeneration__SQLRegenerationService [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__followup_generation__FollowUpGeneration____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__indexing__indexing__Indexing____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__sql_explanation__SQLExplanationService____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__sql_regeneration__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__sql_correction__SQLCorrection____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask_details__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__web__v1__services__ask_details__AskDetailsService____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__retrieval__Retrieval____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__indexing__indexing__Indexing [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__retrieval__Retrieval [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__historical_question__HistoricalQuestion [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__generation__Generation [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__sql_explanation__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__sql_correction__SQLCorrection [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask__followup_generation__FollowUpGeneration [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__ask_details__generation__Generation [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__sql_explanation__generation__Generation [style="solid",  color="#000000"];
+        src__globals__init_globals -> src__pipelines__sql_regeneration__generation__Generation [style="solid",  color="#000000"];
+        src____main__ -> src____main____lifespan [style="solid",  color="#000000"];
+        src____main__ -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src____main__ -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src____main__ -> src__utils__init_providers [style="solid",  color="#000000"];
+        src____main__ -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src____main__ -> src__utils__service_metadata [style="solid",  color="#000000"];
+        src____main__ -> src__utils__setup_custom_logger [style="solid",  color="#000000"];
+        src____main__ -> src__web__v1__routers [style="solid",  color="#000000"];
+        src____main__ -> src__web__development [style="solid",  color="#000000"];
+        src____main__ -> src__globals [style="solid",  color="#000000"];
+        src____main____lifespan -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src____main____lifespan -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src____main____lifespan -> src__utils__init_providers [style="solid",  color="#000000"];
+        src____main____lifespan -> src__utils__service_metadata [style="solid",  color="#000000"];
+        src____main____lifespan -> src__globals__init_globals [style="solid",  color="#000000"];
+        src__utils -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__utils -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__utils -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__utils -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__utils -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__utils -> src__providers__loader [style="solid",  color="#000000"];
+        src__utils__setup_custom_logger -> src__utils__CustomFormatter [style="solid",  color="#000000"];
+        src__utils__init_providers -> src__providers__loader__import_mods [style="solid",  color="#000000"];
+        src__utils__init_providers -> src__providers__loader__get_provider [style="solid",  color="#000000"];
+        src__utils__timer -> src__utils__timer__wrapper_timer [style="solid",  color="#000000"];
+        src__utils__async_timer -> src__utils__async_timer__wrapper_timer [style="solid",  color="#000000"];
+        src__utils__async_timer__wrapper_timer -> src__utils__async_timer__process [style="solid",  color="#000000"];
+        src__utils__trace_metadata -> src__utils__trace_metadata__wrapper [style="solid",  color="#000000"];
+        src__utils__trace_metadata__wrapper -> src__utils__trace_metadata__extract [style="solid",  color="#000000"];
+        src__utils__service_metadata -> src__utils__service_metadata__get_version_from_pyproject [style="solid",  color="#000000"];
+        src__force_deplo -> src__force_deplo__force_deploy [style="solid",  color="#000000"];
+        src__providers__loader__provider -> src__providers__loader__provider__wrapper [style="solid",  color="#000000"];
+        src__providers__engine__wren -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__providers__engine__wren -> src__core__engine__remove_limit_statement [style="solid",  color="#000000"];
+        src__providers__engine__wren -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__engine__wren__WrenUI -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__providers__engine__wren__WrenUI__dry_run_sql -> src__core__engine__remove_limit_statement [style="solid",  color="#000000"];
+        src__providers__engine__wren__WrenIbis -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__providers__engine__wren__WrenIbis__dry_run_sql -> src__core__engine__remove_limit_statement [style="solid",  color="#000000"];
+        src__providers__engine__wren__WrenEngine -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__providers__engine__wren__WrenEngine__dry_run_sql -> src__core__engine__remove_limit_statement [style="solid",  color="#000000"];
+        src__providers__llm__openai -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__providers__llm__openai -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__openai -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__llm__openai__AsyncGenerator__run -> src__providers__llm__openai__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__openai__OpenAILLMProvider -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__providers__llm__openai__OpenAILLMProvider____init__ -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__openai__OpenAILLMProvider____init__ -> src__providers__llm__openai__OpenAILLMProvider____init_____verify_api_key [style="solid",  color="#000000"];
+        src__providers__llm__openai__OpenAILLMProvider__get_generator -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__openai__OpenAILLMProvider__get_generator -> src__providers__llm__openai__AsyncGenerator [style="solid",  color="#000000"];
+        src__providers__llm__openai__OpenAILLMProvider__get_generator -> src__providers__llm__openai__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai__AsyncGenerator__run -> src__providers__llm__azure_openai__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai__AzureOpenAILLMProvider -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai__AzureOpenAILLMProvider____init__ -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai__AzureOpenAILLMProvider__get_generator -> src__providers__llm__azure_openai__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai__AzureOpenAILLMProvider__get_generator -> src__providers__llm__azure_openai__AsyncGenerator [style="solid",  color="#000000"];
+        src__providers__llm__azure_openai__AzureOpenAILLMProvider__get_generator -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__ollama -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__providers__llm__ollama -> src__providers__loader__pull_ollama_model [style="solid",  color="#000000"];
+        src__providers__llm__ollama -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__ollama -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__llm__ollama__AsyncGenerator___handle_streaming_response -> src__providers__llm__ollama__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__ollama__AsyncGenerator__run -> src__providers__llm__ollama__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__ollama__AsyncGenerator__run -> src__providers__llm__ollama__AsyncGenerator___handle_streaming_response [style="solid",  color="#000000"];
+        src__providers__llm__ollama__AsyncGenerator__run -> src__providers__llm__ollama__AsyncGenerator___convert_to_response [style="solid",  color="#000000"];
+        src__providers__llm__ollama__AsyncGenerator__run -> src__providers__llm__ollama__AsyncGenerator___create_json_payload [style="solid",  color="#000000"];
+        src__providers__llm__ollama__OllamaLLMProvider -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__providers__llm__ollama__OllamaLLMProvider____init__ -> src__providers__loader__pull_ollama_model [style="solid",  color="#000000"];
+        src__providers__llm__ollama__OllamaLLMProvider____init__ -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__llm__ollama__OllamaLLMProvider__get_generator -> src__providers__llm__ollama__AsyncGenerator [style="solid",  color="#000000"];
+        src__providers__llm__ollama__OllamaLLMProvider__get_generator -> src__providers__llm__ollama__AsyncGenerator____init__ [style="solid",  color="#000000"];
+        src__providers__llm__ollama__OllamaLLMProvider__get_generator -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__openai -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__providers__embedder__openai -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__openai -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__embedder__openai__AsyncTextEmbedder__run -> src__providers__embedder__openai__AsyncTextEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__openai__AsyncDocumentEmbedder__run -> src__providers__embedder__openai__AsyncDocumentEmbedder___embed_batch [style="solid",  color="#000000"];
+        src__providers__embedder__openai__AsyncDocumentEmbedder__run -> src__providers__embedder__openai__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider____init__ -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider____init__ -> src__providers__embedder__openai__OpenAIEmbedderProvider____init_____verify_api_key [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider__get_text_embedder -> src__providers__embedder__openai__AsyncTextEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider__get_text_embedder -> src__providers__embedder__openai__AsyncTextEmbedder [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider__get_text_embedder -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider__get_document_embedder -> src__providers__embedder__openai__AsyncDocumentEmbedder [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider__get_document_embedder -> src__providers__embedder__openai__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__openai__OpenAIEmbedderProvider__get_document_embedder -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AsyncTextEmbedder__run -> src__providers__embedder__azure_openai__AsyncTextEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AsyncDocumentEmbedder__run -> src__providers__embedder__azure_openai__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AsyncDocumentEmbedder__run -> src__providers__embedder__azure_openai__AsyncDocumentEmbedder___embed_batch [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider____init__ -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_text_embedder -> src__providers__embedder__azure_openai__AsyncTextEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_text_embedder -> src__providers__embedder__azure_openai__AsyncTextEmbedder [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_text_embedder -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_document_embedder -> src__providers__embedder__azure_openai__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_document_embedder -> src__providers__embedder__azure_openai__AsyncDocumentEmbedder [style="solid",  color="#000000"];
+        src__providers__embedder__azure_openai__AzureOpenAIEmbedderProvider__get_document_embedder -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__ollama -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__providers__embedder__ollama -> src__providers__loader__pull_ollama_model [style="solid",  color="#000000"];
+        src__providers__embedder__ollama -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__ollama -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__AsyncTextEmbedder__run -> src__providers__embedder__ollama__AsyncTextEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__AsyncDocumentEmbedder___embed_batch -> src__providers__embedder__ollama__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__AsyncDocumentEmbedder__run -> src__providers__embedder__ollama__AsyncDocumentEmbedder___embed_batch [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__AsyncDocumentEmbedder__run -> src__providers__embedder__ollama__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider____init__ -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider____init__ -> src__providers__loader__pull_ollama_model [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider__get_text_embedder -> src__providers__embedder__ollama__AsyncTextEmbedder [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider__get_text_embedder -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider__get_text_embedder -> src__providers__embedder__ollama__AsyncTextEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider__get_document_embedder -> src__utils__remove_trailing_slash [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider__get_document_embedder -> src__providers__embedder__ollama__AsyncDocumentEmbedder____init__ [style="solid",  color="#000000"];
+        src__providers__embedder__ollama__OllamaEmbedderProvider__get_document_embedder -> src__providers__embedder__ollama__AsyncDocumentEmbedder [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant -> src__providers__loader__get_default_embedding_model_dim [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant -> src__providers__loader__provider [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__AsyncQdrantDocumentStore____init__ -> src__providers__document_store__qdrant__AsyncQdrantDocumentStore____init__ [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__AsyncQdrantDocumentStore__write_documents -> src__providers__document_store__qdrant__convert_haystack_documents_to_qdrant_points [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__AsyncQdrantDocumentStore__write_documents -> src__providers__document_store__qdrant__AsyncQdrantDocumentStore____init__ [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever__run -> src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever____init__ [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__QdrantProvider -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__QdrantProvider__get_store -> src__providers__loader__get_default_embedding_model_dim [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__QdrantProvider__get_store -> src__providers__document_store__qdrant__AsyncQdrantDocumentStore [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__QdrantProvider__get_store -> src__providers__document_store__qdrant__AsyncQdrantDocumentStore____init__ [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__QdrantProvider__get_retriever -> src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever____init__ [style="solid",  color="#000000"];
+        src__providers__document_store__qdrant__QdrantProvider__get_retriever -> src__providers__document_store__qdrant__AsyncQdrantEmbeddingRetriever [style="solid",  color="#000000"];
+        src__pipelines__common -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__common -> src__core__engine__add_quotes [style="solid",  color="#000000"];
+        src__pipelines__common -> src__core__engine__clean_generation_result [style="solid",  color="#000000"];
+        src__pipelines__common__GenerationPostProcessor__run -> src__core__engine__add_quotes [style="solid",  color="#000000"];
+        src__pipelines__common__GenerationPostProcessor__run -> src__core__engine__clean_generation_result [style="solid",  color="#000000"];
+        src__pipelines__common__GenerationPostProcessor__run -> src__pipelines__common__GenerationPostProcessor___build_cte_query [style="solid",  color="#000000"];
+        src__pipelines__common__GenerationPostProcessor__run -> src__pipelines__common__GenerationPostProcessor___check_if_sql_executable [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__pipelines__sql_explanation__generation__Generation__visualize [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__web__v1__services__sql_explanation__StepWithAnalysisResult [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__pipelines__sql_explanation__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation -> src__pipelines__sql_explanation__generation__Generation [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation___compose_sql_expression_of_filter_type -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_filter_type [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___collect_relations -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___collect_relations [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___collect_relations -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___is_subquery_or_has_subquery_child [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type___collect_relations [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor__run -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_select_type [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor__run -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_sortings_type [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor__run -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_filter_type [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor__run -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_relation_type [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor__run -> src__pipelines__sql_explanation__generation___compose_sql_expression_of_groupby_type [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__GenerationPostProcessor__run -> src__pipelines__sql_explanation__generation___extract_to_str [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__generates -> src__pipelines__sql_explanation__generation__generates___task [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation____init__ -> src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation____init__ -> src__pipelines__sql_explanation__generation__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation__visualize -> src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation__visualize -> src__pipelines__sql_explanation__generation__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation__run -> src__pipelines__sql_explanation__generation__SQLAnalysisPreprocessor [style="solid",  color="#000000"];
+        src__pipelines__sql_explanation__generation__Generation__run -> src__pipelines__sql_explanation__generation__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__pipelines__ask_details__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__pipelines__ask_details__generation__Generation [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation -> src__pipelines__ask_details__generation__Generation__visualize [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation____init__ -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation____init__ -> src__pipelines__common__GenerationPostProcessor____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation__visualize -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask_details__generation__Generation__run -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__pipelines__ask__sql_correction__SQLCorrection__visualize [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__pipelines__ask__sql_correction__SQLCorrection [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction -> src__pipelines__ask__sql_correction__SQLCorrection____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection____init__ -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection____init__ -> src__pipelines__ask__components__post_processors__GenerationPostProcessor____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection__visualize -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__sql_correction__SQLCorrection__run -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__web__v1__services__ask__AskRequest__AskResponseDetails [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__pipelines__ask__followup_generation__FollowUpGeneration__visualize [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__pipelines__ask__followup_generation__FollowUpGeneration [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__web__v1__services__ask__AskRequest [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation -> src__pipelines__ask__followup_generation__FollowUpGeneration____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration____init__ -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration____init__ -> src__pipelines__ask__components__post_processors__GenerationPostProcessor____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration__visualize -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__followup_generation__FollowUpGeneration__run -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__pipelines__ask__historical_question__HistoricalQuestion____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__pipelines__ask__historical_question__HistoricalQuestion__visualize [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question -> src__pipelines__ask__historical_question__HistoricalQuestion [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion____init__ -> src__pipelines__ask__historical_question__OutputFormatter [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion____init__ -> src__pipelines__ask__historical_question__ScoreFilter [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion__visualize -> src__pipelines__ask__historical_question__ScoreFilter [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion__visualize -> src__pipelines__ask__historical_question__OutputFormatter [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion__run -> src__pipelines__ask__historical_question__ScoreFilter [style="solid",  color="#000000"];
+        src__pipelines__ask__historical_question__HistoricalQuestion__run -> src__pipelines__ask__historical_question__OutputFormatter [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__pipelines__ask__generation__Generation__visualize [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__pipelines__ask__generation__Generation [style="solid",  color="#000000"];
+        src__pipelines__ask__generation -> src__pipelines__ask__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation____init__ -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation____init__ -> src__pipelines__ask__components__post_processors__GenerationPostProcessor____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation__visualize -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__generation__Generation__run -> src__pipelines__ask__components__post_processors__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__pipelines__ask__retrieval__Retrieval____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__pipelines__ask__retrieval__Retrieval [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval -> src__pipelines__ask__retrieval__Retrieval__visualize [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval__Retrieval -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval__Retrieval -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__ask__retrieval__Retrieval____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors -> src__core__engine__add_quotes [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors -> src__core__engine__clean_generation_result [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors__GenerationPostProcessor__run -> src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors__GenerationPostProcessor__run -> src__core__engine__clean_generation_result [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results -> src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results___task [style="solid",  color="#000000"];
+        src__pipelines__ask__components__post_processors__GenerationPostProcessor___classify_invalid_generation_results___task -> src__core__engine__add_quotes [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__core__provider__DocumentStoreProvider [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__core__provider__EmbedderProvider [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__pipelines__indexing__indexing__Indexing____init__ [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__pipelines__indexing__indexing__Indexing__visualize [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__pipelines__indexing__indexing__Indexing [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__DocumentCleaner__run -> src__pipelines__indexing__indexing__DocumentCleaner__run___clear_documents [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__ViewConverter__run -> src__pipelines__indexing__indexing__ViewConverter__run___format [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__DDLConverter__run -> src__pipelines__indexing__indexing__DDLConverter__get_ddl_commands [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__DDLConverter__get_ddl_commands -> src__pipelines__indexing__indexing__DDLConverter___convert_views [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__DDLConverter__get_ddl_commands -> src__pipelines__indexing__indexing__DDLConverter___convert_metrics [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__DDLConverter__get_ddl_commands -> src__pipelines__indexing__indexing__DDLConverter___convert_models_and_relationships [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__DDLConverter___convert_views -> src__pipelines__indexing__indexing__DDLConverter___convert_views___format [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__pipelines__indexing__indexing__DDLConverter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__pipelines__indexing__indexing__DocumentCleaner [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__pipelines__indexing__indexing__AsyncDocumentWriter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__pipelines__indexing__indexing__DocumentCleaner____init__ [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__pipelines__indexing__indexing__MDLValidator [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__pipelines__indexing__indexing__ViewConverter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__visualize -> src__pipelines__indexing__indexing__DDLConverter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__visualize -> src__pipelines__indexing__indexing__AsyncDocumentWriter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__visualize -> src__pipelines__indexing__indexing__ViewConverter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__visualize -> src__pipelines__indexing__indexing__MDLValidator [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__visualize -> src__pipelines__indexing__indexing__DocumentCleaner [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__run -> src__pipelines__indexing__indexing__DDLConverter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__run -> src__pipelines__indexing__indexing__AsyncDocumentWriter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__run -> src__pipelines__indexing__indexing__ViewConverter [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__run -> src__pipelines__indexing__indexing__MDLValidator [style="solid",  color="#000000"];
+        src__pipelines__indexing__indexing__Indexing__run -> src__pipelines__indexing__indexing__DocumentCleaner [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__utils__timer [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__core__engine__Engine [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__web__v1__services__sql_regeneration__SQLExplanationWithUserCorrections [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__core__engine__EngineConfig [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__utils__init_langfuse [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__core__provider__LLMProvider [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__utils__init_providers [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__pipelines__sql_regeneration__generation__Generation__visualize [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__utils__load_env_vars [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__core__pipeline__async_validate [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__pipelines__sql_regeneration__generation__Generation____init__ [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation -> src__pipelines__sql_regeneration__generation__Generation [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation____init__ -> src__pipelines__sql_regeneration__generation__SQLRegenerationRreprocesser [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation____init__ -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation____init__ -> src__pipelines__common__GenerationPostProcessor____init__ [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation____init__ -> src__core__pipeline__BasicPipeline____init__ [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation__visualize -> src__pipelines__sql_regeneration__generation__SQLRegenerationRreprocesser [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation__visualize -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation__run -> src__pipelines__common__GenerationPostProcessor [style="solid",  color="#000000"];
+        src__pipelines__sql_regeneration__generation__Generation__run -> src__pipelines__sql_regeneration__generation__SQLRegenerationRreprocesser [style="solid",  color="#000000"];
+        src__core__engine__clean_generation_result -> src__core__engine__clean_generation_result___normalize_whitespace [style="solid",  color="#000000"];
+        src__web__development -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__development -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__development -> src__web__v1__services__ask__AskRequest [style="solid",  color="#000000"];
+        src__web__development -> src__web__v1__services__ask__AskResultRequest [style="solid",  color="#000000"];
+        src__web__development -> src__web__v1__services__ask__AskResponse [style="solid",  color="#000000"];
+        src__web__development__dummy_ask_task -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__development__get_dummy_ask_task_result -> src__web__v1__services__ask__AskResultResponse__AskError [style="solid",  color="#000000"];
+        src__web__development__get_dummy_ask_task_result -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__development__dummy_ask -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__development__dummy_ask -> src__web__v1__services__ask__AskResponse [style="solid",  color="#000000"];
+        src__web__development__dummy_ask -> src__web__development__dummy_ask_task [style="solid",  color="#000000"];
+        src__web__development__get_dummy_ask_result -> src__web__development__get_dummy_ask_task_result [style="solid",  color="#000000"];
+        src__web__development__get_dummy_ask_result -> src__web__v1__services__ask__AskResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__indexing__SemanticsPreparationRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask_details__AskDetailsResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_explanation__SQLExplanationResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_explanation__SQLExplanationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask_details__AskDetailsResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_regeneration__SQLRegenerationRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_regeneration__SQLRegenerationResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask__StopAskResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask_details__AskDetailsRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask__StopAskRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_explanation__SQLExplanationResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_explanation__SQLExplanationRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__indexing__SemanticsPreparationStatusResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__indexing__SemanticsPreparationStatusRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask__AskRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__indexing__SemanticsPreparationResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__globals [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask__AskResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask__AskResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__ask_details__AskDetailsResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers -> src__web__v1__services__sql_regeneration__SQLRegenerationResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers__prepare_semantics -> src__web__v1__services__indexing__SemanticsPreparationStatusResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__prepare_semantics -> src__web__v1__services__indexing__SemanticsPreparationResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__get_prepare_semantics_status -> src__web__v1__services__indexing__SemanticsPreparationStatusRequest [style="solid",  color="#000000"];
+        src__web__v1__routers__ask -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__ask -> src__web__v1__services__ask__AskResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__stop_ask -> src__web__v1__services__ask__StopAskResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__get_ask_result -> src__web__v1__services__ask__AskResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers__ask_details -> src__web__v1__services__ask_details__AskDetailsResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__ask_details -> src__web__v1__services__ask_details__AskDetailsResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__get_ask_details_result -> src__web__v1__services__ask_details__AskDetailsResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers__sql_explanation -> src__web__v1__services__sql_explanation__SQLExplanationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__sql_explanation -> src__web__v1__services__sql_explanation__SQLExplanationResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__get_sql_explanation_result -> src__web__v1__services__sql_explanation__SQLExplanationResultRequest [style="solid",  color="#000000"];
+        src__web__v1__routers__sql_regeneration -> src__web__v1__services__sql_regeneration__SQLRegenerationResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__sql_regeneration -> src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__routers__get_sql_regeneration_result -> src__web__v1__services__sql_regeneration__SQLRegenerationResultRequest [style="solid",  color="#000000"];
+        src__web__v1__services__sql_explanation -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__sql_explanation__SQLExplanationService -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation -> src__web__v1__services__sql_explanation__SQLExplanationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation -> src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation___task [style="solid",  color="#000000"];
+        src__web__v1__services__sql_explanation__SQLExplanationService__sql_explanation -> src__web__v1__services__sql_explanation__SQLExplanationResultResponse__SQLExplanationResultError [style="solid",  color="#000000"];
+        src__web__v1__services__sql_explanation__SQLExplanationService__get_sql_explanation_result -> src__web__v1__services__sql_explanation__SQLExplanationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details -> src__utils__trace_metadata [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details -> src__core__engine__add_quotes [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService -> src__utils__trace_metadata [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__ask_details -> src__web__v1__services__ask_details__AskDetailsResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__ask_details -> src__core__engine__add_quotes [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__ask_details -> src__web__v1__services__ask_details__AskDetailsResultResponse__AskDetailsError [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__ask_details -> src__web__v1__services__ask_details__AskDetailsResultResponse__AskDetailsResponseDetails [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__get_ask_details_result -> src__web__v1__services__ask_details__AskDetailsResultResponse__AskDetailsError [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__get_ask_details_result -> src__web__v1__services__ask_details__AskDetailsResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__ask_details__AskDetailsService__get_ask_details_result -> src__web__v1__services__ask_details__AskDetailsService____init__ [style="solid",  color="#000000"];
+        src__web__v1__services__ask -> src__utils__trace_metadata [style="solid",  color="#000000"];
+        src__web__v1__services__ask -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__ask -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService___is_stopped -> src__web__v1__services__ask__AskService____init__ [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService -> src__utils__trace_metadata [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__ask -> src__web__v1__services__ask__AskResultResponse__AskError [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__ask -> src__web__v1__services__ask__AskResultResponse__AskResult [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__ask -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__ask -> src__web__v1__services__ask__AskService___get_failed_dry_run_results [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__ask -> src__web__v1__services__ask__AskService___is_stopped [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__ask -> src__web__v1__services__ask__remove_duplicates [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__stop_ask -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__get_ask_result -> src__web__v1__services__ask__AskResultResponse__AskError [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__get_ask_result -> src__web__v1__services__ask__AskService____init__ [style="solid",  color="#000000"];
+        src__web__v1__services__ask__AskService__get_ask_result -> src__web__v1__services__ask__AskResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__sql_regeneration -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__sql_regeneration__SQLRegenerationService -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__sql_regeneration__SQLRegenerationService__sql_regeneration -> src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse__SQLRegenerationError [style="solid",  color="#000000"];
+        src__web__v1__services__sql_regeneration__SQLRegenerationService__sql_regeneration -> src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__sql_regeneration__SQLRegenerationService__get_sql_regeneration_result -> src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse [style="solid",  color="#000000"];
+        src__web__v1__services__sql_regeneration__SQLRegenerationService__get_sql_regeneration_result -> src__web__v1__services__sql_regeneration__SQLRegenerationResultResponse__SQLRegenerationError [style="solid",  color="#000000"];
+        src__web__v1__services__indexing -> src__utils__trace_metadata [style="solid",  color="#000000"];
+        src__web__v1__services__indexing -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__indexing -> src__core__pipeline__BasicPipeline [style="solid",  color="#000000"];
+        src__web__v1__services__indexing__IndexingService -> src__utils__async_timer [style="solid",  color="#000000"];
+        src__web__v1__services__indexing__IndexingService -> src__utils__trace_metadata [style="solid",  color="#000000"];
+        src__web__v1__services__indexing__IndexingService__prepare_semantics -> src__web__v1__services__indexing__SemanticsPreparationStatusResponse [style="solid",  color="#000000"];
+        src__web__v1__services__indexing__IndexingService__get_prepare_semantics_status -> src__web__v1__services__indexing__SemanticsPreparationStatusResponse__SemanticsPreparationError [style="solid",  color="#000000"];
+        src__web__v1__services__indexing__IndexingService__get_prepare_semantics_status -> src__web__v1__services__indexing__SemanticsPreparationStatusResponse [style="solid",  color="#000000"];
+        src__web__v1__services__indexing__IndexingService__get_prepare_semantics_status -> src__web__v1__services__indexing__IndexingService____init__ [style="solid",  color="#000000"];
+    }
