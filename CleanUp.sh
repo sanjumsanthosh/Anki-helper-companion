@@ -49,7 +49,7 @@ else
 fi
 
 # Get dot files in the target folder using awk
-DOT_FILES=$(ls $STATIC_FOLDER | grep -i ".dot" | awk '{print NR, $0, "'"$TARGET_REPO"'/"$0}')
+DOT_FILES=$(ls $STATIC_FOLDER | grep -i ".dot" | awk '{print NR, $0, "'"$STATIC_FOLDER"'/"$0}')
 
 awk -v dot_files="$DOT_FILES" 'BEGIN {
     print "Index\t| Dot File Name\t| Dot File Path"
@@ -72,8 +72,8 @@ fi
 
 if [[ $confirm_delete == "y" ]]; then
     # delete the selected dot files and their corresponding json files
-    log info  "$MULI_SELECT_CLEANUP_FZF" | awk '{print $3}' | xargs -I {} rm -rf {}
-    log info  "$MULI_SELECT_CLEANUP_FZF_JSON" | xargs -I {} rm -rf {}
+    echo "$MULI_SELECT_CLEANUP_FZF" | awk '{print $3}' | xargs -I {} rm -rf {}
+    echo "$MULI_SELECT_CLEANUP_FZF_JSON" | xargs -I {} rm -rf {}
     log info "Selected dot files and their corresponding json files deleted successfully."
 else
     log info "Selected dot files and their corresponding json files deletion cancelled."
