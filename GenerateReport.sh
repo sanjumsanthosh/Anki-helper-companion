@@ -76,7 +76,22 @@ if [ "$custom_folder" == "y" ]; then
     log debug "Custom folder path selected: $customPath" with name $customPathName
 fi
 
-./.venv/bin/python -m pyan.main "$customPath/**/*.py" --uses --no-defines --colored --grouped --annotated --dot --file=$DOT_FILE
+while true; do
+    ./.venv/bin/python -m pyan.main "$customPath/**/*.py" --uses --no-defines --colored --grouped --annotated --dot --file=$DOT_FILE
+    if [ $? -eq 0 ]; then
+        echo "Command executed successfully."
+        break
+    else
+        echo "The command failed with an error. Do you want to try again? (x to exit)"
+        read answer
+        if [ "$answer" == "x" ]; then
+            echo "Exiting without retrying."
+            break
+        fi
+    fi
+done
+
+
 cd $current_dir
 
 log debug "cd $PYAN_DIR && $PYAN_DIR/.venv/bin/python -m pyan.main $TARGET_REPO/$REPO_NAME/**/*.py --uses --no-defines --colored --grouped --annotated --dot --file=$DOT_FILE"
