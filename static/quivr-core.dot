@@ -1,0 +1,970 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        chat_llm [label="chat_llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        pdf_parsing_tika [label="pdf_parsing_tika", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        quivr_core [label="quivr_core", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        quivr_core__brain [label="quivr_core.brain", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        quivr_core__brain__brain [label="quivr_core.brain.brain", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        quivr_core__brain__brain_defaults [label="quivr_core.brain.brain_defaults", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        quivr_core__brain__info [label="quivr_core.brain.info", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        quivr_core__chat [label="quivr_core.chat", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        quivr_core__chat_llm [label="quivr_core.chat_llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        quivr_core__config [label="quivr_core.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        quivr_core__files [label="quivr_core.files", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        quivr_core__files__file [label="quivr_core.files.file", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        quivr_core__llm [label="quivr_core.llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        quivr_core__llm__llm_endpoint [label="quivr_core.llm.llm_endpoint", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        quivr_core__models [label="quivr_core.models", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        quivr_core__processor [label="quivr_core.processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="16"];
+        quivr_core__processor__implementations [label="quivr_core.processor.implementations", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="17"];
+        quivr_core__processor__implementations__default [label="quivr_core.processor.implementations.default", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="18"];
+        quivr_core__processor__implementations__megaparse_processor [label="quivr_core.processor.implementations.megaparse_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="19"];
+        quivr_core__processor__implementations__simple_txt_processor [label="quivr_core.processor.implementations.simple_txt_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="20"];
+        quivr_core__processor__implementations__tika_processor [label="quivr_core.processor.implementations.tika_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="21"];
+        quivr_core__processor__processor_base [label="quivr_core.processor.processor_base", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="22"];
+        quivr_core__processor__registr [label="quivr_core.processor.registr", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="23"];
+        quivr_core__processor__splitter [label="quivr_core.processor.splitter", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="24"];
+        quivr_core__prompts [label="quivr_core.prompts", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="25"];
+        quivr_core__quivr_rag [label="quivr_core.quivr_rag", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="26"];
+        quivr_core__storage__file [label="quivr_core.storage.file", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="27"];
+        quivr_core__storage__local_storage [label="quivr_core.storage.local_storage", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="28"];
+        quivr_core__storage__storage_base [label="quivr_core.storage.storage_base", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="29"];
+        quivr_core__utils [label="quivr_core.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="30"];
+        quivr_pdf [label="quivr_pdf", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="31"];
+        simple_question [label="simple_question", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="32"];
+        tests [label="tests", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="33"];
+        tests__conftest [label="tests.conftest", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="34"];
+        tests__fixture_chunks [label="tests.fixture_chunks", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="35"];
+        tests__processor [label="tests.processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="36"];
+        tests__processor__community [label="tests.processor.community", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="37"];
+        tests__processor__community__csv_processor [label="tests.processor.community.csv_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="38"];
+        tests__processor__community__markdown_processor [label="tests.processor.community.markdown_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="39"];
+        tests__processor__docx [label="tests.processor.docx", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="40"];
+        tests__processor__docx__test_docx [label="tests.processor.docx.test_docx", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="41"];
+        tests__processor__epub [label="tests.processor.epub", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="42"];
+        tests__processor__epub__test_epub_processor [label="tests.processor.epub.test_epub_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="43"];
+        tests__processor__odt [label="tests.processor.odt", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="44"];
+        tests__processor__odt__test_odt [label="tests.processor.odt.test_odt", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="45"];
+        tests__processor__pdf [label="tests.processor.pdf", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="46"];
+        tests__processor__pdf__test_megaparse_pdf_processor [label="tests.processor.pdf.test_megaparse_pdf_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="47"];
+        tests__processor__pdf__test_unstructured_pdf_processor [label="tests.processor.pdf.test_unstructured_pdf_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="48"];
+        tests__processor__test_default_implementations [label="tests.processor.test_default_implementations", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="49"];
+        tests__processor__test_registr [label="tests.processor.test_registr", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="50"];
+        tests__processor__test_simple_txt_processor [label="tests.processor.test_simple_txt_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="51"];
+        tests__processor__test_tika_processor [label="tests.processor.test_tika_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="52"];
+        tests__processor__test_txt_processor [label="tests.processor.test_txt_processor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="53"];
+        tests__test_brain [label="tests.test_brain", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="54"];
+        tests__test_chat_histor [label="tests.test_chat_histor", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="55"];
+        tests__test_chat_llm [label="tests.test_chat_llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="56"];
+        tests__test_config [label="tests.test_config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="57"];
+        tests__test_llm_endpoint [label="tests.test_llm_endpoint", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="58"];
+        tests__test_quivr_file [label="tests.test_quivr_file", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="59"];
+        tests__test_quivr_rag [label="tests.test_quivr_rag", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="60"];
+        tests__test_utils [label="tests.test_utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="61"];
+        subgraph cluster_main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="main"];
+            main__main [label="main\n(/home/sanjay/Development/explore/quivr/backend/core/examples/chatbot/main.py:48)", style="filled", fillcolor="#fed0ccb2", fontcolor="#000000", group="1"];
+            main__on_chat_start [label="on_chat_start\n(/home/sanjay/Development/explore/quivr/backend/core/examples/chatbot/main.py:8)", style="filled", fillcolor="#fed0ccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_quivr_core {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core"];
+            quivr_core__register_entries [label="register_entries\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/__init__.py:10)", style="filled", fillcolor="#fedaccb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_quivr_core__brain__brain {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.brain"];
+            quivr_core__brain__brain__Brain [label="Brain\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:58)", style="filled", fillcolor="#ffae65b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__process_files [label="process_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:31)", style="filled", fillcolor="#ffae65b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_quivr_core__brain__brain__Brain {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.brain.Brain"];
+            quivr_core__brain__brain__Brain____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:59)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain____repr__ [label="__repr__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:82)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain___init_chats [label="_init_chats\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:113)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__add_file [label="add_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:245)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__afrom_files [label="afrom_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:119)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__afrom_langchain_documents [label="afrom_langchain_documents\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:195)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__asearch [label="asearch\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:228)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__ask [label="ask\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:250)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__ask_streaming [label="ask_streaming\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:278)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__chat_history [label="chat_history\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:110)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__from_files [label="from_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:170)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__get_chat_history [label="get_chat_history\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:241)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__info [label="info\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:92)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+            quivr_core__brain__brain__Brain__print_info [label="print_info\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain.py:86)", style="filled", fillcolor="#ff9432b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_quivr_core__brain__brain_defaults {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.brain_defaults"];
+            quivr_core__brain__brain_defaults__build_default_vectordb [label="build_default_vectordb\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain_defaults.py:13)", style="filled", fillcolor="#ffbd65b2", fontcolor="#000000", group="6"];
+            quivr_core__brain__brain_defaults__default_embedder [label="default_embedder\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain_defaults.py:33)", style="filled", fillcolor="#ffbd65b2", fontcolor="#000000", group="6"];
+            quivr_core__brain__brain_defaults__default_llm [label="default_llm\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/brain_defaults.py:46)", style="filled", fillcolor="#ffbd65b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_quivr_core__brain__info {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.info"];
+            quivr_core__brain__info__BrainInfo [label="BrainInfo\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:54)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="7"];
+            quivr_core__brain__info__ChatHistoryInfo [label="ChatHistoryInfo\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:8)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="7"];
+            quivr_core__brain__info__LLMInfo [label="LLMInfo\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:24)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="7"];
+            quivr_core__brain__info__StorageInfo [label="StorageInfo\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:44)", style="filled", fillcolor="#ffcc65b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_quivr_core__brain__info__BrainInfo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.info.BrainInfo"];
+            quivr_core__brain__info__BrainInfo__to_tree [label="to_tree\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:61)", style="filled", fillcolor="#ffbb32b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_quivr_core__brain__info__ChatHistoryInfo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.info.ChatHistoryInfo"];
+            quivr_core__brain__info__ChatHistoryInfo__add_to_tree [label="add_to_tree\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:13)", style="filled", fillcolor="#ffbb32b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_quivr_core__brain__info__LLMInfo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.info.LLMInfo"];
+            quivr_core__brain__info__LLMInfo__add_to_tree [label="add_to_tree\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:31)", style="filled", fillcolor="#ffbb32b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_quivr_core__brain__info__StorageInfo {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.brain.info.StorageInfo"];
+            quivr_core__brain__info__StorageInfo__add_to_tree [label="add_to_tree\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/brain/info.py:48)", style="filled", fillcolor="#ffbb32b2", fontcolor="#000000", group="7"];
+        }
+        subgraph cluster_quivr_core__chat {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.chat"];
+            quivr_core__chat__ChatHistory [label="ChatHistory\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat.py:9)", style="filled", fillcolor="#ffe699b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_quivr_core__chat__ChatHistory {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.chat.ChatHistory"];
+            quivr_core__chat__ChatHistory____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat.py:10)", style="filled", fillcolor="#ffda65b2", fontcolor="#000000", group="8"];
+            quivr_core__chat__ChatHistory____len__ [label="__len__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat.py:27)", style="filled", fillcolor="#ffda65b2", fontcolor="#000000", group="8"];
+            quivr_core__chat__ChatHistory__append [label="append\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat.py:30)", style="filled", fillcolor="#ffda65b2", fontcolor="#000000", group="8"];
+            quivr_core__chat__ChatHistory__get_chat_history [label="get_chat_history\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat.py:16)", style="filled", fillcolor="#ffda65b2", fontcolor="#000000", group="8"];
+            quivr_core__chat__ChatHistory__iter_pairs [label="iter_pairs\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat.py:43)", style="filled", fillcolor="#ffda65b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_quivr_core__chat_llm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.chat_llm"];
+            quivr_core__chat_llm__ChatLLM [label="ChatLLM\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:23)", style="filled", fillcolor="#fff099b2", fontcolor="#000000", group="9"];
+            quivr_core__chat_llm__ChatLLM [label="ChatLLM\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:23)", style="filled", fillcolor="#fff099b2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_quivr_core__chat_llm__ChatLLM {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.chat_llm.ChatLLM"];
+            quivr_core__chat_llm__ChatLLM____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:24)", style="filled", fillcolor="#ffe965b2", fontcolor="#000000", group="9"];
+            quivr_core__chat_llm__ChatLLM__answer [label="answer\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:90)", style="filled", fillcolor="#ffe965b2", fontcolor="#000000", group="9"];
+            quivr_core__chat_llm__ChatLLM__answer [label="answer\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:90)", style="filled", fillcolor="#ffe965b2", fontcolor="#000000", group="9"];
+            quivr_core__chat_llm__ChatLLM__answer_astream [label="answer_astream\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:99)", style="filled", fillcolor="#ffe965b2", fontcolor="#000000", group="9"];
+            quivr_core__chat_llm__ChatLLM__build_chain [label="build_chain\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:61)", style="filled", fillcolor="#ffe965b2", fontcolor="#000000", group="9"];
+            quivr_core__chat_llm__ChatLLM__filter_history [label="filter_history\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/chat_llm.py:27)", style="filled", fillcolor="#ffe965b2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_quivr_core__config {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.config"];
+            quivr_core__config__LLMEndpointConfig [label="LLMEndpointConfig\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/config.py:4)", style="filled", fillcolor="#fffa99b2", fontcolor="#000000", group="10"];
+            quivr_core__config__RAGConfig [label="RAGConfig\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/config.py:14)", style="filled", fillcolor="#fffa99b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_quivr_core__files__file {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.files.file"];
+            quivr_core__files__file__FileExtension [label="FileExtension\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:14)", style="filled", fillcolor="#e9ff65b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__QuivrFile [label="QuivrFile\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:79)", style="filled", fillcolor="#e9ff65b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__QuivrFile [label="QuivrFile\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:79)", style="filled", fillcolor="#e9ff65b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__get_file_extension [label="get_file_extension\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:34)", style="filled", fillcolor="#e9ff65b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__load_qfile [label="load_qfile\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:50)", style="filled", fillcolor="#e9ff65b2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_quivr_core__files__file__QuivrFile {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.files.file.QuivrFile"];
+            quivr_core__files__file__QuivrFile____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:90)", style="filled", fillcolor="#e1ff32b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__QuivrFile____repr__ [label="__repr__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:108)", style="filled", fillcolor="#e1ff32b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__QuivrFile__metadata [label="metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:121)", style="filled", fillcolor="#e1ff32b2", fontcolor="#000000", group="12"];
+            quivr_core__files__file__QuivrFile__open [label="open\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/files/file.py:112)", style="filled", fillcolor="#e1ff32b2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_quivr_core__llm__llm_endpoint {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.llm.llm_endpoint"];
+            quivr_core__llm__llm_endpoint__LLMEndpoint [label="LLMEndpoint\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/llm/llm_endpoint.py:14)", style="filled", fillcolor="#cbff65b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_quivr_core__llm__llm_endpoint__LLMEndpoint {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.llm.llm_endpoint.LLMEndpoint"];
+            quivr_core__llm__llm_endpoint__LLMEndpoint____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/llm/llm_endpoint.py:15)", style="filled", fillcolor="#baff32b2", fontcolor="#000000", group="14"];
+            quivr_core__llm__llm_endpoint__LLMEndpoint__from_config [label="from_config\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/llm/llm_endpoint.py:26)", style="filled", fillcolor="#baff32b2", fontcolor="#000000", group="14"];
+            quivr_core__llm__llm_endpoint__LLMEndpoint__get_config [label="get_config\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/llm/llm_endpoint.py:22)", style="filled", fillcolor="#baff32b2", fontcolor="#000000", group="14"];
+            quivr_core__llm__llm_endpoint__LLMEndpoint__info [label="info\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/llm/llm_endpoint.py:62)", style="filled", fillcolor="#baff32b2", fontcolor="#000000", group="14"];
+            quivr_core__llm__llm_endpoint__LLMEndpoint__supports_func_calling [label="supports_func_calling\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/llm/llm_endpoint.py:59)", style="filled", fillcolor="#baff32b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_quivr_core__models {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.models"];
+            quivr_core__models__ChatLLMMetadata [label="ChatLLMMetadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:58)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__ChatMessage [label="ChatMessage\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:31)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__ParsedRAGChunkResponse [label="ParsedRAGChunkResponse\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:79)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__ParsedRAGResponse [label="ParsedRAGResponse\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:74)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__QuivrKnowledge [label="QuivrKnowledge\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:85)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__RAGResponseMetadata [label="RAGResponseMetadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:67)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__RawRAGChunkResponse [label="RawRAGChunkResponse\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:48)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__RawRAGResponse [label="RawRAGResponse\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:53)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__SearchResult [label="SearchResult\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:97)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__Source [label="Source\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:40)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+            quivr_core__models__cited_answer [label="cited_answer\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/models.py:13)", style="filled", fillcolor="#d3ff99b2", fontcolor="#000000", group="15"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__default {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.default"];
+            quivr_core__processor__implementations__default__ProcessorInit [label="ProcessorInit\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:33)", style="filled", fillcolor="#6dff32b2", fontcolor="#000000", group="18"];
+            quivr_core__processor__implementations__default___build_processor [label="_build_processor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:41)", style="filled", fillcolor="#6dff32b2", fontcolor="#000000", group="18"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__default__ProcessorInit {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.default.ProcessorInit"];
+            quivr_core__processor__implementations__default__ProcessorInit____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:34)", style="filled", fillcolor="#48ff00b2", fontcolor="#000000", group="18"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__default___build_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.default._build_processor"];
+            quivr_core__processor__implementations__default___build_processor___Processor [label="_Processor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:46)", style="filled", fillcolor="#48ff00b2", fontcolor="#000000", group="18"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__default___build_processor___Processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.default._build_processor._Processor"];
+            quivr_core__processor__implementations__default___build_processor___Processor____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:49)", style="filled", fillcolor="#3acb00b2", fontcolor="#ffffff", group="18"];
+            quivr_core__processor__implementations__default___build_processor___Processor__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:77)", style="filled", fillcolor="#3acb00b2", fontcolor="#ffffff", group="18"];
+            quivr_core__processor__implementations__default___build_processor___Processor__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/default.py:71)", style="filled", fillcolor="#3acb00b2", fontcolor="#ffffff", group="18"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__megaparse_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.megaparse_processor"];
+            quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor [label="MegaparseProcessor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/megaparse_processor.py:16)", style="filled", fillcolor="#59ff32b2", fontcolor="#000000", group="19"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.megaparse_processor.MegaparseProcessor"];
+            quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/megaparse_processor.py:19)", style="filled", fillcolor="#30ff00b2", fontcolor="#000000", group="19"];
+            quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/megaparse_processor.py:48)", style="filled", fillcolor="#30ff00b2", fontcolor="#000000", group="19"];
+            quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/megaparse_processor.py:43)", style="filled", fillcolor="#30ff00b2", fontcolor="#000000", group="19"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__simple_txt_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.simple_txt_processor"];
+            quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor [label="SimpleTxtProcessor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/simple_txt_processor.py:29)", style="filled", fillcolor="#46ff32b2", fontcolor="#000000", group="20"];
+            quivr_core__processor__implementations__simple_txt_processor__recursive_character_splitter [label="recursive_character_splitter\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/simple_txt_processor.py:12)", style="filled", fillcolor="#46ff32b2", fontcolor="#000000", group="20"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.simple_txt_processor.SimpleTxtProcessor"];
+            quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/simple_txt_processor.py:32)", style="filled", fillcolor="#18ff00b2", fontcolor="#000000", group="20"];
+            quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/simple_txt_processor.py:45)", style="filled", fillcolor="#18ff00b2", fontcolor="#000000", group="20"];
+            quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/simple_txt_processor.py:39)", style="filled", fillcolor="#18ff00b2", fontcolor="#000000", group="20"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__tika_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.tika_processor"];
+            quivr_core__processor__implementations__tika_processor__TikaProcessor [label="TikaProcessor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/tika_processor.py:16)", style="filled", fillcolor="#32ff32b2", fontcolor="#000000", group="21"];
+        }
+        subgraph cluster_quivr_core__processor__implementations__tika_processor__TikaProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.implementations.tika_processor.TikaProcessor"];
+            quivr_core__processor__implementations__tika_processor__TikaProcessor____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/tika_processor.py:19)", style="filled", fillcolor="#00ff00b2", fontcolor="#000000", group="21"];
+            quivr_core__processor__implementations__tika_processor__TikaProcessor___send_parse_tika [label="_send_parse_tika\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/tika_processor.py:41)", style="filled", fillcolor="#00ff00b2", fontcolor="#000000", group="21"];
+            quivr_core__processor__implementations__tika_processor__TikaProcessor__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/tika_processor.py:60)", style="filled", fillcolor="#00ff00b2", fontcolor="#000000", group="21"];
+            quivr_core__processor__implementations__tika_processor__TikaProcessor__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/implementations/tika_processor.py:55)", style="filled", fillcolor="#00ff00b2", fontcolor="#000000", group="21"];
+        }
+        subgraph cluster_quivr_core__processor__processor_base {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.processor_base"];
+            quivr_core__processor__processor_base__ProcessorBase [label="ProcessorBase\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/processor_base.py:14)", style="filled", fillcolor="#65ff74b2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_quivr_core__processor__processor_base__ProcessorBase {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.processor_base.ProcessorBase"];
+            quivr_core__processor__processor_base__ProcessorBase__check_supported [label="check_supported\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/processor_base.py:17)", style="filled", fillcolor="#32ff46b2", fontcolor="#000000", group="22"];
+            quivr_core__processor__processor_base__ProcessorBase__process_file [label="process_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/processor_base.py:26)", style="filled", fillcolor="#32ff46b2", fontcolor="#000000", group="22"];
+            quivr_core__processor__processor_base__ProcessorBase__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/processor_base.py:46)", style="filled", fillcolor="#32ff46b2", fontcolor="#000000", group="22"];
+            quivr_core__processor__processor_base__ProcessorBase__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/processor_base.py:23)", style="filled", fillcolor="#32ff46b2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_quivr_core__processor__registr {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.registr"];
+            quivr_core__processor__registr__ProcEntry [label="ProcEntry\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:23)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+            quivr_core__processor__registr___append_proc_mapping [label="_append_proc_mapping\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:50)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+            quivr_core__processor__registr___import_class [label="_import_class\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:206)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+            quivr_core__processor__registr__available_processors [label="available_processors\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:226)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+            quivr_core__processor__registr__defaults_to_proc_entries [label="defaults_to_proc_entries\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:85)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+            quivr_core__processor__registr__get_processor_class [label="get_processor_class\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:133)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+            quivr_core__processor__registr__register_processor [label="register_processor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/registry.py:166)", style="filled", fillcolor="#65ff83b2", fontcolor="#000000", group="23"];
+        }
+        subgraph cluster_quivr_core__processor__splitter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.processor.splitter"];
+            quivr_core__processor__splitter__SplitterConfig [label="SplitterConfig\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/processor/splitter.py:4)", style="filled", fillcolor="#65ff91b2", fontcolor="#000000", group="24"];
+        }
+        subgraph cluster_quivr_core__quivr_rag {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.quivr_rag"];
+            quivr_core__quivr_rag__IdempotentCompressor [label="IdempotentCompressor\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:37)", style="filled", fillcolor="#99ffc9b2", fontcolor="#000000", group="26"];
+            quivr_core__quivr_rag__QuivrQARAG [label="QuivrQARAG\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:47)", style="filled", fillcolor="#99ffc9b2", fontcolor="#000000", group="26"];
+        }
+        subgraph cluster_quivr_core__quivr_rag__IdempotentCompressor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.quivr_rag.IdempotentCompressor"];
+            quivr_core__quivr_rag__IdempotentCompressor__compress_documents [label="compress_documents\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:38)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+        }
+        subgraph cluster_quivr_core__quivr_rag__QuivrQARAG {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.quivr_rag.QuivrQARAG"];
+            quivr_core__quivr_rag__QuivrQARAG____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:48)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+            quivr_core__quivr_rag__QuivrQARAG__answer [label="answer\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:145)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+            quivr_core__quivr_rag__QuivrQARAG__answer_astream [label="answer_astream\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:165)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+            quivr_core__quivr_rag__QuivrQARAG__build_chain [label="build_chain\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:94)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+            quivr_core__quivr_rag__QuivrQARAG__filter_history [label="filter_history\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:65)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+            quivr_core__quivr_rag__QuivrQARAG__retriever [label="retriever\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/quivr_rag.py:62)", style="filled", fillcolor="#65ffaeb2", fontcolor="#000000", group="26"];
+        }
+        subgraph cluster_quivr_core__storage__file {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.file"];
+            quivr_core__storage__file__FileExtension [label="FileExtension\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:14)", style="filled", fillcolor="#65ffbdb2", fontcolor="#000000", group="27"];
+            quivr_core__storage__file__QuivrFile [label="QuivrFile\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:65)", style="filled", fillcolor="#65ffbdb2", fontcolor="#000000", group="27"];
+            quivr_core__storage__file__get_file_extension [label="get_file_extension\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:20)", style="filled", fillcolor="#65ffbdb2", fontcolor="#000000", group="27"];
+            quivr_core__storage__file__load_qfile [label="load_qfile\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:36)", style="filled", fillcolor="#65ffbdb2", fontcolor="#000000", group="27"];
+        }
+        subgraph cluster_quivr_core__storage__file__QuivrFile {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.file.QuivrFile"];
+            quivr_core__storage__file__QuivrFile____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:76)", style="filled", fillcolor="#32ffa7b2", fontcolor="#000000", group="27"];
+            quivr_core__storage__file__QuivrFile__metadata [label="metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:104)", style="filled", fillcolor="#32ffa7b2", fontcolor="#000000", group="27"];
+            quivr_core__storage__file__QuivrFile__open [label="open\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/file.py:95)", style="filled", fillcolor="#32ffa7b2", fontcolor="#000000", group="27"];
+        }
+        subgraph cluster_quivr_core__storage__local_storage {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.local_storage"];
+            quivr_core__storage__local_storage__LocalStorage [label="LocalStorage\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:11)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__TransparentStorage [label="TransparentStorage\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:61)", style="filled", fillcolor="#65ffccb2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_quivr_core__storage__local_storage__LocalStorage {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.local_storage.LocalStorage"];
+            quivr_core__storage__local_storage__LocalStorage____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:14)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__LocalStorage___load_files [label="_load_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:27)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__LocalStorage__get_files [label="get_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:54)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__LocalStorage__info [label="info\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:34)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__LocalStorage__nb_files [label="nb_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:31)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__LocalStorage__remove_file [label="remove_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:57)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__LocalStorage__upload_file [label="upload_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:37)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_quivr_core__storage__local_storage__TransparentStorage {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.local_storage.TransparentStorage"];
+            quivr_core__storage__local_storage__TransparentStorage____init__ [label="__init__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:66)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__TransparentStorage__get_files [label="get_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:78)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__TransparentStorage__nb_files [label="nb_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:72)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__TransparentStorage__remove_file [label="remove_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:75)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+            quivr_core__storage__local_storage__TransparentStorage__upload_file [label="upload_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/local_storage.py:69)", style="filled", fillcolor="#32ffbbb2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_quivr_core__storage__storage_base {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.storage_base"];
+            quivr_core__storage__storage_base__StorageBase [label="StorageBase\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:8)", style="filled", fillcolor="#65ffdab2", fontcolor="#000000", group="29"];
+        }
+        subgraph cluster_quivr_core__storage__storage_base__StorageBase {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.storage.storage_base.StorageBase"];
+            quivr_core__storage__storage_base__StorageBase____init_subclass__ [label="__init_subclass__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:11)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+            quivr_core__storage__storage_base__StorageBase____repr__ [label="__repr__\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:19)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+            quivr_core__storage__storage_base__StorageBase__get_files [label="get_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:27)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+            quivr_core__storage__storage_base__StorageBase__info [label="info\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:38)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+            quivr_core__storage__storage_base__StorageBase__nb_files [label="nb_files\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:23)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+            quivr_core__storage__storage_base__StorageBase__remove_file [label="remove_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:35)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+            quivr_core__storage__storage_base__StorageBase__upload_file [label="upload_file\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/storage/storage_base.py:31)", style="filled", fillcolor="#32ffceb2", fontcolor="#000000", group="29"];
+        }
+        subgraph cluster_quivr_core__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="quivr_core.utils"];
+            quivr_core__utils__cited_answer_filter [label="cited_answer_filter\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:54)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__combine_documents [label="combine_documents\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:137)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__format_file_list [label="format_file_list\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:147)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__format_history_to_openai_mesages [label="format_history_to_openai_mesages\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:41)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__get_chunk_metadata [label="get_chunk_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:58)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__get_prev_message_str [label="get_prev_message_str\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:79)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__model_supports_function_calling [label="model_supports_function_calling\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:24)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__parse_chunk_response [label="parse_chunk_response\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:90)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+            quivr_core__utils__parse_response [label="parse_response\n(/home/sanjay/Development/explore/quivr/backend/core/quivr_core/utils.py:115)", style="filled", fillcolor="#99fff0b2", fontcolor="#000000", group="30"];
+        }
+        subgraph cluster_tests__conftest {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.conftest"];
+            tests__conftest__answers [label="answers\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:75)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__chunks_stream_answer [label="chunks_stream_answer\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:56)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__embedder [label="embedder\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:86)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__fake_llm [label="fake_llm\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:80)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__full_response [label="full_response\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:51)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__mem_vector_store [label="mem_vector_store\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:91)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__openai_api_key [label="openai_api_key\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:70)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__quivr_pdf [label="quivr_pdf\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:39)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__quivr_txt [label="quivr_txt\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:27)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+            tests__conftest__temp_data_file [label="temp_data_file\n(/home/sanjay/Development/explore/quivr/backend/core/tests/conftest.py:19)", style="filled", fillcolor="#99e6ffb2", fontcolor="#000000", group="34"];
+        }
+        subgraph cluster_tests__fixture_chunks {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.fixture_chunks"];
+            tests__fixture_chunks__main [label="main\n(/home/sanjay/Development/explore/quivr/backend/core/tests/fixture_chunks.py:15)", style="filled", fillcolor="#99dcffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_tests__processor__docx__test_docx {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.docx.test_docx"];
+            tests__processor__docx__test_docx__test_docx_filedocx [label="test_docx_filedocx\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/docx/test_docx.py:12)", style="filled", fillcolor="#3246ffb2", fontcolor="#000000", group="41"];
+            tests__processor__docx__test_docx__test_docx_processor_fail [label="test_docx_processor_fail\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/docx/test_docx.py:29)", style="filled", fillcolor="#3246ffb2", fontcolor="#000000", group="41"];
+        }
+        subgraph cluster_tests__processor__epub__test_epub_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.epub.test_epub_processor"];
+            tests__processor__epub__test_epub_processor__test_epub_page_blanche [label="test_epub_page_blanche\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/epub/test_epub_processor.py:12)", style="filled", fillcolor="#4632ffb2", fontcolor="#000000", group="43"];
+            tests__processor__epub__test_epub_processor__test_epub_processor [label="test_epub_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/epub/test_epub_processor.py:29)", style="filled", fillcolor="#4632ffb2", fontcolor="#000000", group="43"];
+            tests__processor__epub__test_epub_processor__test_epub_processor_fail [label="test_epub_processor_fail\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/epub/test_epub_processor.py:47)", style="filled", fillcolor="#4632ffb2", fontcolor="#000000", group="43"];
+        }
+        subgraph cluster_tests__processor__odt__test_odt {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.odt.test_odt"];
+            tests__processor__odt__test_odt__test_odt_processor [label="test_odt_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/odt/test_odt.py:12)", style="filled", fillcolor="#6d32ffb2", fontcolor="#000000", group="45"];
+            tests__processor__odt__test_odt__test_odt_processor_fail [label="test_odt_processor_fail\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/odt/test_odt.py:29)", style="filled", fillcolor="#6d32ffb2", fontcolor="#000000", group="45"];
+        }
+        subgraph cluster_tests__processor__pdf__test_megaparse_pdf_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.pdf.test_megaparse_pdf_processor"];
+            tests__processor__pdf__test_megaparse_pdf_processor__test_get_default_processors_megaparse [label="test_get_default_processors_megaparse\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/pdf/test_megaparse_pdf_processor.py:13)", style="filled", fillcolor="#9432ffb2", fontcolor="#000000", group="47"];
+            tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_fail [label="test_megaparse_fail\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/pdf/test_megaparse_pdf_processor.py:37)", style="filled", fillcolor="#9432ffb2", fontcolor="#000000", group="47"];
+            tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_pdf_processor [label="test_megaparse_pdf_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/pdf/test_megaparse_pdf_processor.py:19)", style="filled", fillcolor="#9432ffb2", fontcolor="#000000", group="47"];
+        }
+        subgraph cluster_tests__processor__pdf__test_unstructured_pdf_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.pdf.test_unstructured_pdf_processor"];
+            tests__processor__pdf__test_unstructured_pdf_processor__test_unstructured_pdf_processor [label="test_unstructured_pdf_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/pdf/test_unstructured_pdf_processor.py:13)", style="filled", fillcolor="#a732ffb2", fontcolor="#000000", group="48"];
+            tests__processor__pdf__test_unstructured_pdf_processor__test_unstructured_pdf_processor_fail [label="test_unstructured_pdf_processor_fail\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/pdf/test_unstructured_pdf_processor.py:30)", style="filled", fillcolor="#a732ffb2", fontcolor="#000000", group="48"];
+        }
+        subgraph cluster_tests__processor__test_default_implementations {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_default_implementations"];
+            tests__processor__test_default_implementations__test___build_processor [label="test___build_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_default_implementations.py:8)", style="filled", fillcolor="#cc65ffb2", fontcolor="#000000", group="49"];
+        }
+        subgraph cluster_tests__processor__test_registr {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr"];
+            tests__processor__test_registr__test__import_class [label="test__import_class\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:124)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_append_proc_mapping [label="test_append_proc_mapping\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:88)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_append_proc_mapping_empty [label="test_append_proc_mapping_empty\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:46)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_append_proc_mapping_priority [label="test_append_proc_mapping_priority\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:63)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_available_processors [label="test_available_processors\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:226)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_get_default_processors_cls [label="test_get_default_processors_cls\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:27)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_get_default_processors_cls_core [label="test_get_default_processors_cls_core\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:38)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_get_processor_cls_error [label="test_get_processor_cls_error\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:146)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_get_processor_cls_import_error [label="test_get_processor_cls_import_error\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:138)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_known_processors [label="test_known_processors\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:118)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_new_proc [label="test_register_new_proc\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:168)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_new_proc_append [label="test_register_new_proc_append\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:156)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_new_proc_noappend [label="test_register_new_proc_noappend\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:151)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_non_processor [label="test_register_non_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:184)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_override_error [label="test_register_override_error\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:208)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_override_proc [label="test_register_override_proc\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:192)", style="filled", fillcolor="#da65ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_new_proc {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_new_proc"];
+            tests__processor__test_registr__test_register_new_proc__TestProcessor [label="TestProcessor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:171)", style="filled", fillcolor="#ce32ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_new_proc__TestProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_new_proc.TestProcessor"];
+            tests__processor__test_registr__test_register_new_proc__TestProcessor__process_file [label="process_file\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:174)", style="filled", fillcolor="#c200ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_non_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_non_processor"];
+            tests__processor__test_registr__test_register_non_processor__NOTPROC [label="NOTPROC\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:185)", style="filled", fillcolor="#ce32ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_override_error {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_override_error"];
+            tests__processor__test_registr__test_register_override_error__TestProcessor [label="TestProcessor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:212)", style="filled", fillcolor="#ce32ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_override_error__TestProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_override_error.TestProcessor"];
+            tests__processor__test_registr__test_register_override_error__TestProcessor__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:219)", style="filled", fillcolor="#c200ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_override_error__TestProcessor__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:216)", style="filled", fillcolor="#c200ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_override_proc {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_override_proc"];
+            tests__processor__test_registr__test_register_override_proc__TestProcessor [label="TestProcessor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:193)", style="filled", fillcolor="#ce32ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_registr__test_register_override_proc__TestProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_registr.test_register_override_proc.TestProcessor"];
+            tests__processor__test_registr__test_register_override_proc__TestProcessor__process_file_inner [label="process_file_inner\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:200)", style="filled", fillcolor="#c200ffb2", fontcolor="#000000", group="50"];
+            tests__processor__test_registr__test_register_override_proc__TestProcessor__processor_metadata [label="processor_metadata\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_registry.py:197)", style="filled", fillcolor="#c200ffb2", fontcolor="#000000", group="50"];
+        }
+        subgraph cluster_tests__processor__test_simple_txt_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_simple_txt_processor"];
+            tests__processor__test_simple_txt_processor__test_recursive_character_splitter [label="test_recursive_character_splitter\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_simple_txt_processor.py:12)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="51"];
+            tests__processor__test_simple_txt_processor__test_simple_processor [label="test_simple_processor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_simple_txt_processor.py:22)", style="filled", fillcolor="#e965ffb2", fontcolor="#000000", group="51"];
+        }
+        subgraph cluster_tests__processor__test_tika_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_tika_processor"];
+            tests__processor__test_tika_processor__test_process_file [label="test_process_file\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_tika_processor.py:10)", style="filled", fillcolor="#f765ffb2", fontcolor="#000000", group="52"];
+            tests__processor__test_tika_processor__test_send_parse_tika_exception [label="test_send_parse_tika_exception\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_tika_processor.py:19)", style="filled", fillcolor="#f765ffb2", fontcolor="#000000", group="52"];
+        }
+        subgraph cluster_tests__processor__test_txt_processor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.processor.test_txt_processor"];
+            tests__processor__test_txt_processor__test_process_txt [label="test_process_txt\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_txt_processor.py:22)", style="filled", fillcolor="#ff65f7b2", fontcolor="#000000", group="53"];
+            tests__processor__test_txt_processor__txt_qfile [label="txt_qfile\n(/home/sanjay/Development/explore/quivr/backend/core/tests/processor/test_txt_processor.py:9)", style="filled", fillcolor="#ff65f7b2", fontcolor="#000000", group="53"];
+        }
+        subgraph cluster_tests__test_brain {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_brain"];
+            tests__test_brain__test_brain_ask_streaming [label="test_brain_ask_streaming\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:116)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_empty_files [label="test_brain_empty_files\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:26)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_empty_files_no_vectordb [label="test_brain_empty_files_no_vectordb\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:15)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_from_files_success [label="test_brain_from_files_success\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:38)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_from_langchain_docs [label="test_brain_from_langchain_docs\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:61)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_get_history [label="test_brain_get_history\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:97)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_info_empty [label="test_brain_info_empty\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:130)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+            tests__test_brain__test_brain_search [label="test_brain_search\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_brain.py:77)", style="filled", fillcolor="#ff99f0b2", fontcolor="#000000", group="54"];
+        }
+        subgraph cluster_tests__test_chat_histor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_chat_histor"];
+            tests__test_chat_histor__ai_message [label="ai_message\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:11)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+            tests__test_chat_histor__human_message [label="human_message\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:16)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+            tests__test_chat_histor__test_chat_history_append [label="test_chat_history_append\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:29)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+            tests__test_chat_histor__test_chat_history_constructor [label="test_chat_history_constructor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:20)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+            tests__test_chat_histor__test_chat_history_get_history [label="test_chat_history_get_history\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:38)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+            tests__test_chat_histor__test_chat_history_iter_pairs_invalid [label="test_chat_history_iter_pairs_invalid\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:57)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+            tests__test_chat_histor__test_chat_history_iter_pais [label="test_chat_history_iter_pais\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_history.py:67)", style="filled", fillcolor="#ff99e6b2", fontcolor="#000000", group="55"];
+        }
+        subgraph cluster_tests__test_chat_llm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_chat_llm"];
+            tests__test_chat_llm__test_chat_llm [label="test_chat_llm\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_chat_llm.py:7)", style="filled", fillcolor="#ff99dcb2", fontcolor="#000000", group="56"];
+        }
+        subgraph cluster_tests__test_config {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_config"];
+            tests__test_config__test_default_llm_config [label="test_default_llm_config\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_config.py:4)", style="filled", fillcolor="#ff99d3b2", fontcolor="#000000", group="57"];
+            tests__test_config__test_default_ragconfig [label="test_default_ragconfig\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_config.py:21)", style="filled", fillcolor="#ff99d3b2", fontcolor="#000000", group="57"];
+        }
+        subgraph cluster_tests__test_llm_endpoint {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_llm_endpoint"];
+            tests__test_llm_endpoint__test_llm_endpoint_constructor [label="test_llm_endpoint_constructor\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_llm_endpoint.py:43)", style="filled", fillcolor="#ff99c9b2", fontcolor="#000000", group="58"];
+            tests__test_llm_endpoint__test_llm_endpoint_from_config [label="test_llm_endpoint_from_config\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_llm_endpoint.py:30)", style="filled", fillcolor="#ff99c9b2", fontcolor="#000000", group="58"];
+            tests__test_llm_endpoint__test_llm_endpoint_from_config_default [label="test_llm_endpoint_from_config_default\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_llm_endpoint.py:12)", style="filled", fillcolor="#ff99c9b2", fontcolor="#000000", group="58"];
+        }
+        subgraph cluster_tests__test_quivr_rag {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_quivr_rag"];
+            tests__test_quivr_rag__mock_chain_qa_stream [label="mock_chain_qa_stream\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_quivr_rag.py:12)", style="filled", fillcolor="#ff99b6b2", fontcolor="#000000", group="60"];
+            tests__test_quivr_rag__test_quivrqarag [label="test_quivrqarag\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_quivr_rag.py:26)", style="filled", fillcolor="#ff99b6b2", fontcolor="#000000", group="60"];
+        }
+        subgraph cluster_tests__test_quivr_rag__mock_chain_qa_stream {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_quivr_rag.mock_chain_qa_stream"];
+            tests__test_quivr_rag__mock_chain_qa_stream__MockQAChain [label="MockQAChain\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_quivr_rag.py:13)", style="filled", fillcolor="#ff6591b2", fontcolor="#000000", group="60"];
+            tests__test_quivr_rag__mock_chain_qa_stream__mock_qa_chain [label="mock_qa_chain\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_quivr_rag.py:18)", style="filled", fillcolor="#ff6591b2", fontcolor="#000000", group="60"];
+        }
+        subgraph cluster_tests__test_quivr_rag__mock_chain_qa_stream__MockQAChain {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_quivr_rag.mock_chain_qa_stream.MockQAChain"];
+            tests__test_quivr_rag__mock_chain_qa_stream__MockQAChain__astream [label="astream\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_quivr_rag.py:14)", style="filled", fillcolor="#ff326db2", fontcolor="#000000", group="60"];
+        }
+        subgraph cluster_tests__test_utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tests.test_utils"];
+            tests__test_utils___check_rolling_msg [label="_check_rolling_msg\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_utils.py:58)", style="filled", fillcolor="#ff99acb2", fontcolor="#000000", group="61"];
+            tests__test_utils__test_get_prev_message_incorrect_message [label="test_get_prev_message_incorrect_message\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_utils.py:19)", style="filled", fillcolor="#ff99acb2", fontcolor="#000000", group="61"];
+            tests__test_utils__test_get_prev_message_str [label="test_get_prev_message_str\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_utils.py:28)", style="filled", fillcolor="#ff99acb2", fontcolor="#000000", group="61"];
+            tests__test_utils__test_model_supports_function_calling [label="test_model_supports_function_calling\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_utils.py:14)", style="filled", fillcolor="#ff99acb2", fontcolor="#000000", group="61"];
+            tests__test_utils__test_parse_chunk_response_func_calling [label="test_parse_chunk_response_func_calling\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_utils.py:67)", style="filled", fillcolor="#ff99acb2", fontcolor="#000000", group="61"];
+            tests__test_utils__test_parse_chunk_response_nofunc_calling [label="test_parse_chunk_response_nofunc_calling\n(/home/sanjay/Development/explore/quivr/backend/core/tests/test_utils.py:45)", style="filled", fillcolor="#ff99acb2", fontcolor="#000000", group="61"];
+        }
+    }
+        quivr_core__config__RAGConfig -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        quivr_core -> quivr_core__register_entries [style="solid",  color="#000000"];
+        quivr_core -> quivr_core__chat_llm__ChatLLM [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__utils__get_chunk_metadata [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__utils__format_file_list [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__utils__combine_documents [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__models__cited_answer [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__models__QuivrKnowledge [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__models__ParsedRAGResponse [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__utils__parse_response [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__utils__parse_chunk_response [style="solid",  color="#000000"];
+        quivr_core__quivr_rag -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG____init__ -> quivr_core__quivr_rag__IdempotentCompressor [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__build_chain -> quivr_core__quivr_rag__QuivrQARAG__retriever [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__build_chain -> quivr_core__utils__combine_documents [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__build_chain -> quivr_core__models__cited_answer [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__build_chain -> quivr_core__quivr_rag__IdempotentCompressor [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__build_chain -> quivr_core__quivr_rag__QuivrQARAG__filter_history [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer -> quivr_core__quivr_rag__QuivrQARAG__build_chain [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer -> quivr_core__utils__format_file_list [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer -> quivr_core__utils__parse_response [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer_astream -> quivr_core__quivr_rag__QuivrQARAG__build_chain [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer_astream -> quivr_core__utils__get_chunk_metadata [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer_astream -> quivr_core__utils__format_file_list [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer_astream -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer_astream -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        quivr_core__quivr_rag__QuivrQARAG__answer_astream -> quivr_core__utils__parse_chunk_response [style="solid",  color="#000000"];
+        quivr_core__chat -> quivr_core__models__ChatMessage [style="solid",  color="#000000"];
+        quivr_core__chat__ChatHistory__append -> quivr_core__models__ChatMessage [style="solid",  color="#000000"];
+        quivr_core__chat__ChatHistory__append -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        quivr_core__chat__ChatHistory__iter_pairs -> quivr_core__chat__ChatHistory__get_chat_history [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__utils__get_chunk_metadata [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__models__ChatLLMMetadata [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__models__ParsedRAGResponse [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        quivr_core__chat_llm -> quivr_core__utils__parse_response [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__build_chain -> quivr_core__chat_llm__ChatLLM__filter_history [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer -> quivr_core__chat_llm__ChatLLM__build_chain [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer -> quivr_core__utils__parse_response [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer_astream -> quivr_core__utils__get_chunk_metadata [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer_astream -> quivr_core__chat_llm__ChatLLM__build_chain [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer_astream -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer_astream -> quivr_core__models__ChatLLMMetadata [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer_astream -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        quivr_core__chat_llm__ChatLLM__answer_astream -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        quivr_core__utils -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__utils -> quivr_core__models__RawRAGResponse [style="solid",  color="#000000"];
+        quivr_core__utils -> quivr_core__models__QuivrKnowledge [style="solid",  color="#000000"];
+        quivr_core__utils -> quivr_core__models__ChatLLMMetadata [style="solid",  color="#000000"];
+        quivr_core__utils -> quivr_core__models__ParsedRAGResponse [style="solid",  color="#000000"];
+        quivr_core__utils__get_chunk_metadata -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__utils__get_chunk_metadata -> quivr_core__utils__cited_answer_filter [style="solid",  color="#000000"];
+        quivr_core__utils__get_prev_message_str -> quivr_core__utils__cited_answer_filter [style="solid",  color="#000000"];
+        quivr_core__utils__parse_chunk_response -> quivr_core__utils__cited_answer_filter [style="solid",  color="#000000"];
+        quivr_core__utils__parse_response -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        quivr_core__utils__parse_response -> quivr_core__utils__model_supports_function_calling [style="solid",  color="#000000"];
+        quivr_core__utils__parse_response -> quivr_core__models__ChatLLMMetadata [style="solid",  color="#000000"];
+        quivr_core__utils__parse_response -> quivr_core__models__ParsedRAGResponse [style="solid",  color="#000000"];
+        quivr_core__files__file__get_file_extension -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        quivr_core__files__file__load_qfile -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        quivr_core__files__file__load_qfile -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__files__file__load_qfile -> quivr_core__files__file__get_file_extension [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint -> quivr_core__utils__model_supports_function_calling [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint -> quivr_core__brain__info__LLMInfo [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint__LLMEndpoint____init__ -> quivr_core__utils__model_supports_function_calling [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint__LLMEndpoint__from_config -> quivr_core__llm__llm_endpoint__LLMEndpoint____init__ [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint__LLMEndpoint__from_config -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint__LLMEndpoint__supports_func_calling -> quivr_core__utils__model_supports_function_calling [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint__LLMEndpoint__info -> quivr_core__llm__llm_endpoint__LLMEndpoint__supports_func_calling [style="solid",  color="#000000"];
+        quivr_core__llm__llm_endpoint__LLMEndpoint__info -> quivr_core__brain__info__LLMInfo [style="solid",  color="#000000"];
+        quivr_core__processor__processor_base -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__processor__processor_base -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        quivr_core__processor__processor_base__ProcessorBase__process_file -> quivr_core__processor__processor_base__ProcessorBase__check_supported [style="solid",  color="#000000"];
+        quivr_core__processor__processor_base__ProcessorBase__process_file -> quivr_core__processor__processor_base__ProcessorBase__process_file_inner [style="solid",  color="#000000"];
+        quivr_core__processor__processor_base__ProcessorBase__process_file -> quivr_core__processor__processor_base__ProcessorBase__processor_metadata [style="solid",  color="#000000"];
+        quivr_core__processor__registr -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__registr -> quivr_core__processor__registr__defaults_to_proc_entries [style="solid",  color="#000000"];
+        quivr_core__processor__registr -> quivr_core__processor__registr__ProcEntry [style="solid",  color="#000000"];
+        quivr_core__processor__registr -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        quivr_core__processor__registr___append_proc_mapping -> quivr_core__processor__registr__ProcEntry [style="solid",  color="#000000"];
+        quivr_core__processor__registr__defaults_to_proc_entries -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        quivr_core__processor__registr__defaults_to_proc_entries -> quivr_core__processor__registr___append_proc_mapping [style="solid",  color="#000000"];
+        quivr_core__processor__registr__get_processor_class -> quivr_core__processor__registr__defaults_to_proc_entries [style="solid",  color="#000000"];
+        quivr_core__processor__registr__get_processor_class -> quivr_core__processor__registr__register_processor [style="solid",  color="#000000"];
+        quivr_core__processor__registr__get_processor_class -> quivr_core__processor__registr___import_class [style="solid",  color="#000000"];
+        quivr_core__processor__registr__register_processor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__registr__register_processor -> quivr_core__processor__registr__defaults_to_proc_entries [style="solid",  color="#000000"];
+        quivr_core__processor__registr__register_processor -> quivr_core__processor__registr___append_proc_mapping [style="solid",  color="#000000"];
+        quivr_core__processor__registr___import_class -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__registr__available_processors -> quivr_core__processor__registr__defaults_to_proc_entries [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__megaparse_processor -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__megaparse_processor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__megaparse_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor____init__ -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor__recursive_character_splitter -> quivr_core__processor__implementations__simple_txt_processor__recursive_character_splitter [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor____init__ -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor____init__ -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor__process_file_inner -> quivr_core__processor__implementations__simple_txt_processor__recursive_character_splitter [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default -> quivr_core__processor__implementations__default___build_processor [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default__ProcessorInit -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default___build_processor -> quivr_core__processor__implementations__default__ProcessorInit [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default___build_processor -> quivr_core__processor__implementations__default___build_processor___Processor [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default___build_processor___Processor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__default___build_processor___Processor____init__ -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__tika_processor -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__tika_processor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__tika_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__tika_processor__TikaProcessor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__tika_processor__TikaProcessor____init__ -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        quivr_core__processor__implementations__tika_processor__TikaProcessor__process_file_inner -> quivr_core__processor__implementations__tika_processor__TikaProcessor___send_parse_tika [style="solid",  color="#000000"];
+        quivr_core__brain__brain_defaults -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        quivr_core__brain__brain_defaults__default_llm -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__brain__brain_defaults__default_embedder [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__models__ParsedRAGResponse [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__models__SearchResult [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__brain__info__BrainInfo [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__brain__info__ChatHistoryInfo [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__files__file__load_qfile [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__brain__brain_defaults__build_default_vectordb [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__brain__brain_defaults__default_llm [style="solid",  color="#000000"];
+        quivr_core__brain__brain -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain____init__ -> quivr_core__brain__brain__Brain___init_chats [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain____repr__ -> quivr_core__brain__brain__Brain__info [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__print_info -> quivr_core__brain__brain__Brain__info [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__info -> quivr_core__brain__info__BrainInfo [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__info -> quivr_core__brain__info__ChatHistoryInfo [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__info -> quivr_core__brain__brain__Brain___init_chats [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain___init_chats -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain___init_chats -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__brain__brain_defaults__default_embedder [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__storage__local_storage__TransparentStorage____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__brain__brain__process_files [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__files__file__load_qfile [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__brain__brain__Brain____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__brain__brain_defaults__build_default_vectordb [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_files -> quivr_core__brain__brain_defaults__default_llm [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__from_files -> quivr_core__storage__local_storage__TransparentStorage____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__from_files -> quivr_core__brain__brain__Brain__afrom_files [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__from_files -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__from_files -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__brain__brain_defaults__default_embedder [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__storage__local_storage__TransparentStorage____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__brain__brain__Brain____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__brain__brain_defaults__build_default_vectordb [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__afrom_langchain_documents -> quivr_core__brain__brain_defaults__default_llm [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__asearch -> quivr_core__models__SearchResult [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__get_chat_history -> quivr_core__brain__brain__Brain___init_chats [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask -> quivr_core__quivr_rag__QuivrQARAG____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask -> quivr_core__quivr_rag__QuivrQARAG__answer [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask_streaming -> quivr_core__quivr_rag__QuivrQARAG____init__ [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask_streaming -> quivr_core__quivr_rag__QuivrQARAG__answer_astream [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask_streaming -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask_streaming -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        quivr_core__brain__brain__Brain__ask_streaming -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        quivr_core__storage__storage_base -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__storage__storage_base -> quivr_core__brain__info__StorageInfo [style="solid",  color="#000000"];
+        quivr_core__storage__storage_base__StorageBase__info -> quivr_core__brain__info__StorageInfo [style="solid",  color="#000000"];
+        quivr_core__storage__storage_base__StorageBase__info -> quivr_core__storage__storage_base__StorageBase__nb_files [style="solid",  color="#000000"];
+        quivr_core__storage__file__get_file_extension -> quivr_core__storage__file__FileExtension [style="solid",  color="#000000"];
+        quivr_core__storage__file__load_qfile -> quivr_core__storage__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        quivr_core__storage__file__load_qfile -> quivr_core__storage__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__storage__file__load_qfile -> quivr_core__storage__file__get_file_extension [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage__LocalStorage -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage__LocalStorage__info -> quivr_core__storage__storage_base__StorageBase__info [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage__LocalStorage__upload_file -> quivr_core__storage__local_storage__LocalStorage____init__ [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage__TransparentStorage -> quivr_core__storage__storage_base__StorageBase [style="solid",  color="#000000"];
+        quivr_core__storage__local_storage__TransparentStorage__get_files -> quivr_core__storage__local_storage__TransparentStorage____init__ [style="solid",  color="#000000"];
+        chat_llm -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        chat_llm -> quivr_core__chat_llm__ChatLLM__answer [style="solid",  color="#000000"];
+        chat_llm -> quivr_core__chat_llm__ChatLLM [style="solid",  color="#000000"];
+        pdf_parsing_tika -> quivr_core__llm__llm_endpoint__LLMEndpoint____init__ [style="solid",  color="#000000"];
+        pdf_parsing_tika -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        pdf_parsing_tika -> quivr_core__llm__llm_endpoint__LLMEndpoint [style="solid",  color="#000000"];
+        main__on_chat_start -> quivr_core__storage__file__QuivrFile__open [style="solid",  color="#000000"];
+        main__on_chat_start -> quivr_core__files__file__QuivrFile__open [style="solid",  color="#000000"];
+        tests__test_quivr_rag -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        tests__test_quivr_rag -> quivr_core__models__ParsedRAGChunkResponse [style="solid",  color="#000000"];
+        tests__test_quivr_rag -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_quivr_rag -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_quivr_rag -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        tests__test_quivr_rag -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        tests__test_quivr_rag__mock_chain_qa_stream__mock_qa_chain -> tests__test_quivr_rag__mock_chain_qa_stream__MockQAChain [style="solid",  color="#000000"];
+        tests__test_quivr_rag__mock_chain_qa_stream -> tests__test_quivr_rag__mock_chain_qa_stream__mock_qa_chain [style="solid",  color="#000000"];
+        tests__test_quivr_rag__mock_chain_qa_stream -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__quivr_rag__QuivrQARAG____init__ [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__quivr_rag__QuivrQARAG__answer_astream [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__models__RAGResponseMetadata [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_quivr_rag__test_quivrqarag -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        tests__fixture_chunks -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__fixture_chunks -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        tests__fixture_chunks -> tests__fixture_chunks__main [style="solid",  color="#000000"];
+        tests__fixture_chunks -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__fixture_chunks -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__quivr_rag__QuivrQARAG____init__ [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__quivr_rag__QuivrQARAG__build_chain [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__quivr_rag__QuivrQARAG [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__storage__file__QuivrFile__open [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__files__file__QuivrFile__open [style="solid",  color="#000000"];
+        tests__fixture_chunks__main -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        tests__test_chat_histor -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_constructor -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_constructor -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_append -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_append -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_append -> quivr_core__chat__ChatHistory__append [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_get_history -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_get_history -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_get_history -> quivr_core__chat__ChatHistory__get_chat_history [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_get_history -> quivr_core__chat__ChatHistory__append [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pairs_invalid -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pairs_invalid -> quivr_core__chat__ChatHistory__iter_pairs [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pairs_invalid -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pairs_invalid -> quivr_core__chat__ChatHistory__append [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pais -> quivr_core__chat__ChatHistory____init__ [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pais -> quivr_core__chat__ChatHistory__iter_pairs [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pais -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_chat_histor__test_chat_history_iter_pais -> quivr_core__chat__ChatHistory__append [style="solid",  color="#000000"];
+        tests__test_config -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_config -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        tests__test_config__test_default_llm_config -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_config__test_default_ragconfig -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_config__test_default_ragconfig -> quivr_core__config__RAGConfig [style="solid",  color="#000000"];
+        tests__conftest -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__conftest -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__conftest -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__conftest__quivr_txt -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__conftest__quivr_txt -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__conftest__quivr_pdf -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__conftest__quivr_pdf -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__conftest__chunks_stream_answer -> quivr_core__storage__file__QuivrFile__open [style="solid",  color="#000000"];
+        tests__conftest__chunks_stream_answer -> quivr_core__files__file__QuivrFile__open [style="solid",  color="#000000"];
+        tests__conftest__fake_llm -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_llm_endpoint -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_llm_endpoint__test_llm_endpoint_from_config_default -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_llm_endpoint__test_llm_endpoint_from_config -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_llm_endpoint__test_llm_endpoint_constructor -> quivr_core__config__LLMEndpointConfig [style="solid",  color="#000000"];
+        tests__test_utils -> quivr_core__utils__parse_chunk_response [style="solid",  color="#000000"];
+        tests__test_utils -> quivr_core__utils__model_supports_function_calling [style="solid",  color="#000000"];
+        tests__test_utils -> quivr_core__utils__get_prev_message_str [style="solid",  color="#000000"];
+        tests__test_utils__test_model_supports_function_calling -> quivr_core__utils__model_supports_function_calling [style="solid",  color="#000000"];
+        tests__test_utils__test_get_prev_message_incorrect_message -> quivr_core__utils__get_prev_message_str [style="solid",  color="#000000"];
+        tests__test_utils__test_get_prev_message_str -> quivr_core__utils__get_prev_message_str [style="solid",  color="#000000"];
+        tests__test_utils__test_parse_chunk_response_nofunc_calling -> quivr_core__utils__parse_chunk_response [style="solid",  color="#000000"];
+        tests__test_utils__test_parse_chunk_response_func_calling -> quivr_core__utils__parse_chunk_response [style="solid",  color="#000000"];
+        tests__test_utils__test_parse_chunk_response_func_calling -> tests__test_utils___check_rolling_msg [style="solid",  color="#000000"];
+        tests__test_chat_llm -> quivr_core__chat_llm__ChatLLM [style="solid",  color="#000000"];
+        tests__test_chat_llm__test_chat_llm -> quivr_core__chat_llm__ChatLLM__answer [style="solid",  color="#000000"];
+        tests__test_chat_llm__test_chat_llm -> quivr_core__chat_llm__ChatLLM [style="solid",  color="#000000"];
+        tests__test_brain -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        tests__test_brain -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_brain__test_brain_from_files_success -> quivr_core__chat__ChatHistory [style="solid",  color="#000000"];
+        tests__test_brain__test_brain_from_files_success -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        tests__test_brain__test_brain_info_empty -> quivr_core__storage__local_storage__TransparentStorage [style="solid",  color="#000000"];
+        tests__test_brain__test_brain_info_empty -> quivr_core__storage__storage_base__StorageBase__info [style="solid",  color="#000000"];
+        tests__test_brain__test_brain_info_empty -> quivr_core__storage__local_storage__TransparentStorage____init__ [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor__test_process_file -> quivr_core__processor__processor_base__ProcessorBase__process_file [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor__test_process_file -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor__test_process_file -> quivr_core__processor__implementations__tika_processor__TikaProcessor____init__ [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor__test_send_parse_tika_exception -> quivr_core__processor__processor_base__ProcessorBase__process_file [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor__test_send_parse_tika_exception -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_tika_processor__test_send_parse_tika_exception -> quivr_core__processor__implementations__tika_processor__TikaProcessor____init__ [style="solid",  color="#000000"];
+        tests__processor__test_default_implementations -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        tests__processor__test_default_implementations -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__test_default_implementations__test___build_processor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        tests__processor__test_default_implementations__test___build_processor -> quivr_core__processor__implementations__default___build_processor [style="solid",  color="#000000"];
+        tests__processor__test_txt_processor -> quivr_core__storage__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__test_txt_processor -> quivr_core__storage__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__test_txt_processor__txt_qfile -> quivr_core__storage__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__test_txt_processor__txt_qfile -> quivr_core__storage__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__test_txt_processor__test_process_txt -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        tests__processor__test_registr -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        tests__processor__test_registr -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__test_registr -> quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_get_default_processors_cls -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_get_default_processors_cls_core -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_get_default_processors_cls_core -> quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_known_processors -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__test_registr__test__import_class -> quivr_core__processor__implementations__tika_processor__TikaProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_new_proc -> tests__processor__test_registr__test_register_new_proc__TestProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_new_proc__TestProcessor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_non_processor -> tests__processor__test_registr__test_register_non_processor__NOTPROC [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_override_proc__TestProcessor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_override_proc -> tests__processor__test_registr__test_register_override_proc__TestProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_override_error -> tests__processor__test_registr__test_register_override_error__TestProcessor [style="solid",  color="#000000"];
+        tests__processor__test_registr__test_register_override_error__TestProcessor -> quivr_core__processor__processor_base__ProcessorBase [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor -> quivr_core__processor__implementations__simple_txt_processor__recursive_character_splitter [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor -> quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor__test_recursive_character_splitter -> quivr_core__processor__implementations__simple_txt_processor__recursive_character_splitter [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor__test_simple_processor -> quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor____init__ [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor__test_simple_processor -> quivr_core__processor__splitter__SplitterConfig [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor__test_simple_processor -> quivr_core__processor__processor_base__ProcessorBase__process_file [style="solid",  color="#000000"];
+        tests__processor__test_simple_txt_processor__test_simple_processor -> quivr_core__processor__implementations__simple_txt_processor__SimpleTxtProcessor [style="solid",  color="#000000"];
+        tests__processor__docx__test_docx -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__docx__test_docx -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__docx__test_docx__test_docx_filedocx -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__docx__test_docx__test_docx_filedocx -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__odt__test_odt -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__odt__test_odt -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__odt__test_odt__test_odt_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__odt__test_odt__test_odt_processor -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__odt__test_odt__test_odt_processor_fail -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__odt__test_odt__test_odt_processor_fail -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__epub__test_epub_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__epub__test_epub_processor -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__epub__test_epub_processor__test_epub_page_blanche -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__epub__test_epub_processor__test_epub_page_blanche -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__epub__test_epub_processor__test_epub_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__epub__test_epub_processor__test_epub_processor -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_unstructured_pdf_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__pdf__test_unstructured_pdf_processor -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__pdf__test_unstructured_pdf_processor__test_unstructured_pdf_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__pdf__test_unstructured_pdf_processor__test_unstructured_pdf_processor -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_unstructured_pdf_processor__test_unstructured_pdf_processor_fail -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_unstructured_pdf_processor__test_unstructured_pdf_processor_fail -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor -> quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor -> quivr_core__files__file__FileExtension [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_get_default_processors_megaparse -> quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_pdf_processor -> quivr_core__processor__processor_base__ProcessorBase__process_file [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_pdf_processor -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_pdf_processor -> quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_pdf_processor -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_pdf_processor -> quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_fail -> quivr_core__files__file__QuivrFile____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_fail -> quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_fail -> quivr_core__processor__implementations__megaparse_processor__MegaparseProcessor____init__ [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_fail -> quivr_core__processor__processor_base__ProcessorBase__process_file [style="solid",  color="#000000"];
+        tests__processor__pdf__test_megaparse_pdf_processor__test_megaparse_fail -> quivr_core__files__file__QuivrFile [style="solid",  color="#000000"];
+    }

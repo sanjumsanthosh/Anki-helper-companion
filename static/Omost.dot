@@ -1,0 +1,175 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        canvas [label="canvas", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        chat_interface [label="chat_interface", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        gradio_a [label="gradio_a", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        memory_management [label="memory_management", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        pipeline [label="pipeline", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        subgraph cluster_canvas {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="canvas"];
+            canvas__Canvas [label="Canvas\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:130)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            canvas__binary_nonzero_positions [label="binary_nonzero_positions\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:124)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            canvas__closest_name [label="closest_name\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:107)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            canvas__safe_str [label="safe_str\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:120)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_canvas__Canvas {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="canvas.Canvas"];
+            canvas__Canvas____init__ [label="__init__\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:143)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            canvas__Canvas__add_local_description [label="add_local_description\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:172)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            canvas__Canvas__from_bot_response [label="from_bot_response\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:132)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            canvas__Canvas__process [label="process\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:216)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+            canvas__Canvas__set_global_description [label="set_global_description\n(/home/sanjay/Development/explore/Omost/lib_omost/canvas.py:151)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_chat_interface {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="chat_interface"];
+            chat_interface__ChatInterface [label="ChatInterface\n(/home/sanjay/Development/explore/Omost/chat_interface.py:34)", style="filled", fillcolor="#fefeccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_chat_interface__ChatInterface {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="chat_interface.ChatInterface"];
+            chat_interface__ChatInterface____init__ [label="__init__\n(/home/sanjay/Development/explore/Omost/chat_interface.py:53)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___api_stream_fn [label="_api_stream_fn\n(/home/sanjay/Development/explore/Omost/chat_interface.py:594)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___api_submit_fn [label="_api_submit_fn\n(/home/sanjay/Development/explore/Omost/chat_interface.py:578)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___append_multimodal_history [label="_append_multimodal_history\n(/home/sanjay/Development/explore/Omost/chat_interface.py:469)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___clear_and_save_textbox [label="_clear_and_save_textbox\n(/home/sanjay/Development/explore/Omost/chat_interface.py:463)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___delete_prev_fn [label="_delete_prev_fn\n(/home/sanjay/Development/explore/Omost/chat_interface.py:616)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___display_input [label="_display_input\n(/home/sanjay/Development/explore/Omost/chat_interface.py:484)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___setup_api [label="_setup_api\n(/home/sanjay/Development/explore/Omost/chat_interface.py:450)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___setup_events [label="_setup_events\n(/home/sanjay/Development/explore/Omost/chat_interface.py:260)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___setup_stop_events [label="_setup_stop_events\n(/home/sanjay/Development/explore/Omost/chat_interface.py:397)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___stream_fn [label="_stream_fn\n(/home/sanjay/Development/explore/Omost/chat_interface.py:526)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+            chat_interface__ChatInterface___submit_fn [label="_submit_fn\n(/home/sanjay/Development/explore/Omost/chat_interface.py:493)", style="filled", fillcolor="#feff99b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_chat_interface__ChatInterface___setup_stop_events {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="chat_interface.ChatInterface._setup_stop_events"];
+            chat_interface__ChatInterface___setup_stop_events__perform_interrupt [label="perform_interrupt\n(/home/sanjay/Development/explore/Omost/chat_interface.py:400)", style="filled", fillcolor="#feff65b2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_gradio_a {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gradio_a"];
+            gradio_a__chat_fn [label="chat_fn\n(/home/sanjay/Development/explore/Omost/gradio_app.py:115)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            gradio_a__diffusion_fn [label="diffusion_fn\n(/home/sanjay/Development/explore/Omost/gradio_app.py:189)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            gradio_a__numpy2pytorch [label="numpy2pytorch\n(/home/sanjay/Development/explore/Omost/gradio_app.py:102)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            gradio_a__post_chat [label="post_chat\n(/home/sanjay/Development/explore/Omost/gradio_app.py:173)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            gradio_a__pytorch2numpy [label="pytorch2numpy\n(/home/sanjay/Development/explore/Omost/gradio_app.py:91)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+            gradio_a__resize_without_crop [label="resize_without_crop\n(/home/sanjay/Development/explore/Omost/gradio_app.py:108)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_gradio_a__chat_fn {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="gradio_a.chat_fn"];
+            gradio_a__chat_fn__interactive_stopping_criteria [label="interactive_stopping_criteria\n(/home/sanjay/Development/explore/Omost/gradio_app.py:135)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="2"];
+            gradio_a__chat_fn__interrupter [label="interrupter\n(/home/sanjay/Development/explore/Omost/gradio_app.py:144)", style="filled", fillcolor="#99ff99b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_memory_management {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="memory_management"];
+            memory_management__load_models_to_gpu [label="load_models_to_gpu\n(/home/sanjay/Development/explore/Omost/lib_omost/memory_management.py:29)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="3"];
+            memory_management__movable_bnb_model [label="movable_bnb_model\n(/home/sanjay/Development/explore/Omost/lib_omost/memory_management.py:16)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="3"];
+            memory_management__unload_all_models [label="unload_all_models\n(/home/sanjay/Development/explore/Omost/lib_omost/memory_management.py:56)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_pipeline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pipeline"];
+            pipeline__KModel [label="KModel\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:60)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+            pipeline__OmostCrossAttnProcessor [label="OmostCrossAttnProcessor\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:129)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+            pipeline__OmostSelfAttnProcessor [label="OmostSelfAttnProcessor\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:102)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline [label="StableDiffusionXLOmostPipeline\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:176)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+            pipeline__hacked_Transformer2DModel_forward [label="hacked_Transformer2DModel_forward\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:12)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+            pipeline__sample_dpmpp_2m [label="sample_dpmpp_2m\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:35)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_pipeline__KModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pipeline.KModel"];
+            pipeline__KModel____call__ [label="__call__\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:92)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__KModel____init__ [label="__init__\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:61)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__KModel__get_sigmas_karras [label="get_sigmas_karras\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:85)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__KModel__sigma_max [label="sigma_max\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:77)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__KModel__sigma_min [label="sigma_min\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:73)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__KModel__timestep [label="timestep\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:80)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_pipeline__OmostCrossAttnProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pipeline.OmostCrossAttnProcessor"];
+            pipeline__OmostCrossAttnProcessor____call__ [label="__call__\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:130)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_pipeline__OmostSelfAttnProcessor {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pipeline.OmostSelfAttnProcessor"];
+            pipeline__OmostSelfAttnProcessor____call__ [label="__call__\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:103)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_pipeline__StableDiffusionXLOmostPipeline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pipeline.StableDiffusionXLOmostPipeline"];
+            pipeline__StableDiffusionXLOmostPipeline____call__ [label="__call__\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:366)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline____init__ [label="__init__\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:177)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline__all_conds_from_canvas [label="all_conds_from_canvas\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:311)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy [label="encode_bag_of_subprompts_greedy\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:192)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline__encode_cropped_prompt_77tokens [label="encode_cropped_prompt_77tokens\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:334)", style="filled", fillcolor="#9999ffb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="pipeline.StableDiffusionXLOmostPipeline.encode_bag_of_subprompts_greedy"];
+            pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__double_encode [label="double_encode\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:240)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__get_77_tokens_in_torch [label="get_77_tokens_in_torch\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:218)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__greedy_partition [label="greedy_partition\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:196)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+            pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__merge_with_prefix [label="merge_with_prefix\n(/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py:226)", style="filled", fillcolor="#6565ffb2", fontcolor="#000000", group="4"];
+        }
+    }
+        chat_interface__ChatInterface____init__ -> chat_interface__ChatInterface___setup_api [style="solid",  color="#000000"];
+        chat_interface__ChatInterface____init__ -> chat_interface__ChatInterface___setup_events [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_events -> chat_interface__ChatInterface___setup_stop_events [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_events -> chat_interface__ChatInterface___clear_and_save_textbox [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_events -> chat_interface__ChatInterface___submit_fn [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_events -> chat_interface__ChatInterface___display_input [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_events -> chat_interface__ChatInterface___stream_fn [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_events -> chat_interface__ChatInterface___delete_prev_fn [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_stop_events -> chat_interface__ChatInterface___setup_stop_events__perform_interrupt [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_api -> chat_interface__ChatInterface___api_stream_fn [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___setup_api -> chat_interface__ChatInterface___api_submit_fn [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___display_input -> chat_interface__ChatInterface___append_multimodal_history [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___submit_fn -> chat_interface__ChatInterface___append_multimodal_history [style="solid",  color="#000000"];
+        chat_interface__ChatInterface___stream_fn -> chat_interface__ChatInterface___append_multimodal_history [style="solid",  color="#000000"];
+        gradio_a -> chat_interface__ChatInterface [style="solid",  color="#000000"];
+        gradio_a -> gradio_a__diffusion_fn [style="solid",  color="#000000"];
+        gradio_a -> gradio_a__chat_fn [style="solid",  color="#000000"];
+        gradio_a -> gradio_a__post_chat [style="solid",  color="#000000"];
+        gradio_a -> chat_interface__ChatInterface____init__ [style="solid",  color="#000000"];
+        gradio_a__chat_fn -> gradio_a__chat_fn__interrupter [style="solid",  color="#000000"];
+        gradio_a__chat_fn -> gradio_a__chat_fn__interactive_stopping_criteria [style="solid",  color="#000000"];
+        gradio_a__diffusion_fn -> gradio_a__pytorch2numpy [style="solid",  color="#000000"];
+        gradio_a__diffusion_fn -> gradio_a__numpy2pytorch [style="solid",  color="#000000"];
+        gradio_a__diffusion_fn -> gradio_a__resize_without_crop [style="solid",  color="#000000"];
+        memory_management__load_models_to_gpu -> memory_management__movable_bnb_model [style="solid",  color="#000000"];
+        memory_management__unload_all_models -> memory_management__load_models_to_gpu [style="solid",  color="#000000"];
+        pipeline -> pipeline__hacked_Transformer2DModel_forward [style="solid",  color="#000000"];
+        pipeline__KModel__get_sigmas_karras -> pipeline__KModel__sigma_min [style="solid",  color="#000000"];
+        pipeline__KModel__get_sigmas_karras -> pipeline__KModel__sigma_max [style="solid",  color="#000000"];
+        pipeline__KModel____call__ -> pipeline__KModel__timestep [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____init__ -> pipeline__KModel____init__ [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____init__ -> pipeline__OmostSelfAttnProcessor [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____init__ -> pipeline__OmostCrossAttnProcessor [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____init__ -> pipeline__KModel [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____init__ -> pipeline__StableDiffusionXLOmostPipeline____init__ [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy -> pipeline__StableDiffusionXLOmostPipeline____init__ [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy -> pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__greedy_partition [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy -> pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__merge_with_prefix [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy -> pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__double_encode [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__merge_with_prefix -> pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__get_77_tokens_in_torch [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__all_conds_from_canvas -> pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline__all_conds_from_canvas -> pipeline__StableDiffusionXLOmostPipeline__encode_cropped_prompt_77tokens [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____call__ -> pipeline__sample_dpmpp_2m [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____call__ -> pipeline__KModel__get_sigmas_karras [style="solid",  color="#000000"];
+        pipeline__StableDiffusionXLOmostPipeline____call__ -> pipeline__KModel [style="solid",  color="#000000"];
+        canvas__Canvas__from_bot_response -> canvas__Canvas____init__ [style="solid",  color="#000000"];
+        canvas__Canvas__set_global_description -> canvas__safe_str [style="solid",  color="#000000"];
+        canvas__Canvas__set_global_description -> canvas__closest_name [style="solid",  color="#000000"];
+        canvas__Canvas__add_local_description -> canvas__safe_str [style="solid",  color="#000000"];
+        canvas__Canvas__add_local_description -> canvas__closest_name [style="solid",  color="#000000"];
+    }

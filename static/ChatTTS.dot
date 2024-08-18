@@ -1,0 +1,581 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        #511 [label="#511", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        #588 [label="#588", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        ChatTTS [label="ChatTTS", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        ChatTTS__config [label="ChatTTS.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        ChatTTS__config__config [label="ChatTTS.config.config", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        ChatTTS__core [label="ChatTTS.core", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        ChatTTS__model [label="ChatTTS.model", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        ChatTTS__model__cuda [label="ChatTTS.model.cuda", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        ChatTTS__model__cuda__patch [label="ChatTTS.model.cuda.patch", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        ChatTTS__model__cuda__te_llama [label="ChatTTS.model.cuda.te_llama", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        ChatTTS__model__dvae [label="ChatTTS.model.dvae", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        ChatTTS__model__gpt [label="ChatTTS.model.gpt", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        ChatTTS__model__processors [label="ChatTTS.model.processors", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="12"];
+        ChatTTS__model__tokenizer [label="ChatTTS.model.tokenizer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="13"];
+        ChatTTS__norm [label="ChatTTS.norm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="14"];
+        ChatTTS__res [label="ChatTTS.res", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="15"];
+        ChatTTS__utils [label="ChatTTS.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="16"];
+        ChatTTS__utils__dl [label="ChatTTS.utils.dl", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="17"];
+        ChatTTS__utils__gpu [label="ChatTTS.utils.gpu", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="18"];
+        ChatTTS__utils__io [label="ChatTTS.utils.io", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="19"];
+        ChatTTS__utils__log [label="ChatTTS.utils.log", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="20"];
+        client [label="client", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="21"];
+        main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="22"];
+        run [label="run", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="23"];
+        setu [label="setu", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="24"];
+        stream [label="stream", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="25"];
+        tools [label="tools", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="26"];
+        tools__audio [label="tools.audio", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="27"];
+        tools__audio__av [label="tools.audio.av", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="28"];
+        tools__audio__ffmpeg [label="tools.audio.ffmpeg", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="29"];
+        tools__audio__n [label="tools.audio.n", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="30"];
+        tools__audio__pcm [label="tools.audio.pcm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="31"];
+        tools__llm [label="tools.llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="32"];
+        tools__llm__llm [label="tools.llm.llm", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="33"];
+        tools__logger [label="tools.logger", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="34"];
+        tools__logger__log [label="tools.logger.log", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="35"];
+        tools__normalizer [label="tools.normalizer", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="36"];
+        tools__normalizer__en [label="tools.normalizer.en", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="37"];
+        tools__normalizer__zh [label="tools.normalizer.zh", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="38"];
+        tools__seeder [label="tools.seeder", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="39"];
+        tools__seeder__ctx [label="tools.seeder.ctx", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="40"];
+        web [label="web", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="41"];
+        web__ex [label="web.ex", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="42"];
+        web__funcs [label="web.funcs", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="43"];
+        web__webui [label="web.webui", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="44"];
+        subgraph cluster_ChatTTS__config__config {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.config.config"];
+            ChatTTS__config__config__Backbone [label="Backbone\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:88)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__BackboneInitArgs [label="BackboneInitArgs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:80)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__Config [label="Config\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:115)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__DVAE [label="DVAE\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:31)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__Decoder [label="Decoder\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:14)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__FeatureExtractor [label="FeatureExtractor\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:74)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__FeatureExtractorInitArgs [label="FeatureExtractorInitArgs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:65)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__FourierHead [label="FourierHead\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:102)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__FourierHeadInitArgs [label="FourierHeadInitArgs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:94)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__GPT [label="GPT\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:50)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__Path [label="Path\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:5)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__VQ [label="VQ\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:23)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+            ChatTTS__config__config__Vocos [label="Vocos\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/config/config.py:108)", style="filled", fillcolor="#ffb565b2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_ChatTTS__core {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.core"];
+            ChatTTS__core__Chat [label="Chat\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:31)", style="filled", fillcolor="#ffdb99b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_ChatTTS__core__Chat {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.core.Chat"];
+            ChatTTS__core__Chat__InferCodeParams [label="InferCodeParams\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:191)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__RefineTextParams [label="RefineTextParams\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:179)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:32)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___decode_to_wavs [label="_decode_to_wavs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:426)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___infer [label="_infer\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:339)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___infer_code [label="_infer_code\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:455)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___load [label="_load\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:238)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___refine_text [label="_refine_text\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:547)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___sample_random_speaker [label="_sample_random_speaker\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:169)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat___vocos_decode [label="_vocos_decode\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:419)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__download_models [label="download_models\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:68)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__has_loaded [label="has_loaded\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:49)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__infer [label="infer\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:203)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__interrupt [label="interrupt\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:234)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__load [label="load\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:124)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__sample_audio_speaker [label="sample_audio_speaker\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:163)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__sample_random_speaker [label="sample_random_speaker\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:159)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+            ChatTTS__core__Chat__unload [label="unload\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/core.py:148)", style="filled", fillcolor="#ffc965b2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_ChatTTS__model__cuda__patch {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.cuda.patch"];
+            ChatTTS__model__cuda__patch__LlamaRMSNorm [label="LlamaRMSNorm\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/patch.py:4)", style="filled", fillcolor="#f6ff32b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_ChatTTS__model__cuda__patch__LlamaRMSNorm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.cuda.patch.LlamaRMSNorm"];
+            ChatTTS__model__cuda__patch__LlamaRMSNorm____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/patch.py:5)", style="filled", fillcolor="#f3ff00b2", fontcolor="#000000", group="8"];
+            ChatTTS__model__cuda__patch__LlamaRMSNorm__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/patch.py:13)", style="filled", fillcolor="#f3ff00b2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_ChatTTS__model__cuda__te_llama {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.cuda.te_llama"];
+            ChatTTS__model__cuda__te_llama__TELlamaDecoderLayer [label="TELlamaDecoderLayer\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:50)", style="filled", fillcolor="#dbff32b2", fontcolor="#000000", group="9"];
+            ChatTTS__model__cuda__te_llama__TELlamaModel [label="TELlamaModel\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:96)", style="filled", fillcolor="#dbff32b2", fontcolor="#000000", group="9"];
+            ChatTTS__model__cuda__te_llama___replace_params [label="_replace_params\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:134)", style="filled", fillcolor="#dbff32b2", fontcolor="#000000", group="9"];
+            ChatTTS__model__cuda__te_llama__replace_decoder [label="replace_decoder\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:29)", style="filled", fillcolor="#dbff32b2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_ChatTTS__model__cuda__te_llama__TELlamaDecoderLayer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.cuda.te_llama.TELlamaDecoderLayer"];
+            ChatTTS__model__cuda__te_llama__TELlamaDecoderLayer____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:61)", style="filled", fillcolor="#d2ff00b2", fontcolor="#000000", group="9"];
+            ChatTTS__model__cuda__te_llama__TELlamaDecoderLayer__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:81)", style="filled", fillcolor="#d2ff00b2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_ChatTTS__model__cuda__te_llama__TELlamaModel {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.cuda.te_llama.TELlamaModel"];
+            ChatTTS__model__cuda__te_llama__TELlamaModel____new__ [label="__new__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:106)", style="filled", fillcolor="#d2ff00b2", fontcolor="#000000", group="9"];
+            ChatTTS__model__cuda__te_llama__TELlamaModel__from_state_dict [label="from_state_dict\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/cuda/te_llama.py:114)", style="filled", fillcolor="#d2ff00b2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_ChatTTS__model__dvae {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.dvae"];
+            ChatTTS__model__dvae__ConvNeXtBlock [label="ConvNeXtBlock\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:13)", style="filled", fillcolor="#d0ff65b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__DVAE [label="DVAE\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:205)", style="filled", fillcolor="#d0ff65b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__DVAEDecoder [label="DVAEDecoder\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:130)", style="filled", fillcolor="#d0ff65b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__GFSQ [label="GFSQ\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:68)", style="filled", fillcolor="#d0ff65b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__MelSpectrogramFeatures [label="MelSpectrogramFeatures\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:174)", style="filled", fillcolor="#d0ff65b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_ChatTTS__model__dvae__ConvNeXtBlock {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.dvae.ConvNeXtBlock"];
+            ChatTTS__model__dvae__ConvNeXtBlock____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:14)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__ConvNeXtBlock__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:45)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_ChatTTS__model__dvae__DVAE {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.dvae.DVAE"];
+            ChatTTS__model__dvae__DVAE____call__ [label="__call__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:245)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__DVAE____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:206)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__DVAE____repr__ [label="__repr__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:240)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__DVAE__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:251)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_ChatTTS__model__dvae__DVAEDecoder {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.dvae.DVAEDecoder"];
+            ChatTTS__model__dvae__DVAEDecoder____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:131)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__DVAEDecoder__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:162)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_ChatTTS__model__dvae__GFSQ {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.dvae.GFSQ"];
+            ChatTTS__model__dvae__GFSQ____call__ [label="__call__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:98)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__GFSQ____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:70)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__GFSQ___embed [label="_embed\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:86)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__GFSQ__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:101)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_ChatTTS__model__dvae__MelSpectrogramFeatures {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.dvae.MelSpectrogramFeatures"];
+            ChatTTS__model__dvae__MelSpectrogramFeatures____call__ [label="__call__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:196)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__MelSpectrogramFeatures____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:175)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+            ChatTTS__model__dvae__MelSpectrogramFeatures__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/dvae.py:199)", style="filled", fillcolor="#c0ff32b2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_ChatTTS__model__gpt {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.gpt"];
+            ChatTTS__model__gpt__GPT [label="GPT\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:22)", style="filled", fillcolor="#bcff65b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_ChatTTS__model__gpt__GPT {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.gpt.GPT"];
+            ChatTTS__model__gpt__GPT__Context [label="Context\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:109)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__GenerationOutputs [label="GenerationOutputs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:318)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT___GenerationInputs [label="_GenerationInputs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:189)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT____call__ [label="__call__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:151)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:23)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT___build_llama [label="_build_llama\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:119)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT___prepare_generation_inputs [label="_prepare_generation_inputs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:208)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT___prepare_generation_outputs [label="_prepare_generation_outputs\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:328)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__forward [label="forward\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:159)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__from_pretrained [label="from_pretrained\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:86)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__generate [label="generate\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:356)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__prepare [label="prepare\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:141)", style="filled", fillcolor="#a6ff32b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_ChatTTS__model__gpt__GPT__Context {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.gpt.GPT.Context"];
+            ChatTTS__model__gpt__GPT__Context____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:110)", style="filled", fillcolor="#90ff00b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__Context__get [label="get\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:116)", style="filled", fillcolor="#90ff00b2", fontcolor="#000000", group="11"];
+            ChatTTS__model__gpt__GPT__Context__set [label="set\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:113)", style="filled", fillcolor="#90ff00b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_ChatTTS__model__gpt__GPT__GenerationOutputs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.gpt.GPT.GenerationOutputs"];
+            ChatTTS__model__gpt__GPT__GenerationOutputs__destroy [label="destroy\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:323)", style="filled", fillcolor="#90ff00b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_ChatTTS__model__gpt__GPT___GenerationInputs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.gpt.GPT._GenerationInputs"];
+            ChatTTS__model__gpt__GPT___GenerationInputs__to [label="to\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/gpt.py:198)", style="filled", fillcolor="#90ff00b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_ChatTTS__model__processors {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.processors"];
+            ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat [label="CustomRepetitionPenaltyLogitsProcessorRepeat\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/processors.py:6)", style="filled", fillcolor="#a8ff65b2", fontcolor="#000000", group="12"];
+            ChatTTS__model__processors__gen_logits [label="gen_logits\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/processors.py:38)", style="filled", fillcolor="#a8ff65b2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.processors.CustomRepetitionPenaltyLogitsProcessorRepeat"];
+            ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat____call__ [label="__call__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/processors.py:18)", style="filled", fillcolor="#8bff32b2", fontcolor="#000000", group="12"];
+            ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/processors.py:8)", style="filled", fillcolor="#8bff32b2", fontcolor="#000000", group="12"];
+        }
+        subgraph cluster_ChatTTS__model__tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.tokenizer"];
+            ChatTTS__model__tokenizer__Tokenizer [label="Tokenizer\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:20)", style="filled", fillcolor="#94ff65b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_ChatTTS__model__tokenizer__Tokenizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.model.tokenizer.Tokenizer"];
+            ChatTTS__model__tokenizer__Tokenizer____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:21)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+            ChatTTS__model__tokenizer__Tokenizer___decode_prompt [label="_decode_prompt\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:171)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+            ChatTTS__model__tokenizer__Tokenizer___decode_spk_emb [label="_decode_spk_emb\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:132)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+            ChatTTS__model__tokenizer__Tokenizer___encode_prompt [label="_encode_prompt\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:187)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+            ChatTTS__model__tokenizer__Tokenizer___encode_spk_emb [label="_encode_spk_emb\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:204)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+            ChatTTS__model__tokenizer__Tokenizer__apply_spk_emb [label="apply_spk_emb\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:143)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+            ChatTTS__model__tokenizer__Tokenizer__encode [label="encode\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/model/tokenizer.py:37)", style="filled", fillcolor="#71ff32b2", fontcolor="#000000", group="13"];
+        }
+        subgraph cluster_ChatTTS__norm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.norm"];
+            ChatTTS__norm__Normalizer [label="Normalizer\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:37)", style="filled", fillcolor="#aaff99b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm___fast_replace [label="_fast_replace\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:22)", style="filled", fillcolor="#aaff99b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm___find_index [label="_find_index\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:14)", style="filled", fillcolor="#aaff99b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_ChatTTS__norm__Normalizer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.norm.Normalizer"];
+            ChatTTS__norm__Normalizer____call__ [label="__call__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:129)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:38)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer___apply_character_map [label="_apply_character_map\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:199)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer___apply_half2full_map [label="_apply_half2full_map\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:196)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer___count_invalid_characters [label="_count_invalid_characters\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:191)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer___detect_language [label="_detect_language\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:202)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer___load_homophones_map [label="_load_homophones_map\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:182)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer__destroy [label="destroy\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:178)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer__register [label="register\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:159)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+            ChatTTS__norm__Normalizer__unregister [label="unregister\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/norm.py:174)", style="filled", fillcolor="#80ff65b2", fontcolor="#000000", group="14"];
+        }
+        subgraph cluster_ChatTTS__utils__dl {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.utils.dl"];
+            ChatTTS__utils__dl__check_all_assets [label="check_all_assets\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:46)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+            ChatTTS__utils__dl__check_model [label="check_model\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:19)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+            ChatTTS__utils__dl__download_all_assets [label="download_all_assets\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:104)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+            ChatTTS__utils__dl__download_and_extract_tar_gz [label="download_and_extract_tar_gz\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:68)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+            ChatTTS__utils__dl__download_and_extract_zip [label="download_and_extract_zip\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:82)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+            ChatTTS__utils__dl__download_dns_yaml [label="download_dns_yaml\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:96)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+            ChatTTS__utils__dl__sha256 [label="sha256\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/dl.py:12)", style="filled", fillcolor="#65ff87b2", fontcolor="#000000", group="17"];
+        }
+        subgraph cluster_ChatTTS__utils__gpu {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.utils.gpu"];
+            ChatTTS__utils__gpu__select_device [label="select_device\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/gpu.py:6)", style="filled", fillcolor="#65ff9bb2", fontcolor="#000000", group="18"];
+        }
+        subgraph cluster_ChatTTS__utils__io {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.utils.io"];
+            ChatTTS__utils__io__del_all [label="del_all\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/io.py:22)", style="filled", fillcolor="#65ffafb2", fontcolor="#000000", group="19"];
+            ChatTTS__utils__io__get_latest_modified_file [label="get_latest_modified_file\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/io.py:9)", style="filled", fillcolor="#65ffafb2", fontcolor="#000000", group="19"];
+        }
+        subgraph cluster_ChatTTS__utils__log {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.utils.log"];
+            ChatTTS__utils__log__Logger [label="Logger\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/log.py:5)", style="filled", fillcolor="#65ffc3b2", fontcolor="#000000", group="20"];
+        }
+        subgraph cluster_ChatTTS__utils__log__Logger {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="ChatTTS.utils.log.Logger"];
+            ChatTTS__utils__log__Logger____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/log.py:6)", style="filled", fillcolor="#32ffafb2", fontcolor="#000000", group="20"];
+            ChatTTS__utils__log__Logger__get_logger [label="get_logger\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/log.py:12)", style="filled", fillcolor="#32ffafb2", fontcolor="#000000", group="20"];
+            ChatTTS__utils__log__Logger__set_logger [label="set_logger\n(/home/sanjay/Development/explore/ChatTTS/ChatTTS/utils/log.py:9)", style="filled", fillcolor="#32ffafb2", fontcolor="#000000", group="20"];
+        }
+        subgraph cluster_main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="main"];
+            main__ChatTTSParams [label="ChatTTSParams\n(/home/sanjay/Development/explore/ChatTTS/examples/api/main.py:46)", style="filled", fillcolor="#ccfef8b2", fontcolor="#000000", group="22"];
+            main__generate_voice [label="generate_voice\n(/home/sanjay/Development/explore/ChatTTS/examples/api/main.py:62)", style="filled", fillcolor="#ccfef8b2", fontcolor="#000000", group="22"];
+            main__startup_event [label="startup_event\n(/home/sanjay/Development/explore/ChatTTS/examples/api/main.py:34)", style="filled", fillcolor="#ccfef8b2", fontcolor="#000000", group="22"];
+        }
+        subgraph cluster_run {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="run"];
+            run__main [label="main\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/run.py:30)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="23"];
+            run__save_mp3_file [label="save_mp3_file\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/run.py:22)", style="filled", fillcolor="#ccfefeb2", fontcolor="#000000", group="23"];
+        }
+        subgraph cluster_stream {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="stream"];
+            stream__ChatStreamer [label="ChatStreamer\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:10)", style="filled", fillcolor="#ccf1feb2", fontcolor="#000000", group="25"];
+        }
+        subgraph cluster_stream__ChatStreamer {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="stream.ChatStreamer"];
+            stream__ChatStreamer____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:11)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer___accum [label="_accum\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:34)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer___subgen [label="_subgen\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:69)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer___update_stream [label="_update_stream\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:16)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer__batch_stream_formatted [label="batch_stream_formatted\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:43)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer__checkvoice [label="checkvoice\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:61)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer__formatted [label="formatted\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:52)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer__generate [label="generate\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:75)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+            stream__ChatStreamer__play [label="play\n(/home/sanjay/Development/explore/ChatTTS/examples/cmd/stream.py:149)", style="filled", fillcolor="#99e4ffb2", fontcolor="#000000", group="25"];
+        }
+        subgraph cluster_tools__audio__av {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.audio.av"];
+            tools__audio__av__load_audio [label="load_audio\n(/home/sanjay/Development/explore/ChatTTS/tools/audio/av.py:42)", style="filled", fillcolor="#659bffb2", fontcolor="#000000", group="28"];
+            tools__audio__av__wav2 [label="wav2\n(/home/sanjay/Development/explore/ChatTTS/tools/audio/av.py:20)", style="filled", fillcolor="#659bffb2", fontcolor="#000000", group="28"];
+        }
+        subgraph cluster_tools__audio__ffmpeg {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.audio.ffmpeg"];
+            tools__audio__ffmpeg__has_ffmpeg_installed [label="has_ffmpeg_installed\n(/home/sanjay/Development/explore/ChatTTS/tools/audio/ffmpeg.py:4)", style="filled", fillcolor="#6587ffb2", fontcolor="#000000", group="29"];
+        }
+        subgraph cluster_tools__audio__n {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.audio.n"];
+            tools__audio__n__float_to_int16 [label="float_to_int16\n(/home/sanjay/Development/explore/ChatTTS/tools/audio/np.py:8)", style="filled", fillcolor="#6573ffb2", fontcolor="#000000", group="30"];
+        }
+        subgraph cluster_tools__audio__pcm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.audio.pcm"];
+            tools__audio__pcm__pcm_arr_to_mp3_view [label="pcm_arr_to_mp3_view\n(/home/sanjay/Development/explore/ChatTTS/tools/audio/pcm.py:10)", style="filled", fillcolor="#6c65ffb2", fontcolor="#000000", group="31"];
+        }
+        subgraph cluster_tools__llm__llm {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.llm.llm"];
+            tools__llm__llm__ChatOpenAI [label="ChatOpenAI\n(/home/sanjay/Development/explore/ChatTTS/tools/llm/llm.py:55)", style="filled", fillcolor="#9465ffb2", fontcolor="#000000", group="33"];
+        }
+        subgraph cluster_tools__llm__llm__ChatOpenAI {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.llm.llm.ChatOpenAI"];
+            tools__llm__llm__ChatOpenAI____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/tools/llm/llm.py:56)", style="filled", fillcolor="#7132ffb2", fontcolor="#000000", group="33"];
+            tools__llm__llm__ChatOpenAI__call [label="call\n(/home/sanjay/Development/explore/ChatTTS/tools/llm/llm.py:63)", style="filled", fillcolor="#7132ffb2", fontcolor="#000000", group="33"];
+        }
+        subgraph cluster_tools__logger__log {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.logger.log"];
+            tools__logger__log__Formatter [label="Formatter\n(/home/sanjay/Development/explore/ChatTTS/tools/logger/log.py:37)", style="filled", fillcolor="#bc65ffb2", fontcolor="#000000", group="35"];
+            tools__logger__log__get_logger [label="get_logger\n(/home/sanjay/Development/explore/ChatTTS/tools/logger/log.py:58)", style="filled", fillcolor="#bc65ffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_tools__logger__log__Formatter {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.logger.log.Formatter"];
+            tools__logger__log__Formatter____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/tools/logger/log.py:38)", style="filled", fillcolor="#a632ffb2", fontcolor="#000000", group="35"];
+            tools__logger__log__Formatter__format [label="format\n(/home/sanjay/Development/explore/ChatTTS/tools/logger/log.py:43)", style="filled", fillcolor="#a632ffb2", fontcolor="#000000", group="35"];
+        }
+        subgraph cluster_tools__normalizer__en {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.normalizer.en"];
+            tools__normalizer__en__normalizer_en_nemo_text [label="normalizer_en_nemo_text\n(/home/sanjay/Development/explore/ChatTTS/tools/normalizer/en.py:5)", style="filled", fillcolor="#e465ffb2", fontcolor="#000000", group="37"];
+        }
+        subgraph cluster_tools__normalizer__zh {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.normalizer.zh"];
+            tools__normalizer__zh__normalizer_zh_tn [label="normalizer_zh_tn\n(/home/sanjay/Development/explore/ChatTTS/tools/normalizer/zh.py:4)", style="filled", fillcolor="#f865ffb2", fontcolor="#000000", group="38"];
+        }
+        subgraph cluster_tools__seeder__ctx {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.seeder.ctx"];
+            tools__seeder__ctx__TorchSeedContext [label="TorchSeedContext\n(/home/sanjay/Development/explore/ChatTTS/tools/seeder/ctx.py:4)", style="filled", fillcolor="#ff65ddb2", fontcolor="#000000", group="40"];
+        }
+        subgraph cluster_tools__seeder__ctx__TorchSeedContext {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="tools.seeder.ctx.TorchSeedContext"];
+            tools__seeder__ctx__TorchSeedContext____enter__ [label="__enter__\n(/home/sanjay/Development/explore/ChatTTS/tools/seeder/ctx.py:9)", style="filled", fillcolor="#ff32d2b2", fontcolor="#000000", group="40"];
+            tools__seeder__ctx__TorchSeedContext____exit__ [label="__exit__\n(/home/sanjay/Development/explore/ChatTTS/tools/seeder/ctx.py:13)", style="filled", fillcolor="#ff32d2b2", fontcolor="#000000", group="40"];
+            tools__seeder__ctx__TorchSeedContext____init__ [label="__init__\n(/home/sanjay/Development/explore/ChatTTS/tools/seeder/ctx.py:5)", style="filled", fillcolor="#ff32d2b2", fontcolor="#000000", group="40"];
+        }
+        subgraph cluster_web__funcs {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="web.funcs"];
+            web__funcs___set_generate_buttons [label="_set_generate_buttons\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:126)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__generate_audio [label="generate_audio\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:153)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__generate_seed [label="generate_seed\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:47)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__interrupt_generate [label="interrupt_generate\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:198)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__load_chat [label="load_chat\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:62)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__on_audio_seed_change [label="on_audio_seed_change\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:56)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__on_upload_sample_audio [label="on_upload_sample_audio\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:117)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__on_voice_change [label="on_voice_change\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:52)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__refine_text [label="refine_text\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:132)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__reload_chat [label="reload_chat\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:94)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__set_buttons_after_generate [label="set_buttons_after_generate\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:217)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+            web__funcs__set_buttons_before_generate [label="set_buttons_before_generate\n(/home/sanjay/Development/explore/ChatTTS/examples/web/funcs.py:205)", style="filled", fillcolor="#ff99c0b2", fontcolor="#000000", group="43"];
+        }
+        subgraph cluster_web__webui {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="web.webui"];
+            web__webui__main [label="main\n(/home/sanjay/Development/explore/ChatTTS/examples/web/webui.py:17)", style="filled", fillcolor="#ff99b3b2", fontcolor="#000000", group="44"];
+        }
+        subgraph cluster_web__webui__main {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="web.webui.main"];
+            web__webui__main__make_audio [label="make_audio\n(/home/sanjay/Development/explore/ChatTTS/examples/web/webui.py:185)", style="filled", fillcolor="#ff658db2", fontcolor="#000000", group="44"];
+        }
+    }
+        stream -> stream__ChatStreamer____init__ [style="solid",  color="#000000"];
+        stream -> stream__ChatStreamer [style="solid",  color="#000000"];
+        stream -> ChatTTS__core__Chat__InferCodeParams [style="solid",  color="#000000"];
+        stream -> ChatTTS__core__Chat__infer [style="solid",  color="#000000"];
+        stream -> ChatTTS [style="solid",  color="#000000"];
+        stream -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        stream -> ChatTTS__core__Chat__sample_random_speaker [style="solid",  color="#000000"];
+        stream -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        stream -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        stream__ChatStreamer__generate -> stream__ChatStreamer___update_stream [style="solid",  color="#000000"];
+        stream__ChatStreamer__generate -> stream__ChatStreamer___subgen [style="solid",  color="#000000"];
+        stream__ChatStreamer__generate -> stream__ChatStreamer__checkvoice [style="solid",  color="#000000"];
+        stream__ChatStreamer__generate -> stream__ChatStreamer__formatted [style="solid",  color="#000000"];
+        stream__ChatStreamer__generate -> stream__ChatStreamer__batch_stream_formatted [style="solid",  color="#000000"];
+        stream__ChatStreamer__generate -> stream__ChatStreamer___accum [style="solid",  color="#000000"];
+        stream__ChatStreamer__play -> stream__ChatStreamer__generate [style="solid",  color="#000000"];
+        run -> run__main [style="solid",  color="#000000"];
+        run -> ChatTTS [style="solid",  color="#000000"];
+        run__main -> ChatTTS__core__Chat__InferCodeParams [style="solid",  color="#000000"];
+        run__main -> ChatTTS__core__Chat__infer [style="solid",  color="#000000"];
+        run__main -> run__save_mp3_file [style="solid",  color="#000000"];
+        run__main -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        run__main -> ChatTTS__core__Chat__sample_random_speaker [style="solid",  color="#000000"];
+        run__main -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        run__main -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        web__webui -> web__webui__main [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__reload_chat [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__load_chat [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__on_audio_seed_change [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__on_voice_change [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__generate_seed [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__on_upload_sample_audio [style="solid",  color="#000000"];
+        web__webui__main -> web__funcs__interrupt_generate [style="solid",  color="#000000"];
+        web__webui__main__make_audio -> web__funcs__set_buttons_after_generate [style="solid",  color="#000000"];
+        web__webui__main__make_audio -> web__funcs__set_buttons_before_generate [style="solid",  color="#000000"];
+        web__webui__main__make_audio -> web__funcs__generate_audio [style="solid",  color="#000000"];
+        web__webui__main__make_audio -> web__funcs__refine_text [style="solid",  color="#000000"];
+        web__funcs -> ChatTTS [style="solid",  color="#000000"];
+        web__funcs -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        web__funcs -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        web__funcs__on_audio_seed_change -> ChatTTS__core__Chat__sample_random_speaker [style="solid",  color="#000000"];
+        web__funcs__load_chat -> ChatTTS__norm__Normalizer__register [style="solid",  color="#000000"];
+        web__funcs__load_chat -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        web__funcs__reload_chat -> web__funcs__load_chat [style="solid",  color="#000000"];
+        web__funcs__reload_chat -> ChatTTS__core__Chat__unload [style="solid",  color="#000000"];
+        web__funcs__on_upload_sample_audio -> ChatTTS__core__Chat__sample_audio_speaker [style="solid",  color="#000000"];
+        web__funcs__refine_text -> ChatTTS__core__Chat__infer [style="solid",  color="#000000"];
+        web__funcs__generate_audio -> ChatTTS__core__Chat__InferCodeParams [style="solid",  color="#000000"];
+        web__funcs__generate_audio -> ChatTTS__core__Chat__infer [style="solid",  color="#000000"];
+        web__funcs__interrupt_generate -> ChatTTS__core__Chat__interrupt [style="solid",  color="#000000"];
+        web__funcs__set_buttons_before_generate -> web__funcs___set_generate_buttons [style="solid",  color="#000000"];
+        web__funcs__set_buttons_after_generate -> web__funcs___set_generate_buttons [style="solid",  color="#000000"];
+        main -> ChatTTS [style="solid",  color="#000000"];
+        main__startup_event -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        main__startup_event -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        main__startup_event -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        #511 -> ChatTTS__core__Chat__InferCodeParams [style="solid",  color="#000000"];
+        #511 -> ChatTTS__core__Chat__infer [style="solid",  color="#000000"];
+        #511 -> ChatTTS [style="solid",  color="#000000"];
+        #511 -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        #511 -> ChatTTS__core__Chat__sample_random_speaker [style="solid",  color="#000000"];
+        #511 -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        #511 -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        #588 -> ChatTTS__core__Chat__RefineTextParams [style="solid",  color="#000000"];
+        #588 -> ChatTTS__core__Chat__infer [style="solid",  color="#000000"];
+        #588 -> ChatTTS [style="solid",  color="#000000"];
+        #588 -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        #588 -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        #588 -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        tools__logger__log__get_logger -> tools__logger__log__Formatter____init__ [style="solid",  color="#000000"];
+        tools__logger__log__get_logger -> tools__logger__log__Formatter [style="solid",  color="#000000"];
+        tools__audio__pcm -> tools__audio__av__wav2 [style="solid",  color="#000000"];
+        tools__audio__pcm__pcm_arr_to_mp3_view -> tools__audio__av__wav2 [style="solid",  color="#000000"];
+        ChatTTS__norm___fast_replace -> ChatTTS__norm___find_index [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____init__ -> ChatTTS__norm__Normalizer___load_homophones_map [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____call__ -> ChatTTS__norm___fast_replace [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____call__ -> ChatTTS__norm__Normalizer___apply_half2full_map [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____call__ -> ChatTTS__norm__Normalizer___apply_character_map [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____call__ -> ChatTTS__norm__Normalizer___detect_language [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____call__ -> ChatTTS__norm__Normalizer___count_invalid_characters [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer____call__ -> ChatTTS__norm__Normalizer___load_homophones_map [style="solid",  color="#000000"];
+        ChatTTS__norm__Normalizer___count_invalid_characters -> ChatTTS__model__gpt__GPT__Context__set [style="solid",  color="#000000"];
+        ChatTTS -> ChatTTS__core__Chat [style="solid",  color="#000000"];
+        ChatTTS__core -> ChatTTS__norm__Normalizer [style="solid",  color="#000000"];
+        ChatTTS__core__Chat____init__ -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        ChatTTS__core__Chat____init__ -> ChatTTS__norm__Normalizer____init__ [style="solid",  color="#000000"];
+        ChatTTS__core__Chat____init__ -> ChatTTS__norm__Normalizer [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__download_models -> ChatTTS__core__Chat__load [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__load -> ChatTTS__core__Chat___load [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__load -> ChatTTS__core__Chat__download_models [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__unload -> ChatTTS__core__Chat____init__ [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__unload -> ChatTTS__norm__Normalizer__destroy [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__sample_random_speaker -> ChatTTS__core__Chat___sample_random_speaker [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__InferCodeParams -> ChatTTS__core__Chat__RefineTextParams [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__infer -> ChatTTS__core__Chat__RefineTextParams [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__infer -> ChatTTS__core__Chat__InferCodeParams [style="solid",  color="#000000"];
+        ChatTTS__core__Chat__infer -> ChatTTS__core__Chat___infer [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___load -> ChatTTS__core__Chat__has_loaded [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__core__Chat__RefineTextParams [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__core__Chat___refine_text [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__core__Chat___infer_code [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__core__Chat__InferCodeParams [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__core__Chat__has_loaded [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__core__Chat___decode_to_wavs [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__norm__Normalizer____init__ [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___infer -> ChatTTS__norm__Normalizer [style="solid",  color="#000000"];
+        ChatTTS__core__Chat___decode_to_wavs -> ChatTTS__core__Chat___vocos_decode [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAEDecoder____init__ -> ChatTTS__model__dvae__ConvNeXtBlock [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAEDecoder____init__ -> ChatTTS__model__dvae__ConvNeXtBlock____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__GFSQ____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__MelSpectrogramFeatures [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__DVAE____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__DVAEDecoder____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__MelSpectrogramFeatures____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__GFSQ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____init__ -> ChatTTS__model__dvae__DVAEDecoder [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE____repr__ -> ChatTTS__model__dvae__DVAE____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE__forward -> ChatTTS__model__dvae__MelSpectrogramFeatures____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE__forward -> ChatTTS__model__dvae__DVAEDecoder [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE__forward -> ChatTTS__model__dvae__MelSpectrogramFeatures [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE__forward -> ChatTTS__model__dvae__DVAE____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__dvae__DVAE__forward -> ChatTTS__model__dvae__DVAEDecoder____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__gpt -> ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT____init__ -> ChatTTS__model__gpt__GPT___build_llama [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__from_pretrained -> ChatTTS__model__gpt__GPT___build_llama [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__from_pretrained -> ChatTTS__model__gpt__GPT____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__prepare -> ChatTTS__model__gpt__GPT____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT___prepare_generation_inputs -> ChatTTS__model__gpt__GPT___GenerationInputs [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT___prepare_generation_outputs -> ChatTTS__model__gpt__GPT__GenerationOutputs [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__generate -> ChatTTS__model__gpt__GPT___prepare_generation_outputs [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__generate -> ChatTTS__model__gpt__GPT___prepare_generation_inputs [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__generate -> ChatTTS__model__gpt__GPT__Context [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__generate -> ChatTTS__model__gpt__GPT__Context____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__generate -> ChatTTS__model__gpt__GPT__generate [style="solid",  color="#000000"];
+        ChatTTS__model__gpt__GPT__generate -> ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat [style="solid",  color="#000000"];
+        ChatTTS__model__processors__gen_logits -> ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat [style="solid",  color="#000000"];
+        ChatTTS__model__processors__gen_logits -> ChatTTS__model__processors__CustomRepetitionPenaltyLogitsProcessorRepeat____init__ [style="solid",  color="#000000"];
+        ChatTTS__model__tokenizer__Tokenizer__encode -> ChatTTS__model__tokenizer__Tokenizer___decode_prompt [style="solid",  color="#000000"];
+        ChatTTS__model__tokenizer__Tokenizer__apply_spk_emb -> ChatTTS__model__tokenizer__Tokenizer___decode_spk_emb [style="solid",  color="#000000"];
+        ChatTTS__model__cuda__te_llama -> ChatTTS__model__cuda__patch__LlamaRMSNorm [style="solid",  color="#000000"];
+        ChatTTS__model__cuda__te_llama__TELlamaModel____new__ -> ChatTTS__model__cuda__te_llama__TELlamaDecoderLayer [style="solid",  color="#000000"];
+        ChatTTS__model__cuda__te_llama__TELlamaModel____new__ -> ChatTTS__model__cuda__patch__LlamaRMSNorm [style="solid",  color="#000000"];
+        ChatTTS__model__cuda__te_llama__TELlamaModel____new__ -> ChatTTS__model__cuda__te_llama__replace_decoder [style="solid",  color="#000000"];
+        ChatTTS__model__cuda__te_llama__TELlamaModel__from_state_dict -> ChatTTS__model__cuda__te_llama___replace_params [style="solid",  color="#000000"];
+        ChatTTS__model__cuda__te_llama___replace_params -> ChatTTS__model__gpt__GPT__Context__set [style="solid",  color="#000000"];
+        ChatTTS__config__config__DVAE -> ChatTTS__config__config__Decoder [style="solid",  color="#000000"];
+        ChatTTS__config__config__DVAE -> ChatTTS__config__config__VQ [style="solid",  color="#000000"];
+        ChatTTS__config__config__FeatureExtractor -> ChatTTS__config__config__FeatureExtractorInitArgs [style="solid",  color="#000000"];
+        ChatTTS__config__config__Backbone -> ChatTTS__config__config__BackboneInitArgs [style="solid",  color="#000000"];
+        ChatTTS__config__config__FourierHead -> ChatTTS__config__config__FourierHeadInitArgs [style="solid",  color="#000000"];
+        ChatTTS__config__config__Vocos -> ChatTTS__config__config__Backbone [style="solid",  color="#000000"];
+        ChatTTS__config__config__Vocos -> ChatTTS__config__config__FourierHead [style="solid",  color="#000000"];
+        ChatTTS__config__config__Vocos -> ChatTTS__config__config__FeatureExtractor [style="solid",  color="#000000"];
+        ChatTTS__config__config__Config -> ChatTTS__config__config__Path [style="solid",  color="#000000"];
+        ChatTTS__config__config__Config -> ChatTTS__config__config__Decoder [style="solid",  color="#000000"];
+        ChatTTS__config__config__Config -> ChatTTS__config__config__GPT [style="solid",  color="#000000"];
+        ChatTTS__config__config__Config -> ChatTTS__config__config__Vocos [style="solid",  color="#000000"];
+        ChatTTS__config__config__Config -> ChatTTS__config__config__DVAE [style="solid",  color="#000000"];
+        ChatTTS__utils__io__del_all -> ChatTTS__utils__io__del_all [style="solid",  color="#000000"];
+        ChatTTS__utils__dl__check_model -> ChatTTS__utils__dl__sha256 [style="solid",  color="#000000"];
+        ChatTTS__utils__dl__check_all_assets -> ChatTTS__utils__dl__check_model [style="solid",  color="#000000"];
+        ChatTTS__utils__dl__download_all_assets -> ChatTTS__utils__dl__download_and_extract_tar_gz [style="solid",  color="#000000"];
+        ChatTTS__utils__dl__download_all_assets -> ChatTTS__utils__dl__download_and_extract_zip [style="solid",  color="#000000"];
+        ChatTTS__utils__dl__download_all_assets -> ChatTTS__utils__dl__download_dns_yaml [style="solid",  color="#000000"];
+        ChatTTS__utils__log -> ChatTTS__utils__log__Logger [style="solid",  color="#000000"];
+        ChatTTS__utils__log -> ChatTTS__utils__log__Logger____init__ [style="solid",  color="#000000"];
+    }

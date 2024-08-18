@@ -1,0 +1,113 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/pchunduri6/rag-demystified/blob/main/"
+    },
+    "subquestion_generator__generate_subquestions": {
+        "label": "generate_subquestions",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/subquestion_generator.py",
+        "relativePath": "subquestion_generator.py",
+        "lineNo": 45,
+        "endLineNo": 147,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fsubquestion_generator.py%23L45-L147&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function takes a user question and generates a list of subquestions along with the corresponding file names and functions to be used for answering them.  It leverages a pre-trained OpenAI LLM to achieve this, designed for question decomposition and retrieval from specified files or performing additional processing (like summarization). \n\n\n## Inputs\n\n* `question`: The user's original question.\n* `file_names`:  A list of file names relevant to potential subquestions.\n\n* `system_prompt`: A prompt that helps guide the LLM's behavior.\n* `user_task`: A description of the overall task the user is trying to accomplish. \n* `llm_model`:  The name of the OpenAI LLM model to use.\n\n## Output\n\n*  `subquestions_list`: A list of dictionaries, each containing:\n    * `question`: A subquestion extracted from the user's question.\n    * `function`: The function to use for answering the subquestion (e.g., retrieval from a file).\n    * `file_name`: The relevant file name for the subquestion.\n* `cost`: The cost incurred by calling the OpenAI LLM for this task. \n\n\n\n\n"
+    },
+    "llama_index_baseline__print_token_count": {
+        "label": "print_token_count",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/llama_index_baseline.py",
+        "relativePath": "llama_index_baseline.py",
+        "lineNo": 67,
+        "endLineNo": 106,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fllama_index_baseline.py%23L67-L106&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis\n\n**Quick Summary:** This Python function calculates and prints the cost of using an embedding model and a chosen GPT model (like gpt-35-turbo or gpt-4) based on the number of tokens used.  It's likely part of a larger system for estimating the expense of running AI applications.\n\n**Inputs:**\n\n* `token_counter`: An object likely containing counts of embedding tokens and prompt/completion tokens for the GPT model.\n* `model`: A string specifying the GPT model to use (e.g., 'gpt-35-turbo'). \n* `embed_model`: A string specifying the embedding model used (e.g., 'hugging_face' or 'text-embedding-ada-002').\n* `pricing`: A dictionary mapping model names to their respective token costs for prompting and completing.\n\n**Output:**\n\n* Printed text showing:\n    * Counts of embedding and GPT tokens used.\n    * Cost breakdowns for embedding, GPT prompting, GPT completion, and total LLM cost.\n    * Total cost for the entire process. \n\n\n"
+    },
+    "openai_utils__llm_call": {
+        "label": "llm_call",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/openai_utils.py",
+        "relativePath": "openai_utils.py",
+        "lineNo": 56,
+        "endLineNo": 90,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fopenai_utils.py%23L56-L90&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** \n\nThis function facilitates a conversation with a language model (LLM) by sending a user prompt and system instructions. It calculates and prints the LLM call cost. The primary purpose is to demonstrate how to interact with an LLM while also being mindful of the associated costs.\n\n**Inputs:**\n\n* **model:** The language model to be used for the interaction.\n* **function_schema:** (Optional) A schema defining the functions the LLM can understand.\n* **output_schema:** (Optional) A schema defining the expected output format.\n* **system_prompt:** (Optional) Instructions provided to the LLM about its role.\n* **user_prompt:** The specific question or request posed to the LLM.\n* **few_shot_examples:** (Optional) Example interactions to help guide the LLM's response.\n\n**Output:**\n\n* **response:** The LLM's generated text response to the user prompt.\n* **call_cost:** The financial cost incurred for the LLM call, formatted as a dollar amount.  \n\n\n\n\n"
+    },
+    "complex_qa__load_wiki_pages": {
+        "label": "load_wiki_pages",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/complex_qa.py",
+        "relativePath": "complex_qa.py",
+        "lineNo": 108,
+        "endLineNo": 140,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fcomplex_qa.py%23L108-L140&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis function downloads Wikipedia articles for a given list of city titles, extracts their text content, saves them to individual files, and then loads these files back into a dictionary for further processing. The purpose is likely to prepare a dataset of city descriptions for natural language processing or text analysis tasks.\n\n**Inputs:**\n\n* `page_titles`: A list of city names (strings).\n\n**Output:**\n\n* `city_docs`: A dictionary where keys are city names and values are the first 10,000 characters of their corresponding Wikipedia article text. \n\n\n\n"
+    },
+    "complex_qa__vector_retrieval": {
+        "label": "vector_retrieval",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/complex_qa.py",
+        "relativePath": "complex_qa.py",
+        "lineNo": 45,
+        "endLineNo": 70,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fcomplex_qa.py%23L45-L70&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**[Quick Summary]**\nThis function aims to answer a factual question using a combination of vector retrieval and a large language model (LLM). It retrieves the most similar text snippets from a database based on the question, constructs a prompt for the LLM using the retrieved context, and then returns the LLM's concise answer.  \n\n**[Inputs]**\n* `question`:  The factual question to be answered.\n* `doc_name`: The name of the database table containing text data and feature vectors.\n* `cursor`: A database cursor object used to query the database.\n* `SentenceFeatureExtractor`: A function that extracts features from a given sentence.\n* `llm_model`: The large language model to be used for answering the question.\n* `llm_call`: A function that interacts with the LLM, taking the prompt and returning the response.\n\n**[Output]**\n* `answer`: The answer to the question as generated by the LLM.\n* `cost`: The computational cost incurred by the LLM call. \n\n\n"
+    },
+    "complex_qa__generate_vector_stores": {
+        "label": "generate_vector_stores",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/complex_qa.py",
+        "relativePath": "complex_qa.py",
+        "lineNo": 21,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fcomplex_qa.py%23L21-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis \n\n**Quick Summary:** This function creates a vector store for each document in the `docs` list using evadb. It loads the document content, defines a sentence feature extractor function, generates feature vectors for each sentence in the document, and indexes these vectors using FAISS.  \n\n**Inputs:**\n\n*  `docs`: A list of document names (e.g., filenames).\n\n**Output:**\n\n*  A vector store for each document in the `docs` list, indexed using FAISS.\n\n\n"
+    },
+    "complex_qa__response_aggregator": {
+        "label": "response_aggregator",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/complex_qa.py",
+        "relativePath": "complex_qa.py",
+        "lineNo": 86,
+        "endLineNo": 107,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fcomplex_qa.py%23L86-L107&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function aggregates multiple subquestion responses, combines them into a context, and then uses a large language model (LLM) to generate a final, concise answer to the main question.  The purpose is to provide a comprehensive and coherent response based on multiple sources of information.\n\n**Inputs:**\n\n* `responses`: A list of responses from individual subquestions.\n* `question`: The main question that needs to be answered.\n* `llm_model`:  The name or identifier of the pre-trained LLM to be used.\n* `llm_call`: A function that interacts with the chosen LLM.\n\n**Output:**\n\n* `answer`: The final, concise answer generated by the LLM.\n* `cost`:  The computational cost incurred by the LLM call. \n\n\n\n"
+    },
+    "complex_qa__summary_retrieval": {
+        "label": "summary_retrieval",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/complex_qa.py",
+        "relativePath": "complex_qa.py",
+        "lineNo": 71,
+        "endLineNo": 85,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fcomplex_qa.py%23L71-L85&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Okay, let's analyze the code snippet.\n\n**[Quick Summary]**\n\nThis function aims to answer a question specifically using a given text document as context. It employs a large language model (LLM) to retrieve a relevant summary from the document and then uses that summary to provide an answer to the question.  The core purpose is question answering based on a specific document.\n\n**[Inputs]**\n\n*  `doc`: This is the text document from which the LLM will retrieve information.\n* `question`: This is the question that the function aims to answer using the context provided in `doc`.\n* `llm_model`: This represents the large language model being used for summarization and question answering. \n\n**[Output]**\n\n* `answer`: The text response generated by the LLM, attempting to answer the question based on the document `doc`.\n* `cost`:  Likely a numerical representation of the computational resources consumed by the LLM during the process. \n\n\nLet me know if you have any other code you'd like me to analyze!\n"
+    },
+    "openai_utils__llm_call_cost": {
+        "label": "llm_call_cost",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/openai_utils.py",
+        "relativePath": "openai_utils.py",
+        "lineNo": 45,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fopenai_utils.py%23L45-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick summary:** This function calculates the cost of an OpenAI LLM call in dollars based on the model used and the number of tokens processed in the prompt and completion.  It retrieves pricing information from a predefined dictionary and applies it to the token counts provided in the `response` object. \n\n**Inputs:**\n\n* `response`: An object containing information about the LLM call, including the model used and token usage.\n* `OPENAI_PRICING`: A dictionary mapping OpenAI models to their corresponding pricing per token for prompts and completions. \n\n**Output:**\n\n* A float representing the total cost of the LLM call in dollars. \n"
+    },
+    "subquestion_generator__FunctionEnum": {
+        "label": "FunctionEnum",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/subquestion_generator.py",
+        "relativePath": "subquestion_generator.py",
+        "lineNo": 35,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fsubquestion_generator.py%23L35-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis code defines two string constants, `VECTOR_RETRIEVAL` and `LLM_RETRIEVAL`,  which likely represent different retrieval mechanisms. The purpose is to  guide the selection of an appropriate retrieval method based on the type of question asked.\n\n## Inputs\n\n*  **question:** The natural language question being asked.\n\n## Output\n\n*   **retrieval_method:** A string indicating the chosen retrieval method (\"vector_retrieval\" or \"llm_retrieval\").  \n\n\n"
+    },
+    "openai_utils__get_num_tokens_simple": {
+        "label": "get_num_tokens_simple",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/openai_utils.py",
+        "relativePath": "openai_utils.py",
+        "lineNo": 91,
+        "endLineNo": 95,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fopenai_utils.py%23L91-L95&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown: Token Estimation\n\n**[Quick summary]** This function estimates the number of tokens in a given prompt using the `tiktoken` library. It first determines the appropriate encoding scheme for a specified model and then encodes the prompt to calculate the token count. This helps in determining the cost and potential length limitations of using the model with the prompt.\n\n**[Inputs]**\n\n* `model`: \n    * Likely the name or identifier of a language model.\n* `prompt`: \n    * The text input string that needs to be analyzed for its token count.\n\n**[Output]**\n\n* `num_tokens`:\n    * An integer representing the estimated number of tokens in the provided prompt. \n"
+    },
+    "openai_utils__completion_with_backoff": {
+        "label": "completion_with_backoff",
+        "systemPath": "/home/sanjay/Development/explore/rag-demystified/openai_utils.py",
+        "relativePath": "openai_utils.py",
+        "lineNo": 41,
+        "endLineNo": 44,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpchunduri6%2Frag-demystified%2Fblob%2Fmain%2Fopenai_utils.py%23L41-L44&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary:\n\nThis function crafts a prompt and sends it to the OpenAI API to generate a response using the specified model and parameters. Its purpose is to allow interaction with the OpenAI's language model for text generation tasks.\n\n## Inputs:\n\n* **client:** An OpenAI API client object, likely authenticated for API access.\n* **kwargs:** Keyword arguments that define the prompt, model, temperature, and other parameters for the API call.  \n\n## Output:\n\n* A structured response from the OpenAI API containing the generated text. \n* This might include the generated text itself, confidence scores, and other metadata. \n\n\n"
+    }
+}

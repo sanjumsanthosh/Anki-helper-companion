@@ -1,0 +1,55 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        complex_qa [label="complex_qa", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        llama_index_baseline [label="llama_index_baseline", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        openai_utils [label="openai_utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        subquestion_generator [label="subquestion_generator", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        subgraph cluster_complex_qa {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="complex_qa"];
+            complex_qa__generate_vector_stores [label="generate_vector_stores\n(/home/sanjay/Development/explore/rag-demystified/complex_qa.py:21)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            complex_qa__load_wiki_pages [label="load_wiki_pages\n(/home/sanjay/Development/explore/rag-demystified/complex_qa.py:108)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            complex_qa__response_aggregator [label="response_aggregator\n(/home/sanjay/Development/explore/rag-demystified/complex_qa.py:86)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            complex_qa__summary_retrieval [label="summary_retrieval\n(/home/sanjay/Development/explore/rag-demystified/complex_qa.py:71)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            complex_qa__vector_retrieval [label="vector_retrieval\n(/home/sanjay/Development/explore/rag-demystified/complex_qa.py:45)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_llama_index_baseline {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="llama_index_baseline"];
+            llama_index_baseline__print_token_count [label="print_token_count\n(/home/sanjay/Development/explore/rag-demystified/llama_index_baseline.py:67)", style="filled", fillcolor="#f4feccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_openai_utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="openai_utils"];
+            openai_utils__completion_with_backoff [label="completion_with_backoff\n(/home/sanjay/Development/explore/rag-demystified/openai_utils.py:41)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+            openai_utils__get_num_tokens_simple [label="get_num_tokens_simple\n(/home/sanjay/Development/explore/rag-demystified/openai_utils.py:91)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+            openai_utils__llm_call [label="llm_call\n(/home/sanjay/Development/explore/rag-demystified/openai_utils.py:56)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+            openai_utils__llm_call_cost [label="llm_call_cost\n(/home/sanjay/Development/explore/rag-demystified/openai_utils.py:45)", style="filled", fillcolor="#ccfee0b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_subquestion_generator {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="subquestion_generator"];
+            subquestion_generator__FunctionEnum [label="FunctionEnum\n(/home/sanjay/Development/explore/rag-demystified/subquestion_generator.py:35)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="3"];
+            subquestion_generator__generate_subquestions [label="generate_subquestions\n(/home/sanjay/Development/explore/rag-demystified/subquestion_generator.py:45)", style="filled", fillcolor="#cce0feb2", fontcolor="#000000", group="3"];
+        }
+    }
+        openai_utils__llm_call -> openai_utils__completion_with_backoff [style="solid",  color="#000000"];
+        openai_utils__llm_call -> openai_utils__llm_call_cost [style="solid",  color="#000000"];
+        llama_index_baseline -> llama_index_baseline__print_token_count [style="solid",  color="#000000"];
+        complex_qa -> complex_qa__response_aggregator [style="solid",  color="#000000"];
+        complex_qa -> subquestion_generator__generate_subquestions [style="solid",  color="#000000"];
+        complex_qa -> complex_qa__load_wiki_pages [style="solid",  color="#000000"];
+        complex_qa -> complex_qa__vector_retrieval [style="solid",  color="#000000"];
+        complex_qa -> complex_qa__summary_retrieval [style="solid",  color="#000000"];
+        complex_qa -> openai_utils__llm_call [style="solid",  color="#000000"];
+        complex_qa -> complex_qa__generate_vector_stores [style="solid",  color="#000000"];
+        complex_qa__vector_retrieval -> openai_utils__llm_call [style="solid",  color="#000000"];
+        complex_qa__summary_retrieval -> openai_utils__llm_call [style="solid",  color="#000000"];
+        complex_qa__response_aggregator -> openai_utils__llm_call [style="solid",  color="#000000"];
+        subquestion_generator -> openai_utils__llm_call [style="solid",  color="#000000"];
+        subquestion_generator__generate_subquestions -> subquestion_generator__FunctionEnum [style="solid",  color="#000000"];
+        subquestion_generator__generate_subquestions -> openai_utils__llm_call [style="solid",  color="#000000"];
+    }

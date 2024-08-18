@@ -1,0 +1,509 @@
+{
+    "ANKIConfig": {
+        "GIT_URL": "https://github.com/lllyasviel/Omost/blob/main/"
+    },
+    "chat_interface__ChatInterface": {
+        "label": "ChatInterface",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 34,
+        "endLineNo": 638,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L34-L638&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "    \"\"\"\n    \n   \n    \n    \n\n\n```python\n    def __init__(\n        \n    \n\n\n\nThis function creates a sleek chat interface for a chatbot, providing a\n    \n    \n    \n    docs for clearer documentation\n    \n    \n    what is the output\n    \n\n    ###\n        \n        return type: list\n    \n    \n    AsyncGenerator\n\n    Asynchronous output\n\n\n\"\"\"\n    \n    \n    \n    \n    \n    \n    asyncify I\n\n    The\n    \n    The function creates a chat interface for a \n\n    \n    \n\n    \n    chat interface for chatbot\n\n\nThis function\n    \n    \n    # The output\n\n\n    This function\n    \n\n    \n    \nhttps://gradio.\n    \n```python\n    Returns a list\n    \n    Gradio\n    \n    Interruption\n    The function is used to create a\n    \n    \n\n    \n\"\"\"\n\nReturns a list\n\n    The function documents\n    Gradio.ChatInterface\n\nThe function.\n    \n    \n    Asynchronous\n    The function returns a\n    \n    Gradio\n    # The\n\n    return values.\n    The function returns a list\n\n    The\n    the function.\n    \n    The function returns\n\n    \n    return: a list\n    \n    \n\n    The function returns a list\n\n    Functions\n    Gradio.chatbot\n    \n\n    \n    The function returns a\n    \n    \n    The function returns a\n    \n    The function returns\n\n    The function returns a list.\n    The function returns a\n    The\n    \n    \n    The function\n    The function\n    \n    The function returns a\n    \n    The function returns a\n```python\n\n\n\n    \n    \n    \n\nA summary of the\n\n    \n    The function\n    Functions\n    The function\n\n    \n    \n    \n    The\n    The function returns a\n    The function returns a\n    \n    The function\n\n    \n    The function returns a\n    The function returns a\n    The function returns a\n    The function returns a\n    The function returns\n    The function returns\n    The function\n\n    \n    \n\n    \n    The function\n    The function\n    \n    \n    \n    \n    The function\n    \n    \n    A summary of the \n    \n    The function returns a\n    The function returns\n    The function\n    \n    \n    The function\n    \n    \n    \n\n    \n\n    The function returns a\n    \n    \n    The function returns\n    The function returns\n    \n\n    The function returns a\n    The function returns\n    The function returns a\n    \n    \n    The function returns a\n    The function\n    The function returns a\n    The function returns a\n    \n    \n    The function returns a\n    The function returns a\n    The function returns a\n    \n    The function returns a\n    The function returns a\n    The function returns a\n    \n    \n    The function returns a\n    The function returns a\n    The function returns a\n    The function returns a\n    The function returns a\n\n    The function returns a\n    The function returns a\n    The function returns a\n    The function returns\n    \n    The function returns a\n    \n    The function returns a\n    The function returns a\n    The function returns a\n    \n    \n   function parameters\n\n    \n    The function\n    \n    The function returns a\n    The function returns a\n    python\n    \n    \n    \n    \n\n\nThis function\n    \n    \n    python\n    \n    \n    python\n    \n    \n    \n    python\n    \n    python\n    python\n    python\n\n    python\n    \n    python\n    \n\n\n\n```python\n\n    python\n    \n    python\n    Python\n    \n    \n    \n    Python\n    python\n    \n    Python\n    \n    \n    \n    \n    python\n    python\n    \n    \n    python\n    \n    python\n    \n\n\n    Python \n    \n    python\n    \n    \n    \n    \n\n    python\n    \n    \n    \n    \n    \n    For\n    python\n    \n    python\n    \n    \n    \n    \n    python\n    \n    \n    \n    \n    \n    \n    \n    \n    python\n\n    python\n    \n    \n    \n    Python\n\n    python\n    \n    Python\n    \n    \n    \n    \n    \n    \n    Python\n    \n    \n    \n    \n    \n    python\n\n    \n    Python\n    \n    Python\n    \n    \n    \n    Python\n\n    \n    \n    Python\n    \n    \n    \n    \n    python?\n    \n    \n    \n\n        (\n        \n    \n    \n    python\n    \n    \n    \n    \n    \n    python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n     \n    \n    \n    ','\n    \n    \n    \n    \n    \n    \n    \n    \n\n    python\n\n\n    Python\n    \n    \n    \n    Python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    Python\n    \n\n    \n    \n    Python\n    \n    \n    \n    \n    Python\n    \n    python\n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    python\n    \n    \n    Python\n\n    \n    \n    \n    Python\n\n    \n    python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n        \n    \n\n    python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    Python\n    \n    \n\n    \n    \n    \n\n    \n    \n    \n\n    python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n```python\n    Python \n\n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\nAsynchronous\n\n    \n\n    Python\n    \n    \n    \n    \n    The\n    \n\n    python\n    \n    \n    \n    \n    \n\n    \n\n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n\n```python\n```python\n    \n    \n    \n    \n    \n    \n    \n    \n    python\n    \n    \n    \n\n    \n    \n    \n    \n    \n     Python\n\n    \n    \n    \n    python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    Python\n    \n    \n    \n\n    python\n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n\n    \n\n    python\n    \n    \n    \n\n```\n\n\n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n    Python\n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n        \n    \n    Python\n    \n\n    \n    \n    \n\n    python\n    \n    python\n    \n```python\n    \n    This\n    \n    \n    \n    python\n\n    \n    \n    \n    \n    Python\n\n    \n\n\n    Python\n    \n    \n    \n    \n    \n\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n    \n    \n    \n    \n    \n\n\n\n```python\n    Python\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n\n    \n    \n\n    \n    \n    Python\n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n        \n    \n    \n    \n    \n    \n\n\nThis function\n\n    \n\n    \n    \n    \n    \n```\n    \n    \n    \n    \n    \n    \n\n\n    \n    \n\n    \n    \n    \n    \n    \n    \n    Python\n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n```\n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n\n```\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    python\n    \n\n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    Python\n```\n  \n    \n    \n    \n    \n    \n    python\n    \n\n    \n\n    Python\n    \n    python\n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n\n    \n\n    \n    \n    \n    python\n    \n    \n\n    \n\n\n```python\n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n\n\n    \n''',\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n\n    \n    \n\n    \n    \n    Python\n\n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n              \n```\n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n```\n\n    \n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n\n\n\n        \n\n    \n\n\n\n<\n    \n\n\n\n    \n    \n    \n    \n```python\n    \n\n    \n\n    \n    \n    \n    \n    \n        (\n\n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n\n    \n    \n    \n```python\n    \n    \n    \n    \n    \n    \n    \n    \n    '\n    \n    \n    \n    \n    \n    \n\n\n\n    \n    \n    \n    \n    \n    \n    \n\n    \n\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n\n\n\n    \n    \n\n    \n\n    \n    \n    \n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline": {
+        "label": "StableDiffusionXLOmostPipeline",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 176,
+        "endLineNo": 435,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L176-L435&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function, likely part of a Stable Diffusion pipeline implementation, generates images based on various textual prompts and conditions. It leverages a Diffusion Model (K-Model) and a U-Net structure for image generation with attention mechanisms. \n\n## Inputs\n\n- `initial_latent`: An initial latent representation (tensor) for the image.\n- `strength`:  A scaling factor for diffusion strength during generation.\n- `num_inference_steps`: The number of steps in the diffusion process.\n- `guidance_scale`: A scaling factor for prompt guidance.\n- `batch_size`: Number of images to generate simultaneously.\n- `generator`: A random number generator for noise injection.\n- `prompt_embeds`: Encoded representations of positive textual prompts.\n- `negative_prompt_embeds`: Encoded representations of negative textual prompts.\n- `pooled_prompt_embeds`:  Pooled encoded representations of prompts.\n- `negative_pooled_prompt_embeds`: Pooled encoded representations of negative prompts.\n- `cross_attention_kwargs`:  Additional arguments for cross-attention mechanisms.\n\n## Output\n\n- `StableDiffusionXLPipelineOutput`:  An object containing the generated images as a tensor.  \n\n\n\n"
+    },
+    "chat_interface__ChatInterface____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 53,
+        "endLineNo": 259,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L53-L259&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Gradio Chat Interface Function Analysis \n\n**Quick Summary:**\n\nThis Python function defines a Gradio interface for a chatbot application. It allows users to interact with the chatbot through a text-based interface and optionally includes additional input components. The function sets up event listeners and API connections for handling user interactions and chatbot responses.\n\n**Inputs:**\n\n* `fn`:  The core function that processes user input and generates the chatbot's response.\n* `post_fn`: An optional function to process the chatbot's response before display.\n* `pre_fn`: An optional function to preprocess user input before sending it to `fn`.\n* `chatbot`: A Gradio component representing the chatbot's text interface.\n* `post_fn_kwargs`, `pre_fn_kwargs`: Keyword arguments for `post_fn` and `pre_fn` respectively.\n* `multimodal`: A boolean flag indicating whether the chatbot supports multimodal input.\n* `textbox`, `additional_inputs`: Gradio components for user input (text or multimodal).\n* `additional_inputs_accordion_name`,  `additional_inputs_accordion`: Parameters for an accordion component that can house additional input components.\n* `examples`: A dataset used to display example interactions with the chatbot.\n* `title`, `description`, `theme`, `css`, `js`: Styling and metadata parameters for the Gradio interface.\n* `head`: HTML head content.\n* `analytics_enabled`:  A boolean flag to enable or disable analytics tracking.\n* `submit_btn`, `stop_btn`, `retry_btn`, `undo_btn`, `clear_btn`: Button components for user interaction.\n* `autofocus`:  A boolean flag to determine whether the textbox should have autofocus.\n* `concurrency_limit`: A limit on the number of concurrent requests to the chatbot function.\n* `fill_height`: A boolean flag to make the Gradio interface fill the entire viewport height.\n* `delete_cache`:  A tuple specifying a time range for deleting cached responses.\n\n**Output:**\n\n* A rendered Gradio interface for interacting with the chatbot.\n\n\n\n\n"
+    },
+    "chat_interface__ChatInterface___setup_events": {
+        "label": "_setup_events",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 260,
+        "endLineNo": 396,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L260-L396&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Code Analysis\n\n**[Quick summary]** This function sets up event listeners for various buttons (submit, retry, undo, clear) within a chat interface and defines the corresponding actions to be taken.  Its purpose is to handle user interactions with the chat interface, triggering specific functions to manage input, display, and communication with a chatbot. \n\n**[Inputs]**\n\n*  `submit_fn`:  Function to be called when the user submits input.\n*  `is_generator`: Boolean indicating whether `submit_fn` is a generator.\n*  `textbox`:  Element representing the user's input field.\n*  `submit_btn`:  Element representing the submit button.\n*  `retry_btn`:  Element representing the retry button (optional).\n*  `undo_btn`:  Element representing the undo button (optional). \n*  `clear_btn`:  Element representing the clear button (optional).\n*  `saved_input`:  Possibly a variable to store the user's input before submission.\n*  `chatbot`:  An object representing the chatbot.\n*  `chatbot_state`:   A variable to hold the chatbot's current state or context.\n*  `interrupter`: An object potentially used to interrupt ongoing chatbot processes.\n*  `additional_inputs`:  A list of additional inputs to be passed to `submit_fn`.\n*  `pre_fn`:  Function to be called before submitting input.\n*  `post_fn`:  Function to be called after receiving the chatbot's response.\n* `concurrecy_limit`:  A concurrency limit for the asynchronous operations.\n*  `pre_fn_kwargs`: Dictionary of keyword arguments for `pre_fn`.\n*  `post_fn_kwargs`: Dictionary of keyword arguments for `post_fn`.\n\n**[Output]**\n\nActions are triggered based on button presses:\n\n* Submit button:\n    * Clears the input field.\n    * Displays the saved input.\n    * Calls `submit_fn` with the input and additional inputs.\n    * Calls `post_fn` after receiving the chatbot's response.\n* Retry button (optional):\n    * Deletes the previous input.\n    * Reruns the steps similar to the submit button.\n* Undo button (optional):\n    * Clears the textbox and the chatbot state (`chatbot_state`).\n* Clear button (optional):\n    * Clears the textbox.\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy": {
+        "label": "encode_bag_of_subprompts_greedy",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 192,
+        "endLineNo": 309,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L192-L309&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary \n\nThis function processes a set of prefixes and suffixes to generate condition vectors (`conds`) and pooled representations (`poolers`) for use with a text-generation model (likely a transformer-based model like SDXL). The purpose is to create a diverse set of input representations based on different combinations of prefixes and suffixes, potentially for prompt engineering or controlled text generation.\n\n\n## Inputs\n\n* `prefixes`: A list of strings representing prefixes to be concatenated.\n* `suffixes`: A list of strings representing suffixes to be combined with prefixes.\n* `self.tokenizer`: A tokenizer object (likely from HuggingFace Transformers) for tokenizing text into numerical representations.\n* `self.tokenizer_2`: A tokenizer object (likely also from HuggingFace Transformers) for tokenizing a different type of text.\n* `self.text_encoder`: A text encoder model (likely a transformer) for processing tokenized text into embedding vectors. \n* `self.text_encoder_2`: A second text encoder model for processing a different type of tokenized text.\n\n## Outputs\n\n* `cond`: A concatenated tensor of condition vectors representing the combined prefixes and suffixes.\n* `pooler`: A tensor representing the pooled output of the combined prefixes and suffixes. \n"
+    },
+    "gradio_a__diffusion_fn": {
+        "label": "diffusion_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 189,
+        "endLineNo": 281,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L189-L281&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Let's break down this Python function.\n\n**Quick Summary**\n\nThis function generates and saves multiple images based on text prompts. It leverages a text-to-image generation pipeline, likely using a diffusion model, and optionally upscales the generated images.  The outputs are saved as PNG files and returned as a list of tuples, where each tuple represents an image with its filename.\n\n**Inputs**\n\n* `canvas_outputs`:  Likely a dictionary containing outputs from a previous generation run, possibly including latent representations or a base image.\n* `negative_prompt`: A string indicating what to avoid in the generated images (negative prompts guide the model away from certain features).\n* `image_width`, `image_height`: The desired dimensions of the output images in pixels.\n* `seed`: A random number seed for reproducible results.\n* `highres_scale`: A scaling factor to enlarge the images after initial generation (if > 1.0). \n* `steps`: The number of generation steps in the text-to-image pipeline.\n* `cfg`: A guidance scale parameter influencing the strength of the text prompt.\n* `highres_steps`: Number of steps for high-resolution upsampling. \n* `highres_denoise`:  A strength parameter for denoising during high-resolution generation.\n\n**Output**\n\n* `chatbot`: A list of tuples where each tuple contains (None, image_path, 'image'). The 'image_path' is the location of the saved PNG image file. \n\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline____call__": {
+        "label": "__call__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 366,
+        "endLineNo": 435,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L366-L435&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis of Function\n\n**Quick Summary**\n\nThis function implements a text-to-image generation pipeline using Stable Diffusion XL with a 2D diffusion model. It takes a text prompt and generates an image based on it, incorporating various guidance and sampling strategies. The purpose is to create high-quality, detailed images from textual descriptions.\n\n**Inputs**\n\n* `initial_latent`: Initial latent vector as starting point for generation.\n* `strength`: Controls the sampling strength (higher means more direct following of the prompt).\n* `num_inference_steps`: Number of diffusion steps used in the generation process.\n* `guidance_scale`:  Strength of the guidance from the prompt during sampling.\n* `batch_size`: Number of images generated simultaneously.\n* `generator`:  Optional random number generator for reproducibility.\n* `prompt_embeds`: Embeddings representing the text prompt.\n* `negative_prompt_embeds`: Embeddings representing negative elements to exclude in the image.\n* `pooled_prompt_embeds`:  Averaged embeddings for guiding the image generation.\n* `negative_pooled_prompt_embeds`: Averaged embeddings of negative prompts.\n* `cross_attention_kwargs`: Additional parameters for cross-attention mechanism (tuning image generation).\n\n**Output**\n\n*  `StableDiffusionXLPipelineOutput`: Object containing the generated images."
+    },
+    "gradio_a__chat_fn": {
+        "label": "chat_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 115,
+        "endLineNo": 171,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L115-L171&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis\n\n**[Quick Summary]**  This function initiates a multi-threaded text generation process using a large language model (LLM). It takes a conversation history, a user input message, and various generation parameters. The function starts a separate thread for generating text, streaming the output in chunks, and allows for user interruption. \n\n**[Inputs]**\n\n* `omost_canvas.system_prompt`: A system prompt for the LLM.\n* `history`: A list of tuples, each containing a user message and an assistant response (both strings).\n* `message`: The user's latest input string.\n* `seed`: An integer used for random seed initialization.\n* `llm_model`: The pre-trained language model object.\n* `llm_tokenizer`: The tokenizer associated with the LLM.\n* `max_new_tokens`: The maximum number of tokens to generate.\n* `temperature`: A parameter controlling the randomness of the generated text.\n* `top_p`: A parameter controlling nucleus sampling for text generation.\n\n**[Output]**\n\n* A generator object that yields the generated text in chunks. \n*  A function `interrupter` used to stop the text generation process.  \n\n\n\n"
+    },
+    "chat_interface__ChatInterface___setup_stop_events": {
+        "label": "_setup_stop_events",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 397,
+        "endLineNo": 449,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L397-L449&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary:** This function sets up interrupt functionality for a user interface element (likely a button) that can stop a running process. It manages button visibility and uses events to trigger an `interrupter` function when the stop button is clicked.\n\n**Inputs:**\n\n*  `event_triggers`: A list of functions that will be triggered when events occur. \n*  `event_to_cancel`: A Dependency object, potentially representing a running process or task to cancel.\n\n**Output:**\n\n*  Modified button visibility based on process state and events.\n*  Triggered events when the stop button is clicked, potentially canceling the `event_to_cancel` dependency. \n\n\n\n"
+    },
+    "chat_interface__ChatInterface___stream_fn": {
+        "label": "_stream_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 526,
+        "endLineNo": 577,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L526-L577&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis asynchronous function processes user input (text or multimodal) within a conversational context. It incorporates the input into a history of past exchanges, interacts with a specified function (`self.fn`) to generate a response, and yields updates to the conversation history along with the generated response and interruption signals. The purpose is to manage and streamline conversational interactions within a larger system.\n\n## Inputs\n\n* **`message`**: \n    * Can be a string (text input) or a dictionary containing text and files for multimodal inputs. \n* **`history_with_input`**: A list of lists representing the conversation history, including the previous user input and the corresponding system response.\n* **`request`**: A `Request` object containing details about the current interaction request (not explicitly defined in the snippet).\n* **`*args`**:  Additional positional arguments that can be passed to the function `self.fn`.\n\n## Output\n\n* **`AsyncGenerator`**:  Yields tuples containing:\n    *  Updated conversation history.\n    * Possibly another updated history (depending on `multimodal` flag).\n    *  A system response.\n    *  An interruption signal (potentially for handling interruptions or stopping the interaction). \n\n\n\n"
+    },
+    "pipeline__OmostCrossAttnProcessor": {
+        "label": "OmostCrossAttnProcessor",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 129,
+        "endLineNo": 175,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L129-L175&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function performs attention based on provided encoder hidden states and the attention mechanism's parameters (`attn`). It dynamically masks out irrelevant positions based on the encoder output and incorporates scaling for efficient computation. The purpose likely lies within the context of a transformer model, refining representations based on weighted contributions from the encoder.\n\n**Inputs:**\n\n* `attn`: An attention mechanism object containing parameters like `to_q`, `to_k`, `to_v`, `heads`, `scale`, `to_out`.\n* `hidden_states`: The input representation to be processed by the attention.\n* `encoder_hidden_states`: A list of tuples, each containing a mask and a corresponding encoder hidden state.\n* `hidden_states_original_shape`: Original shape of the hidden states.\n* `*args, **kwargs`: Additional, potentially model-specific arguments.\n\n**Output:**\n\n* A transformed representation of the input `hidden_states` after applying attention. \n\n\n"
+    },
+    "pipeline__OmostCrossAttnProcessor____call__": {
+        "label": "__call__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 130,
+        "endLineNo": 175,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L130-L175&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function implements a cross-attention mechanism, where an input sequence (`hidden_states`) attends to a set of condition vectors (`conds`). It masks out irrelevant regions based on spatial information (`masks`), scales attention by the receptive field size, and projects the output to the desired dimension using learnable transformations. This mechanism could be used in tasks like image captioning or visual question answering, where the model needs to attend to specific parts of an image based on the textual input.\n\n\n\n## Inputs\n\n* `hidden_states`: The input sequence to attend to.\n* `encoder_hidden_states`: A list of encoder hidden states, potentially containing spatial information.\n* `attn`: An attention object (likely with methods like `to_q`, `to_k`, `to_v`) defining how to transform the input into query, key, and value representations.\n\n## Output\n\n* A transformed representation of the input sequence (`hidden_states`), enriched with contextual information from the `conds`.\n"
+    },
+    "canvas__Canvas__add_local_description": {
+        "label": "add_local_description",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 172,
+        "endLineNo": 215,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L172-L215&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function takes various attributes about a visual element (like a description, location, color, tags, etc.) and constructs a data representation for it. The purpose is likely to build a dataset or data structure for use in a visualization system or similar application.\n\n## Inputs\n\n*  **description:** A string describing the visual element.\n*  **distance_to_viewer:** A numerical value representing the distance of the element from the viewer.\n*  **detailed_descriptions:** A list of strings providing further details about the element.\n*  **tags:** A string containing tags associated with the element.\n*  **atmosphere:** A string depicting the atmosphere or mood of the element.\n*  **style:** A string describing the visual style of the element.\n*  **quality_meta:** A string containing metadata about the quality of the element.\n*  **HTML_web_color_name:** A string representing a color using an HTML color name.\n*  **location, offset, area:** Strings likely representing spatial coordinates or areas within a larger visual context.\n*  **valid_locations, valid_offsets, valid_areas, valid_colors:** Possibly predefined lists of acceptable values for the location, offset, area, and color inputs.\n\n## Output\n\n* Appends a dictionary containing the processed data for the visual element to the `self.components` list.\n\n\n\n"
+    },
+    "pipeline__KModel": {
+        "label": "KModel",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 60,
+        "endLineNo": 101,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L60-L101&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function defines a DDIM (Denoising Diffusion Implicit Model) sampling strategy for generating images from a given U-Net model. It gradually denoises the input based on a schedule of decreasing noise variances, controlled by the `sigma` parameter. \n\n**Inputs:**  \n* `x`: The input, likely a noisy latent representation.\n* `sigma`: A tensor representing the noise variance at each timestep.\n* `extra_args`: A dictionary containing additional arguments, including:\n    * `cfg_scale`:  A scalar controlling the strength of the diffusion process.\n    * `positive`: Additional arguments passed to the U-Net for a positive branch.\n    * `negative`: Additional arguments passed to the U-Net for a negative branch.\n\n**Output:**\n* `x` - The denoised image generated from the gradual noise removal process. \n"
+    },
+    "canvas__Canvas__process": {
+        "label": "process",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 216,
+        "endLineNo": 248,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L216-L248&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function processes a set of image components (likely detected objects) and prepares data for a generative model, possibly for image editing or synthesis.  It sorts components by distance from the viewer, composites their colors onto a latent image representation, and creates conditions based on component masks and associated data. \n\n## Inputs\n\n* **self.components:** A list of dictionaries, each representing an image component with information such as bounding boxes (`rect`), color `color`, and potentially prefixes and suffixes (`prefixes`, `suffixes`).\n* **self.color:** A color value (likely RGB) used as a background or initial color for the latent image.\n\n## Output\n\n* **initial_latent:** A NumPy array representing a 90x90 pixel latent image, where each pixel has an RGB color value.\n* **bag_of_conditions:** A list of dictionaries, each containing a mask (representing the region of an image component), prefixes, and suffixes.\n\n\n"
+    },
+    "chat_interface__ChatInterface___submit_fn": {
+        "label": "_submit_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 493,
+        "endLineNo": 525,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L493-L525&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function processes a user message (either text or multimodal) within a conversational context. It utilizes a specified function (`self.fn`) for generating a response based on the input message and a history of past interactions. The function manages the history of conversations, potentially updating it to include the message and response.\n\n## Inputs\n\n* **`self`:**  Likely refers to the instance of a class containing this function.\n* **`message`:** The user's input, which can be either a string (text) or a dictionary representing multimodal input (including text and files).\n* **`history_with_input`:** A list of lists containing past messages and their corresponding responses. \n* **`request`:** An object representing the incoming request, potentially carrying additional contextual information.\n* **`*args`:**  Additional positional arguments that might be passed to the  `self.fn` function.\n\n## Output\n\n* **`history`:** An updated list of past messages and responses, potentially modified to include the latest interaction.\n* **`history`:**  A duplicate of the `history` list is returned, potentially for further processing or display. \n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__encode_cropped_prompt_77tokens": {
+        "label": "encode_cropped_prompt_77tokens",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 334,
+        "endLineNo": 364,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L334-L364&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis\n\n**Quick Summary:** \n\nThis function processes a text prompt using two identical text encoders and tokenizers, generating embeddings for the prompt. It then concatenates the embeddings from both encoders and converts them to a specific data type and device. This processed embedding is likely used as input for a downstream model, such as an image generation model. \n\n**Inputs:**\n\n*  `prompt`: The text input to be processed.\n*  `self.tokenizer`: The tokenizer used for converting text to numerical tokens.\n*  `self.tokenizer_2`: A second tokenizer, presumably identical to the first.\n*  `self.text_encoder`: The text encoder responsible for generating embeddings from tokenized text.\n*  `self.text_encoder_2`: A second text encoder, potentially identical to the first.\n*  `self.unet`: A downstream model (likely a U-Net architecture) taking the embeddings as input.\n\n**Output:**\n\n* `prompt_embeds`: A concatenated tensor of embeddings from both text encoders.\n* `pooled_prompt_embeds`: A tensor representing the pooled output of the final encoder layer from both encoders. \n\n\n"
+    },
+    "memory_management__load_models_to_gpu": {
+        "label": "load_models_to_gpu",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/memory_management.py",
+        "relativePath": "lib_omost/memory_management.py",
+        "lineNo": 29,
+        "endLineNo": 55,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fmemory_management.py%23L29-L55&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**[Quick Summary]** \n\nThis function manages the loading and unloading of PyTorch models to and from a GPU (or CPUs). Its purpose is to efficiently utilize GPU memory by keeping only the necessary models actively on the GPU, unloading others to free up space, and loading new models as required.\n\n**[Inputs]**\n\n*  `models`:  A single model or a collection of models to be managed.\n*  `high_vram`: A boolean indicating whether the system has high amounts of available GPU memory.\n\n\n**[Output]**\n\n*  Modifies the global `models_in_gpu` list to reflect the current state of models on the GPU. \n*  Prints messages indicating which models are unloaded to the CPU and which are loaded to the GPU. \n*  Cleans up unused GPU memory using `torch.cuda.empty_cache()`. \n\n\n\n"
+    },
+    "pipeline__OmostSelfAttnProcessor": {
+        "label": "OmostSelfAttnProcessor",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 102,
+        "endLineNo": 128,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L102-L128&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**\n\nThis function implements a multi-head self-attention mechanism. It takes hidden states, computes queries, keys, and values, performs scaled dot-product attention, and projects the output back to the original dimensionality.  The purpose is to allow a model to weigh different parts of the input sequence when making predictions.\n\n**[Inputs]**\n*  `attn`: An attention object likely containing parameters for the number of heads, the key/query/value projection matrices, and scaling factors.  \n*  `hidden_states`: The input tensor containing the sequence representations (embeddings) to be processed by the attention mechanism.\n*  `encoder_hidden_states`: May be unused in this particular implementation.\n*  `hidden_states_original_shape`:  Probably used to reconstruct the original shape of the hidden states after processing.\n*  `*args`:  Additional arguments that may be specific to the wider architecture.\n*  `**kwargs`: Keyword arguments that may also provide configuration options.\n\n**[Output]**\n*  `hidden_states`: The output tensor containing the updated sequence representations after attention has been applied. \n\n\n"
+    },
+    "pipeline__OmostSelfAttnProcessor____call__": {
+        "label": "__call__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 103,
+        "endLineNo": 128,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L103-L128&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function implements a multi-head self-attention mechanism. It processes a sequence of hidden states, calculating attention weights to create a contextually richer representation.  This is a fundamental building block in transformer architectures for natural language processing.\n\n## Inputs\n\n* `hidden_states`: A tensor containing the hidden states of a sequence.\n* `attn`:  An attention object likely containing parameters such as the number of heads, head dimension, and linear projections for query, key, and value transformations.\n\n## Output\n\n* `hidden_states`: A tensor containing the updated hidden states after applying the multi-head self-attention.  \n\n\n\n"
+    },
+    "pipeline__sample_dpmpp_2m": {
+        "label": "sample_dpmpp_2m",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 35,
+        "endLineNo": 59,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L35-L59&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## DPM-Solver++(2M) Code Analysis\n\n**[Quick Summary]**\n\nThis function implements the DPM-Solver++ algorithm, a method for denoising images. It iteratively refines a noisy input image by progressively removing noise using a denoising model and a carefully crafted temporal update rule.  \n\n**[Inputs]**\n\n* `x`: The noisy input image.\n* `sigmas`: A sequence of noise variances, likely decreasing over time.\n* `model`: A denoising model function that takes the input image and noise variance as arguments and returns a denoised image.\n* `extra_args`: Additional arguments to be passed to the denoising model.\n* `callback`: (Optional) A function to be called at each iteration, allowing for monitoring or intermediate processing.\n* `disable`: (Optional) A boolean flag to control the display of iteration progress.\n\n**[Output]**\n\n* A denoised version of the input image `x`.  \n\n\n"
+    },
+    "chat_interface__ChatInterface___api_stream_fn": {
+        "label": "_api_stream_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 594,
+        "endLineNo": 615,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L594-L615&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:**\n\nThis asynchronous function integrates a potentially synchronous function (`self.fn`) into a conversational loop, handling input messages, generating responses, and maintaining a conversation history. It gracefully adapts to both synchronous and asynchronous function implementations.\n\n**Inputs:**\n\n* `message: str`: The user's current input text.\n* `history: list[list[str | None]]`: A list of previous messages in the conversation, formatted as pairs (user message, bot response).\n* `request: Request`: An object likely containing information about the incoming request (e.g., headers, method).\n* `*args`: Additional positional arguments to be passed to the function `self.fn`.\n\n**Output:**\n\n* AsyncGenerator: \n    * Yields tuples of (response, updated_history) for each generated response.\n    * `response`: The bot's generated text response.\n    * `updated_history`:  The conversation history including the latest message and response pair.\n* The generator stops yielding when `self.fn` returns `StopIteration`.\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__all_conds_from_canvas": {
+        "label": "all_conds_from_canvas",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 311,
+        "endLineNo": 332,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L311-L332&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function processes positive and negative prompts to generate encoded representations for use in a text generation or similar model. It's likely used within a fine-tuning or evaluation pipeline for a text generation system.\n\n## Inputs\n\n* `negative_prompt`: A string presumably representing a text prompt to be considered \"negative\" for the generation process.\n* `canvas_outputs`: A dictionary containing outputs from a previous step, likely including:\n    * `bag_of_conditions`: A list of dictionaries, each representing a potential prompt condition with 'mask', 'prefixes', and 'suffixes'.\n\n## Output\n\n* `positive_result`: A list of tuples, each containing a mask and a encoded condition for positive prompts.\n* `positive_pooler`: An encoded representation of the positive prompts.\n* `negative_result`: A list containing a tuple with a mask and encoded negative condition.\n* `negative_pooler`: An encoded representation of the negative prompt.  \n\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__double_encode": {
+        "label": "double_encode",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 240,
+        "endLineNo": 261,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L240-L261&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Summary\n\nThis function processes multiple text inputs using separate text encoders, extracts hidden layer representations, concatenates them, and returns both the concatenated representations and the pooled outputs from each encoder. Its purpose is likely to encode text inputs for a downstream task like text generation or classification, leveraging multiple encoders for richer feature representation.\n\n## Inputs\n\n* `pair_of_inds`: Possibly a dictionary containing two lists of indices, representing the indices of tokens for two separate text inputs.\n* `self.text_encoder`: A text encoder model (e.g., BERT, GPT).\n* `self.text_encoder_2`: A second text encoder model, potentially different from the first.\n\n\n## Output\n\n* `prompt_embeds`: A concatenated tensor of hidden state representations from multiple layers of the text encoders.\n* `pooled_prompt_embeds`: A tensor containing the pooled output from each text encoder.  \n\n\n\n"
+    },
+    "canvas__Canvas__set_global_description": {
+        "label": "set_global_description",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 151,
+        "endLineNo": 171,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L151-L171&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**[Quick Summary]**\n\nThis function  initializes an object, likely used for representing image captions or metadata. It takes color information, global descriptions, detailed descriptions, and optional tags as input and prepares them for storage within the object. \n\n**[Inputs]**\n\n* `HTML_web_color_name`: Likely a string representing a color name in HTML format.\n\n* `description`: A string representing a general description for the object.\n* `detailed_descriptions`: A list of strings representing more specific descriptions for the object.\n* `tags`: A string representing tags associated with the object.\n* `valid_colors`: A presumably predefined dictionary or set of valid HTML color names.\n* `record_tags`: A boolean flag determining whether to include tags in the generated descriptions.\n\n**[Output]**\n\n\n* Initializes object attributes: `color`, `prefixes`, and `suffixes`\n* The `color` attribute seems to store a NumPy array representing the given color.\n* `prefixes` and `suffixes` likely hold processed versions of the input descriptions and tags for storing within the object.\n\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__greedy_partition": {
+        "label": "greedy_partition",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 196,
+        "endLineNo": 216,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L196-L216&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown\n\n**Quick summary:** \nThis function aims to pack a list of items into bags, with each bag having a maximum weight capacity (defined by `max_sum`). It iterates through the items, adding them to bags while ensuring no bag exceeds the weight limit.  \n\n**Inputs:**\n\n*  `items`: A list of dictionaries, where each dictionary represents an item and has a key `'length'` indicating the weight of the item.\n* `max_sum`: An integer representing the maximum permissible weight of each bag.\n\n**Output:**\n\n*  `bags`: A list of lists, where each sublist represents a bag containing items.  \n"
+    },
+    "pipeline__hacked_Transformer2DModel_forward": {
+        "label": "hacked_Transformer2DModel_forward",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 12,
+        "endLineNo": 30,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L12-L30&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function, `original_Transformer2DModel_forward`,  likely performs the forward pass computation of a Transformer model. It appears to be a modified version, potentially incorporating conditional information or altering cross-attention behavior.\n\nIts purpose is to execute the core logic of the Transformer model, given input features and various conditioning factors.  \n\n## Inputs\n\n* **`hidden_states`**: The embedded input sequence to be processed by the Transformer.\n* **`encoder_hidden_states`**: May contain pre-processed representations from an encoder, potentially for sequence-to-sequence tasks.\n* **`timestep`**:  A tensor indicating the current time step, likely used for temporal modeling.\n* **`added_cond_kwargs`**: A dictionary of additional conditional keyword arguments, potentially carrying information like class labels or special tokens.\n* **`class_labels`**:  Class labels, if present, might be used for classification tasks.\n* **`cross_attention_kwargs`**:  A dictionary of keyword arguments specifically for the cross-attention mechanism within the Transformer.\n* **`attention_mask`**:  A mask indicating which tokens in the input sequence should be attended to.\n* **`encoder_attention_mask`**:  Similar to `attention_mask`, but for the encoder's hidden states.\n* **`return_dict`**:  A boolean flag determining whether to return a dictionary of model outputs.\n\n\n\n## Output\n\n* A dictionary of model outputs, likely including:\n    * **hidden_states**: The processed output representations from the Transformer.\n    * **encoder_hidden_states**: If an encoder is used, its output representations.\n    * Additional outputs depending on the specific Transformer architecture and its tasks. \n"
+    },
+    "chat_interface__ChatInterface___api_submit_fn": {
+        "label": "_api_submit_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 578,
+        "endLineNo": 593,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L578-L593&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**[Quick Summary]** \nThis function processes a user `message` within a given `history` of past messages. It calls a potentially asynchronous function (`self.fn`) to generate a `response` based on the message and history. The function then appends the `message` and `response` to the `history` list and returns the `response`. This likely forms part of a conversational AI or chatbot system.\n\n**[Inputs]**\n\n*   `message`: The user's latest input text.\n*   `history`: A list of past message pairs (user message, bot response).\n*   `request`: Possibly a web request object containing additional context.\n*   `*args`:  Additional positional arguments potentially passed to `self.fn`.\n\n**[Output]**\n\n*   `response`: The generated text response from `self.fn`.\n*   `history`: The updated list of message pairs, including the new input and response. \n"
+    },
+    "chat_interface__ChatInterface___append_multimodal_history": {
+        "label": "_append_multimodal_history",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 469,
+        "endLineNo": 483,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L469-L483&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**[Quick Summary]**\n\nThis function processes an incoming message, likely from a chat or messaging system. It appends file attachments and the message text (if present) to a history log, along with the generated response. \n\n**[Inputs]**\n\n* `self`: Refers to the instance of the class this function belongs to. \n* `message`: A dictionary containing the message data, likely including:\n    *  `files`: List of file attachments\n    *  `text`: The textual content of the message\n* `response`: The generated response to the message. Can be a string or None.\n* `history`: A list of lists, likely used to store a chronological log of messages and responses.\n\n**[Output]**\n\n*  Modifies the `history` list by adding the current message and response. \n\n\n"
+    },
+    "gradio_a__post_chat": {
+        "label": "post_chat",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 173,
+        "endLineNo": 187,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L173-L187&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "Here's a breakdown of the provided code:\n\n**[Quick Summary]**\n\nThis function attempts to load and process a potential canvas object from a previous assistant response. It checks if there's a valid canvas within the provided history, executes the canvas's processing, and updates the visibility and interactivity states of a graphical component based on the result.  \n\n**[Inputs]**\n\n*  `history`: A list of tuples, presumably representing past conversations between a user and an assistant. Each tuple likely contains the user's message and the assistant's response.\n*  `gr`: Seems to be a graphical component (like a plot, widget, etc.) that potentially needs to be updated based on the canvas processing.\n\n**[Output]**\n\n*  `canvas_outputs`: The output generated by the processed canvas (if successful).\n*  `gr.update(visible=... )`:  A modification to the `gr` component, likely making it visible or invisible depending on whether `canvas_outputs` is valid.\n* `gr.update(interactive=... )`: Another modification to `gr`, potentially enabling or disabling interactivity based on the presence of conversation history.\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 177,
+        "endLineNo": 190,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L177-L190&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function initializes a neural network model, likely for image processing or segmentation, by replacing its original attention processors with custom ones (`OmostCrossAttnProcessor` and `OmostSelfAttnProcessor`).\n\n## Inputs\n\n* `args`:  Arbitrary positional arguments passed to the parent class's constructor.\n* `kwargs`: Arbitrary keyword arguments passed to the parent class's constructor.\n* `self`: A reference to the current instance of the class.\n\n## Output\n\n*  None: The function primarily modifies internal attributes of the object rather than directly returning a value.   \n"
+    },
+    "canvas__closest_name": {
+        "label": "closest_name",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 107,
+        "endLineNo": 119,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L107-L119&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick summary]\nThis function takes user input and attempts to find the closest matching option from a predefined list (`options`). If a close match is found but doesn't exactly match the input, it automatically corrects the input and prints a message indicating the correction. \n\n[Inputs]\n* `input_str`:  The user's input string.\n* `options`:  A dictionary where keys are valid options and values (not used in this snippet) could be associated data.\n\n[Output]\n* The function returns the closest matching option from the `options` dictionary.\n         \n   \n"
+    },
+    "chat_interface__ChatInterface___setup_api": {
+        "label": "_setup_api",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 450,
+        "endLineNo": 462,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L450-L462&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**[Quick Summary]**\n\nThis function simulates interacting with an API, likely for a chatbot, by sending inputs from various text boxes and other elements to a backend service. It adapts its behavior based on whether the API call is streamed or submitted asynchronously.\n\n**[Inputs]**\n\n*  `self._api_stream_fn`: A function presumably responsible for handling streamed API calls (e.g., real-time updates).\n*  `self._api_submit_fn`: A function likely responsible for submitting API requests and awaiting responses.\n*  `self.is_generator`: A boolean flag determining whether the API should handle requests in a streamed or synchronous manner.\n\n*  `self.fake_api_btn`: A graphical button element that triggers the API interaction.\n*  `self.textbox`: A text input element likely used for providing chatbot prompts.\n*  `self.chatbot_state`: An object representing the current state of the chatbot conversation.\n*  `self.additional_inputs`: A list of additional input elements beyond the textbox.\n*  `self.concurrency_limit`: A value controlling the maximum number of concurrent API calls.\n\n\n**[Output]**\n\n* The function expects an interaction with the backend API, likely resulting in a chatbot response.\n* Depending on the values of `self._api_stream_fn`, `self._api_submit_fn`, and `self.is_generator`, the output might be a live, streamed response or a delayed, synchronous response.\n"
+    },
+    "memory_management__movable_bnb_model": {
+        "label": "movable_bnb_model",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/memory_management.py",
+        "relativePath": "lib_omost/memory_management.py",
+        "lineNo": 16,
+        "endLineNo": 28,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fmemory_management.py%23L16-L28&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[Quick Summary]\nThis function appears to be designed for temporarily disabling quantization within a model (`m`). It saves the original quantization method, removes it, yields a placeholder value (likely for other operations), and then restores the original quantization method after the yielded value is handled.  \n\n[Inputs]\n* `m`:  Represents a machine learning model.\n\n[Output]\n* None: The function yields `None` which is a placeholder allowing it to be used in generator functions, likely as part of a larger process that interacts with the model in a quantized and unquantized state. \n\n\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__merge_with_prefix": {
+        "label": "merge_with_prefix",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 226,
+        "endLineNo": 238,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L226-L238&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**[Quick summary]** \nThis function merges prefix IDs for two texts from a list of dictionaries `bag`, ensuring each text has up to 77 tokens. It then utilizes  tokenizers to convert these IDs into torch tensors. \n\n**[Inputs]**\n* `bag`: A list of dictionaries, likely each containing information about two texts (e.g., prefixes)\n* `prefix_ids_t1`: A list potentially holding prefix IDs for the first text.\n* `prefix_ids_t2`: A list potentially holding prefix IDs for the second text.\n* `self.tokenizer`:  A tokenizer instance, probably for language modeling.\n* `self.tokenizer_2`: Another tokenizer instance, possibly for a different language or model.\n\n**[Output]**\n* A dictionary containing:\n    * `ids_t1`: A torch tensor of IDs representing the first text, limited to 77 tokens.\n    * `ids_t2`: A torch tensor of IDs representing the second text, limited to 77 tokens. \n\n\n"
+    },
+    "memory_management__unload_all_models": {
+        "label": "unload_all_models",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/memory_management.py",
+        "relativePath": "lib_omost/memory_management.py",
+        "lineNo": 56,
+        "endLineNo": 67,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fmemory_management.py%23L56-L67&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:**\n\nThis function loads machine learning models to the GPU. It takes a list of models (`extra_models`) to load on top of any existing models already on the GPU (`models_in_gpu`). It then combines these lists, removing duplicates, and returns a result of loading models to the GPU, likely clearing any existing GPUs models before loading the new ones.\n\n**Inputs:**\n\n* `extra_models`: \n    * A potentially single model or a list of models to be loaded onto the GPU.\n* `models_in_gpu`:\n    * A list of models already loaded onto the GPU. Likely a global variable used by other parts of the code.\n\n**Output:**\n\n*  A result of the `load_models_to_gpu` function, potentially indicating successful loading of the models onto the GPU. \n\n\n"
+    },
+    "canvas__Canvas__from_bot_response": {
+        "label": "from_bot_response",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 132,
+        "endLineNo": 142,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L132-L142&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Analysis: Python Code Snippet\n\n**Quick Summary:**\n\nThis function parses a text response, extracts a Python code block, executes it, and checks if it creates a variable named \"canvas\" of a specific type (`Canvas`). It's likely used to verify that a provided code snippet successfully generates a desired object within a program.\n\n**Inputs:**\n\n* `response`: A string containing the text to be analyzed.\n* `Canvas`: A potentially user-defined class representing a \"Canvas\" object.\n\n**Output:**\n\n* `canvas`: The \"canvas\" object created by the executed code, or `None` if the code is invalid or doesn't create the expected object. \n\n\n\n"
+    },
+    "pipeline__KModel____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 61,
+        "endLineNo": 71,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L61-L71&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick Summary:** This function initializes parameters for a diffusion model, specifically calculating the beta schedule (a sequence of learning rates) and the corresponding alpha schedule. It also sets up \u03c3 (sigma) values and a U-Net for image generation. The code is likely part of a diffusion model implementation.\n\n**Inputs:**\n\n* `linear_start`: A float representing the initial value in the linear beta schedule.\n* `linear_end`:  A float representing the final value in the linear beta schedule. \n* `timesteps`: An integer specifying the number of time steps in the diffusion process.\n* `unet`: A pre-defined U-Net model.\n\n**Output:**\n\n* `self.betas`: A tensor containing the beta values at each timestep.\n* `self.alphas`: A tensor containing the alpha values at each timestep.\n* `self.alphas_cumprod`: A tensor containing the cumulative product of alpha values at each timestep.\n* `self.sigmas`: A tensor containing the sigma values at each timestep.\n* `self.log_sigmas`: A tensor containing the log of the sigma values at each timestep.\n* `self.sigma_data`: A constant float set to 1.0. \n\n\n\n"
+    },
+    "gradio_a__pytorch2numpy": {
+        "label": "pytorch2numpy",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 91,
+        "endLineNo": 100,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L91-L100&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:** This function processes a list of images (`imgs`) and transforms each image into a NumPy array representation suitable for display or further processing.  It moves a dimension, scales pixel values, detaches from the computation graph, converts to float, and clips values to the range 0-255. \n\n**Inputs:**\n\n* `imgs`: A list of image tensors. \n\n**Output:**\n\n* `results`: A list of NumPy arrays, each representing a processed image. \n\n\n"
+    },
+    "pipeline__KModel____call__": {
+        "label": "__call__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 92,
+        "endLineNo": 101,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L92-L101&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## DDIM Guidance Function Summary:\n\nThis function implements the DDIM (Denoising Diffusion Implicit Models) guidance mechanism for text-to-image generation. It aims to steer the diffusion process towards generating images that better match the provided textual prompts by incorporating denoising guidance signals.\n\n## Inputs:\n\n*  `x`: Input image tensor, likely a noisy intermediate representation during the diffusion process.\n*  `sigma`: Tensor representing the noise variance schedule for the diffusion process.\n*  `self.sigma_data`: A hyperparameter possibly related to data variance or a scale factor.\n*  `self.timestep`: Function to determine the current timestep in the diffusion process.\n*  `extra_args`: Dictionary likely containing additional arguments, specifically:\n    *  `cfg_scale`: A hyperparameter controlling the strength of the guidance signal.\n\n* `extra_args['positive']` and `extra_args['negative']`: Dictionaries of arguments potentially providing conditioning information for the U-Net model used in the guidance mechanism.\n\n## Output:\n\n*  `x - noise_pred * sigma[:, None, None, None]`:  Modified input image tensor, potentially denoised based on the guidance signals. \n\n\n\n"
+    },
+    "chat_interface__ChatInterface___display_input": {
+        "label": "_display_input",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 484,
+        "endLineNo": 492,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L484-L492&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown:\n\n**Quick Summary:**  This function appends a new message to a conversation history. It handles both text-only and multimodal (e.g., text + image) messages by adding them to the history list appropriately.  \n\n**Inputs:** \n\n* `message`:  \n    * Can be a string representing a text message.\n    * Or a dictionary representing a multimodal message with potential key-value pairs for different media types.\n* `history`: A list of lists, where each inner list represents a turn in the conversation and may contain the message content and metadata (like timestamps or user IDs).\n\n**Output:**\n\n* Returns a tuple containing the updated `history` list twice. This suggests the function might be used in a context where both the updated and original history are needed. \n\n\n\n\n"
+    },
+    "canvas__Canvas____init__": {
+        "label": "__init__",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 143,
+        "endLineNo": 150,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L143-L150&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "[**Quick Summary**]\n\nThis function likely initializes an object, possibly representing a data structure or component. It sets default values for attributes such as `components`, `color`, `record_tags`, `prefixes`, and `suffixes`. The purpose is to establish the initial state of this object when it is created.\n\n\n[**Inputs**]\n \n\n\n[**Outputs**]\n\n"
+    },
+    "chat_interface__ChatInterface___delete_prev_fn": {
+        "label": "_delete_prev_fn",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 616,
+        "endLineNo": 623,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L616-L623&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick Summary]**  This function processes a message within a conversation context. It likely updates the conversation history and generates a response based on the input message and past interactions. The purpose is to simulate a chatbot or conversational agent. \n\n**[Inputs]**\n\n*  `message`:  The user's input, which can be either a string (text) or a dictionary containing lists (potentially structured data).\n* `history`: A list of past conversation turns, each turn represented as a list of strings or tuples.\n\n **[Output]**\n\n*  `updated_history`: The modified conversation history after processing the current message.\n* `response`: The chatbot's generated response, which may be a string or a dictionary.\n* `new_history`:  The updated conversation history. \n\n\n"
+    },
+    "gradio_a__chat_fn__interactive_stopping_criteria": {
+        "label": "interactive_stopping_criteria",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 135,
+        "endLineNo": 141,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L135-L141&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis\n\n**Quick summary:** \n\nThis code snippet checks if a variable named `user_interrupted` exists within the `streamer` object and is set to `True`. If it is, the function prints a message and returns `True`, indicating the generation process was stopped by the user. Otherwise, it returns `False`.  The purpose is likely to handle user interruptions in some kind of  streaming or generation process.\n\n**Inputs:**\n\n* `streamer`:  An object likely containing information about a streaming or generation process.\n\n**Output:**\n\n* `True`: If the user has interrupted the process.\n* `False`: If the user has not interrupted the process. \n\n\n"
+    },
+    "pipeline__KModel__get_sigmas_karras": {
+        "label": "get_sigmas_karras",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 85,
+        "endLineNo": 91,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L85-L91&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "##  Function Breakdown\n\n**Quick Summary:** This function generates a linearly increasing set of sigmas (variance) values over a range `n` points, starting from a minimum variance (`sigma_min`) raised to the power of `1 / rho` and ending at a maximum variance (`sigma_max`) raised to that same power.  \n\n**Purpose:**  This likely generates a schedule of varying variances for a machine learning model, like a diffusion model. \n\n**Inputs:**\n\n* `n`: The number of variance values to generate.\n* `self.sigma_min`: The minimum variance value.\n* `self.sigma_max`: The maximum variance value.\n* `rho`: A parameter controlling the shape of the variance schedule.\n\n**Output:** \n\n* A torch tensor of shape (n+1) containing linearly increasing variance values. \n* The last element is zero, potentially for a special handling at the end of the schedule. \n\n\n\n"
+    },
+    "pipeline__StableDiffusionXLOmostPipeline__encode_bag_of_subprompts_greedy__get_77_tokens_in_torch": {
+        "label": "get_77_tokens_in_torch",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 218,
+        "endLineNo": 224,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L218-L224&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Breakdown \n\n**Quick Summary:** \n\nThis function processes a \"subprompt\" (a sequence of token indices) to fit within the maximum length allowed by a tokenizer. It prepends a \"beginning of sequence\" token, appends an \"end of sequence\" token, and pads the input with padding tokens until it reaches the maximum length. \n\n**Inputs:**\n\n*  `subprompt_inds`: A list of token indices representing the subprompt.\n\n*  `tokenizer`: Likely a tokenizer object from a library like HuggingFace Transformers. \n\n*  `device`:  Specifies the device to store the tensor (e.g., cpu or gpu).\n\n**Output:**\n\n* A PyTorch tensor containing the processed subprompt,  padded to a maximum length of 77 tokens. \n"
+    },
+    "canvas__binary_nonzero_positions": {
+        "label": "binary_nonzero_positions",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 124,
+        "endLineNo": 129,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L124-L129&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick summary:** This function takes an integer (`n`) and an offset (`offset`) as input. It converts the integer to its binary representation, finds the positions of '1' bits in the reversed binary string,  and returns a list of these positions adjusted by the offset. Essentially, it identifies the set bits in the binary form of the integer and translates them to indices.\n\n**Inputs:**\n\n*   `n`: An integer.\n*   `offset`: An integer representing a positional shift.\n\n**Output:**\n\n*   A list of integers representing the positions of '1' bits in the binary representation of `n`, shifted by the given `offset`. \n\n\n"
+    },
+    "chat_interface__ChatInterface___clear_and_save_textbox": {
+        "label": "_clear_and_save_textbox",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 463,
+        "endLineNo": 468,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L463-L468&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown  \n\n**[Quick Summary]** This function determines the response format based on a \"multimodal\" flag. If `multimodal` is True, it returns a dictionary with empty \"text\" and \"files\" keys, suggesting a response containing only files. Otherwise, it returns an empty string, indicating a purely textual response.\n\n**[Inputs]**\n* `self.multimodal`: A boolean value likely indicating whether the desired response should include multimedia files. \n\n**[Output]**\n* A tuple containing:\n    * A string (empty if `multimodal` is True, otherwise also empty)\n    * A `message` object - likely containing additional information about the response. \n"
+    },
+    "gradio_a__numpy2pytorch": {
+        "label": "numpy2pytorch",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 102,
+        "endLineNo": 107,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L102-L107&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function preprocesses images for a machine learning model. It stacks multiple images, normalizes pixel values, and rearranges the dimensions for compatibility with the model. This is a common preprocessing step to enhance model performance.\n\n## Inputs\n* **imgs:** A list of NumPy arrays representing images. \n\n## Output\n*  **h:** A PyTorch tensor containing preprocessed images, ready for input to a machine learning model. \n\n\n"
+    },
+    "gradio_a__resize_without_crop": {
+        "label": "resize_without_crop",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 108,
+        "endLineNo": 113,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L108-L113&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Breakdown\n\n**Quick Summary**\n\nThis function takes an image (likely represented as a NumPy array), resizes it to specified dimensions while using high-quality Lanczos resampling, and returns the resized image as a NumPy array. Its purpose is to scale an image to a particular size while preserving as much detail as possible.\n\n**Inputs**\n\n* `image`: A NumPy array representing an image.\n* `target_width`: The desired width of the resized image.\n* `target_height`: The desired height of the resized image.\n\n**Output**\n\n* A NumPy array representing the resized image. \n\n\n"
+    },
+    "chat_interface__ChatInterface___setup_stop_events__perform_interrupt": {
+        "label": "perform_interrupt",
+        "systemPath": "/home/sanjay/Development/explore/Omost/chat_interface.py",
+        "relativePath": "chat_interface.py",
+        "lineNo": 400,
+        "endLineNo": 404,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fchat_interface.py%23L400-L404&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis:\n\n**Quick Summary:** This function checks if a variable `ipc` exists. If it does, it calls the function stored in `ipc`.  Its purpose is likely to execute a specific function conditionally based on the presence of the `ipc` variable.\n\n**Inputs:**\n\n* **ipc:** A potentially callable object (function reference, etc.).\n\n**Output:** \n\n* The function returns `None`.\n\n\nIf `ipc` is callable, the function will be executed.  \n"
+    },
+    "pipeline__KModel__timestep": {
+        "label": "timestep",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 80,
+        "endLineNo": 84,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L80-L84&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Summary\n\nThis function finds the index of the log-sigma value in `self.log_sigmas` that is closest (in absolute difference) to a given log-sigma value (`sigma.log()`). \n\nIt likely compares predicted noise levels (\"log-sigmas\") and aims to find the best matching level within a set of predefined levels stored in `self.log_sigmas`.\n\n## Inputs\n\n* `sigma`: likely a variable representing a predicted noise level.\n* `self.log_sigmas`: a tensor (likely PyTorch) containing a set of predefined log-sigma values.\n\n## Output\n\n* A tensor (same shape as `sigma`) containing the indices of the closest log-sigma values in `self.log_sigmas` to the input `sigma`.   \n\n\n"
+    },
+    "canvas__safe_str": {
+        "label": "safe_str",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/canvas.py",
+        "relativePath": "lib_omost/canvas.py",
+        "lineNo": 120,
+        "endLineNo": 123,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fcanvas.py%23L120-L123&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "**[Quick summary]** This function takes a string (`x`) as input, removes any trailing commas, periods, and spaces, and appends a period at the end.  The purpose is likely to clean up and standardize the format of text strings. \n\n**[Inputs]**\n-  `x`: A string \n\n**[Output]**\n-  A modified string with trailing commas, periods, and spaces removed and a final period added. \n"
+    },
+    "gradio_a__chat_fn__interrupter": {
+        "label": "interrupter",
+        "systemPath": "/home/sanjay/Development/explore/Omost/gradio_app.py",
+        "relativePath": "gradio_app.py",
+        "lineNo": 144,
+        "endLineNo": 147,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Fgradio_app.py%23L144-L147&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Code Analysis \n\n**Quick Summary:** \n\nThis code snippet likely handles user interruption during a streaming process. It sets a boolean flag `streamer.user_interrupted` to `True`, signaling that the user has interrupted the stream, and then immediately exits the function. This suggests a way to gracefully stop a streaming operation upon user input.\n\n**Inputs:**\n\n* `streamer`:  An object presumably representing the streaming process. \n* `user_interrupted`: A boolean flag, initially `False`, which is set to `True`.\n\n**Output:**\n\n*  `streamer.user_interrupted`: Set to `True` \n* Exits the current function \n"
+    },
+    "pipeline__KModel__sigma_max": {
+        "label": "sigma_max",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 77,
+        "endLineNo": 79,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L77-L79&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Quick Summary\n\nThis function retrieves and returns the last element of the `sigmas` list. This likely indicates it's part of a larger process that involves calculating or accumulating sigmas over time, and the final value is the most relevant.\n\n## Inputs\n\n*  `self`: A reference to the current object instance.\n*  `sigmas`: A list of values, potentially representing standard deviations or other measures of variability.\n\n## Output\n\n*  The last element of the `sigmas` list. This could be a float or another numerical data type. \n\n\n"
+    },
+    "pipeline__KModel__sigma_min": {
+        "label": "sigma_min",
+        "systemPath": "/home/sanjay/Development/explore/Omost/lib_omost/pipeline.py",
+        "relativePath": "lib_omost/pipeline.py",
+        "lineNo": 73,
+        "endLineNo": 75,
+        "emgithubIframeLink": "https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Flllyasviel%2FOmost%2Fblob%2Fmain%2Flib_omost%2Fpipeline.py%23L73-L75&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on",
+        "description": "## Function Analysis \n\n**Quick Summary:**  This function appears to be a part of a class (indicated by \"self\") that manages a collection of values called \"sigmas.\" The function simply returns the first value (index 0) from this collection. The overall purpose is likely to provide access to a specific sigma value within the class.\n\n**Inputs:**\n\n*  `self`:  A reference to the current instance of the class.\n\n**Output:**\n\n*  A numerical value representing the first element in the \"sigmas\" collection. \n\n\n"
+    }
+}

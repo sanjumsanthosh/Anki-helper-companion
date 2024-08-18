@@ -1,0 +1,126 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded", fillcolor="#80808018", label=""];
+        backend [label="backend", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        backend__memory [label="backend.memory", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        backend__memory__draft [label="backend.memory.draft", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        backend__memory__research [label="backend.memory.research", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        backend__report_type [label="backend.report_type", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        backend__report_type__basic_report [label="backend.report_type.basic_report", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        backend__report_type__basic_report__basic_report [label="backend.report_type.basic_report.basic_report", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        backend__report_type__detailed_report [label="backend.report_type.detailed_report", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        backend__report_type__detailed_report__detailed_report [label="backend.report_type.detailed_report.detailed_report", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="8"];
+        backend__server [label="backend.server", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="9"];
+        backend__utils [label="backend.utils", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="10"];
+        backend__websocket_manager [label="backend.websocket_manager", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="11"];
+        subgraph cluster_backend__memory__draft {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.memory.draft"];
+            backend__memory__draft__DraftState [label="DraftState\n(/home/sanjay/Development/explore/gpt-researcher/backend/memory/draft.py:5)", style="filled", fillcolor="#fff365b2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_backend__memory__research {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.memory.research"];
+            backend__memory__research__ResearchState [label="ResearchState\n(/home/sanjay/Development/explore/gpt-researcher/backend/memory/research.py:5)", style="filled", fillcolor="#c4ff65b2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_backend__report_type__basic_report__basic_report {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.report_type.basic_report.basic_report"];
+            backend__report_type__basic_report__basic_report__BasicReport [label="BasicReport\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/basic_report/basic_report.py:6)", style="filled", fillcolor="#32ffcfb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_backend__report_type__basic_report__basic_report__BasicReport {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.report_type.basic_report.basic_report.BasicReport"];
+            backend__report_type__basic_report__basic_report__BasicReport____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/basic_report/basic_report.py:7)", style="filled", fillcolor="#00ffc4b2", fontcolor="#000000", group="6"];
+            backend__report_type__basic_report__basic_report__BasicReport__run [label="run\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/basic_report/basic_report.py:27)", style="filled", fillcolor="#00ffc4b2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_backend__report_type__detailed_report__detailed_report {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.report_type.detailed_report.detailed_report"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport [label="DetailedReport\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:15)", style="filled", fillcolor="#3271ffb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_backend__report_type__detailed_report__detailed_report__DetailedReport {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.report_type.detailed_report.detailed_report.DetailedReport"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:16)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport___construct_detailed_report [label="_construct_detailed_report\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:170)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports [label="_generate_subtopic_reports\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:94)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport___get_all_subtopics [label="_get_all_subtopics\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:90)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport___get_subtopic_report [label="_get_subtopic_report\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:119)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport___initial_research [label="_initial_research\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:82)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport__run [label="run\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:60)", style="filled", fillcolor="#004effb2", fontcolor="#000000", group="8"];
+        }
+        subgraph cluster_backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.report_type.detailed_report.detailed_report.DetailedReport._generate_subtopic_reports"];
+            backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports__fetch_report [label="fetch_report\n(/home/sanjay/Development/explore/gpt-researcher/backend/report_type/detailed_report/detailed_report.py:98)", style="filled", fillcolor="#003ecbb2", fontcolor="#ffffff", group="8"];
+        }
+        subgraph cluster_backend__server {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.server"];
+            backend__server__ConfigRequest [label="ConfigRequest\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:27)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__ResearchRequest [label="ResearchRequest\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:22)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__delete_file [label="delete_file\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:208)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__get_config [label="get_config\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:127)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__list_files [label="list_files\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:202)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__read_root [label="read_root\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:60)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__run_multi_agents [label="run_multi_agents\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:118)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__sanitize_filename [label="sanitize_filename\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:67)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__set_config [label="set_config\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:155)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__startup_event [label="startup_event\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:53)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__upload_file [label="upload_file\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:188)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+            backend__server__websocket_endpoint [label="websocket_endpoint\n(/home/sanjay/Development/explore/gpt-researcher/backend/server.py:71)", style="filled", fillcolor="#a899ffb2", fontcolor="#000000", group="9"];
+        }
+        subgraph cluster_backend__utils {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.utils"];
+            backend__utils__write_md_to_pdf [label="write_md_to_pdf\n(/home/sanjay/Development/explore/gpt-researcher/backend/utils.py:35)", style="filled", fillcolor="#d799ffb2", fontcolor="#000000", group="10"];
+            backend__utils__write_md_to_word [label="write_md_to_word\n(/home/sanjay/Development/explore/gpt-researcher/backend/utils.py:61)", style="filled", fillcolor="#d799ffb2", fontcolor="#000000", group="10"];
+            backend__utils__write_text_to_md [label="write_text_to_md\n(/home/sanjay/Development/explore/gpt-researcher/backend/utils.py:22)", style="filled", fillcolor="#d799ffb2", fontcolor="#000000", group="10"];
+            backend__utils__write_to_file [label="write_to_file\n(/home/sanjay/Development/explore/gpt-researcher/backend/utils.py:5)", style="filled", fillcolor="#d799ffb2", fontcolor="#000000", group="10"];
+        }
+        subgraph cluster_backend__websocket_manager {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.websocket_manager"];
+            backend__websocket_manager__WebSocketManager [label="WebSocketManager\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:12)", style="filled", fillcolor="#ff99f7b2", fontcolor="#000000", group="11"];
+            backend__websocket_manager__run_agent [label="run_agent\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:64)", style="filled", fillcolor="#ff99f7b2", fontcolor="#000000", group="11"];
+        }
+        subgraph cluster_backend__websocket_manager__WebSocketManager {
+
+            graph [style="filled,rounded", fillcolor="#80808018", label="backend.websocket_manager.WebSocketManager"];
+            backend__websocket_manager__WebSocketManager____init__ [label="__init__\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:15)", style="filled", fillcolor="#ff65f3b2", fontcolor="#000000", group="11"];
+            backend__websocket_manager__WebSocketManager__connect [label="connect\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:40)", style="filled", fillcolor="#ff65f3b2", fontcolor="#000000", group="11"];
+            backend__websocket_manager__WebSocketManager__disconnect [label="disconnect\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:47)", style="filled", fillcolor="#ff65f3b2", fontcolor="#000000", group="11"];
+            backend__websocket_manager__WebSocketManager__start_sender [label="start_sender\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:21)", style="filled", fillcolor="#ff65f3b2", fontcolor="#000000", group="11"];
+            backend__websocket_manager__WebSocketManager__start_streaming [label="start_streaming\n(/home/sanjay/Development/explore/gpt-researcher/backend/websocket_manager.py:57)", style="filled", fillcolor="#ff65f3b2", fontcolor="#000000", group="11"];
+        }
+    }
+        backend__server -> backend__websocket_manager__WebSocketManager____init__ [style="solid",  color="#000000"];
+        backend__server -> backend__utils__write_md_to_pdf [style="solid",  color="#000000"];
+        backend__server -> backend__utils__write_md_to_word [style="solid",  color="#000000"];
+        backend__server -> backend__utils__write_text_to_md [style="solid",  color="#000000"];
+        backend__server -> backend__websocket_manager__WebSocketManager [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__websocket_manager__WebSocketManager__connect [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__utils__write_md_to_pdf [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__utils__write_md_to_word [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__websocket_manager__WebSocketManager__disconnect [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__utils__write_text_to_md [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__websocket_manager__WebSocketManager__start_streaming [style="solid",  color="#000000"];
+        backend__server__websocket_endpoint -> backend__server__sanitize_filename [style="solid",  color="#000000"];
+        backend__server__run_multi_agents -> backend__websocket_manager__WebSocketManager [style="solid",  color="#000000"];
+        backend__utils__write_text_to_md -> backend__utils__write_to_file [style="solid",  color="#000000"];
+        backend__websocket_manager__WebSocketManager__start_sender -> backend__websocket_manager__WebSocketManager____init__ [style="solid",  color="#000000"];
+        backend__websocket_manager__WebSocketManager__connect -> backend__websocket_manager__WebSocketManager__start_sender [style="solid",  color="#000000"];
+        backend__websocket_manager__WebSocketManager__connect -> backend__websocket_manager__WebSocketManager____init__ [style="solid",  color="#000000"];
+        backend__websocket_manager__WebSocketManager__disconnect -> backend__websocket_manager__WebSocketManager____init__ [style="solid",  color="#000000"];
+        backend__websocket_manager__WebSocketManager__start_streaming -> backend__websocket_manager__run_agent [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport__run -> backend__report_type__detailed_report__detailed_report__DetailedReport___get_all_subtopics [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport__run -> backend__report_type__detailed_report__detailed_report__DetailedReport___construct_detailed_report [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport__run -> backend__report_type__detailed_report__detailed_report__DetailedReport___initial_research [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport__run -> backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports__fetch_report -> backend__report_type__detailed_report__detailed_report__DetailedReport___get_subtopic_report [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports -> backend__report_type__detailed_report__detailed_report__DetailedReport___generate_subtopic_reports__fetch_report [style="solid",  color="#000000"];
+        backend__report_type__detailed_report__detailed_report__DetailedReport___get_subtopic_report -> backend__report_type__detailed_report__detailed_report__DetailedReport____init__ [style="solid",  color="#000000"];
+    }
